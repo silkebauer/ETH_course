@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 10 Student projects | Migration Course</title>
+  <meta name="description" content="This is the first version of a handout for the ETH migration course at Col de Bretolet. The output format for this example is bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 10 Student projects | Migration Course" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is the first version of a handout for the ETH migration course at Col de Bretolet. The output format for this example is bookdown::gitbook." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 10 Student projects | Migration Course" />
+  
+  <meta name="twitter:description" content="This is the first version of a handout for the ETH migration course at Col de Bretolet. The output format for this example is bookdown::gitbook." />
+  
+
+<meta name="author" content="Fränzi Korner &amp; Silke Bauer" />
+
+
+<meta name="date" content="2019-08-27" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="statistical-tools-for-studying-migration.html"/>
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
+<li class="chapter" data-level="3" data-path="animal-migration.html"><a href="animal-migration.html"><i class="fa fa-check"></i><b>3</b> Animal migration</a><ul>
+<li class="chapter" data-level="3.1" data-path="animal-migration.html"><a href="animal-migration.html#what-is-migration"><i class="fa fa-check"></i><b>3.1</b> What is migration?</a></li>
+<li class="chapter" data-level="3.2" data-path="animal-migration.html"><a href="animal-migration.html#why-do-birds-migrate"><i class="fa fa-check"></i><b>3.2</b> Why do birds migrate?</a></li>
+<li class="chapter" data-level="3.3" data-path="animal-migration.html"><a href="animal-migration.html#terminology-of-specific-migration-patterns"><i class="fa fa-check"></i><b>3.3</b> Terminology of specific migration patterns</a></li>
+<li class="chapter" data-level="3.4" data-path="animal-migration.html"><a href="animal-migration.html#importance-of-migration-for-the-structure-and-dynamics-of-resident-communities"><i class="fa fa-check"></i><b>3.4</b> Importance of migration for the structure and dynamics of resident communities</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="timing-of-migration.html"><a href="timing-of-migration.html"><i class="fa fa-check"></i><b>4</b> Timing of migration</a><ul>
+<li class="chapter" data-level="4.1" data-path="timing-of-migration.html"><a href="timing-of-migration.html#why-is-timing-important"><i class="fa fa-check"></i><b>4.1</b> Why is timing important?</a></li>
+<li class="chapter" data-level="4.2" data-path="timing-of-migration.html"><a href="timing-of-migration.html#what-determines-the-timing-of-migratory-steps-cues"><i class="fa fa-check"></i><b>4.2</b> What determines the timing of migratory steps? Cues!</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="timing-of-migration.html"><a href="timing-of-migration.html#preparation"><i class="fa fa-check"></i><b>4.2.1</b> Preparation</a></li>
+<li class="chapter" data-level="4.2.2" data-path="timing-of-migration.html"><a href="timing-of-migration.html#departure"><i class="fa fa-check"></i><b>4.2.2</b> Departure</a></li>
+<li class="chapter" data-level="4.2.3" data-path="timing-of-migration.html"><a href="timing-of-migration.html#on-the-way"><i class="fa fa-check"></i><b>4.2.3</b> On the way</a></li>
+<li class="chapter" data-level="4.2.4" data-path="timing-of-migration.html"><a href="timing-of-migration.html#termination"><i class="fa fa-check"></i><b>4.2.4</b> Termination</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="timing-of-migration.html"><a href="timing-of-migration.html#consequences-of-migration-timing"><i class="fa fa-check"></i><b>4.3</b> Consequences of migration timing</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="orientation.html"><a href="orientation.html"><i class="fa fa-check"></i><b>5</b> Orientation</a><ul>
+<li class="chapter" data-level="5.1" data-path="orientation.html"><a href="orientation.html#sun-compass"><i class="fa fa-check"></i><b>5.1</b> Sun compass</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="mechanics-energetics-and-plasticity-of-the-migratory-flight.html"><a href="mechanics-energetics-and-plasticity-of-the-migratory-flight.html"><i class="fa fa-check"></i><b>6</b> Mechanics, energetics and plasticity of the migratory flight</a><ul>
+<li class="chapter" data-level="6.1" data-path="mechanics-energetics-and-plasticity-of-the-migratory-flight.html"><a href="mechanics-energetics-and-plasticity-of-the-migratory-flight.html#mechanics-and-energetics-of-flight"><i class="fa fa-check"></i><b>6.1</b> Mechanics and energetics of flight</a></li>
+<li class="chapter" data-level="6.2" data-path="mechanics-energetics-and-plasticity-of-the-migratory-flight.html"><a href="mechanics-energetics-and-plasticity-of-the-migratory-flight.html#fuel-for-migratory-flights"><i class="fa fa-check"></i><b>6.2</b> Fuel for migratory flights</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="field-methods.html"><a href="field-methods.html"><i class="fa fa-check"></i><b>7</b> Field methods</a></li>
+<li class="chapter" data-level="8" data-path="migration-models.html"><a href="migration-models.html"><i class="fa fa-check"></i><b>8</b> Migration models</a><ul>
+<li class="chapter" data-level="8.1" data-path="migration-models.html"><a href="migration-models.html#state-dependent-migration-models"><i class="fa fa-check"></i><b>8.1</b> State-dependent migration models</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html"><i class="fa fa-check"></i><b>9</b> Statistical tools for studying migration</a></li>
+<li class="chapter" data-level="10" data-path="student-projects.html"><a href="student-projects.html"><i class="fa fa-check"></i><b>10</b> Student projects</a><ul>
+<li class="chapter" data-level="10.1" data-path="student-projects.html"><a href="student-projects.html#phenology-migration-patterns-within-season-and-their-changes-over-the-years"><i class="fa fa-check"></i><b>10.1</b> Phenology: Migration patterns within season and their changes over the years</a></li>
+<li class="chapter" data-level="10.2" data-path="student-projects.html"><a href="student-projects.html#long-term-changes-in-morphology"><i class="fa fa-check"></i><b>10.2</b> Long-term changes in morphology</a></li>
+<li class="chapter" data-level="10.3" data-path="student-projects.html"><a href="student-projects.html#differential-migration"><i class="fa fa-check"></i><b>10.3</b> Differential Migration</a></li>
+<li class="chapter" data-level="10.4" data-path="student-projects.html"><a href="student-projects.html#flight-energetics-in-the-course-of-a-night-and-over-the-season"><i class="fa fa-check"></i><b>10.4</b> Flight energetics in the course of a night and over the season</a></li>
+<li class="chapter" data-level="10.5" data-path="student-projects.html"><a href="student-projects.html#estimate-survival-from-capture-recapture-data"><i class="fa fa-check"></i><b>10.5</b> Estimate survival from capture-recapture data</a></li>
+<li class="chapter" data-level="10.6" data-path="student-projects.html"><a href="student-projects.html#modelling-spring-migration-several-questions"><i class="fa fa-check"></i><b>10.6</b> Modelling (spring) migration: several questions</a></li>
+<li class="chapter" data-level="10.7" data-path="student-projects.html"><a href="student-projects.html#estimating-migration-volume"><i class="fa fa-check"></i><b>10.7</b> Estimating Migration volume</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Migration Course</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="student-projects" class="section level1">
+<h1><span class="header-section-number">Chapter 10</span> Student projects</h1>
+<p>We encourage students to work on a research project during the course. We have compiled a list of suggested projects (see below) but students may come up with their own suggested project within the realm of bird and migration ecology.</p>
+<div id="phenology-migration-patterns-within-season-and-their-changes-over-the-years" class="section level2">
+<h2><span class="header-section-number">10.1</span> Phenology: Migration patterns within season and their changes over the years</h2>
+<p>Which species migrate early or late and why?
+Link migration patterns (median of migration) to ecological variables such as migration route, food and other species-traits
+Has the timing of peak migration changed over the years? If so, in which species? What could be potential reasons?</p>
+<pre><code>zugzeiten.txt: Variable baird.mean is an estimate for the average passage day corrected for truncation (migration is still ongoing at the end of the field season) </code></pre>
+<p>passage_by_spec_year.txt: Median passage day per year and species
+species_data.txt: ecological characteristica of species</p>
+</div>
+<div id="long-term-changes-in-morphology" class="section level2">
+<h2><span class="header-section-number">10.2</span> Long-term changes in morphology</h2>
+<p>Has wing length changed over the years in specific species? Are there patterns, e.g. in short- and long-distance migrants? How could this pattern be explained, i.e. which processes or constraints may play a role?</p>
+<pre><code>Analyse species-specific ringing lists</code></pre>
+</div>
+<div id="differential-migration" class="section level2">
+<h2><span class="header-section-number">10.3</span> Differential Migration</h2>
+<p>Do young and old birds or males and females migrate at different times? If such sub-groups migrate at different times in specific species, what could explain these patterns? Potential test species: age-differences in reed warblers, age- and sex-differences in chaffinches.</p>
+<pre><code>Analyse species-specific ringing lists</code></pre>
+</div>
+<div id="flight-energetics-in-the-course-of-a-night-and-over-the-season" class="section level2">
+<h2><span class="header-section-number">10.4</span> Flight energetics in the course of a night and over the season</h2>
+<p>Dynamics of fat reserves: how do the fat reserves change over the night and over the season</p>
+<p>comparison with expectations based on energetics and aero-physics</p>
+<pre><code>Analyse species-specific ringing lists </code></pre>
+<p>specific softare:
+Flight 2.4 (Windows)
+or R-package afpt</p>
+</div>
+<div id="estimate-survival-from-capture-recapture-data" class="section level2">
+<h2><span class="header-section-number">10.5</span> Estimate survival from capture-recapture data</h2>
+<p>Marking and recapturing individual birds allows for estimating apparent survival probability (= the probability that a bird survives and returns to the breeding site). Do survival probabilities correlate with conditions in the wintering area?</p>
+<pre><code>Analyse a mark-recapture data set of reed warblers from a constant ringing effort site </code></pre>
+<p>using MCMC (software: Jags)</p>
+</div>
+<div id="modelling-spring-migration-several-questions" class="section level2">
+<h2><span class="header-section-number">10.6</span> Modelling (spring) migration: several questions</h2>
+<ul>
+<li>Long-term changes in migration phenology</li>
+<li>Consequences of climate-driven changes in site-conditions</li>
+<li>Consequences of human actions, e.g. hunting, on migration success
+Use dynamic migration model and analyse your own scenarios
+Download model from GitHub <a href="https://github.com/slisovski/sdpMig" class="uri">https://github.com/slisovski/sdpMig</a> - you may need to install the R-packages devtools, Rtools, zoo, maptools</li>
+</ul>
+</div>
+<div id="estimating-migration-volume" class="section level2">
+<h2><span class="header-section-number">10.7</span> Estimating Migration volume</h2>
+<ul>
+<li>What is the total number and biomass of birds migrating?</li>
+<li>Are there changes in numbers and biomasses over the past decades?</li>
+<li>What might have caused these changes and which consequences could they have?</li>
+</ul>
+<p>Analyse overall ringing lists over the years</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="statistical-tools-for-studying-migration.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["MigrationCourse.pdf", "MigrationCourse.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
