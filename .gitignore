@@ -38,5 +38,10 @@ vignettes/*.pdf
 # R Environment Variables
 .Renviron
 
+# Bookdown
+# Bookdown
+_book/
+_bookdown_files/
+
 # Mac OS X
 .DS_Store
