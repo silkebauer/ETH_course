@@ -60,79 +60,31 @@ Examples of survival analysis based on mark-reencounter data:
 Examples of estimating stop-over duration based on mark-reencounter data:
 - Estimation of stop-over duration of passerines in the Bolle di Magadino CH during spring migration (Schaub et al. 2001).
 
+
 ##	Tracking individuals
-The vision of being able to follow a migratory bird on a computer screen has become, at least for larger birds, reality by now. The appealing property of tracking individuals is the fact that the individual is known and the movement behaviour can be related to individual characteristics. 
-The archival tags require that the animal is re-captured later to download the data, whereas transmit-ters (= “senders”) allow for remote data collection (Table 6). The development of the technique is ongo-ing intensively. Devices become smaller and techniques are combined to fit specific needs of the sci-entists. 
+
+The vision of being able to follow a migratory bird on a computer screen has become, at least for larger animals, reality by now. The appealing property of tracking individuals is the fact that the individual is known and the movement behaviour can be related to individual characteristics. 
+
+Two major principles exist for tacking devices - for one, information on location or anything else is stored locally and the tracking device needs to be retrieved to access this information; the other are devices which actively transmit information to a receiver such that data can be remotely downloaded (Table \@ref(tab:TrackTechnology)). The development of tracking devices has 
 
 
 
-```{r, echo=FALSE}
-# probably need to reference the csv differently. Won't be found if on the web!
-
-track_methods <- data.frame(read.csv("TrackingMethods.csv", h=T, sep=";"))
-
-```
+The archival tags require that the animal is re-captured later to download the data, whereas transmit-ters (= “senders”) allow for remote data collection (Table \@ref(tab:TrackTechnology)). The development of the technique is ongo-ing intensively. Devices become smaller and techniques are combined to fit specific needs of the sci-entists. 
 
 
-```{r tidy=TRUE, echo=FALSE}
+
+```{r TrackTechnology, tidy=TRUE, echo=FALSE}
+
+track_methods <- data.frame(read.csv("tables/TrackingMethods.csv", h=T, sep=";"))
+
 knitr::kable(
-  head(track_methods, 20), caption = 'Characteristics of different tracking techniques. Adapted from Robinson et al. (2010)',
+  head(track_methods, 20), caption = "\\label{tab:TrackTechnology}Characteristics of different tracking techniques",
   format.args = list(width = 30),
   booktabs = TRUE,
 )
 ```
 
-
-
-
-Tags	Data 	Pros and cons
-Archival tags		
-Geolocators 
-0.5 – 1.5 g	light and time (“geolocation”)
-	+ light weight
-- recapturing required 
-- data analyses complex
-- location estimate w large error range (equinox!)
-Multi-sensor loggers
-1.0-1.2g
-	In addition to light:
-temperature
-pressure
-activity
-	+ additional information about behavior, e.g. flight height, number and duration of flight bouts, activity during stop-over periods
-+ combination of data for better location estimates
-GPS loggers	GPS position
-temperature
-pressure
-activity
-salinity	+ huge amount of information
-+ precise location information
-- recapturing necessary for retrieving the data
-- relatively heavy
-Transmitters		
-PTT tags
-RFID Radio frequency identification	identification of an individual with a reader at a strategic place (nest, feeding site)	+ low cost
-+ small and light-weight (sometimes implanted)
-- readers are expensive
-- individual can be registered only when within a few meters of the reader (data are often noisy)
-Radio telemetry 
-VHF Very high fre-quency telemetry
-from 0.3 g onward	identification of an individual by an antenna over short to medium long distances (0-ca. 20km)
-physiological data (from sen-sors)	+ remote data collection
-+ precise location information
-- battery life limited for small transmitters
-- high effort for data collection
-- transmitter may influence animal behaviour
-Satellite telemetry
-from 5g onward
-different systems, e.g. ARGOS
-	GPS positions of individuals at any time anywhere on the globe	+ remote data collection via satellite over very long distances
-+ almost no effort needed for data collection
-+ precise location information
-- large weight
-- expensive
-- transmitter may influence animal behaviour
-The movebank data base (www.movebank.org) is collecting tracking data from different studies. Its aim is to foster collaboration between different researchers. Some of the data are even provided for free.
+caption="\\label{tab:tab2}A `kable` table")
 
 Example studies using geolocation: 
 - Non-breeding areas of Barn swallows Hirundo rustica: (Liechti et al. 2014).
@@ -146,6 +98,8 @@ Example studies using radio telemetry:
 
 Example studies of satellite telemetry:
 - Kjellén et al. (1997) tracked two Osprey Pandion haliaetus individuals from the same breeding loca-tion. The two individuals used completely different migration routes. The technique is nowadays widely applied for the study of movement behaviour of larger birds.
+
+
 
 ##	Orientation experiments
 Kramer (1949) detected that migratory birds show a directional preference. This behaviour has widely been used to study bird orientation using orientation cages. Emlen & Emlen (1966) designed an orien-tation cage that is still in use, the so-called "Emlen-funnel". Originally, ink was used to visualize the birds tracks. The ink was replaced by typewriter paper on which birds leave scratches while their feathers stayed clean. Some methodological issues with this type of orientation cage are discussed by Nievergelt & Liechti (2000). After typewriter paper has no longer been produced it was recently re-placed by thermal paper (Mouritsen et al. 2009). Automatic registration of bird activity reduces the amount of work for data collection, e.g. Mouritsen & Larsen (2001) or Beck & Wiltschko (1983). 

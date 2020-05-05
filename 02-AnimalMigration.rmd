@@ -17,10 +17,10 @@ There may be also other forms of migration or migrations as a strategy to avoid 
 Other migration than seasonal migration are moult and facultative migrations. In moult migrations, birds appear to migrate to predator-free areas where they can safely shed their flight feathers. In facultative migrations, birds only migrate long-distances when food is sparse, e.g. many finches (Newton 2006). At an extreme end of the spectrum are birds that are nomadic, like grey teal (Anas gracilis) looking for ephemeral water and food sources in a desert landscape in Australia.
 Two main flight modes exist – flapping and soaring, which has consequences on when and where birds migrate: Flapping flight is energetically costly but can be used under a wide range of weather and topographic conditions, whereas for soaring thermals or wind are needed. 
 The majority of birds cannot feed while flying, and in many cases the total travel distance exceeds the maximum flight distance. Thus, the birds need stop-over sites in between, where they can replenish their reserves. A good example are tundra swans (Cygnus columbianus) that migrate between 4000-5500 km, whereas the maximally recorded non-stop flight is 2850 km. These swans mainly refuel on energy-rich, belowground parts of macrophytes in shallow lakes and wetlands along the route.    
-
+See Fig \@ref(fig:NDVIpic)
  
 
-```{r, echo=FALSE, out.width='100%', fig.align='center', fig.show='hold', fig.cap="Seasonal change in global NDVI. These vegetation maps were generated from MODIS/Terra measurements of the Normalized Difference Vegetation Index (NDVI). Significant seasonal variations in the NDVI are apparent between northern hemisphere summer (July 2014; top) and winter (February 2015; bottom). Image credit: Reto Stockli, NASA Earth Observatory Group, using data from the MODIS Land Science Team (http://neo.sci.gsfc.nasa.gov)."}
+```{r NDVIpic, echo=FALSE, out.width='90%', fig.align='center', fig.show='hold', fig.cap="\\label{fig:NDVIpic}Seasonal change in global NDVI. These vegetation maps were generated from MODIS/Terra measurements of the Normalized Difference Vegetation Index (NDVI). Significant seasonal variations in the NDVI are apparent between northern hemisphere summer (July 2014; top) and winter (February 2015; bottom). Image credit: Reto Stockli, NASA Earth Observatory Group, using data from the MODIS Land Science Team (http://neo.sci.gsfc.nasa.gov)."}
 
 knitr::include_graphics('figures/Fig_SeasonalChanges_NDVI.png')
 
