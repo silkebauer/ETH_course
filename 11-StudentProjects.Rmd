@@ -50,15 +50,44 @@ using MCMC (software: Jags)
 
 ## Modelling (spring) migration: several questions
 
+Look at Chapter \@ref(Sec:MigModels) again for background on state-dependent migration models. 
 
-Look at Chapter \@ref(Sec:MigModels) again for background on migration models. 
-
-
--	Long-term changes in migration phenology
+You could use an existing model and tackle one or more of the following questions:
+-	Long-term changes in migration phenology - which site conditions make animals change their timing? 
 -	Consequences of climate-driven changes in site-conditions
 -	Consequences of human actions, e.g. hunting, on migration success
-	Use dynamic migration model and analyse your own scenarios 
-Download model from GitHub https://github.com/slisovski/sdpMig - you may need to install the R-packages devtools, Rtools, zoo, maptools
+
+Download model from GitHub [link](https://github.com/slisovski/sdpMig) - you may need to install the R-packages devtools, Rtools, zoo, maptools. 
+
+
+ dynamic migration model and analyse your own scenarios 
+
+Studies using such migration model:
+[@Bauer2018]
+
+
+**What should you do before the course?**
+1. Read the articles
+2. Summarize the model: 
+  - what are the state-variables?
+  - which are the important variables and why?
+  - what was the main question?
+  - what were the main results?
+3. Make your own assessment of the articles
+
+
+4. 
+
+**During the course**
+1. Try to get the model running with the standard parameter setting.
+2. Change one parameter at a time and observe which output measures change
+3. Come up with a plan of how to test your own question(s), i.e. which parameters would you need to change, by how much, which output measures would you loo at, etc.
+4. Run the respective scenarios
+5. Analyse the results
+6. Interpretation of results
+
+
+
 
 
 ## Estimating Migration volume
