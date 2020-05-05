@@ -7,7 +7,7 @@ Visual observations or observations by infrared cameras or radar result in count
 ```{r, echo=FALSE}
 # probably need to reference the csv differently. Won't be found if on the web!
 
-obs_methods <- data.frame(read.csv("e:/Github/ETH_course/ObservationMethods.csv", h=T, sep=";"))
+obs_methods <- data.frame(read.csv("data/ObservationMethods.csv", h=T, sep=";"))
 
 ```
 
