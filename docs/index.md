@@ -1,7 +1,7 @@
 --- 
 title: "Migration Course"
 author: "Fränzi Korner & Silke Bauer"
-date: "2019-08-27"
+date: "2020-05-05"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -10,7 +10,7 @@ link-citations: yes
 description: "This is the first version of a handout for the ETH migration course at Col de Bretolet. The output format for this example is bookdown::gitbook."
 ---
 
-# Prerequisites
+
 
 This is a _sample_ book written in **Markdown**. You can use anything that Pandoc's Markdown supports, e.g., a math equation $a^2 + b^2 = c^2$.
 

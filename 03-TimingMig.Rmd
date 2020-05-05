@@ -31,22 +31,24 @@ If we look at cues that are used by migratory animals other than birds, there ar
 On-the-way orientation and navigation determines the migration route taken but may also be involved in indicating when migration is to be terminated. Animals heading for a specific location need to recognise this location, which is only an option for experienced animals, whereas naive individuals (e.g. first-time migrants) need to have a genetic programme that signals when to stop. Alternatively, migrations without clear endpoints, e.g. between feeding locations, may involve physiological cues for the termination of migration. Here again, internal signals play a greater role as they indicate when a threshold state is reached, e.g. sufficient body reserves have been accumulated for a subsequent breeding attempt.
 
 
-**Table 3. - this needs to be solved differently, tables are a pain in MD** 
 
-Cues identified for the four major migratory steps of migration, specified for all major migratory taxa. 
- 	Preparation	Departure	On the way	Termination
-Insects	Photoperiod, Crowding during immature stages, Habitat deterioration (food, predation or para-sitism)	Favourable flying condi-tions, e.g. tailwinds	Time-compensated sun compass	Migration reduces inhibition to appetitive cues (in mig. bout); depletion of fuel re-serves, changes in photo-period or temperature
-Fish	Reach minimum body size; for some: physio-logical adaptation to new environment	Salmon: Autumn river discharge	Local food search, or long distance spawning location tracking	Arrival in locations favoura-ble for spawning
-Turtles	Light regime, internal status, and migratory restlessness	Favourable departure conditions, e.g. night, with currents	Visual information (bright skylight), direction of waves, geomagnetic field, wind	Arrival on specific target location, e.g. feeding or wintering grounds
-Birds	Photoperiod,
-Build-up flight apparatus, Reduction digestive system	Favourable flight condi-tions (wind, rain, air pres-sure)
-Fuelling rate and body stores
-Cumulative temperature or related proxy	Sun compass, magnetic field, skylight polarisa-tion, star pattern
-Direction under hormo-nal control, sometimes responses to local con-ditions	Arrival on specific target-location, e.g. breeding or wintering grounds
-Naïve birds have an inherent migratory period
-Bats
-	Accumulate fat deposits (torpor during fuelling periods)	Early night hours, low wind speeds	Not much known, proba-bly use magnetic field	unknown
-Large mammals	No particular (physiolog-ical) preparations	Seasonal changes in temperature, precipitation and water quality but evi-dence anecdotal, animals follow gradients	Not much known	
+```{r, echo=FALSE}
+# probably need to reference the csv differently. Won't be found if on the web!
+
+setwd("e:/Dropbox/ETH-Kurs/Handout/")
+cues <- data.frame(read.csv("e:/Dropbox/ETH-Kurs/Handout/Table_Cues.csv", h=T, sep=";"))
+
+```
+
+
+```{r nice-tab, tidy=TRUE, echo=FALSE}
+knitr::kable(
+  head(cues, 20), caption = 'The cues used in various taxa for timing migration',
+  format.args = list(width = 30),
+  booktabs = TRUE,
+)
+```
+
 
 
 ## Consequences of migration timing

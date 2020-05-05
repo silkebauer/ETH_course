@@ -1,6 +1,30 @@
-# Introduction {#intro}
+# Introduction
 
-Course schedule
+## Course schedule
+
+The course consists of lectures, student work on projects and visits to the ringing station. As the latter is dependent on weather, the following schedule is not entirely fixed but somewhat flexible. 
+
+
+## Monday
+
+**Morning** - Arrival
+
+**Afternoon** 
+
+Depending on Corona situation, this is a test
+
+
+## Tuesday
+
+## Wednesday
+
+## Thursday
+
+## Friday
+
+
+
+
 
 projects
 

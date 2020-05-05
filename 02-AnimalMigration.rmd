@@ -1,3 +1,9 @@
+---
+output: 
+  html_document: 
+    fig_caption: yes
+    toc: yes
+---
 # Animal migration
 ## What is migration? 
 
@@ -19,7 +25,12 @@ Two main flight modes exist – flapping and soaring, which has consequences on 
 The majority of birds cannot feed while flying, and in many cases the total travel distance exceeds the maximum flight distance. Thus, the birds need stop-over sites in between, where they can replenish their reserves. A good example are tundra swans (Cygnus columbianus) that migrate between 4000-5500 km, whereas the maximally recorded non-stop flight is 2850 km. These swans mainly refuel on energy-rich, belowground parts of macrophytes in shallow lakes and wetlands along the route.    
 
  
-Fig.  2. Seasonal change in global NDVI. These vegetation maps were generated from MODIS/Terra meas-urements of the Normalized Difference Vegetation Index (NDVI). Significant seasonal variations in the NDVI are apparent between northern hemisphere summer (July 2014; top) and winter (February 2015; bottom). Im-age credit: Reto Stockli, NASA Earth Observatory Group, using data from the MODIS Land Science Team (http://neo.sci.gsfc.nasa.gov). 
+
+```{r, echo=FALSE, out.width='100%', fig.align='center', fig.show='hold', fig.cap="Seasonal change in global NDVI. These vegetation maps were generated from MODIS/Terra measurements of the Normalized Difference Vegetation Index (NDVI). Significant seasonal variations in the NDVI are apparent between northern hemisphere summer (July 2014; top) and winter (February 2015; bottom). Image credit: Reto Stockli, NASA Earth Observatory Group, using data from the MODIS Land Science Team (http://neo.sci.gsfc.nasa.gov)."}
+
+knitr::include_graphics('Fig_SeasonalChanges_NDVI.png')
+
+```
 
 
 

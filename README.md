@@ -1,3 +1,2 @@
-Dies ist ein Test.
-
-This is a minimal example of a book based on R Markdown and **bookdown** (https://github.com/rstudio/bookdown). Please see the page "Get Started" at https://bookdown.org/ for how to compile this example.
+This is a handout for the course "Migration ecology and methods in field ornithology" led by Fränzi Korner-Nievergelt and Silke Bauer
+Please don't distribute!
