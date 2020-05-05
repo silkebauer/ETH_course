@@ -39,11 +39,13 @@ vignettes/*.pdf
 .Renviron
 
 # Bookdown
-# Bookdown
 _book/
 _bookdown_files/
 MigrationCourse.log
 MigrationCourse.rds
+
+# Bookdown md files created with K-M approach
+docs/*.md
 
 # Mac OS X
 .DS_Store
