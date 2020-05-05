@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 9 Statistical tools for studying migration | Migration Course</title>
+  <meta name="description" content="This is a handout for the ETH migration course at Col de Bretolet. The output format for this example is bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 9 Statistical tools for studying migration | Migration Course" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a handout for the ETH migration course at Col de Bretolet. The output format for this example is bookdown::gitbook." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 9 Statistical tools for studying migration | Migration Course" />
+  
+  <meta name="twitter:description" content="This is a handout for the ETH migration course at Col de Bretolet. The output format for this example is bookdown::gitbook." />
+  
+
+<meta name="author" content="Fränzi Korner &amp; Silke Bauer" />
+
+
+<meta name="date" content="2020-05-05" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="migration-models.html"/>
+<link rel="next" href="student-projects.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Handout ETH course Migration ecology and methods in field ornithology</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
+<li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a><ul>
+<li class="chapter" data-level="2.1" data-path="introduction.html"><a href="introduction.html#course-schedule"><i class="fa fa-check"></i><b>2.1</b> Course schedule</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="introduction.html"><a href="introduction.html#monday"><i class="fa fa-check"></i><b>2.1.1</b> Monday</a></li>
+<li class="chapter" data-level="2.1.2" data-path="introduction.html"><a href="introduction.html#tuesday"><i class="fa fa-check"></i><b>2.1.2</b> Tuesday</a></li>
+<li class="chapter" data-level="2.1.3" data-path="introduction.html"><a href="introduction.html#wednesday"><i class="fa fa-check"></i><b>2.1.3</b> Wednesday</a></li>
+<li class="chapter" data-level="2.1.4" data-path="introduction.html"><a href="introduction.html#thursday"><i class="fa fa-check"></i><b>2.1.4</b> Thursday</a></li>
+<li class="chapter" data-level="2.1.5" data-path="introduction.html"><a href="introduction.html#friday"><i class="fa fa-check"></i><b>2.1.5</b> Friday</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="animal-migration.html"><a href="animal-migration.html"><i class="fa fa-check"></i><b>3</b> Animal migration</a><ul>
+<li class="chapter" data-level="3.1" data-path="animal-migration.html"><a href="animal-migration.html#what-is-migration"><i class="fa fa-check"></i><b>3.1</b> What is migration?</a></li>
+<li class="chapter" data-level="3.2" data-path="animal-migration.html"><a href="animal-migration.html#why-do-birds-migrate"><i class="fa fa-check"></i><b>3.2</b> Why do birds migrate?</a></li>
+<li class="chapter" data-level="3.3" data-path="animal-migration.html"><a href="animal-migration.html#terminology-of-specific-migration-patterns"><i class="fa fa-check"></i><b>3.3</b> Terminology of specific migration patterns</a></li>
+<li class="chapter" data-level="3.4" data-path="animal-migration.html"><a href="animal-migration.html#importance-of-migration-for-the-structure-and-dynamics-of-resident-communities"><i class="fa fa-check"></i><b>3.4</b> Importance of migration for the structure and dynamics of resident communities</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="timing-of-migration.html"><a href="timing-of-migration.html"><i class="fa fa-check"></i><b>4</b> Timing of migration</a><ul>
+<li class="chapter" data-level="4.1" data-path="timing-of-migration.html"><a href="timing-of-migration.html#why-is-timing-important"><i class="fa fa-check"></i><b>4.1</b> Why is timing important?</a></li>
+<li class="chapter" data-level="4.2" data-path="timing-of-migration.html"><a href="timing-of-migration.html#what-determines-the-timing-of-migratory-steps-cues"><i class="fa fa-check"></i><b>4.2</b> What determines the timing of migratory steps? Cues!</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="timing-of-migration.html"><a href="timing-of-migration.html#preparation"><i class="fa fa-check"></i><b>4.2.1</b> Preparation</a></li>
+<li class="chapter" data-level="4.2.2" data-path="timing-of-migration.html"><a href="timing-of-migration.html#departure"><i class="fa fa-check"></i><b>4.2.2</b> Departure</a></li>
+<li class="chapter" data-level="4.2.3" data-path="timing-of-migration.html"><a href="timing-of-migration.html#on-the-way"><i class="fa fa-check"></i><b>4.2.3</b> On the way</a></li>
+<li class="chapter" data-level="4.2.4" data-path="timing-of-migration.html"><a href="timing-of-migration.html#termination"><i class="fa fa-check"></i><b>4.2.4</b> Termination</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="timing-of-migration.html"><a href="timing-of-migration.html#consequences-of-migration-timing"><i class="fa fa-check"></i><b>4.3</b> Consequences of migration timing</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="orientation.html"><a href="orientation.html"><i class="fa fa-check"></i><b>5</b> Orientation</a><ul>
+<li class="chapter" data-level="5.1" data-path="orientation.html"><a href="orientation.html#sun-compass"><i class="fa fa-check"></i><b>5.1</b> Sun compass</a></li>
+<li class="chapter" data-level="5.2" data-path="orientation.html"><a href="orientation.html#star-compass"><i class="fa fa-check"></i><b>5.2</b> Star compass</a></li>
+<li class="chapter" data-level="5.3" data-path="orientation.html"><a href="orientation.html#magnetic-compass"><i class="fa fa-check"></i><b>5.3</b> Magnetic compass</a></li>
+<li class="chapter" data-level="5.4" data-path="orientation.html"><a href="orientation.html#landmarks"><i class="fa fa-check"></i><b>5.4</b> Landmarks</a></li>
+<li class="chapter" data-level="5.5" data-path="orientation.html"><a href="orientation.html#olfactory-cues"><i class="fa fa-check"></i><b>5.5</b> Olfactory cues</a></li>
+<li class="chapter" data-level="5.6" data-path="orientation.html"><a href="orientation.html#compass-orientation-vs.-navigation"><i class="fa fa-check"></i><b>5.6</b> Compass orientation vs. navigation</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="mechanics-energetics-and-plasticity-of-the-migratory-flight.html"><a href="mechanics-energetics-and-plasticity-of-the-migratory-flight.html"><i class="fa fa-check"></i><b>6</b> Mechanics, energetics and plasticity of the migratory flight</a><ul>
+<li class="chapter" data-level="6.1" data-path="mechanics-energetics-and-plasticity-of-the-migratory-flight.html"><a href="mechanics-energetics-and-plasticity-of-the-migratory-flight.html#mechanics-and-energetics-of-flight"><i class="fa fa-check"></i><b>6.1</b> Mechanics and energetics of flight</a></li>
+<li class="chapter" data-level="6.2" data-path="mechanics-energetics-and-plasticity-of-the-migratory-flight.html"><a href="mechanics-energetics-and-plasticity-of-the-migratory-flight.html#fuel-for-migratory-flights"><i class="fa fa-check"></i><b>6.2</b> Fuel for migratory flights</a></li>
+<li class="chapter" data-level="6.3" data-path="mechanics-energetics-and-plasticity-of-the-migratory-flight.html"><a href="mechanics-energetics-and-plasticity-of-the-migratory-flight.html#influences-on-migration"><i class="fa fa-check"></i><b>6.3</b> Influences on migration</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="mechanics-energetics-and-plasticity-of-the-migratory-flight.html"><a href="mechanics-energetics-and-plasticity-of-the-migratory-flight.html#endogeneous-and-exogeneous-factors"><i class="fa fa-check"></i><b>6.3.1</b> Endogeneous and exogeneous factors</a></li>
+<li class="chapter" data-level="6.3.2" data-path="mechanics-energetics-and-plasticity-of-the-migratory-flight.html"><a href="mechanics-energetics-and-plasticity-of-the-migratory-flight.html#topography"><i class="fa fa-check"></i><b>6.3.2</b> Topography</a></li>
+<li class="chapter" data-level="6.3.3" data-path="mechanics-energetics-and-plasticity-of-the-migratory-flight.html"><a href="mechanics-energetics-and-plasticity-of-the-migratory-flight.html#wind"><i class="fa fa-check"></i><b>6.3.3</b> Wind</a></li>
+<li class="chapter" data-level="6.3.4" data-path="mechanics-energetics-and-plasticity-of-the-migratory-flight.html"><a href="mechanics-energetics-and-plasticity-of-the-migratory-flight.html#temperature"><i class="fa fa-check"></i><b>6.3.4</b> Temperature</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="field-methods.html"><a href="field-methods.html"><i class="fa fa-check"></i><b>7</b> Field methods</a><ul>
+<li class="chapter" data-level="7.1" data-path="field-methods.html"><a href="field-methods.html#observations-visual-moonwatching-ir-radar"><i class="fa fa-check"></i><b>7.1</b> Observations: visual, moonwatching, IR, radar</a></li>
+<li class="chapter" data-level="7.2" data-path="field-methods.html"><a href="field-methods.html#marking-and-reencountering"><i class="fa fa-check"></i><b>7.2</b> Marking and reencountering</a></li>
+<li class="chapter" data-level="7.3" data-path="field-methods.html"><a href="field-methods.html#tracking-individuals"><i class="fa fa-check"></i><b>7.3</b> Tracking individuals</a></li>
+<li class="chapter" data-level="7.4" data-path="field-methods.html"><a href="field-methods.html#orientation-experiments"><i class="fa fa-check"></i><b>7.4</b> Orientation experiments</a></li>
+<li class="chapter" data-level="7.5" data-path="field-methods.html"><a href="field-methods.html#stable-isotopes-genetics-and-physiology"><i class="fa fa-check"></i><b>7.5</b> Stable isotopes, genetics and physiology</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="migration-models.html"><a href="migration-models.html"><i class="fa fa-check"></i><b>8</b> Migration models</a><ul>
+<li class="chapter" data-level="8.1" data-path="migration-models.html"><a href="migration-models.html#state-dependent-migration-models"><i class="fa fa-check"></i><b>8.1</b> State-dependent migration models</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html"><i class="fa fa-check"></i><b>9</b> Statistical tools for studying migration</a><ul>
+<li class="chapter" data-level="9.1" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#distribution-models-for-counts-of-resting-or-migrating-individuals"><i class="fa fa-check"></i><b>9.1</b> Distribution models for counts of resting or migrating individuals</a></li>
+<li class="chapter" data-level="9.2" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#connectivity-models"><i class="fa fa-check"></i><b>9.2</b> Connectivity models</a></li>
+<li class="chapter" data-level="9.3" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#estimating-survival-based-on-mark-recapture-data-the-cormack-jolly-seber-model"><i class="fa fa-check"></i><b>9.3</b> Estimating survival based on mark-recapture data: The Cormack-Jolly-Seber model</a></li>
+<li class="chapter" data-level="9.4" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#multi-state-models-to-estimate-movement-rates"><i class="fa fa-check"></i><b>9.4</b> Multi-state models to estimate movement rates</a></li>
+<li class="chapter" data-level="9.5" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#individual-based-hidden-markov-model-for-bird-behaviour"><i class="fa fa-check"></i><b>9.5</b> Individual based hidden Markov model for bird behaviour</a></li>
+<li class="chapter" data-level="9.6" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#the-combination-of-different-data-sources"><i class="fa fa-check"></i><b>9.6</b> The combination of different data sources</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="student-projects.html"><a href="student-projects.html"><i class="fa fa-check"></i><b>10</b> Student projects</a><ul>
+<li class="chapter" data-level="10.1" data-path="student-projects.html"><a href="student-projects.html#phenology-migration-patterns-within-season-and-their-changes-over-the-years"><i class="fa fa-check"></i><b>10.1</b> Phenology: Migration patterns within season and their changes over the years</a></li>
+<li class="chapter" data-level="10.2" data-path="student-projects.html"><a href="student-projects.html#long-term-changes-in-morphology"><i class="fa fa-check"></i><b>10.2</b> Long-term changes in morphology</a></li>
+<li class="chapter" data-level="10.3" data-path="student-projects.html"><a href="student-projects.html#differential-migration"><i class="fa fa-check"></i><b>10.3</b> Differential Migration</a></li>
+<li class="chapter" data-level="10.4" data-path="student-projects.html"><a href="student-projects.html#flight-energetics-in-the-course-of-a-night-and-over-the-season"><i class="fa fa-check"></i><b>10.4</b> Flight energetics in the course of a night and over the season</a></li>
+<li class="chapter" data-level="10.5" data-path="student-projects.html"><a href="student-projects.html#estimate-survival-from-capture-recapture-data"><i class="fa fa-check"></i><b>10.5</b> Estimate survival from capture-recapture data</a></li>
+<li class="chapter" data-level="10.6" data-path="student-projects.html"><a href="student-projects.html#modelling-spring-migration-several-questions"><i class="fa fa-check"></i><b>10.6</b> Modelling (spring) migration: several questions</a></li>
+<li class="chapter" data-level="10.7" data-path="student-projects.html"><a href="student-projects.html#estimating-migration-volume"><i class="fa fa-check"></i><b>10.7</b> Estimating Migration volume</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/silkebauer/ETH_course" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Migration Course</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="statistical-tools-for-studying-migration" class="section level1">
+<h1><span class="header-section-number">Chapter 9</span> Statistical tools for studying migration</h1>
+<div id="distribution-models-for-counts-of-resting-or-migrating-individuals" class="section level2">
+<h2><span class="header-section-number">9.1</span> Distribution models for counts of resting or migrating individuals</h2>
+<p>Count data are classically analysed using generalized linear (mixed) models (GLMM). Typically, the Poisson or negative-binomial models serve as a first model choice when the outcome variable is a count data. In most cases, depending on the data structures, these models are expanded by including spatial or temporal structures, accounting for an excess of zero values (zero-inflation) or a large vari-ance (overdispersion). Any textbook introducing linear models, linear mixed models, generalized linear models and generalized linear mixed models is recommended. We particularly like the introduction to hierarchical models by Gelman &amp; Hill (2007). Of course, we also recommend our own introduction to linear models that follows the philosophy of Gelman and Hill but is written by ecologists for ecologists, i.e. less technically (Korner-Nievergelt et al. 2015).</p>
+<p>Example studies that analysed count data for the study of bird migration:
+- Migration intensity of Wood pigeons Columba palumbus in relation to weather (Kestenholz et al. 2009).
+- Distribution of migratory species during the non-breeding season within Africa (Wisz et al. 2007).</p>
+</div>
+<div id="connectivity-models" class="section level2">
+<h2><span class="header-section-number">9.2</span> Connectivity models</h2>
+<p>Migratory connectivity is the extent to which breeding areas are connected with non-breeding areas via migrating individuals (Webster et al. 2002, Bauer &amp; Hoye 2014). A (multidimensional) measure of mi-gratory connectivity are the proportions of individuals from specific, predefined, breeding areas that spend the non-breeding season in specific, predefined, non-breeding areas. This method requires that distinct breeding areas and distinct non-breeding areas need to be defined by the researcher. There-fore, some authors measure the strength of migratory connectivity by correlating the between individual distances during the breeding season with the ones during the non-breeding season (“Mantel correla-tion coefficient”, (Ambrosini et al. 2009)). However, such a correlation coefficient is strongly scale de-pendent (what and how many populations are included in the analyses) and values are difficult to inter-pret.
+Estimates of migratory connectivity can be obtained by tracking individuals from their breeding grounds to their non-breeding ground. However, because migratory connectivity is a characteristic of popula-tions (not of individuals) a lot of individuals need to be tracked in order to get a reliable estimate of mi-gratory connectivity. Therefore, reencounters of marked individuals that are often available for a large number of individuals and from many different populations are well suited to study migratory connec-tivity. However, the spatial heterogeneity of reencounter probability introduces a bias in the raw mark reencounter data. Stochastic models to correct for this bias have been developed by Kania &amp; Busse (1987), Kendall et al. (2006), Bauthian et al. (2007) and Thorup &amp; Conn (2009). The model has further been expanded by Korner-Nievergelt et al. (2012), Cohen et al. (2014), and Korner-Nievergelt et al. (2014). Combination of different data sources such as ring recoveries, GPS tracking data, geolocator data or stable isotopic data further improves the accuracy of the migratory connectivity estimates (Korner-Nievergelt et al. 2017).</p>
+</div>
+<div id="estimating-survival-based-on-mark-recapture-data-the-cormack-jolly-seber-model" class="section level2">
+<h2><span class="header-section-number">9.3</span> Estimating survival based on mark-recapture data: The Cormack-Jolly-Seber model</h2>
+<p>To study population processes, individuals often are marked and later recaptured or re-sighted. Such mark-recapture/re-sight data contain information on demographic parameters such as survival, move-ment and population size. The difficulty with mark-recapture data is that not all marked individuals are recaptured during each capture occasion. If an individual has not been captured, it may have died, emigrated from the study area, or it may have escaped being captured. For the study of the demo-graphic parameters it is important to disentangle capture probability from the parameters of interest. To do so, Cormack (1964), Jolly (1965), and Seber (1965) developed a statistical model, the Cormack-Jolly-Seber model (CJS), which became the method used by myriad population biologists (Lebreton et al. 1992). The software MARK (www.phidot.org/software/mark/) has become a standard software for the analyses of mark-recapture data (White &amp; Burnham 1999, Cooch &amp; White 2016). The technique is still being developed for the study of various aspects of demographic processes by a lively society of ecologists and statisticians (www.phidot.org).
+Here, we introduce the Cormack-Jolly-Seber (CJS) model for estimating apparent survival and recap-ture probability, or re-sighting probability in cases of re-sights, respectively. The correct term “apparent” survival expresses that in a mark-recapture/re-sight data set from one study site individuals that per-manently emigrated from the study site cannot be distinguished from individuals that died. “Apparent” survival is a product of survival and site fidelity. Whenever below in this section we write “survival”, we actually mean apparent survival.
+The CJS model explicitly models the capture process (the observation process) conditional on a sur-vival model (the biological process). By including an observation process model, the recapture proba-bility and thus the proportion of individuals still alive and present but not recaptured is estimated and taken into account while estimating the probability that an individual survives (and stays in the study area).
+For example, mark-recapture data of Reed warblers Acrocephaus scirpaceus at the constant ringing effort site (CES) in the Wauwilermoos (LU) can be presented as in Table 7.</p>
+<p>Table 7. Number of Reed warblers marked at Wauwilermoos per year of first capture and number of recaptured individuals thereof in the subsequent years. The capture occasion numbers are given in brackets behind the year numbers.
+Year of first capture n marked 2014 (2) 2015 (3) 2016 (4) 2017 (5) 2018 (6)
+2013 (1) 107 13 7 4 5 1
+2014 (2) 76 - 6 2 1 1
+2015 (3) 65 - - 4 3 0
+2016 (4) 54 - - - 7 2
+2017 (5) 64 - - - - 3</p>
+<p>The probability that an individual of all marked individuals released at occasion k is recaptured at occa-sion t is a function of apparent survival probability t and recapture probability pt (Table 8). The recap-ture probability p is the probability that an individual that is alive and present in the study area is cap-tured. The model parameters (apparent survivalt and recapture probability pt) can be estimated by fitting a multinomial model to the number of recaptured individuals at the different occasions. Such a multinomial model is fitted for each cohort of individuals released at the same occasion with the cell probabilities of Table 8.</p>
+<p>Table 8. Multinomial cell probabilities a Cormack-Jolly-Seber model. Note that the cell probabilities are formulated so that one release of a marked individual is resulting in one recapture at maximum. There-fore, the data in Table 7 need to be re-arranged so that every recapture becomes a new release of a marked bird (such re-arranged data is called an m-array).
+Occ 2 3 4 5 6
+1 1p2 1(1-p2)2p3 1(1-p2)2(1-p3)3p4 tt-1(1-pt))4p5 tt-1(1-pt))5p6
+2 0 2p3 2(1-p3)3p4 2(1-p3)3(1-p4)4p5 tt-1(1-pt))5p6
+3 0 0 3p4 3(1-p4)4p5 3(1-p4)4(1-p5)5p6
+4 0 0 0 4p5 4(1-p5)5p6
+5 0 0 0 0 5p6</p>
+<p>The original CJS model allows estimating apparent survival and recapture probability separately for each time period except for the last time period. For the last time period, only the product t-1pt is esti-mable. More stringent model assumptions, such as constant survival over time or relating survival to a linear predictor can give separate survival and recapture estimates also for the last time period.</p>
+<p>The CJS model can alternatively be formulation as a partially hidden Markov model, and fitted to indi-vidual capture histories. Individual based model formulations are appealing because they allow includ-ing individual specific predictors and accounting for more complex correlation structures. The individual based model formulation consists of two logistic regressions, i.e. two Bernoulli-models. The first Ber-noulli variable is the partially observed indicator zit that indicates whether individual i is alive and pre-sent at time t:
+zit ~ Bernoulli(zit-1it)
+In other words, an individual i is alive and in the study area at time t (zit = 1) with probability it, if it was alive and in the study area at time t-1 (zit-1 = 1), or 0, if it was dead (or had permanently emigrated from the study area) at time t -1 (zit-1 = 0). A linear predictor for the logit (or another link function) of it can be added to study factors affecting apparent survival, logit(it) = Xit. This part of the model looks like an autoregressive logistic regression. However, the variable z is only partly observed. It is known that an individual is alive (zit = 1) when it has been recaptured or resighted at time t or at any time point later (yit = 1). When an individual is not recaptured (yit = 0) during any subsequent capture occasion, we do not know whether it has died or whether it is still alive but has not been captured or resighted. The capture process is added to the model as a second Bernoulli process.
+yit ~Bernoulli(zitpit)
+Also, a linear predictor can be added for the logit of pit to study factors affecting the capture probability.</p>
+<p>Table 9. Some Software that provide algorithms for fitting CJS models.
+Name URL, Reference
+MARK www.phidot.org/software/mark/
+R-package marked CRAN, example in a group work of this course, (Laake et al. 2013)
+Stan <a href="http://mc-stan.org/" class="uri">http://mc-stan.org/</a>
+Chapter 14.5 in Korner-Nievergelt et al. (2015)
+BUGS, Jags WinBUGS:www.mrc-bsu.cam.ac.uk/software/bugs/the-bugs-project-winbugs
+OpenBUGS: www.openbugs.ne
+Jags: mcmc-jags.sourceforge.net
+Chapter 7 in Kéry &amp; Schaub (2012)
+E-Surge www.cefe.cnrs.fr/fr/pf/bibliotheque/guides-et-tutoriels/34-french/recherche/bc/bbp/264-logiciels
+Choquet et al. (2009)</p>
+</div>
+<div id="multi-state-models-to-estimate-movement-rates" class="section level2">
+<h2><span class="header-section-number">9.4</span> Multi-state models to estimate movement rates</h2>
+<p>Multi-state models are used for analysing changes between different states of animals. If the states are defined to be locations, a multi-state model analyses movements between different locations. The cen-tral parameters of such models are the probabilities that an animal moves from location A to location B between two time points. Multi-state models have been introduced by Arnason (1972) and Schwarz et al. (1993). They have later been used by many authors for a variety of different study questions. With a large number of locations, the number of possible movements, and thus the number of model parame-ters, becomes very large and a very high sample size is needed to estimate all parameters. But for some model formulations, even with a very high sample size, some parameters may not be identifiable (Brownie et al. 1993, Gimenez et al. 2003, King &amp; Brooks 2003).
+Antoniazza et al. (2012) used a multi-state model to describe the migration of juvenile and adult cormo-rants Phalacrocorax carbo that were colour marked at Lake Neuchatel during the breeding seasons.</p>
+</div>
+<div id="individual-based-hidden-markov-model-for-bird-behaviour" class="section level2">
+<h2><span class="header-section-number">9.5</span> Individual based hidden Markov model for bird behaviour</h2>
+<p>Individual based hidden Markov models are used for analysing tracking data such as geolocator data or satellite telemetry data. Such data contain for each individual location measurements repeated at regular time intervals over a longer time span. Normally a measurement error is involved in the location measurement. For example, spatial error in a location measurement by light-based geolocation can be up to 1000 km (Lisovski et al. 2012) e.g. because of shading by clouds or vegetation.
+The individual based hidden Markov models assume that each individual has a (hidden) “true” location at each time interval, and that the recorded locations are measurements of the true locations with a measurement error. Both the true location as well as the measurement error can depend on environ-mental and/or individual characteristics. Therefore, the model can be used to estimate the true loca-tions of the individuals over the time. Further, general patterns of migration can be studied, e.g. factors that influence migration speed, directions or decisions to depart on a migratory flight.
+A seminal paper that introduces these models for the study of seal migration is Jonsen et al. (2005). The textbook by Hooten et al. (2017) give an understandable introduction to animal movement mo-delling.</p>
+</div>
+<div id="the-combination-of-different-data-sources" class="section level2">
+<h2><span class="header-section-number">9.6</span> The combination of different data sources</h2>
+<p>In future, we expect that more ornithologists combine different data sources in formal models, the inter-grated models. Bayesian techniques and user-friendly Bayesian software such as BUGS (www.mrc-bsu.cam.ac.uk/software/bugs/the-bugs-project-winbugs/) and Stan (mc-stan.org/) made these tech-niques available for ecologists.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="migration-models.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="student-projects.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["MigrationCourse.pdf", "MigrationCourse.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -5,20 +5,20 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Migration Course</title>
-  <meta name="description" content="This is the first version of a handout for the ETH migration course at Col de Bretolet. The output format for this example is bookdown::gitbook." />
-  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+  <meta name="description" content="This is a handout for the ETH migration course at Col de Bretolet. The output format for this example is bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Migration Course" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="This is the first version of a handout for the ETH migration course at Col de Bretolet. The output format for this example is bookdown::gitbook." />
+  <meta property="og:description" content="This is a handout for the ETH migration course at Col de Bretolet. The output format for this example is bookdown::gitbook." />
   
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Migration Course" />
   
-  <meta name="twitter:description" content="This is the first version of a handout for the ETH migration course at Col de Bretolet. The output format for this example is bookdown::gitbook." />
+  <meta name="twitter:description" content="This is a handout for the ETH migration course at Col de Bretolet. The output format for this example is bookdown::gitbook." />
   
 
 <meta name="author" content="Fränzi Korner &amp; Silke Bauer" />
@@ -53,9 +53,9 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -64,14 +64,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -80,9 +82,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -115,7 +117,6 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-<link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
 <body>
@@ -159,16 +160,40 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="5" data-path="orientation.html"><a href="orientation.html"><i class="fa fa-check"></i><b>5</b> Orientation</a><ul>
 <li class="chapter" data-level="5.1" data-path="orientation.html"><a href="orientation.html#sun-compass"><i class="fa fa-check"></i><b>5.1</b> Sun compass</a></li>
+<li class="chapter" data-level="5.2" data-path="orientation.html"><a href="orientation.html#star-compass"><i class="fa fa-check"></i><b>5.2</b> Star compass</a></li>
+<li class="chapter" data-level="5.3" data-path="orientation.html"><a href="orientation.html#magnetic-compass"><i class="fa fa-check"></i><b>5.3</b> Magnetic compass</a></li>
+<li class="chapter" data-level="5.4" data-path="orientation.html"><a href="orientation.html#landmarks"><i class="fa fa-check"></i><b>5.4</b> Landmarks</a></li>
+<li class="chapter" data-level="5.5" data-path="orientation.html"><a href="orientation.html#olfactory-cues"><i class="fa fa-check"></i><b>5.5</b> Olfactory cues</a></li>
+<li class="chapter" data-level="5.6" data-path="orientation.html"><a href="orientation.html#compass-orientation-vs.-navigation"><i class="fa fa-check"></i><b>5.6</b> Compass orientation vs. navigation</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="mechanics-energetics-and-plasticity-of-the-migratory-flight.html"><a href="mechanics-energetics-and-plasticity-of-the-migratory-flight.html"><i class="fa fa-check"></i><b>6</b> Mechanics, energetics and plasticity of the migratory flight</a><ul>
 <li class="chapter" data-level="6.1" data-path="mechanics-energetics-and-plasticity-of-the-migratory-flight.html"><a href="mechanics-energetics-and-plasticity-of-the-migratory-flight.html#mechanics-and-energetics-of-flight"><i class="fa fa-check"></i><b>6.1</b> Mechanics and energetics of flight</a></li>
 <li class="chapter" data-level="6.2" data-path="mechanics-energetics-and-plasticity-of-the-migratory-flight.html"><a href="mechanics-energetics-and-plasticity-of-the-migratory-flight.html#fuel-for-migratory-flights"><i class="fa fa-check"></i><b>6.2</b> Fuel for migratory flights</a></li>
+<li class="chapter" data-level="6.3" data-path="mechanics-energetics-and-plasticity-of-the-migratory-flight.html"><a href="mechanics-energetics-and-plasticity-of-the-migratory-flight.html#influences-on-migration"><i class="fa fa-check"></i><b>6.3</b> Influences on migration</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="mechanics-energetics-and-plasticity-of-the-migratory-flight.html"><a href="mechanics-energetics-and-plasticity-of-the-migratory-flight.html#endogeneous-and-exogeneous-factors"><i class="fa fa-check"></i><b>6.3.1</b> Endogeneous and exogeneous factors</a></li>
+<li class="chapter" data-level="6.3.2" data-path="mechanics-energetics-and-plasticity-of-the-migratory-flight.html"><a href="mechanics-energetics-and-plasticity-of-the-migratory-flight.html#topography"><i class="fa fa-check"></i><b>6.3.2</b> Topography</a></li>
+<li class="chapter" data-level="6.3.3" data-path="mechanics-energetics-and-plasticity-of-the-migratory-flight.html"><a href="mechanics-energetics-and-plasticity-of-the-migratory-flight.html#wind"><i class="fa fa-check"></i><b>6.3.3</b> Wind</a></li>
+<li class="chapter" data-level="6.3.4" data-path="mechanics-energetics-and-plasticity-of-the-migratory-flight.html"><a href="mechanics-energetics-and-plasticity-of-the-migratory-flight.html#temperature"><i class="fa fa-check"></i><b>6.3.4</b> Temperature</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="field-methods.html"><a href="field-methods.html"><i class="fa fa-check"></i><b>7</b> Field methods</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="field-methods.html"><a href="field-methods.html"><i class="fa fa-check"></i><b>7</b> Field methods</a><ul>
+<li class="chapter" data-level="7.1" data-path="field-methods.html"><a href="field-methods.html#observations-visual-moonwatching-ir-radar"><i class="fa fa-check"></i><b>7.1</b> Observations: visual, moonwatching, IR, radar</a></li>
+<li class="chapter" data-level="7.2" data-path="field-methods.html"><a href="field-methods.html#marking-and-reencountering"><i class="fa fa-check"></i><b>7.2</b> Marking and reencountering</a></li>
+<li class="chapter" data-level="7.3" data-path="field-methods.html"><a href="field-methods.html#tracking-individuals"><i class="fa fa-check"></i><b>7.3</b> Tracking individuals</a></li>
+<li class="chapter" data-level="7.4" data-path="field-methods.html"><a href="field-methods.html#orientation-experiments"><i class="fa fa-check"></i><b>7.4</b> Orientation experiments</a></li>
+<li class="chapter" data-level="7.5" data-path="field-methods.html"><a href="field-methods.html#stable-isotopes-genetics-and-physiology"><i class="fa fa-check"></i><b>7.5</b> Stable isotopes, genetics and physiology</a></li>
+</ul></li>
 <li class="chapter" data-level="8" data-path="migration-models.html"><a href="migration-models.html"><i class="fa fa-check"></i><b>8</b> Migration models</a><ul>
 <li class="chapter" data-level="8.1" data-path="migration-models.html"><a href="migration-models.html#state-dependent-migration-models"><i class="fa fa-check"></i><b>8.1</b> State-dependent migration models</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html"><i class="fa fa-check"></i><b>9</b> Statistical tools for studying migration</a></li>
+<li class="chapter" data-level="9" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html"><i class="fa fa-check"></i><b>9</b> Statistical tools for studying migration</a><ul>
+<li class="chapter" data-level="9.1" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#distribution-models-for-counts-of-resting-or-migrating-individuals"><i class="fa fa-check"></i><b>9.1</b> Distribution models for counts of resting or migrating individuals</a></li>
+<li class="chapter" data-level="9.2" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#connectivity-models"><i class="fa fa-check"></i><b>9.2</b> Connectivity models</a></li>
+<li class="chapter" data-level="9.3" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#estimating-survival-based-on-mark-recapture-data-the-cormack-jolly-seber-model"><i class="fa fa-check"></i><b>9.3</b> Estimating survival based on mark-recapture data: The Cormack-Jolly-Seber model</a></li>
+<li class="chapter" data-level="9.4" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#multi-state-models-to-estimate-movement-rates"><i class="fa fa-check"></i><b>9.4</b> Multi-state models to estimate movement rates</a></li>
+<li class="chapter" data-level="9.5" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#individual-based-hidden-markov-model-for-bird-behaviour"><i class="fa fa-check"></i><b>9.5</b> Individual based hidden Markov model for bird behaviour</a></li>
+<li class="chapter" data-level="9.6" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#the-combination-of-different-data-sources"><i class="fa fa-check"></i><b>9.6</b> The combination of different data sources</a></li>
+</ul></li>
 <li class="chapter" data-level="10" data-path="student-projects.html"><a href="student-projects.html"><i class="fa fa-check"></i><b>10</b> Student projects</a><ul>
 <li class="chapter" data-level="10.1" data-path="student-projects.html"><a href="student-projects.html#phenology-migration-patterns-within-season-and-their-changes-over-the-years"><i class="fa fa-check"></i><b>10.1</b> Phenology: Migration patterns within season and their changes over the years</a></li>
 <li class="chapter" data-level="10.2" data-path="student-projects.html"><a href="student-projects.html#long-term-changes-in-morphology"><i class="fa fa-check"></i><b>10.2</b> Long-term changes in morphology</a></li>
@@ -207,9 +232,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Chapter 1</span> Prerequisites</h1>
 <p>This is a <em>sample</em> book written in <strong>Markdown</strong>. You can use anything that Pandoc’s Markdown supports, e.g., a math equation <span class="math inline">\(a^2 + b^2 = c^2\)</span>.</p>
 <p>The <strong>bookdown</strong> package can be installed from CRAN or Github:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">install.packages</span>(<span class="st">&quot;bookdown&quot;</span>)</a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="co"># or the development version</span></a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="co"># devtools::install_github(&quot;rstudio/bookdown&quot;)</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;bookdown&quot;</span>)</span>
+<span id="cb1-2"><a href="index.html#cb1-2"></a><span class="co"># or the development version</span></span>
+<span id="cb1-3"><a href="index.html#cb1-3"></a><span class="co"># devtools::install_github(&quot;rstudio/bookdown&quot;)</span></span></code></pre></div>
 <p>Remember each Rmd file contains one and only one chapter, and a chapter is defined by the first-level heading <code>#</code>.</p>
 <p>To compile this example to PDF, you need XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <a href="https://yihui.name/tinytex/" class="uri">https://yihui.name/tinytex/</a>.</p>
 

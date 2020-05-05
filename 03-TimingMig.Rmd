@@ -33,10 +33,7 @@ On-the-way orientation and navigation determines the migration route taken but m
 
 
 ```{r, echo=FALSE}
-# probably need to reference the csv differently. Won't be found if on the web!
-
-cues <- data.frame(read.csv("Table_Cues.csv", h=T, sep=";"))
-
+cues <- data.frame(read.csv("data/Table_Cues.csv", h=T, sep=";"))
 ```
 
 

@@ -5,20 +5,20 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 7 Field methods | Migration Course</title>
-  <meta name="description" content="This is the first version of a handout for the ETH migration course at Col de Bretolet. The output format for this example is bookdown::gitbook." />
-  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+  <meta name="description" content="This is a handout for the ETH migration course at Col de Bretolet. The output format for this example is bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 7 Field methods | Migration Course" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="This is the first version of a handout for the ETH migration course at Col de Bretolet. The output format for this example is bookdown::gitbook." />
+  <meta property="og:description" content="This is a handout for the ETH migration course at Col de Bretolet. The output format for this example is bookdown::gitbook." />
   
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Chapter 7 Field methods | Migration Course" />
   
-  <meta name="twitter:description" content="This is the first version of a handout for the ETH migration course at Col de Bretolet. The output format for this example is bookdown::gitbook." />
+  <meta name="twitter:description" content="This is a handout for the ETH migration course at Col de Bretolet. The output format for this example is bookdown::gitbook." />
   
 
 <meta name="author" content="Fränzi Korner &amp; Silke Bauer" />
@@ -52,8 +52,71 @@
 
 
 
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
-<link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
 <body>
@@ -97,13 +160,24 @@
 </ul></li>
 <li class="chapter" data-level="5" data-path="orientation.html"><a href="orientation.html"><i class="fa fa-check"></i><b>5</b> Orientation</a><ul>
 <li class="chapter" data-level="5.1" data-path="orientation.html"><a href="orientation.html#sun-compass"><i class="fa fa-check"></i><b>5.1</b> Sun compass</a></li>
+<li class="chapter" data-level="5.2" data-path="orientation.html"><a href="orientation.html#star-compass"><i class="fa fa-check"></i><b>5.2</b> Star compass</a></li>
+<li class="chapter" data-level="5.3" data-path="orientation.html"><a href="orientation.html#magnetic-compass"><i class="fa fa-check"></i><b>5.3</b> Magnetic compass</a></li>
+<li class="chapter" data-level="5.4" data-path="orientation.html"><a href="orientation.html#landmarks"><i class="fa fa-check"></i><b>5.4</b> Landmarks</a></li>
+<li class="chapter" data-level="5.5" data-path="orientation.html"><a href="orientation.html#olfactory-cues"><i class="fa fa-check"></i><b>5.5</b> Olfactory cues</a></li>
+<li class="chapter" data-level="5.6" data-path="orientation.html"><a href="orientation.html#compass-orientation-vs.-navigation"><i class="fa fa-check"></i><b>5.6</b> Compass orientation vs. navigation</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="mechanics-energetics-and-plasticity-of-the-migratory-flight.html"><a href="mechanics-energetics-and-plasticity-of-the-migratory-flight.html"><i class="fa fa-check"></i><b>6</b> Mechanics, energetics and plasticity of the migratory flight</a><ul>
 <li class="chapter" data-level="6.1" data-path="mechanics-energetics-and-plasticity-of-the-migratory-flight.html"><a href="mechanics-energetics-and-plasticity-of-the-migratory-flight.html#mechanics-and-energetics-of-flight"><i class="fa fa-check"></i><b>6.1</b> Mechanics and energetics of flight</a></li>
 <li class="chapter" data-level="6.2" data-path="mechanics-energetics-and-plasticity-of-the-migratory-flight.html"><a href="mechanics-energetics-and-plasticity-of-the-migratory-flight.html#fuel-for-migratory-flights"><i class="fa fa-check"></i><b>6.2</b> Fuel for migratory flights</a></li>
+<li class="chapter" data-level="6.3" data-path="mechanics-energetics-and-plasticity-of-the-migratory-flight.html"><a href="mechanics-energetics-and-plasticity-of-the-migratory-flight.html#influences-on-migration"><i class="fa fa-check"></i><b>6.3</b> Influences on migration</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="mechanics-energetics-and-plasticity-of-the-migratory-flight.html"><a href="mechanics-energetics-and-plasticity-of-the-migratory-flight.html#endogeneous-and-exogeneous-factors"><i class="fa fa-check"></i><b>6.3.1</b> Endogeneous and exogeneous factors</a></li>
+<li class="chapter" data-level="6.3.2" data-path="mechanics-energetics-and-plasticity-of-the-migratory-flight.html"><a href="mechanics-energetics-and-plasticity-of-the-migratory-flight.html#topography"><i class="fa fa-check"></i><b>6.3.2</b> Topography</a></li>
+<li class="chapter" data-level="6.3.3" data-path="mechanics-energetics-and-plasticity-of-the-migratory-flight.html"><a href="mechanics-energetics-and-plasticity-of-the-migratory-flight.html#wind"><i class="fa fa-check"></i><b>6.3.3</b> Wind</a></li>
+<li class="chapter" data-level="6.3.4" data-path="mechanics-energetics-and-plasticity-of-the-migratory-flight.html"><a href="mechanics-energetics-and-plasticity-of-the-migratory-flight.html#temperature"><i class="fa fa-check"></i><b>6.3.4</b> Temperature</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="field-methods.html"><a href="field-methods.html"><i class="fa fa-check"></i><b>7</b> Field methods</a><ul>
-<li class="chapter" data-level="7.1" data-path="field-methods.html"><a href="field-methods.html#observations-visual-moonwatching-ir-radar"><i class="fa fa-check"></i><b>7.1</b> Observations (visual, moonwatching, IR, radar)</a></li>
+<li class="chapter" data-level="7.1" data-path="field-methods.html"><a href="field-methods.html#observations-visual-moonwatching-ir-radar"><i class="fa fa-check"></i><b>7.1</b> Observations: visual, moonwatching, IR, radar</a></li>
 <li class="chapter" data-level="7.2" data-path="field-methods.html"><a href="field-methods.html#marking-and-reencountering"><i class="fa fa-check"></i><b>7.2</b> Marking and reencountering</a></li>
 <li class="chapter" data-level="7.3" data-path="field-methods.html"><a href="field-methods.html#tracking-individuals"><i class="fa fa-check"></i><b>7.3</b> Tracking individuals</a></li>
 <li class="chapter" data-level="7.4" data-path="field-methods.html"><a href="field-methods.html#orientation-experiments"><i class="fa fa-check"></i><b>7.4</b> Orientation experiments</a></li>
@@ -112,7 +186,14 @@
 <li class="chapter" data-level="8" data-path="migration-models.html"><a href="migration-models.html"><i class="fa fa-check"></i><b>8</b> Migration models</a><ul>
 <li class="chapter" data-level="8.1" data-path="migration-models.html"><a href="migration-models.html#state-dependent-migration-models"><i class="fa fa-check"></i><b>8.1</b> State-dependent migration models</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html"><i class="fa fa-check"></i><b>9</b> Statistical tools for studying migration</a></li>
+<li class="chapter" data-level="9" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html"><i class="fa fa-check"></i><b>9</b> Statistical tools for studying migration</a><ul>
+<li class="chapter" data-level="9.1" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#distribution-models-for-counts-of-resting-or-migrating-individuals"><i class="fa fa-check"></i><b>9.1</b> Distribution models for counts of resting or migrating individuals</a></li>
+<li class="chapter" data-level="9.2" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#connectivity-models"><i class="fa fa-check"></i><b>9.2</b> Connectivity models</a></li>
+<li class="chapter" data-level="9.3" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#estimating-survival-based-on-mark-recapture-data-the-cormack-jolly-seber-model"><i class="fa fa-check"></i><b>9.3</b> Estimating survival based on mark-recapture data: The Cormack-Jolly-Seber model</a></li>
+<li class="chapter" data-level="9.4" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#multi-state-models-to-estimate-movement-rates"><i class="fa fa-check"></i><b>9.4</b> Multi-state models to estimate movement rates</a></li>
+<li class="chapter" data-level="9.5" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#individual-based-hidden-markov-model-for-bird-behaviour"><i class="fa fa-check"></i><b>9.5</b> Individual based hidden Markov model for bird behaviour</a></li>
+<li class="chapter" data-level="9.6" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#the-combination-of-different-data-sources"><i class="fa fa-check"></i><b>9.6</b> The combination of different data sources</a></li>
+</ul></li>
 <li class="chapter" data-level="10" data-path="student-projects.html"><a href="student-projects.html"><i class="fa fa-check"></i><b>10</b> Student projects</a><ul>
 <li class="chapter" data-level="10.1" data-path="student-projects.html"><a href="student-projects.html#phenology-migration-patterns-within-season-and-their-changes-over-the-years"><i class="fa fa-check"></i><b>10.1</b> Phenology: Migration patterns within season and their changes over the years</a></li>
 <li class="chapter" data-level="10.2" data-path="student-projects.html"><a href="student-projects.html#long-term-changes-in-morphology"><i class="fa fa-check"></i><b>10.2</b> Long-term changes in morphology</a></li>
@@ -145,45 +226,58 @@
 <div id="field-methods" class="section level1">
 <h1><span class="header-section-number">Chapter 7</span> Field methods</h1>
 <div id="observations-visual-moonwatching-ir-radar" class="section level2">
-<h2><span class="header-section-number">7.1</span> Observations (visual, moonwatching, IR, radar)</h2>
+<h2><span class="header-section-number">7.1</span> Observations: visual, moonwatching, IR, radar</h2>
 <p>Visual observations or observations by infrared cameras or radar result in counts of birds at a given time at a given location. Often, some behavioral observations are also recorded, such as flight altitude, flight direction or the behaviour of a bird resting on the ground. The different observation techniques differ in their detection ranges and in the information they provide (Table 5).</p>
 <table>
-<caption><span id="tab:nice-tab">Table 7.1: </span>Characteristics of different observation methods. MTR is migration traffic rate (a standardized migration intensity)</caption>
+<caption><span id="tab:nice-tab">Table 4.1: </span>Characteristics of different observation methods. MTR is migration traffic rate (a standardized migration intensity)</caption>
 <thead>
 <tr class="header">
-<th align="left">characteristics</th>
-<th align="left">visual</th>
-<th align="left">moon</th>
-<th align="left">IR</th>
-<th align="left">radar</th>
+<th align="left">Tags</th>
+<th align="left">Weight</th>
+<th align="left">Data.recorded</th>
+<th align="left">Pros</th>
+<th align="left">Cons</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">detection range</td>
-<td align="left">&lt;~500m</td>
-<td align="left">&lt;1,5km</td>
-<td align="left">~10km</td>
-<td align="left">&gt;10km</td>
+<td align="left">Archival tags</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">recapturing required, data analyses complex, location estimate with large error range</td>
 </tr>
 <tr class="even">
-<td align="left">factors influencing detection probability</td>
-<td align="left">observer, weather, type of scope, distance, size of species</td>
-<td align="left">observer, weather, type of scope, distance, size of species</td>
-<td align="left">weather, distance, size of species</td>
-<td align="left">weather, distance, size of species</td>
+<td align="left">Geolocators</td>
+<td align="left">05-1.5g</td>
+<td align="left">light and time (?geolocation?)</td>
+<td align="left">light-weight</td>
+<td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">Information</td>
-<td align="left">Numbers, species, behaviour, flight directions</td>
-<td align="left">numbers (MTR), flight directions</td>
-<td align="left">numbers, flight directions</td>
-<td align="left">numbers (MTR), flight directions and altitudes, species groups</td>
+<td align="left">Multi-sensor loggers</td>
+<td align="left">1.0-1.5g</td>
+<td align="left">In addition to light: temperature, air pressure, activity (acceleration)</td>
+<td align="left">+ additional information about behavior, e.g. flight height, number and duration of flight bouts, activity during stop-over periods</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">GPS loggers</td>
+<td align="left"></td>
+<td align="left">GPS position, possibly other variables temperature, pressure, activity, salinity</td>
+<td align="left">huge amount of information, precise location information</td>
+<td align="left">recapturing required; relatively heavy</td>
 </tr>
 </tbody>
 </table>
+<p>Transmitters<br />
+PTT tags identification of an individual with a reader at a strategic place (nest, feeding site) small and light-weight (sometimes implanted)<br />
+RFID Radio frequency identification identification of an individual with a reader at a strategic place (nest, feeding site) small and light-weight (sometimes implanted) readers are expensive, individual can be registered only when within a few meters of the reader (data are often noisy)
+Telemetry - radio or VHF from 0.3 g onward identification of an individual by an antenna over short to medium long distances (0-ca. 20km)
+physiological data (from sen-sors) remote data collections, precise location information battery life limited for small transmitters, great effort for data collections; transmitter may influence behaviour<br />
+Satellite telemetry, different systems exist, e.g. ARGOS &gt; 5g, usually much more GPS positions of individuals at any time anywhere on the globe remote data collections, precise location information, little effort for data collections large weight, expensive, transmitter may influence behaviour</p>
 <p>Example studies of visual observations:
-- Phenology of birds in Switzerland based on records of amateur ornithologists, www.ornitho.ch (Win-kler 1999).
+- Phenology of birds in Switzerland based on records of amateur ornithologists, <a href="www.ornitho.ch">link</a> (Win-kler 1999).
 - Description of migration pattern of Marsh warbler Acrocephalus palustris to southern Africa (Dowsett-Lemaire &amp; Dowsett 1987).</p>
 <p>Example studies of moon watching:
 - Broad front migration and the Alps as an obstacle (Liechti et al. 1996).</p>
@@ -196,11 +290,11 @@
 <div id="marking-and-reencountering" class="section level2">
 <h2><span class="header-section-number">7.2</span> Marking and reencountering</h2>
 <p>Marking birds in order to find out how far and where they move has been started by the Danish Hans Christian Cornelius Mortensen (1856 – 1921) (Fig. 4). In 1899 he, for the first time, marked Starlings Sturnus vulgaris with aluminium rings that were uniquely numbered and contained an address to make a potential finder reporting the ring (Mortensen 1901). Motivated by the success of Mortensen, the first ringing station was initiated in Rossiten (today Rybachi) on the Kurische Nehrung in 1900. Shortly after, other ringing stations were started on Helgoland and in the UK.</p>
-<p>Fig. 4. left: Hans Christian Cornelius Mortensen. Photo: de.wikipedia.org/wiki/Hans_Christian_Cornelius_Mortensen. right: A Snowfinch Montifringilla nivalis marked with a colour plastic ring containing an individual alpha-numeric code (H11).
-In Europe, around 5 million birds are ringed annually at many ringing stations by professional and pri-vate ringers in Europe (Balmer et al. 2008). The ring numbers are coordinated within the countries by the governments who normally delegated this job to ringing schemes. The European ringing schemes are connected within the EURING society (www.euring.org). In regular meetings and workshops, methodological standards are developed and the EURING data base, a data pool of all marking and reencounter data, maintained. EURING also started the EURING Analytical meeting (www.euring.org/meetings/analytical-meetings) that serves as a network of scientists developing statis-tical and mathematical tools for the analysis of mark-reencounter data.<br />
+<p>Fig. 4. left: Hans Christian Cornelius Mortensen. Photo: de.wikipedia.org/wiki/Hans_Christian_Cornelius_Mortensen. right: A Snowfinch Montifringilla nivalis marked with a colour plastic ring containing an individual alpha-numeric code (H11).</p>
+<p>In Europe, around 5 million birds are ringed annually at many ringing stations by professional and pri-vate ringers in Europe (Balmer et al. 2008). The ring numbers are coordinated within the countries by the governments who normally delegated this job to ringing schemes. The European ringing schemes are connected within the EURING society <a href="www.euring.org">link</a>. In regular meetings and workshops, methodological standards are developed and the EURING data base, a data pool of all marking and reencounter data, maintained. EURING also started the EURING Analytical meeting <a href="www.euring.org/meetings/analytical-meetings">link</a> that serves as a network of scientists developing statis-tical and mathematical tools for the analysis of mark-reencounter data.<br />
 The capturing and marking methods underly national policies.
-Mark-reencounter data is widely used to estimate survival, population sizes, movement pattern, migra-tory connectivity, and stop-over durations. Du Feu et al. (2016) review the scientific achievements of bird ringing, present the aims and policies of the EURING data base and give perspectives of bird ring-ing.
-A central challenge in the interpretation of mark-reencounter data is the spatial and temporal heteroge-neity of ring reencounter probability (Perdeck 1977, Korner-Nievergelt et al. 2010, Thorup et al. 2014). Mark-recapture modelling techniques such as the Cormack-Jolly-Seber (CJS, Chapter 8.3) model (Cormack 1964, Jolly 1965, Seber 1965), the multi-state model (Arnason 1972, Arnason et al. 1991) or mark-dead recovery model (Brownie et al. 1985), are seminal techniques that are nowadays widely applied and integrated in a variety of different ecological models. These models estimate reencounter probability and thereby account for its heterogeneity while interpreting mark-reencounter data.<br />
+Mark-reencounter data is widely used to estimate survival, population sizes, movement pattern, migra-tory connectivity, and stop-over durations. Du Feu et al. (2016) review the scientific achievements of bird ringing, present the aims and policies of the EURING data base and give perspectives of bird ring-ing.</p>
+<p>A central challenge in the interpretation of mark-reencounter data is the spatial and temporal heteroge-neity of ring reencounter probability (Perdeck 1977, Korner-Nievergelt et al. 2010, Thorup et al. 2014). Mark-recapture modelling techniques such as the Cormack-Jolly-Seber (CJS, Chapter 8.3) model (Cormack 1964, Jolly 1965, Seber 1965), the multi-state model (Arnason 1972, Arnason et al. 1991) or mark-dead recovery model (Brownie et al. 1985), are seminal techniques that are nowadays widely applied and integrated in a variety of different ecological models. These models estimate reencounter probability and thereby account for its heterogeneity while interpreting mark-reencounter data.<br />
 Many countries published their ring reencounters in migration atlases, e.g. Zink (1985), Zink et al. (1995), Brewer et al. (2000), Fransson &amp; Pettersson (2001), Wernham et al. (2002), Bakken et al. (2003), Bønløkke et al. (2006), and Saurola et al. (2013).</p>
 <p>Examples of quantifying migratory connectivity studies based on ring reencounters:
 - Estimation of the proportions of some song bird species migrating to Africa (Thorup &amp; Conn 2009).
@@ -208,7 +302,7 @@ Many countries published their ring reencounters in migration atlases, e.g. Zin
 - Migratory connectivity of European Nightingales Luscinia megarhynchos (Korner-Nievergelt et al. 2012)
 - Migratory connectivity of European reed warblers Acrocephalus scirpaceus (Procházka et al. 2017).</p>
 <p>Examples of survival analysis based on mark-reencounter data:
-- - Sillett &amp; Holmes (2002) estimated lower survival during migration compared to the breeding and non-breeding periods in the Black-throated blue warbler Dendroica caerulescens.</p>
+- Sillett &amp; Holmes (2002) estimated lower survival during migration compared to the breeding and non-breeding periods in the Black-throated blue warbler Dendroica caerulescens.</p>
 <p>Examples of estimating stop-over duration based on mark-reencounter data:
 - Estimation of stop-over duration of passerines in the Bolle di Magadino CH during spring migration (Schaub et al. 2001).</p>
 </div>
@@ -216,8 +310,55 @@ Many countries published their ring reencounters in migration atlases, e.g. Zin
 <h2><span class="header-section-number">7.3</span> Tracking individuals</h2>
 <p>The vision of being able to follow a migratory bird on a computer screen has become, at least for larger birds, reality by now. The appealing property of tracking individuals is the fact that the individual is known and the movement behaviour can be related to individual characteristics.
 The archival tags require that the animal is re-captured later to download the data, whereas transmit-ters (= “senders”) allow for remote data collection (Table 6). The development of the technique is ongo-ing intensively. Devices become smaller and techniques are combined to fit specific needs of the sci-entists.</p>
-<p>Table 6. Characteristics of different tracking techniques. Adapted from Robinson et al. (2010).
-Tags Data Pros and cons
+<table>
+<caption><span id="tab:unnamed-chunk-3">Table 7.1: </span>Characteristics of different tracking techniques. Adapted from Robinson et al. (2010)</caption>
+<thead>
+<tr class="header">
+<th align="left">Tags</th>
+<th align="left">Weight</th>
+<th align="left">Data.recorded</th>
+<th align="left">Pros</th>
+<th align="left">Cons</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Archival tags</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">Geolocators</td>
+<td align="left">05-1.5g</td>
+<td align="left">light and time (?geolocation?)</td>
+<td align="left">light-weight</td>
+<td align="left">recapturing required, data analyses complex, location estimate with large error range</td>
+</tr>
+<tr class="odd">
+<td align="left">Multi-sensor loggers</td>
+<td align="left">1.0-1.5g</td>
+<td align="left">In addition to light: temperature, air pressure, activity (acceleration)</td>
+<td align="left">+ additional information about behavior, e.g. flight height, number and duration of flight bouts, activity during stop-over periods</td>
+<td align="left">recapturing required, data analyses complex, location estimate with large error range</td>
+</tr>
+<tr class="even">
+<td align="left">GPS loggers</td>
+<td align="left">&gt;2.5g</td>
+<td align="left">GPS position, possibly other variables temperature, pressure, activity, salinity</td>
+<td align="left">huge amount of information, precise location information</td>
+<td align="left">recapturing required; relatively heavy</td>
+</tr>
+</tbody>
+</table>
+<p>Transmitters<br />
+PTT tags identification of an individual with a reader at a strategic place (nest, feeding site) small and light-weight (sometimes implanted)<br />
+RFID Radio frequency identification identification of an individual with a reader at a strategic place (nest, feeding site) small and light-weight (sometimes implanted) readers are expensive, individual can be registered only when within a few meters of the reader (data are often noisy)
+Telemetry - radio or VHF from 0.3 g onward identification of an individual by an antenna over short to medium long distances (0-ca. 20km)
+physiological data (from sen-sors) remote data collections, precise location information battery life limited for small transmitters, great effort for data collections; transmitter may influence behaviour<br />
+Satellite telemetry, different systems exist, e.g. ARGOS &gt; 5g, usually much more GPS positions of individuals at any time anywhere on the globe remote data collections, precise location information, little effort for data collections large weight, expensive, transmitter may influence behaviour</p>
+<p>Tags Data Pros and cons
 Archival tags<br />
 Geolocators
 0.5 – 1.5 g light and time (“geolocation”)
@@ -345,6 +486,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

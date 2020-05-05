@@ -1,8 +1,17 @@
 book_filename: "MigrationCourse"
+
+# Use the K-M approach: https://bookdown.org/yihui/bookdown/new-session.html
+new_session: yes
+
+# Delete temp file after building
 delete_merged_file: true
+
+# Other settings
 language:
   ui:
     chapter_name: "Chapter "
+
+# Output directory
 output_dir: "docs"
-new_session: yes    
-    
+
+# All other settings are defined in index.Rmd
