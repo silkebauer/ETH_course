@@ -4,7 +4,7 @@ We encourage students to work on a research project during the course. We have c
 
 
 
-## Phenology: Migration patterns within season and their changes over the years
+## Phenology: Migration patterns within the season and their changes over the years
 
 
 Which species migrate early or late and why?
@@ -49,6 +49,11 @@ using MCMC (software: Jags)
 
 
 ## Modelling (spring) migration: several questions
+
+
+Look at Chapter \@ref(Sec:MigModels) again for background on migration models. 
+
+
 -	Long-term changes in migration phenology
 -	Consequences of climate-driven changes in site-conditions
 -	Consequences of human actions, e.g. hunting, on migration success

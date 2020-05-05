@@ -1,4 +1,4 @@
-# Migration models
+# Migration models {#Sec:MigModels}
 
 A variety of modelling approaches exist that investigate entire migrations or parts of it: simple analytical models, game-theoretic models, dynamic optimisation models (also known as stochastic dynamic pro-gramming models, SDP), individual-(or agent) based models (IBM), physical transport models, models based on evolutionary programming, network models and others. These models should not be con-fused with statistical analyses of migration, which may also yield predictive models but are not based on (assumed or hypothesised) mechanisms underlying migration. The models differ in their level of complexity and the assumptions they make, and the choice of a particular modelling approach should always be guided by the scientific questions that need to be tackled. For instance, to identify the rea-sons why birds migrate at night, a very general conceptual model is best suited (see below) while for specific predictions of the distribution of a migratory population, a spatio-temporally explicit approach will be required. 
 

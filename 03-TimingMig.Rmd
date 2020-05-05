@@ -1,4 +1,4 @@
-# Timing of migration
+# Timing of migration {#Sec:TimingMigration}
 ## Why is timing important?
 
 The timing of migration (and other life-history activities) is widely considered to have significant fitness consequences  (Forrest & Miller-Rushing 2010, Miller-Rushing & et al. 2010). Particularly in seasonal environments, timing is the all-dominant predictor of success – for instance migration, growth or repro-duction should coincide with favourable conditions and avoid unfavourable periods. Thus, such activi-ties need to be initiated within a specific – often very restricted – time frame. 
@@ -6,8 +6,9 @@ Penalties for not migrating at the optimal time range from slight reductions in 
 
 
 ## What determines the timing of migratory steps? Cues! 
-Photoperiod has been shown to be involved in the timing of activities for many species, e.g. initiating “Zugunruhe” or determining the speed of migratory progression, as it indicates time of the year and thus, can be a useful predictor for the phenology of resources (Fig. 1). Other, local and short-term fac-tors influencing timing of migration include prevailing weather conditions, e.g. temperature, wind, drought and precipitation, as these factors can significantly influence the costs of the travel ahead or its consequences for survival. There are also internal cues that serve as a clock or time-keeping mecha-nism. Additionally, physiological state and developmental stage are important cues as most migrants undergo morphological and physiological changes in preparation for migration and internal signals, e.g. hormone levels, indicate when these changes are completed.
-Migration can be divided into a few major steps – preparation, departure, on the way, and ter-mination – a cycle that might be repeated if migration is suspended at intermittent stop-over sites. Each of these steps potentially requires specific cues and decision rules as the demands on the animal’s physiology and behaviour differ. Similarities might exist across taxonomic groups in how animals deal with each of these steps but differences may also be expected depending on the specific way of mi-grating or their particular environment. 
+
+Photoperiod has been shown to be involved in the timing of activities for many species, e.g. initiating “Zugunruhe” or determining the speed of migratory progression, as it indicates time of the year and thus, can be a useful predictor for the phenology of resources (Fig. 1). Other, local and short-term fac-tors influencing timing of migration include prevailing weather conditions, e.g. temperature, wind, drought and precipitation, as these factors can significantly influence the costs of the travel ahead or its consequences for survival. There are also internal cues that serve as a clock or time-keeping mechanism. Additionally, physiological state and developmental stage are important cues as most migrants undergo morphological and physiological changes in preparation for migration and internal signals, e.g. hormone levels, indicate when these changes are completed.
+Migration can be divided into a few major steps – preparation, departure, on the way, and ter-mination – a cycle that might be repeated if migration is suspended at intermittent stop-over sites. Each of these steps potentially requires specific cues and decision rules as the demands on the animal’s physiology and behaviour differ. Similarities might exist across taxonomic groups in how animals deal with each of these steps but differences may also be expected depending on the specific way of mi-grating or their particular environment (Table \@ref(tab:Cues)). 
 
 ### Preparation
 Before actually embarking on migration, most birds (partly) change the composition of their bodies, e.g. increase flight muscles at the expense of leg muscles, atrophy digestive and metabol-ic organs (Piersma & van Gils 2011) and accumulate body stores. Photoperiod is an important external signal for preparations; it initiates “Zugunruhe”, i.e. migratory restlessness (Gwinner 1990), and birds start accumulating body stores, altering their digestive system and building up flight muscles from a particular day length onwards. The specific value of day length, at which these transformations are started, is under strong genetic control (Newton 2008:324).
@@ -32,14 +33,11 @@ On-the-way orientation and navigation determines the migration route taken but m
 
 
 
-```{r, echo=FALSE}
+```{r Cues, tidy=TRUE, echo=FALSE}
+
 cues <- data.frame(read.csv("data/Table_Cues.csv", h=T, sep=";"))
-```
-
-
-```{r nice-tab, tidy=TRUE, echo=FALSE}
 knitr::kable(
-  head(cues, 20), caption = 'The cues used in various taxa for timing migration',
+  head(cues, 20), caption = "\\label{tab:Cues}The cues used in various taxa for timing migration",
   format.args = list(width = 30),
   booktabs = TRUE,
 )

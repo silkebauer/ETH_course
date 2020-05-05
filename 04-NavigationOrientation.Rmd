@@ -1,4 +1,4 @@
-# Orientation
+# Orientation and Navigation {#Sec:OrientationNavigation}
 
 ## Sun compass
 A crucial observation for the study of bird orientation was the directional preferences of migratory ac-tivity behavior (Zugunruhe) by Kramer (1949). Using orientation cages the amount of activity and the preferred direction can be measured. This also allows experimenting with different cues that may affect bird orientation. 

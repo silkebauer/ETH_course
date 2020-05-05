@@ -1,4 +1,4 @@
-# Mechanics, energetics and plasticity of the migratory flight
+# Mechanics, energetics and plasticity of the migratory flight {#Sec:MechanicsEnergetics}
 
 ## Mechanics and energetics of flight
 
