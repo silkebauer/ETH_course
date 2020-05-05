@@ -42,6 +42,8 @@ vignettes/*.pdf
 # Bookdown
 _book/
 _bookdown_files/
+MigrationCourse.log
+MigrationCourse.rds
 
 # Mac OS X
 .DS_Store
