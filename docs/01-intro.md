@@ -4,23 +4,23 @@
 
 The course consists of lectures, student work on projects and visits to the ringing station. As the latter is dependent on weather, the following schedule is not entirely fixed but somewhat flexible. 
 
+Update for 2020 Corona-situation
 
-## Monday
+
+### Monday
 
 **Morning** - Arrival
 
 **Afternoon** 
 
-Depending on Corona situation, this is a test
 
+### Tuesday
 
-## Tuesday
+### Wednesday
 
-## Wednesday
+### Thursday
 
-## Thursday
-
-## Friday
+### Friday
 
 
 
@@ -29,23 +29,7 @@ Depending on Corona situation, this is a test
 projects
 
 
-You can label chapter and section titles using `{#label}` after them, e.g., we can reference Chapter \@ref(intro). If you do not manually label them, there will be automatic labels anyway, e.g., Chapter \@ref(methods).
-
-Figures and tables with captions will be placed in `figure` and `table` environments, respectively.
-
-
-```r
-par(mar = c(4, 4, .1, .1))
-plot(pressure, type = 'b', pch = 19)
-```
-
-<div class="figure" style="text-align: center">
-<img src="01-intro_files/figure-html/nice-fig-1.png" alt="Here is a nice figure!" width="80%" />
-<p class="caption">(\#fig:nice-fig)Here is a nice figure!</p>
-</div>
-
-Reference a figure by its code chunk label with the `fig:` prefix, e.g., see Figure \@ref(fig:nice-fig). Similarly, you can reference tables generated from `knitr::kable()`, e.g., see Table \@ref(tab:nice-tab).
-
+You can label c
 
 ```r
 knitr::kable(
@@ -80,5 +64,21 @@ Table: (\#tab:nice-tab)Here is a nice table!
           5.1           3.5            1.4           0.3  setosa  
           5.7           3.8            1.7           0.3  setosa  
           5.1           3.8            1.5           0.3  setosa  
+hapter and section titles using `{#label}` after them, e.g., we can reference Chapter \@ref(intro). If you do not manually label them, there will be automatic labels anyway, e.g., Chapter \@ref(methods).
+
+Figures and tables with captions will be placed in `figure` and `table` environments, respectively.
+
+
+```r
+par(mar = c(4, 4, .1, .1))
+plot(pressure, type = 'b', pch = 19)
+```
+
+<div class="figure" style="text-align: center">
+<img src="01-intro_files/figure-html/nice-fig-1.png" alt="Here is a nice figure!" width="80%" />
+<p class="caption">(\#fig:nice-fig)Here is a nice figure!</p>
+</div>
+
+Reference a figure by its code chunk label with the `fig:` prefix, e.g., see Figure \@ref(fig:nice-fig). Similarly, you can reference tables generated from `knitr::kable()`, e.g., see Table \@ref(tab:nice-tab).
 
 You can write citations, too. For example, we are using the **bookdown** package [@R-bookdown] in this sample book, which was built on top of R Markdown and **knitr** [@xie2015].
