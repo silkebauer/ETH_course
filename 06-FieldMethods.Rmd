@@ -3,7 +3,6 @@
 ##	Observations: visual, moonwatching, IR, radar
 Visual observations or observations by infrared cameras or radar result in counts of birds at a given time at a given location. Often, some behavioral observations are also recorded, such as flight altitude, flight direction or the behaviour of a bird resting on the ground. The different observation techniques differ in their detection ranges and in the information they provide (Table \@ref(tab:ObsMethods)).
 
-\@ref(Sec:TimingMigration)
 
 ```{r ObsMethods, tidy=TRUE, echo=FALSE}
 

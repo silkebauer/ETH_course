@@ -53,9 +53,9 @@
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -64,16 +64,14 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -82,9 +80,9 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  {  }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+a.sourceLine::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -148,15 +146,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.3" data-path="animal-migration.html"><a href="animal-migration.html#terminology-of-specific-migration-patterns"><i class="fa fa-check"></i><b>3.3</b> Terminology of specific migration patterns</a></li>
 <li class="chapter" data-level="3.4" data-path="animal-migration.html"><a href="animal-migration.html#importance-of-migration-for-the-structure-and-dynamics-of-resident-communities"><i class="fa fa-check"></i><b>3.4</b> Importance of migration for the structure and dynamics of resident communities</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="timing-of-migration.html"><a href="timing-of-migration.html"><i class="fa fa-check"></i><b>4</b> Timing of migration</a><ul>
-<li class="chapter" data-level="4.1" data-path="timing-of-migration.html"><a href="timing-of-migration.html#why-is-timing-important"><i class="fa fa-check"></i><b>4.1</b> Why is timing important?</a></li>
-<li class="chapter" data-level="4.2" data-path="timing-of-migration.html"><a href="timing-of-migration.html#what-determines-the-timing-of-migratory-steps-cues"><i class="fa fa-check"></i><b>4.2</b> What determines the timing of migratory steps? Cues!</a><ul>
-<li class="chapter" data-level="4.2.1" data-path="timing-of-migration.html"><a href="timing-of-migration.html#preparation"><i class="fa fa-check"></i><b>4.2.1</b> Preparation</a></li>
-<li class="chapter" data-level="4.2.2" data-path="timing-of-migration.html"><a href="timing-of-migration.html#departure"><i class="fa fa-check"></i><b>4.2.2</b> Departure</a></li>
-<li class="chapter" data-level="4.2.3" data-path="timing-of-migration.html"><a href="timing-of-migration.html#on-the-way"><i class="fa fa-check"></i><b>4.2.3</b> On the way</a></li>
-<li class="chapter" data-level="4.2.4" data-path="timing-of-migration.html"><a href="timing-of-migration.html#termination"><i class="fa fa-check"></i><b>4.2.4</b> Termination</a></li>
+<li class="chapter" data-level="4" data-path="Sec-TimingMigration.html"><a href="Sec-TimingMigration.html"><i class="fa fa-check"></i><b>4</b> Timing of migration</a><ul>
+<li class="chapter" data-level="4.1" data-path="Sec-TimingMigration.html"><a href="Sec-TimingMigration.html#why-is-timing-important"><i class="fa fa-check"></i><b>4.1</b> Why is timing important?</a></li>
+<li class="chapter" data-level="4.2" data-path="Sec-TimingMigration.html"><a href="Sec-TimingMigration.html#what-determines-the-timing-of-migratory-steps-cues"><i class="fa fa-check"></i><b>4.2</b> What determines the timing of migratory steps? Cues!</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="Sec-TimingMigration.html"><a href="Sec-TimingMigration.html#preparation"><i class="fa fa-check"></i><b>4.2.1</b> Preparation</a></li>
+<li class="chapter" data-level="4.2.2" data-path="Sec-TimingMigration.html"><a href="Sec-TimingMigration.html#departure"><i class="fa fa-check"></i><b>4.2.2</b> Departure</a></li>
+<li class="chapter" data-level="4.2.3" data-path="Sec-TimingMigration.html"><a href="Sec-TimingMigration.html#on-the-way"><i class="fa fa-check"></i><b>4.2.3</b> On the way</a></li>
+<li class="chapter" data-level="4.2.4" data-path="Sec-TimingMigration.html"><a href="Sec-TimingMigration.html#termination"><i class="fa fa-check"></i><b>4.2.4</b> Termination</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="timing-of-migration.html"><a href="timing-of-migration.html#consequences-of-migration-timing"><i class="fa fa-check"></i><b>4.3</b> Consequences of migration timing</a></li>
+<li class="chapter" data-level="4.3" data-path="Sec-TimingMigration.html"><a href="Sec-TimingMigration.html#consequences-of-migration-timing"><i class="fa fa-check"></i><b>4.3</b> Consequences of migration timing</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="orientation.html"><a href="orientation.html"><i class="fa fa-check"></i><b>5</b> Orientation</a><ul>
 <li class="chapter" data-level="5.1" data-path="orientation.html"><a href="orientation.html#sun-compass"><i class="fa fa-check"></i><b>5.1</b> Sun compass</a></li>
@@ -195,7 +193,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.6" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#the-combination-of-different-data-sources"><i class="fa fa-check"></i><b>9.6</b> The combination of different data sources</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="student-projects.html"><a href="student-projects.html"><i class="fa fa-check"></i><b>10</b> Student projects</a><ul>
-<li class="chapter" data-level="10.1" data-path="student-projects.html"><a href="student-projects.html#phenology-migration-patterns-within-season-and-their-changes-over-the-years"><i class="fa fa-check"></i><b>10.1</b> Phenology: Migration patterns within season and their changes over the years</a></li>
+<li class="chapter" data-level="10.1" data-path="student-projects.html"><a href="student-projects.html#phenology-migration-patterns-within-the-season-and-their-changes-over-the-years"><i class="fa fa-check"></i><b>10.1</b> Phenology: Migration patterns within the season and their changes over the years</a></li>
 <li class="chapter" data-level="10.2" data-path="student-projects.html"><a href="student-projects.html#long-term-changes-in-morphology"><i class="fa fa-check"></i><b>10.2</b> Long-term changes in morphology</a></li>
 <li class="chapter" data-level="10.3" data-path="student-projects.html"><a href="student-projects.html#differential-migration"><i class="fa fa-check"></i><b>10.3</b> Differential Migration</a></li>
 <li class="chapter" data-level="10.4" data-path="student-projects.html"><a href="student-projects.html#flight-energetics-in-the-course-of-a-night-and-over-the-season"><i class="fa fa-check"></i><b>10.4</b> Flight energetics in the course of a night and over the season</a></li>
@@ -227,9 +225,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Chapter 7</span> Field methods</h1>
 <div id="observations-visual-moonwatching-ir-radar" class="section level2">
 <h2><span class="header-section-number">7.1</span> Observations: visual, moonwatching, IR, radar</h2>
-<p>Visual observations or observations by infrared cameras or radar result in counts of birds at a given time at a given location. Often, some behavioral observations are also recorded, such as flight altitude, flight direction or the behaviour of a bird resting on the ground. The different observation techniques differ in their detection ranges and in the information they provide (Table 5).</p>
+<p>Visual observations or observations by infrared cameras or radar result in counts of birds at a given time at a given location. Often, some behavioral observations are also recorded, such as flight altitude, flight direction or the behaviour of a bird resting on the ground. The different observation techniques differ in their detection ranges and in the information they provide (Table <a href="field-methods.html#tab:ObsMethods">7.1</a>).</p>
+<p><a href="Sec-TimingMigration.html#Sec:TimingMigration">4</a></p>
 <table>
-<caption><span id="tab:nice-tab">Table 4.1: </span>Characteristics of different observation methods. MTR is migration traffic rate (a standardized migration intensity)</caption>
+<caption><span id="tab:ObsMethods">Table 7.1: </span>Characteristics of different observation methods. MTR is migration traffic rate (a standardized migration intensity)</caption>
 <thead>
 <tr class="header">
 <th align="left">Tags</th>
@@ -308,10 +307,11 @@ Many countries published their ring reencounters in migration atlases, e.g. Zin
 </div>
 <div id="tracking-individuals" class="section level2">
 <h2><span class="header-section-number">7.3</span> Tracking individuals</h2>
-<p>The vision of being able to follow a migratory bird on a computer screen has become, at least for larger birds, reality by now. The appealing property of tracking individuals is the fact that the individual is known and the movement behaviour can be related to individual characteristics.
-The archival tags require that the animal is re-captured later to download the data, whereas transmit-ters (= “senders”) allow for remote data collection (Table 6). The development of the technique is ongo-ing intensively. Devices become smaller and techniques are combined to fit specific needs of the sci-entists.</p>
+<p>The vision of being able to follow a migratory bird on a computer screen has become, at least for larger animals, reality by now. The appealing property of tracking individuals is the fact that the individual is known and the movement behaviour can be related to individual characteristics.</p>
+<p>Two major principles exist for tacking devices - for one, information on location or anything else is stored locally and the tracking device needs to be retrieved to access this information; the other are devices which actively transmit information to a receiver such that data can be remotely downloaded (Table <a href="field-methods.html#tab:TrackTechnology">7.2</a>). The development of tracking devices has</p>
+<p>The archival tags require that the animal is re-captured later to download the data, whereas transmit-ters (= “senders”) allow for remote data collection (Table <a href="field-methods.html#tab:TrackTechnology">7.2</a>). The development of the technique is ongo-ing intensively. Devices become smaller and techniques are combined to fit specific needs of the sci-entists.</p>
 <table>
-<caption><span id="tab:unnamed-chunk-3">Table 7.1: </span>Characteristics of different tracking techniques. Adapted from Robinson et al. (2010)</caption>
+<caption><span id="tab:TrackTechnology">Table 7.2: </span>Characteristics of different tracking techniques</caption>
 <thead>
 <tr class="header">
 <th align="left">Tags</th>
@@ -350,62 +350,51 @@ The archival tags require that the animal is re-captured later to download the d
 <td align="left">huge amount of information, precise location information</td>
 <td align="left">recapturing required; relatively heavy</td>
 </tr>
+<tr class="odd">
+<td align="left">Transmitters</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">PTT tags</td>
+<td align="left"></td>
+<td align="left">identification of an individual with a reader at a strategic place (nest, feeding site)</td>
+<td align="left">small and light-weight (sometimes implanted)</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">RFID Radio frequency identification</td>
+<td align="left"></td>
+<td align="left">identification of an individual with a reader at a strategic place (nest, feeding site)</td>
+<td align="left">small and light-weight (sometimes implanted)</td>
+<td align="left">readers are expensive, individual can be registered only when within a few meters of the reader (data are often noisy)</td>
+</tr>
+<tr class="even">
+<td align="left">Telemetry - radio or VHF</td>
+<td align="left">from 0.3 g onward</td>
+<td align="left">identification of an individual by an antenna over short to medium long distances (0-ca. 20km)</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">physiological data (from sen-sors) remote data collection</td>
+<td align="left">s, precise location inform</td>
+<td align="left">ation battery life limited for small transmitters, g</td>
+<td align="left">reat effort for data collections; transmitter may influence behaviour</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">Satellite telemetry, different systems exist, e.g. ARGOS</td>
+<td align="left">&gt; 5g, usually much more</td>
+<td align="left">GPS positions of individuals at any time anywhere on the globe</td>
+<td align="left">remote data collections, precise location information, little effort for data collections</td>
+<td align="left">large weight, expensive, transmitter may influence behaviour</td>
+</tr>
 </tbody>
 </table>
-<p>Transmitters<br />
-PTT tags identification of an individual with a reader at a strategic place (nest, feeding site) small and light-weight (sometimes implanted)<br />
-RFID Radio frequency identification identification of an individual with a reader at a strategic place (nest, feeding site) small and light-weight (sometimes implanted) readers are expensive, individual can be registered only when within a few meters of the reader (data are often noisy)
-Telemetry - radio or VHF from 0.3 g onward identification of an individual by an antenna over short to medium long distances (0-ca. 20km)
-physiological data (from sen-sors) remote data collections, precise location information battery life limited for small transmitters, great effort for data collections; transmitter may influence behaviour<br />
-Satellite telemetry, different systems exist, e.g. ARGOS &gt; 5g, usually much more GPS positions of individuals at any time anywhere on the globe remote data collections, precise location information, little effort for data collections large weight, expensive, transmitter may influence behaviour</p>
-<p>Tags Data Pros and cons
-Archival tags<br />
-Geolocators
-0.5 – 1.5 g light and time (“geolocation”)
-+ light weight
-- recapturing required
-- data analyses complex
-- location estimate w large error range (equinox!)
-Multi-sensor loggers
-1.0-1.2g
-In addition to light:
-temperature
-pressure
-activity
-+ additional information about behavior, e.g. flight height, number and duration of flight bouts, activity during stop-over periods
-+ combination of data for better location estimates
-GPS loggers GPS position
-temperature
-pressure
-activity
-salinity + huge amount of information
-+ precise location information
-- recapturing necessary for retrieving the data
-- relatively heavy
-Transmitters<br />
-PTT tags
-RFID Radio frequency identification identification of an individual with a reader at a strategic place (nest, feeding site) + low cost
-+ small and light-weight (sometimes implanted)
-- readers are expensive
-- individual can be registered only when within a few meters of the reader (data are often noisy)
-Radio telemetry
-VHF Very high fre-quency telemetry
-from 0.3 g onward identification of an individual by an antenna over short to medium long distances (0-ca. 20km)
-physiological data (from sen-sors) + remote data collection
-+ precise location information
-- battery life limited for small transmitters
-- high effort for data collection
-- transmitter may influence animal behaviour
-Satellite telemetry
-from 5g onward
-different systems, e.g. ARGOS
-GPS positions of individuals at any time anywhere on the globe + remote data collection via satellite over very long distances
-+ almost no effort needed for data collection
-+ precise location information
-- large weight
-- expensive
-- transmitter may influence animal behaviour
-The movebank data base (www.movebank.org) is collecting tracking data from different studies. Its aim is to foster collaboration between different researchers. Some of the data are even provided for free.</p>
+<p>caption=“\label{tab:tab2}A <code>kable</code> table”)</p>
 <p>Example studies using geolocation:
 - Non-breeding areas of Barn swallows Hirundo rustica: (Liechti et al. 2014).
 - Migration pattern in relation to ecological barriers: (Hahn et al. 2014).
