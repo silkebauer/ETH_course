@@ -28,7 +28,7 @@ The majority of birds cannot feed while flying, and in many cases the total trav
 
 ```{r, echo=FALSE, out.width='100%', fig.align='center', fig.show='hold', fig.cap="Seasonal change in global NDVI. These vegetation maps were generated from MODIS/Terra measurements of the Normalized Difference Vegetation Index (NDVI). Significant seasonal variations in the NDVI are apparent between northern hemisphere summer (July 2014; top) and winter (February 2015; bottom). Image credit: Reto Stockli, NASA Earth Observatory Group, using data from the MODIS Land Science Team (http://neo.sci.gsfc.nasa.gov)."}
 
-knitr::include_graphics('Fig_SeasonalChanges_NDVI.png')
+knitr::include_graphics('figures/Fig_SeasonalChanges_NDVI.png')
 
 ```
 
