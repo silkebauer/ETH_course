@@ -37,9 +37,9 @@ Box 1. Terminology for specific migration characteristics and patterns and a few
 
 **Short-distance migration** Migration over ‘shorter’ distances, typically <5000kms, e.g. from Central Europe to the Mediterranean. Sometimes, short-distance migrants are also partial migrants. Starling Sturnus vulgaris 
 
-**Long-distance migration** Migration over longer distances, usually >5000kms and often including the crossing of ecological barriers such as moun-tains, seas or deserts. Arctic tern Sterna para-disaea, Barn Swallow Hirundo rustica 
+**Long-distance migration** Migration over longer distances, usually >5000kms and often including the crossing of ecological barriers such as mountains, seas or deserts. Arctic tern Sterna paradisaea, Barn Swallow Hirundo rustica 
 
-**Nomadism**	Irregular (not every year) movements to new breeding or non-breeding areas depending on food availability or other environmental conditions. Crossbill Loxia curviros-tra
+**Nomadism**	Irregular (not every year) movements to new breeding or non-breeding areas depending on food availability or other environmental conditions. Crossbill Loxia curvirostra
 
 **Irruptive migration**	Migration of unusually many individuals of one species. Of-ten from north to south in autumn after a good breeding sea-son and a cold spell; usually do not occur every year, but can be relatively regular and synchronized between species (Korner-Nievergelt et al. 2008). Great tit Parus major, Coal tit Parus ater
 
