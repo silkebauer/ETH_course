@@ -1,8 +1,8 @@
 Tags;Weight;Data recorded;Pros;Cons
-Archival tags;;;;recapturing required, data analyses complex, location estimate with large error range
-Geolocators;05-1.5g;light and time (?geolocation?);light-weight;
-Multi-sensor loggers;1.0-1.5g;In addition to light: temperature, air pressure, activity (acceleration);+ additional information about behavior, e.g. flight height, number and duration of flight bouts, activity during stop-over periods;
-GPS loggers;;GPS position, possibly other variables temperature, pressure, activity, salinity;huge amount of information, precise location information;"recapturing required; relatively heavy"
+Archival tags;;;;
+Geolocators;05-1.5g;light and time (?geolocation?);light-weight;recapturing required, data analyses complex, location estimate with large error range
+Multi-sensor loggers;1.0-1.5g;In addition to light: temperature, air pressure, activity (acceleration);+ additional information about behavior, e.g. flight height, number and duration of flight bouts, activity during stop-over periods;recapturing required, data analyses complex, location estimate with large error range
+GPS loggers;>2.5g;GPS position, possibly other variables temperature, pressure, activity, salinity;huge amount of information, precise location information;"recapturing required; relatively heavy"
 ;;;;
 Transmitters;;;;
 PTT tags;;identification of an individual with a reader at a strategic place (nest, feeding site);small and light-weight (sometimes implanted);

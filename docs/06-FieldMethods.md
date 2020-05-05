@@ -8,18 +8,13 @@ Visual observations or observations by infrared cameras or radar result in count
 
 
 
-Table: (\#tab:nice-tab)Characteristics of different observation methods for the study of bird migration. MTR = migra-tion traffic rate (a standardized migration intensity)
+Table: (\#tab:nice-tab)Characteristics of different observation methods. MTR is migration traffic rate (a standardized migration intensity)
 
-characteristics                             visual                                                        moon                                                          IR                                   radar                              
-------------------------------------------  ------------------------------------------------------------  ------------------------------------------------------------  -----------------------------------  -----------------------------------
-detection range                             <~500m                                                        <1,5km                                                        ~10km                                >10km                              
-factors influencing detection probability   observer, weather, type of scope, distance, size of species   observer, weather, type of scope, distance, size of species   weather, distance, size of species   weather, distance, size of species 
-                                                                                                                                                                                                                                                
-information                                 numbers                                                       numbers (MTR)                                                 numbers (MTR)                        numbers (MTR)                      
-                                            species                                                       flight directions                                             flight directions                    flight directions                  
-                                            behaviour                                                                                                                                                        flight altitudes                   
-                                            flight directions                                                                                                                                                species group                      
-                                                                                                                                                                                                                                                
+characteristics                             visual                                                        moon                                                          IR                                   radar                                                          
+------------------------------------------  ------------------------------------------------------------  ------------------------------------------------------------  -----------------------------------  ---------------------------------------------------------------
+detection range                             <~500m                                                        <1,5km                                                        ~10km                                >10km                                                          
+factors influencing detection probability   observer, weather, type of scope, distance, size of species   observer, weather, type of scope, distance, size of species   weather, distance, size of species   weather, distance, size of species                             
+Information                                 Numbers, species, behaviour, flight directions                numbers (MTR), flight directions                              numbers, flight directions           numbers (MTR), flight directions and altitudes, species groups 
 
 Example studies of visual observations:
 - Phenology of birds in Switzerland based on records of amateur ornithologists, www.ornitho.ch (Win-kler 1999).
