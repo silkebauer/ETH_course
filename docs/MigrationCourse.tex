@@ -149,7 +149,7 @@ To compile this example to PDF, you need XeLaTeX. You are recommended to install
 
 The course consists of lectures, student work on projects and visits to the ringing station. As the latter is dependent on weather, the following schedule is not entirely fixed but somewhat flexible.
 
-Update for 2020 Corona-situation
+Update for
 
 \hypertarget{monday}{%
 \subsection{Monday}\label{monday}}
@@ -169,78 +169,6 @@ Update for 2020 Corona-situation
 
 \hypertarget{friday}{%
 \subsection{Friday}\label{friday}}
-
-projects
-
-You can label c
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{knitr}\OperatorTok{::}\KeywordTok{kable}\NormalTok{(}
-  \KeywordTok{head}\NormalTok{(iris, }\DecValTok{20}\NormalTok{), }\DataTypeTok{caption =} \StringTok{'Here is a nice table!'}\NormalTok{,}
-  \DataTypeTok{booktabs =} \OtherTok{TRUE}
-\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{table}
-
-\caption{\label{tab:nice-tab}Here is a nice table!}
-\centering
-\begin{tabular}[t]{rrrrl}
-\toprule
-Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species\\
-\midrule
-5.1 & 3.5 & 1.4 & 0.2 & setosa\\
-4.9 & 3.0 & 1.4 & 0.2 & setosa\\
-4.7 & 3.2 & 1.3 & 0.2 & setosa\\
-4.6 & 3.1 & 1.5 & 0.2 & setosa\\
-5.0 & 3.6 & 1.4 & 0.2 & setosa\\
-\addlinespace
-5.4 & 3.9 & 1.7 & 0.4 & setosa\\
-4.6 & 3.4 & 1.4 & 0.3 & setosa\\
-5.0 & 3.4 & 1.5 & 0.2 & setosa\\
-4.4 & 2.9 & 1.4 & 0.2 & setosa\\
-4.9 & 3.1 & 1.5 & 0.1 & setosa\\
-\addlinespace
-5.4 & 3.7 & 1.5 & 0.2 & setosa\\
-4.8 & 3.4 & 1.6 & 0.2 & setosa\\
-4.8 & 3.0 & 1.4 & 0.1 & setosa\\
-4.3 & 3.0 & 1.1 & 0.1 & setosa\\
-5.8 & 4.0 & 1.2 & 0.2 & setosa\\
-\addlinespace
-5.7 & 4.4 & 1.5 & 0.4 & setosa\\
-5.4 & 3.9 & 1.3 & 0.4 & setosa\\
-5.1 & 3.5 & 1.4 & 0.3 & setosa\\
-5.7 & 3.8 & 1.7 & 0.3 & setosa\\
-5.1 & 3.8 & 1.5 & 0.3 & setosa\\
-\bottomrule
-\end{tabular}
-\end{table}
-
-hapter and section titles using \texttt{\{\#label\}} after them, e.g., we can reference Chapter \ref{intro}. If you do not manually label them, there will be automatic labels anyway, e.g., Chapter \ref{methods}.
-
-Figures and tables with captions will be placed in \texttt{figure} and \texttt{table} environments, respectively.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{par}\NormalTok{(}\DataTypeTok{mar =} \KeywordTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{, }\DecValTok{4}\NormalTok{, }\FloatTok{.1}\NormalTok{, }\FloatTok{.1}\NormalTok{))}
-\KeywordTok{plot}\NormalTok{(pressure, }\DataTypeTok{type =} \StringTok{'b'}\NormalTok{, }\DataTypeTok{pch =} \DecValTok{19}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{figure}
-
-{\centering \includegraphics[width=0.8\linewidth]{01-intro_files/figure-latex/nice-fig-1} 
-
-}
-
-\caption{Here is a nice figure!}\label{fig:nice-fig}
-\end{figure}
-
-Reference a figure by its code chunk label with the \texttt{fig:} prefix, e.g., see Figure \ref{fig:nice-fig}. Similarly, you can reference tables generated from \texttt{knitr::kable()}, e.g., see Table \ref{tab:nice-tab}.
-
-You can write citations, too. For example, we are using the \textbf{bookdown} package \citep{R-bookdown} in this sample book, which was built on top of R Markdown and \textbf{knitr} \citep{xie2015}.
 
 \hypertarget{animal-migration}{%
 \chapter{Animal migration}\label{animal-migration}}
@@ -492,20 +420,26 @@ Further reading: Liechti \& McGuire (2017) compare migration flyways, timing of 
 
 Visual observations or observations by infrared cameras or radar result in counts of birds at a given time at a given location. Often, some behavioral observations are also recorded, such as flight altitude, flight direction or the behaviour of a bird resting on the ground. The different observation techniques differ in their detection ranges and in the information they provide (Table 5).
 
-Table 5. Characteristics of different observation methods for the study of bird migration. MTR = migra-tion traffic rate (a standardized migration intensity)
-characteristics visual moon IR radar
-detection range \textless\textasciitilde500m \textless1,5km \textasciitilde10km \textgreater10km
-factors influencing detection probabil-ity observer, weath-er, type of scope, distance, size of species observer, weather, type of scope, dis-tance, size of spe-cies weather, dis-tance, size of species
-weather, dis-tance, size of species
-information numbers
-species
-behaviour
-flight directions numbers (MTR)
-flight directions numbers (MTR)
-flight directions numbers (MTR)
-flight directions
-flight altitudes
-species group
+\begin{table}
+
+\caption{\label{tab:nice-tab}Characteristics of different observation methods for the study of bird migration. MTR = migra-tion traffic rate (a standardized migration intensity)}
+\centering
+\begin{tabular}[t]{lllll}
+\toprule
+characteristics & visual & moon & IR & radar\\
+\midrule
+detection range & <\textasciitilde{}500m & <1,5km & \textasciitilde{}10km & >10km\\
+factors influencing detection probability & observer, weather, type of scope, distance, size of species & observer, weather, type of scope, distance, size of species & weather, distance, size of species & weather, distance, size of species\\
+ &  &  &  & \\
+information & numbers & numbers (MTR) & numbers (MTR) & numbers (MTR)\\
+ & species & flight directions & flight directions & flight directions\\
+\addlinespace
+ & behaviour &  &  & flight altitudes\\
+ & flight directions &  &  & species group\\
+ &  &  &  & \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 Example studies of visual observations:
 - Phenology of birds in Switzerland based on records of amateur ornithologists, www.ornitho.ch (Win-kler 1999).
