@@ -1,4 +1,4 @@
-book_filename: "MigrationCourse"
+book_filename: "MigrationCourse.Rmd"
 delete_merged_file: true
 language:
   ui:
