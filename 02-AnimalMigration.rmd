@@ -1,9 +1,3 @@
----
-output: 
-  html_document: 
-    fig_caption: yes
-    toc: yes
----
 # Animal migration
 ## What is migration? 
 

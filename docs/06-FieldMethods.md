@@ -3,21 +3,23 @@
 ##	Observations (visual, moonwatching, IR, radar)
 Visual observations or observations by infrared cameras or radar result in counts of birds at a given time at a given location. Often, some behavioral observations are also recorded, such as flight altitude, flight direction or the behaviour of a bird resting on the ground. The different observation techniques differ in their detection ranges and in the information they provide (Table 5).
 
-Table 5. Characteristics of different observation methods for the study of bird migration. MTR = migra-tion traffic rate (a standardized migration intensity)
-characteristics	visual	moon	IR	radar
-detection range	<~500m	<1,5km	~10km	>10km
-factors influencing detection probabil-ity	observer, weath-er, type of scope, distance, size of species	observer, weather, type of scope, dis-tance, size of spe-cies	weather, dis-tance, size of species
-	weather, dis-tance, size of species
-information	numbers
-species
-behaviour
-flight directions	numbers (MTR)
-flight directions	numbers (MTR)
-flight directions	numbers (MTR)
-flight directions
-flight altitudes
-species group
 
+
+
+
+
+Table: (\#tab:nice-tab)Characteristics of different observation methods for the study of bird migration. MTR = migra-tion traffic rate (a standardized migration intensity)
+
+characteristics                             visual                                                        moon                                                          IR                                   radar                              
+------------------------------------------  ------------------------------------------------------------  ------------------------------------------------------------  -----------------------------------  -----------------------------------
+detection range                             <~500m                                                        <1,5km                                                        ~10km                                >10km                              
+factors influencing detection probability   observer, weather, type of scope, distance, size of species   observer, weather, type of scope, distance, size of species   weather, distance, size of species   weather, distance, size of species 
+                                                                                                                                                                                                                                                
+information                                 numbers                                                       numbers (MTR)                                                 numbers (MTR)                        numbers (MTR)                      
+                                            species                                                       flight directions                                             flight directions                    flight directions                  
+                                            behaviour                                                                                                                                                        flight altitudes                   
+                                            flight directions                                                                                                                                                species group                      
+                                                                                                                                                                                                                                                
 
 Example studies of visual observations:
 - Phenology of birds in Switzerland based on records of amateur ornithologists, www.ornitho.ch (Win-kler 1999).
