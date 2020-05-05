@@ -4,5 +4,6 @@ language:
   ui:
     chapter_name: "Chapter "
 output_dir: "docs"
-new_session: yes    
-    
+new_session: yes
+
+# All other settings are defined in index.Rmd
