@@ -53,9 +53,9 @@
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -64,16 +64,14 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -82,9 +80,9 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  {  }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+a.sourceLine::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -148,15 +146,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.3" data-path="animal-migration.html"><a href="animal-migration.html#terminology-of-specific-migration-patterns"><i class="fa fa-check"></i><b>3.3</b> Terminology of specific migration patterns</a></li>
 <li class="chapter" data-level="3.4" data-path="animal-migration.html"><a href="animal-migration.html#importance-of-migration-for-the-structure-and-dynamics-of-resident-communities"><i class="fa fa-check"></i><b>3.4</b> Importance of migration for the structure and dynamics of resident communities</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="timing-of-migration.html"><a href="timing-of-migration.html"><i class="fa fa-check"></i><b>4</b> Timing of migration</a><ul>
-<li class="chapter" data-level="4.1" data-path="timing-of-migration.html"><a href="timing-of-migration.html#why-is-timing-important"><i class="fa fa-check"></i><b>4.1</b> Why is timing important?</a></li>
-<li class="chapter" data-level="4.2" data-path="timing-of-migration.html"><a href="timing-of-migration.html#what-determines-the-timing-of-migratory-steps-cues"><i class="fa fa-check"></i><b>4.2</b> What determines the timing of migratory steps? Cues!</a><ul>
-<li class="chapter" data-level="4.2.1" data-path="timing-of-migration.html"><a href="timing-of-migration.html#preparation"><i class="fa fa-check"></i><b>4.2.1</b> Preparation</a></li>
-<li class="chapter" data-level="4.2.2" data-path="timing-of-migration.html"><a href="timing-of-migration.html#departure"><i class="fa fa-check"></i><b>4.2.2</b> Departure</a></li>
-<li class="chapter" data-level="4.2.3" data-path="timing-of-migration.html"><a href="timing-of-migration.html#on-the-way"><i class="fa fa-check"></i><b>4.2.3</b> On the way</a></li>
-<li class="chapter" data-level="4.2.4" data-path="timing-of-migration.html"><a href="timing-of-migration.html#termination"><i class="fa fa-check"></i><b>4.2.4</b> Termination</a></li>
+<li class="chapter" data-level="4" data-path="Sec-TimingMigration.html"><a href="Sec-TimingMigration.html"><i class="fa fa-check"></i><b>4</b> Timing of migration</a><ul>
+<li class="chapter" data-level="4.1" data-path="Sec-TimingMigration.html"><a href="Sec-TimingMigration.html#why-is-timing-important"><i class="fa fa-check"></i><b>4.1</b> Why is timing important?</a></li>
+<li class="chapter" data-level="4.2" data-path="Sec-TimingMigration.html"><a href="Sec-TimingMigration.html#what-determines-the-timing-of-migratory-steps-cues"><i class="fa fa-check"></i><b>4.2</b> What determines the timing of migratory steps? Cues!</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="Sec-TimingMigration.html"><a href="Sec-TimingMigration.html#preparation"><i class="fa fa-check"></i><b>4.2.1</b> Preparation</a></li>
+<li class="chapter" data-level="4.2.2" data-path="Sec-TimingMigration.html"><a href="Sec-TimingMigration.html#departure"><i class="fa fa-check"></i><b>4.2.2</b> Departure</a></li>
+<li class="chapter" data-level="4.2.3" data-path="Sec-TimingMigration.html"><a href="Sec-TimingMigration.html#on-the-way"><i class="fa fa-check"></i><b>4.2.3</b> On the way</a></li>
+<li class="chapter" data-level="4.2.4" data-path="Sec-TimingMigration.html"><a href="Sec-TimingMigration.html#termination"><i class="fa fa-check"></i><b>4.2.4</b> Termination</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="timing-of-migration.html"><a href="timing-of-migration.html#consequences-of-migration-timing"><i class="fa fa-check"></i><b>4.3</b> Consequences of migration timing</a></li>
+<li class="chapter" data-level="4.3" data-path="Sec-TimingMigration.html"><a href="Sec-TimingMigration.html#consequences-of-migration-timing"><i class="fa fa-check"></i><b>4.3</b> Consequences of migration timing</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="orientation.html"><a href="orientation.html"><i class="fa fa-check"></i><b>5</b> Orientation</a><ul>
 <li class="chapter" data-level="5.1" data-path="orientation.html"><a href="orientation.html#sun-compass"><i class="fa fa-check"></i><b>5.1</b> Sun compass</a></li>
@@ -195,7 +193,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.6" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#the-combination-of-different-data-sources"><i class="fa fa-check"></i><b>9.6</b> The combination of different data sources</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="student-projects.html"><a href="student-projects.html"><i class="fa fa-check"></i><b>10</b> Student projects</a><ul>
-<li class="chapter" data-level="10.1" data-path="student-projects.html"><a href="student-projects.html#phenology-migration-patterns-within-season-and-their-changes-over-the-years"><i class="fa fa-check"></i><b>10.1</b> Phenology: Migration patterns within season and their changes over the years</a></li>
+<li class="chapter" data-level="10.1" data-path="student-projects.html"><a href="student-projects.html#phenology-migration-patterns-within-the-season-and-their-changes-over-the-years"><i class="fa fa-check"></i><b>10.1</b> Phenology: Migration patterns within the season and their changes over the years</a></li>
 <li class="chapter" data-level="10.2" data-path="student-projects.html"><a href="student-projects.html#long-term-changes-in-morphology"><i class="fa fa-check"></i><b>10.2</b> Long-term changes in morphology</a></li>
 <li class="chapter" data-level="10.3" data-path="student-projects.html"><a href="student-projects.html#differential-migration"><i class="fa fa-check"></i><b>10.3</b> Differential Migration</a></li>
 <li class="chapter" data-level="10.4" data-path="student-projects.html"><a href="student-projects.html#flight-energetics-in-the-course-of-a-night-and-over-the-season"><i class="fa fa-check"></i><b>10.4</b> Flight energetics in the course of a night and over the season</a></li>
