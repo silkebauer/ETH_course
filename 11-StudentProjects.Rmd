@@ -5,17 +5,17 @@ We encourage students to work on a research project during the course. We have c
 
 ## Phenology: Migration patterns within the season and their changes over the years
 
-Phenology characterises the temporal course of migration. Naturally, phenology has different aspects, e.g. how individuals of a species migrate in a particular season (spread-out over season or almost synchronized), whether there are differences between the seasons, whether there differences or similarities in the timing of migration between species (some migrate late, some early), whether the timing of migration changes over the years, etc.
+Phenology characterises the temporal course of migration. Naturally, phenology has different aspects, e.g. how individuals of a species migrate in a particular season (spread-out over season or almost synchronized), how different is the migration pattern between seasons (e.g. spring and autumn migration), how different is the timing of migration between species (which species migrate late, which early), how has the timing of migration changed over the years, etc.
 
 Potential research questions that you may select, include:
-- Within a species: characterise phenology of migration in a single season
+- Within a species: characterise phenology of migration for different sexes or age classes in a single season. Who is early, who late?
 
-- Between species comparison: Characterise a selection of species in their migration phenology. 
+- Between species comparison: Characterise a selection of species in their migration phenology. Which species migrate early, which late? How different is the among-year variance in the timing of migration?
 
 
-Once you have one or more of the above, try to link the timing of migration to ecological variables,  
+Start with a description of the migration pattern for the selected species and groups of individuals within the species. Then, try to link the timing of migration to ecological variables.  
 
-Which species migrate early or late and why?
+Which species/groups of individuals migrate early or late and why?
 Link migration patterns (median of migration) to ecological variables such as migration route, food and other species-traits
 Has the timing of peak migration changed over the years? If so, in which species? What could be potential reasons?
 

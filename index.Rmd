@@ -1,6 +1,6 @@
 --- 
 title: "Migration Course"
-author: "Fränzi Korner & Silke Bauer"
+author: "Silke Bauer & Fränzi Korner-Nievergelt"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
