@@ -1,4 +1,0 @@
-characteristics;visual;moon;IR;radar
-detection range;<~500m;<1,5km;~10km;>10km
-factors influencing detection probability;observer, weather, type of scope, distance, size of species;observer, weather, type of scope, distance, size of species;weather, distance, size of species;weather, distance, size of species
-Information;Numbers, species, behaviour, flight directions;numbers (MTR), flight directions;numbers, flight directions;numbers (MTR), flight directions and altitudes, species groups
