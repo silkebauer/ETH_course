@@ -18,19 +18,20 @@ knitr::kable(
 
 
 
-Example studies of visual observations:
-- Phenology of birds in Switzerland based on records of amateur ornithologists, [link](www.ornitho.ch) (Win-kler 1999).
-- Description of migration pattern of Marsh warbler Acrocephalus palustris to southern Africa (Dowsett-Lemaire & Dowsett 1987).
+Example studies of visual observations:  
 
-Example studies of moon watching:
-- Broad front migration and the Alps as an obstacle (Liechti et al. 1996).
+- EuroBird Portal: Phenology of migratory species based on records of amateur ornithologists, [link](https://eurobirdportal.org/ebp/en/#home/HIRRUS/r52weeks/CUCCAN/r52weeks/).  
+- Description of migration pattern of Marsh warbler *Acrocephalus palustris* to southern Africa [@DowsettLemaire.1987].
 
-Example studies of infrared observations:
-- Quantification of reverse migration in southern Sweden (Zehnder et al. 2002).
+Example studies of moon watching:  
+- Broad front migration and the Alps as an obstacle [@Liechti.1996b].  
 
-Example radar studies:
-- The technical bases of bird observation by radar are explained in Bruderer (1997a) and Bruderer (1997b). 
-- Flight directions of migrating passerines along the autumn migration route (Liechti et al. 2012).
+Example studies of infrared observations:  
+- Quantification of reverse migration in southern Sweden [@Zehnder.2002].  
+
+Example radar studies:  
+- Flight directions of migrating passerines along the autumn migration route [@Liechti.2012].
+
 
 ##	Marking and reencountering
 Marking birds in order to find out how far and where they move has been started by the Danish Hans Christian Cornelius Mortensen (1856 – 1921) (Fig.  4). In 1899 he, for the first time, marked Starlings Sturnus vulgaris with aluminium rings that were uniquely numbered and contained an address to make a potential finder reporting the ring (Mortensen 1901). Motivated by the success of Mortensen, the first ringing station was initiated in Rossiten (today Rybachi) on the Kurische Nehrung in 1900. Shortly after, other ringing stations were started on Helgoland and in the UK.
