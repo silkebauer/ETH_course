@@ -1,12 +1,12 @@
 # Field methods {#Sec:FieldMethods}
 
 ##	Observations: visual, moonwatching, IR, radar
-Visual observations or observations by infrared cameras or radar result in counts of birds at a given time at a given location. Often, some behavioral observations are also recorded, such as flight altitude, flight direction or the behaviour of a bird resting on the ground. The different observation techniques differ in their detection ranges and in the information they provide (Table \@ref(tab:ObsMethods)).
+Visual observations or observations by infrared cameras or radar result in counts of birds at a given time at a given location. Often, some behavioral observations are also recorded, such as flight altitude, flight direction or the behaviour of a bird resting on the ground. The different observation techniques differ in their detection ranges and in the information they provide (Table \@ref(tab:tracking)).
 
 
-```{r ObsMethods, tidy=TRUE, echo=FALSE}
+```{r tracking, tidy=TRUE, echo=FALSE}
 
-obs_methods <- data.frame(read.csv("data/ObservationMethods.csv", h=T, sep=";"))
+obs_methods <- data.frame(read.csv("data/Tracking_methods.csv", h=T, sep=";"))
 
 knitr::kable(
   head(obs_methods, 20), caption = "\\label{tab:ObsMethods}Characteristics of different observation methods. MTR is migration traffic rate (a standardized migration intensity)",
@@ -21,7 +21,7 @@ knitr::kable(
 Example studies of visual observations:  
 
 - EuroBird Portal: Phenology of migratory species based on records of amateur ornithologists, [link](https://eurobirdportal.org/ebp/en/#home/HIRRUS/r52weeks/CUCCAN/r52weeks/).  
-- Description of migration pattern of Marsh warbler *Acrocephalus palustris* to southern Africa [@DowsettLemaire.1987].
+- Description of migration pattern of Marsh warbler *Acrocephalus palustris* to southern Africa [@DowsettLemaire.1987].  
 
 Example studies of moon watching:  
 - Broad front migration and the Alps as an obstacle [@Liechti.1996b].  
@@ -34,30 +34,29 @@ Example radar studies:
 
 
 ##	Marking and reencountering
-Marking birds in order to find out how far and where they move has been started by the Danish Hans Christian Cornelius Mortensen (1856 – 1921) (Fig.  4). In 1899 he, for the first time, marked Starlings Sturnus vulgaris with aluminium rings that were uniquely numbered and contained an address to make a potential finder reporting the ring (Mortensen 1901). Motivated by the success of Mortensen, the first ringing station was initiated in Rossiten (today Rybachi) on the Kurische Nehrung in 1900. Shortly after, other ringing stations were started on Helgoland and in the UK.
+Marking birds in order to find out how far and where they move has been started by the Danish Hans Christian Cornelius Mortensen (1856 – 1921). In 1899 he, for the first time, marked Starlings *Sturnus vulgaris* with aluminium rings that were uniquely numbered and contained an address to make a potential finder reporting the ring [@Mortensen.1901]. Motivated by the success of Mortensen, the first ringing station was initiated in Rossiten (today Rybachi) on the Kurische Nehrung in 1900. Shortly after, other ringing stations were started on Helgoland and in the UK.
 
-   
-Fig.  4. left: Hans Christian Cornelius Mortensen. Photo: de.wikipedia.org/wiki/Hans_Christian_Cornelius_Mortensen. right: A Snowfinch Montifringilla nivalis marked with a colour plastic ring containing an individual alpha-numeric code (H11).
-
-
-In Europe, around 5 million birds are ringed annually at many ringing stations by professional and pri-vate ringers in Europe (Balmer et al. 2008). The ring numbers are coordinated within the countries by the governments who normally delegated this job to ringing schemes. The European ringing schemes are connected within the EURING society [link](www.euring.org). In regular meetings and workshops, methodological standards are developed and the EURING data base, a data pool of all marking and reencounter data, maintained. EURING also started the EURING Analytical meeting [link](www.euring.org/meetings/analytical-meetings) that serves as a network of scientists developing statis-tical and mathematical tools for the analysis of mark-reencounter data.  
+Today, around 5 million birds are ringed annually at many ringing stations by professional and private ringers in Europe [@Balmer.2008]. The ring numbers are coordinated within the countries by the governments who normally delegate this job to ringing schemes. The European ringing schemes are connected within the [EURING society](https://www.euring.org). In regular meetings and workshops, methodological standards are developed and the EURING data base, a data pool of all marking and reencounter data, maintained. EURING also started the [EURING Analytical meeting](https://www.euring.org/meetings/analytical-meetings) that serves as a network of scientists developing statistical and mathematical tools for the analysis of mark-reencounter data.  
 The capturing and marking methods underly national policies. 
-Mark-reencounter data is widely used to estimate survival, population sizes, movement pattern, migra-tory connectivity, and stop-over durations. Du Feu et al. (2016) review the scientific achievements of bird ringing, present the aims and policies of the EURING data base and give perspectives of bird ring-ing. 
+Mark-reencounter data is widely used to estimate survival, population sizes, movement pattern, migratory connectivity, and stop-over durations. @DuFeu.2016 review the scientific achievements of bird ringing, present the aims and policies of the EURING data base and give perspectives of bird ringing. 
 
-A central challenge in the interpretation of mark-reencounter data is the spatial and temporal heteroge-neity of ring reencounter probability (Perdeck 1977, Korner-Nievergelt et al. 2010, Thorup et al. 2014). Mark-recapture modelling techniques such as the Cormack-Jolly-Seber (CJS, Chapter 8.3) model (Cormack 1964, Jolly 1965, Seber 1965), the multi-state model (Arnason 1972, Arnason et al. 1991) or mark-dead recovery model (Brownie et al. 1985), are seminal techniques that are nowadays widely applied and integrated in a variety of different ecological models. These models estimate reencounter probability and thereby account for its heterogeneity while interpreting mark-reencounter data.   
-Many countries published their ring reencounters in migration atlases, e.g. Zink (1985), Zink et al. (1995), Brewer et al. (2000), Fransson & Pettersson (2001), Wernham et al. (2002), Bakken et al. (2003),  Bønløkke et al. (2006), and Saurola et al. (2013).  
+A central challenge in the interpretation of mark-reencounter data is the spatial and temporal heterogeneity of reencounter probability [@Perdeck.1977, @KornerNievergelt.2010b, @Thorup.2014]. Mark-recapture modelling techniques such as the Cormack-Jolly-Seber model [@Cormack.1964, @Jolly.1965, @Seber.1965], the multi-state model [@Arnason.1972, @Arnason.1991] or mark-dead recovery model [@Brownie.1985], are seminal techniques that are nowadays widely applied and integrated in a variety of different ecological models. These models estimate reencounter probability and thereby account for its heterogeneity while interpreting mark-reencounter data.   
+Many countries published their mark reencounters in migration atlases, e.g. @Bnlkke.2006, and @Saurola.2013.  
 
 Examples of quantifying migratory connectivity studies based on ring reencounters: 
--	Estimation of the proportions of some song bird species migrating to Africa (Thorup & Conn 2009).
--	Origin of Woodcocks hunted in France (Bauthian et al. 2007).
--	Migratory connectivity of European Nightingales Luscinia megarhynchos (Korner-Nievergelt et al. 2012)
--	Migratory connectivity of European reed warblers Acrocephalus scirpaceus (Procházka et al. 2017).
+-	Estimation of the proportions of some song bird species migrating to Africa [@Thorup.2009].  
+-	Origin of Woodcocks hunted in France [@Bauthian.2007].  
+-	Migratory connectivity of European Nightingales *Luscinia megarhynchos* [@KornerNievergelt.2012b]  
+-	Migratory connectivity of European reed warblers *Acrocephalus scirpaceus* [@Prochazka.2016].  
 
-Examples of survival analysis based on mark-reencounter data:
+Examples of survival analysis based on mark-reencounter data:  
 - Sillett & Holmes (2002) estimated lower survival during migration compared to the breeding and non-breeding periods in the Black-throated blue warbler Dendroica caerulescens.
+- Survival of Snowfinches in the Abruzzi
 
 Examples of estimating stop-over duration based on mark-reencounter data:
 - Estimation of stop-over duration of passerines in the Bolle di Magadino CH during spring migration (Schaub et al. 2001).
+
+
 
 
 ##	Tracking individuals
