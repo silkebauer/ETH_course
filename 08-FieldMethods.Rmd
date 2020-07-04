@@ -21,12 +21,15 @@ Example studies of visual observations:
 - Description of migration pattern of Marsh warbler *Acrocephalus palustris* to southern Africa [@DowsettLemaire.1987].  
 
 Example studies of moon watching:  
+
 - Broad front migration and the Alps as an obstacle [@Liechti.1996b].  
 
 Example studies of infrared observations:  
+
 - Quantification of reverse migration in southern Sweden [@Zehnder.2002].  
 
 Example radar studies:  
+
 - Flight directions of migrating passerines along the autumn migration route [@Liechti.2012].
 
 
@@ -41,6 +44,7 @@ A central challenge in the interpretation of mark-reencounter data is the spatia
 Many countries published their mark reencounters in migration atlases, e.g. @Bnlkke.2006, and @Saurola.2013.  
 
 Examples of quantifying migratory connectivity studies based on ring reencounters: 
+
 -	Estimation of the proportions of some song bird species migrating to Africa [@Thorup.2009].  
 -	Origin of Woodcocks hunted in France [@Bauthian.2007].  
 -	Migratory connectivity of European Nightingales *Luscinia megarhynchos* [@KornerNievergelt.2012b]  
@@ -51,8 +55,9 @@ For estimating survival, it makes a fundamental difference whether the marked an
 When marked animals are recaptured and released alive or resighted, the exact time of death is not known but a minimum life-span is known. In order to estimates survival from such data, it is necessary to estimate recapture or resighting probability (reencounter probability). If reencounter probability is known we can estimate the probability that an individual is still alive dependent on the time after its last reencounter. The CJS model allows estimating both reencounter and (apparent) survival probability. However, because both dead individuals and individuals that emigrated from the study area can no longer be reencountered, the model cannot distinguish between emigration and death. Therefore, the "survival" estimates from mark-recapture/resighting data have to be interpreted as the probability that an individual stays in the study area and survives, the so called apparent survival. 
 
 Example studies:  
+
 - @Sillett.2002 estimated lower apparent survival during migration compared to the breeding and non-breeding periods in the Black-throated blue warbler *Dendroica caerulescens*.  
-- In the central Appenine, female Snowfinches *Montifringilla nivalis* disappear at a higher rate in years with warm and dry summers, whereas the apparent survival of males does not seem to depend on summer weather [@Strinella.2020].
+- In the central Apennine, female White-winged snowfinches *Montifringilla nivalis* disappear at a higher rate in years with warm and dry summers, whereas the apparent survival of males does not seem to depend on summer weather [@Strinella.2020].
 
 
 
@@ -62,30 +67,37 @@ The vision of being able to follow a migratory bird on a computer screen has bec
 
 Two major principles exist for tacking devices. Archival tags store information on geographic position or anything else locally and the tracking device needs to be retrieved to access this information. In contrast, transmitters actively transmit information to a receiver such that data can be remotely downloaded (Table \@ref(tab:TrackTechnology)). The development of tracking devices is ongoing intensively. Devices become smaller, energy households more efficient, type of measurements more diverse and programming more flexible.  
 
-```{r TrackTechnology, tidy=TRUE, echo=FALSE}
+Table: (\#tab:TrackTechnology) Characteristics of different tracking techniques. Adapted from @Robinson.2010.
 
-track_methods <- data.frame(read.csv("tables/TrackingMethods.csv", h=T, sep=";"))
+Tag type   | Data          | Pros and cons        |  
+:-------|:------------------|:------------------|
+*Archival tags* |     |    | 
+Geolocators | Light and time | +:light weight (0.5 - 1.5g), recapturing required;  -:data analyses complex, location estimate with large error range (equinox) | 
+Multi-sensor loggers | light and time  temperature  pressure  activity | +:additional information such as flight height, activity, etc., combination of data for better location estimation;  -:recapturing necessary |
+GPS loggers | GPS position  temperature  pressure  activity  salinity | +:huge amount of information, precise location information;  -:recapturing necessary, relatively heavy |
+*Transmitters* |     |    | 
+PTT tags, RFID Radio frequency identification | identification of an individual with a reader at a strategic place (nest, feeding site) | +:low cost, small and leight-weigt (sometimes implanted); -:readers are expensive, individual is registered only when it is close to the reader (data are often noisy) |
+Radio telemetry, VHF very high frequency telemetry | identification of an individual by an antenna over short to medium long distances (0-ca. 20km) | +:remote data collection, can be very light (0.3g), precise location information; -:battery life limited for small transmitters, high effort for data collection |
+Satellite telemetry, e.g. ARGOS | GPS position of individuals at any time anywhere on the globe | +:remote data collection via satellite over very long distances, almost no effort needed for data collection, precise location information; -:large weight, expensive |
 
-knitr::kable(
-  head(track_methods, 20), caption = "\\label{tab:TrackTechnology}Characteristics of different tracking techniques",
-  format.args = list(width = 30),
-  booktabs = TRUE,
-)
-```
+The [Motus project](https://motus.org/) is a world wide radio telemetry collaboration. Antennas around the world register radio tagged animals and send the information to the researchers.
 
 The [movebank data base](https://www.movebank.org) is collecting tracking data from different studies. Its aim is to foster collaboration between different researchers. Some of the data are even provided for free.
 
 Example studies using geolocation: 
+
 - Non-breeding areas of Barn swallows *Hirundo rustica* [@Liechti.2014].    
 - Migration pattern in relation to ecological barriers: [@Hahn.2014b].  
 -Effects of geolocation on behaviour and body condition: Geolocators that weighted more than 2.3% of the body mass of tracked bird negatively influenced return rates in waders [@Weiser.2016].  
 
 Example studies using radio telemetry:  
+
 - @Bachler.2006 estimated stop-over durations in an oasis of the Sahara using mark-resighting data and compared these estimates with stop-over durations measured using radio telemetry.  
 - At an Alaskan stop-over site,@Schmaljohann.2013 studied the effect of fuel load and weather on stop-over duration of the Wheatear *Oenanthe oenanthe*.   
 - The first animal that was tracked by radio telemetry was a Grizzly bear *Ursus horribilis* [@Craighead.1972].  
 
 Example studies of satellite telemetry:  
+
 - @Kjellen.1997 tracked two Ospreys *Pandion haliaetus* from the same breeding location. The two individuals used completely different migration routes. The technique is nowadays widely applied for the study of movement behaviour of larger birds.
 
 
