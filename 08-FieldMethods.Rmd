@@ -1,18 +1,15 @@
 # Field methods {#Sec:FieldMethods}
 
 ##	Observations: visual, moonwatching, IR, radar
-Visual observations or observations by infrared cameras or radar result in counts of birds at a given time at a given location. Often, some behavioral observations are also recorded, such as flight altitude, flight direction or the behaviour of a bird resting on the ground. The different observation techniques differ in their detection ranges and in the information they provide (Table \@ref(tab:tracking)).
+Visual observations or observations by infrared cameras or radar result in counts of birds at a given time at a given location. Often, some behavioral observations are also recorded, such as flight altitude, flight direction or the behaviour of a bird resting on the ground. The different observation techniques differ in their detection ranges and in the information they provide (Table \@ref(tab:obsmethods)).
 
 
-```{r tracking, tidy=TRUE, echo=FALSE}
+```{r obsmethods, tidy=TRUE, echo=FALSE}
+obs_methods <- data.frame(read.csv("tables/ObservationMethods.csv", h=T, sep=";"))
 
-obs_methods <- data.frame(read.csv("data/Tracking_methods.csv", h=T, sep=";"))
-
-knitr::kable(
-  head(obs_methods, 20), caption = "\\label{tab:ObsMethods}Characteristics of different observation methods. MTR is migration traffic rate (a standardized migration intensity)",
+knitr::kable(obs_methods, caption = "\\label{tab:obsmethods}Characteristics of different observation methods. MTR is migration traffic rate (a standardized migration intensity)",
   format.args = list(width = 30),
-  booktabs = TRUE,
-)
+  booktabs = TRUE)
 ```
 
 
@@ -40,7 +37,7 @@ Today, around 5 million birds are ringed annually at many ringing stations by pr
 The capturing and marking methods underly national policies. 
 Mark-reencounter data is widely used to estimate survival, population sizes, movement pattern, migratory connectivity, and stop-over durations. @DuFeu.2016 review the scientific achievements of bird ringing, present the aims and policies of the EURING data base and give perspectives of bird ringing. 
 
-A central challenge in the interpretation of mark-reencounter data is the spatial and temporal heterogeneity of reencounter probability [@Perdeck.1977, @KornerNievergelt.2010b, @Thorup.2014]. Mark-recapture modelling techniques such as the Cormack-Jolly-Seber model [@Cormack.1964, @Jolly.1965, @Seber.1965], the multi-state model [@Arnason.1972, @Arnason.1991] or mark-dead recovery model [@Brownie.1985], are seminal techniques that are nowadays widely applied and integrated in a variety of different ecological models. These models estimate reencounter probability and thereby account for its heterogeneity while interpreting mark-reencounter data.   
+A central challenge in the interpretation of mark-reencounter data is the spatial and temporal heterogeneity of reencounter probability [@Perdeck.1977; @KornerNievergelt.2010b; @Thorup.2014]. Mark-recapture modelling techniques such as the Cormack-Jolly-Seber (CJS) model [@Cormack.1964; @Jolly.1965; @Seber.1965], the multi-state model [@Arnason.1972; @Arnason.1991] or mark-dead recovery model [@Brownie.1985], are seminal techniques that are nowadays widely applied and integrated in a variety of different ecological models. These models estimate reencounter probability and thereby account for its heterogeneity while interpreting mark-reencounter data.   
 Many countries published their mark reencounters in migration atlases, e.g. @Bnlkke.2006, and @Saurola.2013.  
 
 Examples of quantifying migratory connectivity studies based on ring reencounters: 
@@ -49,27 +46,21 @@ Examples of quantifying migratory connectivity studies based on ring reencounter
 -	Migratory connectivity of European Nightingales *Luscinia megarhynchos* [@KornerNievergelt.2012b]  
 -	Migratory connectivity of European reed warblers *Acrocephalus scirpaceus* [@Prochazka.2016].  
 
-Examples of survival analysis based on mark-reencounter data:  
-- Sillett & Holmes (2002) estimated lower survival during migration compared to the breeding and non-breeding periods in the Black-throated blue warbler Dendroica caerulescens.
-- Survival of Snowfinches in the Abruzzi
+For estimating survival, it makes a fundamental difference whether the marked animal is found dead or whether it is resighted or recaptured alive.  When it is found dead the time of death and thus the lifespan of the individual is known. If we assume that the probability that a dead animal is found and its mark reported is independent of its age, then annual survival estimates are straight foreward. For example, using dead recoveries of 8 different songbird species ringed in Denmark,   @LercheJrgensen.2018 found that early arriving long-distance migrants in spring have a lower survival compared to late arriving individuals whereas arrival date was not correlated with survival in short-distance migrants. Interestingly, female long distance migrants arrived in average at a date correlatd with highest survival, whereas males arrived earlier thereby risking an increase in mortality.
 
-Examples of estimating stop-over duration based on mark-reencounter data:
-- Estimation of stop-over duration of passerines in the Bolle di Magadino CH during spring migration (Schaub et al. 2001).
+When marked animals are recaptured and released alive or resighted, the exact time of death is not known but a minimum life-span is known. In order to estimates survival from such data, it is necessary to estimate recapture or resighting probability (reencounter probability). If reencounter probability is known we can estimate the probability that an individual is still alive dependent on the time after its last reencounter. The CJS model allows estimating both reencounter and (apparent) survival probability. However, because both dead individuals and individuals that emigrated from the study area can no longer be reencountered, the model cannot distinguish between emigration and death. Therefore, the "survival" estimates from mark-recapture/resighting data have to be interpreted as the probability that an individual stays in the study area and survives, the so called apparent survival. 
 
+Example studies:  
+- @Sillett.2002 estimated lower apparent survival during migration compared to the breeding and non-breeding periods in the Black-throated blue warbler *Dendroica caerulescens*.  
+- In the central Appenine, female Snowfinches *Montifringilla nivalis* disappear at a higher rate in years with warm and dry summers, whereas the apparent survival of males does not seem to depend on summer weather [@Strinella.2020].
 
 
 
 ##	Tracking individuals
 
-The vision of being able to follow a migratory bird on a computer screen has become, at least for larger animals, reality by now. The appealing property of tracking individuals is the fact that the individual is known and the movement behaviour can be related to individual characteristics. 
+The vision of being able to follow a migratory bird on a computer screen has become, at least for larger animals, reality by now. Geographic position, flight altitude and other variables can be measured within short time and related to individual characteristics.  
 
-Two major principles exist for tacking devices - for one, information on location or anything else is stored locally and the tracking device needs to be retrieved to access this information; the other are devices which actively transmit information to a receiver such that data can be remotely downloaded (Table \@ref(tab:TrackTechnology)). The development of tracking devices has 
-
-
-
-The archival tags require that the animal is re-captured later to download the data, whereas transmit-ters (= “senders”) allow for remote data collection (Table \@ref(tab:TrackTechnology)). The development of the technique is ongo-ing intensively. Devices become smaller and techniques are combined to fit specific needs of the sci-entists. 
-
-
+Two major principles exist for tacking devices. Archival tags store information on geographic position or anything else locally and the tracking device needs to be retrieved to access this information. In contrast, transmitters actively transmit information to a receiver such that data can be remotely downloaded (Table \@ref(tab:TrackTechnology)). The development of tracking devices is ongoing intensively. Devices become smaller, energy households more efficient, type of measurements more diverse and programming more flexible.  
 
 ```{r TrackTechnology, tidy=TRUE, echo=FALSE}
 
@@ -82,30 +73,30 @@ knitr::kable(
 )
 ```
 
-caption="\\label{tab:tab2}A `kable` table")
+The [movebank data base](https://www.movebank.org) is collecting tracking data from different studies. Its aim is to foster collaboration between different researchers. Some of the data are even provided for free.
 
 Example studies using geolocation: 
-- Non-breeding areas of Barn swallows Hirundo rustica: (Liechti et al. 2014).
-- Migration pattern in relation to ecological barriers: (Hahn et al. 2014).
-Effects of geolocation on behaviour and body condition: Geolocators that weighted more than 2.3% of the body mass of tracked bird negatively influenced return rates in waders (Weiser et al. 2016). 
+- Non-breeding areas of Barn swallows *Hirundo rustica* [@Liechti.2014].    
+- Migration pattern in relation to ecological barriers: [@Hahn.2014b].  
+-Effects of geolocation on behaviour and body condition: Geolocators that weighted more than 2.3% of the body mass of tracked bird negatively influenced return rates in waders [@Weiser.2016].  
 
-Example studies using radio telemetry:
-- Bächler & Schaub (2006) estimated stop-over durations in an oasis of the Sahara using mark-re-sighting data and compared these estimates with stop-over durations measured using radio telemetry.
-- At an Alaskan stop-over site, Schmaljohann et al. (2013) studied the effect of fuel load and weather on stop-over duration of the Wheatear Oenanthe oenanthe. 
-- The first animal that was tracked by radio telemetry was a Grizzly bear Ursus horribilis (Craighead & Craighead 1972).
+Example studies using radio telemetry:  
+- @Bachler.2006 estimated stop-over durations in an oasis of the Sahara using mark-resighting data and compared these estimates with stop-over durations measured using radio telemetry.  
+- At an Alaskan stop-over site,@Schmaljohann.2013 studied the effect of fuel load and weather on stop-over duration of the Wheatear *Oenanthe oenanthe*.   
+- The first animal that was tracked by radio telemetry was a Grizzly bear *Ursus horribilis* [@Craighead.1972].  
 
-Example studies of satellite telemetry:
-- Kjellén et al. (1997) tracked two Osprey Pandion haliaetus individuals from the same breeding loca-tion. The two individuals used completely different migration routes. The technique is nowadays widely applied for the study of movement behaviour of larger birds.
+Example studies of satellite telemetry:  
+- @Kjellen.1997 tracked two Ospreys *Pandion haliaetus* from the same breeding location. The two individuals used completely different migration routes. The technique is nowadays widely applied for the study of movement behaviour of larger birds.
 
 
 
 ##	Orientation experiments
-Kramer (1949) detected that migratory birds show a directional preference. This behaviour has widely been used to study bird orientation using orientation cages. Emlen & Emlen (1966) designed an orien-tation cage that is still in use, the so-called "Emlen-funnel". Originally, ink was used to visualize the birds tracks. The ink was replaced by typewriter paper on which birds leave scratches while their feathers stayed clean. Some methodological issues with this type of orientation cage are discussed by Nievergelt & Liechti (2000). After typewriter paper has no longer been produced it was recently re-placed by thermal paper (Mouritsen et al. 2009). Automatic registration of bird activity reduces the amount of work for data collection, e.g. Mouritsen & Larsen (2001) or Beck & Wiltschko (1983). 
+@Kramer.1949 detected that migratory birds show a directional preference. This behaviour has widely been used to study bird orientation using orientation cages. @Emlen.1966 designed an orientation cage that is still in use, the so-called "Emlen-funnel". Originally, ink was used to visualize the birds tracks. The ink was replaced by typewriter paper on which birds leave scratches while their feathers stayed clean. Some methodological issues with this type of orientation cage are discussed by @Nievergelt.2000. After typewriter paper has no longer been produced it was recently replaced by thermal paper [@Mouritsen.2009]. Automatic registration of bird activity reduces the amount of work for data collection, e.g. @Mouritsen.2001 or @Beck.1983.   
 
 ##	Stable isotopes, genetics and physiology
-Stable isotopes indicate humidity and reflect trophic levels of the diet during the time when the bird’s feathers grew. In America, the isotopic map shows a north-south gradient (Hobson & Wassenaar 2008). Hobson et al. (2012) developed a isotopic map for Africa that may serve as a basis for studying bird migration and non-breeding ecology. However, geographic information in isotopes is weak. Iso-topes measure chemical composition of the diet and may better be interpreted as such (Hahn et al. 2013). For extracting geographic information, often additional data is needed. For example, Procházka et al. (2013) combined ring reencounters with isotopes to describe a migratory divide in the Reed war-bler Acrocephalus scirpaceus. 
+Stable isotopes indicate humidity and reflect trophic levels of the diet during the time when the bird’s feathers grew. In America, the isotopic map shows a north-south gradient [@Hobson.2008]. @Hobson.2012b developed a isotopic map for Africa that may serve as a basis for studying bird migration and non-breeding ecology. However, geographic information in isotopes is weak. Isotopes measure chemical composition of the diet and may better be interpreted as such [@Hahn.2013]. For extracting geographic information, often additional data is needed. For example, @Prochazka.2013 combined ring reencounters with isotopes to describe a migratory divide in the Reed warbler *Acrocephalus scirpaceus*. 
 
-When different populations differ genetically, the DNA of individuals at stop over or non-breeding sites can reveal their breeding origins. 
-The analysis of mtDNA showed that Dunlins Calidris alpina observed in Portugal during migration origi-nated from Greenland, Iceland and the Baltic Sea whereas the ones staying over winter had haplo-types of populations further to the East (Lopes et al. 2006). 
+When populations differ genetically, the DNA of individuals at stop over or non-breeding sites can reveal their breeding origins. 
+The analysis of mtDNA showed that Dunlins *Calidris alpina* observed in Portugal during migration originated from Greenland, Iceland and the Baltic Sea whereas the ones staying over winter had haplotypes of populations further to the east [@Lopes.2006]. 
 
-The study of metabolites in blood samples revealed that birds use lipids and proteins as energy fuel for endurance flights. In a review, Jenni-Eiermann & Jenni (2012) describe how the proportion of protein used is related to the duration of fastening, such as during a long migratory flight. 
+The study of metabolites in blood samples revealed that birds use lipids and proteins as energy fuel for endurance flights. In a review, @JenniEiermann.2012 describe how the proportion of protein used is related to the duration of fastening, such as during a long migratory flight. 
