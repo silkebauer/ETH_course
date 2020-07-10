@@ -24,7 +24,7 @@
 <meta name="author" content="Silke Bauer &amp; Fränzi Korner-Nievergelt" />
 
 
-<meta name="date" content="2020-07-04" />
+<meta name="date" content="2020-07-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -227,71 +227,290 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Chapter 11</span> Statistical tools for studying migration</h1>
 <div id="distribution-models-for-counts-of-resting-or-migrating-individuals" class="section level2">
 <h2><span class="header-section-number">11.1</span> Distribution models for counts of resting or migrating individuals</h2>
-<p>Count data are classically analysed using generalized linear (mixed) models (GLMM). Typically, the Poisson or negative-binomial models serve as a first model choice when the outcome variable is a count data. In most cases, depending on the data structures, these models are expanded by including spatial or temporal structures, accounting for an excess of zero values (zero-inflation) or a large vari-ance (overdispersion). Any textbook introducing linear models, linear mixed models, generalized linear models and generalized linear mixed models is recommended. We particularly like the introduction to hierarchical models by Gelman &amp; Hill (2007). Of course, we also recommend our own introduction to linear models that follows the philosophy of Gelman and Hill but is written by ecologists for ecologists, i.e. less technically (Korner-Nievergelt et al. 2015).</p>
-<p>Example studies that analysed count data for the study of bird migration:
-- Migration intensity of Wood pigeons Columba palumbus in relation to weather (Kestenholz et al. 2009).
-- Distribution of migratory species during the non-breeding season within Africa (Wisz et al. 2007).</p>
+<p>Count data are classically analysed using generalized linear (mixed) models (GLMM). Typically, the Poisson or negative-binomial models serve as a first model choice when the outcome variable is a count data. In most cases, depending on the data structures, these models are expanded by including spatial or temporal structures, accounting for an excess of zero values (zero-inflation) or a large variance (overdispersion). Any textbook introducing linear models, linear mixed models, generalized linear models and generalized linear mixed models is recommended. We particularly like the introduction to hierarchical models by <span class="citation">Gelman and Hill (<a href="#ref-Gelman.2007" role="doc-biblioref">2007</a>)</span>. Of course, we also recommend our own introduction to linear models that follows the philosophy of Gelman and Hill but is written by ecologists for ecologists, i.e. less technically <span class="citation">(Korner-Nievergelt et al. <a href="#ref-KornerNievergelt.2015b" role="doc-biblioref">2015</a>)</span>. An open access <a href="https://tobiasroth.github.io/BDAEcology/">second edition</a> of this book is under construction; planned final release end of 2021.</p>
+<p>Example studies that analysed count data for the study of bird migration:</p>
+<ul>
+<li>Distribution of migratory species during the non-breeding season within Africa <span class="citation">(Wisz, Walther, and Rahbek <a href="#ref-Wisz.2007" role="doc-biblioref">2007</a>)</span>.</li>
+</ul>
 </div>
 <div id="connectivity-models" class="section level2">
 <h2><span class="header-section-number">11.2</span> Connectivity models</h2>
-<p>Migratory connectivity is the extent to which breeding areas are connected with non-breeding areas via migrating individuals (Webster et al. 2002, Bauer &amp; Hoye 2014). A (multidimensional) measure of mi-gratory connectivity are the proportions of individuals from specific, predefined, breeding areas that spend the non-breeding season in specific, predefined, non-breeding areas. This method requires that distinct breeding areas and distinct non-breeding areas need to be defined by the researcher. There-fore, some authors measure the strength of migratory connectivity by correlating the between individual distances during the breeding season with the ones during the non-breeding season (“Mantel correla-tion coefficient”, (Ambrosini et al. 2009)). However, such a correlation coefficient is strongly scale de-pendent (what and how many populations are included in the analyses) and values are difficult to inter-pret.
-Estimates of migratory connectivity can be obtained by tracking individuals from their breeding grounds to their non-breeding ground. However, because migratory connectivity is a characteristic of popula-tions (not of individuals) a lot of individuals need to be tracked in order to get a reliable estimate of mi-gratory connectivity. Therefore, reencounters of marked individuals that are often available for a large number of individuals and from many different populations are well suited to study migratory connec-tivity. However, the spatial heterogeneity of reencounter probability introduces a bias in the raw mark reencounter data. Stochastic models to correct for this bias have been developed by Kania &amp; Busse (1987), Kendall et al. (2006), Bauthian et al. (2007) and Thorup &amp; Conn (2009). The model has further been expanded by Korner-Nievergelt et al. (2012), Cohen et al. (2014), and Korner-Nievergelt et al. (2014). Combination of different data sources such as ring recoveries, GPS tracking data, geolocator data or stable isotopic data further improves the accuracy of the migratory connectivity estimates (Korner-Nievergelt et al. 2017).</p>
+<p>Migratory connectivity is the extent to which breeding areas are connected with non-breeding areas via migrating individuals <span class="citation">(Webster et al. <a href="#ref-Webster.2002" role="doc-biblioref">2002</a>; Bauer and Hoye <a href="#ref-Bauer.2014" role="doc-biblioref">2014</a>)</span>. A (multidimensional) measure of migratory connectivity are the proportions of individuals from specific, predefined, breeding areas that spend the non-breeding season in specific, predefined, non-breeding areas. This method requires that distinct breeding areas and distinct non-breeding areas need to be defined by the researcher. Therefore, some authors measure the strength of migratory connectivity by correlating the between individual distances during the breeding season with the ones during the non-breeding season <span class="citation">(Ambrosini, Møller, and Saino <a href="#ref-Ambrosini.2009" role="doc-biblioref">2009</a>)</span>. However, such a correlation coefficient strongly dependent on what and how many populations are included in the analyses and values are difficult to interpret.
+Estimates of migratory connectivity can be obtained by tracking individuals from their breeding grounds to their non-breeding ground. However, because migratory connectivity is a characteristic of populations (not of individuals) a lot of individuals need to be tracked in order to get a reliable estimate of migratory connectivity. Therefore, reencounters of marked individuals that are often available for a large number of individuals and from many different populations are well suited to study migratory connectivity. However, the spatial heterogeneity of reencounter probability introduces a bias in the raw mark reencounter data. Stochastic models to correct for this bias have been developed by <span class="citation">Kania and Busse (<a href="#ref-Kania.1987" role="doc-biblioref">1987</a>)</span>, <span class="citation">Kendall, Conn, and Hines (<a href="#ref-Kendall.2006" role="doc-biblioref">2006</a>)</span>, <span class="citation">Bauthian et al. (<a href="#ref-Bauthian.2007" role="doc-biblioref">2007</a>)</span> and <span class="citation">Thorup and Conn (<a href="#ref-Thorup.2009" role="doc-biblioref">2009</a>)</span>. The model has further been expanded by <span class="citation">Korner-Nievergelt, Liechti, and Hahn (<a href="#ref-KornerNievergelt.2012b" role="doc-biblioref">2012</a>)</span>, <span class="citation">Cohen et al. (<a href="#ref-Cohen.2014b" role="doc-biblioref">2014</a>)</span>, and <span class="citation">Korner-Nievergelt, Liechti, and Thorup (<a href="#ref-KornerNievergelt.2014" role="doc-biblioref">2014</a>)</span>. Combination of different data sources such as ring recoveries, GPS tracking data, geolocator data or stable isotopic data further improves the accuracy of the migratory connectivity estimates <span class="citation">(Korner-Nievergelt et al. <a href="#ref-KornerNievergelt.2017" role="doc-biblioref">2017</a>; Rönn et al. <a href="#ref-Ronn.2020b" role="doc-biblioref">2020</a>)</span>.</p>
 </div>
 <div id="estimating-survival-based-on-mark-recapture-data-the-cormack-jolly-seber-model" class="section level2">
 <h2><span class="header-section-number">11.3</span> Estimating survival based on mark-recapture data: The Cormack-Jolly-Seber model</h2>
-<p>To study population processes, individuals often are marked and later recaptured or re-sighted. Such mark-recapture/re-sight data contain information on demographic parameters such as survival, move-ment and population size. The difficulty with mark-recapture data is that not all marked individuals are recaptured during each capture occasion. If an individual has not been captured, it may have died, emigrated from the study area, or it may have escaped being captured. For the study of the demo-graphic parameters it is important to disentangle capture probability from the parameters of interest. To do so, Cormack (1964), Jolly (1965), and Seber (1965) developed a statistical model, the Cormack-Jolly-Seber model (CJS), which became the method used by myriad population biologists (Lebreton et al. 1992). The software MARK (www.phidot.org/software/mark/) has become a standard software for the analyses of mark-recapture data (White &amp; Burnham 1999, Cooch &amp; White 2016). The technique is still being developed for the study of various aspects of demographic processes by a lively society of ecologists and statisticians (www.phidot.org).
-Here, we introduce the Cormack-Jolly-Seber (CJS) model for estimating apparent survival and recap-ture probability, or re-sighting probability in cases of re-sights, respectively. The correct term “apparent” survival expresses that in a mark-recapture/re-sight data set from one study site individuals that per-manently emigrated from the study site cannot be distinguished from individuals that died. “Apparent” survival is a product of survival and site fidelity. Whenever below in this section we write “survival”, we actually mean apparent survival.
-The CJS model explicitly models the capture process (the observation process) conditional on a sur-vival model (the biological process). By including an observation process model, the recapture proba-bility and thus the proportion of individuals still alive and present but not recaptured is estimated and taken into account while estimating the probability that an individual survives (and stays in the study area).
-For example, mark-recapture data of Reed warblers Acrocephaus scirpaceus at the constant ringing effort site (CES) in the Wauwilermoos (LU) can be presented as in Table 7.</p>
-<p>Table 7. Number of Reed warblers marked at Wauwilermoos per year of first capture and number of recaptured individuals thereof in the subsequent years. The capture occasion numbers are given in brackets behind the year numbers.
-Year of first capture n marked 2014 (2) 2015 (3) 2016 (4) 2017 (5) 2018 (6)
-2013 (1) 107 13 7 4 5 1
-2014 (2) 76 - 6 2 1 1
-2015 (3) 65 - - 4 3 0
-2016 (4) 54 - - - 7 2
-2017 (5) 64 - - - - 3</p>
-<p>The probability that an individual of all marked individuals released at occasion k is recaptured at occa-sion t is a function of apparent survival probability t and recapture probability pt (Table 8). The recap-ture probability p is the probability that an individual that is alive and present in the study area is cap-tured. The model parameters (apparent survivalt and recapture probability pt) can be estimated by fitting a multinomial model to the number of recaptured individuals at the different occasions. Such a multinomial model is fitted for each cohort of individuals released at the same occasion with the cell probabilities of Table 8.</p>
-<p>Table 8. Multinomial cell probabilities a Cormack-Jolly-Seber model. Note that the cell probabilities are formulated so that one release of a marked individual is resulting in one recapture at maximum. There-fore, the data in Table 7 need to be re-arranged so that every recapture becomes a new release of a marked bird (such re-arranged data is called an m-array).
-Occ 2 3 4 5 6
-1 1p2 1(1-p2)2p3 1(1-p2)2(1-p3)3p4 tt-1(1-pt))4p5 tt-1(1-pt))5p6
-2 0 2p3 2(1-p3)3p4 2(1-p3)3(1-p4)4p5 tt-1(1-pt))5p6
-3 0 0 3p4 3(1-p4)4p5 3(1-p4)4(1-p5)5p6
-4 0 0 0 4p5 4(1-p5)5p6
-5 0 0 0 0 5p6</p>
-<p>The original CJS model allows estimating apparent survival and recapture probability separately for each time period except for the last time period. For the last time period, only the product t-1pt is esti-mable. More stringent model assumptions, such as constant survival over time or relating survival to a linear predictor can give separate survival and recapture estimates also for the last time period.</p>
-<p>The CJS model can alternatively be formulation as a partially hidden Markov model, and fitted to indi-vidual capture histories. Individual based model formulations are appealing because they allow includ-ing individual specific predictors and accounting for more complex correlation structures. The individual based model formulation consists of two logistic regressions, i.e. two Bernoulli-models. The first Ber-noulli variable is the partially observed indicator zit that indicates whether individual i is alive and pre-sent at time t:
-zit ~ Bernoulli(zit-1it)
-In other words, an individual i is alive and in the study area at time t (zit = 1) with probability it, if it was alive and in the study area at time t-1 (zit-1 = 1), or 0, if it was dead (or had permanently emigrated from the study area) at time t -1 (zit-1 = 0). A linear predictor for the logit (or another link function) of it can be added to study factors affecting apparent survival, logit(it) = Xit. This part of the model looks like an autoregressive logistic regression. However, the variable z is only partly observed. It is known that an individual is alive (zit = 1) when it has been recaptured or resighted at time t or at any time point later (yit = 1). When an individual is not recaptured (yit = 0) during any subsequent capture occasion, we do not know whether it has died or whether it is still alive but has not been captured or resighted. The capture process is added to the model as a second Bernoulli process.
-yit ~Bernoulli(zitpit)
-Also, a linear predictor can be added for the logit of pit to study factors affecting the capture probability.</p>
-<p>Table 9. Some Software that provide algorithms for fitting CJS models.
-Name URL, Reference
-MARK www.phidot.org/software/mark/
-R-package marked CRAN, example in a group work of this course, (Laake et al. 2013)
-Stan <a href="http://mc-stan.org/" class="uri">http://mc-stan.org/</a>
-Chapter 14.5 in Korner-Nievergelt et al. (2015)
-BUGS, Jags WinBUGS:www.mrc-bsu.cam.ac.uk/software/bugs/the-bugs-project-winbugs
-OpenBUGS: www.openbugs.ne
-Jags: mcmc-jags.sourceforge.net
-Chapter 7 in Kéry &amp; Schaub (2012)
-E-Surge www.cefe.cnrs.fr/fr/pf/bibliotheque/guides-et-tutoriels/34-french/recherche/bc/bbp/264-logiciels
-Choquet et al. (2009)</p>
+<p>To study population processes, individuals often are marked and later recaptured or re-sighted. Such mark-recapture/re-sight data contain information on demographic parameters such as survival, movement and population size. The difficulty with mark-recapture data is that not all marked individuals are recaptured during each capture occasion. If an individual has not been captured, it may have died, emigrated from the study area, or it may have escaped being captured. For the study of the demographic parameters it is important to disentangle capture probability from the parameters of interest. To do so, <span class="citation">Cormack (<a href="#ref-Cormack.1964" role="doc-biblioref">1964</a>)</span>, <span class="citation">Jolly (<a href="#ref-Jolly.1965" role="doc-biblioref">1965</a>)</span>, and <span class="citation">Seber (<a href="#ref-Seber.1965" role="doc-biblioref">1965</a>)</span> developed a statistical model, the Cormack-Jolly-Seber model (CJS), which became the method used by myriad population biologists <span class="citation">(Lebreton et al. <a href="#ref-Lebreton.1992" role="doc-biblioref">1992</a>; Thomson and al <a href="#ref-Thomson.2009" role="doc-biblioref">2009</a>)</span>. The software [MARK] (www.phidot.org/software/mark/) has become a standard software for the analyses of mark-recapture data <span class="citation">(White and Burnham <a href="#ref-White.1999" role="doc-biblioref">1999</a>; Cooch and White <a href="#ref-Cooch.2016" role="doc-biblioref">2016</a>)</span>. The technique is still being developed for the study of various aspects of demographic processes by a lively <a href="www.phidot.org">society of ecologists and statisticians</a>.
+Here, we introduce the Cormack-Jolly-Seber (CJS) model for estimating apparent survival and recapture probability, or re-sighting probability in cases of re-sights, respectively. The correct term “apparent” survival expresses that in a mark-recapture/re-sight data set from one study site individuals that permanently emigrated from the study site cannot be distinguished from individuals that died. “Apparent” survival is a product of survival and site fidelity.
+The CJS model explicitly models the capture process (the observation process) conditional on a model for apparent survival (the biological process). By including an observation process model, the recapture probability and thus the proportion of individuals still alive and present but not recaptured is estimated and taken into account while estimating the probability that an individual survives and stays in the study area.
+For example, mark-recapture data of Reed warblers <em>Acrocephaus scirpaceus</em> at the constant ringing effort site (CES) in the Wauwilermoos (LU) can be presented as in Table <a href="statistical-tools-for-studying-migration.html#tab:mcdata">11.1</a>.</p>
+<table>
+<caption><span id="tab:mcdata">Table 11.1: </span> Number of Reed warblers marked at Wauwilermoos per year of first capture and number of recaptured individuals thereof in the subsequent years. The capture occasion numbers are given in brackets behind the year numbers.</caption>
+<thead>
+<tr class="header">
+<th align="left">Year of first capture</th>
+<th align="left">n marked</th>
+<th align="left">2014 (2)</th>
+<th align="left">2015 (3)</th>
+<th align="left">2016 (4)</th>
+<th align="left">2017 (5)</th>
+<th align="left">2018 (6)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">2013 (1)</td>
+<td align="left">107</td>
+<td align="left">13</td>
+<td align="left">7</td>
+<td align="left">4</td>
+<td align="left">5</td>
+<td align="left">1</td>
+</tr>
+<tr class="even">
+<td align="left">2014 (2)</td>
+<td align="left">76</td>
+<td align="left">-</td>
+<td align="left">6</td>
+<td align="left">2</td>
+<td align="left">1</td>
+<td align="left">1</td>
+</tr>
+<tr class="odd">
+<td align="left">2015 (3)</td>
+<td align="left">65</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">4</td>
+<td align="left">3</td>
+<td align="left">0</td>
+</tr>
+<tr class="even">
+<td align="left">2016 (4)</td>
+<td align="left">54</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">7</td>
+<td align="left">2</td>
+</tr>
+<tr class="odd">
+<td align="left">2017 (5)</td>
+<td align="left">64</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">3</td>
+</tr>
+</tbody>
+</table>
+<p>The probability that an individual of all marked individuals released at occasion <span class="math inline">\(k\)</span> is recaptured at occasion <span class="math inline">\(t\)</span> is a function of apparent survival probability <span class="math inline">\(\phi_{t}\)</span> and recapture probability <span class="math inline">\(p_t\)</span> (Table <a href="#tab:cjscode">11.2</a>). The recapture probability <span class="math inline">\(p\)</span> is the probability that an individual that is alive and present in the study area is captured. The model parameters (apparent survival <span class="math inline">\(\phi_t\)</span> and recapture probability <span class="math inline">\(p_t\)</span>) can be estimated by fitting a multinomial model to the number of recaptured individuals at the different occasions. Such a multinomial model is fitted for each cohort of individuals released at the same occasion with the cell probabilities of Table <a href="#tab:cjscode">11.2</a>.</p>
+<p>&lt;fontsize
+Table: (#tab:cjscode). Multinomial cell probabilities of a Cormack-Jolly-Seber model. Note that the cell probabilities are formulated so that one release of a marked individual is resulting in one recapture at maximum. Therefore, the data in Table <a href="statistical-tools-for-studying-migration.html#tab:mcdata">11.1</a> need to be re-arranged so that every recapture becomes a new release of a marked bird (such re-arranged data is called an m-array).</p>
+<table style="width:100%;">
+<colgroup>
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Occ</th>
+<th align="left">2</th>
+<th align="left">3</th>
+<th align="left">4</th>
+<th align="left">5</th>
+<th align="left">6</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">1</td>
+<td align="left"><span class="math inline">\(\phi_1p_2\)</span></td>
+<td align="left"><span class="math inline">\(\phi_1(1-p_2)\phi_2p_3\)</span></td>
+<td align="left"><span class="math inline">\(\phi_1(1-p_2)\phi_2(1-p_3)\phi_3p_4\)</span></td>
+<td align="left"><span class="math inline">\(\prod_{t=2}^4(\phi_{t-1}(1-p_t))\phi_4p_5\)</span></td>
+<td align="left">…</td>
+</tr>
+<tr class="even">
+<td align="left">2</td>
+<td align="left">0</td>
+<td align="left"><span class="math inline">\(\phi_2p_3\)</span></td>
+<td align="left"><span class="math inline">\(\phi_2(1-p_3)\phi_3p_4\)</span></td>
+<td align="left"><span class="math inline">\(\phi_2(1-p_3)\phi_3(1-p_4)\phi_4p_5\)</span></td>
+<td align="left">…</td>
+</tr>
+<tr class="odd">
+<td align="left">3</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left"><span class="math inline">\(\phi_3p_4\)</span></td>
+<td align="left"><span class="math inline">\(\phi_3(1-p_4)\phi_4p_5\)</span></td>
+<td align="left">…</td>
+</tr>
+<tr class="even">
+<td align="left">4</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left"><span class="math inline">\(\phi_4p_5\)</span></td>
+<td align="left">…</td>
+</tr>
+<tr class="odd">
+<td align="left">5</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left"><span class="math inline">\(\phi_5p_6\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>The original CJS model allows estimating apparent survival and recapture probability separately for each time period except for the last time period. For the last time period, only the product <span class="math inline">\(\phi_{t-1}p_t\)</span> is estimable. More stringent model assumptions, such as constant survival over time or relating apparent survival to a linear predictor can give separate apparent survival and recapture estimates also for the last time period.</p>
+<p>The CJS model can alternatively be formulated as a partially hidden Markov model, and fitted to individual capture histories. Individual based model formulations are appealing because they allow including individual specific predictors and accounting for more complex correlation structures. The individual based model formulation consists of two logistic regressions, i.e. two Bernoulli-models. The first Bernoulli variable is the partially observed indicator <span class="math inline">\(z_{it}\)</span> that indicates whether individual <span class="math inline">\(i\)</span> is alive and present at time <span class="math inline">\(t\)</span>:<br />
+<span class="math inline">\(z_{it} \sim Bernoulli(z_{it-1}\phi_{it})\)</span><br />
+In other words, an individual <span class="math inline">\(i\)</span> is alive and in the study area at time <span class="math inline">\(t\)</span> (<span class="math inline">\(z_{it} = 1\)</span>) with probability <span class="math inline">\(\phi_{it}\)</span>, if it was alive and in the study area at time <span class="math inline">\(t-1\)</span> (<span class="math inline">\(z_{it-1} = 1\)</span>), or 0, if it was dead or had permanently emigrated from the study area at time <span class="math inline">\(t-1\)</span> (<span class="math inline">\(z_{it-1} = 0\)</span>). A linear predictor for the logit (or another link function) of <span class="math inline">\(\phi_{it}\)</span> can be added to study factors affecting apparent survival. This part of the model looks like an autoregressive logistic regression. However, the variable <span class="math inline">\(z\)</span> is only partly observed. It is known that an individual is alive (<span class="math inline">\(z_{it} = 1\)</span>) when it has been recaptured or resighted at time <span class="math inline">\(t\)</span> (<span class="math inline">\(y_{it} = 1\)</span>) or at any time point later. When an individual is not recaptured (<span class="math inline">\(y_{it} = 0\)</span>) during any subsequent capture occasion, we do not know whether it has died or emigrated, or whether it is still alive but has not been captured or resighted. The capture process is added to the model as a second Bernoulli process.<br />
+<span class="math inline">\(y_{it} \sim Bernoulli(z_{it}p_{it})\)</span><br />
+Also, a linear predictor can be added for the logit of <span class="math inline">\(p_{it}\)</span> to study factors affecting the capture probability.</p>
+<p>Software that provide algorithms for fitting CJS models:</p>
+<ul>
+<li><a href="www.phidot.org/software/mark/">MARK</a><br />
+</li>
+<li>R-package marked CRAN, example in a group work of this course <span class="citation">(Laake, Johnson, and Conn <a href="#ref-Laake.2013" role="doc-biblioref">2013</a>)</span><br />
+</li>
+<li><a href="http://mc-stan.org/">Stan</a><br />
+</li>
+<li>Chapter 14.5 in <span class="citation">Korner-Nievergelt et al. (<a href="#ref-KornerNievergelt.2015b" role="doc-biblioref">2015</a>)</span><br />
+</li>
+<li>BUGS: <a href="www.mrc-bsu.cam.ac.uk/software/bugs/the-bugs-project-winbugs">WinBUGS</a>, <a href="www.openbugs.net">OpenBUGS</a>, <a href="mcmc-jags.sourceforge.net">Jags</a>. Chapter 7 in <span class="citation">Kéry and Schaub (<a href="#ref-Kery.2012" role="doc-biblioref">2012</a>)</span>.<br />
+</li>
+<li><a href="www.cefe.cnrs.fr/fr/pf/bibliotheque/guides-et-tutoriels/34-french/recherche/bc/bbp/264-logiciels">E-Surge</a>. <span class="citation">Choquet, Rouan, and Pradel (<a href="#ref-Choquet.2009" role="doc-biblioref">2009</a>)</span>.</li>
+</ul>
 </div>
 <div id="multi-state-models-to-estimate-movement-rates" class="section level2">
 <h2><span class="header-section-number">11.4</span> Multi-state models to estimate movement rates</h2>
-<p>Multi-state models are used for analysing changes between different states of animals. If the states are defined to be locations, a multi-state model analyses movements between different locations. The cen-tral parameters of such models are the probabilities that an animal moves from location A to location B between two time points. Multi-state models have been introduced by Arnason (1972) and Schwarz et al. (1993). They have later been used by many authors for a variety of different study questions. With a large number of locations, the number of possible movements, and thus the number of model parame-ters, becomes very large and a very high sample size is needed to estimate all parameters. But for some model formulations, even with a very high sample size, some parameters may not be identifiable (Brownie et al. 1993, Gimenez et al. 2003, King &amp; Brooks 2003).
-Antoniazza et al. (2012) used a multi-state model to describe the migration of juvenile and adult cormo-rants Phalacrocorax carbo that were colour marked at Lake Neuchatel during the breeding seasons.</p>
+<p>Multi-state models are used for analysing changes between different states of animals. If the states are defined to be locations, a multi-state model analyses movements between different locations. The central parameters of such models are the probabilities that an animal moves from location A to location B between two time points. Multi-state models have been introduced by <span class="citation">Arnason (<a href="#ref-Arnason.1972" role="doc-biblioref">1972</a>)</span> and <span class="citation">Schwarz, Schweigert, and Arnason (<a href="#ref-Schwarz.1993" role="doc-biblioref">1993</a>)</span>. They have later been used by many authors for a variety of different study questions. With a large number of locations, the number of possible movements, and thus the number of model parameters, becomes very large and a very high sample size is needed to estimate all parameters. But for some model formulations, even with a very high sample size, some parameters may not be identifiable <span class="citation">(Brownie et al. <a href="#ref-Brownie.1993" role="doc-biblioref">1993</a>; Gimenez, Choquet, and Lebreton <a href="#ref-Gimenez.2003" role="doc-biblioref">2003</a>; King and Brooks <a href="#ref-King.2003" role="doc-biblioref">2003</a>)</span>.
+<span class="citation">Antoniazza, Korner-Nievergelt, and Keller (<a href="#ref-Antoniazza.2012" role="doc-biblioref">2012</a>)</span> used a multi-state model to describe the migration of juvenile and adult cormorants <em>Phalacrocorax carbo</em> that were colour marked at Lake Neuchatel during the breeding seasons.</p>
 </div>
 <div id="individual-based-hidden-markov-model-for-bird-behaviour" class="section level2">
 <h2><span class="header-section-number">11.5</span> Individual based hidden Markov model for bird behaviour</h2>
-<p>Individual based hidden Markov models are used for analysing tracking data such as geolocator data or satellite telemetry data. Such data contain for each individual location measurements repeated at regular time intervals over a longer time span. Normally a measurement error is involved in the location measurement. For example, spatial error in a location measurement by light-based geolocation can be up to 1000 km (Lisovski et al. 2012) e.g. because of shading by clouds or vegetation.
-The individual based hidden Markov models assume that each individual has a (hidden) “true” location at each time interval, and that the recorded locations are measurements of the true locations with a measurement error. Both the true location as well as the measurement error can depend on environ-mental and/or individual characteristics. Therefore, the model can be used to estimate the true loca-tions of the individuals over the time. Further, general patterns of migration can be studied, e.g. factors that influence migration speed, directions or decisions to depart on a migratory flight.
-A seminal paper that introduces these models for the study of seal migration is Jonsen et al. (2005). The textbook by Hooten et al. (2017) give an understandable introduction to animal movement mo-delling.</p>
+<p>Individual based hidden Markov models are used for analysing tracking data such as geolocator data or satellite telemetry data. Such data contain for each individual location measurements repeated at regular time intervals over a longer time span. Normally a measurement error is involved in the location measurement. For example, spatial error in a location measurement by light-based geolocation can be up to 1000 km <span class="citation">(Lisovski et al. <a href="#ref-Lisovski.2012b" role="doc-biblioref">2012</a>)</span> e.g. because of shading by clouds or vegetation.
+The individual based hidden Markov models assume that each individual has a (hidden) “true” location at each time interval, and that the recorded locations are measurements of the true locations with a measurement error. Both the true location as well as the measurement error can depend on environmental and/or individual characteristics. Therefore, the model can be used to estimate the true locations of the individuals over the time. Further, general patterns of migration can be studied, e.g. factors that influence migration speed, directions or decisions to depart on a migratory flight.
+A seminal paper that introduces these models for the study of seal migration is <span class="citation">Jonsen, Flemming, and Myers (<a href="#ref-Jonsen.2005" role="doc-biblioref">2005</a>)</span>. The textbook by <span class="citation">Hooten et al. (<a href="#ref-Hooten.2017" role="doc-biblioref">2017</a>)</span> give an understandable introduction to animal movement modelling.</p>
 </div>
 <div id="the-combination-of-different-data-sources" class="section level2">
 <h2><span class="header-section-number">11.6</span> The combination of different data sources</h2>
-<p>In future, we expect that more ornithologists combine different data sources in formal models, the inter-grated models. Bayesian techniques and user-friendly Bayesian software such as BUGS (www.mrc-bsu.cam.ac.uk/software/bugs/the-bugs-project-winbugs/) and Stan (mc-stan.org/) made these tech-niques available for ecologists.</p>
+<p>In future, we expect that more ornithologists combine different data sources in formal models, the intergrated models. Bayesian techniques and user-friendly Bayesian software such as <a href="www.mrc-bsu.cam.ac.uk/software/bugs/the-bugs-project-winbugs/">BUGS</a> and <a href="mc-stan.org/">Stan</a> made these techniques available for ecologists.</p>
 
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-Ambrosini.2009">
+<p>Ambrosini, R., A. P. Møller, and N. Saino. 2009. “A Quantitative Measure of Migratory Connectivity.” <em>Journal of Theoretical Biology</em> 257: 203–11.</p>
+</div>
+<div id="ref-Antoniazza.2012">
+<p>Antoniazza, M., F. Korner-Nievergelt, and V. Keller. 2012. “Les Mouvements Des Grands Cormorans Phalacrocorax Carbo Bagueés Dans La Colonie Du Fanel, Lac de Neuchâtel.” <em>Nos Oiseaux</em> 59: 11–22.</p>
+</div>
+<div id="ref-Arnason.1972">
+<p>Arnason, A. N. 1972. “Parameter Estimates from Mark-Recapture Experiments on Two Populations Subject to Migration and Death.” <em>Researches on Population Ecology</em> 13: 97–113.</p>
+</div>
+<div id="ref-Bauer.2014">
+<p>Bauer, S., and B. J. Hoye. 2014. “Migratory Animals Couple Biodiversity and Ecosystem Functioning Worldwide.” <em>Science</em> 344: 1242552–1–8. <a href="https://doi.org/10.1126/science.1242552">https://doi.org/10.1126/science.1242552</a>.</p>
+</div>
+<div id="ref-Bauthian.2007">
+<p>Bauthian, I., F. Grossmann, Y. Ferrand, and R. Julliard. 2007. “Quantifying the Origin of Woodcock Wintering in France.” <em>Journal of Wildlife Management</em> 71: 701–5.</p>
+</div>
+<div id="ref-Brownie.1993">
+<p>Brownie, C., J. E. Hines, J. D. Nichols, K. H. Pollock, and J. B. Hestbeck. 1993. “Capture-Recapture Studies for Multiple Strata Including Non-Markovian Transitions.” <em>Biometrics</em> 49: 1173–87.</p>
+</div>
+<div id="ref-Choquet.2009">
+<p>Choquet, R., L. Rouan, and R. Pradel. 2009. “Program E-Surge: A Software Application for Fitting Multievent Models.” In <em>Modeling Demographic Processes in Marked Populations</em>, edited by David L. Thomson, Evan G. Cooch, and Michael J. Conroy, 845–65. Environmental and Ecological Statistics. New York: Springer. <a href="https://doi.org/10.1007/978-0-387-78151-8%7B\_%7D39">https://doi.org/10.1007/978-0-387-78151-8{\_}39</a>.</p>
+</div>
+<div id="ref-Cohen.2014b">
+<p>Cohen, E. B., J. A. Hostetler, J. A. Royle, and P. P. Marra. 2014. “Estimating Migratory Connectivity of Birds When Re-Encounter Probabilities Are Heterogeneous.” <em>Ecology and Evolution</em> 4: 1659–70.</p>
+</div>
+<div id="ref-Cooch.2016">
+<p>Cooch, E. G., and G. C. White. 2016. <em>Program Mark: A Gentle Introduction</em>. http://www.phidot.org/software/mark/docs/book/.</p>
+</div>
+<div id="ref-Cormack.1964">
+<p>Cormack, R. M. 1964. “Estimates of Survival from the Sighting of Marked Animals.” <em>Biometrika</em> 51: 429–38.</p>
+</div>
+<div id="ref-Gelman.2007">
+<p>Gelman, A., and J. Hill. 2007. <em>Data Analysis Using Regression and Multilevel / Hierarchical Models</em>. Cambridge: Cambridge University Press.</p>
+</div>
+<div id="ref-Gimenez.2003">
+<p>Gimenez, O., R. Choquet, and J.-D. Lebreton. 2003. “Parameter Redundancy in Multistate Capture-Recapture Models.” <em>Biometrical Journal</em> 45: 704–22.</p>
+</div>
+<div id="ref-Hooten.2017">
+<p>Hooten, Mevin B., Devin S. Johnson, Brett T. McClintock, and Juan M. Morales. 2017. <em>Animal Movement. Statistical Models for Telemetry Data</em>. New York: CRC Press.</p>
+</div>
+<div id="ref-Jolly.1965">
+<p>Jolly, G. 1965. “Explicit Estimates from Capture-Recapture Data with Both Death and Immigration-Stochastic Model.” <em>Biometrika</em> 52: 225–47.</p>
+</div>
+<div id="ref-Jonsen.2005">
+<p>Jonsen, Ian D., Joanna Mills Flemming, and Ransom A. Myers. 2005. “Robust State-Space Modeling of Animal Movement Data.” <em>Ecology</em> 86: 2874–80.</p>
+</div>
+<div id="ref-Kania.1987">
+<p>Kania, Wojciech, and Przemyslaw Busse. 1987. “An Analysis of the Recovery Distribution Based on Finding Probabilities.” <em>Acta Ornithologica</em> 23: 121–28.</p>
+</div>
+<div id="ref-Kendall.2006">
+<p>Kendall, William L., P. B. Conn, and J. E. Hines. 2006. “Combining Multistate Capture-Recapture Data with Tag Recoveries to Estimate Demographic Parameters.” <em>Ecology</em> 87: 169–77.</p>
+</div>
+<div id="ref-Kery.2012">
+<p>Kéry, Marc, and Michael Schaub. 2012. <em>Bayesian Population Analysis Using Winbugs</em>. Amsterdam: Elsevier.</p>
+</div>
+<div id="ref-King.2003">
+<p>King, R., and S. P. Brooks. 2003. “Closed-Form Likelihoods for Arnason–Schwarz Models.” <em>Biometrika</em> 90: 435–44.</p>
+</div>
+<div id="ref-KornerNievergelt.2014">
+<p>Korner-Nievergelt, F., Felix Liechti, and K. Thorup. 2014. “A Bird Distribution Model for Ring Recovery Data: Where Do the European Robins Go?” <em>Ecology and Evolution</em> 4 (6): 720–31.</p>
+</div>
+<div id="ref-KornerNievergelt.2012b">
+<p>Korner-Nievergelt, Fränzi, Felix Liechti, and Steffen Hahn. 2012. “Migratory Connectivity Derived from Sparse Ring Reencounter Data with Unknown Numbers of Ringed Birds.” <em>Journal of Ornithology</em> 153: 771–82. <a href="https://doi.org/10.1007/s10336-011-0793-z">https://doi.org/10.1007/s10336-011-0793-z</a>.</p>
+</div>
+<div id="ref-KornerNievergelt.2017">
+<p>Korner-Nievergelt, Fränzi, Céline Prévot, Steffen Hahn, Lukas Jenni, and Felix Liechti. 2017. “The Integration of Mark Re-Encounter and Tracking Data to Quantify Migratory Connectivity.” <em>Ecological Modelling</em> 344: 87–94. <a href="https://doi.org/10.1016/j.ecolmodel.2016.11.009">https://doi.org/10.1016/j.ecolmodel.2016.11.009</a>.</p>
+</div>
+<div id="ref-KornerNievergelt.2015b">
+<p>Korner-Nievergelt, F., T. Roth, Stefanie von Felten, J. Guélat, B. Almasi, and P. Korner-Nievergelt. 2015. <em>Bayesian Data Analysis in Ecolog Using Linear Models with R, Bugs, and Stan</em>. New York: Elsevier.</p>
+</div>
+<div id="ref-Laake.2013">
+<p>Laake, J. L., D. S. Johnson, and P. B. Conn. 2013. “Marked: An R Package for Maximumlikelihood and Markov Chainmonte Carlo Analysis of Capture-Recapture Data.” <em>Methods in Ecology and Evolution</em> 4: 885–90.</p>
+</div>
+<div id="ref-Lebreton.1992">
+<p>Lebreton, J.-D., K. P. Burnham, J. Clobert, and D. R. Anderson. 1992. “Modelling Survival and Testing Biological Hypotheses Using Marked Animals: A Unified Approach with Case Studies.” <em>Ecological Monographs</em> 62 (1): 67–118.</p>
+</div>
+<div id="ref-Lisovski.2012b">
+<p>Lisovski, Simeon, Chris M. Hewson, Raymond H. G. Klaassen, Fränzi Korner-Nievergelt, Mikkel W. Kristensen, and Steffen Hahn. 2012. “Geolocation by Light: Accuracy and Precision Affected by Environmental Factors.” <em>Methods in Ecology and Evolution</em> 3: 603–312. <a href="https://doi.org/10.1111/j.2041-210X.2012.00185.x">https://doi.org/10.1111/j.2041-210X.2012.00185.x</a>.</p>
+</div>
+<div id="ref-Ronn.2020b">
+<p>Rönn, Jan A. C. von, Martin U. Grüebler, Thord Fransson, Ulrich Köppen, and Fränzi Korner-Nievergelt. 2020. “Integrating Stable Isotopes, Parasite, and Ring-Reencounter Data to Quantify Migratory Connectivity-a Case Study with Barn Swallows Breeding in Switzerland, Germany, Sweden, and Finland.” <em>Ecology and Evolution</em> 10 (4): 2225–37. <a href="https://doi.org/10.1002/ece3.6061">https://doi.org/10.1002/ece3.6061</a>.</p>
+</div>
+<div id="ref-Schwarz.1993">
+<p>Schwarz, Carl J., Jake F. Schweigert, and A. Neil Arnason. 1993. “Estimating Migration Rates Using Tag-Recovery Data.” <em>Biometrics</em> 49: 177–93.</p>
+</div>
+<div id="ref-Seber.1965">
+<p>Seber, G. A. F. 1965. “A Note on the Multiple-Recapture Census.” <em>Biometrika</em> 52: 249–59.</p>
+</div>
+<div id="ref-Thomson.2009">
+<p>Thomson, D. L., and et al, eds. 2009. <em>Modeling Demographic Processees in Marked Populations</em>. Vol. Environmental and Ecological Statistics. New York: Springer.</p>
+</div>
+<div id="ref-Thorup.2009">
+<p>Thorup, K., and P. B. Conn. 2009. “Estimating the Seasonal Distribution of Migrant Bird Species: Can Standard Ringing Data Be Used?” In <em>Modeling Demographic Proccesses in Marked Populations</em>, edited by D. L. Thomson, E. G. Cooch, and M. J. Conroy, 1107–17. New York: Springer.</p>
+</div>
+<div id="ref-Webster.2002">
+<p>Webster, Michael S., Peter P. Marra, Susan M. Haig, Staffan Bensch, and Richard Holmes. 2002. “Links Between Worlds: Unraveling Migratory Connectivity.” <em>Trends in Ecology and Evolution</em> 17 (2): 76–83. <a href="https://doi.org/10.1016/S0169-5347(01)02380-1">https://doi.org/10.1016/S0169-5347(01)02380-1</a>.</p>
+</div>
+<div id="ref-White.1999">
+<p>White, Fary C., and Kenneth P. Burnham. 1999. “Program Mark: Survival Estimation from Populations of Marked Animals.” <em>Bird Study</em> 46 (suppl.): S120–189.</p>
+</div>
+<div id="ref-Wisz.2007">
+<p>Wisz, M. S., B. A. Walther, and C. Rahbek. 2007. “Using Potential Distributions to Explore Determinants of Western Palearctic Migratory Songbird Species Richness in Sub-Saharan Africa.” <em>Journal of Biogeography</em> 34: 828–41.</p>
 </div>
 </div>
             </section>
@@ -347,6 +566,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
