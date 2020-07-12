@@ -24,7 +24,7 @@
 <meta name="author" content="Silke Bauer &amp; Fränzi Korner-Nievergelt" />
 
 
-<meta name="date" content="2020-07-10" />
+<meta name="date" content="2020-07-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -202,6 +202,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.5" data-path="student-projects.html"><a href="student-projects.html#estimate-survival-from-capture-recapture-data"><i class="fa fa-check"></i><b>12.5</b> Estimate survival from capture-recapture data</a></li>
 <li class="chapter" data-level="12.6" data-path="student-projects.html"><a href="student-projects.html#modelling-spring-migration-several-questions"><i class="fa fa-check"></i><b>12.6</b> Modelling (spring) migration: several questions</a></li>
 <li class="chapter" data-level="12.7" data-path="student-projects.html"><a href="student-projects.html#estimating-migration-volume"><i class="fa fa-check"></i><b>12.7</b> Estimating Migration volume</a></li>
+<li class="chapter" data-level="12.8" data-path="student-projects.html"><a href="student-projects.html#partial-migration-who-stays-in-winter"><i class="fa fa-check"></i><b>12.8</b> Partial migration: Who stays in winter?</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/silkebauer/ETH_course" target="blank">Published with bookdown</a></li>
@@ -310,6 +311,19 @@ or R-package afpt</p>
 <li>What might have caused these changes and which consequences could they have?</li>
 </ul>
 <p>Analyse overall ringing lists over the years</p>
+</div>
+<div id="partial-migration-who-stays-in-winter" class="section level2">
+<h2><span class="header-section-number">12.8</span> Partial migration: Who stays in winter?</h2>
+<p>In partially migratory species, some individuals migrate while others remain as year-round residents. Partial migration is widespread among birds. Who migrates can be determined genetically, by individual charachters (sex, age, body condition), or by environmental conditions. We expect that individuals migrating benefit from a higher survival because they escape unfriendly winter conditions. On the other hand, those individuals enduring winter at the breeding site may benefit from an increased reproductive success, e.g., because they can start earlier, know the breeding sites and may occupy better breeding territories, or because they have more chances for mating.</p>
+<p>The White-winged Snowfinch <em>Montifringilla nivalis nivalis</em> is a partial migrant living at high elevations (above the tree line) in southern European mountain areas. In other subspecies, the species occurs in mountain areas from Turkey eastward until the Himalaya. The Snowfinch is highly adapted to living at high-elevation harsh climate. In Switzerland, it can be observed during winter at feeders in ski areas or mountain huts. Its migration behaviour is still largely unknown. In the Pyrenees and in southern France, wintering indivividuals can be regularly observed, ocassionally in large numbers. Ring recoveries also indicate seasonal migration (Fig. <a href="student-projects.html#fig:migsnowfinch">12.1</a>).</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">library</span>(knitr)</a>
+<a class="sourceLine" id="cb6-2" title="2"><span class="kw">include_graphics</span>(<span class="st">&quot;figures/ring_recoveries_Snowfinch.jpg&quot;</span>)</a></code></pre></div>
+<div class="figure"><span id="fig:migsnowfinch"></span>
+<img src="figures/ring_recoveries_Snowfinch.jpg" alt="Seasonal migration of Snowfinches as observed by ring recoveries. Arrows connect the ringing location with the recovery location. Blue = ringed during winter and recovered during summer (spring migration). Red = ringed during summer and recovered during winter (autumn migration)."  />
+<p class="caption">
+Figure 12.1: Seasonal migration of Snowfinches as observed by ring recoveries. Arrows connect the ringing location with the recovery location. Blue = ringed during winter and recovered during summer (spring migration). Red = ringed during summer and recovered during winter (autumn migration).
+</p>
+</div>
 
 <div id="refs" class="references">
 <div>

@@ -117,3 +117,23 @@ Studies using such migration model:
 -	What might have caused these changes and which consequences could they have?
 	
 Analyse overall ringing lists over the years
+
+
+
+
+## Partial migration: Who stays in winter?
+
+In partially migratory species, some individuals migrate while others remain as year-round residents. Partial migration is widespread among birds. Who migrates can be determined genetically, by individual charachters (sex, age, body condition), or by environmental conditions. We expect that individuals migrating benefit from a higher survival because they escape unfriendly winter conditions. On the other hand, those individuals enduring winter at the breeding site may benefit from an increased reproductive success, e.g., because they can start earlier, know the breeding sites and may occupy better breeding territories, or because they have more chances for mating.
+
+The White-winged Snowfinch *Montifringilla nivalis nivalis* is a partial migrant living at high elevations (above the tree line) in southern European mountain areas. In other subspecies, the species occurs in mountain areas from Turkey eastward until the Himalaya. The Snowfinch is highly adapted to living at high-elevation harsh climate. In Switzerland, it can be observed during winter at feeders in ski areas or mountain huts. Its migration behaviour is still largely unknown. In the Pyrenees and in southern France, wintering indivividuals can be regularly observed, ocassionally in large numbers. Ring recoveries also indicate seasonal migration (Fig. \@ref(fig:migsnowfinch)). 
+
+```{r migsnowfinch, fig.cap="Seasonal migration of Snowfinches as observed by ring recoveries. Arrows connect the ringing location with the recovery location. Blue = ringed during winter and recovered during summer (spring migration). Red = ringed during summer and recovered during winter (autumn migration)." }
+library(knitr)
+include_graphics("figures/ring_recoveries_Snowfinch.jpg")
+
+```
+
+
+
+
+
