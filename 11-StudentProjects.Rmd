@@ -5,23 +5,29 @@ We encourage students to work on a research project during the course. We have c
 
 ## Phenology: Migration patterns within the season and their changes over the years
 
-Phenology characterises the temporal course of migration. Naturally, phenology has different aspects, e.g. how individuals of a species migrate in a particular season (spread-out over season or almost synchronized), how different is the migration pattern between seasons (e.g. spring and autumn migration), how different is the timing of migration between species (which species migrate late, which early), how has the timing of migration changed over the years, etc.
+Phenology characterises the temporal course of migration. Naturally, phenology has different aspects, e.g. how individuals of a species migrate in a particular season (spread-out over season or synchronized), how do migration pattern vary between seasons (e.g. spring and autumn migration), how do different species vary in their timing of migration (which species migrate late, which early), how much has the timing of migration (of a specific species) changed over the years, etc.
 
-Potential research questions that you may select, include:
-- Within a species: characterise phenology of migration for different sexes or age classes in a single season. Who is early, who late?
-
-- Between species comparison: Characterise a selection of species in their migration phenology. Which species migrate early, which late? How different is the among-year variance in the timing of migration?
+You may use the above questions as a starting point and develop a project from one of them.
 
 
-Start with a description of the migration pattern for the selected species and groups of individuals within the species. Then, try to link the timing of migration to ecological variables.  
+**Before the course**
 
-Which species/groups of individuals migrate early or late and why?
-Link migration patterns (median of migration) to ecological variables such as migration route, food and other species-traits
-Has the timing of peak migration changed over the years? If so, in which species? What could be potential reasons?
+* Read at least three of the following papers
+  +
+  +
+  +
+*
 
 
+**During project work**
 
-Data required:
+* Select a study species or species group
+* Characterise the migration patterns that are relevant to your question, ideally from different angles (mean migration date, variance, etc.)
+* Link the timing of migration to ecological variables, e.g. migration route, food and other species-traits
+* Time permitting, link the timing of migration to environmental variables, e.g. NDVI
+* Prepare 
+
+**Data required and R-analyses**
 
 Migration data "zugzeiten.txt"
 - Variable baird.mean is an estimate for the average passage day corrected for truncation (migration is still ongoing at the end of the field season) 
@@ -31,7 +37,15 @@ Migration data "zugzeiten.txt"
 Environmental data
 Some NDVI data over the years?
 
-R-code for analyses
+You may use the following R-code to get started 
+
+```{r StudPhenology}
+
+
+
+
+```
+
 
 
 
@@ -71,56 +85,48 @@ Marking and recapturing individual birds allows for estimating apparent survival
 using MCMC (software: Jags)
 
 
-## Modelling (spring) migration: several questions
 
-Look at Chapter \@ref(Sec:MigModels) again for background on state-dependent migration models and read at least three of the following papers: 
-[@Bauer2018], 
+## Modelling spring migration: several questions
+
+Read Chapter \@ref(Sec:MigModels) for background on state-dependent migration models.  
 
 Exemplary questions that could be tackled with such a model are:
 
 -	Long-term changes in migration phenology - which site conditions make animals change their migration timing? 
--	What are the consequences of climate-driven changes in site-conditions
+-	What are the consequences of climate-driven changes in site-conditions on timing and/or success of migration?
 -	What are the consequences of human actions, e.g. hunting, on migration success?
 
 
-**What should you do before the course?**
+### Before the course
 
-1. Summarize the articles 
-  - what was the main question?
-  - what were the main results?
-  
-2. Summarize the model used: 
-  - What is the general approach?
-  - what are the state-variables?
-  - which are the important variables and why?
-  - which scenarios were run?
 
-3. Make your own assessment of the articles
-  - 
 
 4. Download model-code from GitHub [link](https://github.com/slisovski/sdpMig) - you may need to install the R-packages devtools, Rtools, zoo, maptools.
 
 
-**During the course**
+### During the course
 
-1. Run the model using the standard parameter setting.
-2. Change one parameter at a time and observe which output measures change
-3. Develop an ecological question that you would like to tackle
-4. Come up with a plan of how to test your own question(s)
+* Run the model using the standard parameter setting.
+* Change one parameter at a time and observe which output measures change
+* Develop an ecological question that you would like to tackle
+* Come up with a plan of how to test your own question(s)
   + which parameters would you need to change, 
   + change parameters by how much, 
   + which output measures would you look at, etc.
   
-5. Run the respective scenarios
-6. Analyse the results
-7. Evaluate the results
+* Run the respective scenarios
+* Analyse the results
+* Evaluate the results
 
-8. Prepare a presentation 
+* Prepare a presentation 
 
 
 
 
 ## Estimating Migration volume
+
+Why is it important to know how many birds are migrating? Look for possible reasons at Chapters \@ref(Sec:Ecosystemfunctions) and \@ref(Sec:GlobalChange).
+
 -	What is the total number and biomass of birds migrating?
 -	Are there changes in numbers and biomasses over the past decades?
 -	What might have caused these changes and which consequences could they have?
@@ -147,5 +153,6 @@ include_graphics("figures/ring_recoveries_Snowfinch.jpg")
 ## Geolocation - tracking small birds
 
 
-## References
+
+  [link](https://geolocationmanual.vogelwarte.ch/GeoLight.html)
 

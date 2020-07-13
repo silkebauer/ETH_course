@@ -80,5 +80,40 @@ Project work
 
 
 
+## Preparations
 
+We ask students to prepare for the course by reading and summarizing at least two papers - one general paper and one specific research paper and to introduce them to your fellow students during the course. 
+In your summary, please address the following points
+
+1. Summarize the article 
+  - what was the main question?
+  - what were the main results?
+  
+2. Summarize the approach used
+  - What is the general approach?
+  - How could you characterize the model?
+  - Which are the important variables and why?
+  - Which scenarios were run?
+
+3. Make your own assessment of the articles
+  - Was it a convincing article?
+  
+  
+**General papers, reviews, synthesis**
+- [@Bauer.2014], [@Bauer2017],  
+- [@Muheim.2014] - sensory orientation & navigation
+- [@Webster.2002] - migratory connectivity
+- 
+- 
+- 
+
+
+**Specific research papers**
+- [@Bauer2018] - modelling, human actions, management of migrants 
+- [@Adamik2016] - geolocation, small birds, barrier crossing
+- [@Hu2016a] - insect migration, radar, quantification of migrants
+- [@LercheJrgensen.2018] - timing of migration & survival
+- Briedis - large scale patterns
+- Briedis protandry
+- [@Tøttrup2012a] - spring & autumn migration strategies
 
