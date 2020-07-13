@@ -1,21 +1,83 @@
 # Introduction
 
+## Course aims
+
+Students will
+
+* gain a general understanding of migration, its causes and consequences
+* understand the functions of bird migration and its implications for population dynamics and ecological communities
+* apply some frequently used ornithological field methods 
+* interpret information from various data sources (e.g. observations, mark-recapture, data loggers, tracking methods, blood samples, genetics) and evaluate their representativeness and accuracy
+* identify the more common European migrating bird species
+
+
+For the **conceptual background**, we will cover the following aspects:
+
+* Morphological and physiological adaptation to flight 
+* Life cycle of birds (breeding, post-fledging, molting, migration, staging)
+* Ecology and evolution of bird migration
+* Physiology and energetics of flight
+* Migration strategies and orientation
+
+
+For **practical and field methods**, we will introduce some of the most important field methods: 
+
+* counting and identifying migrating birds, 
+* bird catching and marking, 
+* morphological and physiological measurements in live birds,
+* tracking birds
+
+  
+Within the student projects, we will introduce and apply important **theoretical approaches and analytical methods**
+
+* dynamic models of bird migration
+* distribution methods
+* analyses of tracking data
+* 
+
+
 ## Course schedule
-Covid-19 information: The form of the planned course does not fulfil the requirements officially reliesed by the ETH until 31. 8. 2020. Therefore, the course only can take place in the planned format if the regulations will be eased after 1. 9. 2020. If not, the course will take place in an alternative format including home teaching and day trips. 
 
-We will decide on the format of the course by 15th July. By then, you will find the schedule of the course here.
-
-The course consists of lectures, student work on projects and visits to the ringing station (or daily excursions). As the latter is dependent on weather, the schedule is not entirely fixed but somewhat flexible. 
+The course consists of lectures, project work and excursions.
 
 ### Monday
 
+* 10:00 - Welcome to the course and practical issues 
+  + Course schedule
+  + Aims of the course 
+  + What we expect from you and your projects
+  + How to use slack and zoom
+  + Ask us anything!
+  
+* 11:00 - Lecture 1: 
+
+* 12:00 - Lunch break  
+
+* 14:00 - Student introductions and their expectations from the course
+
+* 15:00 - Lecture 2:
+
+* 16:00 - Short introduction to student projects
+
+
+
 ### Tuesday
+
+
 
 ### Wednesday
 
+
+
 ### Thursday
 
+
+Project work
+
 ### Friday
+
+* 10:00 Student presentations
+
 
 
 

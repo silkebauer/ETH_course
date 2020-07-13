@@ -1,0 +1,60 @@
+To do list for ETHZ course handout
+
+---------------------------------------
+index.rmd
+
+- add information on excursions: where to, when we meet, where we go, what to bring, etc. (Fränzi)
+
+- add photo/graphics for first page
+
+
+---------------------------------------
+01-intro.rmd
+- add a few more analytical approaches 
+- finish course schedule
+- add information on excursions
+
+
+
+---------------------------------------
+02-AnimalMigration.rmd
+
+--> done - insert all refs
+- insert photos for types of migrations
+--> done - move "## Importance of migration for community structure ..." to Chapter 06-Ecosystem_functions.rmd -- done
+
+
+---------------------------------------
+03-TimingMig.rmd
+
+- insert all refs
+- include more graphical material
+
+---------------------------------------
+06-Ecosystem_functions.rmd
+
+--> done - include text from 02
+--> done - include graphical material
+- insert all remaining refs
+
+---------------------------------------
+07-Globalchange.rmd
+
+- Text from Grand Challenges paper - needs to be adapted
+- graphical material could be expanded
+
+---------------------------------------
+08-FieldMethods.rmd
+
+- update references for geoloc tracking
+
+
+
+---------------------------------------
+09-MigModels.rmd
+
+- insert refs
+- add graphical material to explain approach or a few examples of model application
+
+
+

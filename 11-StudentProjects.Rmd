@@ -1,4 +1,4 @@
-# Student projects
+# Student projects {#Sec:StudentProjects}
 
 We encourage students to work on a research project during the course. We have compiled a list of suggested projects (see below) but students may come up with their own suggested project within the realm of bird and migration ecology. 
 
@@ -63,6 +63,7 @@ specific softare:
 Flight 2.4 (Windows) 
 or R-package afpt
 
+
 ## Estimate survival from capture-recapture data 
 Marking and recapturing individual birds allows for estimating apparent survival probability (= the probability that a bird survives and returns to the breeding site). Do survival probabilities correlate with conditions in the wintering area?
 
@@ -72,41 +73,49 @@ using MCMC (software: Jags)
 
 ## Modelling (spring) migration: several questions
 
-Look at Chapter \@ref(Sec:MigModels) again for background on state-dependent migration models. 
+Look at Chapter \@ref(Sec:MigModels) again for background on state-dependent migration models and read at least three of the following papers: 
+[@Bauer2018], 
 
-You could use an existing model and tackle one or more of the following questions:
--	Long-term changes in migration phenology - which site conditions make animals change their timing? 
--	Consequences of climate-driven changes in site-conditions
--	Consequences of human actions, e.g. hunting, on migration success
+Exemplary questions that could be tackled with such a model are:
 
-Download model from GitHub [link](https://github.com/slisovski/sdpMig) - you may need to install the R-packages devtools, Rtools, zoo, maptools. 
-
-
- dynamic migration model and analyse your own scenarios 
-
-Studies using such migration model:
-[@Bauer2018]
+-	Long-term changes in migration phenology - which site conditions make animals change their migration timing? 
+-	What are the consequences of climate-driven changes in site-conditions
+-	What are the consequences of human actions, e.g. hunting, on migration success?
 
 
 **What should you do before the course?**
-1. Read the articles
-2. Summarize the model: 
-  - what are the state-variables?
-  - which are the important variables and why?
+
+1. Summarize the articles 
   - what was the main question?
   - what were the main results?
-3. Make your own assessment of the articles
+  
+2. Summarize the model used: 
+  - What is the general approach?
+  - what are the state-variables?
+  - which are the important variables and why?
+  - which scenarios were run?
 
-4. 
+3. Make your own assessment of the articles
+  - 
+
+4. Download model-code from GitHub [link](https://github.com/slisovski/sdpMig) - you may need to install the R-packages devtools, Rtools, zoo, maptools.
+
 
 **During the course**
-1. Try to get the model running with the standard parameter setting.
-2. Change one parameter at a time and observe which output measures change
-3. Come up with a plan of how to test your own question(s), i.e. which parameters would you need to change, by how much, which output measures would you loo at, etc.
-4. Run the respective scenarios
-5. Analyse the results
-6. Interpretation of results
 
+1. Run the model using the standard parameter setting.
+2. Change one parameter at a time and observe which output measures change
+3. Develop an ecological question that you would like to tackle
+4. Come up with a plan of how to test your own question(s)
+  + which parameters would you need to change, 
+  + change parameters by how much, 
+  + which output measures would you look at, etc.
+  
+5. Run the respective scenarios
+6. Analyse the results
+7. Evaluate the results
+
+8. Prepare a presentation 
 
 
 
@@ -135,5 +144,8 @@ include_graphics("figures/ring_recoveries_Snowfinch.jpg")
 
 
 
+## Geolocation - tracking small birds
 
+
+## References
 

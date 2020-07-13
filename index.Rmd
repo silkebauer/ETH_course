@@ -1,5 +1,5 @@
 --- 
-title: "Migration Course"
+title: "Handout and background material for ETHZ course 'Animal Migration and research in field ornithology'"
 author: "Silke Bauer & Fränzi Korner-Nievergelt"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
@@ -7,7 +7,7 @@ documentclass: book
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
-description: "This is a handout for the ETH migration course at Col de Bretolet. The output format for this example is bookdown::gitbook."
+description: "This is a handout for the ETH migration course at Col de Bretolet."
 output:
   bookdown::gitbook:
     config:
@@ -26,30 +26,39 @@ output:
 #    keep_tex: yes
 #  bookdown::epub_book: default
 ---
+:
+***
 
-# Prerequisites
+# General information
+
+In normal times, we would hold the course at the Col de Bretolet with visits to the bird ringing station. Unfortunately, the regulations and recommendations with regard to Covid19 do not allow us to hold the course in its traditional format and we have come up with an alternative that still contains lectures and student work but only one-day or half-day excursions. Lectures may be followed in Sempach or remotely via zoom; student work can also be done in person in Sempach or remotely via slack (see below).
+We hope that you can safely enjoy the course in this alternative format and we hope that we can still bring across the fascination of migration. 
 
 
-- install package afpt (Pennycuick flight energetics)
+**Lectures** can be followed in person at the Swiss Ornithological Institute in Sempach or via zoom (link provided via email).
+How to get there:
+
+* Travel by train to Sempach-Neuenkirch
+* From the train station, follow the signposts to "Vogelwarte" - it's a 10 min walk
+* Enter the red office building on the right-hand side of the street and follow the signs within the building
 
 
-old stuff below
- 
-The **bookdown** package can be installed from CRAN or Github:
+**Excursions**
 
-```{r eval=FALSE}
-install.packages("bookdown")
-# or the development version
-# devtools::install_github("rstudio/bookdown")
-```
 
-Remember each Rmd file contains one and only one chapter, and a chapter is defined by the first-level heading `#`.
+**Student projects** are ideally conducted in grous of 2-4 persons. We expect students to choose a project before the course (see list of potential projects \@ref(Sec:StudentProjects)) and read and summarize the respective literature. There are several slots for work on these projects over the course week and we expect students to give a brief (approx. 20 min) presentation on Friday, detailing the ecological question behind the project, the analytical approach chosen, the results obtained and a discussion. 
 
-To compile this example to PDF, you need XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <https://yihui.name/tinytex/>.
 
-```{r include=FALSE}
-# automatically create a bib database for R packages
-knitr::write_bib(c(
-  .packages(), 'bookdown', 'knitr', 'rmarkdown'
-), 'packages.bib')
-```
+## Online lectures via zoom - a brief how-to
+
+As most participants have indicated they hav used zoom before, we will send a link for the zoom lectures but still explain a few useful features during the first lecture on Monday.  
+
+## Collaborating via Slack
+
+You will receive an invitation from us to join slack and the workspace ETH_MigrationCourse. Slack is a collaboration app that you can either use as a desktop- or an browser-based app. Go to [link](https://slack.com) to see more details and to access it.
+We will give a brief introduction on the first day on how we envisage to interact with you via slack.
+
+
+
+
+

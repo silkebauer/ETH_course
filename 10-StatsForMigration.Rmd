@@ -72,3 +72,6 @@ A seminal paper that introduces these models for the study of seal migration is 
 
 ##	The combination of different data sources
 In future, we expect that more ornithologists combine different data sources in formal models, the intergrated models. Bayesian techniques and user-friendly Bayesian software such as [BUGS](www.mrc-bsu.cam.ac.uk/software/bugs/the-bugs-project-winbugs/) and [Stan](mc-stan.org/) made these techniques available for ecologists. 
+
+
+## References

@@ -112,3 +112,5 @@ When populations differ genetically, the DNA of individuals at stop over or non-
 The analysis of mtDNA showed that Dunlins *Calidris alpina* observed in Portugal during migration originated from Greenland, Iceland and the Baltic Sea whereas the ones staying over winter had haplotypes of populations further to the east [@Lopes.2006]. 
 
 The study of metabolites in blood samples revealed that birds use lipids and proteins as energy fuel for endurance flights. In a review, @JenniEiermann.2012 describe how the proportion of protein used is related to the duration of fastening, such as during a long migratory flight. 
+
+## References
