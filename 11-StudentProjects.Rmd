@@ -2,8 +2,13 @@
 
 We encourage students to work on a research project during the course. We have compiled a list of suggested projects (see below) but students may come up with their own suggested project within the realm of bird and migration ecology. 
 
+The project is done in groups of 2-4 students. The product of the project will be an oral presentation (10 min) at Friday. The presentation includes an introduction of the study question, methods, results and discussion. The presentation can be shared among the students or it it can be held by one delegate. 
+
 
 ## Reading a paper
+
+The projects include reading a few  papers. Therefore, we here give some tips in how to read papers.
+
 1. Summarize the article 
   - Formulate the key message of the paper
   
@@ -14,8 +19,9 @@ We encourage students to work on a research project during the course. We have c
   - Which scenarios were run?
 
 3. Make your own assessment of the articles
-  - Was it a convincing article? Were approach and results
-
+  - Was it a convincing article? Was the approach appropriate to study the research question? Are the results supported by the data, argumentation or other information?  
+  
+4. Do you have questions that you would like to discuss with colleagues or experts?  
 
 
 ## Phenology: Migration patterns within the season and their changes over the years
@@ -24,23 +30,17 @@ Phenology characterises the temporal course of migration. Naturally, phenology h
 
 You may use the above questions as a starting point and develop a project from one of them.
 
+The following papers may be inspiring to start with:
 
-### Before the course
-
-* Read at least three of the following papers
-  +
-  +
-  +
-*
+- @Jenni.2003 
 
 
-### During project work
+The project may include the following steps:
 
-* Select a study species or species group
-* Characterise the migration patterns that are relevant to your question, ideally from different angles (mean migration date, variance, etc.)
-* Link the timing of migration to ecological variables, e.g. migration route, food and other species-traits
-* Time permitting, link the timing of migration to environmental variables, e.g. NDVI
-* Prepare 
+* Select a study species or species group  
+* Characterise the migration patterns that are relevant to your question, ideally from different angles (mean migration date, variance, etc.)  
+* Link the timing of migration to ecological variables, e.g. migration route, food and other species-traits  
+* Time permitting, link the timing of migration to environmental variables, e.g. NDVI  
 
 **Data required and R-analyses**
 
@@ -75,10 +75,12 @@ Analyse species-specific ringing lists
 
 ## Differential Migration
 
-Do young and old birds or males and females migrate at different times? If such sub-groups migrate at different times in specific species, what could explain these patterns? Potential test species: age-differences in reed warblers, age- and sex-differences in chaffinches. 
+Do young and old birds or males and females migrate at different times? If such sub-groups migrate at different times in specific species, what could explain these patterns? Potential study species: age-differences in reed warblers, age- and sex-differences in chaffinches. 
 
 	Analyse species-specific ringing lists
 
+- @LercheJrgensen.2018  
+- @Briedis.2018c  
 
 
 ## Flight energetics in the course of a night and over the season
@@ -164,16 +166,13 @@ include_graphics("figures/ring_recoveries_Snowfinch.jpg")
 ```
 
 
-###Before the course
+The following papers introduce the topic of partial and/or differential migration.
 
-Read at least three of the following papers  
-
-- @Zuniga.2017  
+- @Zuniga.2017    
 - @Kokko.2006  
-- @Albouy.2018 (in French)  
+- @Albouy.2018 (in French)    
 
-
-###During project work
+The project aim is to describe who is migrating in the Snowfinch population of the Swiss Alps and to discuss possible causes of different migration behaviour between age and sex classes.
 
 Use a mark-resighting data set of Snowfinches from the Swiss Alps to describe which individuals spend the winter in the breeding areas (Swiss Alps). The example data contain capturing and resighting dates for individuals with known age and sex.
 
@@ -224,7 +223,6 @@ legend(5, 40, lwd=2, lty=c(1,3,1,1,3,1), col=c("brown", "brown", "orange", "blue
 ```
 
 Discuss possible proximate and ultimate causes for the different seasonal distribution of the sexes and age classes. 
-
 
 
 
