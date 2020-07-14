@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="" xml:lang="">
 <head>
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 12 Student projects | Handout and background material for ETHZ course ‘Animal Migration and research in field ornithology’</title>
   <meta name="description" content="This is a handout for the ETH migration course at Col de Bretolet." />
-  <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 12 Student projects | Handout and background material for ETHZ course ‘Animal Migration and research in field ornithology’" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Silke Bauer &amp; Fränzi Korner-Nievergelt" />
 
 
-<meta name="date" content="2020-07-13" />
+<meta name="date" content="2020-07-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -352,10 +352,11 @@ or R-package afpt</p>
 <h2><span class="header-section-number">12.8</span> Partial migration: Who stays in winter?</h2>
 <p>In partially migratory species, some individuals migrate while others remain as year-round residents. Partial migration is widespread among birds. Who migrates can be determined genetically, by individual charachters (sex, age, body condition), or by environmental conditions. We expect that individuals migrating benefit from a higher survival because they escape unfriendly winter conditions. On the other hand, those individuals enduring winter at the breeding site may benefit from an increased reproductive success, e.g., because they can start earlier, know the breeding sites and may occupy better breeding territories, or because they have more chances for mating.</p>
 <p>The White-winged Snowfinch <em>Montifringilla nivalis nivalis</em> is a partial migrant living at high elevations (above the tree line) in southern European mountain areas. In other subspecies, the species occurs in mountain areas from Turkey eastward until the Himalaya. The Snowfinch is highly adapted to living at high-elevation harsh climate. In Switzerland, it can be observed during winter at feeders in ski areas or mountain huts. Its migration behaviour is still largely unknown. In the Pyrenees and in southern France, wintering indivividuals can be regularly observed, ocassionally in large numbers. Ring recoveries also indicate seasonal migration (Fig. <a href="Sec-StudentProjects.html#fig:migsnowfinch">12.1</a>).</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">library</span>(knitr)</a>
-<a class="sourceLine" id="cb5-2" title="2"><span class="kw">include_graphics</span>(<span class="st">&quot;figures/ring_recoveries_Snowfinch.jpg&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">library</span>(knitr)</a></code></pre></div>
+<pre><code>## Warning: Paket &#39;knitr&#39; wurde unter R Version 3.6.3 erstellt</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">include_graphics</span>(<span class="st">&quot;figures/ring_recoveries_Snowfinch.jpg&quot;</span>)</a></code></pre></div>
 <div class="figure"><span id="fig:migsnowfinch"></span>
-<img src="figures/ring_recoveries_Snowfinch.jpg" alt="Seasonal migration of Snowfinches as observed by ring recoveries. Arrows connect the ringing location with the recovery location. Blue = ringed during winter and recovered during summer (spring migration). Red = ringed during summer and recovered during winter (autumn migration)."  />
+<img src="figures/ring_recoveries_Snowfinch.jpg" alt="Seasonal migration of Snowfinches as observed by ring recoveries. Arrows connect the ringing location with the recovery location. Blue = ringed during winter and recovered during summer (spring migration). Red = ringed during summer and recovered during winter (autumn migration)." width="1026" />
 <p class="caption">
 Figure 12.1: Seasonal migration of Snowfinches as observed by ring recoveries. Arrows connect the ringing location with the recovery location. Blue = ringed during winter and recovered during summer (spring migration). Red = ringed during summer and recovered during winter (autumn migration).
 </p>
@@ -373,44 +374,44 @@ Figure 12.1: Seasonal migration of Snowfinches as observed by ring recoveries. A
 <p>Use a mark-resighting data set of Snowfinches from the Swiss Alps to describe which individuals spend the winter in the breeding areas (Swiss Alps). The example data contain capturing and resighting dates for individuals with known age and sex.</p>
 <p>The age is coded as 1 = nestling, 3 = first calendar year, 4 = not first calendar year, 5 = second calendar year, 6 = older than second calendar year.</p>
 <p>The below R-code can be used to start with. It extracts the number of individuals (number of different ring numbers) seen for each month. The observation effort differed over time but we can assume that it was the same for all age and sex classes.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">load</span>(<span class="st">&quot;data/Snowfinch_resightings.rda&quot;</span>)</a>
-<a class="sourceLine" id="cb6-2" title="2">aggdat &lt;-<span class="st"> </span><span class="kw">aggregate</span>(ringnr<span class="op">~</span>month<span class="op">+</span>sex<span class="op">+</span>age, <span class="dt">data=</span>dat, <span class="cf">function</span>(x) <span class="kw">nlevels</span>(<span class="kw">factor</span>(x)))</a>
-<a class="sourceLine" id="cb6-3" title="3">aggdat &lt;-<span class="st"> </span>aggdat[aggdat<span class="op">$</span>age<span class="op">&gt;</span><span class="dv">3</span>,] <span class="co"># only include individuals from their first winter onward (delete nestlings and first calendar-year birds)</span></a>
-<a class="sourceLine" id="cb6-4" title="4"></a>
-<a class="sourceLine" id="cb6-5" title="5"><span class="kw">plot</span>(aggdat<span class="op">$</span>month, aggdat<span class="op">$</span>ringnr,</a>
-<a class="sourceLine" id="cb6-6" title="6">     <span class="dt">las=</span><span class="dv">1</span>, <span class="dt">ylab=</span><span class="st">&quot;Number of individuals observed&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Month&quot;</span>)</a>
-<a class="sourceLine" id="cb6-7" title="7"><span class="co"># first year males</span></a>
-<a class="sourceLine" id="cb6-8" title="8">index &lt;-<span class="st"> </span>aggdat<span class="op">$</span>age<span class="op">==</span><span class="dv">5</span><span class="op">&amp;</span>aggdat<span class="op">$</span>sex<span class="op">==</span><span class="st">&quot;m&quot;</span></a>
-<a class="sourceLine" id="cb6-9" title="9"><span class="kw">lines</span>(aggdat<span class="op">$</span>month[index], aggdat<span class="op">$</span>ringnr[index], <span class="dt">lwd=</span><span class="dv">2</span>, <span class="dt">col=</span><span class="st">&quot;lightblue&quot;</span>)</a>
-<a class="sourceLine" id="cb6-10" title="10"></a>
-<a class="sourceLine" id="cb6-11" title="11"><span class="co"># second year and older males</span></a>
-<a class="sourceLine" id="cb6-12" title="12">index &lt;-<span class="st"> </span>aggdat<span class="op">$</span>age<span class="op">==</span><span class="dv">6</span><span class="op">&amp;</span>aggdat<span class="op">$</span>sex<span class="op">==</span><span class="st">&quot;m&quot;</span></a>
-<a class="sourceLine" id="cb6-13" title="13"><span class="kw">lines</span>(aggdat<span class="op">$</span>month[index], aggdat<span class="op">$</span>ringnr[index], <span class="dt">lwd=</span><span class="dv">2</span>, </a>
-<a class="sourceLine" id="cb6-14" title="14">      <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>)</a>
-<a class="sourceLine" id="cb6-15" title="15"></a>
-<a class="sourceLine" id="cb6-16" title="16"><span class="co"># males, age not identified</span></a>
-<a class="sourceLine" id="cb6-17" title="17">index &lt;-<span class="st"> </span>aggdat<span class="op">$</span>age<span class="op">==</span><span class="dv">4</span><span class="op">&amp;</span>aggdat<span class="op">$</span>sex<span class="op">==</span><span class="st">&quot;m&quot;</span></a>
-<a class="sourceLine" id="cb6-18" title="18"><span class="kw">lines</span>(aggdat<span class="op">$</span>month[index], aggdat<span class="op">$</span>ringnr[index], <span class="dt">lwd=</span><span class="dv">2</span>, </a>
-<a class="sourceLine" id="cb6-19" title="19">      <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>, <span class="dt">lty=</span><span class="dv">3</span>)</a>
-<a class="sourceLine" id="cb6-20" title="20"></a>
-<a class="sourceLine" id="cb6-21" title="21"></a>
-<a class="sourceLine" id="cb6-22" title="22"><span class="co"># first year females</span></a>
-<a class="sourceLine" id="cb6-23" title="23">index &lt;-<span class="st"> </span>aggdat<span class="op">$</span>age<span class="op">==</span><span class="dv">5</span><span class="op">&amp;</span>aggdat<span class="op">$</span>sex<span class="op">==</span><span class="st">&quot;f&quot;</span></a>
-<a class="sourceLine" id="cb6-24" title="24"><span class="kw">lines</span>(aggdat<span class="op">$</span>month[index], aggdat<span class="op">$</span>ringnr[index], <span class="dt">lwd=</span><span class="dv">2</span>, </a>
-<a class="sourceLine" id="cb6-25" title="25">      <span class="dt">col=</span><span class="st">&quot;orange&quot;</span>)</a>
-<a class="sourceLine" id="cb6-26" title="26"></a>
-<a class="sourceLine" id="cb6-27" title="27"></a>
-<a class="sourceLine" id="cb6-28" title="28"><span class="co"># second year and older females</span></a>
-<a class="sourceLine" id="cb6-29" title="29">index &lt;-<span class="st"> </span>aggdat<span class="op">$</span>age<span class="op">==</span><span class="dv">6</span><span class="op">&amp;</span>aggdat<span class="op">$</span>sex<span class="op">==</span><span class="st">&quot;f&quot;</span></a>
-<a class="sourceLine" id="cb6-30" title="30"><span class="kw">lines</span>(aggdat<span class="op">$</span>month[index], aggdat<span class="op">$</span>ringnr[index], <span class="dt">lwd=</span><span class="dv">2</span>, </a>
-<a class="sourceLine" id="cb6-31" title="31">      <span class="dt">col=</span><span class="st">&quot;brown&quot;</span>)</a>
-<a class="sourceLine" id="cb6-32" title="32"></a>
-<a class="sourceLine" id="cb6-33" title="33"><span class="co"># females, age not identified</span></a>
-<a class="sourceLine" id="cb6-34" title="34">index &lt;-<span class="st"> </span>aggdat<span class="op">$</span>age<span class="op">==</span><span class="dv">4</span><span class="op">&amp;</span>aggdat<span class="op">$</span>sex<span class="op">==</span><span class="st">&quot;f&quot;</span></a>
-<a class="sourceLine" id="cb6-35" title="35"><span class="kw">lines</span>(aggdat<span class="op">$</span>month[index], aggdat<span class="op">$</span>ringnr[index], <span class="dt">lwd=</span><span class="dv">2</span>, </a>
-<a class="sourceLine" id="cb6-36" title="36">      <span class="dt">col=</span><span class="st">&quot;brown&quot;</span>, <span class="dt">lty=</span><span class="dv">3</span>)</a>
-<a class="sourceLine" id="cb6-37" title="37"></a>
-<a class="sourceLine" id="cb6-38" title="38"><span class="kw">legend</span>(<span class="dv">5</span>, <span class="dv">40</span>, <span class="dt">lwd=</span><span class="dv">2</span>, <span class="dt">lty=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">1</span>), <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;brown&quot;</span>, <span class="st">&quot;brown&quot;</span>, <span class="st">&quot;orange&quot;</span>, <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;lightblue&quot;</span>), <span class="dt">legend=</span><span class="kw">c</span>(<span class="st">&quot;females age 2y+&quot;</span>, <span class="st">&quot;females age unknown&quot;</span>, <span class="st">&quot;females 1y&quot;</span>, <span class="st">&quot;males age 2y+&quot;</span>, <span class="st">&quot;males age unknown&quot;</span>, <span class="st">&quot;males 1y&quot;</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">load</span>(<span class="st">&quot;data/Snowfinch_resightings.rda&quot;</span>)</a>
+<a class="sourceLine" id="cb8-2" title="2">aggdat &lt;-<span class="st"> </span><span class="kw">aggregate</span>(ringnr<span class="op">~</span>month<span class="op">+</span>sex<span class="op">+</span>age, <span class="dt">data=</span>dat, <span class="cf">function</span>(x) <span class="kw">nlevels</span>(<span class="kw">factor</span>(x)))</a>
+<a class="sourceLine" id="cb8-3" title="3">aggdat &lt;-<span class="st"> </span>aggdat[aggdat<span class="op">$</span>age<span class="op">&gt;</span><span class="dv">3</span>,] <span class="co"># only include individuals from their first winter onward (delete nestlings and first calendar-year birds)</span></a>
+<a class="sourceLine" id="cb8-4" title="4"></a>
+<a class="sourceLine" id="cb8-5" title="5"><span class="kw">plot</span>(aggdat<span class="op">$</span>month, aggdat<span class="op">$</span>ringnr,</a>
+<a class="sourceLine" id="cb8-6" title="6">     <span class="dt">las=</span><span class="dv">1</span>, <span class="dt">ylab=</span><span class="st">&quot;Number of individuals observed&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Month&quot;</span>)</a>
+<a class="sourceLine" id="cb8-7" title="7"><span class="co"># first year males</span></a>
+<a class="sourceLine" id="cb8-8" title="8">index &lt;-<span class="st"> </span>aggdat<span class="op">$</span>age<span class="op">==</span><span class="dv">5</span><span class="op">&amp;</span>aggdat<span class="op">$</span>sex<span class="op">==</span><span class="st">&quot;m&quot;</span></a>
+<a class="sourceLine" id="cb8-9" title="9"><span class="kw">lines</span>(aggdat<span class="op">$</span>month[index], aggdat<span class="op">$</span>ringnr[index], <span class="dt">lwd=</span><span class="dv">2</span>, <span class="dt">col=</span><span class="st">&quot;lightblue&quot;</span>)</a>
+<a class="sourceLine" id="cb8-10" title="10"></a>
+<a class="sourceLine" id="cb8-11" title="11"><span class="co"># second year and older males</span></a>
+<a class="sourceLine" id="cb8-12" title="12">index &lt;-<span class="st"> </span>aggdat<span class="op">$</span>age<span class="op">==</span><span class="dv">6</span><span class="op">&amp;</span>aggdat<span class="op">$</span>sex<span class="op">==</span><span class="st">&quot;m&quot;</span></a>
+<a class="sourceLine" id="cb8-13" title="13"><span class="kw">lines</span>(aggdat<span class="op">$</span>month[index], aggdat<span class="op">$</span>ringnr[index], <span class="dt">lwd=</span><span class="dv">2</span>, </a>
+<a class="sourceLine" id="cb8-14" title="14">      <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>)</a>
+<a class="sourceLine" id="cb8-15" title="15"></a>
+<a class="sourceLine" id="cb8-16" title="16"><span class="co"># males, age not identified</span></a>
+<a class="sourceLine" id="cb8-17" title="17">index &lt;-<span class="st"> </span>aggdat<span class="op">$</span>age<span class="op">==</span><span class="dv">4</span><span class="op">&amp;</span>aggdat<span class="op">$</span>sex<span class="op">==</span><span class="st">&quot;m&quot;</span></a>
+<a class="sourceLine" id="cb8-18" title="18"><span class="kw">lines</span>(aggdat<span class="op">$</span>month[index], aggdat<span class="op">$</span>ringnr[index], <span class="dt">lwd=</span><span class="dv">2</span>, </a>
+<a class="sourceLine" id="cb8-19" title="19">      <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>, <span class="dt">lty=</span><span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb8-20" title="20"></a>
+<a class="sourceLine" id="cb8-21" title="21"></a>
+<a class="sourceLine" id="cb8-22" title="22"><span class="co"># first year females</span></a>
+<a class="sourceLine" id="cb8-23" title="23">index &lt;-<span class="st"> </span>aggdat<span class="op">$</span>age<span class="op">==</span><span class="dv">5</span><span class="op">&amp;</span>aggdat<span class="op">$</span>sex<span class="op">==</span><span class="st">&quot;f&quot;</span></a>
+<a class="sourceLine" id="cb8-24" title="24"><span class="kw">lines</span>(aggdat<span class="op">$</span>month[index], aggdat<span class="op">$</span>ringnr[index], <span class="dt">lwd=</span><span class="dv">2</span>, </a>
+<a class="sourceLine" id="cb8-25" title="25">      <span class="dt">col=</span><span class="st">&quot;orange&quot;</span>)</a>
+<a class="sourceLine" id="cb8-26" title="26"></a>
+<a class="sourceLine" id="cb8-27" title="27"></a>
+<a class="sourceLine" id="cb8-28" title="28"><span class="co"># second year and older females</span></a>
+<a class="sourceLine" id="cb8-29" title="29">index &lt;-<span class="st"> </span>aggdat<span class="op">$</span>age<span class="op">==</span><span class="dv">6</span><span class="op">&amp;</span>aggdat<span class="op">$</span>sex<span class="op">==</span><span class="st">&quot;f&quot;</span></a>
+<a class="sourceLine" id="cb8-30" title="30"><span class="kw">lines</span>(aggdat<span class="op">$</span>month[index], aggdat<span class="op">$</span>ringnr[index], <span class="dt">lwd=</span><span class="dv">2</span>, </a>
+<a class="sourceLine" id="cb8-31" title="31">      <span class="dt">col=</span><span class="st">&quot;brown&quot;</span>)</a>
+<a class="sourceLine" id="cb8-32" title="32"></a>
+<a class="sourceLine" id="cb8-33" title="33"><span class="co"># females, age not identified</span></a>
+<a class="sourceLine" id="cb8-34" title="34">index &lt;-<span class="st"> </span>aggdat<span class="op">$</span>age<span class="op">==</span><span class="dv">4</span><span class="op">&amp;</span>aggdat<span class="op">$</span>sex<span class="op">==</span><span class="st">&quot;f&quot;</span></a>
+<a class="sourceLine" id="cb8-35" title="35"><span class="kw">lines</span>(aggdat<span class="op">$</span>month[index], aggdat<span class="op">$</span>ringnr[index], <span class="dt">lwd=</span><span class="dv">2</span>, </a>
+<a class="sourceLine" id="cb8-36" title="36">      <span class="dt">col=</span><span class="st">&quot;brown&quot;</span>, <span class="dt">lty=</span><span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb8-37" title="37"></a>
+<a class="sourceLine" id="cb8-38" title="38"><span class="kw">legend</span>(<span class="dv">5</span>, <span class="dv">40</span>, <span class="dt">lwd=</span><span class="dv">2</span>, <span class="dt">lty=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">1</span>), <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;brown&quot;</span>, <span class="st">&quot;brown&quot;</span>, <span class="st">&quot;orange&quot;</span>, <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;lightblue&quot;</span>), <span class="dt">legend=</span><span class="kw">c</span>(<span class="st">&quot;females age 2y+&quot;</span>, <span class="st">&quot;females age unknown&quot;</span>, <span class="st">&quot;females 1y&quot;</span>, <span class="st">&quot;males age 2y+&quot;</span>, <span class="st">&quot;males age unknown&quot;</span>, <span class="st">&quot;males 1y&quot;</span>))</a></code></pre></div>
 <div class="figure"><span id="fig:resight"></span>
 <img src="11-StudentProjects_files/figure-html/resight-1.png" alt="Number of individuals observed per month for each age and sex class" width="672" />
 <p class="caption">
@@ -854,12 +855,11 @@ gitbook.start({
 "github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -871,6 +871,10 @@ gitbook.start({
 "text": null
 },
 "history": {
+"link": null,
+"text": null
+},
+"view": {
 "link": null,
 "text": null
 },

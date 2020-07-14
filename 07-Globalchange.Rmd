@@ -8,6 +8,9 @@ Substantial research effort has been invested in attempts to scale-up organism-f
 
 It would be desirable to have a measure of migration phenology that enables comparisons with existing phenology network data and individual migrant tracking data. Linking phenology across levels of biological organization from individuals to ecosystems through time and space would help us understand the scaling of biological impacts of climate change (Kelly and Horton 2016). A data-science research program centred on use of the weather surveillance radar archive could provide this inference. This approach offers key advantages, such as nearly continuous, continent-scale sampling, that make it capable of addressing the challenge of advancing our understanding of migration at the system-level (Kelly and Horton 2016). Automated workflows mine NEXRAD and other data archives to produce robust metrics for quantifying migration systems, which are scalable across time and space (Van Doren and Horton 2018). A key innovation is to capture the complexity of migration systems analysis while focusing on easily interpreted and universal metrics of migration systems: migratory intensity and migratory trajectory. Most of the diverse methods employed by organismal ecologists to study migration are motivated by efforts to measure these two parameters.  Progress in this direction is occurring rapidly and it is likely that we will achieve this vision in North America by 2020.
 
+
+
+
  
 ## Sensory pollution 
 

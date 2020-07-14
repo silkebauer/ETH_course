@@ -3,6 +3,21 @@
 We encourage students to work on a research project during the course. We have compiled a list of suggested projects (see below) but students may come up with their own suggested project within the realm of bird and migration ecology. 
 
 
+## Reading a paper
+1. Summarize the article 
+  - Formulate the key message of the paper
+  
+2. Summarize the approach used
+  - What is the general approach?
+  - How could you characterize the model?
+  - Which are the important variables and why?
+  - Which scenarios were run?
+
+3. Make your own assessment of the articles
+  - Was it a convincing article? Were approach and results
+
+
+
 ## Phenology: Migration patterns within the season and their changes over the years
 
 Phenology characterises the temporal course of migration. Naturally, phenology has different aspects, e.g. how individuals of a species migrate in a particular season (spread-out over season or synchronized), how do migration pattern vary between seasons (e.g. spring and autumn migration), how do different species vary in their timing of migration (which species migrate late, which early), how much has the timing of migration (of a specific species) changed over the years, etc.
@@ -10,7 +25,7 @@ Phenology characterises the temporal course of migration. Naturally, phenology h
 You may use the above questions as a starting point and develop a project from one of them.
 
 
-###Before the course
+### Before the course
 
 * Read at least three of the following papers
   +
@@ -19,7 +34,7 @@ You may use the above questions as a starting point and develop a project from o
 *
 
 
-###During project work
+### During project work
 
 * Select a study species or species group
 * Characterise the migration patterns that are relevant to your question, ideally from different angles (mean migration date, variance, etc.)

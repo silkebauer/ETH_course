@@ -49,64 +49,102 @@ The course consists of lectures, project work and excursions.
   + How to use slack and zoom
   + Ask us anything!
   
-* 11:00 - Lecture 1: 
+* 11:00 - Lecture 1: What is a bird? Migration in the life-cycle of a bird (Fränzi)
 
 * 12:00 - Lunch break  
 
 * 14:00 - Student introductions and their expectations from the course
 
-* 15:00 - Lecture 2:
+* 15:00 - Lecture 2: Intro Animal migration (Silke)
 
 * 16:00 - Short introduction to student projects
 
 
+Optional
+-	Parasites andmigration
+-	Information, Cues and timing 
+
+ 
 
 ### Tuesday
 
+Lectures 3 & 4
+Morning:
+Lecture Field methods (Fränzi)
+Lecture Tracking (Silke)
+-	Ring recoveries
+-	Moon-watching
+-	Satellite telemetry
+-	GPS loggers
+-	Geolocators
+-	Multi-sensor logger
+-	Radar
+
+Geolocation intro (evt. Martins)
+
+Lecture Migration models (Silke)
+LS3: State-dependent migration models
+-	Basic ingredients and principles of state-dependent models
+-	Backward- forward 
+-	Parameterisations
+-	Typical research questions
+-	Examples of applications of migration model
+
+Afternoon
+Lecture: Climate change and other threats to migrants (beide)
+
+Project work
 
 
 ### Wednesday
 
+Mornings: Excursion to Wauwilermoos (if weather on Wednesday is awful, we go to Wauwilermoos on Tuesday)
+Afternoon: Project work
+Lecture
+LF3: Orientation (Fränzi)
+LS3 Timing (silke)
+(optional) LF4: Life-cycle and population modelling
 
 
 ### Thursday
 
+half-day Excursion Klingnauer Stausee (morning)
+Project work in home office
 
-Project work
+ 
 
 ### Friday
 
-* 10:00 Student presentations
+Morning: Project work 
+LS4: Current research at dept.
+-	General questions, research fields
+-	Kiran – friends story
+-	Bee-eater video abstract
+-	Christoph – alpine swift
+-	Tamara – parasites
+-	Steffen – physiology, metabolic rates
+-	Radar 
+-	Snowfinch ;=)
+
+* 13:30 Afternoon Student presentations
 
 
 
 ## Preparations
 
-We ask students to prepare for the course by reading and summarizing at least two papers - one general paper and one specific research paper and to introduce them to your fellow students during the course. 
-In your summary, please address the following points
+We ask students to prepare for the course by reading at least two papers - one general paper and one specific research paper (see below) - and to introduce the key messages of these papers to your fellow students during the course (for guidelines to reading and summarizing papers, see \@ref(Sec:StudentProjects). 
+Please let us know (via email) until **3 September 2020** which papers you choose and also send us up to three questions that you would like to have answered during the course.
 
-1. Summarize the article 
-  - what was the main question?
-  - what were the main results?
-  
-2. Summarize the approach used
-  - What is the general approach?
-  - How could you characterize the model?
-  - Which are the important variables and why?
-  - Which scenarios were run?
 
-3. Make your own assessment of the articles
-  - Was it a convincing article?
-  
-  
 **General papers, reviews, synthesis**
 - [@Bauer.2014], [@Bauer2017],  
 - [@Muheim.2014] - sensory orientation & navigation
 - [@Webster.2002] - migratory connectivity
-- 
-- 
-- 
-
+- Migration strategies
+- Timing
+- Global change: Runge et al. 
+- [@Chapman2015a] - insetc migration review
+- [@Runge2015] - global conervation of migratory birds
 
 **Specific research papers**
 - [@Bauer2018] - modelling, human actions, management of migrants 
@@ -116,4 +154,7 @@ In your summary, please address the following points
 - Briedis - large scale patterns
 - Briedis protandry
 - [@Tøttrup2012a] - spring & autumn migration strategies
+- Both Climate change
+- [@Zuniga.2017] Survival for migrants and resident blackbirds
+- [@Abrahms2019] - whale migration, memory
 
