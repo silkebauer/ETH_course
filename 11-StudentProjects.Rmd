@@ -159,7 +159,7 @@ In partially migratory species, some individuals migrate while others remain as 
 
 The White-winged Snowfinch *Montifringilla nivalis nivalis* is a partial migrant living at high elevations (above the tree line) in southern European mountain areas. In other subspecies, the species occurs in mountain areas from Turkey eastward until the Himalaya. The Snowfinch is highly adapted to living at high-elevation harsh climate. In Switzerland, it can be observed during winter at feeders in ski areas or mountain huts. Its migration behaviour is still largely unknown. In the Pyrenees and in southern France, wintering indivividuals can be regularly observed, ocassionally in large numbers. Ring recoveries also indicate seasonal migration (Fig. \@ref(fig:migsnowfinch)). 
 
-```{r migsnowfinch, fig.cap="Seasonal migration of Snowfinches as observed by ring recoveries. Arrows connect the ringing location with the recovery location. Blue = ringed during winter and recovered during summer (spring migration). Red = ringed during summer and recovered during winter (autumn migration)." }
+```{r migsnowfinch, echo=FALSE, fig.cap="Seasonal migration of Snowfinches as observed by ring recoveries. Arrows connect the ringing location with the recovery location. Blue = ringed during winter and recovered during summer (spring migration). Red = ringed during summer and recovered during winter (autumn migration)." }
 library(knitr)
 include_graphics("figures/ring_recoveries_Snowfinch.jpg")
 
