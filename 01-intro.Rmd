@@ -42,6 +42,8 @@ The course consists of lectures, project work and excursions.
 
 ### Monday
 
+Location: [Room Aquila at the Swiss Ornithological Institute, Seerose 1, 6204 Sempach](https://www.vogelwarte.ch/de/besuch/anreise). Note that we are in the red office building (not in the brown visitor centre).  
+
 * 10:00 - Welcome to the course and practical issues 
   + Course schedule
   + Aims of the course 
@@ -68,55 +70,76 @@ Optional
 
 ### Tuesday
 
-Lectures 3 & 4
-Morning:
-Lecture Field methods (Fränzi)
-Lecture Tracking (Silke)
--	Ring recoveries
--	Moon-watching
--	Satellite telemetry
--	GPS loggers
--	Geolocators
--	Multi-sensor logger
--	Radar
+Location: [Room Aquila at the Swiss Ornithological Institute, Seerose 1, 6204 Sempach](https://www.vogelwarte.ch/de/besuch/anreise). Note that we are in the red office building (not in the brown visitor centre). 
 
-Geolocation intro (evt. Martins)
 
-Lecture Migration models (Silke)
-LS3: State-dependent migration models
--	Basic ingredients and principles of state-dependent models
--	Backward- forward 
--	Parameterisations
--	Typical research questions
--	Examples of applications of migration model
+ * 10:00 - Lecture: Field methods (Fränzi)
+ 
+ * 10:45 - Lecture Tracking (Silke)
+   + Ring recoveries
+   + Moon-watching
+   + Satellite telemetry
+   + GPS loggers
+   + Geolocators
+   + Multi-sensor logger
+   + Radar
 
-Afternoon
-Lecture: Climate change and other threats to migrants (beide)
+* 11:30 Geolocation intro (evt. Martins)
+ 
+* 12:00 lunch break
 
-Project work
+* 13 30: Lecture Migration models (Silke)
+  + State-dependent migration models
+   -	Basic ingredients and principles of state-dependent models
+   -	Backward- forward 
+   -	Parameterisations
+   -	Typical research questions
+   -	Examples of applications of migration model
+
+
+ * 14:30 Lecture: Climate change and other threats to migrants (beide)
+
+ * Project work
 
 
 ### Wednesday
 
-Mornings: Excursion to Wauwilermoos (if weather on Wednesday is awful, we go to Wauwilermoos on Tuesday)
-Afternoon: Project work
-Lecture
-LF3: Orientation (Fränzi)
-LS3 Timing (silke)
-(optional) LF4: Life-cycle and population modelling
+Excursion to Wauwilermoos
+
+* 9:00 Meeting at the railway station Wauwil. We will hike around 5-7km. Bring warm cloths and good shoes. Further, if you have, bring binoculars, scope and a bird identification guide.   
+
+* 12:00 Transfer by train to Sempach
+
+* 14:00 Lecture Orientation (Fränzi)
+
+* 14:30 Lecture Timing (Silke)
+
+* 15:15 - 17:00: project work
+
+optional (bad weather) Lecture Life-cycle and population modelling (Fränzi)
 
 
 ### Thursday
 
-half-day Excursion Klingnauer Stausee (morning)
-Project work in home office
+Excursion to Klingnauer Stausee
+
+Meeting at 8:10 at the railway station Döttingen.
+We will hike around 5-7km. Bring warm cloths and good shoes. Further, if you have, bring binoculars, scope and a bird identification guide.
+
+ * around 11:30 end of excursion 
+
+
+ * 14:00 - 17:00 Project work in home office. We are available on zoom or slack for discussions.
 
  
 
 ### Friday
 
-Morning: Project work 
-LS4: Current research at dept.
+Location: [Room Aquila at the Swiss Ornithological Institute, Seerose 1, 6204 Sempach](https://www.vogelwarte.ch/de/besuch/anreise). Note that we are in the red office building (not in the brown visitor centre).
+
+ * 10:00 Project work 
+ 
+ * 12:00 Current research at dept.
 -	General questions, research fields
 -	Kiran – friends story
 -	Bee-eater video abstract
@@ -124,9 +147,9 @@ LS4: Current research at dept.
 -	Tamara – parasites
 -	Steffen – physiology, metabolic rates
 -	Radar 
--	Snowfinch ;=)
+-	Snowfinch, Barn owls, Red Kite
 
-* 13:30 Afternoon Student presentations
+* 14:00 Afternoon Student presentations
 
 
 
@@ -137,24 +160,26 @@ Please let us know (via email) until **3 September 2020** which papers you choos
 
 
 **General papers, reviews, synthesis**
-- [@Bauer.2014], [@Bauer2017],  
-- [@Muheim.2014] - sensory orientation & navigation
-- [@Webster.2002] - migratory connectivity
-- Migration strategies
-- Timing
-- Global change: Runge et al. 
-- [@Chapman2015a] - insetc migration review
-- [@Runge2015] - global conervation of migratory birds
+
+- [@Bauer.2014], [@Bauer2017]  
+- [@Muheim.2014] - sensory orientation & navigation  
+- [@Webster.2002] - migratory connectivity  
+- Migration strategies  
+- Timing  
+- Global change: Runge et al.   
+- [@Chapman2015a] - insetc migration review  
+- [@Runge2015] - global conervation of migratory birds  
 
 **Specific research papers**
+
 - [@Bauer2018] - modelling, human actions, management of migrants 
-- [@Adamik2016] - geolocation, small birds, barrier crossing
-- [@Hu2016a] - insect migration, radar, quantification of migrants
-- [@LercheJrgensen.2018] - timing of migration & survival
-- Briedis - large scale patterns
-- Briedis protandry
-- [@Tøttrup2012a] - spring & autumn migration strategies
-- Both Climate change
-- [@Zuniga.2017] Survival for migrants and resident blackbirds
-- [@Abrahms2019] - whale migration, memory
+- [@Adamik2016] - geolocation, small birds, barrier crossing  
+- [@Hu2016a] - insect migration, radar, quantification of migrants  
+- [@LercheJrgensen.2018] - timing of migration & survival  
+- Briedis - large scale patterns  
+- Briedis protandry  
+- [@Tøttrup2012a] - spring & autumn migration strategies  
+- Both Climate change  
+- [@Zuniga.2017] Survival for migrants and resident blackbirds  
+- [@Abrahms2019] - whale migration, memory  
 
