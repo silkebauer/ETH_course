@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="" xml:lang="">
 <head>
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 12 Student projects | Handout and background material for ETHZ course ‘Animal Migration and research in field ornithology’</title>
   <meta name="description" content="This is a handout for the ETH migration course at Col de Bretolet." />
-  <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 12 Student projects | Handout and background material for ETHZ course ‘Animal Migration and research in field ornithology’" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Silke Bauer &amp; Fränzi Korner-Nievergelt" />
 
 
-<meta name="date" content="2020-07-15" />
+<meta name="date" content="2020-07-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -383,8 +383,9 @@ or R-package afpt</p>
 <h2><span class="header-section-number">12.9</span> Partial migration: Who stays in winter?</h2>
 <p>In partially migratory species, some individuals migrate while others remain as year-round residents. Partial migration is widespread among birds. Who migrates can be determined genetically, by individual charachters (sex, age, body condition), or by environmental conditions. We expect that individuals migrating benefit from a higher survival because they escape unfriendly winter conditions. On the other hand, those individuals enduring winter at the breeding site may benefit from an increased reproductive success, e.g., because they can start earlier, know the breeding sites and may occupy better breeding territories, or because they have more chances for mating.</p>
 <p>The White-winged Snowfinch <em>Montifringilla nivalis nivalis</em> is a partial migrant living at high elevations (above the tree line) in southern European mountain areas. In other subspecies, the species occurs in mountain areas from Turkey eastward until the Himalaya. The Snowfinch is highly adapted to living at high-elevation harsh climate. In Switzerland, it can be observed during winter at feeders in ski areas or mountain huts. Its migration behaviour is still largely unknown. In the Pyrenees and in southern France, wintering indivividuals can be regularly observed, ocassionally in large numbers. Ring recoveries also indicate seasonal migration (Fig. <a href="Sec-StudentProjects.html#fig:migsnowfinch">12.1</a>).</p>
+<pre><code>## Warning: Paket &#39;knitr&#39; wurde unter R Version 3.6.3 erstellt</code></pre>
 <div class="figure"><span id="fig:migsnowfinch"></span>
-<img src="figures/ring_recoveries_Snowfinch.jpg" alt="Seasonal migration of Snowfinches as observed by ring recoveries. Arrows connect the ringing location with the recovery location. Blue = ringed during winter and recovered during summer (spring migration). Red = ringed during summer and recovered during winter (autumn migration)."  />
+<img src="figures/ring_recoveries_Snowfinch.jpg" alt="Seasonal migration of Snowfinches as observed by ring recoveries. Arrows connect the ringing location with the recovery location. Blue = ringed during winter and recovered during summer (spring migration). Red = ringed during summer and recovered during winter (autumn migration)." width="1026" />
 <p class="caption">
 Figure 12.1: Seasonal migration of Snowfinches as observed by ring recoveries. Arrows connect the ringing location with the recovery location. Blue = ringed during winter and recovered during summer (spring migration). Red = ringed during summer and recovered during winter (autumn migration).
 </p>
@@ -401,51 +402,51 @@ Figure 12.1: Seasonal migration of Snowfinches as observed by ring recoveries. A
 <p>Use a mark-resighting data set of Snowfinches from the Swiss Alps to describe which individuals spend the winter in the breeding areas (Swiss Alps). The example data contain capturing and resighting dates for individuals with known age and sex.</p>
 <p>The age is coded as 1 = nestling, 3 = first calendar year, 4 = not first calendar year, 5 = second calendar year, 6 = older than second calendar year.</p>
 <p>The below R-code can be used to start with. It extracts the number of individuals (number of different ring numbers) seen for each month. The observation effort differed over time but we can assume that it was the same for all age and sex classes.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">load</span>(<span class="st">&quot;data/Snowfinch_resightings.rda&quot;</span>)</a>
-<a class="sourceLine" id="cb5-2" title="2">aggdat &lt;-<span class="st"> </span><span class="kw">aggregate</span>(ringnr<span class="op">~</span>month<span class="op">+</span>sex<span class="op">+</span>age, <span class="dt">data=</span>dat, <span class="cf">function</span>(x) <span class="kw">nlevels</span>(<span class="kw">factor</span>(x)))</a>
-<a class="sourceLine" id="cb5-3" title="3">aggdat &lt;-<span class="st"> </span>aggdat[aggdat<span class="op">$</span>age<span class="op">&gt;</span><span class="dv">3</span>,] <span class="co"># only include individuals from their first winter onward (delete nestlings and first calendar-year birds)</span></a>
-<a class="sourceLine" id="cb5-4" title="4"></a>
-<a class="sourceLine" id="cb5-5" title="5"><span class="co"># include months with no individuals observed</span></a>
-<a class="sourceLine" id="cb5-6" title="6">datcomplete &lt;-<span class="st"> </span><span class="kw">expand.grid</span>(<span class="dt">month=</span><span class="dv">1</span><span class="op">:</span><span class="dv">11</span>, <span class="dt">sex=</span><span class="kw">c</span>(<span class="st">&quot;f&quot;</span>, <span class="st">&quot;m&quot;</span>), <span class="dt">age=</span><span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>))</a>
-<a class="sourceLine" id="cb5-7" title="7">rowid &lt;-<span class="st"> </span><span class="kw">paste</span>(datcomplete<span class="op">$</span>month, datcomplete<span class="op">$</span>sex, datcomplete<span class="op">$</span>age)</a>
-<a class="sourceLine" id="cb5-8" title="8">rowidaggdat &lt;-<span class="st"> </span><span class="kw">paste</span>(aggdat<span class="op">$</span>month, aggdat<span class="op">$</span>sex, aggdat<span class="op">$</span>age)</a>
-<a class="sourceLine" id="cb5-9" title="9">datcomplete<span class="op">$</span>n &lt;-<span class="st"> </span>aggdat<span class="op">$</span>ringnr[<span class="kw">match</span>(rowid, rowidaggdat)]</a>
-<a class="sourceLine" id="cb5-10" title="10">datcomplete<span class="op">$</span>n[<span class="kw">is.na</span>(datcomplete<span class="op">$</span>n)] &lt;-<span class="st"> </span><span class="dv">0</span></a>
-<a class="sourceLine" id="cb5-11" title="11"></a>
-<a class="sourceLine" id="cb5-12" title="12"><span class="kw">plot</span>(datcomplete<span class="op">$</span>month, datcomplete<span class="op">$</span>n,</a>
-<a class="sourceLine" id="cb5-13" title="13">     <span class="dt">las=</span><span class="dv">1</span>, <span class="dt">ylab=</span><span class="st">&quot;Number of individuals observed&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Month&quot;</span>)</a>
-<a class="sourceLine" id="cb5-14" title="14"><span class="co"># first year males</span></a>
-<a class="sourceLine" id="cb5-15" title="15">index &lt;-<span class="st"> </span>datcomplete<span class="op">$</span>age<span class="op">==</span><span class="dv">5</span><span class="op">&amp;</span>datcomplete<span class="op">$</span>sex<span class="op">==</span><span class="st">&quot;m&quot;</span></a>
-<a class="sourceLine" id="cb5-16" title="16"><span class="kw">lines</span>(datcomplete<span class="op">$</span>month[index], datcomplete<span class="op">$</span>n[index], <span class="dt">lwd=</span><span class="dv">2</span>, <span class="dt">col=</span><span class="st">&quot;lightblue&quot;</span>)</a>
-<a class="sourceLine" id="cb5-17" title="17"></a>
-<a class="sourceLine" id="cb5-18" title="18"><span class="co"># second year and older males</span></a>
-<a class="sourceLine" id="cb5-19" title="19">index &lt;-<span class="st"> </span>datcomplete<span class="op">$</span>age<span class="op">==</span><span class="dv">6</span><span class="op">&amp;</span>datcomplete<span class="op">$</span>sex<span class="op">==</span><span class="st">&quot;m&quot;</span></a>
-<a class="sourceLine" id="cb5-20" title="20"><span class="kw">lines</span>(datcomplete<span class="op">$</span>month[index], datcomplete<span class="op">$</span>n[index], <span class="dt">lwd=</span><span class="dv">2</span>, </a>
-<a class="sourceLine" id="cb5-21" title="21">      <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>)</a>
-<a class="sourceLine" id="cb5-22" title="22"></a>
-<a class="sourceLine" id="cb5-23" title="23"><span class="co"># males, age not identified</span></a>
-<a class="sourceLine" id="cb5-24" title="24">index &lt;-<span class="st"> </span>datcomplete<span class="op">$</span>age<span class="op">==</span><span class="dv">4</span><span class="op">&amp;</span>datcomplete<span class="op">$</span>sex<span class="op">==</span><span class="st">&quot;m&quot;</span></a>
-<a class="sourceLine" id="cb5-25" title="25"><span class="kw">lines</span>(datcomplete<span class="op">$</span>month[index], datcomplete<span class="op">$</span>n[index], <span class="dt">lwd=</span><span class="dv">2</span>, </a>
-<a class="sourceLine" id="cb5-26" title="26">      <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>, <span class="dt">lty=</span><span class="dv">3</span>)</a>
-<a class="sourceLine" id="cb5-27" title="27"></a>
-<a class="sourceLine" id="cb5-28" title="28"></a>
-<a class="sourceLine" id="cb5-29" title="29"><span class="co"># first year females</span></a>
-<a class="sourceLine" id="cb5-30" title="30">index &lt;-<span class="st"> </span>datcomplete<span class="op">$</span>age<span class="op">==</span><span class="dv">5</span><span class="op">&amp;</span>datcomplete<span class="op">$</span>sex<span class="op">==</span><span class="st">&quot;f&quot;</span></a>
-<a class="sourceLine" id="cb5-31" title="31"><span class="kw">lines</span>(datcomplete<span class="op">$</span>month[index], datcomplete<span class="op">$</span>n[index], <span class="dt">lwd=</span><span class="dv">2</span>, </a>
-<a class="sourceLine" id="cb5-32" title="32">      <span class="dt">col=</span><span class="st">&quot;orange&quot;</span>)</a>
-<a class="sourceLine" id="cb5-33" title="33"></a>
-<a class="sourceLine" id="cb5-34" title="34"></a>
-<a class="sourceLine" id="cb5-35" title="35"><span class="co"># second year and older females</span></a>
-<a class="sourceLine" id="cb5-36" title="36">index &lt;-<span class="st"> </span>datcomplete<span class="op">$</span>age<span class="op">==</span><span class="dv">6</span><span class="op">&amp;</span>datcomplete<span class="op">$</span>sex<span class="op">==</span><span class="st">&quot;f&quot;</span></a>
-<a class="sourceLine" id="cb5-37" title="37"><span class="kw">lines</span>(datcomplete<span class="op">$</span>month[index], datcomplete<span class="op">$</span>n[index], <span class="dt">lwd=</span><span class="dv">2</span>, </a>
-<a class="sourceLine" id="cb5-38" title="38">      <span class="dt">col=</span><span class="st">&quot;brown&quot;</span>)</a>
-<a class="sourceLine" id="cb5-39" title="39"></a>
-<a class="sourceLine" id="cb5-40" title="40"><span class="co"># females, age not identified</span></a>
-<a class="sourceLine" id="cb5-41" title="41">index &lt;-<span class="st"> </span>datcomplete<span class="op">$</span>age<span class="op">==</span><span class="dv">4</span><span class="op">&amp;</span>datcomplete<span class="op">$</span>sex<span class="op">==</span><span class="st">&quot;f&quot;</span></a>
-<a class="sourceLine" id="cb5-42" title="42"><span class="kw">lines</span>(datcomplete<span class="op">$</span>month[index], datcomplete<span class="op">$</span>n[index], <span class="dt">lwd=</span><span class="dv">2</span>, </a>
-<a class="sourceLine" id="cb5-43" title="43">      <span class="dt">col=</span><span class="st">&quot;brown&quot;</span>, <span class="dt">lty=</span><span class="dv">3</span>)</a>
-<a class="sourceLine" id="cb5-44" title="44"></a>
-<a class="sourceLine" id="cb5-45" title="45"><span class="kw">legend</span>(<span class="dv">5</span>, <span class="dv">40</span>, <span class="dt">lwd=</span><span class="dv">2</span>, <span class="dt">lty=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">1</span>), <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;brown&quot;</span>, <span class="st">&quot;brown&quot;</span>, <span class="st">&quot;orange&quot;</span>, <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;lightblue&quot;</span>), <span class="dt">legend=</span><span class="kw">c</span>(<span class="st">&quot;females age 2y+&quot;</span>, <span class="st">&quot;females age unknown&quot;</span>, <span class="st">&quot;females 1y&quot;</span>, <span class="st">&quot;males age 2y+&quot;</span>, <span class="st">&quot;males age unknown&quot;</span>, <span class="st">&quot;males 1y&quot;</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">load</span>(<span class="st">&quot;data/Snowfinch_resightings.rda&quot;</span>)</a>
+<a class="sourceLine" id="cb6-2" title="2">aggdat &lt;-<span class="st"> </span><span class="kw">aggregate</span>(ringnr<span class="op">~</span>month<span class="op">+</span>sex<span class="op">+</span>age, <span class="dt">data=</span>dat, <span class="cf">function</span>(x) <span class="kw">nlevels</span>(<span class="kw">factor</span>(x)))</a>
+<a class="sourceLine" id="cb6-3" title="3">aggdat &lt;-<span class="st"> </span>aggdat[aggdat<span class="op">$</span>age<span class="op">&gt;</span><span class="dv">3</span>,] <span class="co"># only include individuals from their first winter onward (delete nestlings and first calendar-year birds)</span></a>
+<a class="sourceLine" id="cb6-4" title="4"></a>
+<a class="sourceLine" id="cb6-5" title="5"><span class="co"># include months with no individuals observed</span></a>
+<a class="sourceLine" id="cb6-6" title="6">datcomplete &lt;-<span class="st"> </span><span class="kw">expand.grid</span>(<span class="dt">month=</span><span class="dv">1</span><span class="op">:</span><span class="dv">11</span>, <span class="dt">sex=</span><span class="kw">c</span>(<span class="st">&quot;f&quot;</span>, <span class="st">&quot;m&quot;</span>), <span class="dt">age=</span><span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>))</a>
+<a class="sourceLine" id="cb6-7" title="7">rowid &lt;-<span class="st"> </span><span class="kw">paste</span>(datcomplete<span class="op">$</span>month, datcomplete<span class="op">$</span>sex, datcomplete<span class="op">$</span>age)</a>
+<a class="sourceLine" id="cb6-8" title="8">rowidaggdat &lt;-<span class="st"> </span><span class="kw">paste</span>(aggdat<span class="op">$</span>month, aggdat<span class="op">$</span>sex, aggdat<span class="op">$</span>age)</a>
+<a class="sourceLine" id="cb6-9" title="9">datcomplete<span class="op">$</span>n &lt;-<span class="st"> </span>aggdat<span class="op">$</span>ringnr[<span class="kw">match</span>(rowid, rowidaggdat)]</a>
+<a class="sourceLine" id="cb6-10" title="10">datcomplete<span class="op">$</span>n[<span class="kw">is.na</span>(datcomplete<span class="op">$</span>n)] &lt;-<span class="st"> </span><span class="dv">0</span></a>
+<a class="sourceLine" id="cb6-11" title="11"></a>
+<a class="sourceLine" id="cb6-12" title="12"><span class="kw">plot</span>(datcomplete<span class="op">$</span>month, datcomplete<span class="op">$</span>n,</a>
+<a class="sourceLine" id="cb6-13" title="13">     <span class="dt">las=</span><span class="dv">1</span>, <span class="dt">ylab=</span><span class="st">&quot;Number of individuals observed&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Month&quot;</span>)</a>
+<a class="sourceLine" id="cb6-14" title="14"><span class="co"># first year males</span></a>
+<a class="sourceLine" id="cb6-15" title="15">index &lt;-<span class="st"> </span>datcomplete<span class="op">$</span>age<span class="op">==</span><span class="dv">5</span><span class="op">&amp;</span>datcomplete<span class="op">$</span>sex<span class="op">==</span><span class="st">&quot;m&quot;</span></a>
+<a class="sourceLine" id="cb6-16" title="16"><span class="kw">lines</span>(datcomplete<span class="op">$</span>month[index], datcomplete<span class="op">$</span>n[index], <span class="dt">lwd=</span><span class="dv">2</span>, <span class="dt">col=</span><span class="st">&quot;lightblue&quot;</span>)</a>
+<a class="sourceLine" id="cb6-17" title="17"></a>
+<a class="sourceLine" id="cb6-18" title="18"><span class="co"># second year and older males</span></a>
+<a class="sourceLine" id="cb6-19" title="19">index &lt;-<span class="st"> </span>datcomplete<span class="op">$</span>age<span class="op">==</span><span class="dv">6</span><span class="op">&amp;</span>datcomplete<span class="op">$</span>sex<span class="op">==</span><span class="st">&quot;m&quot;</span></a>
+<a class="sourceLine" id="cb6-20" title="20"><span class="kw">lines</span>(datcomplete<span class="op">$</span>month[index], datcomplete<span class="op">$</span>n[index], <span class="dt">lwd=</span><span class="dv">2</span>, </a>
+<a class="sourceLine" id="cb6-21" title="21">      <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>)</a>
+<a class="sourceLine" id="cb6-22" title="22"></a>
+<a class="sourceLine" id="cb6-23" title="23"><span class="co"># males, age not identified</span></a>
+<a class="sourceLine" id="cb6-24" title="24">index &lt;-<span class="st"> </span>datcomplete<span class="op">$</span>age<span class="op">==</span><span class="dv">4</span><span class="op">&amp;</span>datcomplete<span class="op">$</span>sex<span class="op">==</span><span class="st">&quot;m&quot;</span></a>
+<a class="sourceLine" id="cb6-25" title="25"><span class="kw">lines</span>(datcomplete<span class="op">$</span>month[index], datcomplete<span class="op">$</span>n[index], <span class="dt">lwd=</span><span class="dv">2</span>, </a>
+<a class="sourceLine" id="cb6-26" title="26">      <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>, <span class="dt">lty=</span><span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb6-27" title="27"></a>
+<a class="sourceLine" id="cb6-28" title="28"></a>
+<a class="sourceLine" id="cb6-29" title="29"><span class="co"># first year females</span></a>
+<a class="sourceLine" id="cb6-30" title="30">index &lt;-<span class="st"> </span>datcomplete<span class="op">$</span>age<span class="op">==</span><span class="dv">5</span><span class="op">&amp;</span>datcomplete<span class="op">$</span>sex<span class="op">==</span><span class="st">&quot;f&quot;</span></a>
+<a class="sourceLine" id="cb6-31" title="31"><span class="kw">lines</span>(datcomplete<span class="op">$</span>month[index], datcomplete<span class="op">$</span>n[index], <span class="dt">lwd=</span><span class="dv">2</span>, </a>
+<a class="sourceLine" id="cb6-32" title="32">      <span class="dt">col=</span><span class="st">&quot;orange&quot;</span>)</a>
+<a class="sourceLine" id="cb6-33" title="33"></a>
+<a class="sourceLine" id="cb6-34" title="34"></a>
+<a class="sourceLine" id="cb6-35" title="35"><span class="co"># second year and older females</span></a>
+<a class="sourceLine" id="cb6-36" title="36">index &lt;-<span class="st"> </span>datcomplete<span class="op">$</span>age<span class="op">==</span><span class="dv">6</span><span class="op">&amp;</span>datcomplete<span class="op">$</span>sex<span class="op">==</span><span class="st">&quot;f&quot;</span></a>
+<a class="sourceLine" id="cb6-37" title="37"><span class="kw">lines</span>(datcomplete<span class="op">$</span>month[index], datcomplete<span class="op">$</span>n[index], <span class="dt">lwd=</span><span class="dv">2</span>, </a>
+<a class="sourceLine" id="cb6-38" title="38">      <span class="dt">col=</span><span class="st">&quot;brown&quot;</span>)</a>
+<a class="sourceLine" id="cb6-39" title="39"></a>
+<a class="sourceLine" id="cb6-40" title="40"><span class="co"># females, age not identified</span></a>
+<a class="sourceLine" id="cb6-41" title="41">index &lt;-<span class="st"> </span>datcomplete<span class="op">$</span>age<span class="op">==</span><span class="dv">4</span><span class="op">&amp;</span>datcomplete<span class="op">$</span>sex<span class="op">==</span><span class="st">&quot;f&quot;</span></a>
+<a class="sourceLine" id="cb6-42" title="42"><span class="kw">lines</span>(datcomplete<span class="op">$</span>month[index], datcomplete<span class="op">$</span>n[index], <span class="dt">lwd=</span><span class="dv">2</span>, </a>
+<a class="sourceLine" id="cb6-43" title="43">      <span class="dt">col=</span><span class="st">&quot;brown&quot;</span>, <span class="dt">lty=</span><span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb6-44" title="44"></a>
+<a class="sourceLine" id="cb6-45" title="45"><span class="kw">legend</span>(<span class="dv">5</span>, <span class="dv">40</span>, <span class="dt">lwd=</span><span class="dv">2</span>, <span class="dt">lty=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">1</span>), <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;brown&quot;</span>, <span class="st">&quot;brown&quot;</span>, <span class="st">&quot;orange&quot;</span>, <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;lightblue&quot;</span>), <span class="dt">legend=</span><span class="kw">c</span>(<span class="st">&quot;females age 2y+&quot;</span>, <span class="st">&quot;females age unknown&quot;</span>, <span class="st">&quot;females 1y&quot;</span>, <span class="st">&quot;males age 2y+&quot;</span>, <span class="st">&quot;males age unknown&quot;</span>, <span class="st">&quot;males 1y&quot;</span>))</a></code></pre></div>
 <div class="figure"><span id="fig:resight"></span>
 <img src="11-StudentProjects_files/figure-html/resight-1.png" alt="Number of individuals observed per month for each age and sex class" width="672" />
 <p class="caption">
@@ -467,6 +468,12 @@ Figure 12.2: Number of individuals observed per month for each age and sex class
 </div>
 <div>
 <p>Albouy, Sylvain, and Christian Riols. 2018. “Afflux de Niverolles Alpines Montifringilla Nivalis Entre Alpes et Pyrénées En 2017.” <em>Ornithos</em> 25: 24–29.</p>
+</div>
+<div>
+<p>Alerstam, Thomas, Jason W Chapman, Johan Bäckman, Alan D Smith, Håkan Karlsson, Cecilia Nilsson, Don R Reynolds, Raymond H G Klaassen, and Jane K Hill. 2011. “Convergent patterns of long-distance nocturnal migration in noctuid moths and passerine birds.” <em>Proceedings. Biological Sciences</em> 278 (1721): 3074–80. <a href="https://doi.org/10.1098/rspb.2011.0058">https://doi.org/10.1098/rspb.2011.0058</a>.</p>
+</div>
+<div>
+<p>Alerstam, Thomas, and Anders Hedenström. 1998. “The development of bird migration theory.” <em>Journal of Avian Biology</em> 29 (4): 343–69.</p>
 </div>
 <div>
 <p>Ambrosini, R., A. P. Møller, and N. Saino. 2009. “A Quantitative Measure of Migratory Connectivity.” <em>Journal of Theoretical Biology</em> 257: 203–11.</p>
@@ -521,6 +528,12 @@ Figure 12.2: Number of individuals observed per month for each age and sex class
 </div>
 <div>
 <p>Briedis, Martins, and Silke Bauer. 2018. “Migratory Connectivity in the Context of Differential Migration.” <em>Biology Letters</em> 14 (12): 20180679. <a href="https://doi.org/10.1098/rsbl.2018.0679">https://doi.org/10.1098/rsbl.2018.0679</a>.</p>
+</div>
+<div>
+<p>Briedis, Martins, Silke Bauer, Peter Adamík, José A. Alves, Joana S. Costa, Tamara Emmenegger, Lars Gustafsson, et al. 2020. “Broad-scale patterns of the Afro-Palaearctic landbird migration.” Edited by Brian McGill. <em>Global Ecology and Biogeography</em> 29 (4): 722–35. <a href="https://doi.org/10.1111/geb.13063">https://doi.org/10.1111/geb.13063</a>.</p>
+</div>
+<div>
+<p>———. 2019. “A full annual perspective on sex-biased migration timing in long-distance migratory birds.” <em>Proceedings of the Royal Society B: Biological Sciences</em> 286 (1897): 20182821. <a href="https://doi.org/10.1098/rspb.2018.2821">https://doi.org/10.1098/rspb.2018.2821</a>.</p>
 </div>
 <div>
 <p>Brownie, C., D. R. Anderson, K. P. Burnham, and D. S. Robson. 1985. <em>Statistical Inference from Band Recovery Data - a Handbook</em>. Washington: United States Department of the Interior, Fish and Wildlife Service.</p>
@@ -619,6 +632,9 @@ Figure 12.2: Number of individuals observed per month for each age and sex class
 <p>Hooten, Mevin B., Devin S. Johnson, Brett T. McClintock, and Juan M. Morales. 2017. <em>Animal Movement. Statistical Models for Telemetry Data</em>. New York: CRC Press.</p>
 </div>
 <div>
+<p>Horton, Kyle G., Frank A. La Sorte, Daniel Sheldon, Tsung Yu Lin, Kevin Winner, Garrett Bernstein, Subhransu Maji, Wesley M. Hochachka, and Andrew Farnsworth. 2020. “Phenology of nocturnal avian migration has shifted at the continental scale.” <em>Nature Climate Change</em> 10 (1): 63–68. <a href="https://doi.org/10.1038/s41558-019-0648-9">https://doi.org/10.1038/s41558-019-0648-9</a>.</p>
+</div>
+<div>
 <p>Hu, Gao, Ka S. Lim, Nir Horvitz, Suzanne J. Clark, Don R. Reynolds, Nir Sapir, and Jason W. Chapman. 2016. “Mass seasonal bioflows of high-flying insect migrants.” <em>Science</em> 354 (6319): 1584–7. <a href="https://doi.org/10.1126/science.aah4379">https://doi.org/10.1126/science.aah4379</a>.</p>
 </div>
 <div>
@@ -659,6 +675,9 @@ Figure 12.2: Number of individuals observed per month for each age and sex class
 </div>
 <div>
 <p>Klein Heerenbrink, M., L. C. Johansson, and A. Hedenström. 2015. “Power of the Wingbeat: Modelling the Effects of Flapping Wings in Vertebrate Flight.” <em>Proceedings of the Royal Society A: Mathematical, Physical and Engineering Sciences</em> 471 (2177): 20140952. <a href="https://doi.org/10.1098/rspa.2014.0952">https://doi.org/10.1098/rspa.2014.0952</a>.</p>
+</div>
+<div>
+<p>Knudsen, Endre, Andreas Lindén, Christiaan Both, Niclas Jonzén, Francisco Pulido, Nicola Saino, William J. Sutherland, et al. 2011. “Challenging claims in the study of migratory birds and climate change.” <em>Biological Reviews</em> 86 (4): 928–46. <a href="https://doi.org/10.1111/j.1469-185X.2011.00179.x">https://doi.org/10.1111/j.1469-185X.2011.00179.x</a>.</p>
 </div>
 <div>
 <p>Kokko, H., T. G. Gunnarsson, L. J. Morrell, and J. A. Gill. 2006. “Why Do Female Migratory Birds Arrive Later Than Males?” <em>The Journal of Animal Ecology</em> 75 (6): 1293–1303. <a href="https://doi.org/10.1111/j.1365-2656.2006.01151.x">https://doi.org/10.1111/j.1365-2656.2006.01151.x</a>.</p>
@@ -716,6 +735,9 @@ Figure 12.2: Number of individuals observed per month for each age and sex class
 </div>
 <div>
 <p>Marra, Peter P., Charles M. Francis, Robert S. Mulvihill, and Frank R. Moore. 2005. “The Influence of Climate on the Timing and Rate of Spring Bird Migration.” <em>Oecologia</em> 142: 307–15.</p>
+</div>
+<div>
+<p>McLaren, James D., Jeffrey J. Buler, Tim Schreckengost, Jaclyn A. Smolinsky, Matthew Boone, E. Emiel van Loon, Deanna K. Dawson, and Eric L. Walters. 2018. “Artificial light at night confounds broad-scale habitat use by migrating birds.” Edited by Ryan Norris. <em>Ecology Letters</em> 21 (3): 356–64. <a href="https://doi.org/10.1111/ele.12902">https://doi.org/10.1111/ele.12902</a>.</p>
 </div>
 <div>
 <p>Merkel, F. W., and W. Wiltschko. 1965. “Magnetismus Und Richtungsfinden Zugunruhiger Rotkehlchen Erithacus Rubecula.” <em>Die Vogelwarte</em> 23 (1): 71–77.</p>
@@ -778,7 +800,13 @@ Figure 12.2: Number of individuals observed per month for each age and sex class
 <p>Robinson, W. Douglas, Melissa S. Bowlin, Isabelle Bisson, Judy Shamoun-Baranes, Kasper Thorup, Robert H. Diehl, Thomas H. Kunz, Sarah Mabey, and David W. Winkler. 2010. “Integrating Concepts and Technologies to Advance the Study of Bird Migration.” <em>Frontiers in Ecology and Evolution</em> 8: 354–61. <a href="https://doi.org/10.1890/080179">https://doi.org/10.1890/080179</a>.</p>
 </div>
 <div>
+<p>Rosenberg, Kenneth V., Adriaan M. Dokter, Peter J. Blancher, John R. Sauer, Adam C. Smith, Paul A. Smith, Jessica C. Stanton, et al. 2019. “Decline of the North American avifauna.” <em>Science</em> 366 (6461): 120–24. <a href="https://doi.org/10.1126/SCIENCE.AAW1313">https://doi.org/10.1126/SCIENCE.AAW1313</a>.</p>
+</div>
+<div>
 <p>Rönn, Jan A. C. von, Martin U. Grüebler, Thord Fransson, Ulrich Köppen, and Fränzi Korner-Nievergelt. 2020. “Integrating Stable Isotopes, Parasite, and Ring-Reencounter Data to Quantify Migratory Connectivity-a Case Study with Barn Swallows Breeding in Switzerland, Germany, Sweden, and Finland.” <em>Ecology and Evolution</em> 10 (4): 2225–37. <a href="https://doi.org/10.1002/ece3.6061">https://doi.org/10.1002/ece3.6061</a>.</p>
+</div>
+<div>
+<p>Runge, C A, T G Martini, H P Possingham, S G Willis, and R A Fuller. 2014. “Conserving mobile species.” <em>Frontiers in Ecology and the Environment</em> 12 (7): 395–402. <a href="https://doi.org/Doi%2010.1890/130237">https://doi.org/Doi 10.1890/130237</a>.</p>
 </div>
 <div>
 <p>Runge, Claire A., James E. M. Watson, Stuart H. M. Butchart, Jeffrey O. Hanson, Hugh P. Possingham, and Richard A. Fuller. 2015. “Protected areas and global conservation of migratory birds.” <em>Science</em> 350 (6265): 1255–8. <a href="https://doi.org/10.1126/science.aac9180">https://doi.org/10.1126/science.aac9180</a>.</p>
@@ -788,6 +816,9 @@ Figure 12.2: Number of individuals observed per month for each age and sex class
 </div>
 <div>
 <p>Saurola, Pertti, J. Valkama, and W. Velmala. 2013. <em>The Finnish Bird Ringing Atlas</em>. Helsinki: Finnish Museum of Natural History and Ministry of Environment.</p>
+</div>
+<div>
+<p>Schmaljohann, Heiko, and Christiaan Both. 2017. “The limits of modifying migration speed to adjust to climate change.” <em>Nature Climate Change</em> 7 (8): 573–76. <a href="https://doi.org/10.1038/nclimate3336">https://doi.org/10.1038/nclimate3336</a>.</p>
 </div>
 <div>
 <p>Schmaljohann, Heiko, Bruno Bruderer, and Felix Liechti. 2008. “Sustained Bird Flights Occur at Temperatures Far Beyond Expected Limits.” <em>Animal Behaviour</em> 76: 1133–8. <a href="https://doi.org/10.1016/j.anbehav.2008.05.024">https://doi.org/10.1016/j.anbehav.2008.05.024</a>.</p>
@@ -913,12 +944,11 @@ gitbook.start({
 "github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -930,6 +960,10 @@ gitbook.start({
 "text": null
 },
 "history": {
+"link": null,
+"text": null
+},
+"view": {
 "link": null,
 "text": null
 },

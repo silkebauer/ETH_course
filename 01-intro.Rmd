@@ -128,7 +128,6 @@ We will hike around 5-7km. Bring warm cloths and good shoes. Further, if you hav
 
  * around 11:30 end of excursion 
 
-
  * 14:00 - 17:00 Project work in home office. We are available on zoom or slack for discussions.
 
  
@@ -140,16 +139,8 @@ Location: [Room Aquila at the Swiss Ornithological Institute, Seerose 1, 6204 Se
  * 10:00 Project work 
  
  * 12:00 Current research at dept.
--	General questions, research fields
--	Kiran – friends story
--	Bee-eater video abstract
--	Christoph – alpine swift
--	Tamara – parasites
--	Steffen – physiology, metabolic rates
--	Radar 
--	Snowfinch, Barn owls, Red Kite
 
-* 14:00 Afternoon Student presentations
+ * 14:00 Afternoon Student presentations
 
 
 
@@ -161,25 +152,29 @@ Please let us know (via email) until **3 September 2020** which papers you choos
 
 **General papers, reviews, synthesis**
 
-- [@Bauer.2014], [@Bauer2017]  
+- [@Bauer.2014] - Synthesis of how migratory animals influence community structure and ecosystem functioning 
+- [@Bauer2017] - Services and disservices or (aerial) migrants
 - [@Muheim.2014] - sensory orientation & navigation  
 - [@Webster.2002] - migratory connectivity  
-- Migration strategies  
-- Timing  
-- Global change: Runge et al.   
-- [@Chapman2015a] - insetc migration review  
+- [@Alerstam1998] - Migration strategies, bird migration theory  
+- [@Alerstam2011] - Migration strategies of birds and insects compared  
+- [@Knudsen2011] - Climate change and bird migration
+- [@Runge2014] - Conservation of mobile species   
+- [@Chapman2015a] - insect migration review  
 - [@Runge2015] - global conervation of migratory birds  
 
 **Specific research papers**
 
-- [@Bauer2018] - modelling, human actions, management of migrants 
+- [@Bauer2018] - modelling, human actions, management of migrant populations 
 - [@Adamik2016] - geolocation, small birds, barrier crossing  
 - [@Hu2016a] - insect migration, radar, quantification of migrants  
 - [@LercheJrgensen.2018] - timing of migration & survival  
-- Briedis - large scale patterns  
-- Briedis protandry  
-- [@Tøttrup2012a] - spring & autumn migration strategies  
-- Both Climate change  
-- [@Zuniga.2017] Survival for migrants and resident blackbirds  
-- [@Abrahms2019] - whale migration, memory  
-
+- [@Briedis2020] - broad-scale patterns of avian migration  
+- [@Briedis2019] - Migration timing of male vs female birds  
+- [@Tøttrup2012a] - spring and autumn migration strategies  
+- [@Horton2020] - Climate change  influences on migration phenology
+- [@Schmaljohann2017] - C limate change response of avian migrants
+- [@Rosenberg2019] - Decline of avifauna
+- [@Zuniga.2017] Survival of migrants and resident blackbirds  
+- [@Abrahms2019] - whale migration, memory versus perception-based migration  
+- [@McLaren2018] - Influence of artificial light on bird migration
