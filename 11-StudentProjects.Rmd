@@ -1,13 +1,13 @@
 # Student projects {#Sec:StudentProjects}
 
-We encourage students to work on a research project during the course. We have compiled a list of suggested projects (see below) but students may come up with their own suggested project within the realm of bird and migration ecology. 
+We encourage students to work on a research project during the course. We have compiled a list of suggested projects (see below) but students may come up with their own suggested project within the realm of bird and migration ecology (in the latter case, please come back to us before the course). 
 
-The project is done in groups of 2-4 students. The product of the project will be an oral presentation (10 min) at Friday. The presentation includes an introduction of the study question, methods, results and discussion. The presentation can be shared among the students or it it can be held by one delegate. 
+The projects should be pursued in groups of 2-4 students. At the end of the course (Friday), we expect an oral presentation of approx. 10 min that should cover the project's scientific background, approach, research aims, results and findings and a discussion. Ideally, the presentation is held jointly by the members of each group but if, for various reasons, this is impossible, other options can be chosen. 
 
 
-## Reading a paper
+## Pre-requisite: Reading and assessing scientific publications
 
-The projects include reading a few  papers. Therefore, we here give some tips in how to read papers.
+The projects require that students get familiar with some background and/or recent developments in a specific research field. This means, students need to read and summarize a few  papers. Here are a few tips that may serve as guidelines:
 
 1. Summarize the article 
   - Formulate the key message of the paper
@@ -24,11 +24,11 @@ The projects include reading a few  papers. Therefore, we here give some tips in
 4. Do you have questions that you would like to discuss with colleagues or experts?  
 
 
-## Phenology: Migration patterns within the season and their changes over the years
+## Student project 1: Phenology - Migration timing within the season and their changes over the years
 
-Phenology characterises the temporal course of migration. Naturally, phenology has different aspects, e.g. how individuals of a species migrate in a particular season (spread-out over season or synchronized), how do migration pattern vary between seasons (e.g. spring and autumn migration), how do different species vary in their timing of migration (which species migrate late, which early), how much has the timing of migration (of a specific species) changed over the years, etc.
+Phenology characterises the temporal course of migration. Naturally, phenology has different aspects, e.g. how individuals of a species migrate in a particular season (spread-out or synchronized), how do migration pattern vary between seasons (e.g. spring and autumn migration), how do different species vary in their timing of migration (which species migrate late, which early), how much has the timing of migration (of a specific species) changed over the years, etc.
 
-You may use the above questions as a starting point and develop a project from one of them.
+You may use one or more of the above questions as a starting point and develop your project from them.
 
 The following papers may be inspiring to start with:
 
@@ -39,8 +39,9 @@ The project may include the following steps:
 
 * Select a study species or species group  
 * Characterise the migration patterns that are relevant to your question, ideally from different angles (mean migration date, variance, etc.)  
-* Link the timing of migration to ecological variables, e.g. migration route, food and other species-traits  
+* Link the timing of migration to ecological variables, e.g. migration route, ecological characteristics of a species, etc.   
 * Time permitting, link the timing of migration to environmental variables, e.g. NDVI  
+
 
 **Data required and R-analyses**
 
@@ -49,8 +50,6 @@ Migration data "zugzeiten.txt"
 - passage_by_spec_year.txt: Median passage day per year and species
 - species_data.txt: ecological characteristica of species
 
-Environmental data
-Some NDVI data over the years?
 
 You may use the following R-code to get started 
 
@@ -64,26 +63,53 @@ You may use the following R-code to get started
 
 
 
-## Long-term changes in morphology
+## Student project 2: Long-term changes in morphology
 
-Has wing length changed over the years in specific species? Are there patterns, e.g. in short- and long-distance migrants? How could this pattern be explained, i.e. which processes or constraints may play a role?
+Which morphological measure is relevant to migration or other life-history processes?
+Wing length is obviously an important determinant of flight costs. Has wing length changed over the years in specific species? Are there patterns, e.g. in short- and long-distance migrants? How could this pattern be explained, i.e. which processes or constraints may play a role?
 
-Analyse species-specific ringing lists
-	
-	
+The following papers give some background on relevance:
+- @Hahn2016 
+- @Saino.2010
+
+**Data required and R-analyses**
+
+- Analyse species-specific ringing lists
+- Select a morphological measure
+- Analyse their summary statistics over the years, separately for species, sexes, etc.
 	
 
-## Differential Migration
+```{r StudMorphology}
+
+
+
+
+```
+
+
+
+## Student project 3: Differential Migration
 
 Do young and old birds or males and females migrate at different times? If such sub-groups migrate at different times in specific species, what could explain these patterns? Potential study species: age-differences in reed warblers, age- and sex-differences in chaffinches. 
 
-	Analyse species-specific ringing lists
+Analyse species-specific ringing lists
 
 - @LercheJrgensen.2018  
 - @Briedis.2018c  
 
 
-## Flight energetics in the course of a night and over the season
+```{r StudDiffMig}
+
+
+
+
+```
+
+
+
+## Student project 4: Flight energetics in the course of a night and over the season
+
+
 Dynamics of fat reserves: how do the fat reserves change over the night and over the season
 
 comparison with expectations based on energetics and aero-physics  
@@ -95,17 +121,19 @@ Flight 2.4 (Windows)
 or R-package afpt
 
 
-## Estimate survival from capture-recapture data 
+## Student project 5: Estimate survival from capture-recapture data 
+
+
 Marking and recapturing individual birds allows for estimating apparent survival probability (= the probability that a bird survives and returns to the breeding site). Do survival probabilities correlate with conditions in the wintering area?
 
-	Analyse a mark-recapture data set of reed warblers from a constant ringing effort site 
+Analyse a mark-recapture data set of reed warblers from a constant ringing effort site 
 using MCMC (software: Jags)
 
 
 
-## Modelling spring migration: several questions
+## Student project 6: Modelling spring migration: several questions
 
-Read Chapter \@ref(Sec:MigModels) for background on state-dependent migration models.  
+Read Chapter \@ref(Sec:MigModels) for background on state-dependent migration models, what they can do and what they can't.   
 
 Exemplary questions that could be tackled with such a model are:
 
@@ -113,15 +141,8 @@ Exemplary questions that could be tackled with such a model are:
 -	What are the consequences of climate-driven changes in site-conditions on timing and/or success of migration?
 -	What are the consequences of human actions, e.g. hunting, on migration success?
 
+Download the model's R-code from GitHub [link](https://github.com/slisovski/sdpMig) - you may need to install additional R-packages like devtools, Rtools, zoo, maptools.
 
-### Before the course
-
-
-
-4. Download model-code from GitHub [link](https://github.com/slisovski/sdpMig) - you may need to install the R-packages devtools, Rtools, zoo, maptools.
-
-
-### During the course
 
 * Run the model using the standard parameter setting.
 * Change one parameter at a time and observe which output measures change
@@ -135,14 +156,12 @@ Exemplary questions that could be tackled with such a model are:
 * Analyse the results
 * Evaluate the results
 
-* Prepare a presentation 
 
 
+## Student project 7: Estimating Migration volume
 
+Why would it be important to quantify the number of birds migrating? Look for possible reasons at Chapters \@ref(Sec:Ecosystemfunctions) and \@ref(Sec:GlobalChange).
 
-## Estimating Migration volume
-
-Why is it important to know how many birds are migrating? Look for possible reasons at Chapters \@ref(Sec:Ecosystemfunctions) and \@ref(Sec:GlobalChange).
 
 -	What is the total number and biomass of birds migrating?
 -	Are there changes in numbers and biomasses over the past decades?
@@ -153,7 +172,7 @@ Analyse overall ringing lists over the years
 
 
 
-## Partial migration: Who stays in winter?
+## Student project 8: Partial migration: Who stays in winter?
 
 In partially migratory species, some individuals migrate while others remain as year-round residents. Partial migration is widespread among birds. Who migrates can be determined genetically, by individual charachters (sex, age, body condition), or by environmental conditions. We expect that individuals migrating benefit from a higher survival because they escape unfriendly winter conditions. On the other hand, those individuals enduring winter at the breeding site may benefit from an increased reproductive success, e.g., because they can start earlier, know the breeding sites and may occupy better breeding territories, or because they have more chances for mating.
 
@@ -233,9 +252,14 @@ Discuss possible proximate and ultimate causes for the different seasonal distri
 
 
 
-## Geolocation - tracking small birds
+## Student project 9: Geolocation - tracking small birds
 
+Where and when birds migrate is typically investigated with individual tracking methods \@ref(Sec:FieldMethods). Among the various devices that exist to date, geolocators have been particularly useful for small (light-weight) birds. However, to get from the light patterns they record to positions requires advanced methods. A manual has been produced that details the necessary steps, the potential pitfalls and their solutions  [link](https://geolocationmanual.vogelwarte.ch/GeoLight.html).
 
+In this project, student apply existing analytical methods to individual geolocator data from selected species and:
 
-  [link](https://geolocationmanual.vogelwarte.ch/GeoLight.html)
+- Analyse light patterns from geolocator recordings
+- Translate a time series of light levels into geographical locations and present them on maps
+- Derive the schedule of movements throughout the year
+
 
