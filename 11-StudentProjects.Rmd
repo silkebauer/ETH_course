@@ -2,12 +2,12 @@
 
 We encourage students to work on a research project during the course. We have compiled a list of suggested projects (see below) but students may come up with their own suggested project within the realm of bird and migration ecology (in the latter case, please come back to us before the course). 
 
-The projects should be pursued in groups of 2-4 students. At the end of the course (Friday), we expect an oral presentation of approx. 10 min that should cover the project's scientific background, approach, research aims, results and findings and a discussion. Ideally, the presentation is held jointly by the members of each group but if, for various reasons, this is impossible, other options can be chosen. 
+The projects should be pursued in groups of 2-4 students. At the end of the course (Friday), we expect an oral presentation of approx. 10 min that should cover the project's scientific background, approach, research aims, results and a discussion. Ideally, the presentation is held jointly by the members of each group but if, for various reasons, this is impossible, other options can be chosen. 
 
 
 ## Pre-requisite: Reading and assessing scientific publications
 
-The projects require that students get familiar with some background and/or recent developments in a specific research field. This means, students need to read and summarize a few  papers. Here are a few tips that may serve as guidelines:
+The projects require that students get familiar with some background and/or recent developments in a specific research field by reading and summarizing a few  papers. Here are a few tips that may serve as guidelines:
 
 1. Summarize the article 
   - Formulate the key message of the paper
@@ -256,7 +256,7 @@ Discuss possible proximate and ultimate causes for the different seasonal distri
 
 Where and when birds migrate is typically investigated with individual tracking methods \@ref(Sec:FieldMethods). Among the various devices that exist to date, geolocators have been particularly useful for small (light-weight) birds. However, to get from the light patterns they record to positions requires advanced methods. A manual has been produced that details the necessary steps, the potential pitfalls and their solutions  [link](https://geolocationmanual.vogelwarte.ch/GeoLight.html).
 
-In this project, student apply existing analytical methods to individual geolocator data from selected species and:
+In this project, students apply existing analytical methods to individual geolocator data from selected species and:
 
 - Analyse light patterns from geolocator recordings
 - Translate a time series of light levels into geographical locations and present them on maps
