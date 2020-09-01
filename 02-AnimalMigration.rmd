@@ -46,7 +46,7 @@ knitr::include_graphics('figures/Fig_SeasonalChanges_NDVI.png')
 There is a variety of migration patterns of which some are also tagged with specific terms. Often it is a specific characteristic or pattern that is emphasized, e.g. the difference in distances covered led to the distinction of short- and long-distance migrants. However, the terminology is not very consistent and may be confusing at the beginning; we explain the most-frequently occurring terms below.  
 
 
-## Characterisation of migration according to distances covered
+### Characterisation of migration according to distances covered
 
 **Short-distance migration** Migration over ‘shorter’ distances, typically <5000kms, e.g. from Central Europe to the Mediterranean. Sometimes, short-distance migrants are also partial migrants. Starling (_Sturnus vulgaris_)
 
@@ -56,7 +56,7 @@ There is a variety of migration patterns of which some are also tagged with spec
 
 
 
-## Characterisation of migration according to daytime of travel
+### Characterisation of migration according to daytime of travel
 
 **Nocturnal migration**	Most songbirds migrate at night, i.e. they are nocturnal migrants. This behavior has been attributed to reduced predation risk, good flight conditions, or for saving the daylight for feeding. Nocturnal migrants mostly fly alone or in loose flocks. Typical example: Most migratory songbirds, e.g. Wheatear (_Oenanthe oenanthe_)
 
@@ -65,7 +65,7 @@ There is a variety of migration patterns of which some are also tagged with spec
 
 
 
-## Characterisation of migration according to larger-scale patterns of migratory bouts
+### Characterisation of migration according to larger-scale patterns of migratory bouts
 
 **Leap-frog migrations**	Populations breeding further north spend the non-breeding season further south than breeding populations from further south. Thus, some populations “overtake” others on migration.	European robin (_Erithacus rubecula_) [@KornerNievergelt.2014]
 
