@@ -90,7 +90,11 @@ The following papers give some background on relevance:
 
 ## Student project 3: Differential Migration
 
-Do young and old birds or males and females migrate at different times? If such sub-groups migrate at different times in specific species, what could explain these patterns? Potential study species: age-differences in reed warblers, age- and sex-differences in chaffinches. 
+Do young and old birds or males and females migrate at different times? If such sub-groups migrate at different times in specific species, what could explain these patterns?   
+
+Potential study species and questions:   
+age-differences in reed warblers  
+age- and sex-differences in chaffinches. 
 
 Analyse species-specific ringing lists
 
