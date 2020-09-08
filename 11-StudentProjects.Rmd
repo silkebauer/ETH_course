@@ -258,7 +258,7 @@ Discuss possible proximate and ultimate causes for the different seasonal distri
 
 ## Student project 9: Geolocation - tracking small birds
 
-Where and when birds migrate is typically investigated with individual tracking methods \@ref(Sec:FieldMethods). Among the various devices that exist to date, geolocators have been particularly useful for small (light-weight) birds. However, to get from the light patterns they record to positions requires advanced methods. A manual has been produced that details the necessary steps, the potential pitfalls and their solutions  [link](https://geolocationmanual.vogelwarte.ch/GeoLight.html).
+Where and when birds migrate is typically investigated with individual tracking methods \@ref(Sec:FieldMethods). Among the various devices that exist to date, geolocators have been particularly useful for small (light-weight) birds. However, to get from the light patterns they record to positions requires advanced methods. A manual has been produced that details the necessary steps, the potential pitfalls and their solutions  [link](https://geolocationmanual.vogelwarte.ch/index.html).
 
 In this project, students apply existing analytical methods to individual geolocator data from selected species and:
 
