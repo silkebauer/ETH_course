@@ -43,15 +43,15 @@ How to get there:
 * Enter the red office building on the right-hand side of the street and follow the signs within the building
 
 
-**Excursions**
+**Excursions** will take place as half-day or day excursion doable by public transport from Zurich main station.
 
 
-**Student projects** are ideally conducted in grous of 2-4 persons. We expect students to choose a project before the course (see list of potential projects \@ref(Sec:StudentProjects)) and read and summarize the respective literature. There are several slots for work on these projects over the course week and we expect students to give a brief (approx. 20 min) presentation on Friday, detailing the ecological question behind the project, the analytical approach chosen, the results obtained and a discussion. 
+**Student projects** are ideally conducted in groups of 2-4 persons. We expect students to choose a project during the first two days of the course (see list of potential projects \@ref(Sec:StudentProjects)). There are several slots for work on these projects over the course week and we expect students to give a brief (approx. 20 min) presentation on Friday, detailing the ecological question behind the project, the analytical approach chosen, the results obtained and a discussion. 
 
 
 ## Online lectures via zoom - a brief how-to
 
-As most participants have indicated they hav used zoom before, we will send a link for the zoom lectures but still explain a few useful features during the first lecture on Monday.  
+We will send a link for the zoom lectures and explain a few useful features during the first lecture on Monday.  
 
 ## Collaborating via Slack
 

@@ -6,7 +6,7 @@ Students will
 
 * gain a general understanding of migration, its causes and consequences
 * understand the functions of bird migration and its implications for population dynamics and ecological communities
-* apply some frequently used ornithological field methods 
+* apply or get introduced to some frequently used ornithological field methods 
 * interpret information from various data sources (e.g. observations, mark-recapture, data loggers, tracking methods, blood samples, genetics) and evaluate their representativeness and accuracy
 * identify the more common European migrating bird species
 
@@ -16,24 +16,20 @@ For the **conceptual background**, we will cover the following aspects:
 * Morphological and physiological adaptation to flight 
 * Life cycle of birds (breeding, post-fledging, molting, migration, staging)
 * Ecology and evolution of bird migration
-* Physiology and energetics of flight
+* Timing of migration
 * Migration strategies and orientation
+* Global change and migration
 
 
 For **practical and field methods**, we will introduce some of the most important field methods: 
 
 * counting and identifying migrating birds, 
 * bird catching and marking, 
-* morphological and physiological measurements in live birds,
+* morphological and physiological measurements,
 * tracking birds
 
   
 Within the student projects, we will introduce and apply important **theoretical approaches and analytical methods**
-
-* dynamic models of bird migration
-* distribution methods
-* analyses of tracking data
-* 
 
 
 ## Course schedule
@@ -56,7 +52,7 @@ The course consists of lectures, project work and excursions.
 * 12:00 Transfer by train to Sempach
 Location: [Room Aquila at the Swiss Ornithological Institute, Seerose 1, 6204 Sempach](https://www.vogelwarte.ch/de/besuch/anreise). Note that we are in the red office building (not in the brown visitor centre).  
 
-* 14:00 Lecture 1: What is a bird? (Fränzi)
+* 14:00 Lecture 1: Characteristics of birds with focus on adaptations to flight (Fränzi)
 
 * 15:00 Lecture 2: Intro Animal migration (Silke)
 
@@ -69,16 +65,16 @@ Location: [Room Aquila at the Swiss Ornithological Institute, Seerose 1, 6204 Se
 
 ### Tuesday
 
-Excursion to Klingnauer Stausee or Flachsee
+Excursion to Flachsee
 
-Meeting at 8:10 at the railway station Döttingen.
-We will hike around 5-7km. Bring warm cloths and good shoes. Further, if you have, bring binoculars, scope and a bird identification guide.
+Meeting 8:20 at bus station Unterlunkhofen. 
 
- * around 11:30 end of excursion 
+* Zurich HB departure by train S5 7:39 -> Birmensdorf arrival 7:55, Birmensdorf departure by bus 245 8:00h -> Unterlunkhofen arrival 8:17
 
- * 14:00 - 17:00 Project work in home office. We are available on zoom or slack for discussions.
+We will hike around 6-7km. Bring warm cloths and good shoes. Further, if you have, bring binoculars, scope and a bird identification guide.
 
- 
+* Unterlunkhofen 16:11 -> Birmensdorf arrival 16:28, Birmensdorf departure 16:35 -> Zurich HB arrival 16:51h
+
 
 
 ### Wednesday
@@ -94,7 +90,6 @@ Location: [Room Aquila at the Swiss Ornithological Institute, Seerose 1, 6204 Se
 
 * 15:15 - 17:00: project work
 
-Optional: Lecture Life-cycle and population modelling (Fränzi)
 
 
 ### Thursday
