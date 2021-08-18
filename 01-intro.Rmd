@@ -42,37 +42,63 @@ The course consists of lectures, project work and excursions.
 
 ### Monday
 
+1/2 day excursion to Wauwilermoos
+
+* 9:00 Meeting at the railway station Wauwil. We will hike around 5-7km. Bring warm clothes and good shoes. Further, if available, bring binoculars, scope and a bird identification guide.   
+
+
+* During the excursion, we will 
+   + Give an introduction to the course and its practical issues
+   + Provide an overview of the course aims
+   + Let students introduce one another and their expectations from the course
+
+
+* 12:00 Transfer by train to Sempach
 Location: [Room Aquila at the Swiss Ornithological Institute, Seerose 1, 6204 Sempach](https://www.vogelwarte.ch/de/besuch/anreise). Note that we are in the red office building (not in the brown visitor centre).  
 
-* 10:00 - Welcome to the course and practical issues 
-  + Course schedule
-  + Aims of the course 
+* 14:00 Lecture 1: What is a bird? (Fränzi)
+
+* 15:00 Lecture 2: Intro Animal migration (Silke)
+
+* 16:00 Some general issues
   + What we expect from you and your projects
   + How to use slack and zoom
   + Ask us anything!
+  + Short introduction to student projects (Fränzi & Silke)
   
-
-* 11:00 - Lecture 1: What is a bird? Migration in the life-cycle of a bird (Fränzi)
-
-* 12:00 - Lunch break  
-
-* 14:00 - Student introductions and their expectations from the course
-
-* 15:00 - Lecture 2: Intro Animal migration (Silke)
-
-* 16:00 - Short introduction to student projects (Fränzi & Silke)
-
-
-Optional
--	Parasites and migration
--	Information, Cues and timing 
-
- 
 
 ### Tuesday
 
+Excursion to Klingnauer Stausee or Flachsee
+
+Meeting at 8:10 at the railway station Döttingen.
+We will hike around 5-7km. Bring warm cloths and good shoes. Further, if you have, bring binoculars, scope and a bird identification guide.
+
+ * around 11:30 end of excursion 
+
+ * 14:00 - 17:00 Project work in home office. We are available on zoom or slack for discussions.
+
+ 
+
+
+### Wednesday
 Location: [Room Aquila at the Swiss Ornithological Institute, Seerose 1, 6204 Sempach](https://www.vogelwarte.ch/de/besuch/anreise). Note that we are in the red office building (not in the brown visitor centre). 
 
+* 10:00 Lecture 3: Migration in the life-cycle of a bird
+
+* 11:00 Lecture Timing (Silke)
+
+* 12:00 Lunch break
+
+* 14:00 Lecture Orientation (Fränzi)
+
+* 15:15 - 17:00: project work
+
+Optional: Lecture Life-cycle and population modelling (Fränzi)
+
+
+### Thursday
+Location: [Room Aquila at the Swiss Ornithological Institute, Seerose 1, 6204 Sempach](https://www.vogelwarte.ch/de/besuch/anreise). Note that we are in the red office building (not in the brown visitor centre). 
 
  * 10:00 - Lecture: Field methods (Fränzi)
  
@@ -85,8 +111,7 @@ Location: [Room Aquila at the Swiss Ornithological Institute, Seerose 1, 6204 Se
    + Multi-sensor logger
    + Radar
 
-
-* 11:30 Introduction to Geolocation (Tamara Emmenegger)
+* 11:30 Introduction to Geolocation 
  
 * 12:00 Lunch break
 
@@ -104,59 +129,27 @@ Location: [Room Aquila at the Swiss Ornithological Institute, Seerose 1, 6204 Se
  * Project work
 
 
-### Wednesday
-
-Excursion to Wauwilermoos
-
-* 9:00 Meeting at the railway station Wauwil. We will hike around 5-7km. Bring warm cloths and good shoes. Further, if you have, bring binoculars, scope and a bird identification guide.   
-
-* 12:00 Transfer by train to Sempach
-
-* 14:00 Lecture Orientation (Fränzi)
-
-* 14:30 Lecture Timing (Silke)
-
-* 15:15 - 17:00: project work
-
-Alternative in case of bad weather: Lecture Life-cycle and population modelling (Fränzi)
-
-
-### Thursday
-
-Excursion to Klingnauer Stausee
-
-Meeting at 8:10 at the railway station Döttingen.
-We will hike around 5-7km. Bring warm cloths and good shoes. Further, if you have, bring binoculars, scope and a bird identification guide.
-
- * around 11:30 end of excursion 
-
- * 14:00 - 17:00 Project work in home office. We are available on zoom or slack for discussions.
-
- 
-
 ### Friday
 
 Location: [Room Aquila at the Swiss Ornithological Institute, Seerose 1, 6204 Sempach](https://www.vogelwarte.ch/de/besuch/anreise). Note that we are in the red office building (not in the brown visitor centre).
 
  * 10:00 Project work 
  
-
  * 14:00 Presentations of student-projects  
  
  * 15:30 Review of bird species seen during excursions (Christian)
  
- * 15:45 Current research at Swiss Ornithological Institute, in particular research in Bird migration  
+ * 15:45 Current research at Swiss Ornithological Institute and possibilities to get involved in (migration) research  
  
- * 16:00 Concluding remarks, feedback
+ * 16:00 Concluding remarks, student feedback
  
  * 17:00 End of course
-
 
 
 ## Preparations
 
 We ask students to prepare for the course by reading at least two papers - one general paper and one specific research paper (see below) - and to introduce the key messages of these papers to your fellow students during the course (for guidelines to reading and summarizing papers, see \@ref(Sec:StudentProjects). 
-Please let us know (via email) until **3 September 2020** which papers you choose and also send us up to three questions that you would like to have answered during the course.
+Please let us know (via email) until **1 September 2021** which papers you choose and also send us up to three questions that you would like to have answered during the course.
 
 
 **General papers, reviews, synthesis**
@@ -182,7 +175,7 @@ Please let us know (via email) until **3 September 2020** which papers you choos
 - [@Briedis2019] - Migration timing of male vs female birds  
 - [@Tøttrup2012a] - spring and autumn migration strategies  
 - [@Horton2020] - Climate change  influences on migration phenology
-- [@Schmaljohann2017] - C limate change response of avian migrants
+- [@Schmaljohann2017] - Climate change response of avian migrants
 - [@Rosenberg2019] - Decline of avifauna
 - [@Zuniga.2017] Survival of migrants and resident blackbirds  
 - [@Abrahms2019] - whale migration, memory versus perception-based migration  
