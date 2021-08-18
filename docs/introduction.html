@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="" xml:lang="">
 <head>
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 2 Introduction | Handout and background material for ETHZ course ‘Animal Migration and research in field ornithology’</title>
   <meta name="description" content="This is a handout for the ETH migration course at Col de Bretolet." />
-  <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 2 Introduction | Handout and background material for ETHZ course ‘Animal Migration and research in field ornithology’" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Silke Bauer &amp; Fränzi Korner-Nievergelt" />
 
 
-<meta name="date" content="2020-09-11" />
+<meta name="date" content="2021-08-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -50,12 +50,15 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -64,14 +67,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -80,9 +85,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -252,7 +257,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>gain a general understanding of migration, its causes and consequences</li>
 <li>understand the functions of bird migration and its implications for population dynamics and ecological communities</li>
-<li>apply some frequently used ornithological field methods</li>
+<li>apply or get introduced to some frequently used ornithological field methods</li>
 <li>interpret information from various data sources (e.g. observations, mark-recapture, data loggers, tracking methods, blood samples, genetics) and evaluate their representativeness and accuracy</li>
 <li>identify the more common European migrating bird species</li>
 </ul>
@@ -261,51 +266,71 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Morphological and physiological adaptation to flight</li>
 <li>Life cycle of birds (breeding, post-fledging, molting, migration, staging)</li>
 <li>Ecology and evolution of bird migration</li>
-<li>Physiology and energetics of flight</li>
+<li>Timing of migration</li>
 <li>Migration strategies and orientation</li>
+<li>Global change and migration</li>
 </ul>
 <p>For <strong>practical and field methods</strong>, we will introduce some of the most important field methods:</p>
 <ul>
 <li>counting and identifying migrating birds,</li>
 <li>bird catching and marking,</li>
-<li>morphological and physiological measurements in live birds,</li>
+<li>morphological and physiological measurements,</li>
 <li>tracking birds</li>
 </ul>
 <p>Within the student projects, we will introduce and apply important <strong>theoretical approaches and analytical methods</strong></p>
-<ul>
-<li>dynamic models of bird migration</li>
-<li>distribution methods</li>
-<li>analyses of tracking data</li>
-<li></li>
-</ul>
 </div>
 <div id="course-schedule" class="section level2">
 <h2><span class="header-section-number">2.2</span> Course schedule</h2>
 <p>The course consists of lectures, project work and excursions.</p>
 <div id="monday" class="section level3">
 <h3><span class="header-section-number">2.2.1</span> Monday</h3>
-<p>Location: <a href="https://www.vogelwarte.ch/de/besuch/anreise">Room Aquila at the Swiss Ornithological Institute, Seerose 1, 6204 Sempach</a>. Note that we are in the red office building (not in the brown visitor centre).</p>
+<p>1/2 day excursion to Wauwilermoos</p>
 <ul>
-<li><p>10:00 - Welcome to the course and practical issues</p>
+<li><p>9:00 Meeting at the railway station Wauwil. We will hike around 5-7km. Bring warm clothes and good shoes. Further, if available, bring binoculars, scope and a bird identification guide.</p></li>
+<li><p>During the excursion, we will</p>
 <ul>
-<li>Course schedule</li>
-<li>Aims of the course</li>
+<li>Give an introduction to the course and its practical issues</li>
+<li>Provide an overview of the course aims</li>
+<li>Let students introduce one another and their expectations from the course</li>
+</ul></li>
+<li><p>12:00 Transfer by train to Sempach
+Location: <a href="https://www.vogelwarte.ch/de/besuch/anreise">Room Aquila at the Swiss Ornithological Institute, Seerose 1, 6204 Sempach</a>. Note that we are in the red office building (not in the brown visitor centre).</p></li>
+<li><p>14:00 Lecture 1: Characteristics of birds with focus on adaptations to flight (Fränzi)</p></li>
+<li><p>15:00 Lecture 2: Intro Animal migration (Silke)</p></li>
+<li><p>16:00 Some general issues</p>
+<ul>
 <li>What we expect from you and your projects</li>
 <li>How to use slack and zoom</li>
 <li>Ask us anything!</li>
+<li>Short introduction to student projects (Fränzi &amp; Silke)</li>
 </ul></li>
-<li><p>11:00 - Lecture 1: What is a bird? Migration in the life-cycle of a bird (Fränzi)</p></li>
-<li><p>12:00 - Lunch break</p></li>
-<li><p>14:00 - Student introductions and their expectations from the course</p></li>
-<li><p>15:00 - Lecture 2: Intro Animal migration (Silke)</p></li>
-<li><p>16:00 - Short introduction to student projects (Fränzi &amp; Silke)</p></li>
 </ul>
-<p>Optional
-- Parasites and migration
-- Information, Cues and timing</p>
 </div>
 <div id="tuesday" class="section level3">
 <h3><span class="header-section-number">2.2.2</span> Tuesday</h3>
+<p>Excursion to Flachsee</p>
+<p>Meeting 8:20 at bus station Unterlunkhofen.</p>
+<ul>
+<li>Zurich HB departure by train S5 7:39 -&gt; Birmensdorf arrival 7:55, Birmensdorf departure by bus 245 8:00h -&gt; Unterlunkhofen arrival 8:17</li>
+</ul>
+<p>We will hike around 6-7km. Bring warm cloths and good shoes. Further, if you have, bring binoculars, scope and a bird identification guide.</p>
+<ul>
+<li>Unterlunkhofen 16:11 -&gt; Birmensdorf arrival 16:28, Birmensdorf departure 16:35 -&gt; Zurich HB arrival 16:51h</li>
+</ul>
+</div>
+<div id="wednesday" class="section level3">
+<h3><span class="header-section-number">2.2.3</span> Wednesday</h3>
+<p>Location: <a href="https://www.vogelwarte.ch/de/besuch/anreise">Room Aquila at the Swiss Ornithological Institute, Seerose 1, 6204 Sempach</a>. Note that we are in the red office building (not in the brown visitor centre).</p>
+<ul>
+<li><p>10:00 Lecture 3: Migration in the life-cycle of a bird</p></li>
+<li><p>11:00 Lecture Timing (Silke)</p></li>
+<li><p>12:00 Lunch break</p></li>
+<li><p>14:00 Lecture Orientation (Fränzi)</p></li>
+<li><p>15:15 - 17:00: project work</p></li>
+</ul>
+</div>
+<div id="thursday" class="section level3">
+<h3><span class="header-section-number">2.2.4</span> Thursday</h3>
 <p>Location: <a href="https://www.vogelwarte.ch/de/besuch/anreise">Room Aquila at the Swiss Ornithological Institute, Seerose 1, 6204 Sempach</a>. Note that we are in the red office building (not in the brown visitor centre).</p>
 <ul>
 <li><p>10:00 - Lecture: Field methods (Fränzi)</p></li>
@@ -319,7 +344,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Multi-sensor logger</li>
 <li>Radar</li>
 </ul></li>
-<li><p>11:30 Introduction to Geolocation (Tamara Emmenegger)</p></li>
+<li><p>11:30 Introduction to Geolocation</p></li>
 <li><p>12:00 Lunch break</p></li>
 <li><p>13 30: Lecture Migration models (Silke)</p>
 <ul>
@@ -334,28 +359,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Project work</p></li>
 </ul>
 </div>
-<div id="wednesday" class="section level3">
-<h3><span class="header-section-number">2.2.3</span> Wednesday</h3>
-<p>Excursion to Wauwilermoos</p>
-<ul>
-<li><p>9:00 Meeting at the railway station Wauwil. We will hike around 5-7km. Bring warm cloths and good shoes. Further, if you have, bring binoculars, scope and a bird identification guide.</p></li>
-<li><p>12:00 Transfer by train to Sempach</p></li>
-<li><p>14:00 Lecture Orientation (Fränzi)</p></li>
-<li><p>14:30 Lecture Timing (Silke)</p></li>
-<li><p>15:15 - 17:00: project work</p></li>
-</ul>
-<p>Alternative in case of bad weather: Lecture Life-cycle and population modelling (Fränzi)</p>
-</div>
-<div id="thursday" class="section level3">
-<h3><span class="header-section-number">2.2.4</span> Thursday</h3>
-<p>Excursion to Klingnauer Stausee</p>
-<p>Meeting at 8:10 at the railway station Döttingen.
-We will hike around 5-7km. Bring warm cloths and good shoes. Further, if you have, bring binoculars, scope and a bird identification guide.</p>
-<ul>
-<li><p>around 11:30 end of excursion</p></li>
-<li><p>14:00 - 17:00 Project work in home office. We are available on zoom or slack for discussions.</p></li>
-</ul>
-</div>
 <div id="friday" class="section level3">
 <h3><span class="header-section-number">2.2.5</span> Friday</h3>
 <p>Location: <a href="https://www.vogelwarte.ch/de/besuch/anreise">Room Aquila at the Swiss Ornithological Institute, Seerose 1, 6204 Sempach</a>. Note that we are in the red office building (not in the brown visitor centre).</p>
@@ -363,8 +366,8 @@ We will hike around 5-7km. Bring warm cloths and good shoes. Further, if you hav
 <li><p>10:00 Project work</p></li>
 <li><p>14:00 Presentations of student-projects</p></li>
 <li><p>15:30 Review of bird species seen during excursions (Christian)</p></li>
-<li><p>15:45 Current research at Swiss Ornithological Institute, in particular research in Bird migration</p></li>
-<li><p>16:00 Concluding remarks, feedback</p></li>
+<li><p>15:45 Current research at Swiss Ornithological Institute and possibilities to get involved in (migration) research</p></li>
+<li><p>16:00 Concluding remarks, student feedback</p></li>
 <li><p>17:00 End of course</p></li>
 </ul>
 </div>
@@ -372,7 +375,7 @@ We will hike around 5-7km. Bring warm cloths and good shoes. Further, if you hav
 <div id="preparations" class="section level2">
 <h2><span class="header-section-number">2.3</span> Preparations</h2>
 <p>We ask students to prepare for the course by reading at least two papers - one general paper and one specific research paper (see below) - and to introduce the key messages of these papers to your fellow students during the course (for guidelines to reading and summarizing papers, see <a href="Sec-StudentProjects.html#Sec:StudentProjects">12</a>.
-Please let us know (via email) until <strong>3 September 2020</strong> which papers you choose and also send us up to three questions that you would like to have answered during the course.</p>
+Please let us know (via email) until <strong>1 September 2021</strong> which papers you choose and also send us up to three questions that you would like to have answered during the course.</p>
 <p><strong>General papers, reviews, synthesis</strong></p>
 <ul>
 <li><span class="citation">(Bauer and Hoye <a href="#ref-Bauer.2014" role="doc-biblioref">2014</a>)</span> - Synthesis of how migratory animals influence community structure and ecosystem functioning</li>
@@ -408,7 +411,7 @@ Please let us know (via email) until <strong>3 September 2020</strong> which pap
 <li><span class="citation">(Tøttrup et al. <a href="#ref-Tøttrup2012a" role="doc-biblioref">2012</a>)</span> - spring and autumn migration strategies<br />
 </li>
 <li><span class="citation">(Horton et al. <a href="#ref-Horton2020" role="doc-biblioref">2020</a>)</span> - Climate change influences on migration phenology</li>
-<li><span class="citation">(Schmaljohann and Both <a href="#ref-Schmaljohann2017" role="doc-biblioref">2017</a>)</span> - C limate change response of avian migrants</li>
+<li><span class="citation">(Schmaljohann and Both <a href="#ref-Schmaljohann2017" role="doc-biblioref">2017</a>)</span> - Climate change response of avian migrants</li>
 <li><span class="citation">(Rosenberg et al. <a href="#ref-Rosenberg2019" role="doc-biblioref">2019</a>)</span> - Decline of avifauna</li>
 <li><span class="citation">(Zúñiga et al. <a href="#ref-Zuniga.2017" role="doc-biblioref">2017</a>)</span> Survival of migrants and resident blackbirds<br />
 </li>
@@ -516,12 +519,11 @@ gitbook.start({
 "github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -533,6 +535,10 @@ gitbook.start({
 "text": null
 },
 "history": {
+"link": null,
+"text": null
+},
+"view": {
 "link": null,
 "text": null
 },

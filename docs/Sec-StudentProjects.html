@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="" xml:lang="">
 <head>
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 12 Student projects | Handout and background material for ETHZ course ‘Animal Migration and research in field ornithology’</title>
   <meta name="description" content="This is a handout for the ETH migration course at Col de Bretolet." />
-  <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 12 Student projects | Handout and background material for ETHZ course ‘Animal Migration and research in field ornithology’" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Silke Bauer &amp; Fränzi Korner-Nievergelt" />
 
 
-<meta name="date" content="2020-09-11" />
+<meta name="date" content="2021-08-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -50,12 +50,15 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -64,14 +67,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -80,9 +85,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -383,7 +388,7 @@ using MCMC (software: Jags)</p>
 <p>In partially migratory species, some individuals migrate while others remain as year-round residents. Partial migration is widespread among birds. Who migrates can be determined genetically, by individual charachters (sex, age, body condition), or by environmental conditions. We expect that individuals migrating benefit from a higher survival because they escape unfriendly winter conditions. On the other hand, those individuals enduring winter at the breeding site may benefit from an increased reproductive success, e.g., because they can start earlier, know the breeding sites and may occupy better breeding territories, or because they have more chances for mating.</p>
 <p>The White-winged Snowfinch <em>Montifringilla nivalis nivalis</em> is a partial migrant living at high elevations (above the tree line) in southern European mountain areas. In other subspecies, the species occurs in mountain areas from Turkey eastward until the Himalaya. The Snowfinch is highly adapted to living at high-elevation harsh climate. In Switzerland, it can be observed during winter at feeders in ski areas or mountain huts. Its migration behaviour is still largely unknown. In the Pyrenees and in southern France, wintering indivividuals can be regularly observed, ocassionally in large numbers. Ring recoveries also indicate seasonal migration (Fig. <a href="Sec-StudentProjects.html#fig:migsnowfinch">12.1</a>).</p>
 <div class="figure"><span id="fig:migsnowfinch"></span>
-<img src="figures/ring_recoveries_Snowfinch.jpg" alt="Seasonal migration of Snowfinches as observed by ring recoveries. Arrows connect the ringing location with the recovery location. Blue = ringed during winter and recovered during summer (spring migration). Red = ringed during summer and recovered during winter (autumn migration)."  />
+<img src="figures/ring_recoveries_Snowfinch.jpg" alt="Seasonal migration of Snowfinches as observed by ring recoveries. Arrows connect the ringing location with the recovery location. Blue = ringed during winter and recovered during summer (spring migration). Red = ringed during summer and recovered during winter (autumn migration)." width="1026" />
 <p class="caption">
 Figure 12.1: Seasonal migration of Snowfinches as observed by ring recoveries. Arrows connect the ringing location with the recovery location. Blue = ringed during winter and recovered during summer (spring migration). Red = ringed during summer and recovered during winter (autumn migration).
 </p>
@@ -400,51 +405,51 @@ Figure 12.1: Seasonal migration of Snowfinches as observed by ring recoveries. A
 <p>Use a mark-resighting data set of Snowfinches from the Swiss Alps to describe which individuals spend the winter in the breeding areas (Swiss Alps). The example data contain capturing and resighting dates for individuals with known age and sex.</p>
 <p>The age is coded as 1 = nestling, 3 = first calendar year, 4 = not first calendar year, 5 = second calendar year, 6 = older than second calendar year.</p>
 <p>The below R-code can be used to start with. It extracts the number of individuals (number of different ring numbers) seen for each month. The observation effort differed over time but we can assume that it was the same for all age and sex classes.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">load</span>(<span class="st">&quot;data/Snowfinch_resightings.rda&quot;</span>)</a>
-<a class="sourceLine" id="cb3-2" title="2">aggdat &lt;-<span class="st"> </span><span class="kw">aggregate</span>(ringnr<span class="op">~</span>month<span class="op">+</span>sex<span class="op">+</span>age, <span class="dt">data=</span>dat, <span class="cf">function</span>(x) <span class="kw">nlevels</span>(<span class="kw">factor</span>(x)))</a>
-<a class="sourceLine" id="cb3-3" title="3">aggdat &lt;-<span class="st"> </span>aggdat[aggdat<span class="op">$</span>age<span class="op">&gt;</span><span class="dv">3</span>,] <span class="co"># only include individuals from their first winter onward (delete nestlings and first calendar-year birds)</span></a>
-<a class="sourceLine" id="cb3-4" title="4"></a>
-<a class="sourceLine" id="cb3-5" title="5"><span class="co"># include months with no individuals observed</span></a>
-<a class="sourceLine" id="cb3-6" title="6">datcomplete &lt;-<span class="st"> </span><span class="kw">expand.grid</span>(<span class="dt">month=</span><span class="dv">1</span><span class="op">:</span><span class="dv">11</span>, <span class="dt">sex=</span><span class="kw">c</span>(<span class="st">&quot;f&quot;</span>, <span class="st">&quot;m&quot;</span>), <span class="dt">age=</span><span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>))</a>
-<a class="sourceLine" id="cb3-7" title="7">rowid &lt;-<span class="st"> </span><span class="kw">paste</span>(datcomplete<span class="op">$</span>month, datcomplete<span class="op">$</span>sex, datcomplete<span class="op">$</span>age)</a>
-<a class="sourceLine" id="cb3-8" title="8">rowidaggdat &lt;-<span class="st"> </span><span class="kw">paste</span>(aggdat<span class="op">$</span>month, aggdat<span class="op">$</span>sex, aggdat<span class="op">$</span>age)</a>
-<a class="sourceLine" id="cb3-9" title="9">datcomplete<span class="op">$</span>n &lt;-<span class="st"> </span>aggdat<span class="op">$</span>ringnr[<span class="kw">match</span>(rowid, rowidaggdat)]</a>
-<a class="sourceLine" id="cb3-10" title="10">datcomplete<span class="op">$</span>n[<span class="kw">is.na</span>(datcomplete<span class="op">$</span>n)] &lt;-<span class="st"> </span><span class="dv">0</span></a>
-<a class="sourceLine" id="cb3-11" title="11"></a>
-<a class="sourceLine" id="cb3-12" title="12"><span class="kw">plot</span>(datcomplete<span class="op">$</span>month, datcomplete<span class="op">$</span>n,</a>
-<a class="sourceLine" id="cb3-13" title="13">     <span class="dt">las=</span><span class="dv">1</span>, <span class="dt">ylab=</span><span class="st">&quot;Number of individuals observed&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Month&quot;</span>)</a>
-<a class="sourceLine" id="cb3-14" title="14"><span class="co"># first year males</span></a>
-<a class="sourceLine" id="cb3-15" title="15">index &lt;-<span class="st"> </span>datcomplete<span class="op">$</span>age<span class="op">==</span><span class="dv">5</span><span class="op">&amp;</span>datcomplete<span class="op">$</span>sex<span class="op">==</span><span class="st">&quot;m&quot;</span></a>
-<a class="sourceLine" id="cb3-16" title="16"><span class="kw">lines</span>(datcomplete<span class="op">$</span>month[index], datcomplete<span class="op">$</span>n[index], <span class="dt">lwd=</span><span class="dv">2</span>, <span class="dt">col=</span><span class="st">&quot;lightblue&quot;</span>)</a>
-<a class="sourceLine" id="cb3-17" title="17"></a>
-<a class="sourceLine" id="cb3-18" title="18"><span class="co"># second year and older males</span></a>
-<a class="sourceLine" id="cb3-19" title="19">index &lt;-<span class="st"> </span>datcomplete<span class="op">$</span>age<span class="op">==</span><span class="dv">6</span><span class="op">&amp;</span>datcomplete<span class="op">$</span>sex<span class="op">==</span><span class="st">&quot;m&quot;</span></a>
-<a class="sourceLine" id="cb3-20" title="20"><span class="kw">lines</span>(datcomplete<span class="op">$</span>month[index], datcomplete<span class="op">$</span>n[index], <span class="dt">lwd=</span><span class="dv">2</span>, </a>
-<a class="sourceLine" id="cb3-21" title="21">      <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>)</a>
-<a class="sourceLine" id="cb3-22" title="22"></a>
-<a class="sourceLine" id="cb3-23" title="23"><span class="co"># males, age not identified</span></a>
-<a class="sourceLine" id="cb3-24" title="24">index &lt;-<span class="st"> </span>datcomplete<span class="op">$</span>age<span class="op">==</span><span class="dv">4</span><span class="op">&amp;</span>datcomplete<span class="op">$</span>sex<span class="op">==</span><span class="st">&quot;m&quot;</span></a>
-<a class="sourceLine" id="cb3-25" title="25"><span class="kw">lines</span>(datcomplete<span class="op">$</span>month[index], datcomplete<span class="op">$</span>n[index], <span class="dt">lwd=</span><span class="dv">2</span>, </a>
-<a class="sourceLine" id="cb3-26" title="26">      <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>, <span class="dt">lty=</span><span class="dv">3</span>)</a>
-<a class="sourceLine" id="cb3-27" title="27"></a>
-<a class="sourceLine" id="cb3-28" title="28"></a>
-<a class="sourceLine" id="cb3-29" title="29"><span class="co"># first year females</span></a>
-<a class="sourceLine" id="cb3-30" title="30">index &lt;-<span class="st"> </span>datcomplete<span class="op">$</span>age<span class="op">==</span><span class="dv">5</span><span class="op">&amp;</span>datcomplete<span class="op">$</span>sex<span class="op">==</span><span class="st">&quot;f&quot;</span></a>
-<a class="sourceLine" id="cb3-31" title="31"><span class="kw">lines</span>(datcomplete<span class="op">$</span>month[index], datcomplete<span class="op">$</span>n[index], <span class="dt">lwd=</span><span class="dv">2</span>, </a>
-<a class="sourceLine" id="cb3-32" title="32">      <span class="dt">col=</span><span class="st">&quot;orange&quot;</span>)</a>
-<a class="sourceLine" id="cb3-33" title="33"></a>
-<a class="sourceLine" id="cb3-34" title="34"></a>
-<a class="sourceLine" id="cb3-35" title="35"><span class="co"># second year and older females</span></a>
-<a class="sourceLine" id="cb3-36" title="36">index &lt;-<span class="st"> </span>datcomplete<span class="op">$</span>age<span class="op">==</span><span class="dv">6</span><span class="op">&amp;</span>datcomplete<span class="op">$</span>sex<span class="op">==</span><span class="st">&quot;f&quot;</span></a>
-<a class="sourceLine" id="cb3-37" title="37"><span class="kw">lines</span>(datcomplete<span class="op">$</span>month[index], datcomplete<span class="op">$</span>n[index], <span class="dt">lwd=</span><span class="dv">2</span>, </a>
-<a class="sourceLine" id="cb3-38" title="38">      <span class="dt">col=</span><span class="st">&quot;brown&quot;</span>)</a>
-<a class="sourceLine" id="cb3-39" title="39"></a>
-<a class="sourceLine" id="cb3-40" title="40"><span class="co"># females, age not identified</span></a>
-<a class="sourceLine" id="cb3-41" title="41">index &lt;-<span class="st"> </span>datcomplete<span class="op">$</span>age<span class="op">==</span><span class="dv">4</span><span class="op">&amp;</span>datcomplete<span class="op">$</span>sex<span class="op">==</span><span class="st">&quot;f&quot;</span></a>
-<a class="sourceLine" id="cb3-42" title="42"><span class="kw">lines</span>(datcomplete<span class="op">$</span>month[index], datcomplete<span class="op">$</span>n[index], <span class="dt">lwd=</span><span class="dv">2</span>, </a>
-<a class="sourceLine" id="cb3-43" title="43">      <span class="dt">col=</span><span class="st">&quot;brown&quot;</span>, <span class="dt">lty=</span><span class="dv">3</span>)</a>
-<a class="sourceLine" id="cb3-44" title="44"></a>
-<a class="sourceLine" id="cb3-45" title="45"><span class="kw">legend</span>(<span class="dv">5</span>, <span class="dv">40</span>, <span class="dt">lwd=</span><span class="dv">2</span>, <span class="dt">lty=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">1</span>), <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;brown&quot;</span>, <span class="st">&quot;brown&quot;</span>, <span class="st">&quot;orange&quot;</span>, <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;lightblue&quot;</span>), <span class="dt">legend=</span><span class="kw">c</span>(<span class="st">&quot;females age 2y+&quot;</span>, <span class="st">&quot;females age unknown&quot;</span>, <span class="st">&quot;females 1y&quot;</span>, <span class="st">&quot;males age 2y+&quot;</span>, <span class="st">&quot;males age unknown&quot;</span>, <span class="st">&quot;males 1y&quot;</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="Sec-StudentProjects.html#cb2-1"></a><span class="kw">load</span>(<span class="st">&quot;data/Snowfinch_resightings.rda&quot;</span>)</span>
+<span id="cb2-2"><a href="Sec-StudentProjects.html#cb2-2"></a>aggdat &lt;-<span class="st"> </span><span class="kw">aggregate</span>(ringnr<span class="op">~</span>month<span class="op">+</span>sex<span class="op">+</span>age, <span class="dt">data=</span>dat, <span class="cf">function</span>(x) <span class="kw">nlevels</span>(<span class="kw">factor</span>(x)))</span>
+<span id="cb2-3"><a href="Sec-StudentProjects.html#cb2-3"></a>aggdat &lt;-<span class="st"> </span>aggdat[aggdat<span class="op">$</span>age<span class="op">&gt;</span><span class="dv">3</span>,] <span class="co"># only include individuals from their first winter onward (delete nestlings and first calendar-year birds)</span></span>
+<span id="cb2-4"><a href="Sec-StudentProjects.html#cb2-4"></a></span>
+<span id="cb2-5"><a href="Sec-StudentProjects.html#cb2-5"></a><span class="co"># include months with no individuals observed</span></span>
+<span id="cb2-6"><a href="Sec-StudentProjects.html#cb2-6"></a>datcomplete &lt;-<span class="st"> </span><span class="kw">expand.grid</span>(<span class="dt">month=</span><span class="dv">1</span><span class="op">:</span><span class="dv">11</span>, <span class="dt">sex=</span><span class="kw">c</span>(<span class="st">&quot;f&quot;</span>, <span class="st">&quot;m&quot;</span>), <span class="dt">age=</span><span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>))</span>
+<span id="cb2-7"><a href="Sec-StudentProjects.html#cb2-7"></a>rowid &lt;-<span class="st"> </span><span class="kw">paste</span>(datcomplete<span class="op">$</span>month, datcomplete<span class="op">$</span>sex, datcomplete<span class="op">$</span>age)</span>
+<span id="cb2-8"><a href="Sec-StudentProjects.html#cb2-8"></a>rowidaggdat &lt;-<span class="st"> </span><span class="kw">paste</span>(aggdat<span class="op">$</span>month, aggdat<span class="op">$</span>sex, aggdat<span class="op">$</span>age)</span>
+<span id="cb2-9"><a href="Sec-StudentProjects.html#cb2-9"></a>datcomplete<span class="op">$</span>n &lt;-<span class="st"> </span>aggdat<span class="op">$</span>ringnr[<span class="kw">match</span>(rowid, rowidaggdat)]</span>
+<span id="cb2-10"><a href="Sec-StudentProjects.html#cb2-10"></a>datcomplete<span class="op">$</span>n[<span class="kw">is.na</span>(datcomplete<span class="op">$</span>n)] &lt;-<span class="st"> </span><span class="dv">0</span></span>
+<span id="cb2-11"><a href="Sec-StudentProjects.html#cb2-11"></a></span>
+<span id="cb2-12"><a href="Sec-StudentProjects.html#cb2-12"></a><span class="kw">plot</span>(datcomplete<span class="op">$</span>month, datcomplete<span class="op">$</span>n,</span>
+<span id="cb2-13"><a href="Sec-StudentProjects.html#cb2-13"></a>     <span class="dt">las=</span><span class="dv">1</span>, <span class="dt">ylab=</span><span class="st">&quot;Number of individuals observed&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Month&quot;</span>)</span>
+<span id="cb2-14"><a href="Sec-StudentProjects.html#cb2-14"></a><span class="co"># first year males</span></span>
+<span id="cb2-15"><a href="Sec-StudentProjects.html#cb2-15"></a>index &lt;-<span class="st"> </span>datcomplete<span class="op">$</span>age<span class="op">==</span><span class="dv">5</span><span class="op">&amp;</span>datcomplete<span class="op">$</span>sex<span class="op">==</span><span class="st">&quot;m&quot;</span></span>
+<span id="cb2-16"><a href="Sec-StudentProjects.html#cb2-16"></a><span class="kw">lines</span>(datcomplete<span class="op">$</span>month[index], datcomplete<span class="op">$</span>n[index], <span class="dt">lwd=</span><span class="dv">2</span>, <span class="dt">col=</span><span class="st">&quot;lightblue&quot;</span>)</span>
+<span id="cb2-17"><a href="Sec-StudentProjects.html#cb2-17"></a></span>
+<span id="cb2-18"><a href="Sec-StudentProjects.html#cb2-18"></a><span class="co"># second year and older males</span></span>
+<span id="cb2-19"><a href="Sec-StudentProjects.html#cb2-19"></a>index &lt;-<span class="st"> </span>datcomplete<span class="op">$</span>age<span class="op">==</span><span class="dv">6</span><span class="op">&amp;</span>datcomplete<span class="op">$</span>sex<span class="op">==</span><span class="st">&quot;m&quot;</span></span>
+<span id="cb2-20"><a href="Sec-StudentProjects.html#cb2-20"></a><span class="kw">lines</span>(datcomplete<span class="op">$</span>month[index], datcomplete<span class="op">$</span>n[index], <span class="dt">lwd=</span><span class="dv">2</span>, </span>
+<span id="cb2-21"><a href="Sec-StudentProjects.html#cb2-21"></a>      <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb2-22"><a href="Sec-StudentProjects.html#cb2-22"></a></span>
+<span id="cb2-23"><a href="Sec-StudentProjects.html#cb2-23"></a><span class="co"># males, age not identified</span></span>
+<span id="cb2-24"><a href="Sec-StudentProjects.html#cb2-24"></a>index &lt;-<span class="st"> </span>datcomplete<span class="op">$</span>age<span class="op">==</span><span class="dv">4</span><span class="op">&amp;</span>datcomplete<span class="op">$</span>sex<span class="op">==</span><span class="st">&quot;m&quot;</span></span>
+<span id="cb2-25"><a href="Sec-StudentProjects.html#cb2-25"></a><span class="kw">lines</span>(datcomplete<span class="op">$</span>month[index], datcomplete<span class="op">$</span>n[index], <span class="dt">lwd=</span><span class="dv">2</span>, </span>
+<span id="cb2-26"><a href="Sec-StudentProjects.html#cb2-26"></a>      <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>, <span class="dt">lty=</span><span class="dv">3</span>)</span>
+<span id="cb2-27"><a href="Sec-StudentProjects.html#cb2-27"></a></span>
+<span id="cb2-28"><a href="Sec-StudentProjects.html#cb2-28"></a></span>
+<span id="cb2-29"><a href="Sec-StudentProjects.html#cb2-29"></a><span class="co"># first year females</span></span>
+<span id="cb2-30"><a href="Sec-StudentProjects.html#cb2-30"></a>index &lt;-<span class="st"> </span>datcomplete<span class="op">$</span>age<span class="op">==</span><span class="dv">5</span><span class="op">&amp;</span>datcomplete<span class="op">$</span>sex<span class="op">==</span><span class="st">&quot;f&quot;</span></span>
+<span id="cb2-31"><a href="Sec-StudentProjects.html#cb2-31"></a><span class="kw">lines</span>(datcomplete<span class="op">$</span>month[index], datcomplete<span class="op">$</span>n[index], <span class="dt">lwd=</span><span class="dv">2</span>, </span>
+<span id="cb2-32"><a href="Sec-StudentProjects.html#cb2-32"></a>      <span class="dt">col=</span><span class="st">&quot;orange&quot;</span>)</span>
+<span id="cb2-33"><a href="Sec-StudentProjects.html#cb2-33"></a></span>
+<span id="cb2-34"><a href="Sec-StudentProjects.html#cb2-34"></a></span>
+<span id="cb2-35"><a href="Sec-StudentProjects.html#cb2-35"></a><span class="co"># second year and older females</span></span>
+<span id="cb2-36"><a href="Sec-StudentProjects.html#cb2-36"></a>index &lt;-<span class="st"> </span>datcomplete<span class="op">$</span>age<span class="op">==</span><span class="dv">6</span><span class="op">&amp;</span>datcomplete<span class="op">$</span>sex<span class="op">==</span><span class="st">&quot;f&quot;</span></span>
+<span id="cb2-37"><a href="Sec-StudentProjects.html#cb2-37"></a><span class="kw">lines</span>(datcomplete<span class="op">$</span>month[index], datcomplete<span class="op">$</span>n[index], <span class="dt">lwd=</span><span class="dv">2</span>, </span>
+<span id="cb2-38"><a href="Sec-StudentProjects.html#cb2-38"></a>      <span class="dt">col=</span><span class="st">&quot;brown&quot;</span>)</span>
+<span id="cb2-39"><a href="Sec-StudentProjects.html#cb2-39"></a></span>
+<span id="cb2-40"><a href="Sec-StudentProjects.html#cb2-40"></a><span class="co"># females, age not identified</span></span>
+<span id="cb2-41"><a href="Sec-StudentProjects.html#cb2-41"></a>index &lt;-<span class="st"> </span>datcomplete<span class="op">$</span>age<span class="op">==</span><span class="dv">4</span><span class="op">&amp;</span>datcomplete<span class="op">$</span>sex<span class="op">==</span><span class="st">&quot;f&quot;</span></span>
+<span id="cb2-42"><a href="Sec-StudentProjects.html#cb2-42"></a><span class="kw">lines</span>(datcomplete<span class="op">$</span>month[index], datcomplete<span class="op">$</span>n[index], <span class="dt">lwd=</span><span class="dv">2</span>, </span>
+<span id="cb2-43"><a href="Sec-StudentProjects.html#cb2-43"></a>      <span class="dt">col=</span><span class="st">&quot;brown&quot;</span>, <span class="dt">lty=</span><span class="dv">3</span>)</span>
+<span id="cb2-44"><a href="Sec-StudentProjects.html#cb2-44"></a></span>
+<span id="cb2-45"><a href="Sec-StudentProjects.html#cb2-45"></a><span class="kw">legend</span>(<span class="dv">5</span>, <span class="dv">40</span>, <span class="dt">lwd=</span><span class="dv">2</span>, <span class="dt">lty=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">1</span>), <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;brown&quot;</span>, <span class="st">&quot;brown&quot;</span>, <span class="st">&quot;orange&quot;</span>, <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;lightblue&quot;</span>), <span class="dt">legend=</span><span class="kw">c</span>(<span class="st">&quot;females age 2y+&quot;</span>, <span class="st">&quot;females age unknown&quot;</span>, <span class="st">&quot;females 1y&quot;</span>, <span class="st">&quot;males age 2y+&quot;</span>, <span class="st">&quot;males age unknown&quot;</span>, <span class="st">&quot;males 1y&quot;</span>))</span></code></pre></div>
 <div class="figure"><span id="fig:resight"></span>
 <img src="11-StudentProjects_files/figure-html/resight-1.png" alt="Number of individuals observed per month for each age and sex class" width="672" />
 <p class="caption">
@@ -960,12 +965,11 @@ gitbook.start({
 "github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -977,6 +981,10 @@ gitbook.start({
 "text": null
 },
 "history": {
+"link": null,
+"text": null
+},
+"view": {
 "link": null,
 "text": null
 },
