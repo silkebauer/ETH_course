@@ -95,7 +95,7 @@ Location: [Room Aquila at the Swiss Ornithological Institute, Seerose 1, 6204 Se
 
 * 12:00 Lunch break
 
-* 14:00 Lecture Orientation (Fränzi)
+* 14:00 Lecture Field methods (Fränzi)
 
 * 15:15 - 17:00: project work
 
@@ -104,15 +104,13 @@ Location: [Room Aquila at the Swiss Ornithological Institute, Seerose 1, 6204 Se
 ### Thursday
 Location: [Room Aquila at the Swiss Ornithological Institute, Seerose 1, 6204 Sempach](https://www.vogelwarte.ch/de/besuch/anreise). Note that we are in the red office building (not in the brown visitor centre). 
 
-* 10:00 Lecture Field methods (Fränzi)
- 
-* 11:00 Lecture Timing (Silke) & Migration models (Silke)
-  + State-dependent migration models
+* 10:00 Lecture Timing (Silke) & Migration models (Silke)
    -	Basic ingredients and principles of state-dependent models
    -	Backward- forward 
    -	Parameterisations
-   -	Typical research questions
-   -	Examples of applications of migration model
+   -	Typical research questions & examples of applications of migration model
+ 
+* 11:00 Lecture Orientation (Fränzi)
  
 * 12:00 Lunch break
 
@@ -129,7 +127,7 @@ Location: [Room Aquila at the Swiss Ornithological Institute, Seerose 1, 6204 Se
  
  * 14:00 Presentations of student-projects  
  
- * 15:30 Review of bird species seen during excursions (Christian)
+ * 15:00 Review of bird species seen during excursions (Christian)
  
  * 15:45 Current research at Swiss Ornithological Institute and possibilities to get involved in (migration) research  
  * 16:00 Concluding remarks, student feedback
