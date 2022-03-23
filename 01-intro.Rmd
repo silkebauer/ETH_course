@@ -36,51 +36,48 @@ Within the student projects, we will introduce and apply important **theoretical
 
 The course consists of lectures, project work and excursions.
 
-### Monday
-
-1/2 day excursion to Wauwilermoos
-
-* 9:00 Meeting at the railway station Wauwil. We will hike around 5-7km. Bring warm clothes and good shoes. Further, if available, bring binoculars, scope and a bird identification guide.   
+### Tuesday, 3 May 2022
 
 
-* During the excursion, we will 
-   + Give an introduction to the course and its practical issues
-   + Provide an overview of the course aims
-   + Let students introduce one another and their expectations from the course
-
-
-* 12:00 Transfer by train to Sempach
+* 10:00 Welcome
 Location: [Room Aquila at the Swiss Ornithological Institute, Seerose 1, 6204 Sempach](https://www.vogelwarte.ch/de/besuch/anreise). Note that we are in the red office building (not in the brown visitor centre).  
 
-* 14:00 Lecture 1: Characteristics of birds with focus on adaptations to flight (Fränzi)
-
-* 15:00 Lecture 2: Intro Animal migration (Silke)
-
-* 16:00 Some general issues
+   + Provide an overview of the course aims
+   + Let students introduce one another and their expectations from the course
   + What we expect from you and your projects
   + How to use slack and zoom
   + Ask us anything!
-  + Short introduction to student projects (Fränzi & Silke)
   
+* 10:15 Lecture 1: Characteristics of birds with focus on adaptations to flight (Fränzi)
 
-### Tuesday
-
-Excursion to Flachsee (guided by Silke Bauer, Fränzi Korner-Nievergelt and Christian Schano)
-
-Meeting 8:20 at bus station Unterlunkhofen. 
-
-* Zurich HB departure by train S5 7:39 -> Birmensdorf arrival 7:55, Birmensdorf departure by bus 245 8:00h -> Unterlunkhofen arrival 8:17
-
-We will hike around 6-7km. Bring warm cloths and good shoes. Further, if you have, bring binoculars, scope and a bird identification guide.
-
-* Unterlunkhofen 16:11 -> Birmensdorf arrival 16:28, Birmensdorf departure 16:35 -> Zurich HB arrival 16:51h
+* 11:00 Lecture 2: Intro Animal migration (Silke)
 
 
 
-### Wednesday
+13 31: train from Sempach to Wauwil (arrival 13 57)
+
+1/2 day excursion to Wauwilermoos
+
+* 14:00 Meeting at the railway station Wauwil. We will hike around 5-7km. Bring warm clothes and good shoes. Further, if available, bring binoculars, scope and a bird identification guide.   
+
+
+* During the excursion, we will 
+   + Give an introduction to bird identification
+   + Identification of common bird species
+   + Morphometric measures
+   + Show tracking devices
+   
+
+* 16:30 end of excursion
+
+
+### Wednesday, 11 May 2022
 Location: [Room Aquila at the Swiss Ornithological Institute, Seerose 1, 6204 Sempach](https://www.vogelwarte.ch/de/besuch/anreise). Note that we are in the red office building (not in the brown visitor centre). 
 
-* 10:00 Lecture 3: Migration in the life-cycle of a bird
+  + Short introduction to student projects (Fränzi & Silke)
+
+* 10:00 Lecture 3: Lecture Field methods (Fränzi)
+   + methods for studying breeding biology 
 
 * 11:00 - Lecture Tracking (Silke)
    + Ring recoveries
@@ -95,16 +92,31 @@ Location: [Room Aquila at the Swiss Ornithological Institute, Seerose 1, 6204 Se
 
 * 12:00 Lunch break
 
-* 14:00 Lecture Field methods (Fränzi)
+* 14:00 Migration in the life-cycle of a bird (Fränzi)
 
 * 15:15 - 17:00: project work
 
 
 
-### Thursday
+
+### Tuesday, 17 May 2022
+
+Excursion to Flachsee (guided by Silke Bauer, Fränzi Korner-Nievergelt and Christian Schano)
+
+Meeting 8:20 at bus station Unterlunkhofen. 
+
+* Zurich HB departure by train S5 7:39 -> Birmensdorf arrival 7:55, Birmensdorf departure by bus 245 8:00h -> Unterlunkhofen arrival 8:17
+
+We will hike around 6-7km. Bring warm cloths and good shoes. Further, if you have, bring binoculars, scope and a bird identification guide.
+
+* Unterlunkhofen 16:11 -> Birmensdorf arrival 16:28, Birmensdorf departure 16:35 -> Zurich HB arrival 16:51h
+
+
+
+### Tuesday, 24 May 2022
+
 Location: [Room Aquila at the Swiss Ornithological Institute, Seerose 1, 6204 Sempach](https://www.vogelwarte.ch/de/besuch/anreise). Note that we are in the red office building (not in the brown visitor centre). 
 
-<<<<<<< HEAD
  
 * 10:00 Lecture Timing (Silke) & Migration models (Silke)
   + State-dependent migration models
@@ -114,14 +126,7 @@ Location: [Room Aquila at the Swiss Ornithological Institute, Seerose 1, 6204 Se
    -	Typical research questions
    -	Examples of applications of migration model
 
-=======
-* 10:00 Lecture Timing (Silke) & Migration models (Silke)
-   -	Basic ingredients and principles of state-dependent models
-   -	Backward- forward 
-   -	Parameterisations
-   -	Typical research questions & examples of applications of migration model
- 
->>>>>>> 4aefd8ffe5b475cbb7e7d0be5b266b8b51ef81eb
+
 * 11:00 Lecture Orientation (Fränzi)
  
 * 12:00 Lunch break
@@ -131,7 +136,7 @@ Location: [Room Aquila at the Swiss Ornithological Institute, Seerose 1, 6204 Se
 * Project work
 
 
-### Friday
+### Wednesday, 25 May 2022
 
 Location: [Room Aquila at the Swiss Ornithological Institute, Seerose 1, 6204 Sempach](https://www.vogelwarte.ch/de/besuch/anreise). Note that we are in the red office building (not in the brown visitor centre).
 
@@ -150,7 +155,7 @@ Location: [Room Aquila at the Swiss Ornithological Institute, Seerose 1, 6204 Se
 ## Preparations
 
 We ask students to prepare for the course by reading at least two papers - one general paper and one specific research paper (see below) - and to introduce the key messages of these papers to your fellow students during the course (for guidelines to reading and summarizing papers, see \@ref(Sec:StudentProjects). 
-Please let us know (via email) until **1 September 2021** which papers you choose and also send us up to three questions that you would like to have answered during the course.
+Please let us know (via email) until **26 April 2022** which papers you choose and also send us up to three questions that you would like to have answered during the course.
 
 
 **General papers, reviews, synthesis**

@@ -91,3 +91,9 @@ student-project-6-modelling-spring-migration-several-questions
 student-project-7-estimating-migration-volume
 student-project-8-partial-migration-who-stays-in-winter
 student-project-9-geolocation---tracking-small-birds
+download-pdf-epub
+tuesday-3-may-2022
+wednesday-11-may-2022
+tuesday-17-may-2022
+tuesday-24-may-2022
+wednesday-25-may-2022
