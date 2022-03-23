@@ -74,12 +74,14 @@ Location: [Room Aquila at the Swiss Ornithological Institute, Seerose 1, 6204 Se
 ### Wednesday, 11 May 2022
 Location: [Room Aquila at the Swiss Ornithological Institute, Seerose 1, 6204 Sempach](https://www.vogelwarte.ch/de/besuch/anreise). Note that we are in the red office building (not in the brown visitor centre). 
 
+* 10:00 Students projects and paper discussion
   + Short introduction to student projects (Fränzi & Silke)
+  + Paper discussion in groups (general papers)
+  
+* 11:30 Lecture 3: Lecture Field methods (Fränzi)
+   + Methods for studying breeding biology 
 
-* 10:00 Lecture 3: Lecture Field methods (Fränzi)
-   + methods for studying breeding biology 
-
-* 11:00 - Lecture Tracking (Silke)
+* 12:00 - Lecture Tracking (Silke)
    + Ring recoveries
    + Moon-watching
    + Satellite telemetry
@@ -89,10 +91,12 @@ Location: [Room Aquila at the Swiss Ornithological Institute, Seerose 1, 6204 Se
    + Radar
 
 
-
-* 12:00 Lunch break
+* 12:30 Lunch break
 
 * 14:00 Migration in the life-cycle of a bird (Fränzi)
+
+* 14:30
+  + Paper discussion in groups (specific papers)
 
 * 15:15 - 17:00: project work
 
