@@ -267,85 +267,35 @@ Analyse overall ringing lists over the years
 
 
 
-## Student project 8: Partial migration: Who stays in winter?
+## Student project 8: Why is timing in spring important?
 
-In partially migratory species, some individuals migrate while others remain as year-round residents. Partial migration is widespread among birds. Who migrates can be determined genetically, by individual charachters (sex, age, body condition), or by environmental conditions. We expect that individuals migrating benefit from a higher survival because they escape unfriendly winter conditions. On the other hand, those individuals enduring winter at the breeding site may benefit from an increased reproductive success, e.g., because they can start earlier, know the breeding sites and may occupy better breeding territories, or because they have more chances for mating.
+Finding the optimal time for reproduction is important for many species. In this project, you ask why is timing important based on literature and based on a small data set on nestling growth rate.   
 
-The White-winged Snowfinch *Montifringilla nivalis nivalis* is a partial migrant living at high elevations (above the tree line) in southern European mountain areas. In other subspecies, the species occurs in mountain areas from Turkey eastward until the Himalaya. The Snowfinch is highly adapted to living at high-elevation harsh climate. In Switzerland, it can be observed during winter at feeders in ski areas or mountain huts. Its migration behaviour is still largely unknown. In the Pyrenees and in southern France, wintering indivividuals can be regularly observed, ocassionally in large numbers. Ring recoveries also indicate seasonal migration (Fig. \@ref(fig:migsnowfinch)). 
+The data contain nestling growth rates of Snowfinches *Montifringilla nivalis* and some predictors such as the age of the nestlings, the number of nestlings in the brood and how strongly snow was melting. The Snowfinch is a partial migrant. Use the data to answer how strongly nestling growth is related to snowmelt. 
 
-```{r migsnowfinch, echo=FALSE, fig.cap="Seasonal migration of Snowfinches as observed by ring recoveries. Arrows connect the ringing location with the recovery location. Blue = ringed during winter and recovered during summer (spring migration). Red = ringed during summer and recovered during winter (autumn migration)." }
-library(knitr)
-include_graphics("figures/ring_recoveries_Snowfinch.jpg")
+Use the result as a motivation to discuss the importance of timing and possible consequences of climate change on breeding success. 
+
+@NaefDaenzer.1999
+@LercheJrgensen.2018
+@Schano.2021
+
+
+```{r nestlinggrowth}
+load("data/nestling_growth.rda")
+
+# 'data.frame':	214 obs. of  7 variables:
+#  $ broodID     : ID of brood
+#  $ ringnr      : ID of individual
+#  $ age_nestling: age of individual in days (0 = hatching day)
+#  $ weight      : weight in g
+#  $ growth      : average daily change of weight during the last 3 days
+#  $ Nb_chicks   : number of nestlings in the brood
+#  $ snow_change : % decrease of snow cover per day during the 3 days matching the measure of growth rate
+
+plot(growth~age_nestling, data=dat, xlab="Age of nestling (d)", ylab="Growth (g/d)")
+
 
 ```
-
-
-The following papers introduce the topic of partial and/or differential migration.
-
-- @Zuniga.2017    
-- @Kokko.2006  
-- @Albouy.2018 (in French)    
-
-The project aim is to describe who is migrating in the Snowfinch population of the Swiss Alps and to discuss possible causes of different migration behaviour between age and sex classes.
-
-Use a mark-resighting data set of Snowfinches from the Swiss Alps to describe which individuals spend the winter in the breeding areas (Swiss Alps). The example data contain capturing and resighting dates for individuals with known age and sex.
-
-The age is coded as 1 = nestling, 3 = first calendar year, 4 = not first calendar year, 5 = second calendar year, 6 = older than second calendar year.
-
-The below R-code can be used to start with. It extracts the number of individuals (number of different ring numbers) seen for each month. The observation effort differed over time but we can assume that it was the same for all age and sex classes.
-
-```{r resight, fig.cap="Number of individuals observed per month for each age and sex class"}
-load("data/Snowfinch_resightings.rda")
-aggdat <- aggregate(ringnr~month+sex+age, data=dat, function(x) nlevels(factor(x)))
-aggdat <- aggdat[aggdat$age>3,] # only include individuals from their first winter onward (delete nestlings and first calendar-year birds)
-
-# include months with no individuals observed
-datcomplete <- expand.grid(month=1:11, sex=c("f", "m"), age=c(4,5,6))
-rowid <- paste(datcomplete$month, datcomplete$sex, datcomplete$age)
-rowidaggdat <- paste(aggdat$month, aggdat$sex, aggdat$age)
-datcomplete$n <- aggdat$ringnr[match(rowid, rowidaggdat)]
-datcomplete$n[is.na(datcomplete$n)] <- 0
-
-plot(datcomplete$month, datcomplete$n,
-     las=1, ylab="Number of individuals observed", xlab="Month")
-# first year males
-index <- datcomplete$age==5&datcomplete$sex=="m"
-lines(datcomplete$month[index], datcomplete$n[index], lwd=2, col="lightblue")
-
-# second year and older males
-index <- datcomplete$age==6&datcomplete$sex=="m"
-lines(datcomplete$month[index], datcomplete$n[index], lwd=2, 
-      col="blue")
-
-# males, age not identified
-index <- datcomplete$age==4&datcomplete$sex=="m"
-lines(datcomplete$month[index], datcomplete$n[index], lwd=2, 
-      col="blue", lty=3)
-
-
-# first year females
-index <- datcomplete$age==5&datcomplete$sex=="f"
-lines(datcomplete$month[index], datcomplete$n[index], lwd=2, 
-      col="orange")
-
-
-# second year and older females
-index <- datcomplete$age==6&datcomplete$sex=="f"
-lines(datcomplete$month[index], datcomplete$n[index], lwd=2, 
-      col="brown")
-
-# females, age not identified
-index <- datcomplete$age==4&datcomplete$sex=="f"
-lines(datcomplete$month[index], datcomplete$n[index], lwd=2, 
-      col="brown", lty=3)
-
-legend(5, 40, lwd=2, lty=c(1,3,1,1,3,1), col=c("brown", "brown", "orange", "blue", "blue", "lightblue"), legend=c("females age 2y+", "females age unknown", "females 1y", "males age 2y+", "males age unknown", "males 1y"))
-
-```
-
-Discuss possible proximate and ultimate causes for the different seasonal distribution of the sexes and age classes. 
-
-
 
 ## Student project 9: Geolocation - tracking small birds
 

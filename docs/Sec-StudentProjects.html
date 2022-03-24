@@ -204,7 +204,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.6" data-path="Sec-StudentProjects.html"><a href="Sec-StudentProjects.html#student-project-5-estimate-survival-from-capture-recapture-data"><i class="fa fa-check"></i><b>12.6</b> Student project 5: Estimate survival from capture-recapture data</a></li>
 <li class="chapter" data-level="12.7" data-path="Sec-StudentProjects.html"><a href="Sec-StudentProjects.html#student-project-6-modelling-spring-migration-several-questions"><i class="fa fa-check"></i><b>12.7</b> Student project 6: Modelling spring migration: several questions</a></li>
 <li class="chapter" data-level="12.8" data-path="Sec-StudentProjects.html"><a href="Sec-StudentProjects.html#student-project-7-estimating-migration-volume"><i class="fa fa-check"></i><b>12.8</b> Student project 7: Estimating Migration volume</a></li>
-<li class="chapter" data-level="12.9" data-path="Sec-StudentProjects.html"><a href="Sec-StudentProjects.html#student-project-8-partial-migration-who-stays-in-winter"><i class="fa fa-check"></i><b>12.9</b> Student project 8: Partial migration: Who stays in winter?</a></li>
+<li class="chapter" data-level="12.9" data-path="Sec-StudentProjects.html"><a href="Sec-StudentProjects.html#student-project-8-why-is-timing-in-spring-important"><i class="fa fa-check"></i><b>12.9</b> Student project 8: Why is timing in spring important?</a></li>
 <li class="chapter" data-level="12.10" data-path="Sec-StudentProjects.html"><a href="Sec-StudentProjects.html#student-project-9-geolocation---tracking-small-birds"><i class="fa fa-check"></i><b>12.10</b> Student project 9: Geolocation - tracking small birds</a></li>
 </ul></li>
 <li class="divider"></li>
@@ -373,11 +373,16 @@ age- and sex-differences in chaffinches.</p>
 </div>
 <div id="student-project-4-flight-energetics-in-the-course-of-a-night-and-over-the-season" class="section level2">
 <h2><span class="header-section-number">12.5</span> Student project 4: Flight energetics in the course of a night and over the season</h2>
-<p>Analyse how fat reserves change over the night or day and over the season. Possible questions to be asked are:
-- How far can birds fly with what fat reserves?
-- How does wing shape and weight of the bird influence the energy needed for flight?
-- Does expected energy expenditure per hour flight correspond to the decrease of fat reserves?
-- What factors influence flight energy?</p>
+<p>Analyse how fat reserves change over the night or day and over the season. Possible questions to be asked are:</p>
+<ul>
+<li>How far can birds fly with what fat reserves?<br />
+</li>
+<li>How does wing shape and weight of the bird influence the energy needed for flight?<br />
+</li>
+<li>Does expected energy expenditure per hour flight correspond to the decrease of fat reserves?<br />
+</li>
+<li>What factors influence flight energy?</li>
+</ul>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="Sec-StudentProjects.html#cb6-1"></a><span class="co"># you will get the ring list to analyse how fat reserves </span></span>
 <span id="cb6-2"><a href="Sec-StudentProjects.html#cb6-2"></a><span class="co"># change over the night and over seasons</span></span>
 <span id="cb6-3"><a href="Sec-StudentProjects.html#cb6-3"></a></span>
@@ -454,80 +459,27 @@ using MCMC (software: Jags)</p>
 </ul>
 <p>Analyse overall ringing lists over the years</p>
 </div>
-<div id="student-project-8-partial-migration-who-stays-in-winter" class="section level2">
-<h2><span class="header-section-number">12.9</span> Student project 8: Partial migration: Who stays in winter?</h2>
-<p>In partially migratory species, some individuals migrate while others remain as year-round residents. Partial migration is widespread among birds. Who migrates can be determined genetically, by individual charachters (sex, age, body condition), or by environmental conditions. We expect that individuals migrating benefit from a higher survival because they escape unfriendly winter conditions. On the other hand, those individuals enduring winter at the breeding site may benefit from an increased reproductive success, e.g., because they can start earlier, know the breeding sites and may occupy better breeding territories, or because they have more chances for mating.</p>
-<p>The White-winged Snowfinch <em>Montifringilla nivalis nivalis</em> is a partial migrant living at high elevations (above the tree line) in southern European mountain areas. In other subspecies, the species occurs in mountain areas from Turkey eastward until the Himalaya. The Snowfinch is highly adapted to living at high-elevation harsh climate. In Switzerland, it can be observed during winter at feeders in ski areas or mountain huts. Its migration behaviour is still largely unknown. In the Pyrenees and in southern France, wintering indivividuals can be regularly observed, ocassionally in large numbers. Ring recoveries also indicate seasonal migration (Fig. <a href="#fig:migsnowfinch"><strong>??</strong></a>).</p>
-<div class="figure">
-<img src="figures/ring_recoveries_Snowfinch.jpg" alt="Seasonal migration of Snowfinches as observed by ring recoveries. Arrows connect the ringing location with the recovery location. Blue = ringed during winter and recovered during summer (spring migration). Red = ringed during summer and recovered during winter (autumn migration)." width="1026" />
-<p class="caption">
-Seasonal migration of Snowfinches as observed by ring recoveries. Arrows connect the ringing location with the recovery location. Blue = ringed during winter and recovered during summer (spring migration). Red = ringed during summer and recovered during winter (autumn migration).
-</p>
-</div>
-<p>The following papers introduce the topic of partial and/or differential migration.</p>
-<ul>
-<li><span class="citation">Zúñiga et al. (<a href="#ref-Zuniga.2017" role="doc-biblioref">2017</a>)</span><br />
-</li>
-<li><span class="citation">Kokko et al. (<a href="#ref-Kokko.2006" role="doc-biblioref">2006</a>)</span><br />
-</li>
-<li><span class="citation">Albouy and Riols (<a href="#ref-Albouy.2018" role="doc-biblioref">2018</a>)</span> (in French)</li>
-</ul>
-<p>The project aim is to describe who is migrating in the Snowfinch population of the Swiss Alps and to discuss possible causes of different migration behaviour between age and sex classes.</p>
-<p>Use a mark-resighting data set of Snowfinches from the Swiss Alps to describe which individuals spend the winter in the breeding areas (Swiss Alps). The example data contain capturing and resighting dates for individuals with known age and sex.</p>
-<p>The age is coded as 1 = nestling, 3 = first calendar year, 4 = not first calendar year, 5 = second calendar year, 6 = older than second calendar year.</p>
-<p>The below R-code can be used to start with. It extracts the number of individuals (number of different ring numbers) seen for each month. The observation effort differed over time but we can assume that it was the same for all age and sex classes.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="Sec-StudentProjects.html#cb7-1"></a><span class="kw">load</span>(<span class="st">&quot;data/Snowfinch_resightings.rda&quot;</span>)</span>
-<span id="cb7-2"><a href="Sec-StudentProjects.html#cb7-2"></a>aggdat &lt;-<span class="st"> </span><span class="kw">aggregate</span>(ringnr<span class="op">~</span>month<span class="op">+</span>sex<span class="op">+</span>age, <span class="dt">data=</span>dat, <span class="cf">function</span>(x) <span class="kw">nlevels</span>(<span class="kw">factor</span>(x)))</span>
-<span id="cb7-3"><a href="Sec-StudentProjects.html#cb7-3"></a>aggdat &lt;-<span class="st"> </span>aggdat[aggdat<span class="op">$</span>age<span class="op">&gt;</span><span class="dv">3</span>,] <span class="co"># only include individuals from their first winter onward (delete nestlings and first calendar-year birds)</span></span>
-<span id="cb7-4"><a href="Sec-StudentProjects.html#cb7-4"></a></span>
-<span id="cb7-5"><a href="Sec-StudentProjects.html#cb7-5"></a><span class="co"># include months with no individuals observed</span></span>
-<span id="cb7-6"><a href="Sec-StudentProjects.html#cb7-6"></a>datcomplete &lt;-<span class="st"> </span><span class="kw">expand.grid</span>(<span class="dt">month=</span><span class="dv">1</span><span class="op">:</span><span class="dv">11</span>, <span class="dt">sex=</span><span class="kw">c</span>(<span class="st">&quot;f&quot;</span>, <span class="st">&quot;m&quot;</span>), <span class="dt">age=</span><span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>))</span>
-<span id="cb7-7"><a href="Sec-StudentProjects.html#cb7-7"></a>rowid &lt;-<span class="st"> </span><span class="kw">paste</span>(datcomplete<span class="op">$</span>month, datcomplete<span class="op">$</span>sex, datcomplete<span class="op">$</span>age)</span>
-<span id="cb7-8"><a href="Sec-StudentProjects.html#cb7-8"></a>rowidaggdat &lt;-<span class="st"> </span><span class="kw">paste</span>(aggdat<span class="op">$</span>month, aggdat<span class="op">$</span>sex, aggdat<span class="op">$</span>age)</span>
-<span id="cb7-9"><a href="Sec-StudentProjects.html#cb7-9"></a>datcomplete<span class="op">$</span>n &lt;-<span class="st"> </span>aggdat<span class="op">$</span>ringnr[<span class="kw">match</span>(rowid, rowidaggdat)]</span>
-<span id="cb7-10"><a href="Sec-StudentProjects.html#cb7-10"></a>datcomplete<span class="op">$</span>n[<span class="kw">is.na</span>(datcomplete<span class="op">$</span>n)] &lt;-<span class="st"> </span><span class="dv">0</span></span>
+<div id="student-project-8-why-is-timing-in-spring-important" class="section level2">
+<h2><span class="header-section-number">12.9</span> Student project 8: Why is timing in spring important?</h2>
+<p>Finding the optimal time for reproduction is important for many species. In this project, you ask why is timing important based on literature and based on a small data set on nestling growth rate.</p>
+<p>The data contain nestling growth rates of Snowfinches <em>Montifringilla nivalis</em> and some predictors such as the age of the nestlings, the number of nestlings in the brood and how strongly snow was melting. The Snowfinch is a partial migrant. Use the data to answer how strongly nestling growth is related to snowmelt.</p>
+<p>Use the result as a motivation to discuss the importance of timing and possible consequences of climate change on breeding success.</p>
+<p><span class="citation">Naef-Daenzer and Keller (<a href="#ref-NaefDaenzer.1999" role="doc-biblioref">1999</a>)</span>
+<span class="citation">Lerche-Jørgensen et al. (<a href="#ref-LercheJrgensen.2018" role="doc-biblioref">2018</a>)</span>
+<span class="citation">Schano et al. (<a href="#ref-Schano.2021" role="doc-biblioref">2021</a>)</span></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="Sec-StudentProjects.html#cb7-1"></a><span class="kw">load</span>(<span class="st">&quot;data/nestling_growth.rda&quot;</span>)</span>
+<span id="cb7-2"><a href="Sec-StudentProjects.html#cb7-2"></a></span>
+<span id="cb7-3"><a href="Sec-StudentProjects.html#cb7-3"></a><span class="co"># &#39;data.frame&#39;: 214 obs. of  7 variables:</span></span>
+<span id="cb7-4"><a href="Sec-StudentProjects.html#cb7-4"></a><span class="co">#  $ broodID     : ID of brood</span></span>
+<span id="cb7-5"><a href="Sec-StudentProjects.html#cb7-5"></a><span class="co">#  $ ringnr      : ID of individual</span></span>
+<span id="cb7-6"><a href="Sec-StudentProjects.html#cb7-6"></a><span class="co">#  $ age_nestling: age of individual in days (0 = hatching day)</span></span>
+<span id="cb7-7"><a href="Sec-StudentProjects.html#cb7-7"></a><span class="co">#  $ weight      : weight in g</span></span>
+<span id="cb7-8"><a href="Sec-StudentProjects.html#cb7-8"></a><span class="co">#  $ growth      : average daily change of weight during the last 3 days</span></span>
+<span id="cb7-9"><a href="Sec-StudentProjects.html#cb7-9"></a><span class="co">#  $ Nb_chicks   : number of nestlings in the brood</span></span>
+<span id="cb7-10"><a href="Sec-StudentProjects.html#cb7-10"></a><span class="co">#  $ snow_change : % decrease of snow cover per day during the 3 days matching the measure of growth rate</span></span>
 <span id="cb7-11"><a href="Sec-StudentProjects.html#cb7-11"></a></span>
-<span id="cb7-12"><a href="Sec-StudentProjects.html#cb7-12"></a><span class="kw">plot</span>(datcomplete<span class="op">$</span>month, datcomplete<span class="op">$</span>n,</span>
-<span id="cb7-13"><a href="Sec-StudentProjects.html#cb7-13"></a>     <span class="dt">las=</span><span class="dv">1</span>, <span class="dt">ylab=</span><span class="st">&quot;Number of individuals observed&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Month&quot;</span>)</span>
-<span id="cb7-14"><a href="Sec-StudentProjects.html#cb7-14"></a><span class="co"># first year males</span></span>
-<span id="cb7-15"><a href="Sec-StudentProjects.html#cb7-15"></a>index &lt;-<span class="st"> </span>datcomplete<span class="op">$</span>age<span class="op">==</span><span class="dv">5</span><span class="op">&amp;</span>datcomplete<span class="op">$</span>sex<span class="op">==</span><span class="st">&quot;m&quot;</span></span>
-<span id="cb7-16"><a href="Sec-StudentProjects.html#cb7-16"></a><span class="kw">lines</span>(datcomplete<span class="op">$</span>month[index], datcomplete<span class="op">$</span>n[index], <span class="dt">lwd=</span><span class="dv">2</span>, <span class="dt">col=</span><span class="st">&quot;lightblue&quot;</span>)</span>
-<span id="cb7-17"><a href="Sec-StudentProjects.html#cb7-17"></a></span>
-<span id="cb7-18"><a href="Sec-StudentProjects.html#cb7-18"></a><span class="co"># second year and older males</span></span>
-<span id="cb7-19"><a href="Sec-StudentProjects.html#cb7-19"></a>index &lt;-<span class="st"> </span>datcomplete<span class="op">$</span>age<span class="op">==</span><span class="dv">6</span><span class="op">&amp;</span>datcomplete<span class="op">$</span>sex<span class="op">==</span><span class="st">&quot;m&quot;</span></span>
-<span id="cb7-20"><a href="Sec-StudentProjects.html#cb7-20"></a><span class="kw">lines</span>(datcomplete<span class="op">$</span>month[index], datcomplete<span class="op">$</span>n[index], <span class="dt">lwd=</span><span class="dv">2</span>, </span>
-<span id="cb7-21"><a href="Sec-StudentProjects.html#cb7-21"></a>      <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>)</span>
-<span id="cb7-22"><a href="Sec-StudentProjects.html#cb7-22"></a></span>
-<span id="cb7-23"><a href="Sec-StudentProjects.html#cb7-23"></a><span class="co"># males, age not identified</span></span>
-<span id="cb7-24"><a href="Sec-StudentProjects.html#cb7-24"></a>index &lt;-<span class="st"> </span>datcomplete<span class="op">$</span>age<span class="op">==</span><span class="dv">4</span><span class="op">&amp;</span>datcomplete<span class="op">$</span>sex<span class="op">==</span><span class="st">&quot;m&quot;</span></span>
-<span id="cb7-25"><a href="Sec-StudentProjects.html#cb7-25"></a><span class="kw">lines</span>(datcomplete<span class="op">$</span>month[index], datcomplete<span class="op">$</span>n[index], <span class="dt">lwd=</span><span class="dv">2</span>, </span>
-<span id="cb7-26"><a href="Sec-StudentProjects.html#cb7-26"></a>      <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>, <span class="dt">lty=</span><span class="dv">3</span>)</span>
-<span id="cb7-27"><a href="Sec-StudentProjects.html#cb7-27"></a></span>
-<span id="cb7-28"><a href="Sec-StudentProjects.html#cb7-28"></a></span>
-<span id="cb7-29"><a href="Sec-StudentProjects.html#cb7-29"></a><span class="co"># first year females</span></span>
-<span id="cb7-30"><a href="Sec-StudentProjects.html#cb7-30"></a>index &lt;-<span class="st"> </span>datcomplete<span class="op">$</span>age<span class="op">==</span><span class="dv">5</span><span class="op">&amp;</span>datcomplete<span class="op">$</span>sex<span class="op">==</span><span class="st">&quot;f&quot;</span></span>
-<span id="cb7-31"><a href="Sec-StudentProjects.html#cb7-31"></a><span class="kw">lines</span>(datcomplete<span class="op">$</span>month[index], datcomplete<span class="op">$</span>n[index], <span class="dt">lwd=</span><span class="dv">2</span>, </span>
-<span id="cb7-32"><a href="Sec-StudentProjects.html#cb7-32"></a>      <span class="dt">col=</span><span class="st">&quot;orange&quot;</span>)</span>
-<span id="cb7-33"><a href="Sec-StudentProjects.html#cb7-33"></a></span>
-<span id="cb7-34"><a href="Sec-StudentProjects.html#cb7-34"></a></span>
-<span id="cb7-35"><a href="Sec-StudentProjects.html#cb7-35"></a><span class="co"># second year and older females</span></span>
-<span id="cb7-36"><a href="Sec-StudentProjects.html#cb7-36"></a>index &lt;-<span class="st"> </span>datcomplete<span class="op">$</span>age<span class="op">==</span><span class="dv">6</span><span class="op">&amp;</span>datcomplete<span class="op">$</span>sex<span class="op">==</span><span class="st">&quot;f&quot;</span></span>
-<span id="cb7-37"><a href="Sec-StudentProjects.html#cb7-37"></a><span class="kw">lines</span>(datcomplete<span class="op">$</span>month[index], datcomplete<span class="op">$</span>n[index], <span class="dt">lwd=</span><span class="dv">2</span>, </span>
-<span id="cb7-38"><a href="Sec-StudentProjects.html#cb7-38"></a>      <span class="dt">col=</span><span class="st">&quot;brown&quot;</span>)</span>
-<span id="cb7-39"><a href="Sec-StudentProjects.html#cb7-39"></a></span>
-<span id="cb7-40"><a href="Sec-StudentProjects.html#cb7-40"></a><span class="co"># females, age not identified</span></span>
-<span id="cb7-41"><a href="Sec-StudentProjects.html#cb7-41"></a>index &lt;-<span class="st"> </span>datcomplete<span class="op">$</span>age<span class="op">==</span><span class="dv">4</span><span class="op">&amp;</span>datcomplete<span class="op">$</span>sex<span class="op">==</span><span class="st">&quot;f&quot;</span></span>
-<span id="cb7-42"><a href="Sec-StudentProjects.html#cb7-42"></a><span class="kw">lines</span>(datcomplete<span class="op">$</span>month[index], datcomplete<span class="op">$</span>n[index], <span class="dt">lwd=</span><span class="dv">2</span>, </span>
-<span id="cb7-43"><a href="Sec-StudentProjects.html#cb7-43"></a>      <span class="dt">col=</span><span class="st">&quot;brown&quot;</span>, <span class="dt">lty=</span><span class="dv">3</span>)</span>
-<span id="cb7-44"><a href="Sec-StudentProjects.html#cb7-44"></a></span>
-<span id="cb7-45"><a href="Sec-StudentProjects.html#cb7-45"></a><span class="kw">legend</span>(<span class="dv">5</span>, <span class="dv">40</span>, <span class="dt">lwd=</span><span class="dv">2</span>, <span class="dt">lty=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">1</span>), <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;brown&quot;</span>, <span class="st">&quot;brown&quot;</span>, <span class="st">&quot;orange&quot;</span>, <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;lightblue&quot;</span>), <span class="dt">legend=</span><span class="kw">c</span>(<span class="st">&quot;females age 2y+&quot;</span>, <span class="st">&quot;females age unknown&quot;</span>, <span class="st">&quot;females 1y&quot;</span>, <span class="st">&quot;males age 2y+&quot;</span>, <span class="st">&quot;males age unknown&quot;</span>, <span class="st">&quot;males 1y&quot;</span>))</span></code></pre></div>
-<div class="figure">
-<img src="11-StudentProjects_files/figure-html/resight-1.png" alt="Number of individuals observed per month for each age and sex class" width="672" />
-<p class="caption">
-Number of individuals observed per month for each age and sex class
-</p>
-</div>
-<p>Discuss possible proximate and ultimate causes for the different seasonal distribution of the sexes and age classes.</p>
+<span id="cb7-12"><a href="Sec-StudentProjects.html#cb7-12"></a><span class="kw">plot</span>(growth<span class="op">~</span>age_nestling, <span class="dt">data=</span>dat, <span class="dt">xlab=</span><span class="st">&quot;Age of nestling (d)&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;Growth (g/d)&quot;</span>)</span></code></pre></div>
+<p><img src="11-StudentProjects_files/figure-html/nestlinggrowth-1.png" width="672" /></p>
 </div>
 <div id="student-project-9-geolocation---tracking-small-birds" class="section level2">
 <h2><span class="header-section-number">12.10</span> Student project 9: Geolocation - tracking small birds</h2>
@@ -541,9 +493,6 @@ Number of individuals observed per month for each age and sex class
 
 <div id="refs" class="references">
 <div>
-<p>Albouy, Sylvain, and Christian Riols. 2018. “Afflux de Niverolles Alpines Montifringilla Nivalis Entre Alpes et Pyrénées En 2017.” <em>Ornithos</em> 25: 24–29.</p>
-</div>
-<div>
 <p>Briedis, Martins, and Silke Bauer. 2018. “Migratory Connectivity in the Context of Differential Migration.” <em>Biology Letters</em> 14 (12): 20180679. <a href="https://doi.org/10.1098/rsbl.2018.0679">https://doi.org/10.1098/rsbl.2018.0679</a>.</p>
 </div>
 <div>
@@ -553,25 +502,22 @@ Number of individuals observed per month for each age and sex class
 <p>Jenni, Lukas, and Marc Kéry. 2003. “Timing of Autumn Bird Migration Under Climate Change: Advances in Long-Distance Migrants, Delays in Short-Distance Migrants.” <em>Proceedings of the Royal Society of London - Series B: Biological Sciences</em> 270: 1467–71.</p>
 </div>
 <div>
-<p>Kokko, H., T. G. Gunnarsson, L. J. Morrell, and J. A. Gill. 2006. “Why Do Female Migratory Birds Arrive Later Than Males?” <em>The Journal of Animal Ecology</em> 75 (6): 1293–1303. <a href="https://doi.org/10.1111/j.1365-2656.2006.01151.x">https://doi.org/10.1111/j.1365-2656.2006.01151.x</a>.</p>
+<p>Lerche-Jørgensen, Mathilde, Fränzi Korner-Nievergelt, Anders P. Tøttrup, Mikkel Willemoes Kristensen, and Kasper Thorup. 2018. “Early Returning Long-Distance Migrant Males Do Pay a Survival Cost.” <em>Ecology and Evolution</em> 8: 11434–49. <a href="https://doi.org/10.1002/ece3.4569">https://doi.org/10.1002/ece3.4569</a>.</p>
 </div>
 <div>
-<p>Lerche-Jørgensen, Mathilde, Fränzi Korner-Nievergelt, Anders P. Tøttrup, Mikkel Willemoes Kristensen, and Kasper Thorup. 2018. “Early Returning Long-Distance Migrant Males Do Pay a Survival Cost.” <em>Ecology and Evolution</em> 8: 11434–49. <a href="https://doi.org/10.1002/ece3.4569">https://doi.org/10.1002/ece3.4569</a>.</p>
+<p>Naef-Daenzer, Beat, and Lukas F. Keller. 1999. “The Foraging Performance of Great and Blue Tits (Parus Major and P. Caeruleus) in Relation to Caterpillar Development, and Its Consequences for Nestling Growth.” <em>Journal of Animal Ecology</em> 68: 708–18.</p>
 </div>
 <div>
 <p>Saino, Nicola, Diego Rubolini, Jost Von Hardenberg, Roberto Ambrosini, Antonello Provenzale, Maria Romano, and Fernando Spina. 2010. “Spring migration decisions in relation to weather are predicted by wing morphology among trans-Mediterranean migratory birds.” <em>Functional Ecology</em> 24 (3): 658–69. <a href="https://doi.org/10.1111/j.1365-2435.2009.01659.x">https://doi.org/10.1111/j.1365-2435.2009.01659.x</a>.</p>
 </div>
 <div>
-<p>Zúñiga, D., Y. Gager, H. Kokko, A. M. Fudickar, A. Schmidt, B. Naef-Daenzer, M. Wikelski, and J. Partecke. 2017. “Migration Confers Winter Survival Benefits in a Partially Migratory Songbird.” <em>eLIFE</em>, e28123. <a href="https://doi.org/10.7554/eLife.28123.001">https://doi.org/10.7554/eLife.28123.001</a>.</p>
+<p>Schano, Christian, Carole Niffenegger, Tobias Jonas, and Fränzi Korner-Nievergelt. 2021. “Hatching Phenology Is Lagging Behind an Advancing Snowmelt Pattern in a High-Alpine Bird.” <em>Scientific Reports</em> 11 (1): 20130016. <a href="https://doi.org/10.1038/s41598-021-01497-8">https://doi.org/10.1038/s41598-021-01497-8</a>.</p>
 </div>
 </div>
 </div>
 </div>
 <h3>References</h3>
 <div id="refs" class="references">
-<div id="ref-Albouy.2018">
-<p>Albouy, Sylvain, and Christian Riols. 2018. “Afflux de Niverolles Alpines Montifringilla Nivalis Entre Alpes et Pyrénées En 2017.” <em>Ornithos</em> 25: 24–29.</p>
-</div>
 <div id="ref-Briedis.2018c">
 <p>Briedis, Martins, and Silke Bauer. 2018. “Migratory Connectivity in the Context of Differential Migration.” <em>Biology Letters</em> 14 (12): 20180679. <a href="https://doi.org/10.1098/rsbl.2018.0679">https://doi.org/10.1098/rsbl.2018.0679</a>.</p>
 </div>
@@ -581,17 +527,17 @@ Number of individuals observed per month for each age and sex class
 <div id="ref-Jenni.2003">
 <p>Jenni, Lukas, and Marc Kéry. 2003. “Timing of Autumn Bird Migration Under Climate Change: Advances in Long-Distance Migrants, Delays in Short-Distance Migrants.” <em>Proceedings of the Royal Society of London - Series B: Biological Sciences</em> 270: 1467–71.</p>
 </div>
-<div id="ref-Kokko.2006">
-<p>Kokko, H., T. G. Gunnarsson, L. J. Morrell, and J. A. Gill. 2006. “Why Do Female Migratory Birds Arrive Later Than Males?” <em>The Journal of Animal Ecology</em> 75 (6): 1293–1303. <a href="https://doi.org/10.1111/j.1365-2656.2006.01151.x">https://doi.org/10.1111/j.1365-2656.2006.01151.x</a>.</p>
-</div>
 <div id="ref-LercheJrgensen.2018">
 <p>Lerche-Jørgensen, Mathilde, Fränzi Korner-Nievergelt, Anders P. Tøttrup, Mikkel Willemoes Kristensen, and Kasper Thorup. 2018. “Early Returning Long-Distance Migrant Males Do Pay a Survival Cost.” <em>Ecology and Evolution</em> 8: 11434–49. <a href="https://doi.org/10.1002/ece3.4569">https://doi.org/10.1002/ece3.4569</a>.</p>
+</div>
+<div id="ref-NaefDaenzer.1999">
+<p>Naef-Daenzer, Beat, and Lukas F. Keller. 1999. “The Foraging Performance of Great and Blue Tits (Parus Major and P. Caeruleus) in Relation to Caterpillar Development, and Its Consequences for Nestling Growth.” <em>Journal of Animal Ecology</em> 68: 708–18.</p>
 </div>
 <div id="ref-Saino.2010">
 <p>Saino, Nicola, Diego Rubolini, Jost Von Hardenberg, Roberto Ambrosini, Antonello Provenzale, Maria Romano, and Fernando Spina. 2010. “Spring migration decisions in relation to weather are predicted by wing morphology among trans-Mediterranean migratory birds.” <em>Functional Ecology</em> 24 (3): 658–69. <a href="https://doi.org/10.1111/j.1365-2435.2009.01659.x">https://doi.org/10.1111/j.1365-2435.2009.01659.x</a>.</p>
 </div>
-<div id="ref-Zuniga.2017">
-<p>Zúñiga, D., Y. Gager, H. Kokko, A. M. Fudickar, A. Schmidt, B. Naef-Daenzer, M. Wikelski, and J. Partecke. 2017. “Migration Confers Winter Survival Benefits in a Partially Migratory Songbird.” <em>eLIFE</em>, e28123. <a href="https://doi.org/10.7554/eLife.28123.001">https://doi.org/10.7554/eLife.28123.001</a>.</p>
+<div id="ref-Schano.2021">
+<p>Schano, Christian, Carole Niffenegger, Tobias Jonas, and Fränzi Korner-Nievergelt. 2021. “Hatching Phenology Is Lagging Behind an Advancing Snowmelt Pattern in a High-Alpine Bird.” <em>Scientific Reports</em> 11 (1): 20130016. <a href="https://doi.org/10.1038/s41598-021-01497-8">https://doi.org/10.1038/s41598-021-01497-8</a>.</p>
 </div>
 </div>
             </section>
