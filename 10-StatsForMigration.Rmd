@@ -53,8 +53,7 @@ Software that provide algorithms for fitting CJS models:
 
 - [MARK](www.phidot.org/software/mark/)  
 - R-package marked	CRAN, example in a group work of this course [@Laake.2013]    
-- [Stan](http://mc-stan.org/)  
-- Chapter 14.5 in @KornerNievergelt.2015b  
+- [Stan](http://mc-stan.org/), chapter 14.5 in @KornerNievergelt.2015b  
 - BUGS: [WinBUGS](www.mrc-bsu.cam.ac.uk/software/bugs/the-bugs-project-winbugs), [OpenBUGS](www.openbugs.net), [Jags](mcmc-jags.sourceforge.net). Chapter 7 in @Kery.2012.  
 - [E-Surge](www.cefe.cnrs.fr/fr/pf/bibliotheque/guides-et-tutoriels/34-french/recherche/bc/bbp/264-logiciels). @Choquet.2009.   
 

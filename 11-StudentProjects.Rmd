@@ -2,7 +2,7 @@
 
 We encourage students to work on a research project during the course. We have compiled a list of suggested projects (see below) but students may come up with their own suggested project within the realm of bird and migration ecology (in the latter case, please come back to us before the course). 
 
-The projects should be pursued in groups of 2-4 students. At the end of the course (Friday), we expect an oral presentation of approx. 10 min that should cover the project's scientific background, approach, research aims, results and a discussion. Ideally, the presentation is held jointly by the members of each group but if, for various reasons, this is impossible, other options can be chosen. 
+The projects should be pursued in groups of 2-4 students. During the last day of the course, we expect an oral presentation of approx. 10 min that should cover the project's scientific background, approach, research aims, results and a discussion. Ideally, the presentation is held jointly by the members of each group but if, for various reasons, this is impossible, other options can be chosen. 
 
 
 ## Pre-requisite: Reading and assessing scientific publications
@@ -55,7 +55,33 @@ You may use the following R-code to get started
 
 ```{r StudPhenology}
 
+dat <- read.table("data/passage_by_spec_year.txt", header=TRUE, sep="\t")
 
+
+# species names and characteristics of species-------------------------
+# artnr:	secies number, see species data file
+# latabk:	abreviation of latin species name 
+# Weight:	g
+# FlightSpeed:	m/s
+# WingSpan(m):	m
+# WingArea(m2):	m2
+# DistanceBretolet_meanOrigi:n	distance between Bretolet (ringing site) 
+#         and centre of  species breeding distribution
+# Destination:	non-breeding area
+# diet_breeding_season:	diet during the breeding season:  
+#         Samen=seeds, Ins=insects, Pfl=plants
+# diet_migration:	diet during the breeding season:  
+#         Samen=seeds, Ins=insects, Pfl=plants
+# habitat_breeding:	Feld=field, Sumpf=marsh, Wasser=water, 
+#         Wald=forest, offener Wald=open forest, Luft=air,  
+#         Busch=bush, Gras=gras, Schilf=reed, Conif=coniferous forest
+# habitat_winter:	Feld=field, Sumpf=marsh, Wasser=water, Wald=forest, 
+#         offener Wald=open forest, Luft=air,  Busch=bush, Gras=gras, 
+#         Schilf=reed, Conif=coniferous forest
+# migratory_activity:	n= nocturnal migrant, t=diurnal migrant, 
+#         t+n= migrates both at night and day
+# migdist_cat:	l=long-distance migrant, k=short-distance migrant
+# Passeres:	0= non-Passeriformes, 1=Passeriformes
 
 
 ```
