@@ -139,7 +139,7 @@ The following papers give some background on relevance:
 
 ```{r StudMorphology}
 
-
+# the ring list will be distributed by the course leaders
 
 
 ```
@@ -162,7 +162,7 @@ Analyse species-specific ringing lists
 
 ```{r StudDiffMig}
 
-
+# the ring list will be distributed by the course leaders
 
 
 ```
@@ -171,16 +171,49 @@ Analyse species-specific ringing lists
 
 ## Student project 4: Flight energetics in the course of a night and over the season
 
+Analyse how fat reserves change over the night or day and over the season. Possible questions to be asked are:
 
-Dynamics of fat reserves: how do the fat reserves change over the night and over the season
+- How far can birds fly with what fat reserves?  
+- How does wing shape and weight of the bird influence the energy needed for flight?  
+- Does expected energy expenditure per hour flight correspond to the decrease of fat reserves?  
+- What factors influence flight energy?  
 
-comparison with expectations based on energetics and aero-physics  
 
-	Analyse species-specific ringing lists 
+```{r afpt, echo=TRUE}
+# you will get the ring list to analyse how fat reserves 
+# change over the night and over seasons
 
-specific softare:
-Flight 2.4 (Windows) 
-or R-package afpt
+
+# use the R-package afpt to answer questions like
+
+library('afpt')
+
+# define myBird, use data of a robin
+myBird <- Bird(
+  massTotal = 0.015, 
+  wingSpan = 0.15, 
+  wingArea = 0.0085,
+  name = 'Robin',
+  name.scientific = 'Erithacus rubecula',
+  type = 'passerine',
+  source = 'gestimated by fk'
+)
+
+
+speed <- seq(3,18,length.out=10) #  airspeed in m/s
+powercurve <- computeFlappingPower(myBird,speed)
+
+
+par(mar=c(3.1,3.1,0.4,1.1),mgp=c(1.9,0.7,0.0),cex=0.75)
+with(powercurve , plot( speed,power, 
+                        type='b', pch=15, col='grey20', 
+                        xlab=NA, ylab=NA, xlim=c(0,18), ylim=c(0,1.1)))
+
+mtext(side = 1, line = 2,'Speed (m/s)')
+mtext(side = 2, line = 2,'Power (J/s)')
+abline(h=min(powercurve$power), col=grey(0.6))
+abline(0,0.033, col=grey(0.8))
+```
 
 
 ## Student project 5: Estimate survival from capture-recapture data 

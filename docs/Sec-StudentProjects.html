@@ -355,6 +355,7 @@ Wing length is obviously an important determinant of flight costs. Has wing leng
 <li>Select a morphological measure</li>
 <li>Analyse their summary statistics over the years, separately for species, sexes, etc.</li>
 </ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="Sec-StudentProjects.html#cb4-1"></a><span class="co"># the ring list will be distributed by the course leaders</span></span></code></pre></div>
 </div>
 <div id="student-project-3-differential-migration" class="section level2">
 <h2><span class="header-section-number">12.4</span> Student project 3: Differential Migration</h2>
@@ -368,15 +369,49 @@ age- and sex-differences in chaffinches.</p>
 </li>
 <li><span class="citation">Briedis and Bauer (<a href="#ref-Briedis.2018c" role="doc-biblioref">2018</a>)</span></li>
 </ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="Sec-StudentProjects.html#cb5-1"></a><span class="co"># the ring list will be distributed by the course leaders</span></span></code></pre></div>
 </div>
 <div id="student-project-4-flight-energetics-in-the-course-of-a-night-and-over-the-season" class="section level2">
 <h2><span class="header-section-number">12.5</span> Student project 4: Flight energetics in the course of a night and over the season</h2>
-<p>Dynamics of fat reserves: how do the fat reserves change over the night and over the season</p>
-<p>comparison with expectations based on energetics and aero-physics</p>
-<pre><code>Analyse species-specific ringing lists </code></pre>
-<p>specific softare:
-Flight 2.4 (Windows)
-or R-package afpt</p>
+<p>Analyse how fat reserves change over the night or day and over the season. Possible questions to be asked are:
+- How far can birds fly with what fat reserves?
+- How does wing shape and weight of the bird influence the energy needed for flight?
+- Does expected energy expenditure per hour flight correspond to the decrease of fat reserves?
+- What factors influence flight energy?</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="Sec-StudentProjects.html#cb6-1"></a><span class="co"># you will get the ring list to analyse how fat reserves </span></span>
+<span id="cb6-2"><a href="Sec-StudentProjects.html#cb6-2"></a><span class="co"># change over the night and over seasons</span></span>
+<span id="cb6-3"><a href="Sec-StudentProjects.html#cb6-3"></a></span>
+<span id="cb6-4"><a href="Sec-StudentProjects.html#cb6-4"></a></span>
+<span id="cb6-5"><a href="Sec-StudentProjects.html#cb6-5"></a><span class="co"># use the R-package afpt to answer questions like</span></span>
+<span id="cb6-6"><a href="Sec-StudentProjects.html#cb6-6"></a></span>
+<span id="cb6-7"><a href="Sec-StudentProjects.html#cb6-7"></a><span class="kw">library</span>(<span class="st">&#39;afpt&#39;</span>)</span>
+<span id="cb6-8"><a href="Sec-StudentProjects.html#cb6-8"></a></span>
+<span id="cb6-9"><a href="Sec-StudentProjects.html#cb6-9"></a><span class="co"># define myBird, use data of a robin</span></span>
+<span id="cb6-10"><a href="Sec-StudentProjects.html#cb6-10"></a>myBird &lt;-<span class="st"> </span><span class="kw">Bird</span>(</span>
+<span id="cb6-11"><a href="Sec-StudentProjects.html#cb6-11"></a>  <span class="dt">massTotal =</span> <span class="fl">0.015</span>, </span>
+<span id="cb6-12"><a href="Sec-StudentProjects.html#cb6-12"></a>  <span class="dt">wingSpan =</span> <span class="fl">0.15</span>, </span>
+<span id="cb6-13"><a href="Sec-StudentProjects.html#cb6-13"></a>  <span class="dt">wingArea =</span> <span class="fl">0.0085</span>,</span>
+<span id="cb6-14"><a href="Sec-StudentProjects.html#cb6-14"></a>  <span class="dt">name =</span> <span class="st">&#39;Robin&#39;</span>,</span>
+<span id="cb6-15"><a href="Sec-StudentProjects.html#cb6-15"></a>  <span class="dt">name.scientific =</span> <span class="st">&#39;Erithacus rubecula&#39;</span>,</span>
+<span id="cb6-16"><a href="Sec-StudentProjects.html#cb6-16"></a>  <span class="dt">type =</span> <span class="st">&#39;passerine&#39;</span>,</span>
+<span id="cb6-17"><a href="Sec-StudentProjects.html#cb6-17"></a>  <span class="dt">source =</span> <span class="st">&#39;gestimated by fk&#39;</span></span>
+<span id="cb6-18"><a href="Sec-StudentProjects.html#cb6-18"></a>)</span>
+<span id="cb6-19"><a href="Sec-StudentProjects.html#cb6-19"></a></span>
+<span id="cb6-20"><a href="Sec-StudentProjects.html#cb6-20"></a></span>
+<span id="cb6-21"><a href="Sec-StudentProjects.html#cb6-21"></a>speed &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">3</span>,<span class="dv">18</span>,<span class="dt">length.out=</span><span class="dv">10</span>) <span class="co">#  airspeed in m/s</span></span>
+<span id="cb6-22"><a href="Sec-StudentProjects.html#cb6-22"></a>powercurve &lt;-<span class="st"> </span><span class="kw">computeFlappingPower</span>(myBird,speed)</span>
+<span id="cb6-23"><a href="Sec-StudentProjects.html#cb6-23"></a></span>
+<span id="cb6-24"><a href="Sec-StudentProjects.html#cb6-24"></a></span>
+<span id="cb6-25"><a href="Sec-StudentProjects.html#cb6-25"></a><span class="kw">par</span>(<span class="dt">mar=</span><span class="kw">c</span>(<span class="fl">3.1</span>,<span class="fl">3.1</span>,<span class="fl">0.4</span>,<span class="fl">1.1</span>),<span class="dt">mgp=</span><span class="kw">c</span>(<span class="fl">1.9</span>,<span class="fl">0.7</span>,<span class="fl">0.0</span>),<span class="dt">cex=</span><span class="fl">0.75</span>)</span>
+<span id="cb6-26"><a href="Sec-StudentProjects.html#cb6-26"></a><span class="kw">with</span>(powercurve , <span class="kw">plot</span>( speed,power, </span>
+<span id="cb6-27"><a href="Sec-StudentProjects.html#cb6-27"></a>                        <span class="dt">type=</span><span class="st">&#39;b&#39;</span>, <span class="dt">pch=</span><span class="dv">15</span>, <span class="dt">col=</span><span class="st">&#39;grey20&#39;</span>, </span>
+<span id="cb6-28"><a href="Sec-StudentProjects.html#cb6-28"></a>                        <span class="dt">xlab=</span><span class="ot">NA</span>, <span class="dt">ylab=</span><span class="ot">NA</span>, <span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">18</span>), <span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">1.1</span>)))</span>
+<span id="cb6-29"><a href="Sec-StudentProjects.html#cb6-29"></a></span>
+<span id="cb6-30"><a href="Sec-StudentProjects.html#cb6-30"></a><span class="kw">mtext</span>(<span class="dt">side =</span> <span class="dv">1</span>, <span class="dt">line =</span> <span class="dv">2</span>,<span class="st">&#39;Speed (m/s)&#39;</span>)</span>
+<span id="cb6-31"><a href="Sec-StudentProjects.html#cb6-31"></a><span class="kw">mtext</span>(<span class="dt">side =</span> <span class="dv">2</span>, <span class="dt">line =</span> <span class="dv">2</span>,<span class="st">&#39;Power (J/s)&#39;</span>)</span>
+<span id="cb6-32"><a href="Sec-StudentProjects.html#cb6-32"></a><span class="kw">abline</span>(<span class="dt">h=</span><span class="kw">min</span>(powercurve<span class="op">$</span>power), <span class="dt">col=</span><span class="kw">grey</span>(<span class="fl">0.6</span>))</span>
+<span id="cb6-33"><a href="Sec-StudentProjects.html#cb6-33"></a><span class="kw">abline</span>(<span class="dv">0</span>,<span class="fl">0.033</span>, <span class="dt">col=</span><span class="kw">grey</span>(<span class="fl">0.8</span>))</span></code></pre></div>
+<p><img src="11-StudentProjects_files/figure-html/afpt-1.png" width="672" /></p>
 </div>
 <div id="student-project-5-estimate-survival-from-capture-recapture-data" class="section level2">
 <h2><span class="header-section-number">12.6</span> Student project 5: Estimate survival from capture-recapture data</h2>
@@ -441,51 +476,51 @@ Seasonal migration of Snowfinches as observed by ring recoveries. Arrows connect
 <p>Use a mark-resighting data set of Snowfinches from the Swiss Alps to describe which individuals spend the winter in the breeding areas (Swiss Alps). The example data contain capturing and resighting dates for individuals with known age and sex.</p>
 <p>The age is coded as 1 = nestling, 3 = first calendar year, 4 = not first calendar year, 5 = second calendar year, 6 = older than second calendar year.</p>
 <p>The below R-code can be used to start with. It extracts the number of individuals (number of different ring numbers) seen for each month. The observation effort differed over time but we can assume that it was the same for all age and sex classes.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="Sec-StudentProjects.html#cb5-1"></a><span class="kw">load</span>(<span class="st">&quot;data/Snowfinch_resightings.rda&quot;</span>)</span>
-<span id="cb5-2"><a href="Sec-StudentProjects.html#cb5-2"></a>aggdat &lt;-<span class="st"> </span><span class="kw">aggregate</span>(ringnr<span class="op">~</span>month<span class="op">+</span>sex<span class="op">+</span>age, <span class="dt">data=</span>dat, <span class="cf">function</span>(x) <span class="kw">nlevels</span>(<span class="kw">factor</span>(x)))</span>
-<span id="cb5-3"><a href="Sec-StudentProjects.html#cb5-3"></a>aggdat &lt;-<span class="st"> </span>aggdat[aggdat<span class="op">$</span>age<span class="op">&gt;</span><span class="dv">3</span>,] <span class="co"># only include individuals from their first winter onward (delete nestlings and first calendar-year birds)</span></span>
-<span id="cb5-4"><a href="Sec-StudentProjects.html#cb5-4"></a></span>
-<span id="cb5-5"><a href="Sec-StudentProjects.html#cb5-5"></a><span class="co"># include months with no individuals observed</span></span>
-<span id="cb5-6"><a href="Sec-StudentProjects.html#cb5-6"></a>datcomplete &lt;-<span class="st"> </span><span class="kw">expand.grid</span>(<span class="dt">month=</span><span class="dv">1</span><span class="op">:</span><span class="dv">11</span>, <span class="dt">sex=</span><span class="kw">c</span>(<span class="st">&quot;f&quot;</span>, <span class="st">&quot;m&quot;</span>), <span class="dt">age=</span><span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>))</span>
-<span id="cb5-7"><a href="Sec-StudentProjects.html#cb5-7"></a>rowid &lt;-<span class="st"> </span><span class="kw">paste</span>(datcomplete<span class="op">$</span>month, datcomplete<span class="op">$</span>sex, datcomplete<span class="op">$</span>age)</span>
-<span id="cb5-8"><a href="Sec-StudentProjects.html#cb5-8"></a>rowidaggdat &lt;-<span class="st"> </span><span class="kw">paste</span>(aggdat<span class="op">$</span>month, aggdat<span class="op">$</span>sex, aggdat<span class="op">$</span>age)</span>
-<span id="cb5-9"><a href="Sec-StudentProjects.html#cb5-9"></a>datcomplete<span class="op">$</span>n &lt;-<span class="st"> </span>aggdat<span class="op">$</span>ringnr[<span class="kw">match</span>(rowid, rowidaggdat)]</span>
-<span id="cb5-10"><a href="Sec-StudentProjects.html#cb5-10"></a>datcomplete<span class="op">$</span>n[<span class="kw">is.na</span>(datcomplete<span class="op">$</span>n)] &lt;-<span class="st"> </span><span class="dv">0</span></span>
-<span id="cb5-11"><a href="Sec-StudentProjects.html#cb5-11"></a></span>
-<span id="cb5-12"><a href="Sec-StudentProjects.html#cb5-12"></a><span class="kw">plot</span>(datcomplete<span class="op">$</span>month, datcomplete<span class="op">$</span>n,</span>
-<span id="cb5-13"><a href="Sec-StudentProjects.html#cb5-13"></a>     <span class="dt">las=</span><span class="dv">1</span>, <span class="dt">ylab=</span><span class="st">&quot;Number of individuals observed&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Month&quot;</span>)</span>
-<span id="cb5-14"><a href="Sec-StudentProjects.html#cb5-14"></a><span class="co"># first year males</span></span>
-<span id="cb5-15"><a href="Sec-StudentProjects.html#cb5-15"></a>index &lt;-<span class="st"> </span>datcomplete<span class="op">$</span>age<span class="op">==</span><span class="dv">5</span><span class="op">&amp;</span>datcomplete<span class="op">$</span>sex<span class="op">==</span><span class="st">&quot;m&quot;</span></span>
-<span id="cb5-16"><a href="Sec-StudentProjects.html#cb5-16"></a><span class="kw">lines</span>(datcomplete<span class="op">$</span>month[index], datcomplete<span class="op">$</span>n[index], <span class="dt">lwd=</span><span class="dv">2</span>, <span class="dt">col=</span><span class="st">&quot;lightblue&quot;</span>)</span>
-<span id="cb5-17"><a href="Sec-StudentProjects.html#cb5-17"></a></span>
-<span id="cb5-18"><a href="Sec-StudentProjects.html#cb5-18"></a><span class="co"># second year and older males</span></span>
-<span id="cb5-19"><a href="Sec-StudentProjects.html#cb5-19"></a>index &lt;-<span class="st"> </span>datcomplete<span class="op">$</span>age<span class="op">==</span><span class="dv">6</span><span class="op">&amp;</span>datcomplete<span class="op">$</span>sex<span class="op">==</span><span class="st">&quot;m&quot;</span></span>
-<span id="cb5-20"><a href="Sec-StudentProjects.html#cb5-20"></a><span class="kw">lines</span>(datcomplete<span class="op">$</span>month[index], datcomplete<span class="op">$</span>n[index], <span class="dt">lwd=</span><span class="dv">2</span>, </span>
-<span id="cb5-21"><a href="Sec-StudentProjects.html#cb5-21"></a>      <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>)</span>
-<span id="cb5-22"><a href="Sec-StudentProjects.html#cb5-22"></a></span>
-<span id="cb5-23"><a href="Sec-StudentProjects.html#cb5-23"></a><span class="co"># males, age not identified</span></span>
-<span id="cb5-24"><a href="Sec-StudentProjects.html#cb5-24"></a>index &lt;-<span class="st"> </span>datcomplete<span class="op">$</span>age<span class="op">==</span><span class="dv">4</span><span class="op">&amp;</span>datcomplete<span class="op">$</span>sex<span class="op">==</span><span class="st">&quot;m&quot;</span></span>
-<span id="cb5-25"><a href="Sec-StudentProjects.html#cb5-25"></a><span class="kw">lines</span>(datcomplete<span class="op">$</span>month[index], datcomplete<span class="op">$</span>n[index], <span class="dt">lwd=</span><span class="dv">2</span>, </span>
-<span id="cb5-26"><a href="Sec-StudentProjects.html#cb5-26"></a>      <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>, <span class="dt">lty=</span><span class="dv">3</span>)</span>
-<span id="cb5-27"><a href="Sec-StudentProjects.html#cb5-27"></a></span>
-<span id="cb5-28"><a href="Sec-StudentProjects.html#cb5-28"></a></span>
-<span id="cb5-29"><a href="Sec-StudentProjects.html#cb5-29"></a><span class="co"># first year females</span></span>
-<span id="cb5-30"><a href="Sec-StudentProjects.html#cb5-30"></a>index &lt;-<span class="st"> </span>datcomplete<span class="op">$</span>age<span class="op">==</span><span class="dv">5</span><span class="op">&amp;</span>datcomplete<span class="op">$</span>sex<span class="op">==</span><span class="st">&quot;f&quot;</span></span>
-<span id="cb5-31"><a href="Sec-StudentProjects.html#cb5-31"></a><span class="kw">lines</span>(datcomplete<span class="op">$</span>month[index], datcomplete<span class="op">$</span>n[index], <span class="dt">lwd=</span><span class="dv">2</span>, </span>
-<span id="cb5-32"><a href="Sec-StudentProjects.html#cb5-32"></a>      <span class="dt">col=</span><span class="st">&quot;orange&quot;</span>)</span>
-<span id="cb5-33"><a href="Sec-StudentProjects.html#cb5-33"></a></span>
-<span id="cb5-34"><a href="Sec-StudentProjects.html#cb5-34"></a></span>
-<span id="cb5-35"><a href="Sec-StudentProjects.html#cb5-35"></a><span class="co"># second year and older females</span></span>
-<span id="cb5-36"><a href="Sec-StudentProjects.html#cb5-36"></a>index &lt;-<span class="st"> </span>datcomplete<span class="op">$</span>age<span class="op">==</span><span class="dv">6</span><span class="op">&amp;</span>datcomplete<span class="op">$</span>sex<span class="op">==</span><span class="st">&quot;f&quot;</span></span>
-<span id="cb5-37"><a href="Sec-StudentProjects.html#cb5-37"></a><span class="kw">lines</span>(datcomplete<span class="op">$</span>month[index], datcomplete<span class="op">$</span>n[index], <span class="dt">lwd=</span><span class="dv">2</span>, </span>
-<span id="cb5-38"><a href="Sec-StudentProjects.html#cb5-38"></a>      <span class="dt">col=</span><span class="st">&quot;brown&quot;</span>)</span>
-<span id="cb5-39"><a href="Sec-StudentProjects.html#cb5-39"></a></span>
-<span id="cb5-40"><a href="Sec-StudentProjects.html#cb5-40"></a><span class="co"># females, age not identified</span></span>
-<span id="cb5-41"><a href="Sec-StudentProjects.html#cb5-41"></a>index &lt;-<span class="st"> </span>datcomplete<span class="op">$</span>age<span class="op">==</span><span class="dv">4</span><span class="op">&amp;</span>datcomplete<span class="op">$</span>sex<span class="op">==</span><span class="st">&quot;f&quot;</span></span>
-<span id="cb5-42"><a href="Sec-StudentProjects.html#cb5-42"></a><span class="kw">lines</span>(datcomplete<span class="op">$</span>month[index], datcomplete<span class="op">$</span>n[index], <span class="dt">lwd=</span><span class="dv">2</span>, </span>
-<span id="cb5-43"><a href="Sec-StudentProjects.html#cb5-43"></a>      <span class="dt">col=</span><span class="st">&quot;brown&quot;</span>, <span class="dt">lty=</span><span class="dv">3</span>)</span>
-<span id="cb5-44"><a href="Sec-StudentProjects.html#cb5-44"></a></span>
-<span id="cb5-45"><a href="Sec-StudentProjects.html#cb5-45"></a><span class="kw">legend</span>(<span class="dv">5</span>, <span class="dv">40</span>, <span class="dt">lwd=</span><span class="dv">2</span>, <span class="dt">lty=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">1</span>), <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;brown&quot;</span>, <span class="st">&quot;brown&quot;</span>, <span class="st">&quot;orange&quot;</span>, <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;lightblue&quot;</span>), <span class="dt">legend=</span><span class="kw">c</span>(<span class="st">&quot;females age 2y+&quot;</span>, <span class="st">&quot;females age unknown&quot;</span>, <span class="st">&quot;females 1y&quot;</span>, <span class="st">&quot;males age 2y+&quot;</span>, <span class="st">&quot;males age unknown&quot;</span>, <span class="st">&quot;males 1y&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="Sec-StudentProjects.html#cb7-1"></a><span class="kw">load</span>(<span class="st">&quot;data/Snowfinch_resightings.rda&quot;</span>)</span>
+<span id="cb7-2"><a href="Sec-StudentProjects.html#cb7-2"></a>aggdat &lt;-<span class="st"> </span><span class="kw">aggregate</span>(ringnr<span class="op">~</span>month<span class="op">+</span>sex<span class="op">+</span>age, <span class="dt">data=</span>dat, <span class="cf">function</span>(x) <span class="kw">nlevels</span>(<span class="kw">factor</span>(x)))</span>
+<span id="cb7-3"><a href="Sec-StudentProjects.html#cb7-3"></a>aggdat &lt;-<span class="st"> </span>aggdat[aggdat<span class="op">$</span>age<span class="op">&gt;</span><span class="dv">3</span>,] <span class="co"># only include individuals from their first winter onward (delete nestlings and first calendar-year birds)</span></span>
+<span id="cb7-4"><a href="Sec-StudentProjects.html#cb7-4"></a></span>
+<span id="cb7-5"><a href="Sec-StudentProjects.html#cb7-5"></a><span class="co"># include months with no individuals observed</span></span>
+<span id="cb7-6"><a href="Sec-StudentProjects.html#cb7-6"></a>datcomplete &lt;-<span class="st"> </span><span class="kw">expand.grid</span>(<span class="dt">month=</span><span class="dv">1</span><span class="op">:</span><span class="dv">11</span>, <span class="dt">sex=</span><span class="kw">c</span>(<span class="st">&quot;f&quot;</span>, <span class="st">&quot;m&quot;</span>), <span class="dt">age=</span><span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>))</span>
+<span id="cb7-7"><a href="Sec-StudentProjects.html#cb7-7"></a>rowid &lt;-<span class="st"> </span><span class="kw">paste</span>(datcomplete<span class="op">$</span>month, datcomplete<span class="op">$</span>sex, datcomplete<span class="op">$</span>age)</span>
+<span id="cb7-8"><a href="Sec-StudentProjects.html#cb7-8"></a>rowidaggdat &lt;-<span class="st"> </span><span class="kw">paste</span>(aggdat<span class="op">$</span>month, aggdat<span class="op">$</span>sex, aggdat<span class="op">$</span>age)</span>
+<span id="cb7-9"><a href="Sec-StudentProjects.html#cb7-9"></a>datcomplete<span class="op">$</span>n &lt;-<span class="st"> </span>aggdat<span class="op">$</span>ringnr[<span class="kw">match</span>(rowid, rowidaggdat)]</span>
+<span id="cb7-10"><a href="Sec-StudentProjects.html#cb7-10"></a>datcomplete<span class="op">$</span>n[<span class="kw">is.na</span>(datcomplete<span class="op">$</span>n)] &lt;-<span class="st"> </span><span class="dv">0</span></span>
+<span id="cb7-11"><a href="Sec-StudentProjects.html#cb7-11"></a></span>
+<span id="cb7-12"><a href="Sec-StudentProjects.html#cb7-12"></a><span class="kw">plot</span>(datcomplete<span class="op">$</span>month, datcomplete<span class="op">$</span>n,</span>
+<span id="cb7-13"><a href="Sec-StudentProjects.html#cb7-13"></a>     <span class="dt">las=</span><span class="dv">1</span>, <span class="dt">ylab=</span><span class="st">&quot;Number of individuals observed&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Month&quot;</span>)</span>
+<span id="cb7-14"><a href="Sec-StudentProjects.html#cb7-14"></a><span class="co"># first year males</span></span>
+<span id="cb7-15"><a href="Sec-StudentProjects.html#cb7-15"></a>index &lt;-<span class="st"> </span>datcomplete<span class="op">$</span>age<span class="op">==</span><span class="dv">5</span><span class="op">&amp;</span>datcomplete<span class="op">$</span>sex<span class="op">==</span><span class="st">&quot;m&quot;</span></span>
+<span id="cb7-16"><a href="Sec-StudentProjects.html#cb7-16"></a><span class="kw">lines</span>(datcomplete<span class="op">$</span>month[index], datcomplete<span class="op">$</span>n[index], <span class="dt">lwd=</span><span class="dv">2</span>, <span class="dt">col=</span><span class="st">&quot;lightblue&quot;</span>)</span>
+<span id="cb7-17"><a href="Sec-StudentProjects.html#cb7-17"></a></span>
+<span id="cb7-18"><a href="Sec-StudentProjects.html#cb7-18"></a><span class="co"># second year and older males</span></span>
+<span id="cb7-19"><a href="Sec-StudentProjects.html#cb7-19"></a>index &lt;-<span class="st"> </span>datcomplete<span class="op">$</span>age<span class="op">==</span><span class="dv">6</span><span class="op">&amp;</span>datcomplete<span class="op">$</span>sex<span class="op">==</span><span class="st">&quot;m&quot;</span></span>
+<span id="cb7-20"><a href="Sec-StudentProjects.html#cb7-20"></a><span class="kw">lines</span>(datcomplete<span class="op">$</span>month[index], datcomplete<span class="op">$</span>n[index], <span class="dt">lwd=</span><span class="dv">2</span>, </span>
+<span id="cb7-21"><a href="Sec-StudentProjects.html#cb7-21"></a>      <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb7-22"><a href="Sec-StudentProjects.html#cb7-22"></a></span>
+<span id="cb7-23"><a href="Sec-StudentProjects.html#cb7-23"></a><span class="co"># males, age not identified</span></span>
+<span id="cb7-24"><a href="Sec-StudentProjects.html#cb7-24"></a>index &lt;-<span class="st"> </span>datcomplete<span class="op">$</span>age<span class="op">==</span><span class="dv">4</span><span class="op">&amp;</span>datcomplete<span class="op">$</span>sex<span class="op">==</span><span class="st">&quot;m&quot;</span></span>
+<span id="cb7-25"><a href="Sec-StudentProjects.html#cb7-25"></a><span class="kw">lines</span>(datcomplete<span class="op">$</span>month[index], datcomplete<span class="op">$</span>n[index], <span class="dt">lwd=</span><span class="dv">2</span>, </span>
+<span id="cb7-26"><a href="Sec-StudentProjects.html#cb7-26"></a>      <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>, <span class="dt">lty=</span><span class="dv">3</span>)</span>
+<span id="cb7-27"><a href="Sec-StudentProjects.html#cb7-27"></a></span>
+<span id="cb7-28"><a href="Sec-StudentProjects.html#cb7-28"></a></span>
+<span id="cb7-29"><a href="Sec-StudentProjects.html#cb7-29"></a><span class="co"># first year females</span></span>
+<span id="cb7-30"><a href="Sec-StudentProjects.html#cb7-30"></a>index &lt;-<span class="st"> </span>datcomplete<span class="op">$</span>age<span class="op">==</span><span class="dv">5</span><span class="op">&amp;</span>datcomplete<span class="op">$</span>sex<span class="op">==</span><span class="st">&quot;f&quot;</span></span>
+<span id="cb7-31"><a href="Sec-StudentProjects.html#cb7-31"></a><span class="kw">lines</span>(datcomplete<span class="op">$</span>month[index], datcomplete<span class="op">$</span>n[index], <span class="dt">lwd=</span><span class="dv">2</span>, </span>
+<span id="cb7-32"><a href="Sec-StudentProjects.html#cb7-32"></a>      <span class="dt">col=</span><span class="st">&quot;orange&quot;</span>)</span>
+<span id="cb7-33"><a href="Sec-StudentProjects.html#cb7-33"></a></span>
+<span id="cb7-34"><a href="Sec-StudentProjects.html#cb7-34"></a></span>
+<span id="cb7-35"><a href="Sec-StudentProjects.html#cb7-35"></a><span class="co"># second year and older females</span></span>
+<span id="cb7-36"><a href="Sec-StudentProjects.html#cb7-36"></a>index &lt;-<span class="st"> </span>datcomplete<span class="op">$</span>age<span class="op">==</span><span class="dv">6</span><span class="op">&amp;</span>datcomplete<span class="op">$</span>sex<span class="op">==</span><span class="st">&quot;f&quot;</span></span>
+<span id="cb7-37"><a href="Sec-StudentProjects.html#cb7-37"></a><span class="kw">lines</span>(datcomplete<span class="op">$</span>month[index], datcomplete<span class="op">$</span>n[index], <span class="dt">lwd=</span><span class="dv">2</span>, </span>
+<span id="cb7-38"><a href="Sec-StudentProjects.html#cb7-38"></a>      <span class="dt">col=</span><span class="st">&quot;brown&quot;</span>)</span>
+<span id="cb7-39"><a href="Sec-StudentProjects.html#cb7-39"></a></span>
+<span id="cb7-40"><a href="Sec-StudentProjects.html#cb7-40"></a><span class="co"># females, age not identified</span></span>
+<span id="cb7-41"><a href="Sec-StudentProjects.html#cb7-41"></a>index &lt;-<span class="st"> </span>datcomplete<span class="op">$</span>age<span class="op">==</span><span class="dv">4</span><span class="op">&amp;</span>datcomplete<span class="op">$</span>sex<span class="op">==</span><span class="st">&quot;f&quot;</span></span>
+<span id="cb7-42"><a href="Sec-StudentProjects.html#cb7-42"></a><span class="kw">lines</span>(datcomplete<span class="op">$</span>month[index], datcomplete<span class="op">$</span>n[index], <span class="dt">lwd=</span><span class="dv">2</span>, </span>
+<span id="cb7-43"><a href="Sec-StudentProjects.html#cb7-43"></a>      <span class="dt">col=</span><span class="st">&quot;brown&quot;</span>, <span class="dt">lty=</span><span class="dv">3</span>)</span>
+<span id="cb7-44"><a href="Sec-StudentProjects.html#cb7-44"></a></span>
+<span id="cb7-45"><a href="Sec-StudentProjects.html#cb7-45"></a><span class="kw">legend</span>(<span class="dv">5</span>, <span class="dv">40</span>, <span class="dt">lwd=</span><span class="dv">2</span>, <span class="dt">lty=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">1</span>), <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;brown&quot;</span>, <span class="st">&quot;brown&quot;</span>, <span class="st">&quot;orange&quot;</span>, <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;lightblue&quot;</span>), <span class="dt">legend=</span><span class="kw">c</span>(<span class="st">&quot;females age 2y+&quot;</span>, <span class="st">&quot;females age unknown&quot;</span>, <span class="st">&quot;females 1y&quot;</span>, <span class="st">&quot;males age 2y+&quot;</span>, <span class="st">&quot;males age unknown&quot;</span>, <span class="st">&quot;males 1y&quot;</span>))</span></code></pre></div>
 <div class="figure">
 <img src="11-StudentProjects_files/figure-html/resight-1.png" alt="Number of individuals observed per month for each age and sex class" width="672" />
 <p class="caption">
