@@ -45,22 +45,33 @@ The project may include the following steps:
 
 **Data required and R-analyses**
 
-Migration data "zugzeiten.txt"
-- Variable baird.mean is an estimate for the average passage day corrected for truncation (migration is still ongoing at the end of the field season) 
 - passage_by_spec_year.txt: Median passage day per year and species
-- species_data.txt: ecological characteristica of species
+- species_data.rda: ecological characteristica of species
 
 
-You may use the following R-code to get started 
+You may use the following R-code to get started.
 
 ```{r StudPhenology}
 
 dat <- read.table("data/passage_by_spec_year.txt", header=TRUE, sep="\t")
 
+ # $ species    : species nr = "artnr" in datspec
+ # $ year       : 
+ # $ mpassage   : median passage day (day of year)
+ # $ min_passage:  first passage day 
+ # $ q10_passage: 10% quantile of passage day
+ # $ q20_passage: 20% quantile of passage day
+ # $ q80_passage: 80% quantile of passage day
+ # $ q90_passage: 90 % quantile of passage day
+ # $ max_passage: last passage day
+ # $ n          : number of individuals
 
+
+load("data/species_data.rda") # load data.frame "datspec"
 # species names and characteristics of species-------------------------
-# artnr:	secies number, see species data file
+# artnr:	species number, see species data file
 # latabk:	abreviation of latin species name 
+# englname: english species name
 # Weight:	g
 # FlightSpeed:	m/s
 # WingSpan(m):	m
@@ -82,6 +93,27 @@ dat <- read.table("data/passage_by_spec_year.txt", header=TRUE, sep="\t")
 #         t+n= migrates both at night and day
 # migdist_cat:	l=long-distance migrant, k=short-distance migrant
 # Passeres:	0= non-Passeriformes, 1=Passeriformes
+
+
+# Example 1: Standard deviation of median passage day across years for the Robin
+
+sd(dat$max_passage[dat$species==4000])
+
+
+# Example 2: long-term change in median passage day for the Robin
+
+index <- dat$species==4000
+plot(dat$year[index], dat$mpassage[index], xlab="Year", ylab="Median passage day", main="Robin")
+mod <- lm(mpassage~year, data=dat[index,])
+abline(mod)
+newdat <- data.frame(year=1976:2018)
+newdat$lwr <- predict(mod, newdata=newdat, interval="confidence")[,2]
+newdat$upr <- predict(mod, newdata=newdat, interval="confidence")[,3]
+lines(newdat$year, newdat$lwr, lty=3)
+lines(newdat$year, newdat$upr, lty=3)
+
+
+
 
 
 ```
