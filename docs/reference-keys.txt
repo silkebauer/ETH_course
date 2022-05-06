@@ -98,3 +98,8 @@ tuesday-17-may-2022
 tuesday-24-may-2022
 wednesday-25-may-2022
 student-project-8-why-is-timing-in-spring-important
+course-day-1-tuesday-3-may-2022
+course-day-2-wednesday-11-may-2022
+course-day-3-tuesday-17-may-2022
+course-day-4-tuesday-24-may-2022
+course-day-5-wednesday-25-may-2022
