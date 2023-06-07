@@ -28,12 +28,18 @@ For **practical and field methods**, we will introduce some of the most importan
 * morphological and physiological measurements,
 * tracking birds
 
+
+**Student projects** are ideally conducted in groups of 2-4 persons. We expect students to choose a project during the first two days of the course (see list of potential projects \@ref(Sec:StudentProjects)). There are several slots for work on these projects over the course week and we expect students to give a brief (approx. 20 min) presentation on Friday, detailing the ecological question behind the project, the analytical approach chosen, the results obtained and a discussion. 
 Within the student projects, we will introduce and apply important **theoretical approaches and analytical methods**
 
 
 ## Course schedule
 
 The course consists of lectures, project work and excursions.
+
+### Prepatory days 1 & 2: Tuesday, 5-6 September 2023 in Sempach (or online)
+
+
 
 ### Course day 1: Tuesday, 3 May 2022
 
