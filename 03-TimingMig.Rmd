@@ -46,7 +46,7 @@ cues <- data.frame(read.csv("tables/Table_Cues.csv", h=T, sep=";"))
 knitr::kable(
   head(cues, 20), caption = "\\label{tab:Cues}The cues used in various taxa for timing migration",
   format.args = list(width = 30),
-  booktabs = TRUE,
+  booktabs = TRUE
 )
 ```
 
