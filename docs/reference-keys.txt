@@ -15,7 +15,7 @@ general-information
 introduction
 course-aims
 course-schedule
-prepatory-days-1-2-tuesday-5-6-september-2023-in-sempach-or-online
+prepatory-days-1-2-tuesday-5-6-september-2023-in-sempach
 course-day-1-tuesday-5-september-2023
 course-day-2-wednesday-6-september-2023-in-sempach
 excursion-to-col-de-bretolet-mon-fri-11-15-september-2023
@@ -24,7 +24,6 @@ course-day-4-tuesday-12-september-2023
 course-day-5-wednesday-13-september-2023
 course-day-6-thursday-14-september-2023
 course-day-7-friday-15-september-2023
-preparations
 animal-migration
 what-is-migration
 why-do-birds-migrate
