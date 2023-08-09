@@ -32,7 +32,7 @@ Year of first capture   | n marked    | 2014 (2) |	2015 (3)	| 2016 (4)	| 2017 (5
 
 The probability that an individual of all marked individuals released at occasion $k$ is recaptured at occasion $t$ is a function of apparent survival probability $\phi_{t}$ and recapture probability $p_t$ (Table \@ref(tab:cjscode)). The recapture probability $p$ is the probability that an individual that is alive and present in the study area is captured. The model parameters (apparent survival $\phi_t$ and recapture probability $p_t$) can be estimated by fitting a multinomial model to the number of recaptured individuals at the different occasions. Such a multinomial model is fitted for each cohort of individuals released at the same occasion with the cell probabilities of Table \@ref(tab:cjscode).
 
-<fontsize
+
 Table: (\#tab:cjscode). Multinomial cell probabilities of a Cormack-Jolly-Seber model. Note that the cell probabilities are formulated so that one release of a marked individual is resulting in one recapture at maximum. Therefore, the data in Table \@ref(tab:mcdata) need to be re-arranged so that every recapture becomes a new release of a marked bird (such re-arranged data is called an m-array).
 
 Occ	| 2	| 3 |	4 |	5 |	6 |

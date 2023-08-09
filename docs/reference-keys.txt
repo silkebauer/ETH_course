@@ -73,7 +73,7 @@ Sec:MigModels
 state-dependent-migration-models
 statistical-tools-for-studying-migration
 distribution-models-for-counts-of-resting-or-migrating-individuals
-connectivity-models
+migratory-connectivity-models
 estimating-survival-based-on-mark-recapture-data-the-cormack-jolly-seber-model
 multi-state-models-to-estimate-movement-rates
 individual-based-hidden-markov-model-for-bird-behaviour
