@@ -51,16 +51,16 @@ Location: [Room Aquila at the Swiss Ornithological Institute, Seerose 1, 6204 Se
   + What we expect from you and your projects
   + Ask us anything!
   
-* 11:00 Lecture 1: Introduction to animal migration
+* 11:00 Lecture 1: Introduction to animal migration (SB)
 
 * 12:00 - 13:30 Lunch break
 
-* 13:30 Lecture 2: Characteristics of birds and adaptations to flight (Vorlesung FK)
+* 13:30 Lecture 2: Characteristics of birds and introduction to expected species (FK)
 
-* 14:30 Overview of student projects and papers to be read (Information SB, FK)
+* 14:30 Overview of student projects and papers to be read (information SB, FK)
 
 * 15:15 Introduction to bird watching & bird identification
-  + The 20 most common bird species at Col de Bretolet in September (Lecture & Übung, FK, SB)  
+  + The 20 most common bird species at Col de Bretolet in September (Lecture & practice, FK, SB)  
   + brief practical (weather dependent): Walk along lakeshore to station and watch birds
 
 
@@ -94,7 +94,7 @@ we need to take weather conditions into account and may need to re-adjust.
 
 * Afternoon:
 
-* Lecture 6: Methods for studying animal migration (Vorlesung FK, SB)
+* Lecture 6: Methods for studying animal migration (SB)
    + Moon-watching
    + Satellite telemetry
    + GPS loggers
@@ -103,7 +103,7 @@ we need to take weather conditions into account and may need to re-adjust.
    + Radar
    
    
-* Lecture 7: Migration in the life-cycle of a bird (Vorlesung FK)
+* Lecture 7: Migration in the life-cycle of a bird (FK)
 
 * Presentations & discussion of 'homework' papers
   + Give a brief overview of overarching questions addressed in the paper
@@ -123,7 +123,7 @@ we need to take weather conditions into account and may need to re-adjust.
 * Afternoon 
 
 * Lecture 8: Timing of migration (SB)
-* Lecture 9: Orientation (Vorlesung FK)
+* Lecture 9: Orientation (FK)
 
 * Project work
 
@@ -166,8 +166,8 @@ we need to take weather conditions into account and may need to re-adjust.
 
 ## Preparations
 
-We ask students to prepare for the course by reading at least two papers - one general paper and one specific research paper (see below) - and to introduce the key messages of these papers to your fellow students during the course (for guidelines to reading and summarizing papers, see \@ref(Sec:StudentProjects). 
-Please let us know (via email) until **26 April 2022** which papers you choose and also send us up to three questions that you would like to have answered during the course.
+To start the project work, we will ask students to read at least two papers - one general paper and one specific research paper and to introduce the key messages of these papers to your fellow students in the first days in the field (for guidelines to reading and summarizing papers, see Chapter Student's projects. 
+The specific paper may be chosen to fit the topic of the project work (see also specific recommendations at the project descriptions). 
 
 
 **General papers, reviews, synthesis**
