@@ -4,36 +4,36 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 7 Field methods | Migration Course</title>
-  <meta name="description" content="This is a handout for the ETH migration course at Col de Bretolet. The output format for this example is bookdown::gitbook." />
-  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+  <title>Chapter 9 Field methods | Handout and background material for ETHZ course ‘Animal Migration and research in field ornithology’</title>
+  <meta name="description" content="This is a handout for the ETH migration course at Col de Bretolet." />
+  <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 7 Field methods | Migration Course" />
+  <meta property="og:title" content="Chapter 9 Field methods | Handout and background material for ETHZ course ‘Animal Migration and research in field ornithology’" />
   <meta property="og:type" content="book" />
   
-  
-  <meta property="og:description" content="This is a handout for the ETH migration course at Col de Bretolet. The output format for this example is bookdown::gitbook." />
+  <meta property="og:description" content="This is a handout for the ETH migration course at Col de Bretolet." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 7 Field methods | Migration Course" />
+  <meta name="twitter:title" content="Chapter 9 Field methods | Handout and background material for ETHZ course ‘Animal Migration and research in field ornithology’" />
   
-  <meta name="twitter:description" content="This is a handout for the ETH migration course at Col de Bretolet. The output format for this example is bookdown::gitbook." />
+  <meta name="twitter:description" content="This is a handout for the ETH migration course at Col de Bretolet." />
   
 
-<meta name="author" content="Fränzi Korner &amp; Silke Bauer" />
+<meta name="author" content="Silke Bauer &amp; Fränzi Korner-Nievergelt" />
 
 
-<meta name="date" content="2020-05-05" />
+<meta name="date" content="2023-08-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="mechanics-energetics-and-plasticity-of-the-migratory-flight.html"/>
+<link rel="prev" href="global-change-and-other-challenges.html"/>
 <link rel="next" href="migration-models.html"/>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -49,29 +49,33 @@
 
 
 
-
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -80,15 +84,15 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -101,7 +105,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -113,6 +117,29 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 </head>
@@ -130,76 +157,115 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">Handout ETH course Migration ecology and methods in field ornithology</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
-<li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a><ul>
-<li class="chapter" data-level="2.1" data-path="introduction.html"><a href="introduction.html#course-schedule"><i class="fa fa-check"></i><b>2.1</b> Course schedule</a><ul>
-<li class="chapter" data-level="2.1.1" data-path="introduction.html"><a href="introduction.html#monday"><i class="fa fa-check"></i><b>2.1.1</b> Monday</a></li>
-<li class="chapter" data-level="2.1.2" data-path="introduction.html"><a href="introduction.html#tuesday"><i class="fa fa-check"></i><b>2.1.2</b> Tuesday</a></li>
-<li class="chapter" data-level="2.1.3" data-path="introduction.html"><a href="introduction.html#wednesday"><i class="fa fa-check"></i><b>2.1.3</b> Wednesday</a></li>
-<li class="chapter" data-level="2.1.4" data-path="introduction.html"><a href="introduction.html#thursday"><i class="fa fa-check"></i><b>2.1.4</b> Thursday</a></li>
-<li class="chapter" data-level="2.1.5" data-path="introduction.html"><a href="introduction.html#friday"><i class="fa fa-check"></i><b>2.1.5</b> Friday</a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> General information</a></li>
+<li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="introduction.html"><a href="introduction.html#course-aims"><i class="fa fa-check"></i><b>2.1</b> Course aims</a></li>
+<li class="chapter" data-level="2.2" data-path="introduction.html"><a href="introduction.html#course-schedule"><i class="fa fa-check"></i><b>2.2</b> Course schedule</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="introduction.html"><a href="introduction.html#prepatory-days-1-2-tuesday-5-6-september-2023-in-sempach-or-online"><i class="fa fa-check"></i><b>2.2.1</b> Prepatory days 1 &amp; 2: Tuesday, 5-6 September 2023 in Sempach (or online)</a></li>
+<li class="chapter" data-level="2.2.2" data-path="introduction.html"><a href="introduction.html#course-day-1-tuesday-5-september-2023"><i class="fa fa-check"></i><b>2.2.2</b> Course day 1: Tuesday, 5 September 2023</a></li>
+<li class="chapter" data-level="2.2.3" data-path="introduction.html"><a href="introduction.html#course-day-2-wednesday-6-september-2023-in-sempach"><i class="fa fa-check"></i><b>2.2.3</b> Course day 2: Wednesday, 6 September 2023 in Sempach</a></li>
+<li class="chapter" data-level="2.2.4" data-path="introduction.html"><a href="introduction.html#excursion-to-col-de-bretolet-mon-fri-11-15-september-2023"><i class="fa fa-check"></i><b>2.2.4</b> Excursion to Col de Bretolet: Mon-Fri 11-15 September 2023</a></li>
+<li class="chapter" data-level="2.2.5" data-path="introduction.html"><a href="introduction.html#course-day-3-monday-11-september-2023"><i class="fa fa-check"></i><b>2.2.5</b> Course day 3: Monday, 11 September 2023</a></li>
+<li class="chapter" data-level="2.2.6" data-path="introduction.html"><a href="introduction.html#course-day-4-tuesday-12-september-2023"><i class="fa fa-check"></i><b>2.2.6</b> Course day 4: Tuesday, 12 September 2023</a></li>
+<li class="chapter" data-level="2.2.7" data-path="introduction.html"><a href="introduction.html#course-day-5-wednesday-13-september-2023"><i class="fa fa-check"></i><b>2.2.7</b> Course day 5: Wednesday, 13 September 2023</a></li>
+<li class="chapter" data-level="2.2.8" data-path="introduction.html"><a href="introduction.html#course-day-6-thursday-14-september-2023"><i class="fa fa-check"></i><b>2.2.8</b> Course day 6: Thursday, 14 September 2023</a></li>
+<li class="chapter" data-level="2.2.9" data-path="introduction.html"><a href="introduction.html#course-day-7-friday-15-september-2023"><i class="fa fa-check"></i><b>2.2.9</b> Course day 7: Friday, 15 September 2023</a></li>
 </ul></li>
+<li class="chapter" data-level="2.3" data-path="introduction.html"><a href="introduction.html#preparations"><i class="fa fa-check"></i><b>2.3</b> Preparations</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="animal-migration.html"><a href="animal-migration.html"><i class="fa fa-check"></i><b>3</b> Animal migration</a><ul>
+<li class="chapter" data-level="3" data-path="animal-migration.html"><a href="animal-migration.html"><i class="fa fa-check"></i><b>3</b> Animal migration</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="animal-migration.html"><a href="animal-migration.html#what-is-migration"><i class="fa fa-check"></i><b>3.1</b> What is migration?</a></li>
 <li class="chapter" data-level="3.2" data-path="animal-migration.html"><a href="animal-migration.html#why-do-birds-migrate"><i class="fa fa-check"></i><b>3.2</b> Why do birds migrate?</a></li>
-<li class="chapter" data-level="3.3" data-path="animal-migration.html"><a href="animal-migration.html#terminology-of-specific-migration-patterns"><i class="fa fa-check"></i><b>3.3</b> Terminology of specific migration patterns</a></li>
-<li class="chapter" data-level="3.4" data-path="animal-migration.html"><a href="animal-migration.html#importance-of-migration-for-the-structure-and-dynamics-of-resident-communities"><i class="fa fa-check"></i><b>3.4</b> Importance of migration for the structure and dynamics of resident communities</a></li>
-</ul></li>
-<li class="chapter" data-level="4" data-path="Sec-TimingMigration.html"><a href="Sec-TimingMigration.html"><i class="fa fa-check"></i><b>4</b> Timing of migration</a><ul>
-<li class="chapter" data-level="4.1" data-path="Sec-TimingMigration.html"><a href="Sec-TimingMigration.html#why-is-timing-important"><i class="fa fa-check"></i><b>4.1</b> Why is timing important?</a></li>
-<li class="chapter" data-level="4.2" data-path="Sec-TimingMigration.html"><a href="Sec-TimingMigration.html#what-determines-the-timing-of-migratory-steps-cues"><i class="fa fa-check"></i><b>4.2</b> What determines the timing of migratory steps? Cues!</a><ul>
-<li class="chapter" data-level="4.2.1" data-path="Sec-TimingMigration.html"><a href="Sec-TimingMigration.html#preparation"><i class="fa fa-check"></i><b>4.2.1</b> Preparation</a></li>
-<li class="chapter" data-level="4.2.2" data-path="Sec-TimingMigration.html"><a href="Sec-TimingMigration.html#departure"><i class="fa fa-check"></i><b>4.2.2</b> Departure</a></li>
-<li class="chapter" data-level="4.2.3" data-path="Sec-TimingMigration.html"><a href="Sec-TimingMigration.html#on-the-way"><i class="fa fa-check"></i><b>4.2.3</b> On the way</a></li>
-<li class="chapter" data-level="4.2.4" data-path="Sec-TimingMigration.html"><a href="Sec-TimingMigration.html#termination"><i class="fa fa-check"></i><b>4.2.4</b> Termination</a></li>
-</ul></li>
-<li class="chapter" data-level="4.3" data-path="Sec-TimingMigration.html"><a href="Sec-TimingMigration.html#consequences-of-migration-timing"><i class="fa fa-check"></i><b>4.3</b> Consequences of migration timing</a></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="orientation.html"><a href="orientation.html"><i class="fa fa-check"></i><b>5</b> Orientation</a><ul>
-<li class="chapter" data-level="5.1" data-path="orientation.html"><a href="orientation.html#sun-compass"><i class="fa fa-check"></i><b>5.1</b> Sun compass</a></li>
-<li class="chapter" data-level="5.2" data-path="orientation.html"><a href="orientation.html#star-compass"><i class="fa fa-check"></i><b>5.2</b> Star compass</a></li>
-<li class="chapter" data-level="5.3" data-path="orientation.html"><a href="orientation.html#magnetic-compass"><i class="fa fa-check"></i><b>5.3</b> Magnetic compass</a></li>
-<li class="chapter" data-level="5.4" data-path="orientation.html"><a href="orientation.html#landmarks"><i class="fa fa-check"></i><b>5.4</b> Landmarks</a></li>
-<li class="chapter" data-level="5.5" data-path="orientation.html"><a href="orientation.html#olfactory-cues"><i class="fa fa-check"></i><b>5.5</b> Olfactory cues</a></li>
-<li class="chapter" data-level="5.6" data-path="orientation.html"><a href="orientation.html#compass-orientation-vs.-navigation"><i class="fa fa-check"></i><b>5.6</b> Compass orientation vs. navigation</a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="mechanics-energetics-and-plasticity-of-the-migratory-flight.html"><a href="mechanics-energetics-and-plasticity-of-the-migratory-flight.html"><i class="fa fa-check"></i><b>6</b> Mechanics, energetics and plasticity of the migratory flight</a><ul>
-<li class="chapter" data-level="6.1" data-path="mechanics-energetics-and-plasticity-of-the-migratory-flight.html"><a href="mechanics-energetics-and-plasticity-of-the-migratory-flight.html#mechanics-and-energetics-of-flight"><i class="fa fa-check"></i><b>6.1</b> Mechanics and energetics of flight</a></li>
-<li class="chapter" data-level="6.2" data-path="mechanics-energetics-and-plasticity-of-the-migratory-flight.html"><a href="mechanics-energetics-and-plasticity-of-the-migratory-flight.html#fuel-for-migratory-flights"><i class="fa fa-check"></i><b>6.2</b> Fuel for migratory flights</a></li>
-<li class="chapter" data-level="6.3" data-path="mechanics-energetics-and-plasticity-of-the-migratory-flight.html"><a href="mechanics-energetics-and-plasticity-of-the-migratory-flight.html#influences-on-migration"><i class="fa fa-check"></i><b>6.3</b> Influences on migration</a><ul>
-<li class="chapter" data-level="6.3.1" data-path="mechanics-energetics-and-plasticity-of-the-migratory-flight.html"><a href="mechanics-energetics-and-plasticity-of-the-migratory-flight.html#endogeneous-and-exogeneous-factors"><i class="fa fa-check"></i><b>6.3.1</b> Endogeneous and exogeneous factors</a></li>
-<li class="chapter" data-level="6.3.2" data-path="mechanics-energetics-and-plasticity-of-the-migratory-flight.html"><a href="mechanics-energetics-and-plasticity-of-the-migratory-flight.html#topography"><i class="fa fa-check"></i><b>6.3.2</b> Topography</a></li>
-<li class="chapter" data-level="6.3.3" data-path="mechanics-energetics-and-plasticity-of-the-migratory-flight.html"><a href="mechanics-energetics-and-plasticity-of-the-migratory-flight.html#wind"><i class="fa fa-check"></i><b>6.3.3</b> Wind</a></li>
-<li class="chapter" data-level="6.3.4" data-path="mechanics-energetics-and-plasticity-of-the-migratory-flight.html"><a href="mechanics-energetics-and-plasticity-of-the-migratory-flight.html#temperature"><i class="fa fa-check"></i><b>6.3.4</b> Temperature</a></li>
+<li class="chapter" data-level="3.3" data-path="animal-migration.html"><a href="animal-migration.html#terminology-of-specific-migration-patterns"><i class="fa fa-check"></i><b>3.3</b> Terminology of specific migration patterns</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="animal-migration.html"><a href="animal-migration.html#characterisation-of-migration-according-to-distances-covered"><i class="fa fa-check"></i><b>3.3.1</b> Characterisation of migration according to distances covered</a></li>
+<li class="chapter" data-level="3.3.2" data-path="animal-migration.html"><a href="animal-migration.html#characterisation-of-migration-according-to-daytime-of-travel"><i class="fa fa-check"></i><b>3.3.2</b> Characterisation of migration according to daytime of travel</a></li>
+<li class="chapter" data-level="3.3.3" data-path="animal-migration.html"><a href="animal-migration.html#characterisation-of-migration-according-to-larger-scale-patterns-of-migratory-bouts"><i class="fa fa-check"></i><b>3.3.3</b> Characterisation of migration according to larger-scale patterns of migratory bouts</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="field-methods.html"><a href="field-methods.html"><i class="fa fa-check"></i><b>7</b> Field methods</a><ul>
-<li class="chapter" data-level="7.1" data-path="field-methods.html"><a href="field-methods.html#observations-visual-moonwatching-ir-radar"><i class="fa fa-check"></i><b>7.1</b> Observations: visual, moonwatching, IR, radar</a></li>
-<li class="chapter" data-level="7.2" data-path="field-methods.html"><a href="field-methods.html#marking-and-reencountering"><i class="fa fa-check"></i><b>7.2</b> Marking and reencountering</a></li>
-<li class="chapter" data-level="7.3" data-path="field-methods.html"><a href="field-methods.html#tracking-individuals"><i class="fa fa-check"></i><b>7.3</b> Tracking individuals</a></li>
-<li class="chapter" data-level="7.4" data-path="field-methods.html"><a href="field-methods.html#orientation-experiments"><i class="fa fa-check"></i><b>7.4</b> Orientation experiments</a></li>
-<li class="chapter" data-level="7.5" data-path="field-methods.html"><a href="field-methods.html#stable-isotopes-genetics-and-physiology"><i class="fa fa-check"></i><b>7.5</b> Stable isotopes, genetics and physiology</a></li>
+<li class="chapter" data-level="4" data-path="timing-of-migration.html"><a href="timing-of-migration.html"><i class="fa fa-check"></i><b>4</b> Timing of migration</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="timing-of-migration.html"><a href="timing-of-migration.html#why-is-timing-important"><i class="fa fa-check"></i><b>4.1</b> Why is timing important?</a></li>
+<li class="chapter" data-level="4.2" data-path="timing-of-migration.html"><a href="timing-of-migration.html#what-determines-the-timing-of-migratory-steps-cues"><i class="fa fa-check"></i><b>4.2</b> What determines the timing of migratory steps? Cues!</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="timing-of-migration.html"><a href="timing-of-migration.html#preparation"><i class="fa fa-check"></i><b>4.2.1</b> Preparation</a></li>
+<li class="chapter" data-level="4.2.2" data-path="timing-of-migration.html"><a href="timing-of-migration.html#departure"><i class="fa fa-check"></i><b>4.2.2</b> Departure</a></li>
+<li class="chapter" data-level="4.2.3" data-path="timing-of-migration.html"><a href="timing-of-migration.html#on-the-way"><i class="fa fa-check"></i><b>4.2.3</b> On the way</a></li>
+<li class="chapter" data-level="4.2.4" data-path="timing-of-migration.html"><a href="timing-of-migration.html#termination"><i class="fa fa-check"></i><b>4.2.4</b> Termination</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="migration-models.html"><a href="migration-models.html"><i class="fa fa-check"></i><b>8</b> Migration models</a><ul>
-<li class="chapter" data-level="8.1" data-path="migration-models.html"><a href="migration-models.html#state-dependent-migration-models"><i class="fa fa-check"></i><b>8.1</b> State-dependent migration models</a></li>
+<li class="chapter" data-level="4.3" data-path="timing-of-migration.html"><a href="timing-of-migration.html#consequences-of-migration-timing"><i class="fa fa-check"></i><b>4.3</b> Consequences of migration timing</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html"><i class="fa fa-check"></i><b>9</b> Statistical tools for studying migration</a><ul>
-<li class="chapter" data-level="9.1" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#distribution-models-for-counts-of-resting-or-migrating-individuals"><i class="fa fa-check"></i><b>9.1</b> Distribution models for counts of resting or migrating individuals</a></li>
-<li class="chapter" data-level="9.2" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#connectivity-models"><i class="fa fa-check"></i><b>9.2</b> Connectivity models</a></li>
-<li class="chapter" data-level="9.3" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#estimating-survival-based-on-mark-recapture-data-the-cormack-jolly-seber-model"><i class="fa fa-check"></i><b>9.3</b> Estimating survival based on mark-recapture data: The Cormack-Jolly-Seber model</a></li>
-<li class="chapter" data-level="9.4" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#multi-state-models-to-estimate-movement-rates"><i class="fa fa-check"></i><b>9.4</b> Multi-state models to estimate movement rates</a></li>
-<li class="chapter" data-level="9.5" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#individual-based-hidden-markov-model-for-bird-behaviour"><i class="fa fa-check"></i><b>9.5</b> Individual based hidden Markov model for bird behaviour</a></li>
-<li class="chapter" data-level="9.6" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#the-combination-of-different-data-sources"><i class="fa fa-check"></i><b>9.6</b> The combination of different data sources</a></li>
+<li class="chapter" data-level="5" data-path="orientation-and-navigation.html"><a href="orientation-and-navigation.html"><i class="fa fa-check"></i><b>5</b> Orientation and Navigation</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="orientation-and-navigation.html"><a href="orientation-and-navigation.html#sun-compass"><i class="fa fa-check"></i><b>5.1</b> Sun compass</a></li>
+<li class="chapter" data-level="5.2" data-path="orientation-and-navigation.html"><a href="orientation-and-navigation.html#star-compass"><i class="fa fa-check"></i><b>5.2</b> Star compass</a></li>
+<li class="chapter" data-level="5.3" data-path="orientation-and-navigation.html"><a href="orientation-and-navigation.html#magnetic-compass"><i class="fa fa-check"></i><b>5.3</b> Magnetic compass</a></li>
+<li class="chapter" data-level="5.4" data-path="orientation-and-navigation.html"><a href="orientation-and-navigation.html#landmarks"><i class="fa fa-check"></i><b>5.4</b> Landmarks</a></li>
+<li class="chapter" data-level="5.5" data-path="orientation-and-navigation.html"><a href="orientation-and-navigation.html#olfactory-cues"><i class="fa fa-check"></i><b>5.5</b> Olfactory cues</a></li>
+<li class="chapter" data-level="5.6" data-path="orientation-and-navigation.html"><a href="orientation-and-navigation.html#compass-orientation-vs.-navigation"><i class="fa fa-check"></i><b>5.6</b> Compass orientation vs. navigation</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="student-projects.html"><a href="student-projects.html"><i class="fa fa-check"></i><b>10</b> Student projects</a><ul>
-<li class="chapter" data-level="10.1" data-path="student-projects.html"><a href="student-projects.html#phenology-migration-patterns-within-the-season-and-their-changes-over-the-years"><i class="fa fa-check"></i><b>10.1</b> Phenology: Migration patterns within the season and their changes over the years</a></li>
-<li class="chapter" data-level="10.2" data-path="student-projects.html"><a href="student-projects.html#long-term-changes-in-morphology"><i class="fa fa-check"></i><b>10.2</b> Long-term changes in morphology</a></li>
-<li class="chapter" data-level="10.3" data-path="student-projects.html"><a href="student-projects.html#differential-migration"><i class="fa fa-check"></i><b>10.3</b> Differential Migration</a></li>
-<li class="chapter" data-level="10.4" data-path="student-projects.html"><a href="student-projects.html#flight-energetics-in-the-course-of-a-night-and-over-the-season"><i class="fa fa-check"></i><b>10.4</b> Flight energetics in the course of a night and over the season</a></li>
-<li class="chapter" data-level="10.5" data-path="student-projects.html"><a href="student-projects.html#estimate-survival-from-capture-recapture-data"><i class="fa fa-check"></i><b>10.5</b> Estimate survival from capture-recapture data</a></li>
-<li class="chapter" data-level="10.6" data-path="student-projects.html"><a href="student-projects.html#modelling-spring-migration-several-questions"><i class="fa fa-check"></i><b>10.6</b> Modelling (spring) migration: several questions</a></li>
-<li class="chapter" data-level="10.7" data-path="student-projects.html"><a href="student-projects.html#estimating-migration-volume"><i class="fa fa-check"></i><b>10.7</b> Estimating Migration volume</a></li>
+<li class="chapter" data-level="6" data-path="flight-energetics-and-plasticity-of-the-migratory-flight.html"><a href="flight-energetics-and-plasticity-of-the-migratory-flight.html"><i class="fa fa-check"></i><b>6</b> Flight energetics and plasticity of the migratory flight</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="flight-energetics-and-plasticity-of-the-migratory-flight.html"><a href="flight-energetics-and-plasticity-of-the-migratory-flight.html#mechanics-and-energetics-of-flight"><i class="fa fa-check"></i><b>6.1</b> Mechanics and energetics of flight</a></li>
+<li class="chapter" data-level="6.2" data-path="flight-energetics-and-plasticity-of-the-migratory-flight.html"><a href="flight-energetics-and-plasticity-of-the-migratory-flight.html#fuel-for-migratory-flights"><i class="fa fa-check"></i><b>6.2</b> Fuel for migratory flights</a></li>
+<li class="chapter" data-level="6.3" data-path="flight-energetics-and-plasticity-of-the-migratory-flight.html"><a href="flight-energetics-and-plasticity-of-the-migratory-flight.html#influences-on-migration"><i class="fa fa-check"></i><b>6.3</b> Influences on migration</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="flight-energetics-and-plasticity-of-the-migratory-flight.html"><a href="flight-energetics-and-plasticity-of-the-migratory-flight.html#endogeneous-and-exogeneous-factors"><i class="fa fa-check"></i><b>6.3.1</b> Endogeneous and exogeneous factors</a></li>
+<li class="chapter" data-level="6.3.2" data-path="flight-energetics-and-plasticity-of-the-migratory-flight.html"><a href="flight-energetics-and-plasticity-of-the-migratory-flight.html#topography"><i class="fa fa-check"></i><b>6.3.2</b> Topography</a></li>
+<li class="chapter" data-level="6.3.3" data-path="flight-energetics-and-plasticity-of-the-migratory-flight.html"><a href="flight-energetics-and-plasticity-of-the-migratory-flight.html#wind"><i class="fa fa-check"></i><b>6.3.3</b> Wind</a></li>
+<li class="chapter" data-level="6.3.4" data-path="flight-energetics-and-plasticity-of-the-migratory-flight.html"><a href="flight-energetics-and-plasticity-of-the-migratory-flight.html#temperature"><i class="fa fa-check"></i><b>6.3.4</b> Temperature</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="importance-of-migration-for-the-structure-and-dynamics-of-resident-communities.html"><a href="importance-of-migration-for-the-structure-and-dynamics-of-resident-communities.html"><i class="fa fa-check"></i><b>7</b> Importance of migration for the structure and dynamics of resident communities</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="importance-of-migration-for-the-structure-and-dynamics-of-resident-communities.html"><a href="importance-of-migration-for-the-structure-and-dynamics-of-resident-communities.html#migrants-link-ecological-communities-and-ecosystem-functioning-worldwide"><i class="fa fa-check"></i><b>7.1</b> Migrants link ecological communities and ecosystem functioning worldwide</a></li>
+<li class="chapter" data-level="7.2" data-path="importance-of-migration-for-the-structure-and-dynamics-of-resident-communities.html"><a href="importance-of-migration-for-the-structure-and-dynamics-of-resident-communities.html#animal-migrations-provide-services-and-disservices"><i class="fa fa-check"></i><b>7.2</b> Animal migrations provide services and disservices</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="global-change-and-other-challenges.html"><a href="global-change-and-other-challenges.html"><i class="fa fa-check"></i><b>8</b> Global change and other challenges</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="global-change-and-other-challenges.html"><a href="global-change-and-other-challenges.html#climate-change"><i class="fa fa-check"></i><b>8.1</b> Climate change</a></li>
+<li class="chapter" data-level="8.2" data-path="global-change-and-other-challenges.html"><a href="global-change-and-other-challenges.html#sensory-pollution"><i class="fa fa-check"></i><b>8.2</b> Sensory pollution</a></li>
+<li class="chapter" data-level="8.3" data-path="global-change-and-other-challenges.html"><a href="global-change-and-other-challenges.html#man-made-structures"><i class="fa fa-check"></i><b>8.3</b> Man-made structures</a></li>
+<li class="chapter" data-level="8.4" data-path="global-change-and-other-challenges.html"><a href="global-change-and-other-challenges.html#conservation-of-migrants-and-migrations"><i class="fa fa-check"></i><b>8.4</b> Conservation of migrants and migrations</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="field-methods.html"><a href="field-methods.html"><i class="fa fa-check"></i><b>9</b> Field methods</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="field-methods.html"><a href="field-methods.html#observations-visual-moonwatching-ir-radar"><i class="fa fa-check"></i><b>9.1</b> Observations: visual, moonwatching, IR, radar</a></li>
+<li class="chapter" data-level="9.2" data-path="field-methods.html"><a href="field-methods.html#marking-and-reencountering"><i class="fa fa-check"></i><b>9.2</b> Marking and reencountering</a></li>
+<li class="chapter" data-level="9.3" data-path="field-methods.html"><a href="field-methods.html#tracking-individuals"><i class="fa fa-check"></i><b>9.3</b> Tracking individuals</a></li>
+<li class="chapter" data-level="9.4" data-path="field-methods.html"><a href="field-methods.html#orientation-experiments"><i class="fa fa-check"></i><b>9.4</b> Orientation experiments</a></li>
+<li class="chapter" data-level="9.5" data-path="field-methods.html"><a href="field-methods.html#stable-isotopes-genetics-and-physiology"><i class="fa fa-check"></i><b>9.5</b> Stable isotopes, genetics and physiology</a></li>
+<li class="chapter" data-level="9.6" data-path="field-methods.html"><a href="field-methods.html#references"><i class="fa fa-check"></i><b>9.6</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="migration-models.html"><a href="migration-models.html"><i class="fa fa-check"></i><b>10</b> Migration models</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="migration-models.html"><a href="migration-models.html#state-dependent-migration-models"><i class="fa fa-check"></i><b>10.1</b> State-dependent migration models</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html"><i class="fa fa-check"></i><b>11</b> Statistical tools for studying migration</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#distribution-models-for-counts-of-resting-or-migrating-individuals"><i class="fa fa-check"></i><b>11.1</b> Distribution models for counts of resting or migrating individuals</a></li>
+<li class="chapter" data-level="11.2" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#migratory-connectivity-models"><i class="fa fa-check"></i><b>11.2</b> Migratory connectivity models</a></li>
+<li class="chapter" data-level="11.3" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#estimating-survival-based-on-mark-recapture-data-the-cormack-jolly-seber-model"><i class="fa fa-check"></i><b>11.3</b> Estimating survival based on mark-recapture data: The Cormack-Jolly-Seber model</a></li>
+<li class="chapter" data-level="11.4" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#multi-state-models-to-estimate-movement-rates"><i class="fa fa-check"></i><b>11.4</b> Multi-state models to estimate movement rates</a></li>
+<li class="chapter" data-level="11.5" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#individual-based-hidden-markov-model-for-bird-behaviour"><i class="fa fa-check"></i><b>11.5</b> Individual based hidden Markov model for bird behaviour</a></li>
+<li class="chapter" data-level="11.6" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#the-combination-of-different-data-sources"><i class="fa fa-check"></i><b>11.6</b> The combination of different data sources</a></li>
+<li class="chapter" data-level="11.7" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#references-1"><i class="fa fa-check"></i><b>11.7</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="student-projects.html"><a href="student-projects.html"><i class="fa fa-check"></i><b>12</b> Student projects</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="student-projects.html"><a href="student-projects.html#pre-requisite-reading-and-assessing-scientific-publications"><i class="fa fa-check"></i><b>12.1</b> Pre-requisite: Reading and assessing scientific publications</a></li>
+<li class="chapter" data-level="12.2" data-path="student-projects.html"><a href="student-projects.html#student-project-1-phenology---migration-timing-within-the-season-and-their-changes-over-the-years"><i class="fa fa-check"></i><b>12.2</b> Student project 1: Phenology - Migration timing within the season and their changes over the years</a></li>
+<li class="chapter" data-level="12.3" data-path="student-projects.html"><a href="student-projects.html#student-project-2-long-term-changes-in-morphology"><i class="fa fa-check"></i><b>12.3</b> Student project 2: Long-term changes in morphology</a></li>
+<li class="chapter" data-level="12.4" data-path="student-projects.html"><a href="student-projects.html#student-project-3-differential-migration"><i class="fa fa-check"></i><b>12.4</b> Student project 3: Differential Migration</a></li>
+<li class="chapter" data-level="12.5" data-path="student-projects.html"><a href="student-projects.html#student-project-4-flight-energetics-in-the-course-of-a-night-and-over-the-season"><i class="fa fa-check"></i><b>12.5</b> Student project 4: Flight energetics in the course of a night and over the season</a></li>
+<li class="chapter" data-level="12.6" data-path="student-projects.html"><a href="student-projects.html#student-project-5-estimate-survival-from-capture-recapture-data"><i class="fa fa-check"></i><b>12.6</b> Student project 5: Estimate survival from capture-recapture data</a></li>
+<li class="chapter" data-level="12.7" data-path="student-projects.html"><a href="student-projects.html#student-project-6-modelling-spring-migration-several-questions"><i class="fa fa-check"></i><b>12.7</b> Student project 6: Modelling spring migration: several questions</a></li>
+<li class="chapter" data-level="12.8" data-path="student-projects.html"><a href="student-projects.html#student-project-7-estimating-migration-volume"><i class="fa fa-check"></i><b>12.8</b> Student project 7: Estimating Migration volume</a></li>
+<li class="chapter" data-level="12.9" data-path="student-projects.html"><a href="student-projects.html#student-project-8-why-is-timing-in-spring-important"><i class="fa fa-check"></i><b>12.9</b> Student project 8: Why is timing in spring important?</a></li>
+<li class="chapter" data-level="12.10" data-path="student-projects.html"><a href="student-projects.html#student-project-9-geolocation---tracking-small-birds"><i class="fa fa-check"></i><b>12.10</b> Student project 9: Geolocation - tracking small birds</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/silkebauer/ETH_course" target="blank">Published with bookdown</a></li>
@@ -213,7 +279,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Migration Course</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Handout and background material for ETHZ course ‘Animal Migration and research in field ornithology’</a>
           </h1>
         </div>
 
@@ -221,202 +287,363 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="field-methods" class="section level1">
-<h1><span class="header-section-number">Chapter 7</span> Field methods</h1>
-<div id="observations-visual-moonwatching-ir-radar" class="section level2">
-<h2><span class="header-section-number">7.1</span> Observations: visual, moonwatching, IR, radar</h2>
-<p>Visual observations or observations by infrared cameras or radar result in counts of birds at a given time at a given location. Often, some behavioral observations are also recorded, such as flight altitude, flight direction or the behaviour of a bird resting on the ground. The different observation techniques differ in their detection ranges and in the information they provide (Table <a href="field-methods.html#tab:ObsMethods">7.1</a>).</p>
-<p><a href="Sec-TimingMigration.html#Sec:TimingMigration">4</a></p>
+<div id="field-methods" class="section level1 hasAnchor" number="9">
+<h1><span class="header-section-number">Chapter 9</span> Field methods<a href="field-methods.html#field-methods" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="observations-visual-moonwatching-ir-radar" class="section level2 hasAnchor" number="9.1">
+<h2><span class="header-section-number">9.1</span> Observations: visual, moonwatching, IR, radar<a href="field-methods.html#observations-visual-moonwatching-ir-radar" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Visual observations or observations by infrared cameras or radar result in counts of birds at a given time at a given location. Often, some behavioral observations are also recorded, such as flight altitude, flight direction or the behaviour of a bird resting on the ground. The different observation techniques differ in their detection ranges and in the information they provide (Table <a href="field-methods.html#tab:obsmethods">9.1</a>).</p>
 <table>
-<caption><span id="tab:ObsMethods">Table 7.1: </span>Characteristics of different observation methods. MTR is migration traffic rate (a standardized migration intensity)</caption>
+<caption><span id="tab:obsmethods">Table 9.1: </span>Characteristics of different observation methods. MTR is migration traffic rate (a standardized migration intensity)</caption>
+<colgroup>
+<col width="5%" />
+<col width="11%" />
+<col width="32%" />
+<col width="51%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th align="left">Tags</th>
-<th align="left">Weight</th>
-<th align="left">Data.recorded</th>
-<th align="left">Pros</th>
-<th align="left">Cons</th>
+<th align="left">Method</th>
+<th align="left">Detection.range</th>
+<th align="left">Influencing.factors</th>
+<th align="left">Information</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Archival tags</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">recapturing required, data analyses complex, location estimate with large error range</td>
+<td align="left">visual</td>
+<td align="left">max. app. 500m</td>
+<td align="left">observer, weather, scope, distance, species</td>
+<td align="left">numbers, species, behaviour</td>
 </tr>
 <tr class="even">
-<td align="left">Geolocators</td>
-<td align="left">05-1.5g</td>
-<td align="left">light and time (?geolocation?)</td>
-<td align="left">light-weight</td>
+<td align="left">moon</td>
+<td align="left">max. app. 1.5km</td>
+<td align="left">observer, weather, scope, distance, species</td>
+<td align="left">numbers (MTR), flight directions</td>
+</tr>
+<tr class="odd">
+<td align="left">IR</td>
+<td align="left">app. 10km</td>
+<td align="left">weather, distance species</td>
+<td align="left">numbers (MTR), flight directions</td>
+</tr>
+<tr class="even">
+<td align="left">radar</td>
+<td align="left">over 10km</td>
+<td align="left">weather, distance species</td>
+<td align="left">numbers (MTR), flight directions, flight altitudes, wing beat pattern</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">Multi-sensor loggers</td>
-<td align="left">1.0-1.5g</td>
-<td align="left">In addition to light: temperature, air pressure, activity (acceleration)</td>
-<td align="left">+ additional information about behavior, e.g. flight height, number and duration of flight bouts, activity during stop-over periods</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">GPS loggers</td>
 <td align="left"></td>
-<td align="left">GPS position, possibly other variables temperature, pressure, activity, salinity</td>
-<td align="left">huge amount of information, precise location information</td>
-<td align="left">recapturing required; relatively heavy</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
 </tr>
 </tbody>
 </table>
-<p>Transmitters<br />
-PTT tags identification of an individual with a reader at a strategic place (nest, feeding site) small and light-weight (sometimes implanted)<br />
-RFID Radio frequency identification identification of an individual with a reader at a strategic place (nest, feeding site) small and light-weight (sometimes implanted) readers are expensive, individual can be registered only when within a few meters of the reader (data are often noisy)
-Telemetry - radio or VHF from 0.3 g onward identification of an individual by an antenna over short to medium long distances (0-ca. 20km)
-physiological data (from sen-sors) remote data collections, precise location information battery life limited for small transmitters, great effort for data collections; transmitter may influence behaviour<br />
-Satellite telemetry, different systems exist, e.g. ARGOS &gt; 5g, usually much more GPS positions of individuals at any time anywhere on the globe remote data collections, precise location information, little effort for data collections large weight, expensive, transmitter may influence behaviour</p>
-<p>Example studies of visual observations:
-- Phenology of birds in Switzerland based on records of amateur ornithologists, <a href="www.ornitho.ch">link</a> (Win-kler 1999).
-- Description of migration pattern of Marsh warbler Acrocephalus palustris to southern Africa (Dowsett-Lemaire &amp; Dowsett 1987).</p>
-<p>Example studies of moon watching:
-- Broad front migration and the Alps as an obstacle (Liechti et al. 1996).</p>
-<p>Example studies of infrared observations:
-- Quantification of reverse migration in southern Sweden (Zehnder et al. 2002).</p>
-<p>Example radar studies:
-- The technical bases of bird observation by radar are explained in Bruderer (1997a) and Bruderer (1997b).
-- Flight directions of migrating passerines along the autumn migration route (Liechti et al. 2012).</p>
+<p>Example studies of visual observations:</p>
+<ul>
+<li>EuroBird Portal: Phenology of migratory species based on records of amateur ornithologists, <a href="https://eurobirdportal.org/ebp/en/#home/HIRRUS/r52weeks/CUCCAN/r52weeks/">link</a>.<br />
+</li>
+<li>Description of migration pattern of Marsh warbler <em>Acrocephalus palustris</em> to southern Africa <span class="citation">(<a href="#ref-DowsettLemaire.1987">Dowsett-Lemaire and Dowsett 1987</a>)</span>.</li>
+</ul>
+<p>Example studies of moon watching:</p>
+<ul>
+<li>Broad front migration and the Alps as an obstacle <span class="citation">(<a href="#ref-Liechti.1996b">F. Liechti et al. 1996</a>)</span>.</li>
+</ul>
+<p>Example studies of infrared observations:</p>
+<ul>
+<li>Quantification of reverse migration in southern Sweden <span class="citation">(<a href="#ref-Zehnder.2002">Zehnder et al. 2002</a>)</span>.</li>
+</ul>
+<p>Example radar studies:</p>
+<ul>
+<li><p>Flight directions of migrating passerines along the autumn migration route <span class="citation">(<a href="#ref-Liechti.2012">F. Liechti, Komenda-Zehnder, and Bruderer 2012</a>)</span>.</p></li>
+<li><p>Passerines migrating across the Sahara fly at night and land for the day <span class="citation">(<a href="#ref-Schmaljohann.2007">Schmaljohann, Liechti, and Bruderer 2007</a>)</span>.</p></li>
+</ul>
 </div>
-<div id="marking-and-reencountering" class="section level2">
-<h2><span class="header-section-number">7.2</span> Marking and reencountering</h2>
-<p>Marking birds in order to find out how far and where they move has been started by the Danish Hans Christian Cornelius Mortensen (1856 – 1921) (Fig. 4). In 1899 he, for the first time, marked Starlings Sturnus vulgaris with aluminium rings that were uniquely numbered and contained an address to make a potential finder reporting the ring (Mortensen 1901). Motivated by the success of Mortensen, the first ringing station was initiated in Rossiten (today Rybachi) on the Kurische Nehrung in 1900. Shortly after, other ringing stations were started on Helgoland and in the UK.</p>
-<p>Fig. 4. left: Hans Christian Cornelius Mortensen. Photo: de.wikipedia.org/wiki/Hans_Christian_Cornelius_Mortensen. right: A Snowfinch Montifringilla nivalis marked with a colour plastic ring containing an individual alpha-numeric code (H11).</p>
-<p>In Europe, around 5 million birds are ringed annually at many ringing stations by professional and pri-vate ringers in Europe (Balmer et al. 2008). The ring numbers are coordinated within the countries by the governments who normally delegated this job to ringing schemes. The European ringing schemes are connected within the EURING society <a href="www.euring.org">link</a>. In regular meetings and workshops, methodological standards are developed and the EURING data base, a data pool of all marking and reencounter data, maintained. EURING also started the EURING Analytical meeting <a href="www.euring.org/meetings/analytical-meetings">link</a> that serves as a network of scientists developing statis-tical and mathematical tools for the analysis of mark-reencounter data.<br />
-The capturing and marking methods underly national policies.
-Mark-reencounter data is widely used to estimate survival, population sizes, movement pattern, migra-tory connectivity, and stop-over durations. Du Feu et al. (2016) review the scientific achievements of bird ringing, present the aims and policies of the EURING data base and give perspectives of bird ring-ing.</p>
-<p>A central challenge in the interpretation of mark-reencounter data is the spatial and temporal heteroge-neity of ring reencounter probability (Perdeck 1977, Korner-Nievergelt et al. 2010, Thorup et al. 2014). Mark-recapture modelling techniques such as the Cormack-Jolly-Seber (CJS, Chapter 8.3) model (Cormack 1964, Jolly 1965, Seber 1965), the multi-state model (Arnason 1972, Arnason et al. 1991) or mark-dead recovery model (Brownie et al. 1985), are seminal techniques that are nowadays widely applied and integrated in a variety of different ecological models. These models estimate reencounter probability and thereby account for its heterogeneity while interpreting mark-reencounter data.<br />
-Many countries published their ring reencounters in migration atlases, e.g. Zink (1985), Zink et al. (1995), Brewer et al. (2000), Fransson &amp; Pettersson (2001), Wernham et al. (2002), Bakken et al. (2003), Bønløkke et al. (2006), and Saurola et al. (2013).</p>
-<p>Examples of quantifying migratory connectivity studies based on ring reencounters:
-- Estimation of the proportions of some song bird species migrating to Africa (Thorup &amp; Conn 2009).
-- Origin of Woodcocks hunted in France (Bauthian et al. 2007).
-- Migratory connectivity of European Nightingales Luscinia megarhynchos (Korner-Nievergelt et al. 2012)
-- Migratory connectivity of European reed warblers Acrocephalus scirpaceus (Procházka et al. 2017).</p>
-<p>Examples of survival analysis based on mark-reencounter data:
-- Sillett &amp; Holmes (2002) estimated lower survival during migration compared to the breeding and non-breeding periods in the Black-throated blue warbler Dendroica caerulescens.</p>
-<p>Examples of estimating stop-over duration based on mark-reencounter data:
-- Estimation of stop-over duration of passerines in the Bolle di Magadino CH during spring migration (Schaub et al. 2001).</p>
+<div id="marking-and-reencountering" class="section level2 hasAnchor" number="9.2">
+<h2><span class="header-section-number">9.2</span> Marking and reencountering<a href="field-methods.html#marking-and-reencountering" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Marking birds in order to find out how far and where they move has been started by the Danish Hans Christian Cornelius Mortensen (1856 – 1921). In 1899 he, for the first time, marked Starlings <em>Sturnus vulgaris</em> with aluminium rings that were uniquely numbered and contained an address to make a potential finder reporting the ring <span class="citation">(<a href="#ref-Mortensen.1901">Mortensen 1901</a>)</span>. Motivated by the success of Mortensen, the first ringing station was initiated in Rossiten (today Rybachi) on the Kurische Nehrung in 1900. Shortly after, other ringing stations were started on Helgoland and in the UK.</p>
+<p>Today, around 5 million birds are ringed annually at many ringing stations by professional and private ringers in Europe <span class="citation">(<a href="#ref-Balmer.2008">Balmer et al. 2008</a>)</span>. The ring numbers are coordinated within the countries by the governments who normally delegate this job to ringing schemes. The European ringing schemes are connected within the <a href="https://www.euring.org">EURING society</a>. In regular meetings and workshops, methodological standards are developed and the EURING data base, a data pool of all marking and reencounter data, maintained. EURING also started the <a href="https://www.euring.org/meetings/analytical-meetings">EURING Analytical meeting</a> that serves as a network of scientists developing statistical and mathematical tools for the analysis of mark-reencounter data.</p>
+<p>The capturing and marking methods underly national policies. In Switzerland, only trained persons can apply for a permission for capturing and marking birds.</p>
+<p>Mark-reencounter data is widely used to estimate survival, population sizes, movement pattern, migratory connectivity, and stop-over durations. <span class="citation">Du Feu et al. (<a href="#ref-DuFeu.2016">2016</a>)</span> review the scientific achievements of bird ringing, present the aims and policies of the EURING data base and give perspectives of bird ringing.</p>
+<p>A central challenge in the interpretation of mark-reencounter data is the spatial and temporal heterogeneity of reencounter probability <span class="citation">(<a href="#ref-Perdeck.1977">Perdeck 1977</a>; <a href="#ref-KornerNievergelt.2010b">Fränzi Korner-Nievergelt et al. 2010</a>; <a href="#ref-Thorup.2014">Thorup et al. 2014</a>)</span>. Mark-recapture modelling techniques such as the Cormack-Jolly-Seber (CJS) model <span class="citation">(<a href="#ref-Cormack.1964">Cormack 1964</a>; <a href="#ref-Jolly.1965">Jolly 1965</a>; <a href="#ref-Seber.1965">Seber 1965</a>)</span>, the multi-state model <span class="citation">(<a href="#ref-Arnason.1972">Arnason 1972</a>; <a href="#ref-Arnason.1991">Arnason, Schwarz, and Gerrard 1991</a>)</span> or mark-dead recovery model <span class="citation">(<a href="#ref-Brownie.1985">Brownie et al. 1985</a>)</span>, are seminal techniques that are nowadays widely applied and integrated in a variety of different ecological models. These models estimate reencounter probability and thereby account for its heterogeneity while interpreting mark-reencounter data.</p>
+<p>Many countries published their mark reencounters in migration atlases, e.g. <span class="citation">Bønløkke et al. (<a href="#ref-Bnlkke.2006">2006</a>)</span>, and <span class="citation">Saurola, Valkama, and Velmala (<a href="#ref-Saurola.2013">2013</a>)</span>.</p>
+<p>Examples of quantifying migratory connectivity studies based on ring reencounters:</p>
+<ul>
+<li>Estimation of the proportions of some song bird species migrating to Africa <span class="citation">(<a href="#ref-Thorup.2009">Thorup and Conn 2009</a>)</span>.<br />
+</li>
+<li>Origin of Woodcocks hunted in France <span class="citation">(<a href="#ref-Bauthian.2007">Bauthian et al. 2007</a>)</span>.<br />
+</li>
+<li>Migratory connectivity of European Nightingales <em>Luscinia megarhynchos</em> <span class="citation">(<a href="#ref-KornerNievergelt.2012b">Fränzi Korner-Nievergelt, Liechti, and Hahn 2012</a>)</span><br />
+</li>
+<li>Migratory connectivity of European reed warblers <em>Acrocephalus scirpaceus</em> <span class="citation">(<a href="#ref-Prochazka.2016">Petr Procházka et al. 2017</a>)</span>.</li>
+</ul>
+<p>For estimating survival, it makes a fundamental difference whether the marked animal is found dead or whether it is resighted or recaptured alive. When it is found dead the time of death and thus the lifespan of the individual is known. If we assume that the probability that a dead animal is found and its mark reported is independent of its age, then annual survival estimates are straight foreward. For example, using dead recoveries of 8 different songbird species ringed in Denmark, <span class="citation">Lerche-Jørgensen et al. (<a href="#ref-LercheJrgensen.2018">2018</a>)</span> found that early arriving long-distance migrants in spring have a lower survival compared to late arriving individuals whereas arrival date was not correlated with survival in short-distance migrants. Interestingly, female long distance migrants arrived in average at a date correlated with highest survival, whereas males arrived earlier thereby risking an increase in mortality.</p>
+<p>When marked animals are recaptured and released alive or resighted, the exact time of death is not known but a minimum life-span is known. In order to estimates survival from such data, it is necessary to estimate recapture or resighting probability (reencounter probability). If reencounter probability is known we can estimate the probability that an individual is still alive dependent on the time after its last reencounter. The CJS model allows estimating both reencounter and (apparent) survival probability. However, because both dead individuals and individuals that emigrated from the study area can no longer be reencountered, the model cannot distinguish between emigration and death. Therefore, the “survival” estimates from mark-recapture/resighting data have to be interpreted as the probability that an individual stays in the study area and survives, the so called apparent survival.</p>
+<p>Example studies:</p>
+<ul>
+<li><span class="citation">Sillett and Holmes (<a href="#ref-Sillett.2002">2002</a>)</span> estimated lower apparent survival during migration compared to the breeding and non-breeding periods in the Black-throated blue warbler <em>Dendroica caerulescens</em>.<br />
+</li>
+<li>In the central Apennine, female White-winged snowfinches <em>Montifringilla nivalis</em> disappear at a higher rate in years with warm and dry summers, whereas the apparent survival of males does not seem to depend on summer weather <span class="citation">(<a href="#ref-Strinella.2020">Strinella et al. 2020</a>)</span>.</li>
+</ul>
 </div>
-<div id="tracking-individuals" class="section level2">
-<h2><span class="header-section-number">7.3</span> Tracking individuals</h2>
-<p>The vision of being able to follow a migratory bird on a computer screen has become, at least for larger animals, reality by now. The appealing property of tracking individuals is the fact that the individual is known and the movement behaviour can be related to individual characteristics.</p>
-<p>Two major principles exist for tacking devices - for one, information on location or anything else is stored locally and the tracking device needs to be retrieved to access this information; the other are devices which actively transmit information to a receiver such that data can be remotely downloaded (Table <a href="field-methods.html#tab:TrackTechnology">7.2</a>). The development of tracking devices has</p>
-<p>The archival tags require that the animal is re-captured later to download the data, whereas transmit-ters (= “senders”) allow for remote data collection (Table <a href="field-methods.html#tab:TrackTechnology">7.2</a>). The development of the technique is ongo-ing intensively. Devices become smaller and techniques are combined to fit specific needs of the sci-entists.</p>
+<div id="tracking-individuals" class="section level2 hasAnchor" number="9.3">
+<h2><span class="header-section-number">9.3</span> Tracking individuals<a href="field-methods.html#tracking-individuals" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The vision of being able to follow a migratory bird on a computer screen has become, at least for larger animals, reality by now. Geographic position, flight altitude and other variables can be measured within short time and related to individual characteristics.</p>
+<p>Two major principles exist for tacking devices. Archival tags store information on geographic position or anything else locally and the tracking device needs to be retrieved to access this information. In contrast, transmitters actively transmit information to a receiver such that data can be remotely downloaded (Table <a href="field-methods.html#tab:TrackTechnology">9.2</a>). The development of tracking devices is ongoing intensively. Devices become smaller, energy households more efficient, type of measurements more diverse and programming more flexible.</p>
 <table>
-<caption><span id="tab:TrackTechnology">Table 7.2: </span>Characteristics of different tracking techniques</caption>
+<caption><span id="tab:TrackTechnology">Table 9.2: </span> Characteristics of different tracking techniques. Adapted from <span class="citation">Robinson et al. (<a href="#ref-Robinson.2010">2010</a>)</span>.</caption>
+<colgroup>
+<col width="17%" />
+<col width="41%" />
+<col width="41%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th align="left">Tags</th>
-<th align="left">Weight</th>
-<th align="left">Data.recorded</th>
-<th align="left">Pros</th>
-<th align="left">Cons</th>
+<th align="left">Tag type</th>
+<th align="left">Data</th>
+<th align="left">Pros and cons</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Archival tags</td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left"><em>Archival tags</em></td>
 <td align="left"></td>
 <td align="left"></td>
 </tr>
 <tr class="even">
 <td align="left">Geolocators</td>
-<td align="left">05-1.5g</td>
-<td align="left">light and time (?geolocation?)</td>
-<td align="left">light-weight</td>
-<td align="left">recapturing required, data analyses complex, location estimate with large error range</td>
+<td align="left">Light and time</td>
+<td align="left">+:light weight (0.5 - 1.5g), recapturing required; -:data analyses complex, location estimate with large error range (equinox)</td>
 </tr>
 <tr class="odd">
 <td align="left">Multi-sensor loggers</td>
-<td align="left">1.0-1.5g</td>
-<td align="left">In addition to light: temperature, air pressure, activity (acceleration)</td>
-<td align="left">+ additional information about behavior, e.g. flight height, number and duration of flight bouts, activity during stop-over periods</td>
-<td align="left">recapturing required, data analyses complex, location estimate with large error range</td>
+<td align="left">light and time temperature pressure activity</td>
+<td align="left">+:additional information such as flight height, activity, etc., combination of data for better location estimation; -:recapturing necessary</td>
 </tr>
 <tr class="even">
 <td align="left">GPS loggers</td>
-<td align="left">&gt;2.5g</td>
-<td align="left">GPS position, possibly other variables temperature, pressure, activity, salinity</td>
-<td align="left">huge amount of information, precise location information</td>
-<td align="left">recapturing required; relatively heavy</td>
+<td align="left">GPS position temperature pressure activity salinity</td>
+<td align="left">+:huge amount of information, precise location information; -:recapturing necessary, relatively heavy</td>
 </tr>
 <tr class="odd">
-<td align="left">Transmitters</td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left"><em>Transmitters</em></td>
 <td align="left"></td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">PTT tags</td>
-<td align="left"></td>
+<td align="left">PTT tags, RFID Radio frequency identification</td>
 <td align="left">identification of an individual with a reader at a strategic place (nest, feeding site)</td>
-<td align="left">small and light-weight (sometimes implanted)</td>
-<td align="left"></td>
+<td align="left">+:low cost, small and leight-weigt (sometimes implanted); -:readers are expensive, individual is registered only when it is close to the reader (data are often noisy)</td>
 </tr>
 <tr class="odd">
-<td align="left">RFID Radio frequency identification</td>
-<td align="left"></td>
-<td align="left">identification of an individual with a reader at a strategic place (nest, feeding site)</td>
-<td align="left">small and light-weight (sometimes implanted)</td>
-<td align="left">readers are expensive, individual can be registered only when within a few meters of the reader (data are often noisy)</td>
-</tr>
-<tr class="even">
-<td align="left">Telemetry - radio or VHF</td>
-<td align="left">from 0.3 g onward</td>
+<td align="left">Radio telemetry, VHF very high frequency telemetry</td>
 <td align="left">identification of an individual by an antenna over short to medium long distances (0-ca. 20km)</td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">physiological data (from sen-sors) remote data collection</td>
-<td align="left">s, precise location inform</td>
-<td align="left">ation battery life limited for small transmitters, g</td>
-<td align="left">reat effort for data collections; transmitter may influence behaviour</td>
-<td align="left"></td>
+<td align="left">+:remote data collection, can be very light (0.3g), precise location information; -:battery life limited for small transmitters, high effort for data collection</td>
 </tr>
 <tr class="even">
-<td align="left">Satellite telemetry, different systems exist, e.g. ARGOS</td>
-<td align="left">&gt; 5g, usually much more</td>
-<td align="left">GPS positions of individuals at any time anywhere on the globe</td>
-<td align="left">remote data collections, precise location information, little effort for data collections</td>
-<td align="left">large weight, expensive, transmitter may influence behaviour</td>
+<td align="left">Satellite telemetry, e.g. ARGOS</td>
+<td align="left">GPS position of individuals at any time anywhere on the globe</td>
+<td align="left">+:remote data collection via satellite over very long distances, almost no effort needed for data collection, precise location information; -:large weight, expensive</td>
 </tr>
 </tbody>
 </table>
-<p>caption=“\label{tab:tab2}A <code>kable</code> table”)</p>
-<p>Example studies using geolocation:
-- Non-breeding areas of Barn swallows Hirundo rustica: (Liechti et al. 2014).
-- Migration pattern in relation to ecological barriers: (Hahn et al. 2014).
-Effects of geolocation on behaviour and body condition: Geolocators that weighted more than 2.3% of the body mass of tracked bird negatively influenced return rates in waders (Weiser et al. 2016).</p>
-<p>Example studies using radio telemetry:
-- Bächler &amp; Schaub (2006) estimated stop-over durations in an oasis of the Sahara using mark-re-sighting data and compared these estimates with stop-over durations measured using radio telemetry.
-- At an Alaskan stop-over site, Schmaljohann et al. (2013) studied the effect of fuel load and weather on stop-over duration of the Wheatear Oenanthe oenanthe.
-- The first animal that was tracked by radio telemetry was a Grizzly bear Ursus horribilis (Craighead &amp; Craighead 1972).</p>
-<p>Example studies of satellite telemetry:
-- Kjellén et al. (1997) tracked two Osprey Pandion haliaetus individuals from the same breeding loca-tion. The two individuals used completely different migration routes. The technique is nowadays widely applied for the study of movement behaviour of larger birds.</p>
+<p>The <a href="https://motus.org/">Motus project</a> is a world wide radio telemetry collaboration. Antennas around the world register radio tagged animals and send the information to the researchers.</p>
+<p>The <a href="https://www.movebank.org">movebank data base</a> is collecting tracking data from different studies. Its aim is to foster collaboration between different researchers. Some of the data are even provided for free.</p>
+<p>Example studies using geolocation:</p>
+<ul>
+<li>Non-breeding areas of Barn swallows <em>Hirundo rustica</em> <span class="citation">(<a href="#ref-Liechti.2014">Felix Liechti et al. 2014</a>)</span>.<br />
+</li>
+<li>Migration pattern in relation to ecological barriers: <span class="citation">(<a href="#ref-Hahn.2014b">Hahn et al. 2014</a>)</span>.<br />
+-Effects of geolocation on behaviour and body condition: Geolocators that weighted more than 2.3% of the body mass of tracked bird negatively influenced return rates in waders <span class="citation">(<a href="#ref-Weiser.2016">Weiser et al. 2016</a>)</span>.</li>
+</ul>
+<p>Example studies using radio telemetry:</p>
+<ul>
+<li><span class="citation">Bächler and Schaub (<a href="#ref-Bachler.2006">2006</a>)</span> estimated stop-over durations in an oasis of the Sahara using mark-resighting data and compared these estimates with stop-over durations measured using radio telemetry.<br />
+</li>
+<li>At an Alaskan stop-over site,<span class="citation">Schmaljohann et al. (<a href="#ref-Schmaljohann.2013">2013</a>)</span> studied the effect of fuel load and weather on stop-over duration of the Wheatear <em>Oenanthe oenanthe</em>.<br />
+</li>
+<li>The first animal that was tracked by radio telemetry was a Grizzly bear <em>Ursus horribilis</em> <span class="citation">(<a href="#ref-Craighead.1972">Craighead and Craighead 1972</a>)</span>.</li>
+</ul>
+<p>Example studies of satellite telemetry:</p>
+<ul>
+<li><span class="citation">Kjellén, Hake, and Alerstam (<a href="#ref-Kjellen.1997">1997</a>)</span> tracked two Ospreys <em>Pandion haliaetus</em> from the same breeding location. The two individuals used completely different migration routes. The technique is nowadays widely applied for the study of movement behaviour of larger birds.</li>
+</ul>
 </div>
-<div id="orientation-experiments" class="section level2">
-<h2><span class="header-section-number">7.4</span> Orientation experiments</h2>
-<p>Kramer (1949) detected that migratory birds show a directional preference. This behaviour has widely been used to study bird orientation using orientation cages. Emlen &amp; Emlen (1966) designed an orien-tation cage that is still in use, the so-called “Emlen-funnel”. Originally, ink was used to visualize the birds tracks. The ink was replaced by typewriter paper on which birds leave scratches while their feathers stayed clean. Some methodological issues with this type of orientation cage are discussed by Nievergelt &amp; Liechti (2000). After typewriter paper has no longer been produced it was recently re-placed by thermal paper (Mouritsen et al. 2009). Automatic registration of bird activity reduces the amount of work for data collection, e.g. Mouritsen &amp; Larsen (2001) or Beck &amp; Wiltschko (1983).</p>
+<div id="orientation-experiments" class="section level2 hasAnchor" number="9.4">
+<h2><span class="header-section-number">9.4</span> Orientation experiments<a href="field-methods.html#orientation-experiments" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><span class="citation">Kramer (<a href="#ref-Kramer.1949">1949</a>)</span> detected that migratory birds show a directional preference. This behaviour has widely been used to study bird orientation using orientation cages. <span class="citation">Emlen and Emlen (<a href="#ref-Emlen.1966">1966</a>)</span> designed an orientation cage that is still in use, the so-called “Emlen-funnel”. Originally, ink was used to visualize the birds tracks. The ink was replaced by typewriter paper on which birds leave scratches while their feathers stayed clean. Some methodological issues with this type of orientation cage are discussed by <span class="citation">Nievergelt and Liechti (<a href="#ref-Nievergelt.2000">2000</a>)</span>. After typewriter paper has no longer been produced it was recently replaced by thermal paper <span class="citation">(<a href="#ref-Mouritsen.2009">H. Mouritsen et al. 2009</a>)</span>. Automatic registration of bird activity reduces the amount of work for data collection, e.g. <span class="citation">Henrik Mouritsen and Larsen (<a href="#ref-Mouritsen.2001">2001</a>)</span> or <span class="citation">Beck and Wiltschko (<a href="#ref-Beck.1983">1983</a>)</span>.</p>
 </div>
-<div id="stable-isotopes-genetics-and-physiology" class="section level2">
-<h2><span class="header-section-number">7.5</span> Stable isotopes, genetics and physiology</h2>
-<p>Stable isotopes indicate humidity and reflect trophic levels of the diet during the time when the bird’s feathers grew. In America, the isotopic map shows a north-south gradient (Hobson &amp; Wassenaar 2008). Hobson et al. (2012) developed a isotopic map for Africa that may serve as a basis for studying bird migration and non-breeding ecology. However, geographic information in isotopes is weak. Iso-topes measure chemical composition of the diet and may better be interpreted as such (Hahn et al. 2013). For extracting geographic information, often additional data is needed. For example, Procházka et al. (2013) combined ring reencounters with isotopes to describe a migratory divide in the Reed war-bler Acrocephalus scirpaceus.</p>
-<p>When different populations differ genetically, the DNA of individuals at stop over or non-breeding sites can reveal their breeding origins.
-The analysis of mtDNA showed that Dunlins Calidris alpina observed in Portugal during migration origi-nated from Greenland, Iceland and the Baltic Sea whereas the ones staying over winter had haplo-types of populations further to the East (Lopes et al. 2006).</p>
-<p>The study of metabolites in blood samples revealed that birds use lipids and proteins as energy fuel for endurance flights. In a review, Jenni-Eiermann &amp; Jenni (2012) describe how the proportion of protein used is related to the duration of fastening, such as during a long migratory flight.</p>
+<div id="stable-isotopes-genetics-and-physiology" class="section level2 hasAnchor" number="9.5">
+<h2><span class="header-section-number">9.5</span> Stable isotopes, genetics and physiology<a href="field-methods.html#stable-isotopes-genetics-and-physiology" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Stable isotopes indicate humidity and reflect trophic levels of the diet during the time when the bird’s feathers grew. In America, the isotopic map shows a north-south gradient <span class="citation">(<a href="#ref-Hobson.2008">Hobson and Wassenaar 2008</a>)</span>. <span class="citation">Hobson et al. (<a href="#ref-Hobson.2012b">2012</a>)</span> developed a isotopic map for Africa that may serve as a basis for studying bird migration and non-breeding ecology. However, geographic information in isotopes is weak. Isotopes measure chemical composition of the diet and may better be interpreted as such <span class="citation">(<a href="#ref-Hahn.2013">Hahn et al. 2013</a>)</span>. For extracting geographic information, often additional data is needed. For example, <span class="citation">P. Procházka et al. (<a href="#ref-Prochazka.2013">2013</a>)</span> combined ring reencounters with isotopes to describe a migratory divide in the Reed warbler <em>Acrocephalus scirpaceus</em>.</p>
+<p>When populations differ genetically, the DNA of individuals at stop over or non-breeding sites can reveal their breeding origins.
+The analysis of mtDNA showed that Dunlins <em>Calidris alpina</em> observed in Portugal during migration originated from Greenland, Iceland and the Baltic Sea whereas the ones staying over winter had haplotypes of populations further to the east <span class="citation">(<a href="#ref-Lopes.2006">Lopes, Marques, and Wennerberg 2006</a>)</span>.</p>
+<p>The study of metabolites in blood samples revealed that birds use lipids and proteins as energy fuel for endurance flights. In a review, <span class="citation">Jenni-Eiermann and Jenni (<a href="#ref-JenniEiermann.2012">2012</a>)</span> describe how the proportion of protein used is related to the duration of fastening, such as during a long migratory flight.</p>
+</div>
+<div id="references" class="section level2 hasAnchor" number="9.6">
+<h2><span class="header-section-number">9.6</span> References<a href="field-methods.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Arnason.1972" class="csl-entry">
+Arnason, A. N. 1972. <span>“Parameter Estimates from Mark-Recapture Experiments on Two Populations Subject to Migration and Death.”</span> <em>Researches on Population Ecology</em> 13: 97–113.
+</div>
+<div id="ref-Arnason.1991" class="csl-entry">
+Arnason, A. N., C. J. Schwarz, and J. M. Gerrard. 1991. <span>“Estimating Closed Population Size and Number of Marked Animals from Sighting Data.”</span> <em>Journal of Wildlife Management</em> 55: 716–30.
+</div>
+<div id="ref-Bachler.2006" class="csl-entry">
+Bächler, E., and M. Schaub. 2006. <span>“The Effects of Permanent Local Emigration and Encounter Technique on Stopover Duration Estimates as Revealed by Telemetry and Mark-Recapture.”</span> <em>The Condor</em> 109: 142–54.
+</div>
+<div id="ref-Balmer.2008" class="csl-entry">
+Balmer, D., L. Coiffait, J. Clark, and R. A. Robinson. 2008. <em>Bird Ringing</em>. Norfolk: <span>British Trust for Ornithology BTO</span>.
+</div>
+<div id="ref-Bauthian.2007" class="csl-entry">
+Bauthian, I., F. Grossmann, Y. Ferrand, and R. Julliard. 2007. <span>“Quantifying the Origin of Woodcock Wintering in France.”</span> <em>Journal of Wildlife Management</em> 71: 701–5.
+</div>
+<div id="ref-Beck.1983" class="csl-entry">
+Beck, W., and W. Wiltschko. 1983. <span>“Orientation Behaviour Recorded in Registration Cages: A Comparison of Funnel Cages and Radial Perch Cages.”</span> <em>Behaviour</em> 87: 145–56.
+</div>
+<div id="ref-Bnlkke.2006" class="csl-entry">
+Bønløkke, J., J. J. Madsen, K. Thorup, K. T. Pedersen, M. Bjerrum, and C. Rahbek. 2006. <em>Dansk Tr<span>æ</span>kfugleatlas - the Danish Bird Migration Atlas</em>. K<span>ø</span>benhavn: <span>Forlaget Rhodos A/S and Zoological Museum, Copenhagen University</span>.
+</div>
+<div id="ref-Brownie.1985" class="csl-entry">
+Brownie, C., D. R. Anderson, K. P. Burnham, and D. S. Robson. 1985. <em>Statistical Inference from Band Recovery Data - a Handbook</em>. Washington: <span>United States Department of the Interior, Fish and Wildlife Service</span>.
+</div>
+<div id="ref-Cormack.1964" class="csl-entry">
+Cormack, R. M. 1964. <span>“Estimates of Survival from the Sighting of Marked Animals.”</span> <em>Biometrika</em> 51: 429–38.
+</div>
+<div id="ref-Craighead.1972" class="csl-entry">
+Craighead, F., and J. Craighead. 1972. <span>“Grizzly Bear Prehibernation and Denning Activities as Determined by Radiotracking.”</span> <em>Wildlife Monographs</em> 32: 3–35.
+</div>
+<div id="ref-DowsettLemaire.1987" class="csl-entry">
+Dowsett-Lemaire, F., and R. J. Dowsett. 1987. <span>“European Reed and Marsh Warblers in Africa: Migration Patterns, Moult and Habitat.”</span> <em>Ostrich</em> 58: 65–85.
+</div>
+<div id="ref-DuFeu.2016" class="csl-entry">
+Du Feu, C. R., J. A. Clark, M. Schaub, W. Fiedler, and S. R. Baillie. 2016. <span>“The EURING Data Bank – a Critical Tool for Continental-Scale Studies of Marked Birds.”</span> <em>Ringing <span>&amp;</span> Migration</em> 31: 1–18. <a href="https://doi.org/10.1080/03078698.2016.1195205">https://doi.org/10.1080/03078698.2016.1195205</a>.
+</div>
+<div id="ref-Emlen.1966" class="csl-entry">
+Emlen, S. T., and J. T. Emlen. 1966. <span>“A Technique for Recording Migratory Orientation of Captive Birds.”</span> <em>The Auk</em> 83: 361–67.
+</div>
+<div id="ref-Hahn.2013" class="csl-entry">
+Hahn, Steffen, Valentin Amrhein, Pavel Zehtindijev, and Felix Liechti. 2013. <span>“Strong Migratory Connectivity and Seasonally Shifting Isotopic Niches in Geographically Separated Populations of a Long-Distance Migrating Songbird.”</span> <em>Oecologia</em> 73: 1217–25. <a href="https://doi.org/10.1007/s00442-013-2726-4">https://doi.org/10.1007/s00442-013-2726-4</a>.
+</div>
+<div id="ref-Hahn.2014b" class="csl-entry">
+Hahn, Steffen, Tamara Emmenegger, Simeon Lisovski, V. Amrhein, Pavel Zehtindjiev, and F. Liechti. 2014. <span>“Variable Detours in Long-Distance Migration Across Ecological Barriers and Their Relation to Habitat Availability at Ground.”</span> <em>Ecology and Evolution</em> online. <a href="https://doi.org/10.1002/ece3.1279">https://doi.org/10.1002/ece3.1279</a>.
+</div>
+<div id="ref-Hobson.2012b" class="csl-entry">
+Hobson, K. A., Steven L. Van Wilgenburg, L. I. Wassenaar, R. L. Powell, J. Still, and J. M. Craine. 2012. <span>“A Multi-Isotope (d13C, d15N, d2H) Feather Isoscape to Assign Afrotropical Migrant Birds to Origins.”</span> <em>Ecosphere</em> 3 (5): 44.
+</div>
+<div id="ref-Hobson.2008" class="csl-entry">
+Hobson, K. A., and L. Wassenaar. 2008. <em>Tracking Animal Migration with Stable Isotopes</em>. London: <span>Academic Press</span>.
+</div>
+<div id="ref-JenniEiermann.2012" class="csl-entry">
+Jenni-Eiermann, S., and Lukas Jenni. 2012. <span>“Fasting in Birds: General Patterns and the Special Case of Endurance Flight.”</span> In <em>Comparative Physiology of Fasting, Starvation, and Food Limitation</em>, edited by M. D. McCue. Berlin: Springer.
+</div>
+<div id="ref-Jolly.1965" class="csl-entry">
+Jolly, G. 1965. <span>“Explicit Estimates from Capture-Recapture Data with Both Death and Immigration-Stochastic Model.”</span> <em>Biometrika</em> 52: 225–47.
+</div>
+<div id="ref-Kjellen.1997" class="csl-entry">
+Kjellén, N., M. Hake, and T. Alerstam. 1997. <span>“Strategies of Two Ospreys Pandion Haliaetus Migrating Between Sweden and Tropical Africa as Revealed by Satellite Tracking.”</span> <em>Journal of Avian Biology</em> 28: 15–23.
+</div>
+<div id="ref-KornerNievergelt.2012b" class="csl-entry">
+Korner-Nievergelt, Fränzi, Felix Liechti, and Steffen Hahn. 2012. <span>“Migratory Connectivity Derived from Sparse Ring Reencounter Data with Unknown Numbers of Ringed Birds.”</span> <em>Journal of Ornithology</em> 153: 771–82. <a href="https://doi.org/10.1007/s10336-011-0793-z">https://doi.org/10.1007/s10336-011-0793-z</a>.
+</div>
+<div id="ref-KornerNievergelt.2010b" class="csl-entry">
+Korner-Nievergelt, Fränzi, Annette Sauter, P. W. Atkinson, J. Guélat, W. Kania, Marc Kéry, U. Köppen, et al. 2010. <span>“Improving the Analysis of Movement Data from Marked Individuals Through Explicit Estimation of Observer Heterogeneity.”</span> <em>Journal of Avian Biology</em> 41: 8–17.
+</div>
+<div id="ref-Kramer.1949" class="csl-entry">
+Kramer, G. 1949. <span>“<span>Ü</span>ber Richtungstendenzen Bei Der n<span>ä</span>chtlichen Zugunruhe Gek<span>ä</span>figter v<span>ö</span>gel.”</span> In <em>Ornithologie Als Biologische Wissenschaft</em>, edited by E. Mayr and E. Schütz, 269–83. Heidelberg: Heidelberg.
+</div>
+<div id="ref-LercheJrgensen.2018" class="csl-entry">
+Lerche-Jørgensen, Mathilde, Fränzi Korner-Nievergelt, Anders P. Tøttrup, Mikkel Willemoes Kristensen, and Kasper Thorup. 2018. <span>“Early Returning Long-Distance Migrant Males Do Pay a Survival Cost.”</span> <em>Ecology and Evolution</em> 8: 11434–49. <a href="https://doi.org/10.1002/ece3.4569">https://doi.org/10.1002/ece3.4569</a>.
+</div>
+<div id="ref-Liechti.2014" class="csl-entry">
+Liechti, Felix, C. Scandolara, D. Rubolini, R. Ambrosini, Fränzi Korner-Nievergelt, S. Hahn, R. Lardelli, et al. 2014. <span>“Timing of Migration and Residence Areas During the Non-Breeding Period of Barn Swallows Hirundo Rustica in Relation to Sex and Population.”</span> <em>Journal of Avian Biology</em> 45: 001–12.
+</div>
+<div id="ref-Liechti.2012" class="csl-entry">
+Liechti, F., S. Komenda-Zehnder, and B. Bruderer. 2012. <span>“Orientation of Passerine Trans-Sahara Migrants: The Directional Shift (<span>‘Zugknick’</span>) Reconsidered for Free-Flying Birds.”</span> <em>Animal Behaviour</em> 83: 63–68.
+</div>
+<div id="ref-Liechti.1996b" class="csl-entry">
+Liechti, F., D. Peter, R. Lardelli, and B. Bruderer. 1996. <span>“The Alps, an Obstacle for Nocturnal Broad Front Migration - a Survey Based on Moon-Watching.”</span> <em>Journal of Ornithology</em> 137: 337–56.
+</div>
+<div id="ref-Lopes.2006" class="csl-entry">
+Lopes, Ricardo J., João C. Marques, and Liv Wennerberg. 2006. <span>“Migratory Connectivity and Temporal Segregation of Dunlin (Calidris Alpina) in Portugal: Evidence from Morphology, Ringing Recoveries and mtDNA.”</span> <em>Journal of Ornithology</em> 147: 385–94.
+</div>
+<div id="ref-Mortensen.1901" class="csl-entry">
+Mortensen, H. C. C. 1901. <span>“Premiers r<span>é</span>sultats de l’enqu<span>ê</span>te Sur Les Migrations de l’<span>é</span>tourneau Vulgaire.”</span> <em>Ornis</em> 11: 312.
+</div>
+<div id="ref-Mouritsen.2001" class="csl-entry">
+Mouritsen, Henrik, and Ole Næsbye Larsen. 2001. <span>“Migrating Songbirds Tested in Computer-Controlled Emlen Funnels Use Stellar Cues for a Time-Independent Compass.”</span> <em>The Journal of Experimental Biology</em> 204: 3855–65.
+</div>
+<div id="ref-Mouritsen.2009" class="csl-entry">
+Mouritsen, H., G. Feenders, A. Hegemann, and M. Liedvogel. 2009. <span>“Thermal Paper Can Replace Type Writer Correction Paper in Emlen Funnels.”</span> <em>Journal of Ornithology</em> 150: 713–15.
+</div>
+<div id="ref-Nievergelt.2000" class="csl-entry">
+Nievergelt, F., and F. Liechti. 2000. <span>“Methodische Aspekte Zur Untersuchung Der Zugaktivit<span>ä</span>t Im Emlen-Trichter.”</span> <em>Journal of Ornithology</em> 141: 180–90.
+</div>
+<div id="ref-Perdeck.1977" class="csl-entry">
+———. 1977. <span>“The Analysis of Ringing Data: Pitfalls and Prospects.”</span> <em>Die Vogelwarte</em> 29 (Sonderheft): 33–44.
+</div>
+<div id="ref-Prochazka.2016" class="csl-entry">
+Procházka, Petr, Steffen Hahn, Simon Rolland, Henk van der Jeugd, Tibor Csörgő, Frédéric Jiguet, Tomasz Mokwa, Felix Liechti, Didier Vangeluwe, and Fränzi Korner-Nievergelt. 2017. <span>“Delineating Large-Scale Migratory Connectivity of Reed Warblers Using Integrated Multistate Models.”</span> <em>Diversity and Distributions</em> 23: 27–40. <a href="https://doi.org/10.1111/ddi.12502">https://doi.org/10.1111/ddi.12502</a>.
+</div>
+<div id="ref-Prochazka.2013" class="csl-entry">
+Procházka, P., Steven L. Van Wilgenburg, J. M. Neto, R. Yosef, and K. A. Hobson. 2013. <span>“Using Stable Hydrogen Isotopes (d2H) and Ring Recoveries to Trace Natal Origins in a Eurasian Passerine with a Migratory Divide.”</span> <em>Journal of Avian Biology</em> 44: 1–10.
+</div>
+<div id="ref-Robinson.2010" class="csl-entry">
+Robinson, W. Douglas, Melissa S. Bowlin, Isabelle Bisson, Judy Shamoun-Baranes, Kasper Thorup, Robert H. Diehl, Thomas H. Kunz, Sarah Mabey, and David W. Winkler. 2010. <span>“Integrating Concepts and Technologies to Advance the Study of Bird Migration.”</span> <em>Frontiers in Ecology and Evolution</em> 8: 354–61. <a href="https://doi.org/10.1890/080179">https://doi.org/10.1890/080179</a>.
+</div>
+<div id="ref-Saurola.2013" class="csl-entry">
+Saurola, Pertti, J. Valkama, and W. Velmala. 2013. <em>The Finnish Bird Ringing Atlas</em>. Helsinki: <span>Finnish Museum of Natural History and Ministry of Environment</span>.
+</div>
+<div id="ref-Schmaljohann.2013" class="csl-entry">
+Schmaljohann, Heiko, Fränzi Korner-Nievergelt, Beat Naef-Daenzer, Rolf Nagel, Ivan Maggini, Marc Bulte, and Franz Bairlein. 2013. <span>“Stopover Optimization in a Long-Distance Migrant: The Role of Fuel Load and Nocturnal Take-Off Time in Alaskan Northern Wheatears (Oenanthe Oenanthe).”</span> <em>Frontiers in Zoology</em> 10: 26.
+</div>
+<div id="ref-Schmaljohann.2007" class="csl-entry">
+Schmaljohann, Heiko, Felix Liechti, and Bruno Bruderer. 2007. <span>“Songbird Migration Across the Sahara: The Non-Stop Hypothesis Rejected!”</span> <em>Proceedings of the Royal Society B: Biological Sciences</em> 274 (1610): 735–39. <a href="https://doi.org/10.1098/rspb.2006.0011">https://doi.org/10.1098/rspb.2006.0011</a>.
+</div>
+<div id="ref-Seber.1965" class="csl-entry">
+Seber, G. A. F. 1965. <span>“A Note on the Multiple-Recapture Census.”</span> <em>Biometrika</em> 52: 249–59.
+</div>
+<div id="ref-Sillett.2002" class="csl-entry">
+Sillett, T. Scott, and Richard T. Holmes. 2002. <span>“Variation in Survivorship of a Migratory Songbird Throughout Its Annual Cycle.”</span> <em>Journal of Animal Ecology</em> 71: 296–308.
+</div>
+<div id="ref-Strinella.2020" class="csl-entry">
+Strinella, Eliseo, Davide Scridel, Mattia Brambilla, Christian Schano, and Fränzi Korner-Nievergelt. 2020. <span>“Potential Sex-Dependent Effects of Weather on Apparent Survival of a High-Elevation Specialist.”</span> <em>Scientific Reports</em> 10 (1): 990. <a href="https://doi.org/10.1038/s41598-020-65017-w">https://doi.org/10.1038/s41598-020-65017-w</a>.
+</div>
+<div id="ref-Thorup.2009" class="csl-entry">
+Thorup, K., and P. B. Conn. 2009. <span>“Estimating the Seasonal Distribution of Migrant Bird Species: Can Standard Ringing Data Be Used?”</span> In <em>Modeling Demographic Proccesses in Marked Populations</em>, edited by D. L. Thomson, E. G. Cooch, and M. J. Conroy, 1107–17. New York: Springer.
+</div>
+<div id="ref-Thorup.2014" class="csl-entry">
+Thorup, K., F. Korner-Nievergelt, Emily B. Cohen, and Stephen R. Baillie. 2014. <span>“Large-Scale Spatial Analysis of Ringing and Re-Encounter Data: A Review Including Methodological Perspectives.”</span> <em>Methods in Ecology and Evolution</em> 5: 1337–50. <a href="https://doi.org/10.1111/2041-210X.12258">https://doi.org/10.1111/2041-210X.12258</a>.
+</div>
+<div id="ref-Weiser.2016" class="csl-entry">
+Weiser, Emily L., Richard B. Lanctot, Stephen C. Brown, José A. Alves, Phil F. Battley, Rebecca Bentzen, Joël Bêty, et al. 2016. <span>“Effects of Geolocators on Hatching Success, Return Rates, Breeding Movements, and Change in Body Mass in 16 Species of Arctic-Breeding Shorebirds.”</span> <em>Movement Ecology</em> 4: 12. <a href="https://doi.org/10.1186/s40462-016-0077-6">https://doi.org/10.1186/s40462-016-0077-6</a>.
+</div>
+<div id="ref-Zehnder.2002" class="csl-entry">
+Zehnder, Susanna, Susanne Akesson, Felix Liechti, and Bruno Bruderer. 2002. <span>“Observation of Free-Flying Nocturnal Migrants at Falsterbo: Occurrence of Reverse Flight Directions in Autumn.”</span> <em>Avian Science</em> 2 (2): 103–13.
 </div>
 </div>
             </section>
@@ -424,12 +651,11 @@ The analysis of mtDNA showed that Dunlins Calidris alpina observed in Portugal d
           </div>
         </div>
       </div>
-<a href="mechanics-energetics-and-plasticity-of-the-migratory-flight.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="global-change-and-other-challenges.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="migration-models.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -448,6 +674,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -468,6 +695,10 @@ gitbook.start({
 "text": null
 },
 "download": ["MigrationCourse.pdf", "MigrationCourse.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }
@@ -481,7 +712,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

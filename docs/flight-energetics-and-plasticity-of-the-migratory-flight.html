@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 10 Migration models | Handout and background material for ETHZ course ‘Animal Migration and research in field ornithology’</title>
+  <title>Chapter 6 Flight energetics and plasticity of the migratory flight | Handout and background material for ETHZ course ‘Animal Migration and research in field ornithology’</title>
   <meta name="description" content="This is a handout for the ETH migration course at Col de Bretolet." />
   <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 10 Migration models | Handout and background material for ETHZ course ‘Animal Migration and research in field ornithology’" />
+  <meta property="og:title" content="Chapter 6 Flight energetics and plasticity of the migratory flight | Handout and background material for ETHZ course ‘Animal Migration and research in field ornithology’" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This is a handout for the ETH migration course at Col de Bretolet." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 10 Migration models | Handout and background material for ETHZ course ‘Animal Migration and research in field ornithology’" />
+  <meta name="twitter:title" content="Chapter 6 Flight energetics and plasticity of the migratory flight | Handout and background material for ETHZ course ‘Animal Migration and research in field ornithology’" />
   
   <meta name="twitter:description" content="This is a handout for the ETH migration course at Col de Bretolet." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="field-methods.html"/>
-<link rel="next" href="statistical-tools-for-studying-migration.html"/>
+<link rel="prev" href="orientation-and-navigation.html"/>
+<link rel="next" href="importance-of-migration-for-the-structure-and-dynamics-of-resident-communities.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -287,29 +287,106 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="migration-models" class="section level1 hasAnchor" number="10">
-<h1><span class="header-section-number">Chapter 10</span> Migration models<a href="migration-models.html#migration-models" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>A variety of modelling approaches exist that investigate entire migrations or parts of it: simple analytical models, game-theoretic models, dynamic optimisation models (also known as stochastic dynamic pro-gramming models, SDP), individual-(or agent) based models (IBM), physical transport models, models based on evolutionary programming, network models and others. These models should not be con-fused with statistical analyses of migration, which may also yield predictive models but are not based on (assumed or hypothesised) mechanisms underlying migration. The models differ in their level of complexity and the assumptions they make, and the choice of a particular modelling approach should always be guided by the scientific questions that need to be tackled. For instance, to identify the rea-sons why birds migrate at night, a very general conceptual model is best suited (see below) while for specific predictions of the distribution of a migratory population, a spatio-temporally explicit approach will be required.</p>
-<p>Examples for models that aim at explaining specific migration behaviours and/or patterns are:
-- Kokko et al. (2006) explored reasons for the earlier arrival of males in the breeding area ob-served in many migratory bird species. They found that territoriality cannot explain this protan-dry because this affects both males and females. However, if early arriving males can increase their chance of mating whereas females cannot, arrival time of only males advanced.
-- Alerstam &amp; Hedenström – The development of bird migration theory – which factor – time, en-ergy or safety determines migration patterns? (Alerstam &amp; Hedenström 1998)
-- Alerstam – why do birds fly detours (Alerstam 2001)?
-- Hein – what determines maximum migration distance (Hein et al. 2012)?</p>
-<p>In the following, we specifically introduce state-dependent migration models as they are a good trade-off between ‘conceptual’ and ‘realistic’ and may thus be used to investigate a variety of both fundamen-tal and applied ecological questions.</p>
-<div id="state-dependent-migration-models" class="section level2 hasAnchor" number="10.1">
-<h2><span class="header-section-number">10.1</span> State-dependent migration models<a href="migration-models.html#state-dependent-migration-models" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>State-dependent optimality models calculate fitness-maximizing decisions depending on time, and a set of state-variables – in our case, location and body reserves. They use an optimization procedure (line-ar programming) that starts at the final time-point and calculates backwards the sequence of behav-ioural decision that would maximize fitness.
-The fundamental behavioural decisions a bird faces in each time-step in the model are a) to stay at its present location or b) to migrate to one of the following sites – each of which has consequences on the animal’s state (body reserves and location). Staying at the present location may allow foraging and accumulating fuel stores that are required for covering the next migratory step or for accumulating re-serves required for breeding. However, staying and foraging also entails mortality risks – as carrying body reserves may be costly and foraging may reduce vigilance (see below), and a time-cost when staying beyond the best time for arrival at the breeding grounds. Alternatively, flying to one of the fol-lowing sites may bring a bird closer to its breeding grounds and thus, facilitate arrival at the breeding grounds within the short time-window that allows successful breeding. However, if this ‘target-site’ does not provide food yet, staying there might increase starvation risk.<br />
-Once the optimal decisions have been calculated for all possible combinations of time, body reserve levels and for all locations, forward simulations are run to generate predictions on individual birds dur-ing their journey from the wintering to breeding grounds.</p>
-<p>Data requirements. For model parameterisation, internal and external constraints (e.g. the costs of locomotion and food availability for all stopover sites) need to be known as well as how these change the values of state variables (e.g. how food availability affects body stores). Model predictions are ide-ally scrutinized by spatio-temporal explicit data of the population along the migratory route (e.g. count data) or individual migration data from tracking studies.
-Elaborate background and methodology on state-dependent models can be found in the excellent text-books of (Houston &amp; McNamara 1999, Clark &amp; Mangel 2000).
-State-dependent migration models have been used for a variety of questions; a few examples are the following:
-• Estimating the impact of global changes on stop-over site use (Bauer et al. 2008).
-• Managing migrant populations at lowest economic cost (Klaassen et al. 2008a).
-• Hunting migratory populations
-• Potential reasons for why red knots (Calidris canutus) use multiple routes to their breeding grounds (Bauer et al. 2010)
-• Besides birds, SDP models have also investigated the spawning migrations of cod assuming optimal energy allocations (Jørgensen &amp; Fiksen 2006, Jørgensen et al. 2008).</p>
+<div id="flight-energetics-and-plasticity-of-the-migratory-flight" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">Chapter 6</span> Flight energetics and plasticity of the migratory flight<a href="flight-energetics-and-plasticity-of-the-migratory-flight.html#flight-energetics-and-plasticity-of-the-migratory-flight" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="mechanics-and-energetics-of-flight" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Mechanics and energetics of flight<a href="flight-energetics-and-plasticity-of-the-migratory-flight.html#mechanics-and-energetics-of-flight" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>During flight, a bird experiences two important mechanical forces, the weight, and frictional drag of the body (parasite drag) and the wings (profile drag). Normally, drag is around 1/10 of the weight. The more streamlined the body is the smaller the drag. Fast flying bird species are more streamlined (e.g. swifts) than slow flying species (e.g. pigeons). The wing is shaped as an aerofoil that produces lift when it is overflown by air. Birds produce both thrust and lift by flapping their wing.
+Among all forms of locomotion, flight is the one that requires most energy per unit of time. However, per unit of distance it is often quite efficient. Flight at low speeds is power demanding because wings have to be flapped at high speed in order to provide the lift to counteract gravity. At higher speeds, lift produced by the aerofoil shape of the wing increases without having to flap the wings. However, at even higher speed the profile and parasite drag increase so that higher speed need more power. The power vs. speed relationship, therefore, typically is U-shaped. Its minimum is at the speed at which the bird can fly with minimal power (minimum power speed). The greatest efficiency per unit of distance travelled is obtained at the maximum range speed, which is higher than the minimum power speed. These mechanics have implications for a migratory bird. Given a specific energy load (fat reserves), it can fly for the longest time if it flies at minimum power speed, but it covers longer distances if it flies at maximum range speed. Migratory birds may further minimize the time needed for migration, e.g. because it pays off having more time for other activities such as breeding or moulting, and therefore fly at even higher speeds.</p>
+<pre><code>## Warning: Paket &#39;afpt&#39; wurde unter R Version 4.2.3 erstellt</code></pre>
+<div class="figure"><span style="display:block;" id="fig:powercurve"></span>
+<img src="05-MechanicsEnergetics_files/figure-html/powercurve-1.png" alt="Mechanical power of flight in relation to flight speed for a hypothetical Robin *Erithacus rubecula*. Minimum power speed is the speed at which the power curve reaches its minimum (speed at which horizontal line touches the power curve). At the maximum range speed the distance per energy used is maximal (speed at which the tangent from the origin touches the power curve). The power curve is calculated using the R-package afpt" width="672" />
+<p class="caption">
+Figure 6.1: Mechanical power of flight in relation to flight speed for a hypothetical Robin <em>Erithacus rubecula</em>. Minimum power speed is the speed at which the power curve reaches its minimum (speed at which horizontal line touches the power curve). At the maximum range speed the distance per energy used is maximal (speed at which the tangent from the origin touches the power curve). The power curve is calculated using the R-package afpt
+</p>
+</div>
+<p>The relationship between mechanical flight power and speed depends on the morphology of the bird (Figure <a href="flight-energetics-and-plasticity-of-the-migratory-flight.html#fig:powercurve">6.1</a>). Important factors are body mass, wing span and wing area. All else equal minimum power and maximal range speed increase with increasing body mass. Also body and wing shape play important roles.
+Seminal work on energetics of flight in birds has been done by Colins Pennycuick. He presents his life-long work in his book <span class="citation">(<a href="#ref-Pennycuick.2008">Pennycuick 2008</a>)</span>. <span class="citation">Rayner (<a href="#ref-Rayner.1990">1990</a>)</span> gives a short introduction to flight mechanics wing morphology and migration performance. Anders Hedenström and his group investigate energetics of flight in migratory vertebrates, also including flapping flight <span class="citation">(<a href="#ref-Hedenstrom.1998">A. Hedenström and Alerstam 1998</a>; <a href="#ref-Hedenstrom.2009">Anders Hedenström 2009</a>; <a href="#ref-KleinHeerenbrink.2015">Klein Heerenbrink, Johansson, and Hedenström 2015</a>)</span>. They provide an R-package that allows exploring relationships between morphology and flight energetics (afpt).</p>
+</div>
+<div id="fuel-for-migratory-flights" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> Fuel for migratory flights<a href="flight-energetics-and-plasticity-of-the-migratory-flight.html#fuel-for-migratory-flights" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Among the three types of fuel (glycogen, lipids, protein), lipids contain the highest amount of energy per storage weight and therefore, lipids constitute efficient fuel for migratory birds. However, extramuscular lipids need a 1-2 hour mobilization period before the energy delivery is fully operating and even then, the rate of delivery is limited by physiological constraints (perfusion limitation, insolubility in plasma). Therefore, in mammals the relative proportion of energy from lipids during endurance exercise is always low. In contrast, birds can increase the proportion of energy derived from lipids to over 90% during endurance flights. In addition to lipids, the contribution of proteins is around 5% <span class="citation">(<a href="#ref-Jenni.1998">L. Jenni and Jenni-Eiermann 1998</a>)</span>. The additional use of protein may be advantageous for the water metabolism. Further, when body weight decreases due to depletion of fat reserves, it may be energetically advantageous that the flight muscles shrink in parallel.</p>
+</div>
+<div id="influences-on-migration" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> Influences on migration<a href="flight-energetics-and-plasticity-of-the-migratory-flight.html#influences-on-migration" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="endogeneous-and-exogeneous-factors" class="section level3 hasAnchor" number="6.3.1">
+<h3><span class="header-section-number">6.3.1</span> Endogeneous and exogeneous factors<a href="flight-energetics-and-plasticity-of-the-migratory-flight.html#endogeneous-and-exogeneous-factors" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>How long birds stop-over is influenced by their body condition, food availability, time constraints and weather situation. <span class="citation">Biebach (<a href="#ref-Biebach.1985">1985</a>)</span> caught Spotted flycatchers <em>Muscicapa striata</em> during their stop-over in an oasis of the Sahara desert. He deprived them from food and then allowed them restricted access to food and finally gave them food ad libitum. During the time with food deprivation, birds increased their migratory activity while body mass decreased. Migratory activity stopped when they received restricted access to food. During that period they increased body mass. Migratory activity started after they regained body mass. This experiment shows that birds decide between stopping-over and continuing migration based on their body condition and the food availability at the stop-over site.</p>
+<p>Tracking of Marsh harriers <em>Circus aeruginosis</em> for several subsequent migration seasons has shown that individuals are highly consistent in the timing of migration whereas they chose different migration routes every year <span class="citation">(<a href="#ref-Vardanis.2011">Vardanis et al. 2011</a>)</span>. This suggests that the timing of migration is more strongly determined by genetics whereas the route may be chosen opportunistically depending on wind situation or food availability, at least in the Marsh harrier.</p>
+</div>
+<div id="topography" class="section level3 hasAnchor" number="6.3.2">
+<h3><span class="header-section-number">6.3.2</span> Topography<a href="flight-energetics-and-plasticity-of-the-migratory-flight.html#topography" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Ecological barriers such as mountains, seas and deserts shape migration pattern. Most migrants choos routes side tracking ecological barriers. However, astoninglishly such barriers are regularly crossed by migrants. Individuals that cross the Alps, often are heavier and origin from more northern populations than individuals that fly around the Alps <span class="citation">(<a href="#ref-Bruderer.1988">Bruderer and Jenni 1988</a>)</span>. Among the larger bird species regularly crossing the Alps, the ones normally using active flapping flight (e.g. falcons) predominate over those normally gliding by using thermal uplifts (e.g. storks).
+Migration density is lower above the Mediterranean compared to the Iberian Peninsula <span class="citation">(<a href="#ref-Bruderer.1998">Bruderer and Liechti 1998</a>)</span>.
+Surprisingly, most birds crossing the Sahara desert only fly at night and rest over the day seeking a shadow place wherever they land <span class="citation">(<a href="#ref-Schmaljohann.2007">Schmaljohann, Liechti, and Bruderer 2007</a>)</span>.</p>
+</div>
+<div id="wind" class="section level3 hasAnchor" number="6.3.3">
+<h3><span class="header-section-number">6.3.3</span> Wind<a href="flight-energetics-and-plasticity-of-the-migratory-flight.html#wind" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Wind has a strong impact on migrating birds. The costs for migration may be doubled or halved depending on wind condition. Some migrants rely on wind drift for completing their migration. Migrants start when wind conditions are favorable. During flight they choose the height at which they experience tail wind <span class="citation">(<a href="#ref-Liechti.2006">Felix Liechti 2006</a>)</span>. How strongly birds compensate for wind drift depends on age and differs between species. Generally, weak wind drift is compensated, whereas strong wind drift is only partially compensated.</p>
+</div>
+<div id="temperature" class="section level3 hasAnchor" number="6.3.4">
+<h3><span class="header-section-number">6.3.4</span> Temperature<a href="flight-energetics-and-plasticity-of-the-migratory-flight.html#temperature" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Temperature is important in two ways: First, temperature affects the migrating bird in flight. Second, temperature (together with other weather variables) acts via spatio-temporal distribution of food availability on the timing of migration.
+During flight, the bird has to cope with the body heat that is produced by the exercising muscles. This becomes more difficult at higher temperature. In wind tunnels, birds do not fly if temperatures are above 25°C. However, this contrasts with the observation of many birds flying at temperature above 25°C when crossing the Sahara desert during migration <span class="citation">(<a href="#ref-Schmaljohann.2008">Schmaljohann, Bruderer, and Liechti 2008</a>)</span>. We still do not understand how birds cope with water loss and high temperature during migratory flights.</p>
+<p>Temperature affects vegetation and the onset of spring. Effects of global warming on the timing of migration have primarily been studied during spring migration. Based on capturing data at three different ringing stations in Northern America, <span class="citation">Marra et al. (<a href="#ref-Marra.2005">2005</a>)</span> showed that long-distance migrants migrate earlier in warm springs compared to cold springs, thereby 1°C warmer corresponded to 1 day earlier migration. However, the vegetation budburst advanced by 3 days, thus showed the three-fold reaction. They further showed that the speed of migration was faster in warm years compared to cold years. It seems as if long-distance migrants may be able to adjust their timing of spring migration to some limited extent to an earlier vegetation burst. Similarly, <span class="citation">Both (<a href="#ref-Both.2010">2010</a>)</span> could show that Pied flycatchers <em>Ficedula hypoleuca</em> adjusted the timing of spring migration rapidly to changing climate when conditions on migration are favorable. However, such adaptation of the timing happens not in all populations to a similar extent. Several studies found that conditions on the migratory route are important for the timing of migration <span class="citation">(<a href="#ref-Huppop.2006b">Hüppop and Winkel 2006</a>)</span>.</p>
+<p>In general, short-distance migrants adapted their timing of migration to a higher degree than long-distance migrants. In the latter, timing seems to have a stronger genetic bases. Further, their migration is affected by changing conditions across a wide geographic range.</p>
+<p>Further reading: <span class="citation">Felix Liechti and McGuire (<a href="#ref-Liechti.2017">2017</a>)</span> compare migration flyways, timing of migratory flights and staging and flight behaviour between birds and bats.</p>
 
+</div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Biebach.1985" class="csl-entry">
+Biebach, H. 1985. <span>“Sahara Stopover in Migratory Flycatchers: Fat and Food Affect the Time Program.”</span> <em>Experientia</em> 41: 695–97.
+</div>
+<div id="ref-Both.2010" class="csl-entry">
+Both, C. 2010. <span>“Flexibility of Timing of Avian Migration to Climate Change Masked by Environmental Constraints En Route.”</span> <em>Current Biology : CB</em> 20 (3): 243–48. <a href="https://doi.org/10.1016/j.cub.2009.11.074">https://doi.org/10.1016/j.cub.2009.11.074</a>.
+</div>
+<div id="ref-Bruderer.1988" class="csl-entry">
+Bruderer, B., and L. Jenni. 1988. <span>“Strategies of Bird Migration in the Area of the Alps.”</span> <em>Acta XIX Congressus Internationalis Ornithologici</em> XIX: 2150–61.
+</div>
+<div id="ref-Bruderer.1998" class="csl-entry">
+Bruderer, B., and F. Liechti. 1998. <span>“Flight Behaviour of Nocturnally Migrating Birds in Coastal Areas - Crossing or Coasting.”</span> <em>Journal of Avian Biology</em> 29: 499–507.
+</div>
+<div id="ref-Hedenstrom.1998" class="csl-entry">
+Hedenström, A., and T. Alerstam. 1998. <span>“How Fast Can Birds Migrate?”</span> <em>Journal of Avian Biology</em> 29: 424–32.
+</div>
+<div id="ref-Hedenstrom.2009" class="csl-entry">
+Hedenström, Anders. 2009. <span>“Optimal Migration Strategies in Bats.”</span> <em>Journal of Mammalogy</em> 90: 1298–1309.
+</div>
+<div id="ref-Huppop.2006b" class="csl-entry">
+Hüppop, Ommo, and Wolfgang Winkel. 2006. <span>“Climate Change and Timing of Spring Migration in the Long-Distance Migrants Ficedula Hypoleuca in Central Europe: The Role of Spatially Different Temperature Changes Along Migration Routes.”</span> <em>Journal of Ornithology</em> 147: 344–53.
+</div>
+<div id="ref-Jenni.1998" class="csl-entry">
+Jenni, L., and S. Jenni-Eiermann. 1998. <span>“Fuel Supply and Metabolic Constraints in Migrating Birds.”</span> <em>Journal of Avian Biology</em> 29: 521–28.
+</div>
+<div id="ref-KleinHeerenbrink.2015" class="csl-entry">
+Klein Heerenbrink, M., L. C. Johansson, and A. Hedenström. 2015. <span>“Power of the Wingbeat: Modelling the Effects of Flapping Wings in Vertebrate Flight.”</span> <em>Proceedings of the Royal Society A: Mathematical, Physical and Engineering Sciences</em> 471 (2177): 20140952. <a href="https://doi.org/10.1098/rspa.2014.0952">https://doi.org/10.1098/rspa.2014.0952</a>.
+</div>
+<div id="ref-Liechti.2006" class="csl-entry">
+Liechti, Felix. 2006. <span>“Birds: Blowin’ the Wind?”</span> <em>Journal of Ornithology</em> 147: 202–11.
+</div>
+<div id="ref-Liechti.2017" class="csl-entry">
+Liechti, Felix, and Liam P. McGuire. 2017. <span>“Facing the Wind: The Aeroecology of Vertebrate Migrants.”</span> In <em>Aeroecology</em>, edited by P. B. Chilson and et al., 179–98. Berlin: <span>Springer Verlgag</span>.
+</div>
+<div id="ref-Marra.2005" class="csl-entry">
+Marra, Peter P., Charles M. Francis, Robert S. Mulvihill, and Frank R. Moore. 2005. <span>“The Influence of Climate on the Timing and Rate of Spring Bird Migration.”</span> <em>Oecologia</em> 142: 307–15.
+</div>
+<div id="ref-Pennycuick.2008" class="csl-entry">
+Pennycuick, C. J. 2008. <em>Modelling the Flying Bird</em>. Amsterdam: <span>Academic Press</span>.
+</div>
+<div id="ref-Rayner.1990" class="csl-entry">
+Rayner, J. M. V. 1990. <span>“The Mechanics of Flight and Bird Migration Performance.”</span> In <em>Bird Migration</em>, edited by E. Gwinner, 283–99. Berlin; Heidelberg: Springer-Verlag.
+</div>
+<div id="ref-Schmaljohann.2008" class="csl-entry">
+Schmaljohann, Heiko, Bruno Bruderer, and Felix Liechti. 2008. <span>“Sustained Bird Flights Occur at Temperatures Far Beyond Expected Limits.”</span> <em>Animal Behaviour</em> 76: 1133–38. <a href="https://doi.org/10.1016/j.anbehav.2008.05.024">https://doi.org/10.1016/j.anbehav.2008.05.024</a>.
+</div>
+<div id="ref-Schmaljohann.2007" class="csl-entry">
+Schmaljohann, Heiko, Felix Liechti, and Bruno Bruderer. 2007. <span>“Songbird Migration Across the Sahara: The Non-Stop Hypothesis Rejected!”</span> <em>Proceedings of the Royal Society B: Biological Sciences</em> 274 (1610): 735–39. <a href="https://doi.org/10.1098/rspb.2006.0011">https://doi.org/10.1098/rspb.2006.0011</a>.
+</div>
+<div id="ref-Vardanis.2011" class="csl-entry">
+Vardanis, Yannis, Raymond H. G. Klaassen, Roine Strandberg, and Thomas Alerstam. 2011. <span>“Individuality in Bird Migration: Routes and Timing.”</span> <em>Biology Letters</em> 7 (4): 502–5. <a href="https://doi.org/10.1098/rsbl.2010.1180">https://doi.org/10.1098/rsbl.2010.1180</a>.
 </div>
 </div>
             </section>
@@ -317,8 +394,8 @@ State-dependent migration models have been used for a variety of questions; a fe
           </div>
         </div>
       </div>
-<a href="field-methods.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="statistical-tools-for-studying-migration.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="orientation-and-navigation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="importance-of-migration-for-the-structure-and-dynamics-of-resident-communities.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

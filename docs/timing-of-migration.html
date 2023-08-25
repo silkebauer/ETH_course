@@ -4,27 +4,26 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 4 Timing of migration | Migration Course</title>
-  <meta name="description" content="This is a handout for the ETH migration course at Col de Bretolet. The output format for this example is bookdown::gitbook." />
-  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+  <title>Chapter 4 Timing of migration | Handout and background material for ETHZ course ‘Animal Migration and research in field ornithology’</title>
+  <meta name="description" content="This is a handout for the ETH migration course at Col de Bretolet." />
+  <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 4 Timing of migration | Migration Course" />
+  <meta property="og:title" content="Chapter 4 Timing of migration | Handout and background material for ETHZ course ‘Animal Migration and research in field ornithology’" />
   <meta property="og:type" content="book" />
   
-  
-  <meta property="og:description" content="This is a handout for the ETH migration course at Col de Bretolet. The output format for this example is bookdown::gitbook." />
+  <meta property="og:description" content="This is a handout for the ETH migration course at Col de Bretolet." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 4 Timing of migration | Migration Course" />
+  <meta name="twitter:title" content="Chapter 4 Timing of migration | Handout and background material for ETHZ course ‘Animal Migration and research in field ornithology’" />
   
-  <meta name="twitter:description" content="This is a handout for the ETH migration course at Col de Bretolet. The output format for this example is bookdown::gitbook." />
+  <meta name="twitter:description" content="This is a handout for the ETH migration course at Col de Bretolet." />
   
 
-<meta name="author" content="Fränzi Korner &amp; Silke Bauer" />
+<meta name="author" content="Silke Bauer &amp; Fränzi Korner-Nievergelt" />
 
 
-<meta name="date" content="2020-05-05" />
+<meta name="date" content="2023-08-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,8 +31,9 @@
   
   
 <link rel="prev" href="animal-migration.html"/>
-<link rel="next" href="orientation.html"/>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link rel="next" href="orientation-and-navigation.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -49,29 +49,33 @@
 
 
 
-
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -80,15 +84,15 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -101,7 +105,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -113,6 +117,29 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 </head>
@@ -130,25 +157,40 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">Handout ETH course Migration ecology and methods in field ornithology</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
-<li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a><ul>
-<li class="chapter" data-level="2.1" data-path="introduction.html"><a href="introduction.html#course-schedule"><i class="fa fa-check"></i><b>2.1</b> Course schedule</a><ul>
-<li class="chapter" data-level="2.1.1" data-path="introduction.html"><a href="introduction.html#monday"><i class="fa fa-check"></i><b>2.1.1</b> Monday</a></li>
-<li class="chapter" data-level="2.1.2" data-path="introduction.html"><a href="introduction.html#tuesday"><i class="fa fa-check"></i><b>2.1.2</b> Tuesday</a></li>
-<li class="chapter" data-level="2.1.3" data-path="introduction.html"><a href="introduction.html#wednesday"><i class="fa fa-check"></i><b>2.1.3</b> Wednesday</a></li>
-<li class="chapter" data-level="2.1.4" data-path="introduction.html"><a href="introduction.html#thursday"><i class="fa fa-check"></i><b>2.1.4</b> Thursday</a></li>
-<li class="chapter" data-level="2.1.5" data-path="introduction.html"><a href="introduction.html#friday"><i class="fa fa-check"></i><b>2.1.5</b> Friday</a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> General information</a></li>
+<li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="introduction.html"><a href="introduction.html#course-aims"><i class="fa fa-check"></i><b>2.1</b> Course aims</a></li>
+<li class="chapter" data-level="2.2" data-path="introduction.html"><a href="introduction.html#course-schedule"><i class="fa fa-check"></i><b>2.2</b> Course schedule</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="introduction.html"><a href="introduction.html#prepatory-days-1-2-tuesday-5-6-september-2023-in-sempach-or-online"><i class="fa fa-check"></i><b>2.2.1</b> Prepatory days 1 &amp; 2: Tuesday, 5-6 September 2023 in Sempach (or online)</a></li>
+<li class="chapter" data-level="2.2.2" data-path="introduction.html"><a href="introduction.html#course-day-1-tuesday-5-september-2023"><i class="fa fa-check"></i><b>2.2.2</b> Course day 1: Tuesday, 5 September 2023</a></li>
+<li class="chapter" data-level="2.2.3" data-path="introduction.html"><a href="introduction.html#course-day-2-wednesday-6-september-2023-in-sempach"><i class="fa fa-check"></i><b>2.2.3</b> Course day 2: Wednesday, 6 September 2023 in Sempach</a></li>
+<li class="chapter" data-level="2.2.4" data-path="introduction.html"><a href="introduction.html#excursion-to-col-de-bretolet-mon-fri-11-15-september-2023"><i class="fa fa-check"></i><b>2.2.4</b> Excursion to Col de Bretolet: Mon-Fri 11-15 September 2023</a></li>
+<li class="chapter" data-level="2.2.5" data-path="introduction.html"><a href="introduction.html#course-day-3-monday-11-september-2023"><i class="fa fa-check"></i><b>2.2.5</b> Course day 3: Monday, 11 September 2023</a></li>
+<li class="chapter" data-level="2.2.6" data-path="introduction.html"><a href="introduction.html#course-day-4-tuesday-12-september-2023"><i class="fa fa-check"></i><b>2.2.6</b> Course day 4: Tuesday, 12 September 2023</a></li>
+<li class="chapter" data-level="2.2.7" data-path="introduction.html"><a href="introduction.html#course-day-5-wednesday-13-september-2023"><i class="fa fa-check"></i><b>2.2.7</b> Course day 5: Wednesday, 13 September 2023</a></li>
+<li class="chapter" data-level="2.2.8" data-path="introduction.html"><a href="introduction.html#course-day-6-thursday-14-september-2023"><i class="fa fa-check"></i><b>2.2.8</b> Course day 6: Thursday, 14 September 2023</a></li>
+<li class="chapter" data-level="2.2.9" data-path="introduction.html"><a href="introduction.html#course-day-7-friday-15-september-2023"><i class="fa fa-check"></i><b>2.2.9</b> Course day 7: Friday, 15 September 2023</a></li>
 </ul></li>
+<li class="chapter" data-level="2.3" data-path="introduction.html"><a href="introduction.html#preparations"><i class="fa fa-check"></i><b>2.3</b> Preparations</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="animal-migration.html"><a href="animal-migration.html"><i class="fa fa-check"></i><b>3</b> Animal migration</a><ul>
+<li class="chapter" data-level="3" data-path="animal-migration.html"><a href="animal-migration.html"><i class="fa fa-check"></i><b>3</b> Animal migration</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="animal-migration.html"><a href="animal-migration.html#what-is-migration"><i class="fa fa-check"></i><b>3.1</b> What is migration?</a></li>
 <li class="chapter" data-level="3.2" data-path="animal-migration.html"><a href="animal-migration.html#why-do-birds-migrate"><i class="fa fa-check"></i><b>3.2</b> Why do birds migrate?</a></li>
-<li class="chapter" data-level="3.3" data-path="animal-migration.html"><a href="animal-migration.html#terminology-of-specific-migration-patterns"><i class="fa fa-check"></i><b>3.3</b> Terminology of specific migration patterns</a></li>
-<li class="chapter" data-level="3.4" data-path="animal-migration.html"><a href="animal-migration.html#importance-of-migration-for-the-structure-and-dynamics-of-resident-communities"><i class="fa fa-check"></i><b>3.4</b> Importance of migration for the structure and dynamics of resident communities</a></li>
+<li class="chapter" data-level="3.3" data-path="animal-migration.html"><a href="animal-migration.html#terminology-of-specific-migration-patterns"><i class="fa fa-check"></i><b>3.3</b> Terminology of specific migration patterns</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="animal-migration.html"><a href="animal-migration.html#characterisation-of-migration-according-to-distances-covered"><i class="fa fa-check"></i><b>3.3.1</b> Characterisation of migration according to distances covered</a></li>
+<li class="chapter" data-level="3.3.2" data-path="animal-migration.html"><a href="animal-migration.html#characterisation-of-migration-according-to-daytime-of-travel"><i class="fa fa-check"></i><b>3.3.2</b> Characterisation of migration according to daytime of travel</a></li>
+<li class="chapter" data-level="3.3.3" data-path="animal-migration.html"><a href="animal-migration.html#characterisation-of-migration-according-to-larger-scale-patterns-of-migratory-bouts"><i class="fa fa-check"></i><b>3.3.3</b> Characterisation of migration according to larger-scale patterns of migratory bouts</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="timing-of-migration.html"><a href="timing-of-migration.html"><i class="fa fa-check"></i><b>4</b> Timing of migration</a><ul>
+</ul></li>
+<li class="chapter" data-level="4" data-path="timing-of-migration.html"><a href="timing-of-migration.html"><i class="fa fa-check"></i><b>4</b> Timing of migration</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="timing-of-migration.html"><a href="timing-of-migration.html#why-is-timing-important"><i class="fa fa-check"></i><b>4.1</b> Why is timing important?</a></li>
-<li class="chapter" data-level="4.2" data-path="timing-of-migration.html"><a href="timing-of-migration.html#what-determines-the-timing-of-migratory-steps-cues"><i class="fa fa-check"></i><b>4.2</b> What determines the timing of migratory steps? Cues!</a><ul>
+<li class="chapter" data-level="4.2" data-path="timing-of-migration.html"><a href="timing-of-migration.html#what-determines-the-timing-of-migratory-steps-cues"><i class="fa fa-check"></i><b>4.2</b> What determines the timing of migratory steps? Cues!</a>
+<ul>
 <li class="chapter" data-level="4.2.1" data-path="timing-of-migration.html"><a href="timing-of-migration.html#preparation"><i class="fa fa-check"></i><b>4.2.1</b> Preparation</a></li>
 <li class="chapter" data-level="4.2.2" data-path="timing-of-migration.html"><a href="timing-of-migration.html#departure"><i class="fa fa-check"></i><b>4.2.2</b> Departure</a></li>
 <li class="chapter" data-level="4.2.3" data-path="timing-of-migration.html"><a href="timing-of-migration.html#on-the-way"><i class="fa fa-check"></i><b>4.2.3</b> On the way</a></li>
@@ -156,50 +198,74 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4.3" data-path="timing-of-migration.html"><a href="timing-of-migration.html#consequences-of-migration-timing"><i class="fa fa-check"></i><b>4.3</b> Consequences of migration timing</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="orientation.html"><a href="orientation.html"><i class="fa fa-check"></i><b>5</b> Orientation</a><ul>
-<li class="chapter" data-level="5.1" data-path="orientation.html"><a href="orientation.html#sun-compass"><i class="fa fa-check"></i><b>5.1</b> Sun compass</a></li>
-<li class="chapter" data-level="5.2" data-path="orientation.html"><a href="orientation.html#star-compass"><i class="fa fa-check"></i><b>5.2</b> Star compass</a></li>
-<li class="chapter" data-level="5.3" data-path="orientation.html"><a href="orientation.html#magnetic-compass"><i class="fa fa-check"></i><b>5.3</b> Magnetic compass</a></li>
-<li class="chapter" data-level="5.4" data-path="orientation.html"><a href="orientation.html#landmarks"><i class="fa fa-check"></i><b>5.4</b> Landmarks</a></li>
-<li class="chapter" data-level="5.5" data-path="orientation.html"><a href="orientation.html#olfactory-cues"><i class="fa fa-check"></i><b>5.5</b> Olfactory cues</a></li>
-<li class="chapter" data-level="5.6" data-path="orientation.html"><a href="orientation.html#compass-orientation-vs.-navigation"><i class="fa fa-check"></i><b>5.6</b> Compass orientation vs. navigation</a></li>
+<li class="chapter" data-level="5" data-path="orientation-and-navigation.html"><a href="orientation-and-navigation.html"><i class="fa fa-check"></i><b>5</b> Orientation and Navigation</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="orientation-and-navigation.html"><a href="orientation-and-navigation.html#sun-compass"><i class="fa fa-check"></i><b>5.1</b> Sun compass</a></li>
+<li class="chapter" data-level="5.2" data-path="orientation-and-navigation.html"><a href="orientation-and-navigation.html#star-compass"><i class="fa fa-check"></i><b>5.2</b> Star compass</a></li>
+<li class="chapter" data-level="5.3" data-path="orientation-and-navigation.html"><a href="orientation-and-navigation.html#magnetic-compass"><i class="fa fa-check"></i><b>5.3</b> Magnetic compass</a></li>
+<li class="chapter" data-level="5.4" data-path="orientation-and-navigation.html"><a href="orientation-and-navigation.html#landmarks"><i class="fa fa-check"></i><b>5.4</b> Landmarks</a></li>
+<li class="chapter" data-level="5.5" data-path="orientation-and-navigation.html"><a href="orientation-and-navigation.html#olfactory-cues"><i class="fa fa-check"></i><b>5.5</b> Olfactory cues</a></li>
+<li class="chapter" data-level="5.6" data-path="orientation-and-navigation.html"><a href="orientation-and-navigation.html#compass-orientation-vs.-navigation"><i class="fa fa-check"></i><b>5.6</b> Compass orientation vs. navigation</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="mechanics-energetics-and-plasticity-of-the-migratory-flight.html"><a href="mechanics-energetics-and-plasticity-of-the-migratory-flight.html"><i class="fa fa-check"></i><b>6</b> Mechanics, energetics and plasticity of the migratory flight</a><ul>
-<li class="chapter" data-level="6.1" data-path="mechanics-energetics-and-plasticity-of-the-migratory-flight.html"><a href="mechanics-energetics-and-plasticity-of-the-migratory-flight.html#mechanics-and-energetics-of-flight"><i class="fa fa-check"></i><b>6.1</b> Mechanics and energetics of flight</a></li>
-<li class="chapter" data-level="6.2" data-path="mechanics-energetics-and-plasticity-of-the-migratory-flight.html"><a href="mechanics-energetics-and-plasticity-of-the-migratory-flight.html#fuel-for-migratory-flights"><i class="fa fa-check"></i><b>6.2</b> Fuel for migratory flights</a></li>
-<li class="chapter" data-level="6.3" data-path="mechanics-energetics-and-plasticity-of-the-migratory-flight.html"><a href="mechanics-energetics-and-plasticity-of-the-migratory-flight.html#influences-on-migration"><i class="fa fa-check"></i><b>6.3</b> Influences on migration</a><ul>
-<li class="chapter" data-level="6.3.1" data-path="mechanics-energetics-and-plasticity-of-the-migratory-flight.html"><a href="mechanics-energetics-and-plasticity-of-the-migratory-flight.html#endogeneous-and-exogeneous-factors"><i class="fa fa-check"></i><b>6.3.1</b> Endogeneous and exogeneous factors</a></li>
-<li class="chapter" data-level="6.3.2" data-path="mechanics-energetics-and-plasticity-of-the-migratory-flight.html"><a href="mechanics-energetics-and-plasticity-of-the-migratory-flight.html#topography"><i class="fa fa-check"></i><b>6.3.2</b> Topography</a></li>
-<li class="chapter" data-level="6.3.3" data-path="mechanics-energetics-and-plasticity-of-the-migratory-flight.html"><a href="mechanics-energetics-and-plasticity-of-the-migratory-flight.html#wind"><i class="fa fa-check"></i><b>6.3.3</b> Wind</a></li>
-<li class="chapter" data-level="6.3.4" data-path="mechanics-energetics-and-plasticity-of-the-migratory-flight.html"><a href="mechanics-energetics-and-plasticity-of-the-migratory-flight.html#temperature"><i class="fa fa-check"></i><b>6.3.4</b> Temperature</a></li>
+<li class="chapter" data-level="6" data-path="flight-energetics-and-plasticity-of-the-migratory-flight.html"><a href="flight-energetics-and-plasticity-of-the-migratory-flight.html"><i class="fa fa-check"></i><b>6</b> Flight energetics and plasticity of the migratory flight</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="flight-energetics-and-plasticity-of-the-migratory-flight.html"><a href="flight-energetics-and-plasticity-of-the-migratory-flight.html#mechanics-and-energetics-of-flight"><i class="fa fa-check"></i><b>6.1</b> Mechanics and energetics of flight</a></li>
+<li class="chapter" data-level="6.2" data-path="flight-energetics-and-plasticity-of-the-migratory-flight.html"><a href="flight-energetics-and-plasticity-of-the-migratory-flight.html#fuel-for-migratory-flights"><i class="fa fa-check"></i><b>6.2</b> Fuel for migratory flights</a></li>
+<li class="chapter" data-level="6.3" data-path="flight-energetics-and-plasticity-of-the-migratory-flight.html"><a href="flight-energetics-and-plasticity-of-the-migratory-flight.html#influences-on-migration"><i class="fa fa-check"></i><b>6.3</b> Influences on migration</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="flight-energetics-and-plasticity-of-the-migratory-flight.html"><a href="flight-energetics-and-plasticity-of-the-migratory-flight.html#endogeneous-and-exogeneous-factors"><i class="fa fa-check"></i><b>6.3.1</b> Endogeneous and exogeneous factors</a></li>
+<li class="chapter" data-level="6.3.2" data-path="flight-energetics-and-plasticity-of-the-migratory-flight.html"><a href="flight-energetics-and-plasticity-of-the-migratory-flight.html#topography"><i class="fa fa-check"></i><b>6.3.2</b> Topography</a></li>
+<li class="chapter" data-level="6.3.3" data-path="flight-energetics-and-plasticity-of-the-migratory-flight.html"><a href="flight-energetics-and-plasticity-of-the-migratory-flight.html#wind"><i class="fa fa-check"></i><b>6.3.3</b> Wind</a></li>
+<li class="chapter" data-level="6.3.4" data-path="flight-energetics-and-plasticity-of-the-migratory-flight.html"><a href="flight-energetics-and-plasticity-of-the-migratory-flight.html#temperature"><i class="fa fa-check"></i><b>6.3.4</b> Temperature</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="field-methods.html"><a href="field-methods.html"><i class="fa fa-check"></i><b>7</b> Field methods</a><ul>
-<li class="chapter" data-level="7.1" data-path="field-methods.html"><a href="field-methods.html#observations-visual-moonwatching-ir-radar"><i class="fa fa-check"></i><b>7.1</b> Observations: visual, moonwatching, IR, radar</a></li>
-<li class="chapter" data-level="7.2" data-path="field-methods.html"><a href="field-methods.html#marking-and-reencountering"><i class="fa fa-check"></i><b>7.2</b> Marking and reencountering</a></li>
-<li class="chapter" data-level="7.3" data-path="field-methods.html"><a href="field-methods.html#tracking-individuals"><i class="fa fa-check"></i><b>7.3</b> Tracking individuals</a></li>
-<li class="chapter" data-level="7.4" data-path="field-methods.html"><a href="field-methods.html#orientation-experiments"><i class="fa fa-check"></i><b>7.4</b> Orientation experiments</a></li>
-<li class="chapter" data-level="7.5" data-path="field-methods.html"><a href="field-methods.html#stable-isotopes-genetics-and-physiology"><i class="fa fa-check"></i><b>7.5</b> Stable isotopes, genetics and physiology</a></li>
+<li class="chapter" data-level="7" data-path="importance-of-migration-for-the-structure-and-dynamics-of-resident-communities.html"><a href="importance-of-migration-for-the-structure-and-dynamics-of-resident-communities.html"><i class="fa fa-check"></i><b>7</b> Importance of migration for the structure and dynamics of resident communities</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="importance-of-migration-for-the-structure-and-dynamics-of-resident-communities.html"><a href="importance-of-migration-for-the-structure-and-dynamics-of-resident-communities.html#migrants-link-ecological-communities-and-ecosystem-functioning-worldwide"><i class="fa fa-check"></i><b>7.1</b> Migrants link ecological communities and ecosystem functioning worldwide</a></li>
+<li class="chapter" data-level="7.2" data-path="importance-of-migration-for-the-structure-and-dynamics-of-resident-communities.html"><a href="importance-of-migration-for-the-structure-and-dynamics-of-resident-communities.html#animal-migrations-provide-services-and-disservices"><i class="fa fa-check"></i><b>7.2</b> Animal migrations provide services and disservices</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="migration-models.html"><a href="migration-models.html"><i class="fa fa-check"></i><b>8</b> Migration models</a><ul>
-<li class="chapter" data-level="8.1" data-path="migration-models.html"><a href="migration-models.html#state-dependent-migration-models"><i class="fa fa-check"></i><b>8.1</b> State-dependent migration models</a></li>
+<li class="chapter" data-level="8" data-path="global-change-and-other-challenges.html"><a href="global-change-and-other-challenges.html"><i class="fa fa-check"></i><b>8</b> Global change and other challenges</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="global-change-and-other-challenges.html"><a href="global-change-and-other-challenges.html#climate-change"><i class="fa fa-check"></i><b>8.1</b> Climate change</a></li>
+<li class="chapter" data-level="8.2" data-path="global-change-and-other-challenges.html"><a href="global-change-and-other-challenges.html#sensory-pollution"><i class="fa fa-check"></i><b>8.2</b> Sensory pollution</a></li>
+<li class="chapter" data-level="8.3" data-path="global-change-and-other-challenges.html"><a href="global-change-and-other-challenges.html#man-made-structures"><i class="fa fa-check"></i><b>8.3</b> Man-made structures</a></li>
+<li class="chapter" data-level="8.4" data-path="global-change-and-other-challenges.html"><a href="global-change-and-other-challenges.html#conservation-of-migrants-and-migrations"><i class="fa fa-check"></i><b>8.4</b> Conservation of migrants and migrations</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html"><i class="fa fa-check"></i><b>9</b> Statistical tools for studying migration</a><ul>
-<li class="chapter" data-level="9.1" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#distribution-models-for-counts-of-resting-or-migrating-individuals"><i class="fa fa-check"></i><b>9.1</b> Distribution models for counts of resting or migrating individuals</a></li>
-<li class="chapter" data-level="9.2" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#connectivity-models"><i class="fa fa-check"></i><b>9.2</b> Connectivity models</a></li>
-<li class="chapter" data-level="9.3" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#estimating-survival-based-on-mark-recapture-data-the-cormack-jolly-seber-model"><i class="fa fa-check"></i><b>9.3</b> Estimating survival based on mark-recapture data: The Cormack-Jolly-Seber model</a></li>
-<li class="chapter" data-level="9.4" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#multi-state-models-to-estimate-movement-rates"><i class="fa fa-check"></i><b>9.4</b> Multi-state models to estimate movement rates</a></li>
-<li class="chapter" data-level="9.5" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#individual-based-hidden-markov-model-for-bird-behaviour"><i class="fa fa-check"></i><b>9.5</b> Individual based hidden Markov model for bird behaviour</a></li>
-<li class="chapter" data-level="9.6" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#the-combination-of-different-data-sources"><i class="fa fa-check"></i><b>9.6</b> The combination of different data sources</a></li>
+<li class="chapter" data-level="9" data-path="field-methods.html"><a href="field-methods.html"><i class="fa fa-check"></i><b>9</b> Field methods</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="field-methods.html"><a href="field-methods.html#observations-visual-moonwatching-ir-radar"><i class="fa fa-check"></i><b>9.1</b> Observations: visual, moonwatching, IR, radar</a></li>
+<li class="chapter" data-level="9.2" data-path="field-methods.html"><a href="field-methods.html#marking-and-reencountering"><i class="fa fa-check"></i><b>9.2</b> Marking and reencountering</a></li>
+<li class="chapter" data-level="9.3" data-path="field-methods.html"><a href="field-methods.html#tracking-individuals"><i class="fa fa-check"></i><b>9.3</b> Tracking individuals</a></li>
+<li class="chapter" data-level="9.4" data-path="field-methods.html"><a href="field-methods.html#orientation-experiments"><i class="fa fa-check"></i><b>9.4</b> Orientation experiments</a></li>
+<li class="chapter" data-level="9.5" data-path="field-methods.html"><a href="field-methods.html#stable-isotopes-genetics-and-physiology"><i class="fa fa-check"></i><b>9.5</b> Stable isotopes, genetics and physiology</a></li>
+<li class="chapter" data-level="9.6" data-path="field-methods.html"><a href="field-methods.html#references"><i class="fa fa-check"></i><b>9.6</b> References</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="student-projects.html"><a href="student-projects.html"><i class="fa fa-check"></i><b>10</b> Student projects</a><ul>
-<li class="chapter" data-level="10.1" data-path="student-projects.html"><a href="student-projects.html#phenology-migration-patterns-within-season-and-their-changes-over-the-years"><i class="fa fa-check"></i><b>10.1</b> Phenology: Migration patterns within season and their changes over the years</a></li>
-<li class="chapter" data-level="10.2" data-path="student-projects.html"><a href="student-projects.html#long-term-changes-in-morphology"><i class="fa fa-check"></i><b>10.2</b> Long-term changes in morphology</a></li>
-<li class="chapter" data-level="10.3" data-path="student-projects.html"><a href="student-projects.html#differential-migration"><i class="fa fa-check"></i><b>10.3</b> Differential Migration</a></li>
-<li class="chapter" data-level="10.4" data-path="student-projects.html"><a href="student-projects.html#flight-energetics-in-the-course-of-a-night-and-over-the-season"><i class="fa fa-check"></i><b>10.4</b> Flight energetics in the course of a night and over the season</a></li>
-<li class="chapter" data-level="10.5" data-path="student-projects.html"><a href="student-projects.html#estimate-survival-from-capture-recapture-data"><i class="fa fa-check"></i><b>10.5</b> Estimate survival from capture-recapture data</a></li>
-<li class="chapter" data-level="10.6" data-path="student-projects.html"><a href="student-projects.html#modelling-spring-migration-several-questions"><i class="fa fa-check"></i><b>10.6</b> Modelling (spring) migration: several questions</a></li>
-<li class="chapter" data-level="10.7" data-path="student-projects.html"><a href="student-projects.html#estimating-migration-volume"><i class="fa fa-check"></i><b>10.7</b> Estimating Migration volume</a></li>
+<li class="chapter" data-level="10" data-path="migration-models.html"><a href="migration-models.html"><i class="fa fa-check"></i><b>10</b> Migration models</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="migration-models.html"><a href="migration-models.html#state-dependent-migration-models"><i class="fa fa-check"></i><b>10.1</b> State-dependent migration models</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html"><i class="fa fa-check"></i><b>11</b> Statistical tools for studying migration</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#distribution-models-for-counts-of-resting-or-migrating-individuals"><i class="fa fa-check"></i><b>11.1</b> Distribution models for counts of resting or migrating individuals</a></li>
+<li class="chapter" data-level="11.2" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#migratory-connectivity-models"><i class="fa fa-check"></i><b>11.2</b> Migratory connectivity models</a></li>
+<li class="chapter" data-level="11.3" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#estimating-survival-based-on-mark-recapture-data-the-cormack-jolly-seber-model"><i class="fa fa-check"></i><b>11.3</b> Estimating survival based on mark-recapture data: The Cormack-Jolly-Seber model</a></li>
+<li class="chapter" data-level="11.4" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#multi-state-models-to-estimate-movement-rates"><i class="fa fa-check"></i><b>11.4</b> Multi-state models to estimate movement rates</a></li>
+<li class="chapter" data-level="11.5" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#individual-based-hidden-markov-model-for-bird-behaviour"><i class="fa fa-check"></i><b>11.5</b> Individual based hidden Markov model for bird behaviour</a></li>
+<li class="chapter" data-level="11.6" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#the-combination-of-different-data-sources"><i class="fa fa-check"></i><b>11.6</b> The combination of different data sources</a></li>
+<li class="chapter" data-level="11.7" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#references-1"><i class="fa fa-check"></i><b>11.7</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="student-projects.html"><a href="student-projects.html"><i class="fa fa-check"></i><b>12</b> Student projects</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="student-projects.html"><a href="student-projects.html#pre-requisite-reading-and-assessing-scientific-publications"><i class="fa fa-check"></i><b>12.1</b> Pre-requisite: Reading and assessing scientific publications</a></li>
+<li class="chapter" data-level="12.2" data-path="student-projects.html"><a href="student-projects.html#student-project-1-phenology---migration-timing-within-the-season-and-their-changes-over-the-years"><i class="fa fa-check"></i><b>12.2</b> Student project 1: Phenology - Migration timing within the season and their changes over the years</a></li>
+<li class="chapter" data-level="12.3" data-path="student-projects.html"><a href="student-projects.html#student-project-2-long-term-changes-in-morphology"><i class="fa fa-check"></i><b>12.3</b> Student project 2: Long-term changes in morphology</a></li>
+<li class="chapter" data-level="12.4" data-path="student-projects.html"><a href="student-projects.html#student-project-3-differential-migration"><i class="fa fa-check"></i><b>12.4</b> Student project 3: Differential Migration</a></li>
+<li class="chapter" data-level="12.5" data-path="student-projects.html"><a href="student-projects.html#student-project-4-flight-energetics-in-the-course-of-a-night-and-over-the-season"><i class="fa fa-check"></i><b>12.5</b> Student project 4: Flight energetics in the course of a night and over the season</a></li>
+<li class="chapter" data-level="12.6" data-path="student-projects.html"><a href="student-projects.html#student-project-5-estimate-survival-from-capture-recapture-data"><i class="fa fa-check"></i><b>12.6</b> Student project 5: Estimate survival from capture-recapture data</a></li>
+<li class="chapter" data-level="12.7" data-path="student-projects.html"><a href="student-projects.html#student-project-6-modelling-spring-migration-several-questions"><i class="fa fa-check"></i><b>12.7</b> Student project 6: Modelling spring migration: several questions</a></li>
+<li class="chapter" data-level="12.8" data-path="student-projects.html"><a href="student-projects.html#student-project-7-estimating-migration-volume"><i class="fa fa-check"></i><b>12.8</b> Student project 7: Estimating Migration volume</a></li>
+<li class="chapter" data-level="12.9" data-path="student-projects.html"><a href="student-projects.html#student-project-8-why-is-timing-in-spring-important"><i class="fa fa-check"></i><b>12.9</b> Student project 8: Why is timing in spring important?</a></li>
+<li class="chapter" data-level="12.10" data-path="student-projects.html"><a href="student-projects.html#student-project-9-geolocation---tracking-small-birds"><i class="fa fa-check"></i><b>12.10</b> Student project 9: Geolocation - tracking small birds</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/silkebauer/ETH_course" target="blank">Published with bookdown</a></li>
@@ -213,7 +279,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Migration Course</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Handout and background material for ETHZ course ‘Animal Migration and research in field ornithology’</a>
           </h1>
         </div>
 
@@ -221,45 +287,52 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="timing-of-migration" class="section level1">
-<h1><span class="header-section-number">Chapter 4</span> Timing of migration</h1>
-<div id="why-is-timing-important" class="section level2">
-<h2><span class="header-section-number">4.1</span> Why is timing important?</h2>
-<p>The timing of migration (and other life-history activities) is widely considered to have significant fitness consequences (Forrest &amp; Miller-Rushing 2010, Miller-Rushing &amp; et al. 2010). Particularly in seasonal environments, timing is the all-dominant predictor of success – for instance migration, growth or repro-duction should coincide with favourable conditions and avoid unfavourable periods. Thus, such activi-ties need to be initiated within a specific – often very restricted – time frame.
-Penalties for not migrating at the optimal time range from slight reductions in reproductive success (e.g. raising fewer offspring or offspring with lower survival prospects) to fatal consequences (e.g. mistiming of migration leading to starvation (Newton 2007). Besides immediate penalties there may also be time-lagged consequences (e.g. carry-over effects; Harrison et al. 2011), since current mistiming may bear a cost later in life.</p>
+<div id="timing-of-migration" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Timing of migration<a href="timing-of-migration.html#timing-of-migration" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="why-is-timing-important" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Why is timing important?<a href="timing-of-migration.html#why-is-timing-important" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The timing of migration (and other life-history activities) is widely considered to have significant fitness consequences (Forrest &amp; Miller-Rushing 2010, Miller-Rushing &amp; et al. 2010). Particularly in seasonal environments, timing is the all-dominant predictor of success – for instance migration, growth or repro-duction should coincide with favourable conditions and avoid unfavourable periods. Thus, such activities need to be initiated within a specific – often very restricted – timeframe.</p>
+<p>Penalties for not migrating at the optimal time range from slight reductions in reproductive success (e.g. raising fewer offspring or offspring with lower survival prospects) to fatal consequences (e.g. mistiming of migration leading to starvation (Newton 2007). Besides immediate penalties there may also be time-lagged consequences (e.g. carry-over effects; Harrison et al. 2011), since current mistiming may bear a cost later in life.</p>
 </div>
-<div id="what-determines-the-timing-of-migratory-steps-cues" class="section level2">
-<h2><span class="header-section-number">4.2</span> What determines the timing of migratory steps? Cues!</h2>
-<p>Photoperiod has been shown to be involved in the timing of activities for many species, e.g. initiating “Zugunruhe” or determining the speed of migratory progression, as it indicates time of the year and thus, can be a useful predictor for the phenology of resources (Fig. 1). Other, local and short-term fac-tors influencing timing of migration include prevailing weather conditions, e.g. temperature, wind, drought and precipitation, as these factors can significantly influence the costs of the travel ahead or its consequences for survival. There are also internal cues that serve as a clock or time-keeping mechanism. Additionally, physiological state and developmental stage are important cues as most migrants undergo morphological and physiological changes in preparation for migration and internal signals, e.g. hormone levels, indicate when these changes are completed.
+<div id="what-determines-the-timing-of-migratory-steps-cues" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> What determines the timing of migratory steps? Cues!<a href="timing-of-migration.html#what-determines-the-timing-of-migratory-steps-cues" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Photoperiod has been shown to be involved in the timing of activities for many species, e.g. initiating “Zugunruhe” or determining the speed of migratory progression, as it indicates time of the year and thus, can be a useful predictor for the phenology of resources (Fig. <a href="animal-migration.html#fig:NDVIpic">3.2</a>). Other, local and short-term factors influencing timing of migration include prevailing weather conditions, e.g. temperature, wind, drought and precipitation, as these factors can significantly influence the costs of the travel ahead or its consequences for survival <span class="citation">(<a href="#ref-Bauer2011">Silke Bauer et al. 2011</a>)</span>. There are also internal cues that serve as a clock or time-keeping mechanism. Additionally, physiological state and developmental stage are important cues as most migrants undergo morphological and physiological changes in preparation for migration and internal signals, e.g. hormone levels, indicate when these changes are completed.
 Migration can be divided into a few major steps – preparation, departure, on the way, and ter-mination – a cycle that might be repeated if migration is suspended at intermittent stop-over sites. Each of these steps potentially requires specific cues and decision rules as the demands on the animal’s physiology and behaviour differ. Similarities might exist across taxonomic groups in how animals deal with each of these steps but differences may also be expected depending on the specific way of mi-grating or their particular environment (Table <a href="timing-of-migration.html#tab:Cues">4.1</a>).</p>
-<div id="preparation" class="section level3">
-<h3><span class="header-section-number">4.2.1</span> Preparation</h3>
-<p>Before actually embarking on migration, most birds (partly) change the composition of their bodies, e.g. increase flight muscles at the expense of leg muscles, atrophy digestive and metabol-ic organs (Piersma &amp; van Gils 2011) and accumulate body stores. Photoperiod is an important external signal for preparations; it initiates “Zugunruhe”, i.e. migratory restlessness (Gwinner 1990), and birds start accumulating body stores, altering their digestive system and building up flight muscles from a particular day length onwards. The specific value of day length, at which these transformations are started, is under strong genetic control (Newton 2008:324).
-However, also birds kept under constant day length for up to several years still showed a cir-cannual rhythm with the right sequence of annual events (migratory fat deposition and restlessness, gonad development, and moult) suggesting that getting into the migratory state is under internal control (Gwinner 1977). But these cycles tend to drift and be either shorter or (most often) longer than a calen-dar year. This internal control is most rigid in long-distance migrants that are normally confronted with most variation in day length.
-Thus, under natural conditions the exact timing of events is most likely determined by a combi-nation of internal and external factors such that the internal system is adjusted by seasonal changes in photoperiod, as has been shown with experiments with extra light or shorter than annual cycles (Newton 2008: 321, 358).</p>
+<div id="preparation" class="section level3 hasAnchor" number="4.2.1">
+<h3><span class="header-section-number">4.2.1</span> Preparation<a href="timing-of-migration.html#preparation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Before actually embarking on migration, most birds (partly) change the composition of their bodies, e.g. increase flight muscles at the expense of leg muscles, atrophy digestive and metabol-ic organs (Piersma &amp; van Gils 2011) and accumulate body stores. Photoperiod is an important external signal for preparations; it initiates “Zugunruhe”, i.e. migratory restlessness (Gwinner 1990), and birds start accumulating body stores, altering their digestive system and building up flight muscles from a particular day length onwards. The specific value of day length, at which these transformations are started, is under strong genetic control (Newton 2008:324).</p>
+<p>However, also birds kept under constant day length for up to several years still showed a cir-cannual rhythm with the right sequence of annual events (migratory fat deposition and restlessness, gonad development, and moult) suggesting that getting into the migratory state is under internal control (Gwinner 1977). But these cycles tend to drift and be either shorter or (most often) longer than a calen-dar year. This internal control is most rigid in long-distance migrants that are normally confronted with most variation in day length.</p>
+<p>Thus, under natural conditions the exact timing of events is most likely determined by a combi-nation of internal and external factors such that the internal system is adjusted by seasonal changes in photoperiod, as has been shown with experiments with extra light or shorter than annual cycles (Newton 2008: 321, 358).</p>
 </div>
-<div id="departure" class="section level3">
-<h3><span class="header-section-number">4.2.2</span> Departure</h3>
-<p>The exact timing of migratory departure is fine-tuned by secondary factors like tempera-ture, wind, rain and food supplies (Newton 2008: 322, 353-354). Birds choose favourable flight condi-tions and preferably leave on days with tail-winds and no rain. In the Swainson’s thrush (Catharus ustu-latus), departure decisions are best predicted by both a high daily temperature (&gt; 20°C) and low wind speeds (&lt; 10 km/h) at the time of presumed take-off. If one of these conditions is not met, the individual will not take off. However, such apparently strict rules also lead to serious errors, e.g. individuals take off at low local winds, and yet ascend into air streams that will push them backwards against their flight direction (Cochran &amp; Wikelski 2005).
-One means by which birds may forecast improving weather condition before they actually occur has been hypothesized to be sensing air pressure changes (Newton 2008: 255, Keeton 1980). In faculta-tive migrants, departure may also be delayed until weather conditions for refuelling deteriorate (Newton 2008: 348).
-The decisions to depart from a stop-over site are likely based on rather simple behavioural rules. Passerines that lose or increase fuel stores at a high rate leave a site quickly, whereas the inter-mediate birds stage the longest (Schaub et al. 2008). Geese use a mixture of endogenous and external cues, with the endogenous cues having a stronger effect as the season progresses (Bauer et al. 2008, Duriez et al. 2009).</p>
+<div id="departure" class="section level3 hasAnchor" number="4.2.2">
+<h3><span class="header-section-number">4.2.2</span> Departure<a href="timing-of-migration.html#departure" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The exact timing of migratory departure is fine-tuned by secondary factors like tempera-ture, wind, rain and food supplies (Newton 2008: 322, 353-354). Birds choose favourable flight condi-tions and preferably leave on days with tail-winds and no rain. In the Swainson’s thrush (<em>Catharus ustulatus</em>), departure decisions are best predicted by both a high daily temperature (&gt; 20°C) and low wind speeds (&lt; 10 km/h) at the time of presumed take-off. If one of these conditions is not met, the individual will not take off. However, such apparently strict rules also lead to serious errors, e.g. individuals take off at low local winds, and yet ascend into air streams that will push them backwards against their flight direction (Cochran &amp; Wikelski 2005).
+One means by which birds may forecast improving weather condition before they actually occur has been hypothesized to be sensing air pressure changes (Newton 2008: 255, Keeton 1980). In facultative migrants, departure may also be delayed until weather conditions for refuelling deteriorate (Newton 2008: 348).</p>
+<p>The decisions to depart from a stop-over site are likely based on rather simple behavioural rules. Passerines that lose or increase fuel stores at a high rate leave a site quickly, whereas the intermediate birds stage the longest (Schaub et al. 2008). Geese use a mixture of endogenous and external cues, with the endogenous cues having a stronger effect as the season progresses <span class="citation">(<a href="#ref-Bauer2008">Silke Bauer, Gienapp, and Madsen 2008</a>)</span>.</p>
 </div>
-<div id="on-the-way" class="section level3">
-<h3><span class="header-section-number">4.2.3</span> On the way</h3>
-<p>Birds use several cues to guide them in the right direction on long-distance migration – for details on them, see under “Orientation”.</p>
+<div id="on-the-way" class="section level3 hasAnchor" number="4.2.3">
+<h3><span class="header-section-number">4.2.3</span> On the way<a href="timing-of-migration.html#on-the-way" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Birds use several cues to guide them in the right direction on long-distance migration – for details on them, see under <a href="#Sec:OrientationNavigation"><strong>??</strong></a>.</p>
 </div>
-<div id="termination" class="section level3">
-<h3><span class="header-section-number">4.2.4</span> Termination</h3>
+<div id="termination" class="section level3 hasAnchor" number="4.2.4">
+<h3><span class="header-section-number">4.2.4</span> Termination<a href="timing-of-migration.html#termination" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>When tested under identical conditions in the lab, the duration of migratory restlessness is longer in long- than in short-distance migrants, even within species. Cross-breeding experiments showed that this is an inherited trait (see also Berthold 1999 for an experiment with hybrids of red-starts). In birds from the same species, those wintering furthest away from the breeding grounds show a tendency to start spring migration earlier. Juvenile blue-winged teal Anas discors caught in autumn, and held captive for a while, migrated, after release at the same site, less far than normal. This shows that the decision to stop is at least partly under genetic control. However, in adult birds the opposite was found, with the migratory restlessness continuing longer than normal when held captive for a while during spring migration (Newton 2008: 343). Also, when held at the breeding location, indigo buntings Passerina cyanea did not migrate after release in spring, whereas the control birds that were displaced 1000 km to the south did. The same was true for white storks Ciconia ciconia reared in captivity and released in a reintroduction programme. In experienced birds, the decision to stop is therefore appar-ently influenced by cues indicating that the familiar locality has been reached.</p>
-<p>If we look at cues that are used by migratory animals other than birds, there are naturally many differ-ences due to the specifics of each species’ migration but also considerable similarities: In all species, preparations for migration involve entrainment to time of the year as all environments are seasonal to some degree and thus, particular times are more suitable for particular activities. Indeed, even for very small levels of seasonality animals should migrate in order to make use of the varying levels of food in different areas. Therefore, the occurrence of photoperiod as a cue in almost all taxa is not surprising.
-As migration is a daunting activity in the life- or annual cycle of most animals, it also requires changes in the body – ranging from the accumulation of energy stores, the build-up of the locomotion apparatus - often at the expense of the digestive and/or reproductive system, to the transformation of a freshwater- to a seawater-adapted life-form or the achievement of a particular developmental stage. Whenever these changes are accomplished, an internal cue is produced indicating that the animal is ready to depart.
-For the actual departure on migration often another external cue is involved, which is usually related to travel conditions, e.g. wind, precipitation, temperature. Thus, animals prefer to depart during periods of favourable conditions, for instance, flying animals wait for tailwinds in their preferred direc-tions; swimming animals use river discharge or sea-currents.<br />
-On-the-way orientation and navigation determines the migration route taken but may also be involved in indicating when migration is to be terminated. Animals heading for a specific location need to recognise this location, which is only an option for experienced animals, whereas naive individuals (e.g. first-time migrants) need to have a genetic programme that signals when to stop. Alternatively, migrations without clear endpoints, e.g. between feeding locations, may involve physiological cues for the termination of migration. Here again, internal signals play a greater role as they indicate when a threshold state is reached, e.g. sufficient body reserves have been accumulated for a subsequent breeding attempt.</p>
+<p>If we look at cues that are used by migratory animals other than birds, there are naturally many differ-ences due to the specifics of each species’ migration but also considerable similarities: In all species, preparations for migration involve entrainment to time of the year as all environments are seasonal to some degree and thus, particular times are more suitable for particular activities. Indeed, even for very small levels of seasonality animals should migrate in order to make use of the varying levels of food in different areas. Therefore, the occurrence of photoperiod as a cue in almost all taxa is not surprising.</p>
+<p>As migration is a daunting activity in the life- or annual cycle of most animals, it also requires changes in the body – ranging from the accumulation of energy stores, the build-up of the locomotion apparatus - often at the expense of the digestive and/or reproductive system, to the transformation of a freshwater- to a seawater-adapted life-form or the achievement of a particular developmental stage. Whenever these changes are accomplished, an internal cue is produced indicating that the animal is ready to depart.</p>
+<p>For the actual departure on migration often another external cue is involved, which is usually related to travel conditions, e.g. wind, precipitation, temperature. Thus, animals prefer to depart during periods of favourable conditions, for instance, flying animals wait for tailwinds in their preferred direc-tions; swimming animals use river discharge or sea-currents.</p>
+<p>On-the-way orientation and navigation determines the migration route taken but may also be involved in indicating when migration is to be terminated. Animals heading for a specific location need to recognise this location, which is only an option for experienced animals, whereas naive individuals (e.g. first-time migrants) need to have a genetic programme that signals when to stop. Alternatively, migrations without clear endpoints, e.g. between feeding locations, may involve physiological cues for the termination of migration. Here again, internal signals play a greater role as they indicate when a threshold state is reached, e.g. sufficient body reserves have been accumulated for a subsequent breeding attempt.</p>
 <table>
 <caption><span id="tab:Cues">Table 4.1: </span>The cues used in various taxa for timing migration</caption>
+<colgroup>
+<col width="2%" />
+<col width="19%" />
+<col width="25%" />
+<col width="27%" />
+<col width="25%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th align="left">X</th>
+<th align="left">Taxon</th>
 <th align="left">Preparation</th>
 <th align="left">Departure</th>
 <th align="left">On.the.way</th>
@@ -272,12 +345,12 @@ On-the-way orientation and navigation determines the migration route taken but m
 <td align="left">Photoperiod, Crowding during immature stages, Habitat deterioration (food, predation or parasitism)</td>
 <td align="left">Favourable flying conditions, e.g. tailwinds</td>
 <td align="left">Time-compensated sun compass</td>
-<td align="left">Migration reduces inhibition to appetitive cues (in mig. bout); depletion of fuel reserves, changes in photoperiod or temperature</td>
+<td align="left">Migration reduces inhibition to appetitive cues (in mig. bout), depletion of fuel reserves, changes in photoperiod or temperature</td>
 </tr>
 <tr class="even">
 <td align="left">Fish</td>
-<td align="left">Reach minimum body size; for some: physiological adaptation to new environment</td>
-<td align="left">Salmon: Autumn river discharge</td>
+<td align="left">Reach minimum body size, for some - physiological adaptation to new environment</td>
+<td align="left">Salmon - Autumn river discharge</td>
 <td align="left">Local food search, or long distance spawning location tracking</td>
 <td align="left">Arrival in locations favourable for spawning</td>
 </tr>
@@ -293,7 +366,7 @@ On-the-way orientation and navigation determines the migration route taken but m
 <td align="left">Photoperiod, Build-up flight apparatus, Reduction digestive system</td>
 <td align="left">Favourable flight conditions (wind, rain, air pressure), Fuelling rate and body stores, Cumulative temperature or related proxy</td>
 <td align="left">Sun compass, magnetic field, skylight polarisation, star pattern, Direction under hormonal control, sometimes responses to local conditions</td>
-<td align="left">Arrival on specific target-location, e.g. breeding or wintering grounds, NaÃ¯ve birds have an inherent migratory period</td>
+<td align="left">Arrival on specific target-location, e.g. breeding or wintering grounds, Naive birds have an inherent migratory period</td>
 </tr>
 <tr class="odd">
 <td align="left">Bats</td>
@@ -307,23 +380,44 @@ On-the-way orientation and navigation determines the migration route taken but m
 <td align="left">No particular (physiological) preparations</td>
 <td align="left">Seasonal changes in temperature, precipitation and water quality but evidence anecdotal, animals follow gradients</td>
 <td align="left">Not much known</td>
-<td align="left"></td>
+<td align="left">unknown</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
-<div id="consequences-of-migration-timing" class="section level2">
-<h2><span class="header-section-number">4.3</span> Consequences of migration timing</h2>
-<p>Please note that we have talked about one aspect of migration timing so far – phenology – but the timing of migration can be characterised by three complementary dimensions – synchrony, phenology, and consistency. Migration phenology describes the timing of migratory steps - arrival, departure and staging times at sites - relative to the phenology of other relevant processes, e.g. temporal availability of key-resources or presence and abundance of other species and populations. At the two extremes, the migrants’ presence on a particular site fully coincides with, e.g. resource peaks (‘matched’) or is completely separated from the availability of resources (‘mismatched’). Migration synchrony describes how wide-spread over time individuals of a population migrate (Fig. 1). At one extreme, all individuals migrate at the same time – synchronously - while at the other, individuals migrate at different times - asynchronously. Specific examples of asynchronous migration include differential migration, where (age-, sex-, or family-)subgroups of a population migrate at different times. Finally, consistency de-scribes how repeatable migration phenology and synchrony are over time - usually over several migra-tions.
+<div id="consequences-of-migration-timing" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Consequences of migration timing<a href="timing-of-migration.html#consequences-of-migration-timing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Please note that we have talked about one aspect of migration timing so far – phenology – but the timing of migration can be characterised by three complementary dimensions – synchrony, phenology, and consistency. Migration phenology describes the timing of migratory steps - arrival, departure and staging times at sites - relative to the phenology of other relevant processes, e.g. temporal availability of key-resources or presence and abundance of other species and populations. At the two extremes, the migrants’ presence on a particular site fully coincides with, e.g. resource peaks (‘matched’) or is completely separated from the availability of resources (‘mismatched’). Migration synchrony describes how wide-spread over time individuals of a population migrate. At one extreme, all individuals migrate at the same time – synchronously - while at the other, individuals migrate at different times - asynchronously. Specific examples of asynchronous migration include differential migration, where (age-, sex-, or family-)subgroups of a population migrate at different times. Finally, consistency de-scribes how repeatable migration phenology and synchrony are over time - usually over several migra-tions.
 These three aspects of migration timing can have different consequences on individual fitness and the dynamics of populations but also on a variety of other processes.</p>
-<p>Resources usually change seasonally but often also at time-scales similar to the visitation of migrants. Therefore, variations in the phenology of migration will lead to a population experiencing on average different resource levels, abundances of competitors and predators (‘phenological match/mismatch’, Johansson et al. (2015)) If, for instance, resource availability at one site changes as a consequence of natural decay or due to finite resources being exhausted, early migrants would benefit from abundant resources compared to late migrants. This is exemplified in a population of Arctic breeding geese, where individuals that arrived at stop-over locations at the peak of vegetation growth had a higher breeding success (Kölzsch et al. 2015).
-Similarly, within-population competition may be alleviated under asynchronous migration while it is fully effective under synchronous migration (Skoglund et al. 2011), e.g. as in the exclusion of competitively inferior individuals from high-quality foraging patches (Beauchamp 2012, Eichhorn et al. 2009). Alterna-tively, synchronous migration can be beneficial if the joint consumption of a resource increases its quality or productivity, as in the case of grazing by migratory geese on a spring stop-over site (Stahl et al. 2006) or the increased productivity of the African savannah through the temporal grazing of migrato-ry herbivores (Holdo et al. 2007).
-The level of predation (incl. hunting) may also change at the time-scale of migrant visitation, e.g. as resulting from seasonal hunting permissions or mobile predators. For instance, hunting on spring-migrating geese in Russia is permitted during 10 days of peak migration and individuals migrating out-side this 10-day hunting window experience much lower mortality risks (Mooij et al. 1999). Similarly, late-migrating sandpipers responded to the arrival of predators (peregrine falcons, Falco peregrinus) on a common stop-over site with behavioural changes, e.g. increased vigilance, reduced foraging and consequently, reduced migration speed – behaviours that early-migrants failed to show (Hope et al. 2014).
-The timing of migration can also influence the degree of gene flow between populations –as a result of either spatial or temporal segregation (Bensch et al. 2009, Moussy et al. 2013, Webster and Marra 2005). A prominent example is the European blackcap (Sylvia atricapilla), in which there is no or very little gene flow between two sub-populations despite them meeting at a common breeding site. This is mainly explained by differences in arrival and onset of breeding between these sub-populations that segregated them temporally and resulted in assortative mating, restricted gene flow and ultimately, phenotypic divergence (Bearhop et al. 2005, Berthold et al. 1992).
-Another process that can be influenced by the timing of migration is the transmission of parasites and the dynamics of diseases: Infections impair the fitness of migrant hosts, e.g. directly through increased mortality but also indirectly through costly immune responses. Disease symptoms may range from fatigue, reduced foraging or movement, which may knock-on to lower fuelling rates, later departure and eventually, in reduced reproductive success or survival. Depending on the proportion of a population being infected and the severity of effects, this may severely influence population demographic rates (Hudson et al. 2002). Depending on the timing of migration, migrants can experience very different levels of parasite pressure because parasite prevalence may vary over time, e.g. resulting from varia-tions in environmental conditions (Reperant et al. 2010), density of potential hosts (Gaidet et al. 2012) or the influx of immunologically naïve individuals, such that there are periods during which transmission is more likely than in others (Hoye et al. 2011).
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:PhenologySynchrony"></span>
+<img src="figures/Fig_PhenologySynchrony.jpg" alt="\label{fig:PhenolSynchrony}. The timing of migration – here exemplarily from a non-breeding site via an intermittent staging to a breeding site – can be characterised by synchrony (left panel) and phenology (right panel). Migration synchrony describes in how far individual migrants depart, stay or arrive at the same time, i.e. synchronously, or at different times, i.e. asynchronously. Migration phenology relates the timing of migration to the phenology of other populations and species, with which migrants interact, e.g. via competition, predation, etc. We exemplarily depicted various degrees of coincidence between migrant visitation and resource availability (upper-right panel) that influence the migrants’ fitness and may range from positive under complete overlap to negative when migrant visitation and resource availability are fully mismatched. From [@Bauer2015]" width="90%" />
+<p class="caption">
+Figure 4.1: . The timing of migration – here exemplarily from a non-breeding site via an intermittent staging to a breeding site – can be characterised by synchrony (left panel) and phenology (right panel). Migration synchrony describes in how far individual migrants depart, stay or arrive at the same time, i.e. synchronously, or at different times, i.e. asynchronously. Migration phenology relates the timing of migration to the phenology of other populations and species, with which migrants interact, e.g. via competition, predation, etc. We exemplarily depicted various degrees of coincidence between migrant visitation and resource availability (upper-right panel) that influence the migrants’ fitness and may range from positive under complete overlap to negative when migrant visitation and resource availability are fully mismatched. From <span class="citation">(<a href="#ref-Bauer2015">Silke Bauer, Lisovski, and Hahn 2016</a>)</span>
+</p>
+</div>
+<p>Resources usually change seasonally but often also at time-scales similar to the visitation of migrants. Therefore, variations in the phenology of migration will lead to a population experiencing on average different resource levels, abundances of competitors and predators (‘phenological match/mismatch’, Johansson et al. (2015)) If, for instance, resource availability at one site changes as a consequence of natural decay or due to finite resources being exhausted, early migrants would benefit from abundant resources compared to late migrants. This is exemplified in a population of Arctic breeding geese, where individuals that arrived at stop-over locations at the peak of vegetation growth had a higher breeding success <span class="citation">(<a href="#ref-Kolzsch2015">Kölzsch et al. 2015</a>)</span>.
+Similarly, within-population competition may be alleviated under asynchronous migration while it is fully effective under synchronous migration (Skoglund et al. 2011), e.g. as in the exclusion of competitively inferior individuals from high-quality foraging patches (Beauchamp 2012, Eichhorn et al. 2009). Alternatively, synchronous migration can be beneficial if the joint consumption of a resource increases its quality or productivity, as in the case of grazing by migratory geese on a spring stop-over site (Stahl et al. 2006) or the increased productivity of the African savannah through the temporal grazing of migratory herbivores (Holdo et al. 2007).</p>
+<p>The level of predation (incl. hunting) may also change at the time-scale of migrant visitation, e.g. as resulting from seasonal hunting permissions or mobile predators. For instance, hunting on spring-migrating geese in Russia is permitted during 10 days of peak migration and individuals migrating out-side this 10-day hunting window experience much lower mortality risks (Mooij et al. 1999). Similarly, late-migrating sandpipers responded to the arrival of predators (peregrine falcons, Falco peregrinus) on a common stop-over site with behavioural changes, e.g. increased vigilance, reduced foraging and consequently, reduced migration speed – behaviours that early-migrants failed to show (Hope et al. 2014).</p>
+<p>The timing of migration can also influence the degree of gene flow between populations –as a result of either spatial or temporal segregation (Bensch et al. 2009, Moussy et al. 2013, Webster and Marra 2005). A prominent example is the European blackcap (Sylvia atricapilla), in which there is no or very little gene flow between two sub-populations despite them meeting at a common breeding site. This is mainly explained by differences in arrival and onset of breeding between these sub-populations that segregated them temporally and resulted in assortative mating, restricted gene flow and ultimately, phenotypic divergence (Bearhop et al. 2005, Berthold et al. 1992).</p>
+<p>Another process that can be influenced by the timing of migration is the transmission of parasites and the dynamics of diseases: Infections impair the fitness of migrant hosts, e.g. directly through increased mortality but also indirectly through costly immune responses. Disease symptoms may range from fatigue, reduced foraging or movement, which may knock-on to lower fuelling rates, later departure and eventually, in reduced reproductive success or survival. Depending on the proportion of a population being infected and the severity of effects, this may severely influence population demographic rates (Hudson et al. 2002). Depending on the timing of migration, migrants can experience very different levels of parasite pressure because parasite prevalence may vary over time, e.g. resulting from varia-tions in environmental conditions (Reperant et al. 2010), density of potential hosts (Gaidet et al. 2012) or the influx of immunologically naïve individuals, such that there are periods during which transmission is more likely than in others (Hoye et al. 2011).
 The further transmission of parasites then depends on infectious individuals actually meeting suscepti-ble (un-infected) individuals to transmit parasites, which might be efficiently prevented when infected and uninfected individuals migrate at different times. For instance in Monarch butterflies (Danaus plex-ippus), individuals infected with a protozoon parasite migrated at lower speeds than their healthy con-specifics (Bradley and Altizer 2005) and such “migratory escape” introduced a barrier to the spread of parasites that consequently reduced parasite-prevalence in the population (Altizer et al. 2011, Hall et al. 2014).</p>
 
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Bauer2008" class="csl-entry">
+Bauer, Silke, Phillip Gienapp, and Jesper Madsen. 2008. <span>“<span class="nocase">The relevance of environmental conditions for departure decision changes en route in migrating geese</span>.”</span> <em>Ecology</em> 89 (7): 1953–60. <a href="https://doi.org/10.1890/07-1101.1">https://doi.org/10.1890/07-1101.1</a>.
+</div>
+<div id="ref-Bauer2015" class="csl-entry">
+Bauer, Silke, Simeon Lisovski, and Steffen Hahn. 2016. <span>“<span class="nocase">Timing is crucial for consequences of migratory connectivity</span>.”</span> <em>Oikos</em> 125 (5): 605–12. <a href="https://doi.org/10.1111/oik.02706">https://doi.org/10.1111/oik.02706</a>.
+</div>
+<div id="ref-Bauer2011" class="csl-entry">
+Bauer, Silke, Bart a Nolet, Jarl Giske, Jason W Chapman, Susanne Åkesson, Anders Hedenström, and John M Fryxell. 2011. <span>“<span class="nocase">Cues and decision rules in animal migration</span>.”</span> In <em>Animal Migration: A Synthesis</em>, edited by E. J. Milner-Gulland, John M. Fryxell, and Anthony R. E. Sinclair, 68–87. August 2015. Oxford University Press. <a href="https://doi.org/10.1093/acprof:oso/9780199568994.001.0001">https://doi.org/10.1093/acprof:oso/9780199568994.001.0001</a>.
+</div>
+<div id="ref-Kolzsch2015" class="csl-entry">
+Kölzsch, Andrea, Silke Bauer, Rob de Boer, Larry Griffin, David Cabot, Klaus-Michael Exo, Henk P. van der Jeugd, and Bart A. Nolet. 2015. <span>“<span class="nocase">Forecasting spring from afar? Timing of migration and predictability of phenology along different migration routes of an avian herbivore</span>.”</span> Edited by Stuart Bearhop. <em>Journal of Animal Ecology</em> 84 (1): 272–83. <a href="https://doi.org/10.1111/1365-2656.12281">https://doi.org/10.1111/1365-2656.12281</a>.
 </div>
 </div>
             </section>
@@ -332,11 +426,10 @@ The further transmission of parasites then depends on infectious individuals act
         </div>
       </div>
 <a href="animal-migration.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="orientation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="orientation-and-navigation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -355,6 +448,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -375,6 +469,10 @@ gitbook.start({
 "text": null
 },
 "download": ["MigrationCourse.pdf", "MigrationCourse.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }
@@ -388,7 +486,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');
