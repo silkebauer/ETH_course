@@ -1,7 +1,7 @@
 --- 
 title: "Handout and background material for ETHZ course 'Animal Migration and research in field ornithology'"
 author: "Silke Bauer & Fränzi Korner-Nievergelt"
-date: "`r Sys.Date()`"
+date: "2024-07-03"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
