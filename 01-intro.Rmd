@@ -66,9 +66,9 @@ Location: [Room Aquila at the Swiss Ornithological Institute, Seerose 1, 6204 Se
 ### Course day 2: Friday, 6 September 2024 at ETH Zürich 
 Location: ETH seminar room CHN E 46 
 
-* 9:15 – 10:00: Discussion of exercise linear regression  
+* 9:15 – 10:00: Discussion of exercise linear regression  (FK)
 
-* 10:15 - 11:00: Discussion of exercise survival estimation using mark-recapture modelling
+* 10:15 - 11:00: Discussion of exercise survival estimation using mark-recapture modelling (FK)
 
 * 11:15 – 12:00: Lecture 3: Modelling bird migration (lecture & practical, SB)
  + State-dependent migration models
