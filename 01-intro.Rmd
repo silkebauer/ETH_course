@@ -94,7 +94,7 @@ we need to take weather conditions into account and may need to re-adjust.
 
 * Afternoon:
 
-* Lecture 6: Methods for studying animal migration (SB)
+* Lecture 4: Methods for studying animal migration (SB)
    + Moon-watching
    + Satellite telemetry
    + GPS loggers
@@ -103,7 +103,7 @@ we need to take weather conditions into account and may need to re-adjust.
    + Radar
    
    
-* Lecture 7: Migration in the life-cycle of a bird (FK)
+* Lecture 5: Migration in the life-cycle of a bird (FK)
 
 * Presentations & discussion of 'homework' papers
   + Give a brief overview of overarching questions addressed in the paper
@@ -122,8 +122,8 @@ we need to take weather conditions into account and may need to re-adjust.
 
 * Afternoon 
 
-* Lecture 8: Timing of migration (SB)
-* Lecture 9: Orientation (FK)
+* Lecture 6: Timing of migration (SB)
+* Lecture 7: Orientation (FK)
 
 * Project work
 
@@ -138,7 +138,7 @@ we need to take weather conditions into account and may need to re-adjust.
 * Afternoon
 * Continue project work 
 
-* Lecture 10: Climate change and other threats to migrating animals (SB)
+* Lecture 8: Climate change and other threats to migrating animals (SB)
 
 
 ### Course day 6: Thursday, 12 September 2024
@@ -148,7 +148,7 @@ we need to take weather conditions into account and may need to re-adjust.
 * Continue project work 
 * Prepare final presentation
 
-* Lecture 11: Climate change and other threats to Swiss breeding birds (FK)
+* Lecture 9: Climate change and other threats to Swiss breeding birds (FK)
 
 
 
