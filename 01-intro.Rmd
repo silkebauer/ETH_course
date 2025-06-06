@@ -37,13 +37,22 @@ Within the student projects, we will introduce and apply important **theoretical
 
 The course consists of lectures, project work and excursions.
 
-### Prepatory days 1 & 2: Thursday and Friday, 5-6 September 2024 in Sempach and Zürich
+### Prepatory days: 2-5 September 2025 at Swiss Ornithological Institute Sempach and ETH Zürich
 
 
-### Course day 1: Thursday, 5 September 2024 in Sempach
+
+
+
+Travel information
+•	To Sempach: Travel by train is around 1.5h from Zürich HB (www.sbb.ch). The nearest train station is Sempach-Neuenkirch, from which you can either walk (15-20mins) to the visitor center of the Swiss Ornithological Institute or take a bus to “Sempach Vogelwarte”.
+
+•	Arrival in La Barmaz. We meet at the train station in Champéry on Monday 8 September 2025 at 13 :45h. Please organise your travel to Champery yourself.
+
+
+### Course day 1: Tuesday, 2 September 2024 in Sempach
+Location: [Room Schulungsraum Besuchszentrum at the Swiss Ornithological Institute, 6204 Sempach](https://www.vogelwarte.ch/de/besuch/anreise). We will meet at the main entrance of the visitor centre at 10:00.  
 
 * 10:00 - 11:00 Welcome and Introduction
-Location: [Room Schulungsraum Besuchszentrum at the Swiss Ornithological Institute, 6204 Sempach](https://www.vogelwarte.ch/de/besuch/anreise). We will meet at the main entrance of the visitor centre at 10:00.  
 
   + Introduction of all
   + Overview of the course aims and content
@@ -63,8 +72,9 @@ Location: [Room Schulungsraum Besuchszentrum at the Swiss Ornithological Institu
 
 
 
-### Course day 2: Friday, 6 September 2024 at ETH Zürich 
-Location: ETH seminar room CHN E 46 
+### Course days 2-4: Wednesday-Friday, 3-5 September 2025 at ETH Zürich 
+Location: ETH seminar room **CHN D 46**  
+
 
 * 9:15 – 10:00: Discussion of exercise linear regression  (FK)
 
@@ -83,12 +93,12 @@ Location: ETH seminar room CHN E 46
 * 13:00 - 16:00: Preparations project work (find your partner, search literature, install R-packages) (SB, FK)
 
 
-### Excursion to Col de Bretolet: Mon-Fri 9-13 September 2024
+### Excursion to Col de Bretolet: Mon-Fri 8-12 September 2025
 
 The schedule of lectures, excursions and project work in Barmaz will be kept flexible as
 we need to take weather conditions into account and may need to re-adjust.
 
-### Course day 3: Monday, 9 September 2024
+### Course day 5: Monday, 8 September 2024
 
 * Morning/ early afternoon: Travel to Barmaz (detailed travel suggestions will be provided separately)
 
@@ -112,13 +122,12 @@ we need to take weather conditions into account and may need to re-adjust.
   + Discuss 
 
 
-### Course day 4: Tuesday, 10 September 2024
+### Course day 6: Tuesday, 9 September 2025
 
 
 * Morning: Hike to field station at Col de Bretolet
   + Field methods
   + Data 
-
 
 * Afternoon 
 
@@ -128,8 +137,7 @@ we need to take weather conditions into account and may need to re-adjust.
 * Project work
 
 
-
-### Course day 5: Wednesday, 11 September 2024
+### Course day 6: Wednesday, 10 September 2025
 
 * Morning: Hike to field station at Col de Bretolet
   + Field methods
@@ -141,7 +149,7 @@ we need to take weather conditions into account and may need to re-adjust.
 * Lecture 8: Climate change and other threats to migrating animals (SB)
 
 
-### Course day 6: Thursday, 12 September 2024
+### Course day 7: Thursday, 11 September 2025
 
 * Morning: Hike to field station at Col de Bretolet (optional)
  
@@ -152,7 +160,7 @@ we need to take weather conditions into account and may need to re-adjust.
 
 
 
-### Course day 7: Friday, 13 September 2024
+### Course day 8: Friday, 12 September 2025
 
 * Morning
   + Presentations of project work
