@@ -40,16 +40,11 @@ The course consists of lectures, project work and excursions.
 ### Prepatory days: 2-5 September 2025 at Swiss Ornithological Institute Sempach and ETH Zürich
 
 
-
-
-
 Travel information
 •	To Sempach: Travel by train is around 1.5h from Zürich HB (www.sbb.ch). The nearest train station is Sempach-Neuenkirch, from which you can either walk (15-20mins) to the visitor center of the Swiss Ornithological Institute or take a bus to “Sempach Vogelwarte”.
 
-•	Arrival in La Barmaz. We meet at the train station in Champéry on Monday 8 September 2025 at 13 :45h. Please organise your travel to Champery yourself.
 
-
-### Course day 1: Tuesday, 2 September 2024 in Sempach
+### Course day 1: Tuesday, 2 September 2025 in Sempach
 Location: [Room Schulungsraum Besuchszentrum at the Swiss Ornithological Institute, 6204 Sempach](https://www.vogelwarte.ch/de/besuch/anreise). We will meet at the main entrance of the visitor centre at 10:00.  
 
 * 10:00 - 11:00 Welcome and Introduction
@@ -71,44 +66,26 @@ Location: [Room Schulungsraum Besuchszentrum at the Swiss Ornithological Institu
 * 15:45 - 17:00 Overview of student projects and papers to be read (information SB, FK)
 
 
-* 10:00 Lecture: Field methods (Fränzi)
-   + Methods for studying breeding biology and population dynamics
-   
-* 11:00 Lecture: Tracking methods (Silke)
-   + Moon-watching
-   + Satellite telemetry
-   + GPS loggers
-   + Geolocators
-   + Multi-sensor logger
-   + Radar
+
+### Course day 2: Wednesday, 3 September 2025 
+
+Location: ETH Zürich, room LEE C 114
+ 
+
+* 9:15 - 17:00
 
 
-* 12:00 Lunch break
+### Course day 3: Thursday, 4 September 2025 
 
-* 13:30 Student projects and paper discussion
-  + Short introduction to student projects (Fränzi & Silke)
-  + Paper discussion in groups and presentation
-  + project work
+Location: ETH Zürich, room LEE C 114
 
-* 16:00 Lecture: Migration in the life-cycle of a bird (Fränzi)
+* 9:15 - 17:00
 
-* 17:00 end of course
+### Course day 4: Friday, 5 September 2025 
 
-* 9:15 – 10:00: Discussion of exercise linear regression  (FK)
+Location: ETH Zürich, room LEE C 114
 
-* 10:15 - 11:00: Discussion of exercise survival estimation using mark-recapture modelling (FK)
-
-* 11:15 – 12:00: Lecture 3: Modelling bird migration (lecture & practical, SB)
- + State-dependent migration models
-   -	Basic ingredients and principles of state-dependent models
-   -	Backward- forward 
-   -	Parameterisations
-   -	Typical research questions
-   -	Examples of applications of migration model
-
-* 12:00 – 13:00: Lunch break
-
-* 13:00 - 16:00: Preparations project work (find your partner, search literature, install R-packages) (SB, FK)
+* 9:15 - 17:00
 
 
 ### Excursion to Col de Bretolet: Mon-Fri 8-12 September 2025
