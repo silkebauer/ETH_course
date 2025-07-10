@@ -28,6 +28,8 @@ For **practical and field methods**, we will introduce some of the most importan
 * morphological and physiological measurements,
 * tracking birds
 
+
+**Student projects** are ideally conducted in groups of 2-4 persons. We expect students to choose a project during the first two days of the course (see list of potential projects \@ref(Sec:StudentProjects)). There are several slots for work on these projects over the course week and we expect students to give a brief (approx. 20 min) presentation on Friday, detailing the ecological question behind the project, the analytical approach chosen, the results obtained and a discussion. 
 Within the student projects, we will introduce and apply important **theoretical approaches and analytical methods**
 
 
@@ -35,37 +37,39 @@ Within the student projects, we will introduce and apply important **theoretical
 
 The course consists of lectures, project work and excursions.
 
-### Course day 1: Tuesday, 3 May 2022
+### Prepatory days: 2-5 September 2025 at Swiss Ornithological Institute Sempach and ETH Zürich
 
-* 10:00 Welcome
-Location: [Room Aquila at the Swiss Ornithological Institute, Seerose 1, 6204 Sempach](https://www.vogelwarte.ch/de/besuch/anreise). Note that we are in the red office building (not in the brown visitor centre).  
 
-  + Provide an overview of the course aims
-  + Introduction of students and their expectations from the course
+
+
+
+Travel information
+•	To Sempach: Travel by train is around 1.5h from Zürich HB (www.sbb.ch). The nearest train station is Sempach-Neuenkirch, from which you can either walk (15-20mins) to the visitor center of the Swiss Ornithological Institute or take a bus to “Sempach Vogelwarte”.
+
+•	Arrival in La Barmaz. We meet at the train station in Champéry on Monday 8 September 2025 at 13 :45h. Please organise your travel to Champery yourself.
+
+
+### Course day 1: Tuesday, 2 September 2024 in Sempach
+Location: [Room Schulungsraum Besuchszentrum at the Swiss Ornithological Institute, 6204 Sempach](https://www.vogelwarte.ch/de/besuch/anreise). We will meet at the main entrance of the visitor centre at 10:00.  
+
+* 10:00 - 11:00 Welcome and Introduction
+
+  + Introduction of all
+  + Overview of the course aims and content
+  + Student expectations from the course
   + What we expect from you and your projects
-  + How to use slack and zoom
   + Ask us anything!
   
-* 10:15 Lecture 1: Characteristics of birds with focus on adaptations to flight (Fränzi)
+* 11:00 Lecture 1: Introduction to animal migration (SB)
 
-* 11:00 Lecture 2: Intro Animal migration (Silke)
+* 12:00 - 13:00 Lunch break  
 
-1/2 day excursion to Wauwilermoos
-* 13:31h: train from Sempach-Neuenkirch to Wauwil (arrival 13:57h)
+* 13:00 - 14:30 Visitor centre (self study)
 
-* 14:00 Meeting at the railway station Wauwil. We will hike around 5-7km. Wear weather-appropriate clothes and good shoes. Further, if available, bring binoculars, scope and a bird identification guide.   
+* 14:45 - 15:45 Lecture 2: Characteristics of birds and introduction to expected species (FK)
 
-* During the excursion, we will 
-   + Give an introduction to bird identification
-   + Identify common bird species
-   + Demonstrate how to take morphometric measures
-   + Show tracking devices
-   
-* 16:30 end of excursion
+* 15:45 - 17:00 Overview of student projects and papers to be read (information SB, FK)
 
-
-### Course day 2: Wednesday, 11 May 2022
-Location: [Room Aquila at the Swiss Ornithological Institute, Seerose 1, 6204 Sempach](https://www.vogelwarte.ch/de/besuch/anreise). Note that we are in the red office building (not in the brown visitor centre). 
 
 * 10:00 Lecture: Field methods (Fränzi)
    + Methods for studying breeding biology and population dynamics
@@ -90,35 +94,85 @@ Location: [Room Aquila at the Swiss Ornithological Institute, Seerose 1, 6204 Se
 
 * 17:00 end of course
 
+* 9:15 – 10:00: Discussion of exercise linear regression  (FK)
 
-### Course day 3: Tuesday, 17 May 2022
+* 10:15 - 11:00: Discussion of exercise survival estimation using mark-recapture modelling (FK)
 
-Excursion to Flachsee (guided by Silke Bauer, Fränzi Korner-Nievergelt and Christian Schano)
-
-Meeting 8:20h at bus station Unterlunkhofen. 
-
-* Zurich HB departure by train S5 7:39 -> Birmensdorf arrival 7:55, Birmensdorf departure by bus 245 8:00h -> Unterlunkhofen arrival 8:17
-
-We will hike around 6-7km. Bring warm cloths and good shoes. Further, if you have, bring binoculars, scope and a bird identification guide.
-
-* Unterlunkhofen 16:11 -> Birmensdorf arrival 16:28, Birmensdorf departure 16:35 -> Zurich HB arrival 16:51h
-
-
-### Course day 4: Tuesday, 24 May 2022
-
-Location: [Room Aquila at the Swiss Ornithological Institute, Seerose 1, 6204 Sempach](https://www.vogelwarte.ch/de/besuch/anreise). Note that we are in the red office building (not in the brown visitor centre). 
-
-* 10:00 Lecture: Timing (Silke) & Migration models (Silke)
-  + State-dependent migration models
+* 11:15 – 12:00: Lecture 3: Modelling bird migration (lecture & practical, SB)
+ + State-dependent migration models
    -	Basic ingredients and principles of state-dependent models
    -	Backward- forward 
    -	Parameterisations
    -	Typical research questions
    -	Examples of applications of migration model
 
-* 11:00 Lecture: Orientation (Fränzi)
+* 12:00 – 13:00: Lunch break
+
+* 13:00 - 16:00: Preparations project work (find your partner, search literature, install R-packages) (SB, FK)
+
+
+### Excursion to Col de Bretolet: Mon-Fri 8-12 September 2025
+
+The schedule of lectures, excursions and project work in Barmaz will be kept flexible as
+we need to take weather conditions into account and may need to re-adjust.
+
+### Course day 5: Monday, 8 September 2024
+
+* Morning/ early afternoon: Travel to Barmaz (detailed travel suggestions will be provided separately)
+
+* Afternoon:
+
+* Lecture 4: Methods for studying animal migration (SB)
+   + Moon-watching
+   + Satellite telemetry
+   + GPS loggers
+   + Geolocators
+   + Multi-sensor logger
+   + Radar
+   
+   
+* Lecture 5: Migration in the life-cycle of a bird (FK)
+
+* Presentations & discussion of 'homework' papers
+  + Give a brief overview of overarching questions addressed in the paper
+  + Provide background to approach used 
+  + Show/Explain main results
+  + Discuss 
+
+
+### Course day 6: Tuesday, 9 September 2025
+
+
+* Morning: Hike to field station at Col de Bretolet
+  + Field methods
+  + Data 
+
+* Afternoon 
+
+* Lecture 6: Timing of migration (SB)
+* Lecture 7: Orientation (FK)
+
+* Project work
+
+
+### Course day 6: Wednesday, 10 September 2025
+
+* Morning: Hike to field station at Col de Bretolet
+  + Field methods
+  + Data 
+
+* Afternoon
+* Continue project work 
+
+* Lecture 8: Climate change and other threats to migrating animals (SB)
+
+
+### Course day 7: Thursday, 11 September 2025
+
+* Morning: Hike to field station at Col de Bretolet (optional)
  
-* 12:00 Lunch break
+* Continue project work 
+* Prepare final presentation
 
 * 13:30 Visit at the visitor centre
 
@@ -127,9 +181,16 @@ Location: [Room Aquila at the Swiss Ornithological Institute, Seerose 1, 6204 Se
 * 16:00-17:00 Project work
 
 
-### Course day 5: Wednesday, 25 May 2022
 
-Location: [Room Aquila at the Swiss Ornithological Institute, Seerose 1, 6204 Sempach](https://www.vogelwarte.ch/de/besuch/anreise). Note that we are in the red office building (not in the brown visitor centre).
+### Course day 8: Friday, 12 September 2025
+
+* Morning
+  + Presentations of project work
+  + Summary of course & take Home Message (FK & SB)
+  + Student feedback
+
+* Around noon - return home
+
 
  * 10:00 Continue project work 
  
@@ -145,8 +206,8 @@ Location: [Room Aquila at the Swiss Ornithological Institute, Seerose 1, 6204 Se
 
 ## Preparations
 
-We ask students to prepare for the course by reading at least two papers - one general paper and one specific research paper (see below) - and to introduce the key messages of these papers to your fellow students during the course (for guidelines to reading and summarizing papers, see \@ref(Sec:StudentProjects). 
-Please let us know (via email) until **26 April 2022** which papers you choose and also send us up to three questions that you would like to have answered during the course.
+To start the project work, we will ask students to read at least two papers - one general paper and one specific research paper and to introduce the key messages of these papers to your fellow students in the first days in the field (for guidelines to reading and summarizing papers, see Chapter Student's projects. 
+The specific paper may be chosen to fit the topic of the project work (see also specific recommendations at the project descriptions). 
 
 
 **General papers, reviews, synthesis**
@@ -160,7 +221,7 @@ Please let us know (via email) until **26 April 2022** which papers you choose a
 - [@Knudsen2011] - Climate change and bird migration
 - [@Runge2014] - Conservation of mobile species   
 - [@Chapman2015a] - insect migration review  
-- [@Runge2015] - global conervation of migratory birds  
+- [@Runge2015] - global conservation of migratory birds  
 
 **Specific research papers**
 

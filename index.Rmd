@@ -9,13 +9,13 @@ biblio-style: apalike
 link-citations: yes
 description: "This is a handout for the ETH migration course at Col de Bretolet."
 output:
-  bookdown::gitbook:
-    config:
-      toc:
-        before: |
-          <li><a href="./">Handout ETH course Migration ecology and methods in field ornithology</a></li>
-        after: |
-          <li><a href="https://github.com/silkebauer/ETH_course" target="blank">Published with bookdown</a></li>
+   bookdown::gitbook:
+     config:
+       toc:
+         before: |
+           <li><a href="./">Handout ETH course Migration ecology and methods in field ornithology</a></li>
+         after: |
+           <li><a href="https://github.com/silkebauer/ETH_course" target="blank">Published with bookdown</a></li>
 
 #      download: ["pdf", "epub"]
 #  bookdown::pdf_book:
@@ -31,34 +31,27 @@ output:
 
 # General information
 
-In normal times, we would hold the course at the Col de Bretolet with visits to the bird ringing station. Unfortunately, the regulations and recommendations with regard to Covid19 do not allow us to hold the course in its traditional format and we have come up with an alternative that still contains lectures and student work but only one-day or half-day excursions. Lectures may be followed in Sempach or remotely via zoom; student work can also be done in person in Sempach or remotely via slack (see below).
-We hope that you can safely enjoy the course in this alternative format and we hope that we can still bring across the fascination of migration. 
+The course consists of lectures, excursions, seminars and project work and the approximate schedule in 2025 is as follows:
+
+* 2.-5. September 2025: preparatory days at the Swiss Ornithological Institute in Sempach
+and ETH Zürich
+* 8.-12. September 2025: Excursion to Col de Bretolet. 
 
 
-**Lectures** can be followed in person at the Swiss Ornithological Institute in Sempach or via zoom (link provided via email).
-How to get there:
+**Preparatory days in Sempach and ETH Zürich 2-5 September 2025.** 
+In these two days, we will give introductory lectures to the theme of the course, introduce the student projects and to most important bird species that we likely see at the Bretolet. 
+
+How to get to Sempach:
 
 * Travel by train to Sempach-Neuenkirch
-* From the train station, follow the signposts to "Vogelwarte" - it's a 10 min walk
-* Enter the red office building on the right-hand side of the street and follow the signs within the building
+* From the train station, follow the signposts to "Vogelwarte" - it's an easy 10 min walk
+* Enter the red office building on the right-hand side of the street and follow the signs within the building.
+
+In Zürich, we will likely be at ETH in seminar room CHN D 46.
 
 
-**Excursions** will take place as half-day or day excursion doable by public transport from Zurich main station.
+**Excursion to Col de Bretolet 8-12 September 2025.** 
+We will meet on Monday, 8 September 2025 at 13:30h, at the train station in Champery and drive together to Barmaz. Please organise your travel to Champery individually - we will later provide a suggestion. 
+In Barmaz, we will stay in a simple hostel with dormitories and breakfast and dinner provided, i.e. you need to bring your own lunch for those 5 days. 
 
-
-**Student projects** are ideally conducted in groups of 2-4 persons. We expect students to choose a project during the first two days of the course (see list of potential projects \@ref(Sec:StudentProjects)). There are several slots for work on these projects over the course week and we expect students to give a brief (approx. 20 min) presentation on Friday, detailing the ecological question behind the project, the analytical approach chosen, the results obtained and a discussion. 
-
-
-## Online lectures via zoom - a brief how-to
-
-We will send a link for the zoom lectures and explain a few useful features during the first lecture on Monday.  
-
-## Collaborating via Slack
-
-You will receive an invitation from us to join slack and the workspace ETH_MigrationCourse. Slack is a collaboration app that you can either use as a desktop- or an browser-based app. Go to [link](https://slack.com) to see more details and to access it.
-We will give a brief introduction on the first day on how we envisage to interact with you via slack.
-
-
-
-
-
+Travel and accommodation costs will be partly covered by ETH. We will communicate how to get reimbursed during the course. 

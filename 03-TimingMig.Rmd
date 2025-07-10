@@ -1,4 +1,4 @@
-# Timing of migration {#Sec:TimingMigration}
+# Timing of migration
 ## Why is timing important?
 
 The timing of migration (and other life-history activities) is widely considered to have significant fitness consequences  (Forrest & Miller-Rushing 2010, Miller-Rushing & et al. 2010). Particularly in seasonal environments, timing is the all-dominant predictor of success – for instance migration, growth or repro-duction should coincide with favourable conditions and avoid unfavourable periods. Thus, such activities need to be initiated within a specific – often very restricted – timeframe. 
@@ -46,7 +46,7 @@ cues <- data.frame(read.csv("tables/Table_Cues.csv", h=T, sep=";"))
 knitr::kable(
   head(cues, 20), caption = "\\label{tab:Cues}The cues used in various taxa for timing migration",
   format.args = list(width = 30),
-  booktabs = TRUE,
+  booktabs = TRUE
 )
 ```
 

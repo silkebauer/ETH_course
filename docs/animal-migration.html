@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 3 Animal migration | Handout and background material for ETHZ course ‘Animal Migration and research in field ornithology’</title>
   <meta name="description" content="This is a handout for the ETH migration course at Col de Bretolet." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 3 Animal migration | Handout and background material for ETHZ course ‘Animal Migration and research in field ornithology’" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="This is a handout for the ETH migration course at Col de Bretolet." />
   
@@ -24,7 +23,7 @@
 <meta name="author" content="Silke Bauer &amp; Fränzi Korner-Nievergelt" />
 
 
-<meta name="date" content="2021-08-18" />
+<meta name="date" content="2025-07-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,8 +31,9 @@
   
   
 <link rel="prev" href="introduction.html"/>
-<link rel="next" href="Sec-TimingMigration.html"/>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link rel="next" href="timing-of-migration.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -49,25 +49,24 @@
 
 
 
-
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -87,13 +86,13 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -106,7 +105,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -118,6 +117,34 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 </head>
@@ -135,100 +162,117 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">Handout ETH course Migration ecology and methods in field ornithology</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> General information</a><ul>
-<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#online-lectures-via-zoom---a-brief-how-to"><i class="fa fa-check"></i><b>1.1</b> Online lectures via zoom - a brief how-to</a></li>
-<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#collaborating-via-slack"><i class="fa fa-check"></i><b>1.2</b> Collaborating via Slack</a></li>
-</ul></li>
-<li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a><ul>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> General information</a></li>
+<li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="introduction.html"><a href="introduction.html#course-aims"><i class="fa fa-check"></i><b>2.1</b> Course aims</a></li>
-<li class="chapter" data-level="2.2" data-path="introduction.html"><a href="introduction.html#course-schedule"><i class="fa fa-check"></i><b>2.2</b> Course schedule</a><ul>
-<li class="chapter" data-level="2.2.1" data-path="introduction.html"><a href="introduction.html#monday"><i class="fa fa-check"></i><b>2.2.1</b> Monday</a></li>
-<li class="chapter" data-level="2.2.2" data-path="introduction.html"><a href="introduction.html#tuesday"><i class="fa fa-check"></i><b>2.2.2</b> Tuesday</a></li>
-<li class="chapter" data-level="2.2.3" data-path="introduction.html"><a href="introduction.html#wednesday"><i class="fa fa-check"></i><b>2.2.3</b> Wednesday</a></li>
-<li class="chapter" data-level="2.2.4" data-path="introduction.html"><a href="introduction.html#thursday"><i class="fa fa-check"></i><b>2.2.4</b> Thursday</a></li>
-<li class="chapter" data-level="2.2.5" data-path="introduction.html"><a href="introduction.html#friday"><i class="fa fa-check"></i><b>2.2.5</b> Friday</a></li>
+<li class="chapter" data-level="2.2" data-path="introduction.html"><a href="introduction.html#course-schedule"><i class="fa fa-check"></i><b>2.2</b> Course schedule</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="02-AnimalMigration.html"><a href="#prepatory-days-2-5-september-2025-at-swiss-ornithological-institute-sempach-and-eth-z%C3%BCrich"><i class="fa fa-check"></i><b>2.2.1</b> Prepatory days: 2-5 September 2025 at Swiss Ornithological Institute Sempach and ETH Zürich</a></li>
+<li class="chapter" data-level="2.2.2" data-path="introduction.html"><a href="introduction.html#course-day-1-tuesday-2-september-2024-in-sempach"><i class="fa fa-check"></i><b>2.2.2</b> Course day 1: Tuesday, 2 September 2024 in Sempach</a></li>
+<li class="chapter" data-level="2.2.3" data-path="introduction.html"><a href="introduction.html#excursion-to-col-de-bretolet-mon-fri-8-12-september-2025"><i class="fa fa-check"></i><b>2.2.3</b> Excursion to Col de Bretolet: Mon-Fri 8-12 September 2025</a></li>
+<li class="chapter" data-level="2.2.4" data-path="introduction.html"><a href="introduction.html#course-day-5-monday-8-september-2024"><i class="fa fa-check"></i><b>2.2.4</b> Course day 5: Monday, 8 September 2024</a></li>
+<li class="chapter" data-level="2.2.5" data-path="introduction.html"><a href="introduction.html#course-day-6-tuesday-9-september-2025"><i class="fa fa-check"></i><b>2.2.5</b> Course day 6: Tuesday, 9 September 2025</a></li>
+<li class="chapter" data-level="2.2.6" data-path="introduction.html"><a href="introduction.html#course-day-6-wednesday-10-september-2025"><i class="fa fa-check"></i><b>2.2.6</b> Course day 6: Wednesday, 10 September 2025</a></li>
+<li class="chapter" data-level="2.2.7" data-path="introduction.html"><a href="introduction.html#course-day-7-thursday-11-september-2025"><i class="fa fa-check"></i><b>2.2.7</b> Course day 7: Thursday, 11 September 2025</a></li>
+<li class="chapter" data-level="2.2.8" data-path="introduction.html"><a href="introduction.html#course-day-8-friday-12-september-2025"><i class="fa fa-check"></i><b>2.2.8</b> Course day 8: Friday, 12 September 2025</a></li>
 </ul></li>
 <li class="chapter" data-level="2.3" data-path="introduction.html"><a href="introduction.html#preparations"><i class="fa fa-check"></i><b>2.3</b> Preparations</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="animal-migration.html"><a href="animal-migration.html"><i class="fa fa-check"></i><b>3</b> Animal migration</a><ul>
+<li class="chapter" data-level="3" data-path="animal-migration.html"><a href="animal-migration.html"><i class="fa fa-check"></i><b>3</b> Animal migration</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="animal-migration.html"><a href="animal-migration.html#what-is-migration"><i class="fa fa-check"></i><b>3.1</b> What is migration?</a></li>
 <li class="chapter" data-level="3.2" data-path="animal-migration.html"><a href="animal-migration.html#why-do-birds-migrate"><i class="fa fa-check"></i><b>3.2</b> Why do birds migrate?</a></li>
-<li class="chapter" data-level="3.3" data-path="animal-migration.html"><a href="animal-migration.html#terminology-of-specific-migration-patterns"><i class="fa fa-check"></i><b>3.3</b> Terminology of specific migration patterns</a><ul>
+<li class="chapter" data-level="3.3" data-path="animal-migration.html"><a href="animal-migration.html#terminology-of-specific-migration-patterns"><i class="fa fa-check"></i><b>3.3</b> Terminology of specific migration patterns</a>
+<ul>
 <li class="chapter" data-level="3.3.1" data-path="animal-migration.html"><a href="animal-migration.html#characterisation-of-migration-according-to-distances-covered"><i class="fa fa-check"></i><b>3.3.1</b> Characterisation of migration according to distances covered</a></li>
 <li class="chapter" data-level="3.3.2" data-path="animal-migration.html"><a href="animal-migration.html#characterisation-of-migration-according-to-daytime-of-travel"><i class="fa fa-check"></i><b>3.3.2</b> Characterisation of migration according to daytime of travel</a></li>
 <li class="chapter" data-level="3.3.3" data-path="animal-migration.html"><a href="animal-migration.html#characterisation-of-migration-according-to-larger-scale-patterns-of-migratory-bouts"><i class="fa fa-check"></i><b>3.3.3</b> Characterisation of migration according to larger-scale patterns of migratory bouts</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="Sec-TimingMigration.html"><a href="Sec-TimingMigration.html"><i class="fa fa-check"></i><b>4</b> Timing of migration</a><ul>
-<li class="chapter" data-level="4.1" data-path="Sec-TimingMigration.html"><a href="Sec-TimingMigration.html#why-is-timing-important"><i class="fa fa-check"></i><b>4.1</b> Why is timing important?</a></li>
-<li class="chapter" data-level="4.2" data-path="Sec-TimingMigration.html"><a href="Sec-TimingMigration.html#what-determines-the-timing-of-migratory-steps-cues"><i class="fa fa-check"></i><b>4.2</b> What determines the timing of migratory steps? Cues!</a><ul>
-<li class="chapter" data-level="4.2.1" data-path="Sec-TimingMigration.html"><a href="Sec-TimingMigration.html#preparation"><i class="fa fa-check"></i><b>4.2.1</b> Preparation</a></li>
-<li class="chapter" data-level="4.2.2" data-path="Sec-TimingMigration.html"><a href="Sec-TimingMigration.html#departure"><i class="fa fa-check"></i><b>4.2.2</b> Departure</a></li>
-<li class="chapter" data-level="4.2.3" data-path="Sec-TimingMigration.html"><a href="Sec-TimingMigration.html#on-the-way"><i class="fa fa-check"></i><b>4.2.3</b> On the way</a></li>
-<li class="chapter" data-level="4.2.4" data-path="Sec-TimingMigration.html"><a href="Sec-TimingMigration.html#termination"><i class="fa fa-check"></i><b>4.2.4</b> Termination</a></li>
+<li class="chapter" data-level="4" data-path="timing-of-migration.html"><a href="timing-of-migration.html"><i class="fa fa-check"></i><b>4</b> Timing of migration</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="timing-of-migration.html"><a href="timing-of-migration.html#why-is-timing-important"><i class="fa fa-check"></i><b>4.1</b> Why is timing important?</a></li>
+<li class="chapter" data-level="4.2" data-path="timing-of-migration.html"><a href="timing-of-migration.html#what-determines-the-timing-of-migratory-steps-cues"><i class="fa fa-check"></i><b>4.2</b> What determines the timing of migratory steps? Cues!</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="timing-of-migration.html"><a href="timing-of-migration.html#preparation"><i class="fa fa-check"></i><b>4.2.1</b> Preparation</a></li>
+<li class="chapter" data-level="4.2.2" data-path="timing-of-migration.html"><a href="timing-of-migration.html#departure"><i class="fa fa-check"></i><b>4.2.2</b> Departure</a></li>
+<li class="chapter" data-level="4.2.3" data-path="timing-of-migration.html"><a href="timing-of-migration.html#on-the-way"><i class="fa fa-check"></i><b>4.2.3</b> On the way</a></li>
+<li class="chapter" data-level="4.2.4" data-path="timing-of-migration.html"><a href="timing-of-migration.html#termination"><i class="fa fa-check"></i><b>4.2.4</b> Termination</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="Sec-TimingMigration.html"><a href="Sec-TimingMigration.html#consequences-of-migration-timing"><i class="fa fa-check"></i><b>4.3</b> Consequences of migration timing</a></li>
+<li class="chapter" data-level="4.3" data-path="timing-of-migration.html"><a href="timing-of-migration.html#consequences-of-migration-timing"><i class="fa fa-check"></i><b>4.3</b> Consequences of migration timing</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="Sec-OrientationNavigation.html"><a href="Sec-OrientationNavigation.html"><i class="fa fa-check"></i><b>5</b> Orientation and Navigation</a><ul>
-<li class="chapter" data-level="5.1" data-path="Sec-OrientationNavigation.html"><a href="Sec-OrientationNavigation.html#sun-compass"><i class="fa fa-check"></i><b>5.1</b> Sun compass</a></li>
-<li class="chapter" data-level="5.2" data-path="Sec-OrientationNavigation.html"><a href="Sec-OrientationNavigation.html#star-compass"><i class="fa fa-check"></i><b>5.2</b> Star compass</a></li>
-<li class="chapter" data-level="5.3" data-path="Sec-OrientationNavigation.html"><a href="Sec-OrientationNavigation.html#magnetic-compass"><i class="fa fa-check"></i><b>5.3</b> Magnetic compass</a></li>
-<li class="chapter" data-level="5.4" data-path="Sec-OrientationNavigation.html"><a href="Sec-OrientationNavigation.html#landmarks"><i class="fa fa-check"></i><b>5.4</b> Landmarks</a></li>
-<li class="chapter" data-level="5.5" data-path="Sec-OrientationNavigation.html"><a href="Sec-OrientationNavigation.html#olfactory-cues"><i class="fa fa-check"></i><b>5.5</b> Olfactory cues</a></li>
-<li class="chapter" data-level="5.6" data-path="Sec-OrientationNavigation.html"><a href="Sec-OrientationNavigation.html#compass-orientation-vs.-navigation"><i class="fa fa-check"></i><b>5.6</b> Compass orientation vs. navigation</a></li>
+<li class="chapter" data-level="5" data-path="orientation-and-navigation.html"><a href="orientation-and-navigation.html"><i class="fa fa-check"></i><b>5</b> Orientation and Navigation</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="orientation-and-navigation.html"><a href="orientation-and-navigation.html#sun-compass"><i class="fa fa-check"></i><b>5.1</b> Sun compass</a></li>
+<li class="chapter" data-level="5.2" data-path="orientation-and-navigation.html"><a href="orientation-and-navigation.html#star-compass"><i class="fa fa-check"></i><b>5.2</b> Star compass</a></li>
+<li class="chapter" data-level="5.3" data-path="orientation-and-navigation.html"><a href="orientation-and-navigation.html#magnetic-compass"><i class="fa fa-check"></i><b>5.3</b> Magnetic compass</a></li>
+<li class="chapter" data-level="5.4" data-path="orientation-and-navigation.html"><a href="orientation-and-navigation.html#landmarks"><i class="fa fa-check"></i><b>5.4</b> Landmarks</a></li>
+<li class="chapter" data-level="5.5" data-path="orientation-and-navigation.html"><a href="orientation-and-navigation.html#olfactory-cues"><i class="fa fa-check"></i><b>5.5</b> Olfactory cues</a></li>
+<li class="chapter" data-level="5.6" data-path="orientation-and-navigation.html"><a href="orientation-and-navigation.html#compass-orientation-vs.-navigation"><i class="fa fa-check"></i><b>5.6</b> Compass orientation vs. navigation</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="Sec-MechanicsEnergetics.html"><a href="Sec-MechanicsEnergetics.html"><i class="fa fa-check"></i><b>6</b> Flight energetics and plasticity of the migratory flight</a><ul>
-<li class="chapter" data-level="6.1" data-path="Sec-MechanicsEnergetics.html"><a href="Sec-MechanicsEnergetics.html#mechanics-and-energetics-of-flight"><i class="fa fa-check"></i><b>6.1</b> Mechanics and energetics of flight</a></li>
-<li class="chapter" data-level="6.2" data-path="Sec-MechanicsEnergetics.html"><a href="Sec-MechanicsEnergetics.html#fuel-for-migratory-flights"><i class="fa fa-check"></i><b>6.2</b> Fuel for migratory flights</a></li>
-<li class="chapter" data-level="6.3" data-path="Sec-MechanicsEnergetics.html"><a href="Sec-MechanicsEnergetics.html#influences-on-migration"><i class="fa fa-check"></i><b>6.3</b> Influences on migration</a><ul>
-<li class="chapter" data-level="6.3.1" data-path="Sec-MechanicsEnergetics.html"><a href="Sec-MechanicsEnergetics.html#endogeneous-and-exogeneous-factors"><i class="fa fa-check"></i><b>6.3.1</b> Endogeneous and exogeneous factors</a></li>
-<li class="chapter" data-level="6.3.2" data-path="Sec-MechanicsEnergetics.html"><a href="Sec-MechanicsEnergetics.html#topography"><i class="fa fa-check"></i><b>6.3.2</b> Topography</a></li>
-<li class="chapter" data-level="6.3.3" data-path="Sec-MechanicsEnergetics.html"><a href="Sec-MechanicsEnergetics.html#wind"><i class="fa fa-check"></i><b>6.3.3</b> Wind</a></li>
-<li class="chapter" data-level="6.3.4" data-path="Sec-MechanicsEnergetics.html"><a href="Sec-MechanicsEnergetics.html#temperature"><i class="fa fa-check"></i><b>6.3.4</b> Temperature</a></li>
+<li class="chapter" data-level="6" data-path="flight-energetics-and-plasticity-of-the-migratory-flight.html"><a href="flight-energetics-and-plasticity-of-the-migratory-flight.html"><i class="fa fa-check"></i><b>6</b> Flight energetics and plasticity of the migratory flight</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="flight-energetics-and-plasticity-of-the-migratory-flight.html"><a href="flight-energetics-and-plasticity-of-the-migratory-flight.html#mechanics-and-energetics-of-flight"><i class="fa fa-check"></i><b>6.1</b> Mechanics and energetics of flight</a></li>
+<li class="chapter" data-level="6.2" data-path="flight-energetics-and-plasticity-of-the-migratory-flight.html"><a href="flight-energetics-and-plasticity-of-the-migratory-flight.html#fuel-for-migratory-flights"><i class="fa fa-check"></i><b>6.2</b> Fuel for migratory flights</a></li>
+<li class="chapter" data-level="6.3" data-path="flight-energetics-and-plasticity-of-the-migratory-flight.html"><a href="flight-energetics-and-plasticity-of-the-migratory-flight.html#influences-on-migration"><i class="fa fa-check"></i><b>6.3</b> Influences on migration</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="flight-energetics-and-plasticity-of-the-migratory-flight.html"><a href="flight-energetics-and-plasticity-of-the-migratory-flight.html#endogeneous-and-exogeneous-factors"><i class="fa fa-check"></i><b>6.3.1</b> Endogeneous and exogeneous factors</a></li>
+<li class="chapter" data-level="6.3.2" data-path="flight-energetics-and-plasticity-of-the-migratory-flight.html"><a href="flight-energetics-and-plasticity-of-the-migratory-flight.html#topography"><i class="fa fa-check"></i><b>6.3.2</b> Topography</a></li>
+<li class="chapter" data-level="6.3.3" data-path="flight-energetics-and-plasticity-of-the-migratory-flight.html"><a href="flight-energetics-and-plasticity-of-the-migratory-flight.html#wind"><i class="fa fa-check"></i><b>6.3.3</b> Wind</a></li>
+<li class="chapter" data-level="6.3.4" data-path="flight-energetics-and-plasticity-of-the-migratory-flight.html"><a href="flight-energetics-and-plasticity-of-the-migratory-flight.html#temperature"><i class="fa fa-check"></i><b>6.3.4</b> Temperature</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="Sec-Ecosystemfunctions.html"><a href="Sec-Ecosystemfunctions.html"><i class="fa fa-check"></i><b>7</b> Importance of migration for the structure and dynamics of resident communities</a><ul>
-<li class="chapter" data-level="7.1" data-path="Sec-Ecosystemfunctions.html"><a href="Sec-Ecosystemfunctions.html#migrants-link-ecological-communities-and-ecosystem-functioning-worldwide"><i class="fa fa-check"></i><b>7.1</b> Migrants link ecological communities and ecosystem functioning worldwide</a></li>
-<li class="chapter" data-level="7.2" data-path="Sec-Ecosystemfunctions.html"><a href="Sec-Ecosystemfunctions.html#animal-migrations-provide-services-and-disservices"><i class="fa fa-check"></i><b>7.2</b> Animal migrations provide services and disservices</a></li>
+<li class="chapter" data-level="7" data-path="importance-of-migration-for-the-structure-and-dynamics-of-resident-communities.html"><a href="importance-of-migration-for-the-structure-and-dynamics-of-resident-communities.html"><i class="fa fa-check"></i><b>7</b> Importance of migration for the structure and dynamics of resident communities</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="importance-of-migration-for-the-structure-and-dynamics-of-resident-communities.html"><a href="importance-of-migration-for-the-structure-and-dynamics-of-resident-communities.html#migrants-link-ecological-communities-and-ecosystem-functioning-worldwide"><i class="fa fa-check"></i><b>7.1</b> Migrants link ecological communities and ecosystem functioning worldwide</a></li>
+<li class="chapter" data-level="7.2" data-path="importance-of-migration-for-the-structure-and-dynamics-of-resident-communities.html"><a href="importance-of-migration-for-the-structure-and-dynamics-of-resident-communities.html#animal-migrations-provide-services-and-disservices"><i class="fa fa-check"></i><b>7.2</b> Animal migrations provide services and disservices</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="Sec-GlobalChange.html"><a href="Sec-GlobalChange.html"><i class="fa fa-check"></i><b>8</b> Global change and other challenges</a><ul>
-<li class="chapter" data-level="8.1" data-path="Sec-GlobalChange.html"><a href="Sec-GlobalChange.html#climate-change"><i class="fa fa-check"></i><b>8.1</b> Climate change</a></li>
-<li class="chapter" data-level="8.2" data-path="Sec-GlobalChange.html"><a href="Sec-GlobalChange.html#sensory-pollution"><i class="fa fa-check"></i><b>8.2</b> Sensory pollution</a></li>
-<li class="chapter" data-level="8.3" data-path="Sec-GlobalChange.html"><a href="Sec-GlobalChange.html#man-made-structures"><i class="fa fa-check"></i><b>8.3</b> Man-made structures</a></li>
-<li class="chapter" data-level="8.4" data-path="Sec-GlobalChange.html"><a href="Sec-GlobalChange.html#conservation-of-migrants-and-migrations"><i class="fa fa-check"></i><b>8.4</b> Conservation of migrants and migrations</a></li>
+<li class="chapter" data-level="8" data-path="global-change-and-other-challenges.html"><a href="global-change-and-other-challenges.html"><i class="fa fa-check"></i><b>8</b> Global change and other challenges</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="global-change-and-other-challenges.html"><a href="global-change-and-other-challenges.html#climate-change"><i class="fa fa-check"></i><b>8.1</b> Climate change</a></li>
+<li class="chapter" data-level="8.2" data-path="global-change-and-other-challenges.html"><a href="global-change-and-other-challenges.html#sensory-pollution"><i class="fa fa-check"></i><b>8.2</b> Sensory pollution</a></li>
+<li class="chapter" data-level="8.3" data-path="global-change-and-other-challenges.html"><a href="global-change-and-other-challenges.html#man-made-structures"><i class="fa fa-check"></i><b>8.3</b> Man-made structures</a></li>
+<li class="chapter" data-level="8.4" data-path="global-change-and-other-challenges.html"><a href="global-change-and-other-challenges.html#conservation-of-migrants-and-migrations"><i class="fa fa-check"></i><b>8.4</b> Conservation of migrants and migrations</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="Sec-FieldMethods.html"><a href="Sec-FieldMethods.html"><i class="fa fa-check"></i><b>9</b> Field methods</a><ul>
-<li class="chapter" data-level="9.1" data-path="Sec-FieldMethods.html"><a href="Sec-FieldMethods.html#observations-visual-moonwatching-ir-radar"><i class="fa fa-check"></i><b>9.1</b> Observations: visual, moonwatching, IR, radar</a></li>
-<li class="chapter" data-level="9.2" data-path="Sec-FieldMethods.html"><a href="Sec-FieldMethods.html#marking-and-reencountering"><i class="fa fa-check"></i><b>9.2</b> Marking and reencountering</a></li>
-<li class="chapter" data-level="9.3" data-path="Sec-FieldMethods.html"><a href="Sec-FieldMethods.html#tracking-individuals"><i class="fa fa-check"></i><b>9.3</b> Tracking individuals</a></li>
-<li class="chapter" data-level="9.4" data-path="Sec-FieldMethods.html"><a href="Sec-FieldMethods.html#orientation-experiments"><i class="fa fa-check"></i><b>9.4</b> Orientation experiments</a></li>
-<li class="chapter" data-level="9.5" data-path="Sec-FieldMethods.html"><a href="Sec-FieldMethods.html#stable-isotopes-genetics-and-physiology"><i class="fa fa-check"></i><b>9.5</b> Stable isotopes, genetics and physiology</a></li>
-<li class="chapter" data-level="9.6" data-path="Sec-FieldMethods.html"><a href="Sec-FieldMethods.html#references"><i class="fa fa-check"></i><b>9.6</b> References</a></li>
+<li class="chapter" data-level="9" data-path="field-methods.html"><a href="field-methods.html"><i class="fa fa-check"></i><b>9</b> Field methods</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="field-methods.html"><a href="field-methods.html#observations-visual-moonwatching-ir-radar"><i class="fa fa-check"></i><b>9.1</b> Observations: visual, moonwatching, IR, radar</a></li>
+<li class="chapter" data-level="9.2" data-path="field-methods.html"><a href="field-methods.html#marking-and-reencountering"><i class="fa fa-check"></i><b>9.2</b> Marking and reencountering</a></li>
+<li class="chapter" data-level="9.3" data-path="field-methods.html"><a href="field-methods.html#tracking-individuals"><i class="fa fa-check"></i><b>9.3</b> Tracking individuals</a></li>
+<li class="chapter" data-level="9.4" data-path="field-methods.html"><a href="field-methods.html#orientation-experiments"><i class="fa fa-check"></i><b>9.4</b> Orientation experiments</a></li>
+<li class="chapter" data-level="9.5" data-path="field-methods.html"><a href="field-methods.html#stable-isotopes-genetics-and-physiology"><i class="fa fa-check"></i><b>9.5</b> Stable isotopes, genetics and physiology</a></li>
+<li class="chapter" data-level="9.6" data-path="field-methods.html"><a href="field-methods.html#references"><i class="fa fa-check"></i><b>9.6</b> References</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="Sec-MigModels.html"><a href="Sec-MigModels.html"><i class="fa fa-check"></i><b>10</b> Migration models</a><ul>
-<li class="chapter" data-level="10.1" data-path="Sec-MigModels.html"><a href="Sec-MigModels.html#state-dependent-migration-models"><i class="fa fa-check"></i><b>10.1</b> State-dependent migration models</a></li>
+<li class="chapter" data-level="10" data-path="migration-models.html"><a href="migration-models.html"><i class="fa fa-check"></i><b>10</b> Migration models</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="migration-models.html"><a href="migration-models.html#state-dependent-migration-models"><i class="fa fa-check"></i><b>10.1</b> State-dependent migration models</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html"><i class="fa fa-check"></i><b>11</b> Statistical tools for studying migration</a><ul>
-<li class="chapter" data-level="11.1" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#distribution-models-for-counts-of-resting-or-migrating-individuals"><i class="fa fa-check"></i><b>11.1</b> Distribution models for counts of resting or migrating individuals</a></li>
-<li class="chapter" data-level="11.2" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#connectivity-models"><i class="fa fa-check"></i><b>11.2</b> Connectivity models</a></li>
-<li class="chapter" data-level="11.3" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#estimating-survival-based-on-mark-recapture-data-the-cormack-jolly-seber-model"><i class="fa fa-check"></i><b>11.3</b> Estimating survival based on mark-recapture data: The Cormack-Jolly-Seber model</a></li>
-<li class="chapter" data-level="11.4" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#multi-state-models-to-estimate-movement-rates"><i class="fa fa-check"></i><b>11.4</b> Multi-state models to estimate movement rates</a></li>
-<li class="chapter" data-level="11.5" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#individual-based-hidden-markov-model-for-bird-behaviour"><i class="fa fa-check"></i><b>11.5</b> Individual based hidden Markov model for bird behaviour</a></li>
-<li class="chapter" data-level="11.6" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#the-combination-of-different-data-sources"><i class="fa fa-check"></i><b>11.6</b> The combination of different data sources</a></li>
-<li class="chapter" data-level="11.7" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#references-1"><i class="fa fa-check"></i><b>11.7</b> References</a></li>
+<li class="chapter" data-level="11" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html"><i class="fa fa-check"></i><b>11</b> Statistical tools for studying migration</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#linear-models"><i class="fa fa-check"></i><b>11.1</b> Linear models</a></li>
+<li class="chapter" data-level="11.2" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#distribution-models-for-counts-of-resting-or-migrating-individuals"><i class="fa fa-check"></i><b>11.2</b> Distribution models for counts of resting or migrating individuals</a></li>
+<li class="chapter" data-level="11.3" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#migratory-connectivity-models"><i class="fa fa-check"></i><b>11.3</b> Migratory connectivity models</a></li>
+<li class="chapter" data-level="11.4" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#estimating-survival-based-on-mark-recapture-data-the-cormack-jolly-seber-model"><i class="fa fa-check"></i><b>11.4</b> Estimating survival based on mark-recapture data: The Cormack-Jolly-Seber model</a></li>
+<li class="chapter" data-level="11.5" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#multi-state-models-to-estimate-movement-rates"><i class="fa fa-check"></i><b>11.5</b> Multi-state models to estimate movement rates</a></li>
+<li class="chapter" data-level="11.6" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#individual-based-hidden-markov-model-for-bird-behaviour"><i class="fa fa-check"></i><b>11.6</b> Individual based hidden Markov model for bird behaviour</a></li>
+<li class="chapter" data-level="11.7" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#the-combination-of-different-data-sources"><i class="fa fa-check"></i><b>11.7</b> The combination of different data sources</a></li>
+<li class="chapter" data-level="11.8" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#references-1"><i class="fa fa-check"></i><b>11.8</b> References</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="Sec-StudentProjects.html"><a href="Sec-StudentProjects.html"><i class="fa fa-check"></i><b>12</b> Student projects</a><ul>
-<li class="chapter" data-level="12.1" data-path="Sec-StudentProjects.html"><a href="Sec-StudentProjects.html#pre-requisite-reading-and-assessing-scientific-publications"><i class="fa fa-check"></i><b>12.1</b> Pre-requisite: Reading and assessing scientific publications</a></li>
-<li class="chapter" data-level="12.2" data-path="Sec-StudentProjects.html"><a href="Sec-StudentProjects.html#student-project-1-phenology---migration-timing-within-the-season-and-their-changes-over-the-years"><i class="fa fa-check"></i><b>12.2</b> Student project 1: Phenology - Migration timing within the season and their changes over the years</a></li>
-<li class="chapter" data-level="12.3" data-path="Sec-StudentProjects.html"><a href="Sec-StudentProjects.html#student-project-2-long-term-changes-in-morphology"><i class="fa fa-check"></i><b>12.3</b> Student project 2: Long-term changes in morphology</a></li>
-<li class="chapter" data-level="12.4" data-path="Sec-StudentProjects.html"><a href="Sec-StudentProjects.html#student-project-3-differential-migration"><i class="fa fa-check"></i><b>12.4</b> Student project 3: Differential Migration</a></li>
-<li class="chapter" data-level="12.5" data-path="Sec-StudentProjects.html"><a href="Sec-StudentProjects.html#student-project-4-flight-energetics-in-the-course-of-a-night-and-over-the-season"><i class="fa fa-check"></i><b>12.5</b> Student project 4: Flight energetics in the course of a night and over the season</a></li>
-<li class="chapter" data-level="12.6" data-path="Sec-StudentProjects.html"><a href="Sec-StudentProjects.html#student-project-5-estimate-survival-from-capture-recapture-data"><i class="fa fa-check"></i><b>12.6</b> Student project 5: Estimate survival from capture-recapture data</a></li>
-<li class="chapter" data-level="12.7" data-path="Sec-StudentProjects.html"><a href="Sec-StudentProjects.html#student-project-6-modelling-spring-migration-several-questions"><i class="fa fa-check"></i><b>12.7</b> Student project 6: Modelling spring migration: several questions</a></li>
-<li class="chapter" data-level="12.8" data-path="Sec-StudentProjects.html"><a href="Sec-StudentProjects.html#student-project-7-estimating-migration-volume"><i class="fa fa-check"></i><b>12.8</b> Student project 7: Estimating Migration volume</a></li>
-<li class="chapter" data-level="12.9" data-path="Sec-StudentProjects.html"><a href="Sec-StudentProjects.html#student-project-8-partial-migration-who-stays-in-winter"><i class="fa fa-check"></i><b>12.9</b> Student project 8: Partial migration: Who stays in winter?</a></li>
-<li class="chapter" data-level="12.10" data-path="Sec-StudentProjects.html"><a href="Sec-StudentProjects.html#student-project-9-geolocation---tracking-small-birds"><i class="fa fa-check"></i><b>12.10</b> Student project 9: Geolocation - tracking small birds</a></li>
+<li class="chapter" data-level="12" data-path="student-projects.html"><a href="student-projects.html"><i class="fa fa-check"></i><b>12</b> Student projects</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="student-projects.html"><a href="student-projects.html#pre-requisite-reading-and-assessing-scientific-publications"><i class="fa fa-check"></i><b>12.1</b> Pre-requisite: Reading and assessing scientific publications</a></li>
+<li class="chapter" data-level="12.2" data-path="student-projects.html"><a href="student-projects.html#student-project-1-phenology---migration-timing-within-the-season-and-their-changes-over-the-years"><i class="fa fa-check"></i><b>12.2</b> Student project 1: Phenology - Migration timing within the season and their changes over the years</a></li>
+<li class="chapter" data-level="12.3" data-path="student-projects.html"><a href="student-projects.html#student-project-2-long-term-changes-in-morphology"><i class="fa fa-check"></i><b>12.3</b> Student project 2: Long-term changes in morphology</a></li>
+<li class="chapter" data-level="12.4" data-path="student-projects.html"><a href="student-projects.html#student-project-3-differential-migration"><i class="fa fa-check"></i><b>12.4</b> Student project 3: Differential Migration</a></li>
+<li class="chapter" data-level="12.5" data-path="student-projects.html"><a href="student-projects.html#student-project-4-flight-energetics-in-the-course-of-a-night-and-over-the-season"><i class="fa fa-check"></i><b>12.5</b> Student project 4: Flight energetics in the course of a night and over the season</a></li>
+<li class="chapter" data-level="12.6" data-path="student-projects.html"><a href="student-projects.html#student-project-5-estimate-survival-from-capture-recapture-data"><i class="fa fa-check"></i><b>12.6</b> Student project 5: Estimate survival from capture-recapture data</a></li>
+<li class="chapter" data-level="12.7" data-path="student-projects.html"><a href="student-projects.html#student-project-6-modelling-spring-migration-several-questions"><i class="fa fa-check"></i><b>12.7</b> Student project 6: Modelling spring migration: several questions</a></li>
+<li class="chapter" data-level="12.8" data-path="student-projects.html"><a href="student-projects.html#student-project-7-estimating-migration-volume"><i class="fa fa-check"></i><b>12.8</b> Student project 7: Estimating Migration volume</a></li>
+<li class="chapter" data-level="12.9" data-path="student-projects.html"><a href="student-projects.html#student-project-8-why-is-timing-in-spring-important"><i class="fa fa-check"></i><b>12.9</b> Student project 8: Why is timing in spring important?</a></li>
+<li class="chapter" data-level="12.10" data-path="student-projects.html"><a href="student-projects.html#student-project-9-geolocation---tracking-small-birds"><i class="fa fa-check"></i><b>12.10</b> Student project 9: Geolocation - tracking small birds</a></li>
 </ul></li>
+<li class="chapter" data-level="13" data-path="references-2.html"><a href="references-2.html"><i class="fa fa-check"></i><b>13</b> References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/silkebauer/ETH_course" target="blank">Published with bookdown</a></li>
 
@@ -249,10 +293,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="animal-migration" class="section level1">
-<h1><span class="header-section-number">Chapter 3</span> Animal migration</h1>
-<div id="what-is-migration" class="section level2">
-<h2><span class="header-section-number">3.1</span> What is migration?</h2>
+<div id="animal-migration" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Chapter 3</span> Animal migration<a href="animal-migration.html#animal-migration" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="what-is-migration" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> What is migration?<a href="animal-migration.html#what-is-migration" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Not all birds migrate and not all movements are migratory movements. The types of movements that exist range from:</p>
 <ol style="list-style-type: decimal">
 <li>local movements between roosting and feeding sites, movements within the home range</li>
@@ -262,46 +306,46 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
 <li>migration, including its most common form of seasonal migration but also nomadism and irruptive migrations.</li>
 </ol>
-<p>Migrations are persistent, directional movements from one destination to another, uninterrupted by intervening resources [<span class="citation">Dingle (<a href="#ref-dingle2014migration" role="doc-biblioref">2014</a>)</span>). The distances covered are often astounding, yet, the most ex-traordinary aspects of migration are perhaps the ubiquity of the phenomenon and the abundance of individuals involved. For instance, an estimated 1855 bird species (19% of extant species) are migrato-ry. Of the avian species that use terrestrial and freshwater habitats, roughly 45% of those breeding in North America undergo seasonal migration, and over 30% breeding in the Palearctic migrate to sub-Saharan Africa, with many more migrating within Europe. Although accurate estimates of the number of individuals involved are scant, more than 2 billion passerine birds are found to migrate to sub-Saharan Africa, whereas upwards of 3 billion insects migrate over any 1-km stretch of countryside in southern England <span class="citation">(Hu et al. <a href="#ref-Hu2016a" role="doc-biblioref">2016</a>)</span>. Thus, migration is set apart from the other movement types by i) its timing, frequency and predictability, ii) the intensity of interactions with resident species, and iii) the spatial scales over which they connect communities and ecosystems.</p>
-<div class="figure" style="text-align: center"><span id="fig:ScalesMovement"></span>
+<p>Migrations are persistent, directional movements from one destination to another, uninterrupted by intervening resources [<span class="citation">Dingle (<a href="#ref-dingle2014migration">2014</a>)</span>). The distances covered are often astounding, yet, the most ex-traordinary aspects of migration are perhaps the ubiquity of the phenomenon and the abundance of individuals involved. For instance, an estimated 1855 bird species (19% of extant species) are migrato-ry. Of the avian species that use terrestrial and freshwater habitats, roughly 45% of those breeding in North America undergo seasonal migration, and over 30% breeding in the Palearctic migrate to sub-Saharan Africa, with many more migrating within Europe. Although accurate estimates of the number of individuals involved are scant, more than 2 billion passerine birds are found to migrate to sub-Saharan Africa, whereas upwards of 3 billion insects migrate over any 1-km stretch of countryside in southern England <span class="citation">(<a href="#ref-Hu2016a">Hu et al. 2016</a>)</span>. Thus, migration is set apart from the other movement types by i) its timing, frequency and predictability, ii) the intensity of interactions with resident species, and iii) the spatial scales over which they connect communities and ecosystems.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:ScalesMovement"></span>
 <img src="figures/Fig_ScalesMovements.jpg" alt="\label{fig:ScaleMove} The typical spatial and temporal scales of different movement-types. From [@Jeltsch2013]" width="120%" />
 <p class="caption">
-Figure 3.1:  The typical spatial and temporal scales of different movement-types. From <span class="citation">(Jeltsch et al. <a href="#ref-Jeltsch2013" role="doc-biblioref">2013</a>)</span>
+Figure 3.1:  The typical spatial and temporal scales of different movement-types. From <span class="citation">(<a href="#ref-Jeltsch2013">Jeltsch et al. 2013</a>)</span>
 </p>
 </div>
 </div>
-<div id="why-do-birds-migrate" class="section level2">
-<h2><span class="header-section-number">3.2</span> Why do birds migrate?</h2>
+<div id="why-do-birds-migrate" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Why do birds migrate?<a href="animal-migration.html#why-do-birds-migrate" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The classic bird migration is the biannual migration between breeding and non-breeding (‘wintering’) grounds. The breeding grounds are suitable for nesting and hatchling/fledgling survival, whereas the wintering grounds are more suitable for post-fledgling and adult survival. Migration is thought to be primarily an adaptation to the seasonality of resources - to use (a surplus of) resources that are only seasonally available and to avoid shortage of resources at specific times of the year.</p>
-<p>Indeed, almost all places on Earth are seasonal to some degree and therefore, many migrants move between these seasonally available resources (Fig. <a href="animal-migration.html#fig:NDVIpic">3.2</a>). For instance, many birds breeding in Europe migrate to the Sahel-zone in Africa in the Northern winter. The advantage of being in an area that provides better condition outweighs the cost of migration. In the temperate zones, it are usually those species that leave the breeding area during winter that have specific food requirements, which is not available dur-ing winter, e.g. insects, but abundant in the Sahel after rainfall. Many species, e.g. Red-backed shrikes (<em>Lanius collurio</em>) migrate within the non-breeding season between distinct non-breeding areas in order to make use of seasonally changing food availability <span class="citation">(Tøttrup et al. <a href="#ref-Tøttrup2012a" role="doc-biblioref">2012</a>)</span>.</p>
+<p>Indeed, almost all places on Earth are seasonal to some degree and therefore, many migrants move between these seasonally available resources (Fig. <a href="animal-migration.html#fig:NDVIpic">3.2</a>). For instance, many birds breeding in Europe migrate to the Sahel-zone in Africa in the Northern winter. The advantage of being in an area that provides better condition outweighs the cost of migration. In the temperate zones, it are usually those species that leave the breeding area during winter that have specific food requirements, which is not available dur-ing winter, e.g. insects, but abundant in the Sahel after rainfall. Many species, e.g. Red-backed shrikes (<em>Lanius collurio</em>) migrate within the non-breeding season between distinct non-breeding areas in order to make use of seasonally changing food availability <span class="citation">(<a href="#ref-T%C3%B8ttrup2012a">Tøttrup et al. 2012</a>)</span>.</p>
 <p>There may be also other forms of migration or migrations as a strategy to avoid predators or pathogens.
-Other migration than seasonal migration are moult and facultative migrations. In moult migrations, birds migrate to predator-free areas where they can safely shed their flight feathers. In facultative migrations, birds only migrate long-distances when food is sparse, e.g. many finches <span class="citation">(Newton <a href="#ref-newton2006advances" role="doc-biblioref">2006</a>)</span>. At an extreme end of the spectrum are birds that are nomadic, like grey teal (<em>Anas gracilis</em>) looking for ephemeral water and food sources in a desert landscape in Australia.</p>
+Other migration than seasonal migration are moult and facultative migrations. In moult migrations, birds migrate to predator-free areas where they can safely shed their flight feathers. In facultative migrations, birds only migrate long-distances when food is sparse, e.g. many finches <span class="citation">(<a href="#ref-newton2006advances">Newton 2006</a>)</span>. At an extreme end of the spectrum are birds that are nomadic, like grey teal (<em>Anas gracilis</em>) looking for ephemeral water and food sources in a desert landscape in Australia.</p>
 <p>Two main flight modes exist – flapping and soaring, which has consequences on when and where birds migrate: Flapping flight is energetically costly but can be used under a wide range of weather and topographic conditions, whereas for soaring thermals or wind are needed.
 The majority of birds cannot feed while flying, and in many cases the total travel distance exceeds the maximum flight distance. Thus, the birds need stop-over sites in between, where they can replenish their reserves. A good example are tundra swans (<em>Cygnus columbianus</em>) that migrate between 4000-5500 km, whereas the maximally recorded non-stop flight is 2850 km. These swans mainly refuel on energy-rich, belowground parts of macrophytes in shallow lakes and wetlands along the route.</p>
-<div class="figure" style="text-align: center"><span id="fig:NDVIpic"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:NDVIpic"></span>
 <img src="figures/Fig_SeasonalChanges_NDVI.png" alt="\label{fig:NDVIpic}Seasonal change in global NDVI. These vegetation maps were generated from MODIS/Terra measurements of the Normalized Difference Vegetation Index (NDVI). Significant seasonal variations in the NDVI are apparent between northern hemisphere summer (July 2014; top) and winter (February 2015; bottom). Image credit: Reto Stockli, NASA Earth Observatory Group, using data from the MODIS Land Science Team (http://neo.sci.gsfc.nasa.gov)." width="90%" />
 <p class="caption">
 Figure 3.2: Seasonal change in global NDVI. These vegetation maps were generated from MODIS/Terra measurements of the Normalized Difference Vegetation Index (NDVI). Significant seasonal variations in the NDVI are apparent between northern hemisphere summer (July 2014; top) and winter (February 2015; bottom). Image credit: Reto Stockli, NASA Earth Observatory Group, using data from the MODIS Land Science Team (<a href="http://neo.sci.gsfc.nasa.gov" class="uri">http://neo.sci.gsfc.nasa.gov</a>).
 </p>
 </div>
 </div>
-<div id="terminology-of-specific-migration-patterns" class="section level2">
-<h2><span class="header-section-number">3.3</span> Terminology of specific migration patterns</h2>
+<div id="terminology-of-specific-migration-patterns" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Terminology of specific migration patterns<a href="animal-migration.html#terminology-of-specific-migration-patterns" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>There is a variety of migration patterns of which some are also tagged with specific terms. Often it is a specific characteristic or pattern that is emphasized, e.g. the difference in distances covered led to the distinction of short- and long-distance migrants. However, the terminology is not very consistent and may be confusing at the beginning; we explain the most-frequently occurring terms below.</p>
-<div id="characterisation-of-migration-according-to-distances-covered" class="section level3">
-<h3><span class="header-section-number">3.3.1</span> Characterisation of migration according to distances covered</h3>
+<div id="characterisation-of-migration-according-to-distances-covered" class="section level3 hasAnchor" number="3.3.1">
+<h3><span class="header-section-number">3.3.1</span> Characterisation of migration according to distances covered<a href="animal-migration.html#characterisation-of-migration-according-to-distances-covered" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>Short-distance migration</strong> Migration over ‘shorter’ distances, typically &lt;5000kms, e.g. from Central Europe to the Mediterranean. Sometimes, short-distance migrants are also partial migrants. Starling (<em>Sturnus vulgaris</em>)</p>
 <p><strong>Long-distance migration</strong> Migration over longer distances, usually &gt;5000kms and often including the crossing of ecological barriers such as mountains, seas or deserts. Arctic tern (<em>Sterna paradisaea</em>), Barn Swallow (<em>Hirundo rustica</em>)</p>
 </div>
-<div id="characterisation-of-migration-according-to-daytime-of-travel" class="section level3">
-<h3><span class="header-section-number">3.3.2</span> Characterisation of migration according to daytime of travel</h3>
+<div id="characterisation-of-migration-according-to-daytime-of-travel" class="section level3 hasAnchor" number="3.3.2">
+<h3><span class="header-section-number">3.3.2</span> Characterisation of migration according to daytime of travel<a href="animal-migration.html#characterisation-of-migration-according-to-daytime-of-travel" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>Nocturnal migration</strong> Most songbirds migrate at night, i.e. they are nocturnal migrants. This behavior has been attributed to reduced predation risk, good flight conditions, or for saving the daylight for feeding. Nocturnal migrants mostly fly alone or in loose flocks. Typical example: Most migratory songbirds, e.g. Wheatear (<em>Oenanthe oenanthe</em>)</p>
 <p><strong>Diurnal migration</strong> Migratory flights take place during the day. Many larger birds are diurnal migrants, e.g. birds of prey that use thermals or swans and geese that often fly in flocks. Typical examples: raptors, bee-eaters, many geese species</p>
 </div>
-<div id="characterisation-of-migration-according-to-larger-scale-patterns-of-migratory-bouts" class="section level3">
-<h3><span class="header-section-number">3.3.3</span> Characterisation of migration according to larger-scale patterns of migratory bouts</h3>
-<p><strong>Leap-frog migrations</strong> Populations breeding further north spend the non-breeding season further south than breeding populations from further south. Thus, some populations “overtake” others on migration. European robin (<em>Erithacus rubecula</em>) <span class="citation">(Korner-Nievergelt, Liechti, and Thorup <a href="#ref-KornerNievergelt.2014" role="doc-biblioref">2014</a>)</span></p>
-<p><strong>Chain migration</strong> Northern breeding populations spend the non-breeding period in breeding areas of southern populations. Thus, a species can be observed year-round but it are different individuals in winter/ summer. Cormorant (<em>Phalacrocorax carbo</em>) <span class="citation">(Frederiksen et al. <a href="#ref-frederiksen2018wintering" role="doc-biblioref">2018</a>)</span></p>
+<div id="characterisation-of-migration-according-to-larger-scale-patterns-of-migratory-bouts" class="section level3 hasAnchor" number="3.3.3">
+<h3><span class="header-section-number">3.3.3</span> Characterisation of migration according to larger-scale patterns of migratory bouts<a href="animal-migration.html#characterisation-of-migration-according-to-larger-scale-patterns-of-migratory-bouts" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Leap-frog migrations</strong> Populations breeding further north spend the non-breeding season further south than breeding populations from further south. Thus, some populations “overtake” others on migration. European robin (<em>Erithacus rubecula</em>) <span class="citation">(<a href="#ref-KornerNievergelt.2014">F. Korner-Nievergelt, Liechti, and Thorup 2014</a>)</span></p>
+<p><strong>Chain migration</strong> Northern breeding populations spend the non-breeding period in breeding areas of southern populations. Thus, a species can be observed year-round but it are different individuals in winter/ summer. Cormorant (<em>Phalacrocorax carbo</em>) <span class="citation">(<a href="#ref-frederiksen2018wintering">Frederiksen et al. 2018</a>)</span></p>
 <p><strong>Broad front migration</strong> Individuals disperse over the whole distributional range while migrating (theoretically a lot of parallel flight tracks dispersed over a large area). Yet, migrants can still accumulate depending on topography and funnel through narrow areas. Chaffinch (<em>Fringilla coelebs</em>), many passerines: (Liechti et al. 1996)</p>
 <p><strong>Funnel migration</strong> All individuals of a species (or population) concentrate on migration in one stop-over area or a topographically important place such as Gibraltar in Europe or the Yellow Sea in Asia. Crane (<em>Grus grus</em>), many waders (Yellow sea!)</p>
 <p><strong>Seasonal migration</strong></p>
@@ -313,28 +357,25 @@ Figure 3.2: Seasonal change in global NDVI. These vegetation maps were generated
 </div>
 </div>
 </div>
-<h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-dingle2014migration">
-<p>Dingle, Hugh. 2014. <em>Migration: The Biology of Life on the Move</em>. Oxford University Press, USA.</p>
+<h3> References<a href="references-2.html#references-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
+<div id="ref-dingle2014migration" class="csl-entry">
+Dingle, Hugh. 2014. <em>Migration: The Biology of Life on the Move</em>. Oxford University Press, USA.
 </div>
-<div id="ref-frederiksen2018wintering">
-<p>Frederiksen, Morten, Fränzi Korner-Nievergelt, Loı̈c Marion, and Thomas Bregnballe. 2018. “Where Do Wintering Cormorants Come from? Long-Term Changes in the Geographical Origin of a Migratory Bird on a Continental Scale.” <em>Journal of Applied Ecology</em> 55 (4): 2019–32.</p>
+<div id="ref-frederiksen2018wintering" class="csl-entry">
+Frederiksen, Morten, Fränzi Korner-Nievergelt, Loı̈c Marion, and Thomas Bregnballe. 2018. <span>“Where Do Wintering Cormorants Come from? Long-Term Changes in the Geographical Origin of a Migratory Bird on a Continental Scale.”</span> <em>Journal of Applied Ecology</em> 55 (4): 2019–32.
 </div>
-<div id="ref-Hu2016a">
-<p>Hu, Gao, Ka S. Lim, Nir Horvitz, Suzanne J. Clark, Don R. Reynolds, Nir Sapir, and Jason W. Chapman. 2016. “Mass seasonal bioflows of high-flying insect migrants.” <em>Science</em> 354 (6319): 1584–7. <a href="https://doi.org/10.1126/science.aah4379">https://doi.org/10.1126/science.aah4379</a>.</p>
+<div id="ref-Hu2016a" class="csl-entry">
+Hu, Gao, Ka S. Lim, Nir Horvitz, Suzanne J. Clark, Don R. Reynolds, Nir Sapir, and Jason W. Chapman. 2016. <span>“<span class="nocase">Mass seasonal bioflows of high-flying insect migrants</span>.”</span> <em>Science</em> 354 (6319): 1584–87. <a href="https://doi.org/10.1126/science.aah4379">https://doi.org/10.1126/science.aah4379</a>.
 </div>
-<div id="ref-Jeltsch2013">
-<p>Jeltsch, Florian, Dries Bonte, Guy Pe’er, Björn Reineking, Peter Leimgruber, Niko Balkenhol, Boris Schröder, et al. 2013. “Integrating movement ecology with biodiversity research - exploring new avenues to address spatiotemporal biodiversity dynamics.” <em>Movement Ecology</em> 1 (1): 6. <a href="https://doi.org/10.1186/2051-3933-1-6">https://doi.org/10.1186/2051-3933-1-6</a>.</p>
+<div id="ref-Jeltsch2013" class="csl-entry">
+Jeltsch, Florian, Dries Bonte, Guy Pe’er, Björn Reineking, Peter Leimgruber, Niko Balkenhol, Boris Schröder, et al. 2013. <span>“<span class="nocase">Integrating movement ecology with biodiversity research - exploring new avenues to address spatiotemporal biodiversity dynamics</span>.”</span> <em>Movement Ecology</em> 1 (1): 6. <a href="https://doi.org/10.1186/2051-3933-1-6">https://doi.org/10.1186/2051-3933-1-6</a>.
 </div>
-<div id="ref-KornerNievergelt.2014">
-<p>Korner-Nievergelt, F., Felix Liechti, and K. Thorup. 2014. “A Bird Distribution Model for Ring Recovery Data: Where Do the European Robins Go?” <em>Ecology and Evolution</em> 4 (6): 720–31.</p>
+<div id="ref-KornerNievergelt.2014" class="csl-entry">
+Korner-Nievergelt, F., Felix Liechti, and K. Thorup. 2014. <span>“A Bird Distribution Model for Ring Recovery Data: Where Do the European Robins Go?”</span> <em>Ecology and Evolution</em> 4 (6): 720–31.
 </div>
-<div id="ref-newton2006advances">
-<p>Newton, Ian. 2006. “Advances in the Study of Irruptive Migration.” <em>ARDEA-WAGENINGEN-</em> 94 (3): 433.</p>
-</div>
-<div id="ref-Tøttrup2012a">
-<p>Tøttrup, Anders P, Raymond H G Klaassen, Roine Strandberg, Kasper Thorup, Mikkel Willemoes Kristensen, Peter Søgaard Jørgensen, James Fox, Vsevolod Afanasyev, Carsten Rahbek, and Thomas Alerstam. 2012. “The annual cycle of a trans-equatorial Eurasian-African passerine migrant: different spatio-temporal strategies for autumn and spring migration.” <em>Proceedings. Biological Sciences / the Royal Society</em> 279 (1730): 1008–16. <a href="https://doi.org/10.1098/rspb.2011.1323">https://doi.org/10.1098/rspb.2011.1323</a>.</p>
+<div id="ref-newton2006advances" class="csl-entry">
+Newton, Ian. 2006. <span>“Advances in the Study of Irruptive Migration.”</span> <em>ARDEA-WAGENINGEN-</em> 94 (3): 433.
 </div>
 </div>
             </section>
@@ -343,11 +384,10 @@ Figure 3.2: Seasonal change in global NDVI. These vegetation maps were generated
         </div>
       </div>
 <a href="introduction.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="Sec-TimingMigration.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="timing-of-migration.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -366,6 +406,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -386,6 +427,10 @@ gitbook.start({
 "text": null
 },
 "download": ["MigrationCourse.pdf", "MigrationCourse.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }
@@ -399,7 +444,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

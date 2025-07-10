@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 11 Statistical tools for studying migration | Handout and background material for ETHZ course ‘Animal Migration and research in field ornithology’</title>
   <meta name="description" content="This is a handout for the ETH migration course at Col de Bretolet." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 11 Statistical tools for studying migration | Handout and background material for ETHZ course ‘Animal Migration and research in field ornithology’" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="This is a handout for the ETH migration course at Col de Bretolet." />
   
@@ -24,16 +23,17 @@
 <meta name="author" content="Silke Bauer &amp; Fränzi Korner-Nievergelt" />
 
 
-<meta name="date" content="2021-08-18" />
+<meta name="date" content="2025-07-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="Sec-MigModels.html"/>
-<link rel="next" href="Sec-StudentProjects.html"/>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link rel="prev" href="migration-models.html"/>
+<link rel="next" href="student-projects.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -49,25 +49,24 @@
 
 
 
-
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -87,13 +86,13 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -106,7 +105,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -118,6 +117,34 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 </head>
@@ -135,100 +162,117 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">Handout ETH course Migration ecology and methods in field ornithology</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> General information</a><ul>
-<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#online-lectures-via-zoom---a-brief-how-to"><i class="fa fa-check"></i><b>1.1</b> Online lectures via zoom - a brief how-to</a></li>
-<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#collaborating-via-slack"><i class="fa fa-check"></i><b>1.2</b> Collaborating via Slack</a></li>
-</ul></li>
-<li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a><ul>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> General information</a></li>
+<li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="introduction.html"><a href="introduction.html#course-aims"><i class="fa fa-check"></i><b>2.1</b> Course aims</a></li>
-<li class="chapter" data-level="2.2" data-path="introduction.html"><a href="introduction.html#course-schedule"><i class="fa fa-check"></i><b>2.2</b> Course schedule</a><ul>
-<li class="chapter" data-level="2.2.1" data-path="introduction.html"><a href="introduction.html#monday"><i class="fa fa-check"></i><b>2.2.1</b> Monday</a></li>
-<li class="chapter" data-level="2.2.2" data-path="introduction.html"><a href="introduction.html#tuesday"><i class="fa fa-check"></i><b>2.2.2</b> Tuesday</a></li>
-<li class="chapter" data-level="2.2.3" data-path="introduction.html"><a href="introduction.html#wednesday"><i class="fa fa-check"></i><b>2.2.3</b> Wednesday</a></li>
-<li class="chapter" data-level="2.2.4" data-path="introduction.html"><a href="introduction.html#thursday"><i class="fa fa-check"></i><b>2.2.4</b> Thursday</a></li>
-<li class="chapter" data-level="2.2.5" data-path="introduction.html"><a href="introduction.html#friday"><i class="fa fa-check"></i><b>2.2.5</b> Friday</a></li>
+<li class="chapter" data-level="2.2" data-path="introduction.html"><a href="introduction.html#course-schedule"><i class="fa fa-check"></i><b>2.2</b> Course schedule</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="10-StatsForMigration.html"><a href="#prepatory-days-2-5-september-2025-at-swiss-ornithological-institute-sempach-and-eth-z%C3%BCrich"><i class="fa fa-check"></i><b>2.2.1</b> Prepatory days: 2-5 September 2025 at Swiss Ornithological Institute Sempach and ETH Zürich</a></li>
+<li class="chapter" data-level="2.2.2" data-path="introduction.html"><a href="introduction.html#course-day-1-tuesday-2-september-2024-in-sempach"><i class="fa fa-check"></i><b>2.2.2</b> Course day 1: Tuesday, 2 September 2024 in Sempach</a></li>
+<li class="chapter" data-level="2.2.3" data-path="introduction.html"><a href="introduction.html#excursion-to-col-de-bretolet-mon-fri-8-12-september-2025"><i class="fa fa-check"></i><b>2.2.3</b> Excursion to Col de Bretolet: Mon-Fri 8-12 September 2025</a></li>
+<li class="chapter" data-level="2.2.4" data-path="introduction.html"><a href="introduction.html#course-day-5-monday-8-september-2024"><i class="fa fa-check"></i><b>2.2.4</b> Course day 5: Monday, 8 September 2024</a></li>
+<li class="chapter" data-level="2.2.5" data-path="introduction.html"><a href="introduction.html#course-day-6-tuesday-9-september-2025"><i class="fa fa-check"></i><b>2.2.5</b> Course day 6: Tuesday, 9 September 2025</a></li>
+<li class="chapter" data-level="2.2.6" data-path="introduction.html"><a href="introduction.html#course-day-6-wednesday-10-september-2025"><i class="fa fa-check"></i><b>2.2.6</b> Course day 6: Wednesday, 10 September 2025</a></li>
+<li class="chapter" data-level="2.2.7" data-path="introduction.html"><a href="introduction.html#course-day-7-thursday-11-september-2025"><i class="fa fa-check"></i><b>2.2.7</b> Course day 7: Thursday, 11 September 2025</a></li>
+<li class="chapter" data-level="2.2.8" data-path="introduction.html"><a href="introduction.html#course-day-8-friday-12-september-2025"><i class="fa fa-check"></i><b>2.2.8</b> Course day 8: Friday, 12 September 2025</a></li>
 </ul></li>
 <li class="chapter" data-level="2.3" data-path="introduction.html"><a href="introduction.html#preparations"><i class="fa fa-check"></i><b>2.3</b> Preparations</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="animal-migration.html"><a href="animal-migration.html"><i class="fa fa-check"></i><b>3</b> Animal migration</a><ul>
+<li class="chapter" data-level="3" data-path="animal-migration.html"><a href="animal-migration.html"><i class="fa fa-check"></i><b>3</b> Animal migration</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="animal-migration.html"><a href="animal-migration.html#what-is-migration"><i class="fa fa-check"></i><b>3.1</b> What is migration?</a></li>
 <li class="chapter" data-level="3.2" data-path="animal-migration.html"><a href="animal-migration.html#why-do-birds-migrate"><i class="fa fa-check"></i><b>3.2</b> Why do birds migrate?</a></li>
-<li class="chapter" data-level="3.3" data-path="animal-migration.html"><a href="animal-migration.html#terminology-of-specific-migration-patterns"><i class="fa fa-check"></i><b>3.3</b> Terminology of specific migration patterns</a><ul>
+<li class="chapter" data-level="3.3" data-path="animal-migration.html"><a href="animal-migration.html#terminology-of-specific-migration-patterns"><i class="fa fa-check"></i><b>3.3</b> Terminology of specific migration patterns</a>
+<ul>
 <li class="chapter" data-level="3.3.1" data-path="animal-migration.html"><a href="animal-migration.html#characterisation-of-migration-according-to-distances-covered"><i class="fa fa-check"></i><b>3.3.1</b> Characterisation of migration according to distances covered</a></li>
 <li class="chapter" data-level="3.3.2" data-path="animal-migration.html"><a href="animal-migration.html#characterisation-of-migration-according-to-daytime-of-travel"><i class="fa fa-check"></i><b>3.3.2</b> Characterisation of migration according to daytime of travel</a></li>
 <li class="chapter" data-level="3.3.3" data-path="animal-migration.html"><a href="animal-migration.html#characterisation-of-migration-according-to-larger-scale-patterns-of-migratory-bouts"><i class="fa fa-check"></i><b>3.3.3</b> Characterisation of migration according to larger-scale patterns of migratory bouts</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="Sec-TimingMigration.html"><a href="Sec-TimingMigration.html"><i class="fa fa-check"></i><b>4</b> Timing of migration</a><ul>
-<li class="chapter" data-level="4.1" data-path="Sec-TimingMigration.html"><a href="Sec-TimingMigration.html#why-is-timing-important"><i class="fa fa-check"></i><b>4.1</b> Why is timing important?</a></li>
-<li class="chapter" data-level="4.2" data-path="Sec-TimingMigration.html"><a href="Sec-TimingMigration.html#what-determines-the-timing-of-migratory-steps-cues"><i class="fa fa-check"></i><b>4.2</b> What determines the timing of migratory steps? Cues!</a><ul>
-<li class="chapter" data-level="4.2.1" data-path="Sec-TimingMigration.html"><a href="Sec-TimingMigration.html#preparation"><i class="fa fa-check"></i><b>4.2.1</b> Preparation</a></li>
-<li class="chapter" data-level="4.2.2" data-path="Sec-TimingMigration.html"><a href="Sec-TimingMigration.html#departure"><i class="fa fa-check"></i><b>4.2.2</b> Departure</a></li>
-<li class="chapter" data-level="4.2.3" data-path="Sec-TimingMigration.html"><a href="Sec-TimingMigration.html#on-the-way"><i class="fa fa-check"></i><b>4.2.3</b> On the way</a></li>
-<li class="chapter" data-level="4.2.4" data-path="Sec-TimingMigration.html"><a href="Sec-TimingMigration.html#termination"><i class="fa fa-check"></i><b>4.2.4</b> Termination</a></li>
+<li class="chapter" data-level="4" data-path="timing-of-migration.html"><a href="timing-of-migration.html"><i class="fa fa-check"></i><b>4</b> Timing of migration</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="timing-of-migration.html"><a href="timing-of-migration.html#why-is-timing-important"><i class="fa fa-check"></i><b>4.1</b> Why is timing important?</a></li>
+<li class="chapter" data-level="4.2" data-path="timing-of-migration.html"><a href="timing-of-migration.html#what-determines-the-timing-of-migratory-steps-cues"><i class="fa fa-check"></i><b>4.2</b> What determines the timing of migratory steps? Cues!</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="timing-of-migration.html"><a href="timing-of-migration.html#preparation"><i class="fa fa-check"></i><b>4.2.1</b> Preparation</a></li>
+<li class="chapter" data-level="4.2.2" data-path="timing-of-migration.html"><a href="timing-of-migration.html#departure"><i class="fa fa-check"></i><b>4.2.2</b> Departure</a></li>
+<li class="chapter" data-level="4.2.3" data-path="timing-of-migration.html"><a href="timing-of-migration.html#on-the-way"><i class="fa fa-check"></i><b>4.2.3</b> On the way</a></li>
+<li class="chapter" data-level="4.2.4" data-path="timing-of-migration.html"><a href="timing-of-migration.html#termination"><i class="fa fa-check"></i><b>4.2.4</b> Termination</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="Sec-TimingMigration.html"><a href="Sec-TimingMigration.html#consequences-of-migration-timing"><i class="fa fa-check"></i><b>4.3</b> Consequences of migration timing</a></li>
+<li class="chapter" data-level="4.3" data-path="timing-of-migration.html"><a href="timing-of-migration.html#consequences-of-migration-timing"><i class="fa fa-check"></i><b>4.3</b> Consequences of migration timing</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="Sec-OrientationNavigation.html"><a href="Sec-OrientationNavigation.html"><i class="fa fa-check"></i><b>5</b> Orientation and Navigation</a><ul>
-<li class="chapter" data-level="5.1" data-path="Sec-OrientationNavigation.html"><a href="Sec-OrientationNavigation.html#sun-compass"><i class="fa fa-check"></i><b>5.1</b> Sun compass</a></li>
-<li class="chapter" data-level="5.2" data-path="Sec-OrientationNavigation.html"><a href="Sec-OrientationNavigation.html#star-compass"><i class="fa fa-check"></i><b>5.2</b> Star compass</a></li>
-<li class="chapter" data-level="5.3" data-path="Sec-OrientationNavigation.html"><a href="Sec-OrientationNavigation.html#magnetic-compass"><i class="fa fa-check"></i><b>5.3</b> Magnetic compass</a></li>
-<li class="chapter" data-level="5.4" data-path="Sec-OrientationNavigation.html"><a href="Sec-OrientationNavigation.html#landmarks"><i class="fa fa-check"></i><b>5.4</b> Landmarks</a></li>
-<li class="chapter" data-level="5.5" data-path="Sec-OrientationNavigation.html"><a href="Sec-OrientationNavigation.html#olfactory-cues"><i class="fa fa-check"></i><b>5.5</b> Olfactory cues</a></li>
-<li class="chapter" data-level="5.6" data-path="Sec-OrientationNavigation.html"><a href="Sec-OrientationNavigation.html#compass-orientation-vs.-navigation"><i class="fa fa-check"></i><b>5.6</b> Compass orientation vs. navigation</a></li>
+<li class="chapter" data-level="5" data-path="orientation-and-navigation.html"><a href="orientation-and-navigation.html"><i class="fa fa-check"></i><b>5</b> Orientation and Navigation</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="orientation-and-navigation.html"><a href="orientation-and-navigation.html#sun-compass"><i class="fa fa-check"></i><b>5.1</b> Sun compass</a></li>
+<li class="chapter" data-level="5.2" data-path="orientation-and-navigation.html"><a href="orientation-and-navigation.html#star-compass"><i class="fa fa-check"></i><b>5.2</b> Star compass</a></li>
+<li class="chapter" data-level="5.3" data-path="orientation-and-navigation.html"><a href="orientation-and-navigation.html#magnetic-compass"><i class="fa fa-check"></i><b>5.3</b> Magnetic compass</a></li>
+<li class="chapter" data-level="5.4" data-path="orientation-and-navigation.html"><a href="orientation-and-navigation.html#landmarks"><i class="fa fa-check"></i><b>5.4</b> Landmarks</a></li>
+<li class="chapter" data-level="5.5" data-path="orientation-and-navigation.html"><a href="orientation-and-navigation.html#olfactory-cues"><i class="fa fa-check"></i><b>5.5</b> Olfactory cues</a></li>
+<li class="chapter" data-level="5.6" data-path="orientation-and-navigation.html"><a href="orientation-and-navigation.html#compass-orientation-vs.-navigation"><i class="fa fa-check"></i><b>5.6</b> Compass orientation vs. navigation</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="Sec-MechanicsEnergetics.html"><a href="Sec-MechanicsEnergetics.html"><i class="fa fa-check"></i><b>6</b> Flight energetics and plasticity of the migratory flight</a><ul>
-<li class="chapter" data-level="6.1" data-path="Sec-MechanicsEnergetics.html"><a href="Sec-MechanicsEnergetics.html#mechanics-and-energetics-of-flight"><i class="fa fa-check"></i><b>6.1</b> Mechanics and energetics of flight</a></li>
-<li class="chapter" data-level="6.2" data-path="Sec-MechanicsEnergetics.html"><a href="Sec-MechanicsEnergetics.html#fuel-for-migratory-flights"><i class="fa fa-check"></i><b>6.2</b> Fuel for migratory flights</a></li>
-<li class="chapter" data-level="6.3" data-path="Sec-MechanicsEnergetics.html"><a href="Sec-MechanicsEnergetics.html#influences-on-migration"><i class="fa fa-check"></i><b>6.3</b> Influences on migration</a><ul>
-<li class="chapter" data-level="6.3.1" data-path="Sec-MechanicsEnergetics.html"><a href="Sec-MechanicsEnergetics.html#endogeneous-and-exogeneous-factors"><i class="fa fa-check"></i><b>6.3.1</b> Endogeneous and exogeneous factors</a></li>
-<li class="chapter" data-level="6.3.2" data-path="Sec-MechanicsEnergetics.html"><a href="Sec-MechanicsEnergetics.html#topography"><i class="fa fa-check"></i><b>6.3.2</b> Topography</a></li>
-<li class="chapter" data-level="6.3.3" data-path="Sec-MechanicsEnergetics.html"><a href="Sec-MechanicsEnergetics.html#wind"><i class="fa fa-check"></i><b>6.3.3</b> Wind</a></li>
-<li class="chapter" data-level="6.3.4" data-path="Sec-MechanicsEnergetics.html"><a href="Sec-MechanicsEnergetics.html#temperature"><i class="fa fa-check"></i><b>6.3.4</b> Temperature</a></li>
+<li class="chapter" data-level="6" data-path="flight-energetics-and-plasticity-of-the-migratory-flight.html"><a href="flight-energetics-and-plasticity-of-the-migratory-flight.html"><i class="fa fa-check"></i><b>6</b> Flight energetics and plasticity of the migratory flight</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="flight-energetics-and-plasticity-of-the-migratory-flight.html"><a href="flight-energetics-and-plasticity-of-the-migratory-flight.html#mechanics-and-energetics-of-flight"><i class="fa fa-check"></i><b>6.1</b> Mechanics and energetics of flight</a></li>
+<li class="chapter" data-level="6.2" data-path="flight-energetics-and-plasticity-of-the-migratory-flight.html"><a href="flight-energetics-and-plasticity-of-the-migratory-flight.html#fuel-for-migratory-flights"><i class="fa fa-check"></i><b>6.2</b> Fuel for migratory flights</a></li>
+<li class="chapter" data-level="6.3" data-path="flight-energetics-and-plasticity-of-the-migratory-flight.html"><a href="flight-energetics-and-plasticity-of-the-migratory-flight.html#influences-on-migration"><i class="fa fa-check"></i><b>6.3</b> Influences on migration</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="flight-energetics-and-plasticity-of-the-migratory-flight.html"><a href="flight-energetics-and-plasticity-of-the-migratory-flight.html#endogeneous-and-exogeneous-factors"><i class="fa fa-check"></i><b>6.3.1</b> Endogeneous and exogeneous factors</a></li>
+<li class="chapter" data-level="6.3.2" data-path="flight-energetics-and-plasticity-of-the-migratory-flight.html"><a href="flight-energetics-and-plasticity-of-the-migratory-flight.html#topography"><i class="fa fa-check"></i><b>6.3.2</b> Topography</a></li>
+<li class="chapter" data-level="6.3.3" data-path="flight-energetics-and-plasticity-of-the-migratory-flight.html"><a href="flight-energetics-and-plasticity-of-the-migratory-flight.html#wind"><i class="fa fa-check"></i><b>6.3.3</b> Wind</a></li>
+<li class="chapter" data-level="6.3.4" data-path="flight-energetics-and-plasticity-of-the-migratory-flight.html"><a href="flight-energetics-and-plasticity-of-the-migratory-flight.html#temperature"><i class="fa fa-check"></i><b>6.3.4</b> Temperature</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="Sec-Ecosystemfunctions.html"><a href="Sec-Ecosystemfunctions.html"><i class="fa fa-check"></i><b>7</b> Importance of migration for the structure and dynamics of resident communities</a><ul>
-<li class="chapter" data-level="7.1" data-path="Sec-Ecosystemfunctions.html"><a href="Sec-Ecosystemfunctions.html#migrants-link-ecological-communities-and-ecosystem-functioning-worldwide"><i class="fa fa-check"></i><b>7.1</b> Migrants link ecological communities and ecosystem functioning worldwide</a></li>
-<li class="chapter" data-level="7.2" data-path="Sec-Ecosystemfunctions.html"><a href="Sec-Ecosystemfunctions.html#animal-migrations-provide-services-and-disservices"><i class="fa fa-check"></i><b>7.2</b> Animal migrations provide services and disservices</a></li>
+<li class="chapter" data-level="7" data-path="importance-of-migration-for-the-structure-and-dynamics-of-resident-communities.html"><a href="importance-of-migration-for-the-structure-and-dynamics-of-resident-communities.html"><i class="fa fa-check"></i><b>7</b> Importance of migration for the structure and dynamics of resident communities</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="importance-of-migration-for-the-structure-and-dynamics-of-resident-communities.html"><a href="importance-of-migration-for-the-structure-and-dynamics-of-resident-communities.html#migrants-link-ecological-communities-and-ecosystem-functioning-worldwide"><i class="fa fa-check"></i><b>7.1</b> Migrants link ecological communities and ecosystem functioning worldwide</a></li>
+<li class="chapter" data-level="7.2" data-path="importance-of-migration-for-the-structure-and-dynamics-of-resident-communities.html"><a href="importance-of-migration-for-the-structure-and-dynamics-of-resident-communities.html#animal-migrations-provide-services-and-disservices"><i class="fa fa-check"></i><b>7.2</b> Animal migrations provide services and disservices</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="Sec-GlobalChange.html"><a href="Sec-GlobalChange.html"><i class="fa fa-check"></i><b>8</b> Global change and other challenges</a><ul>
-<li class="chapter" data-level="8.1" data-path="Sec-GlobalChange.html"><a href="Sec-GlobalChange.html#climate-change"><i class="fa fa-check"></i><b>8.1</b> Climate change</a></li>
-<li class="chapter" data-level="8.2" data-path="Sec-GlobalChange.html"><a href="Sec-GlobalChange.html#sensory-pollution"><i class="fa fa-check"></i><b>8.2</b> Sensory pollution</a></li>
-<li class="chapter" data-level="8.3" data-path="Sec-GlobalChange.html"><a href="Sec-GlobalChange.html#man-made-structures"><i class="fa fa-check"></i><b>8.3</b> Man-made structures</a></li>
-<li class="chapter" data-level="8.4" data-path="Sec-GlobalChange.html"><a href="Sec-GlobalChange.html#conservation-of-migrants-and-migrations"><i class="fa fa-check"></i><b>8.4</b> Conservation of migrants and migrations</a></li>
+<li class="chapter" data-level="8" data-path="global-change-and-other-challenges.html"><a href="global-change-and-other-challenges.html"><i class="fa fa-check"></i><b>8</b> Global change and other challenges</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="global-change-and-other-challenges.html"><a href="global-change-and-other-challenges.html#climate-change"><i class="fa fa-check"></i><b>8.1</b> Climate change</a></li>
+<li class="chapter" data-level="8.2" data-path="global-change-and-other-challenges.html"><a href="global-change-and-other-challenges.html#sensory-pollution"><i class="fa fa-check"></i><b>8.2</b> Sensory pollution</a></li>
+<li class="chapter" data-level="8.3" data-path="global-change-and-other-challenges.html"><a href="global-change-and-other-challenges.html#man-made-structures"><i class="fa fa-check"></i><b>8.3</b> Man-made structures</a></li>
+<li class="chapter" data-level="8.4" data-path="global-change-and-other-challenges.html"><a href="global-change-and-other-challenges.html#conservation-of-migrants-and-migrations"><i class="fa fa-check"></i><b>8.4</b> Conservation of migrants and migrations</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="Sec-FieldMethods.html"><a href="Sec-FieldMethods.html"><i class="fa fa-check"></i><b>9</b> Field methods</a><ul>
-<li class="chapter" data-level="9.1" data-path="Sec-FieldMethods.html"><a href="Sec-FieldMethods.html#observations-visual-moonwatching-ir-radar"><i class="fa fa-check"></i><b>9.1</b> Observations: visual, moonwatching, IR, radar</a></li>
-<li class="chapter" data-level="9.2" data-path="Sec-FieldMethods.html"><a href="Sec-FieldMethods.html#marking-and-reencountering"><i class="fa fa-check"></i><b>9.2</b> Marking and reencountering</a></li>
-<li class="chapter" data-level="9.3" data-path="Sec-FieldMethods.html"><a href="Sec-FieldMethods.html#tracking-individuals"><i class="fa fa-check"></i><b>9.3</b> Tracking individuals</a></li>
-<li class="chapter" data-level="9.4" data-path="Sec-FieldMethods.html"><a href="Sec-FieldMethods.html#orientation-experiments"><i class="fa fa-check"></i><b>9.4</b> Orientation experiments</a></li>
-<li class="chapter" data-level="9.5" data-path="Sec-FieldMethods.html"><a href="Sec-FieldMethods.html#stable-isotopes-genetics-and-physiology"><i class="fa fa-check"></i><b>9.5</b> Stable isotopes, genetics and physiology</a></li>
-<li class="chapter" data-level="9.6" data-path="Sec-FieldMethods.html"><a href="Sec-FieldMethods.html#references"><i class="fa fa-check"></i><b>9.6</b> References</a></li>
+<li class="chapter" data-level="9" data-path="field-methods.html"><a href="field-methods.html"><i class="fa fa-check"></i><b>9</b> Field methods</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="field-methods.html"><a href="field-methods.html#observations-visual-moonwatching-ir-radar"><i class="fa fa-check"></i><b>9.1</b> Observations: visual, moonwatching, IR, radar</a></li>
+<li class="chapter" data-level="9.2" data-path="field-methods.html"><a href="field-methods.html#marking-and-reencountering"><i class="fa fa-check"></i><b>9.2</b> Marking and reencountering</a></li>
+<li class="chapter" data-level="9.3" data-path="field-methods.html"><a href="field-methods.html#tracking-individuals"><i class="fa fa-check"></i><b>9.3</b> Tracking individuals</a></li>
+<li class="chapter" data-level="9.4" data-path="field-methods.html"><a href="field-methods.html#orientation-experiments"><i class="fa fa-check"></i><b>9.4</b> Orientation experiments</a></li>
+<li class="chapter" data-level="9.5" data-path="field-methods.html"><a href="field-methods.html#stable-isotopes-genetics-and-physiology"><i class="fa fa-check"></i><b>9.5</b> Stable isotopes, genetics and physiology</a></li>
+<li class="chapter" data-level="9.6" data-path="field-methods.html"><a href="field-methods.html#references"><i class="fa fa-check"></i><b>9.6</b> References</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="Sec-MigModels.html"><a href="Sec-MigModels.html"><i class="fa fa-check"></i><b>10</b> Migration models</a><ul>
-<li class="chapter" data-level="10.1" data-path="Sec-MigModels.html"><a href="Sec-MigModels.html#state-dependent-migration-models"><i class="fa fa-check"></i><b>10.1</b> State-dependent migration models</a></li>
+<li class="chapter" data-level="10" data-path="migration-models.html"><a href="migration-models.html"><i class="fa fa-check"></i><b>10</b> Migration models</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="migration-models.html"><a href="migration-models.html#state-dependent-migration-models"><i class="fa fa-check"></i><b>10.1</b> State-dependent migration models</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html"><i class="fa fa-check"></i><b>11</b> Statistical tools for studying migration</a><ul>
-<li class="chapter" data-level="11.1" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#distribution-models-for-counts-of-resting-or-migrating-individuals"><i class="fa fa-check"></i><b>11.1</b> Distribution models for counts of resting or migrating individuals</a></li>
-<li class="chapter" data-level="11.2" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#connectivity-models"><i class="fa fa-check"></i><b>11.2</b> Connectivity models</a></li>
-<li class="chapter" data-level="11.3" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#estimating-survival-based-on-mark-recapture-data-the-cormack-jolly-seber-model"><i class="fa fa-check"></i><b>11.3</b> Estimating survival based on mark-recapture data: The Cormack-Jolly-Seber model</a></li>
-<li class="chapter" data-level="11.4" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#multi-state-models-to-estimate-movement-rates"><i class="fa fa-check"></i><b>11.4</b> Multi-state models to estimate movement rates</a></li>
-<li class="chapter" data-level="11.5" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#individual-based-hidden-markov-model-for-bird-behaviour"><i class="fa fa-check"></i><b>11.5</b> Individual based hidden Markov model for bird behaviour</a></li>
-<li class="chapter" data-level="11.6" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#the-combination-of-different-data-sources"><i class="fa fa-check"></i><b>11.6</b> The combination of different data sources</a></li>
-<li class="chapter" data-level="11.7" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#references-1"><i class="fa fa-check"></i><b>11.7</b> References</a></li>
+<li class="chapter" data-level="11" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html"><i class="fa fa-check"></i><b>11</b> Statistical tools for studying migration</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#linear-models"><i class="fa fa-check"></i><b>11.1</b> Linear models</a></li>
+<li class="chapter" data-level="11.2" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#distribution-models-for-counts-of-resting-or-migrating-individuals"><i class="fa fa-check"></i><b>11.2</b> Distribution models for counts of resting or migrating individuals</a></li>
+<li class="chapter" data-level="11.3" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#migratory-connectivity-models"><i class="fa fa-check"></i><b>11.3</b> Migratory connectivity models</a></li>
+<li class="chapter" data-level="11.4" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#estimating-survival-based-on-mark-recapture-data-the-cormack-jolly-seber-model"><i class="fa fa-check"></i><b>11.4</b> Estimating survival based on mark-recapture data: The Cormack-Jolly-Seber model</a></li>
+<li class="chapter" data-level="11.5" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#multi-state-models-to-estimate-movement-rates"><i class="fa fa-check"></i><b>11.5</b> Multi-state models to estimate movement rates</a></li>
+<li class="chapter" data-level="11.6" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#individual-based-hidden-markov-model-for-bird-behaviour"><i class="fa fa-check"></i><b>11.6</b> Individual based hidden Markov model for bird behaviour</a></li>
+<li class="chapter" data-level="11.7" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#the-combination-of-different-data-sources"><i class="fa fa-check"></i><b>11.7</b> The combination of different data sources</a></li>
+<li class="chapter" data-level="11.8" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#references-1"><i class="fa fa-check"></i><b>11.8</b> References</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="Sec-StudentProjects.html"><a href="Sec-StudentProjects.html"><i class="fa fa-check"></i><b>12</b> Student projects</a><ul>
-<li class="chapter" data-level="12.1" data-path="Sec-StudentProjects.html"><a href="Sec-StudentProjects.html#pre-requisite-reading-and-assessing-scientific-publications"><i class="fa fa-check"></i><b>12.1</b> Pre-requisite: Reading and assessing scientific publications</a></li>
-<li class="chapter" data-level="12.2" data-path="Sec-StudentProjects.html"><a href="Sec-StudentProjects.html#student-project-1-phenology---migration-timing-within-the-season-and-their-changes-over-the-years"><i class="fa fa-check"></i><b>12.2</b> Student project 1: Phenology - Migration timing within the season and their changes over the years</a></li>
-<li class="chapter" data-level="12.3" data-path="Sec-StudentProjects.html"><a href="Sec-StudentProjects.html#student-project-2-long-term-changes-in-morphology"><i class="fa fa-check"></i><b>12.3</b> Student project 2: Long-term changes in morphology</a></li>
-<li class="chapter" data-level="12.4" data-path="Sec-StudentProjects.html"><a href="Sec-StudentProjects.html#student-project-3-differential-migration"><i class="fa fa-check"></i><b>12.4</b> Student project 3: Differential Migration</a></li>
-<li class="chapter" data-level="12.5" data-path="Sec-StudentProjects.html"><a href="Sec-StudentProjects.html#student-project-4-flight-energetics-in-the-course-of-a-night-and-over-the-season"><i class="fa fa-check"></i><b>12.5</b> Student project 4: Flight energetics in the course of a night and over the season</a></li>
-<li class="chapter" data-level="12.6" data-path="Sec-StudentProjects.html"><a href="Sec-StudentProjects.html#student-project-5-estimate-survival-from-capture-recapture-data"><i class="fa fa-check"></i><b>12.6</b> Student project 5: Estimate survival from capture-recapture data</a></li>
-<li class="chapter" data-level="12.7" data-path="Sec-StudentProjects.html"><a href="Sec-StudentProjects.html#student-project-6-modelling-spring-migration-several-questions"><i class="fa fa-check"></i><b>12.7</b> Student project 6: Modelling spring migration: several questions</a></li>
-<li class="chapter" data-level="12.8" data-path="Sec-StudentProjects.html"><a href="Sec-StudentProjects.html#student-project-7-estimating-migration-volume"><i class="fa fa-check"></i><b>12.8</b> Student project 7: Estimating Migration volume</a></li>
-<li class="chapter" data-level="12.9" data-path="Sec-StudentProjects.html"><a href="Sec-StudentProjects.html#student-project-8-partial-migration-who-stays-in-winter"><i class="fa fa-check"></i><b>12.9</b> Student project 8: Partial migration: Who stays in winter?</a></li>
-<li class="chapter" data-level="12.10" data-path="Sec-StudentProjects.html"><a href="Sec-StudentProjects.html#student-project-9-geolocation---tracking-small-birds"><i class="fa fa-check"></i><b>12.10</b> Student project 9: Geolocation - tracking small birds</a></li>
+<li class="chapter" data-level="12" data-path="student-projects.html"><a href="student-projects.html"><i class="fa fa-check"></i><b>12</b> Student projects</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="student-projects.html"><a href="student-projects.html#pre-requisite-reading-and-assessing-scientific-publications"><i class="fa fa-check"></i><b>12.1</b> Pre-requisite: Reading and assessing scientific publications</a></li>
+<li class="chapter" data-level="12.2" data-path="student-projects.html"><a href="student-projects.html#student-project-1-phenology---migration-timing-within-the-season-and-their-changes-over-the-years"><i class="fa fa-check"></i><b>12.2</b> Student project 1: Phenology - Migration timing within the season and their changes over the years</a></li>
+<li class="chapter" data-level="12.3" data-path="student-projects.html"><a href="student-projects.html#student-project-2-long-term-changes-in-morphology"><i class="fa fa-check"></i><b>12.3</b> Student project 2: Long-term changes in morphology</a></li>
+<li class="chapter" data-level="12.4" data-path="student-projects.html"><a href="student-projects.html#student-project-3-differential-migration"><i class="fa fa-check"></i><b>12.4</b> Student project 3: Differential Migration</a></li>
+<li class="chapter" data-level="12.5" data-path="student-projects.html"><a href="student-projects.html#student-project-4-flight-energetics-in-the-course-of-a-night-and-over-the-season"><i class="fa fa-check"></i><b>12.5</b> Student project 4: Flight energetics in the course of a night and over the season</a></li>
+<li class="chapter" data-level="12.6" data-path="student-projects.html"><a href="student-projects.html#student-project-5-estimate-survival-from-capture-recapture-data"><i class="fa fa-check"></i><b>12.6</b> Student project 5: Estimate survival from capture-recapture data</a></li>
+<li class="chapter" data-level="12.7" data-path="student-projects.html"><a href="student-projects.html#student-project-6-modelling-spring-migration-several-questions"><i class="fa fa-check"></i><b>12.7</b> Student project 6: Modelling spring migration: several questions</a></li>
+<li class="chapter" data-level="12.8" data-path="student-projects.html"><a href="student-projects.html#student-project-7-estimating-migration-volume"><i class="fa fa-check"></i><b>12.8</b> Student project 7: Estimating Migration volume</a></li>
+<li class="chapter" data-level="12.9" data-path="student-projects.html"><a href="student-projects.html#student-project-8-why-is-timing-in-spring-important"><i class="fa fa-check"></i><b>12.9</b> Student project 8: Why is timing in spring important?</a></li>
+<li class="chapter" data-level="12.10" data-path="student-projects.html"><a href="student-projects.html#student-project-9-geolocation---tracking-small-birds"><i class="fa fa-check"></i><b>12.10</b> Student project 9: Geolocation - tracking small birds</a></li>
 </ul></li>
+<li class="chapter" data-level="13" data-path="references-2.html"><a href="references-2.html"><i class="fa fa-check"></i><b>13</b> References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/silkebauer/ETH_course" target="blank">Published with bookdown</a></li>
 
@@ -249,31 +293,44 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="statistical-tools-for-studying-migration" class="section level1">
-<h1><span class="header-section-number">Chapter 11</span> Statistical tools for studying migration</h1>
-<div id="distribution-models-for-counts-of-resting-or-migrating-individuals" class="section level2">
-<h2><span class="header-section-number">11.1</span> Distribution models for counts of resting or migrating individuals</h2>
-<p>Count data are classically analysed using generalized linear (mixed) models (GLMM). Typically, the Poisson or negative-binomial models serve as a first model choice when the outcome variable is a count data. In most cases, depending on the data structures, these models are expanded by including spatial or temporal structures, accounting for an excess of zero values (zero-inflation) or a large variance (overdispersion). Any textbook introducing linear models, linear mixed models, generalized linear models and generalized linear mixed models is recommended. We particularly like the introduction to hierarchical models by <span class="citation">Gelman and Hill (<a href="#ref-Gelman.2007" role="doc-biblioref">2007</a>)</span>. Of course, we also recommend our own introduction to linear models that follows the philosophy of Gelman and Hill but is written by ecologists for ecologists, i.e. less technically <span class="citation">(Korner-Nievergelt et al. <a href="#ref-KornerNievergelt.2015b" role="doc-biblioref">2015</a>)</span>. An open access <a href="https://tobiasroth.github.io/BDAEcology/">second edition</a> of this book is under construction; planned final release end of 2021.</p>
+<div id="statistical-tools-for-studying-migration" class="section level1 hasAnchor" number="11">
+<h1><span class="header-section-number">Chapter 11</span> Statistical tools for studying migration<a href="statistical-tools-for-studying-migration.html#statistical-tools-for-studying-migration" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="linear-models" class="section level2 hasAnchor" number="11.1">
+<h2><span class="header-section-number">11.1</span> Linear models<a href="statistical-tools-for-studying-migration.html#linear-models" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Linear models are the basics to most statistical modelling also for the study of migration. It is highly recommended to get an understanding of linear modelling in empirical sciences. Our course is not a statistics course, but we will use statistics for the group work during the course. As a preparation for the course, we recommend reading Chapters 2, 3 and 11 of the <a href="https://tobiasroth.github.io/BDAEcology/">online book on linear modelling</a>.</p>
+</div>
+<div id="distribution-models-for-counts-of-resting-or-migrating-individuals" class="section level2 hasAnchor" number="11.2">
+<h2><span class="header-section-number">11.2</span> Distribution models for counts of resting or migrating individuals<a href="statistical-tools-for-studying-migration.html#distribution-models-for-counts-of-resting-or-migrating-individuals" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Count data are classically analysed using generalized linear (mixed) models (GLMM). Typically, the Poisson or negative-binomial models serve as a first model choice when the outcome variable is a count data. In most cases, depending on the data structures, these models are expanded by including spatial or temporal structures, accounting for an excess of zero values (zero-inflation) or a large variance (overdispersion). Any textbook introducing linear models, linear mixed models, generalized linear models and generalized linear mixed models is recommended. We particularly like the introduction to hierarchical models by <span class="citation">Gelman and Hill (<a href="#ref-Gelman.2007">2007</a>)</span>. Of course, we also recommend our own introduction to linear models that follows the philosophy of Gelman and Hill but is written by ecologists for ecologists, i.e. less technically <span class="citation">(<a href="#ref-KornerNievergelt.2015b">F. Korner-Nievergelt et al. 2015</a>)</span>. An open access <a href="https://tobiasroth.github.io/BDAEcology/">second edition</a> of the most important parts of the book is available.</p>
 <p>Example studies that analysed count data for the study of bird migration:</p>
 <ul>
-<li>Distribution of migratory species during the non-breeding season within Africa <span class="citation">(Wisz, Walther, and Rahbek <a href="#ref-Wisz.2007" role="doc-biblioref">2007</a>)</span>.</li>
+<li>Distribution of migratory species during the non-breeding season within Africa <span class="citation">(<a href="#ref-Wisz.2007">Wisz, Walther, and Rahbek 2007</a>)</span>.</li>
 </ul>
 </div>
-<div id="connectivity-models" class="section level2">
-<h2><span class="header-section-number">11.2</span> Connectivity models</h2>
-<p>Migratory connectivity is the extent to which breeding areas are connected with non-breeding areas via migrating individuals <span class="citation">(Webster et al. <a href="#ref-Webster.2002" role="doc-biblioref">2002</a>; Bauer and Hoye <a href="#ref-Bauer.2014" role="doc-biblioref">2014</a>)</span>. A (multidimensional) measure of migratory connectivity are the proportions of individuals from specific, predefined, breeding areas that spend the non-breeding season in specific, predefined, non-breeding areas. This method requires that distinct breeding areas and distinct non-breeding areas need to be defined by the researcher. Therefore, some authors measure the strength of migratory connectivity by correlating the between individual distances during the breeding season with the ones during the non-breeding season <span class="citation">(Ambrosini, Møller, and Saino <a href="#ref-Ambrosini.2009" role="doc-biblioref">2009</a>)</span>. However, such a correlation coefficient strongly dependent on what and how many populations are included in the analyses and values are difficult to interpret.
-Estimates of migratory connectivity can be obtained by tracking individuals from their breeding grounds to their non-breeding ground. However, because migratory connectivity is a characteristic of populations (not of individuals) a lot of individuals need to be tracked in order to get a reliable estimate of migratory connectivity. Therefore, reencounters of marked individuals that are often available for a large number of individuals and from many different populations are well suited to study migratory connectivity. However, the spatial heterogeneity of reencounter probability introduces a bias in the raw mark reencounter data. Stochastic models to correct for this bias have been developed by <span class="citation">Kania and Busse (<a href="#ref-Kania.1987" role="doc-biblioref">1987</a>)</span>, <span class="citation">Kendall, Conn, and Hines (<a href="#ref-Kendall.2006" role="doc-biblioref">2006</a>)</span>, <span class="citation">Bauthian et al. (<a href="#ref-Bauthian.2007" role="doc-biblioref">2007</a>)</span> and <span class="citation">Thorup and Conn (<a href="#ref-Thorup.2009" role="doc-biblioref">2009</a>)</span>. The model has further been expanded by <span class="citation">Korner-Nievergelt, Liechti, and Hahn (<a href="#ref-KornerNievergelt.2012b" role="doc-biblioref">2012</a>)</span>, <span class="citation">Cohen et al. (<a href="#ref-Cohen.2014b" role="doc-biblioref">2014</a>)</span>, and <span class="citation">Korner-Nievergelt, Liechti, and Thorup (<a href="#ref-KornerNievergelt.2014" role="doc-biblioref">2014</a>)</span>. Combination of different data sources such as ring recoveries, GPS tracking data, geolocator data or stable isotopic data further improves the accuracy of the migratory connectivity estimates <span class="citation">(Korner-Nievergelt et al. <a href="#ref-KornerNievergelt.2017" role="doc-biblioref">2017</a>; Rönn et al. <a href="#ref-Ronn.2020b" role="doc-biblioref">2020</a>)</span>.</p>
+<div id="migratory-connectivity-models" class="section level2 hasAnchor" number="11.3">
+<h2><span class="header-section-number">11.3</span> Migratory connectivity models<a href="statistical-tools-for-studying-migration.html#migratory-connectivity-models" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Migratory connectivity is the extent to which breeding areas are connected with non-breeding areas via migrating individuals <span class="citation">(<a href="#ref-Webster.2002">Webster et al. 2002</a>; <a href="#ref-Bauer.2014">S. Bauer and Hoye 2014</a>)</span>. A (multidimensional) measure of migratory connectivity are the proportions of individuals from specific, predefined, breeding areas that spend the non-breeding season in specific, predefined, non-breeding areas. Thus, migratory connectivity can be quantified based on distinct breeding areas and distinct non-breeding areas. Alternatively, migratory connectivity may be visualised using different distribution maps by population <span class="citation">(<a href="#ref-Schirmer2021">Schirmer 2021</a>)</span>.
+Estimates of migratory connectivity can be obtained by tracking individuals from their breeding grounds to their non-breeding ground. However, because migratory connectivity is a characteristic of populations (not of individuals) a lot of individuals need to be tracked in order to get a reliable estimate of migratory connectivity. Therefore, reencounters of marked individuals that are often available for a large number of individuals and from many different populations are well suited to study migratory connectivity. However, the spatial heterogeneity of reencounter probability introduces a bias in the raw mark reencounter data. Stochastic models to correct for this bias have been developed by <span class="citation">Kania and Busse (<a href="#ref-Kania.1987">1987</a>)</span>, <span class="citation">Kendall, Conn, and Hines (<a href="#ref-Kendall.2006">2006</a>)</span>, <span class="citation">Bauthian et al. (<a href="#ref-Bauthian.2007">2007</a>)</span> and <span class="citation">Thorup and Conn (<a href="#ref-Thorup.2009">2009</a>)</span>. The model has further been expanded by <span class="citation">Fränzi Korner-Nievergelt, Liechti, and Hahn (<a href="#ref-KornerNievergelt.2012b">2012</a>)</span>, <span class="citation">Cohen et al. (<a href="#ref-Cohen.2014b">2014</a>)</span>, <span class="citation">F. Korner-Nievergelt, Liechti, and Thorup (<a href="#ref-KornerNievergelt.2014">2014</a>)</span> and <span class="citation">Schirmer (<a href="#ref-Schirmer2021">2021</a>)</span>. Combination of different data sources such as ring recoveries, GPS tracking data, geolocator data or stable isotopic data further improves the accuracy of the migratory connectivity estimates <span class="citation">(<a href="#ref-KornerNievergelt.2017">Fränzi Korner-Nievergelt et al. 2017</a>; <a href="#ref-Ronn.2020b">Rönn et al. 2020</a>)</span>.</p>
 </div>
-<div id="estimating-survival-based-on-mark-recapture-data-the-cormack-jolly-seber-model" class="section level2">
-<h2><span class="header-section-number">11.3</span> Estimating survival based on mark-recapture data: The Cormack-Jolly-Seber model</h2>
-<p>To study population processes, individuals often are marked and later recaptured or re-sighted. Such mark-recapture/re-sight data contain information on demographic parameters such as survival, movement and population size. The difficulty with mark-recapture data is that not all marked individuals are recaptured during each capture occasion. If an individual has not been captured, it may have died, emigrated from the study area, or it may have escaped being captured. For the study of the demographic parameters it is important to disentangle capture probability from the parameters of interest. To do so, <span class="citation">Cormack (<a href="#ref-Cormack.1964" role="doc-biblioref">1964</a>)</span>, <span class="citation">Jolly (<a href="#ref-Jolly.1965" role="doc-biblioref">1965</a>)</span>, and <span class="citation">Seber (<a href="#ref-Seber.1965" role="doc-biblioref">1965</a>)</span> developed a statistical model, the Cormack-Jolly-Seber model (CJS), which became the method used by myriad population biologists <span class="citation">(Lebreton et al. <a href="#ref-Lebreton.1992" role="doc-biblioref">1992</a>; Thomson and al <a href="#ref-Thomson.2009" role="doc-biblioref">2009</a>)</span>. The software [MARK] (www.phidot.org/software/mark/) has become a standard software for the analyses of mark-recapture data <span class="citation">(White and Burnham <a href="#ref-White.1999" role="doc-biblioref">1999</a>; Cooch and White <a href="#ref-Cooch.2016" role="doc-biblioref">2016</a>)</span>. The technique is still being developed for the study of various aspects of demographic processes by a lively <a href="www.phidot.org">society of ecologists and statisticians</a>.
-Here, we introduce the Cormack-Jolly-Seber (CJS) model for estimating apparent survival and recapture probability, or re-sighting probability in cases of re-sights, respectively. The correct term “apparent” survival expresses that in a mark-recapture/re-sight data set from one study site individuals that permanently emigrated from the study site cannot be distinguished from individuals that died. “Apparent” survival is a product of survival and site fidelity.
-The CJS model explicitly models the capture process (the observation process) conditional on a model for apparent survival (the biological process). By including an observation process model, the recapture probability and thus the proportion of individuals still alive and present but not recaptured is estimated and taken into account while estimating the probability that an individual survives and stays in the study area.
+<div id="estimating-survival-based-on-mark-recapture-data-the-cormack-jolly-seber-model" class="section level2 hasAnchor" number="11.4">
+<h2><span class="header-section-number">11.4</span> Estimating survival based on mark-recapture data: The Cormack-Jolly-Seber model<a href="statistical-tools-for-studying-migration.html#estimating-survival-based-on-mark-recapture-data-the-cormack-jolly-seber-model" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>To study population processes, individuals often are marked and later recaptured or re-sighted. Such mark-recapture/re-sight data contain information on demographic parameters such as survival, movement and population size. The difficulty with mark-recapture data is that not all marked individuals are recaptured during each capture occasion. If an individual has not been captured, it may have died, emigrated from the study area, or it may have escaped being captured. For the study of the demographic parameters it is important to disentangle capture probability from the parameters of interest. To do so, <span class="citation">Cormack (<a href="#ref-Cormack.1964">1964</a>)</span>, <span class="citation">Jolly (<a href="#ref-Jolly.1965">1965</a>)</span>, and <span class="citation">Seber (<a href="#ref-Seber.1965">1965</a>)</span> developed a statistical model, the Cormack-Jolly-Seber model (CJS), which became the method used by myriad population biologists <span class="citation">(<a href="#ref-Lebreton.1992">Lebreton et al. 1992</a>; <a href="#ref-Thomson.2009">Thomson and al 2009</a>)</span>. The software <a href="www.phidot.org/software/mark/">MARK</a> has become a standard software for the analyses of mark-recapture data <span class="citation">(<a href="#ref-White.1999">White and Burnham 1999</a>; <a href="#ref-Cooch.2016">Cooch and White 2016</a>)</span>. The technique is still being developed for the study of various aspects of demographic processes by a lively <a href="www.phidot.org">society of ecologists and statisticians</a>.
+Here, we introduce the Cormack-Jolly-Seber (CJS) model for estimating apparent survival and recapture probability, or re-sighting probability in cases of re-sights, respectively. The correct term “apparent” survival expresses that in a mark-recapture/re-sight data set from one study site individuals that permanently emigrated from the study site cannot be distinguished from individuals that died. “Apparent” survival is a product of survival and site fidelity.</p>
+<p>The CJS model explicitly models the capture process (the observation process) conditional on a model for apparent survival (the biological process). By including an observation process model, the recapture probability and thus the proportion of individuals still alive and present but not recaptured is estimated and taken into account while estimating the probability that an individual survives and stays in the study area.
 For example, mark-recapture data of Reed warblers <em>Acrocephaus scirpaceus</em> at the constant ringing effort site (CES) in the Wauwilermoos (LU) can be presented as in Table <a href="statistical-tools-for-studying-migration.html#tab:mcdata">11.1</a>.</p>
-<table>
+<table style="width:100%;">
 <caption><span id="tab:mcdata">Table 11.1: </span> Number of Reed warblers marked at Wauwilermoos per year of first capture and number of recaptured individuals thereof in the subsequent years. The capture occasion numbers are given in brackets behind the year numbers.</caption>
+<colgroup>
+<col width="21%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+</colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th align="left">Year of first capture</th>
 <th align="left">n marked</th>
 <th align="left">2014 (2)</th>
@@ -284,7 +341,7 @@ For example, mark-recapture data of Reed warblers <em>Acrocephaus scirpaceus</em
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td align="left">2013 (1)</td>
 <td align="left">107</td>
 <td align="left">13</td>
@@ -293,7 +350,7 @@ For example, mark-recapture data of Reed warblers <em>Acrocephaus scirpaceus</em
 <td align="left">5</td>
 <td align="left">1</td>
 </tr>
-<tr class="even">
+<tr>
 <td align="left">2014 (2)</td>
 <td align="left">76</td>
 <td align="left">-</td>
@@ -302,7 +359,7 @@ For example, mark-recapture data of Reed warblers <em>Acrocephaus scirpaceus</em
 <td align="left">1</td>
 <td align="left">1</td>
 </tr>
-<tr class="odd">
+<tr>
 <td align="left">2015 (3)</td>
 <td align="left">65</td>
 <td align="left">-</td>
@@ -311,7 +368,7 @@ For example, mark-recapture data of Reed warblers <em>Acrocephaus scirpaceus</em
 <td align="left">3</td>
 <td align="left">0</td>
 </tr>
-<tr class="even">
+<tr>
 <td align="left">2016 (4)</td>
 <td align="left">54</td>
 <td align="left">-</td>
@@ -320,7 +377,7 @@ For example, mark-recapture data of Reed warblers <em>Acrocephaus scirpaceus</em
 <td align="left">7</td>
 <td align="left">2</td>
 </tr>
-<tr class="odd">
+<tr>
 <td align="left">2017 (5)</td>
 <td align="left">64</td>
 <td align="left">-</td>
@@ -331,10 +388,9 @@ For example, mark-recapture data of Reed warblers <em>Acrocephaus scirpaceus</em
 </tr>
 </tbody>
 </table>
-<p>The probability that an individual of all marked individuals released at occasion <span class="math inline">\(k\)</span> is recaptured at occasion <span class="math inline">\(t\)</span> is a function of apparent survival probability <span class="math inline">\(\phi_{t}\)</span> and recapture probability <span class="math inline">\(p_t\)</span> (Table <a href="#tab:cjscode">11.2</a>). The recapture probability <span class="math inline">\(p\)</span> is the probability that an individual that is alive and present in the study area is captured. The model parameters (apparent survival <span class="math inline">\(\phi_t\)</span> and recapture probability <span class="math inline">\(p_t\)</span>) can be estimated by fitting a multinomial model to the number of recaptured individuals at the different occasions. Such a multinomial model is fitted for each cohort of individuals released at the same occasion with the cell probabilities of Table <a href="#tab:cjscode">11.2</a>.</p>
-<p>&lt;fontsize
-Table: (#tab:cjscode). Multinomial cell probabilities of a Cormack-Jolly-Seber model. Note that the cell probabilities are formulated so that one release of a marked individual is resulting in one recapture at maximum. Therefore, the data in Table <a href="statistical-tools-for-studying-migration.html#tab:mcdata">11.1</a> need to be re-arranged so that every recapture becomes a new release of a marked bird (such re-arranged data is called an m-array).</p>
+<p>The probability that an individual of all marked individuals released at occasion <span class="math inline">\(k\)</span> is recaptured at occasion <span class="math inline">\(t\)</span> is a function of apparent survival probability <span class="math inline">\(\phi_{t}\)</span> and recapture probability <span class="math inline">\(p_t\)</span> (Table <a href="statistical-tools-for-studying-migration.html#tab:cjscode">11.2</a>). The recapture probability <span class="math inline">\(p\)</span> is the probability that an individual that is alive and present in the study area is captured. The model parameters (apparent survival <span class="math inline">\(\phi_t\)</span> and recapture probability <span class="math inline">\(p_t\)</span>) can be estimated by fitting a multinomial model to the number of recaptured individuals at the different occasions. Such a multinomial model is fitted for each cohort of individuals released at the same occasion with the cell probabilities of Table <a href="statistical-tools-for-studying-migration.html#tab:cjscode">11.2</a>.</p>
 <table style="width:100%;">
+<caption><span id="tab:cjscode">Table 11.2: </span>. Multinomial cell probabilities of a Cormack-Jolly-Seber model. Note that the cell probabilities are formulated so that one release of a marked individual is resulting in one recapture at maximum. Therefore, the data in Table <a href="statistical-tools-for-studying-migration.html#tab:mcdata">11.1</a> need to be re-arranged so that every recapture becomes a new release of a marked bird (such re-arranged data is called an m-array).</caption>
 <colgroup>
 <col width="16%" />
 <col width="16%" />
@@ -344,7 +400,7 @@ Table: (#tab:cjscode). Multinomial cell probabilities of a Cormack-Jolly-Seber m
 <col width="16%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th align="left">Occ</th>
 <th align="left">2</th>
 <th align="left">3</th>
@@ -354,7 +410,7 @@ Table: (#tab:cjscode). Multinomial cell probabilities of a Cormack-Jolly-Seber m
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td align="left">1</td>
 <td align="left"><span class="math inline">\(\phi_1p_2\)</span></td>
 <td align="left"><span class="math inline">\(\phi_1(1-p_2)\phi_2p_3\)</span></td>
@@ -362,7 +418,7 @@ Table: (#tab:cjscode). Multinomial cell probabilities of a Cormack-Jolly-Seber m
 <td align="left"><span class="math inline">\(\prod_{t=2}^4(\phi_{t-1}(1-p_t))\phi_4p_5\)</span></td>
 <td align="left">…</td>
 </tr>
-<tr class="even">
+<tr>
 <td align="left">2</td>
 <td align="left">0</td>
 <td align="left"><span class="math inline">\(\phi_2p_3\)</span></td>
@@ -370,7 +426,7 @@ Table: (#tab:cjscode). Multinomial cell probabilities of a Cormack-Jolly-Seber m
 <td align="left"><span class="math inline">\(\phi_2(1-p_3)\phi_3(1-p_4)\phi_4p_5\)</span></td>
 <td align="left">…</td>
 </tr>
-<tr class="odd">
+<tr>
 <td align="left">3</td>
 <td align="left">0</td>
 <td align="left">0</td>
@@ -378,7 +434,7 @@ Table: (#tab:cjscode). Multinomial cell probabilities of a Cormack-Jolly-Seber m
 <td align="left"><span class="math inline">\(\phi_3(1-p_4)\phi_4p_5\)</span></td>
 <td align="left">…</td>
 </tr>
-<tr class="even">
+<tr>
 <td align="left">4</td>
 <td align="left">0</td>
 <td align="left">0</td>
@@ -386,7 +442,7 @@ Table: (#tab:cjscode). Multinomial cell probabilities of a Cormack-Jolly-Seber m
 <td align="left"><span class="math inline">\(\phi_4p_5\)</span></td>
 <td align="left">…</td>
 </tr>
-<tr class="odd">
+<tr>
 <td align="left">5</td>
 <td align="left">0</td>
 <td align="left">0</td>
@@ -406,140 +462,138 @@ Also, a linear predictor can be added for the logit of <span class="math inline"
 <ul>
 <li><a href="www.phidot.org/software/mark/">MARK</a><br />
 </li>
-<li>R-package marked CRAN, example in a group work of this course <span class="citation">(Laake, Johnson, and Conn <a href="#ref-Laake.2013" role="doc-biblioref">2013</a>)</span><br />
+<li>R-package marked CRAN, example in a group work of this course <span class="citation">(<a href="#ref-Laake.2013">Laake, Johnson, and Conn 2013</a>)</span><br />
 </li>
-<li><a href="http://mc-stan.org/">Stan</a><br />
+<li><a href="http://mc-stan.org/">Stan</a>, chapter 14.5 in <span class="citation">F. Korner-Nievergelt et al. (<a href="#ref-KornerNievergelt.2015b">2015</a>)</span><br />
 </li>
-<li>Chapter 14.5 in <span class="citation">Korner-Nievergelt et al. (<a href="#ref-KornerNievergelt.2015b" role="doc-biblioref">2015</a>)</span><br />
+<li>BUGS: <a href="www.mrc-bsu.cam.ac.uk/software/bugs/the-bugs-project-winbugs">WinBUGS</a>, <a href="www.openbugs.net">OpenBUGS</a>, <a href="mcmc-jags.sourceforge.net">Jags</a>. Chapter 7 in <span class="citation">Kéry and Schaub (<a href="#ref-Kery.2012">2012</a>)</span>.<br />
 </li>
-<li>BUGS: <a href="www.mrc-bsu.cam.ac.uk/software/bugs/the-bugs-project-winbugs">WinBUGS</a>, <a href="www.openbugs.net">OpenBUGS</a>, <a href="mcmc-jags.sourceforge.net">Jags</a>. Chapter 7 in <span class="citation">Kéry and Schaub (<a href="#ref-Kery.2012" role="doc-biblioref">2012</a>)</span>.<br />
-</li>
-<li><a href="www.cefe.cnrs.fr/fr/pf/bibliotheque/guides-et-tutoriels/34-french/recherche/bc/bbp/264-logiciels">E-Surge</a>. <span class="citation">Choquet, Rouan, and Pradel (<a href="#ref-Choquet.2009" role="doc-biblioref">2009</a>)</span>.</li>
+<li><a href="www.cefe.cnrs.fr/fr/pf/bibliotheque/guides-et-tutoriels/34-french/recherche/bc/bbp/264-logiciels">E-Surge</a>. <span class="citation">Choquet, Rouan, and Pradel (<a href="#ref-Choquet.2009">2009</a>)</span>.</li>
 </ul>
 </div>
-<div id="multi-state-models-to-estimate-movement-rates" class="section level2">
-<h2><span class="header-section-number">11.4</span> Multi-state models to estimate movement rates</h2>
-<p>Multi-state models are used for analysing changes between different states of animals. If the states are defined to be locations, a multi-state model analyses movements between different locations. The central parameters of such models are the probabilities that an animal moves from location A to location B between two time points. Multi-state models have been introduced by <span class="citation">Arnason (<a href="#ref-Arnason.1972" role="doc-biblioref">1972</a>)</span> and <span class="citation">Schwarz, Schweigert, and Arnason (<a href="#ref-Schwarz.1993" role="doc-biblioref">1993</a>)</span>. They have later been used by many authors for a variety of different study questions. With a large number of locations, the number of possible movements, and thus the number of model parameters, becomes very large and a very high sample size is needed to estimate all parameters. But for some model formulations, even with a very high sample size, some parameters may not be identifiable <span class="citation">(Brownie et al. <a href="#ref-Brownie.1993" role="doc-biblioref">1993</a>; Gimenez, Choquet, and Lebreton <a href="#ref-Gimenez.2003" role="doc-biblioref">2003</a>; King and Brooks <a href="#ref-King.2003" role="doc-biblioref">2003</a>)</span>.
-<span class="citation">Antoniazza, Korner-Nievergelt, and Keller (<a href="#ref-Antoniazza.2012" role="doc-biblioref">2012</a>)</span> used a multi-state model to describe the migration of juvenile and adult cormorants <em>Phalacrocorax carbo</em> that were colour marked at Lake Neuchatel during the breeding seasons.</p>
+<div id="multi-state-models-to-estimate-movement-rates" class="section level2 hasAnchor" number="11.5">
+<h2><span class="header-section-number">11.5</span> Multi-state models to estimate movement rates<a href="statistical-tools-for-studying-migration.html#multi-state-models-to-estimate-movement-rates" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Multi-state models are used for analysing changes between different states of animals. If the states are defined to be locations, a multi-state model analyses movements between different locations. The central parameters of such models are the probabilities that an animal moves from location A to location B between two time points. Multi-state models have been introduced by <span class="citation">Arnason (<a href="#ref-Arnason.1972">1972</a>)</span> and <span class="citation">Schwarz, Schweigert, and Arnason (<a href="#ref-Schwarz.1993">1993</a>)</span>. They have later been used by many authors for a variety of different study questions. With a large number of locations, the number of possible movements, and thus the number of model parameters, becomes very large and a very high sample size is needed to estimate all parameters. But for some model formulations, even with a very high sample size, some parameters may not be identifiable <span class="citation">(<a href="#ref-Brownie.1993">Brownie et al. 1993</a>; <a href="#ref-Gimenez.2003">Gimenez, Choquet, and Lebreton 2003</a>; <a href="#ref-King.2003">King and Brooks 2003</a>)</span>.
+<span class="citation">Antoniazza, Korner-Nievergelt, and Keller (<a href="#ref-Antoniazza.2012">2012</a>)</span> used a multi-state model to describe the migration of juvenile and adult cormorants <em>Phalacrocorax carbo</em> that were colour marked at Lake Neuchatel during the breeding seasons.</p>
 </div>
-<div id="individual-based-hidden-markov-model-for-bird-behaviour" class="section level2">
-<h2><span class="header-section-number">11.5</span> Individual based hidden Markov model for bird behaviour</h2>
-<p>Individual based hidden Markov models are used for analysing tracking data such as geolocator data or satellite telemetry data. Such data contain for each individual location measurements repeated at regular time intervals over a longer time span. Normally a measurement error is involved in the location measurement. For example, spatial error in a location measurement by light-based geolocation can be up to 1000 km <span class="citation">(Lisovski et al. <a href="#ref-Lisovski.2012b" role="doc-biblioref">2012</a>)</span> e.g. because of shading by clouds or vegetation.
+<div id="individual-based-hidden-markov-model-for-bird-behaviour" class="section level2 hasAnchor" number="11.6">
+<h2><span class="header-section-number">11.6</span> Individual based hidden Markov model for bird behaviour<a href="statistical-tools-for-studying-migration.html#individual-based-hidden-markov-model-for-bird-behaviour" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Individual based hidden Markov models are used for analysing tracking data such as geolocator data or satellite telemetry data. Such data contain for each individual location measurements repeated at regular time intervals over a longer time span. Normally a measurement error is involved in the location measurement. For example, spatial error in a location measurement by light-based geolocation can be up to 1000 km <span class="citation">(<a href="#ref-Lisovski.2012b">Lisovski et al. 2012</a>)</span> e.g. because of shading by clouds or vegetation.
 The individual based hidden Markov models assume that each individual has a (hidden) “true” location at each time interval, and that the recorded locations are measurements of the true locations with a measurement error. Both the true location as well as the measurement error can depend on environmental and/or individual characteristics. Therefore, the model can be used to estimate the true locations of the individuals over the time. Further, general patterns of migration can be studied, e.g. factors that influence migration speed, directions or decisions to depart on a migratory flight.
-A seminal paper that introduces these models for the study of seal migration is <span class="citation">Jonsen, Flemming, and Myers (<a href="#ref-Jonsen.2005" role="doc-biblioref">2005</a>)</span>. The textbook by <span class="citation">Hooten et al. (<a href="#ref-Hooten.2017" role="doc-biblioref">2017</a>)</span> give an understandable introduction to animal movement modelling.</p>
+A seminal paper that introduces these models for the study of seal migration is <span class="citation">Jonsen, Flemming, and Myers (<a href="#ref-Jonsen.2005">2005</a>)</span>. The textbook by <span class="citation">Hooten et al. (<a href="#ref-Hooten.2017">2017</a>)</span> give an understandable introduction to animal movement modelling.</p>
 </div>
-<div id="the-combination-of-different-data-sources" class="section level2">
-<h2><span class="header-section-number">11.6</span> The combination of different data sources</h2>
-<p>In future, we expect that more ornithologists combine different data sources in formal models, the intergrated models. Bayesian techniques and user-friendly Bayesian software such as <a href="www.mrc-bsu.cam.ac.uk/software/bugs/the-bugs-project-winbugs/">BUGS</a> and <a href="mc-stan.org/">Stan</a> made these techniques available for ecologists.</p>
+<div id="the-combination-of-different-data-sources" class="section level2 hasAnchor" number="11.7">
+<h2><span class="header-section-number">11.7</span> The combination of different data sources<a href="statistical-tools-for-studying-migration.html#the-combination-of-different-data-sources" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In future, we expect that more ornithologists combine different data sources in formal models, the integrated models (e.g. <span class="citation">Fränzi Korner-Nievergelt et al. (<a href="#ref-KornerNievergelt.2017">2017</a>)</span>). Bayesian techniques and user-friendly Bayesian software such as <a href="www.mrc-bsu.cam.ac.uk/software/bugs/the-bugs-project-winbugs/">BUGS</a> and <a href="mc-stan.org/">Stan</a> made these techniques available for ecologists.</p>
 </div>
-<div id="references-1" class="section level2">
-<h2><span class="header-section-number">11.7</span> References</h2>
+<div id="references-1" class="section level2 hasAnchor" number="11.8">
+<h2><span class="header-section-number">11.8</span> References<a href="statistical-tools-for-studying-migration.html#references-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 
 </div>
 </div>
-<h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-Ambrosini.2009">
-<p>Ambrosini, R., A. P. Møller, and N. Saino. 2009. “A Quantitative Measure of Migratory Connectivity.” <em>Journal of Theoretical Biology</em> 257: 203–11.</p>
+<h3> References<a href="references-2.html#references-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
+<div id="ref-Antoniazza.2012" class="csl-entry">
+Antoniazza, M., F. Korner-Nievergelt, and V. Keller. 2012. <span>“Les Mouvements Des Grands Cormorans Phalacrocorax Carbo Bague<span>é</span>s Dans La Colonie Du Fanel, Lac de Neuch<span>â</span>tel.”</span> <em>Nos Oiseaux</em> 59: 11–22.
 </div>
-<div id="ref-Antoniazza.2012">
-<p>Antoniazza, M., F. Korner-Nievergelt, and V. Keller. 2012. “Les Mouvements Des Grands Cormorans Phalacrocorax Carbo Bagueés Dans La Colonie Du Fanel, Lac de Neuchâtel.” <em>Nos Oiseaux</em> 59: 11–22.</p>
+<div id="ref-Arnason.1972" class="csl-entry">
+Arnason, A. N. 1972. <span>“Parameter Estimates from Mark-Recapture Experiments on Two Populations Subject to Migration and Death.”</span> <em>Researches on Population Ecology</em> 13: 97–113.
 </div>
-<div id="ref-Arnason.1972">
-<p>Arnason, A. N. 1972. “Parameter Estimates from Mark-Recapture Experiments on Two Populations Subject to Migration and Death.” <em>Researches on Population Ecology</em> 13: 97–113.</p>
+<div id="ref-Bauer.2014" class="csl-entry">
+Bauer, S., and B. J. Hoye. 2014. <span>“Migratory Animals Couple Biodiversity and Ecosystem Functioning Worldwide.”</span> <em>Science</em> 344: 1242552-1-8. <a href="https://doi.org/10.1126/science.1242552">https://doi.org/10.1126/science.1242552</a>.
 </div>
-<div id="ref-Bauer.2014">
-<p>Bauer, S., and B. J. Hoye. 2014. “Migratory Animals Couple Biodiversity and Ecosystem Functioning Worldwide.” <em>Science</em> 344: 1242552–1–8. <a href="https://doi.org/10.1126/science.1242552">https://doi.org/10.1126/science.1242552</a>.</p>
+<div id="ref-Bauthian.2007" class="csl-entry">
+Bauthian, I., F. Grossmann, Y. Ferrand, and R. Julliard. 2007. <span>“Quantifying the Origin of Woodcock Wintering in France.”</span> <em>Journal of Wildlife Management</em> 71: 701–5.
 </div>
-<div id="ref-Bauthian.2007">
-<p>Bauthian, I., F. Grossmann, Y. Ferrand, and R. Julliard. 2007. “Quantifying the Origin of Woodcock Wintering in France.” <em>Journal of Wildlife Management</em> 71: 701–5.</p>
+<div id="ref-Brownie.1993" class="csl-entry">
+Brownie, C., J. E. Hines, J. D. Nichols, K. H. Pollock, and J. B. Hestbeck. 1993. <span>“Capture-Recapture Studies for Multiple Strata Including Non-Markovian Transitions.”</span> <em>Biometrics</em> 49: 1173–87.
 </div>
-<div id="ref-Brownie.1993">
-<p>Brownie, C., J. E. Hines, J. D. Nichols, K. H. Pollock, and J. B. Hestbeck. 1993. “Capture-Recapture Studies for Multiple Strata Including Non-Markovian Transitions.” <em>Biometrics</em> 49: 1173–87.</p>
+<div id="ref-Choquet.2009" class="csl-entry">
+Choquet, R., L. Rouan, and R. Pradel. 2009. <span>“Program e-Surge: A Software Application for Fitting Multievent Models.”</span> In <em>Modeling Demographic Processes in Marked Populations</em>, edited by David L. Thomson, Evan G. Cooch, and Michael J. Conroy, 845–65. Environmental and Ecological Statistics. New York: Springer. <a href="https://doi.org/10.1007/978-0-387-78151-8%7B\_%7D39">https://doi.org/10.1007/978-0-387-78151-8{\_}39</a>.
 </div>
-<div id="ref-Choquet.2009">
-<p>Choquet, R., L. Rouan, and R. Pradel. 2009. “Program E-Surge: A Software Application for Fitting Multievent Models.” In <em>Modeling Demographic Processes in Marked Populations</em>, edited by David L. Thomson, Evan G. Cooch, and Michael J. Conroy, 845–65. Environmental and Ecological Statistics. New York: Springer. <a href="https://doi.org/10.1007/978-0-387-78151-8%7B\_%7D39">https://doi.org/10.1007/978-0-387-78151-8{\_}39</a>.</p>
+<div id="ref-Cohen.2014b" class="csl-entry">
+Cohen, E. B., J. A. Hostetler, J. A. Royle, and P. P. Marra. 2014. <span>“Estimating Migratory Connectivity of Birds When Re-Encounter Probabilities Are Heterogeneous.”</span> <em>Ecology and Evolution</em> 4: 1659–70.
 </div>
-<div id="ref-Cohen.2014b">
-<p>Cohen, E. B., J. A. Hostetler, J. A. Royle, and P. P. Marra. 2014. “Estimating Migratory Connectivity of Birds When Re-Encounter Probabilities Are Heterogeneous.” <em>Ecology and Evolution</em> 4: 1659–70.</p>
+<div id="ref-Cooch.2016" class="csl-entry">
+Cooch, E. G., and G. C. White. 2016. <em>Program MARK: A Gentle Introduction</em>. http://www.phidot.org/software/mark/docs/book/.
 </div>
-<div id="ref-Cooch.2016">
-<p>Cooch, E. G., and G. C. White. 2016. <em>Program Mark: A Gentle Introduction</em>. http://www.phidot.org/software/mark/docs/book/.</p>
+<div id="ref-Cormack.1964" class="csl-entry">
+Cormack, R. M. 1964. <span>“Estimates of Survival from the Sighting of Marked Animals.”</span> <em>Biometrika</em> 51: 429–38.
 </div>
-<div id="ref-Cormack.1964">
-<p>Cormack, R. M. 1964. “Estimates of Survival from the Sighting of Marked Animals.” <em>Biometrika</em> 51: 429–38.</p>
+<div id="ref-Gelman.2007" class="csl-entry">
+Gelman, A., and J. Hill. 2007. <em>Data Analysis Using Regression and Multilevel / Hierarchical Models</em>. Cambridge: <span>Cambridge University Press</span>.
 </div>
-<div id="ref-Gelman.2007">
-<p>Gelman, A., and J. Hill. 2007. <em>Data Analysis Using Regression and Multilevel / Hierarchical Models</em>. Cambridge: Cambridge University Press.</p>
+<div id="ref-Gimenez.2003" class="csl-entry">
+Gimenez, O., R. Choquet, and J.-D. Lebreton. 2003. <span>“Parameter Redundancy in Multistate Capture-Recapture Models.”</span> <em>Biometrical Journal</em> 45: 704–22.
 </div>
-<div id="ref-Gimenez.2003">
-<p>Gimenez, O., R. Choquet, and J.-D. Lebreton. 2003. “Parameter Redundancy in Multistate Capture-Recapture Models.” <em>Biometrical Journal</em> 45: 704–22.</p>
+<div id="ref-Hooten.2017" class="csl-entry">
+Hooten, Mevin B., Devin S. Johnson, Brett T. McClintock, and Juan M. Morales. 2017. <em>Animal Movement. Statistical Models for Telemetry Data</em>. New York: <span>CRC Press</span>.
 </div>
-<div id="ref-Hooten.2017">
-<p>Hooten, Mevin B., Devin S. Johnson, Brett T. McClintock, and Juan M. Morales. 2017. <em>Animal Movement. Statistical Models for Telemetry Data</em>. New York: CRC Press.</p>
+<div id="ref-Jolly.1965" class="csl-entry">
+Jolly, G. 1965. <span>“Explicit Estimates from Capture-Recapture Data with Both Death and Immigration-Stochastic Model.”</span> <em>Biometrika</em> 52: 225–47.
 </div>
-<div id="ref-Jolly.1965">
-<p>Jolly, G. 1965. “Explicit Estimates from Capture-Recapture Data with Both Death and Immigration-Stochastic Model.” <em>Biometrika</em> 52: 225–47.</p>
+<div id="ref-Jonsen.2005" class="csl-entry">
+Jonsen, Ian D., Joanna Mills Flemming, and Ransom A. Myers. 2005. <span>“Robust State-Space Modeling of Animal Movement Data.”</span> <em>Ecology</em> 86: 2874–80.
 </div>
-<div id="ref-Jonsen.2005">
-<p>Jonsen, Ian D., Joanna Mills Flemming, and Ransom A. Myers. 2005. “Robust State-Space Modeling of Animal Movement Data.” <em>Ecology</em> 86: 2874–80.</p>
+<div id="ref-Kania.1987" class="csl-entry">
+Kania, Wojciech, and Przemyslaw Busse. 1987. <span>“An Analysis of the Recovery Distribution Based on Finding Probabilities.”</span> <em>Acta Ornithologica</em> 23: 121–28.
 </div>
-<div id="ref-Kania.1987">
-<p>Kania, Wojciech, and Przemyslaw Busse. 1987. “An Analysis of the Recovery Distribution Based on Finding Probabilities.” <em>Acta Ornithologica</em> 23: 121–28.</p>
+<div id="ref-Kendall.2006" class="csl-entry">
+Kendall, William L., P. B. Conn, and J. E. Hines. 2006. <span>“Combining Multistate Capture-Recapture Data with Tag Recoveries to Estimate Demographic Parameters.”</span> <em>Ecology</em> 87: 169–77.
 </div>
-<div id="ref-Kendall.2006">
-<p>Kendall, William L., P. B. Conn, and J. E. Hines. 2006. “Combining Multistate Capture-Recapture Data with Tag Recoveries to Estimate Demographic Parameters.” <em>Ecology</em> 87: 169–77.</p>
+<div id="ref-Kery.2012" class="csl-entry">
+Kéry, Marc, and Michael Schaub. 2012. <em>Bayesian Population Analysis Using WinBUGS</em>. Amsterdam: Elsevier.
 </div>
-<div id="ref-Kery.2012">
-<p>Kéry, Marc, and Michael Schaub. 2012. <em>Bayesian Population Analysis Using Winbugs</em>. Amsterdam: Elsevier.</p>
+<div id="ref-King.2003" class="csl-entry">
+King, R., and S. P. Brooks. 2003. <span>“Closed-Form Likelihoods for Arnason–Schwarz Models.”</span> <em>Biometrika</em> 90: 435–44.
 </div>
-<div id="ref-King.2003">
-<p>King, R., and S. P. Brooks. 2003. “Closed-Form Likelihoods for Arnason–Schwarz Models.” <em>Biometrika</em> 90: 435–44.</p>
+<div id="ref-KornerNievergelt.2014" class="csl-entry">
+Korner-Nievergelt, F., Felix Liechti, and K. Thorup. 2014. <span>“A Bird Distribution Model for Ring Recovery Data: Where Do the European Robins Go?”</span> <em>Ecology and Evolution</em> 4 (6): 720–31.
 </div>
-<div id="ref-KornerNievergelt.2014">
-<p>Korner-Nievergelt, F., Felix Liechti, and K. Thorup. 2014. “A Bird Distribution Model for Ring Recovery Data: Where Do the European Robins Go?” <em>Ecology and Evolution</em> 4 (6): 720–31.</p>
+<div id="ref-KornerNievergelt.2012b" class="csl-entry">
+Korner-Nievergelt, Fränzi, Felix Liechti, and Steffen Hahn. 2012. <span>“Migratory Connectivity Derived from Sparse Ring Reencounter Data with Unknown Numbers of Ringed Birds.”</span> <em>Journal of Ornithology</em> 153: 771–82. <a href="https://doi.org/10.1007/s10336-011-0793-z">https://doi.org/10.1007/s10336-011-0793-z</a>.
 </div>
-<div id="ref-KornerNievergelt.2012b">
-<p>Korner-Nievergelt, Fränzi, Felix Liechti, and Steffen Hahn. 2012. “Migratory Connectivity Derived from Sparse Ring Reencounter Data with Unknown Numbers of Ringed Birds.” <em>Journal of Ornithology</em> 153: 771–82. <a href="https://doi.org/10.1007/s10336-011-0793-z">https://doi.org/10.1007/s10336-011-0793-z</a>.</p>
+<div id="ref-KornerNievergelt.2017" class="csl-entry">
+Korner-Nievergelt, Fränzi, Céline Prévot, Steffen Hahn, Lukas Jenni, and Felix Liechti. 2017. <span>“The Integration of Mark Re-Encounter and Tracking Data to Quantify Migratory Connectivity.”</span> <em>Ecological Modelling</em> 344: 87–94. <a href="https://doi.org/10.1016/j.ecolmodel.2016.11.009">https://doi.org/10.1016/j.ecolmodel.2016.11.009</a>.
 </div>
-<div id="ref-KornerNievergelt.2017">
-<p>Korner-Nievergelt, Fränzi, Céline Prévot, Steffen Hahn, Lukas Jenni, and Felix Liechti. 2017. “The Integration of Mark Re-Encounter and Tracking Data to Quantify Migratory Connectivity.” <em>Ecological Modelling</em> 344: 87–94. <a href="https://doi.org/10.1016/j.ecolmodel.2016.11.009">https://doi.org/10.1016/j.ecolmodel.2016.11.009</a>.</p>
+<div id="ref-KornerNievergelt.2015b" class="csl-entry">
+Korner-Nievergelt, F., T. Roth, Stefanie von Felten, J. Guélat, B. Almasi, and P. Korner-Nievergelt. 2015. <em>Bayesian Data Analysis in Ecolog Using Linear Models with r, BUGS, and Stan</em>. New York: Elsevier.
 </div>
-<div id="ref-KornerNievergelt.2015b">
-<p>Korner-Nievergelt, F., T. Roth, Stefanie von Felten, J. Guélat, B. Almasi, and P. Korner-Nievergelt. 2015. <em>Bayesian Data Analysis in Ecolog Using Linear Models with R, Bugs, and Stan</em>. New York: Elsevier.</p>
+<div id="ref-Laake.2013" class="csl-entry">
+Laake, J. L., D. S. Johnson, and P. B. Conn. 2013. <span>“Marked: An r Package for Maximumlikelihood and Markov ChainMonte Carlo Analysis of Capture-Recapture Data.”</span> <em>Methods in Ecology and Evolution</em> 4: 885–90.
 </div>
-<div id="ref-Laake.2013">
-<p>Laake, J. L., D. S. Johnson, and P. B. Conn. 2013. “Marked: An R Package for Maximumlikelihood and Markov Chainmonte Carlo Analysis of Capture-Recapture Data.” <em>Methods in Ecology and Evolution</em> 4: 885–90.</p>
+<div id="ref-Lebreton.1992" class="csl-entry">
+Lebreton, J.-D., K. P. Burnham, J. Clobert, and D. R. Anderson. 1992. <span>“Modelling Survival and Testing Biological Hypotheses Using Marked Animals: A Unified Approach with Case Studies.”</span> <em>Ecological Monographs</em> 62 (1): 67–118.
 </div>
-<div id="ref-Lebreton.1992">
-<p>Lebreton, J.-D., K. P. Burnham, J. Clobert, and D. R. Anderson. 1992. “Modelling Survival and Testing Biological Hypotheses Using Marked Animals: A Unified Approach with Case Studies.” <em>Ecological Monographs</em> 62 (1): 67–118.</p>
+<div id="ref-Lisovski.2012b" class="csl-entry">
+Lisovski, Simeon, Chris M. Hewson, Raymond H. G. Klaassen, Fränzi Korner-Nievergelt, Mikkel W. Kristensen, and Steffen Hahn. 2012. <span>“Geolocation by Light: Accuracy and Precision Affected by Environmental Factors.”</span> <em>Methods in Ecology and Evolution</em> 3: 603–312. <a href="https://doi.org/10.1111/j.2041-210X.2012.00185.x">https://doi.org/10.1111/j.2041-210X.2012.00185.x</a>.
 </div>
-<div id="ref-Lisovski.2012b">
-<p>Lisovski, Simeon, Chris M. Hewson, Raymond H. G. Klaassen, Fränzi Korner-Nievergelt, Mikkel W. Kristensen, and Steffen Hahn. 2012. “Geolocation by Light: Accuracy and Precision Affected by Environmental Factors.” <em>Methods in Ecology and Evolution</em> 3: 603–312. <a href="https://doi.org/10.1111/j.2041-210X.2012.00185.x">https://doi.org/10.1111/j.2041-210X.2012.00185.x</a>.</p>
+<div id="ref-Ronn.2020b" class="csl-entry">
+Rönn, Jan A. C. von, Martin U. Grüebler, Thord Fransson, Ulrich Köppen, and Fränzi Korner-Nievergelt. 2020. <span>“Integrating Stable Isotopes, Parasite, and Ring-Reencounter Data to Quantify Migratory Connectivity-a Case Study with Barn Swallows Breeding in Switzerland, Germany, Sweden, and Finland.”</span> <em>Ecology and Evolution</em> 10 (4): 2225–37. <a href="https://doi.org/10.1002/ece3.6061">https://doi.org/10.1002/ece3.6061</a>.
 </div>
-<div id="ref-Ronn.2020b">
-<p>Rönn, Jan A. C. von, Martin U. Grüebler, Thord Fransson, Ulrich Köppen, and Fränzi Korner-Nievergelt. 2020. “Integrating Stable Isotopes, Parasite, and Ring-Reencounter Data to Quantify Migratory Connectivity-a Case Study with Barn Swallows Breeding in Switzerland, Germany, Sweden, and Finland.” <em>Ecology and Evolution</em> 10 (4): 2225–37. <a href="https://doi.org/10.1002/ece3.6061">https://doi.org/10.1002/ece3.6061</a>.</p>
+<div id="ref-Schirmer2021" class="csl-entry">
+Schirmer, Saskia. 2021. <span>“Modeling Spatial Patterns of Survival, Space Use and Recovery Probability.”</span> Mathematisch-Naturwissenschaftlichen Fakultät.
 </div>
-<div id="ref-Schwarz.1993">
-<p>Schwarz, Carl J., Jake F. Schweigert, and A. Neil Arnason. 1993. “Estimating Migration Rates Using Tag-Recovery Data.” <em>Biometrics</em> 49: 177–93.</p>
+<div id="ref-Schwarz.1993" class="csl-entry">
+Schwarz, Carl J., Jake F. Schweigert, and A. Neil Arnason. 1993. <span>“Estimating Migration Rates Using Tag-Recovery Data.”</span> <em>Biometrics</em> 49: 177–93.
 </div>
-<div id="ref-Seber.1965">
-<p>Seber, G. A. F. 1965. “A Note on the Multiple-Recapture Census.” <em>Biometrika</em> 52: 249–59.</p>
+<div id="ref-Seber.1965" class="csl-entry">
+Seber, G. A. F. 1965. <span>“A Note on the Multiple-Recapture Census.”</span> <em>Biometrika</em> 52: 249–59.
 </div>
-<div id="ref-Thomson.2009">
-<p>Thomson, D. L., and et al, eds. 2009. <em>Modeling Demographic Processees in Marked Populations</em>. Vol. Environmental and Ecological Statistics. New York: Springer.</p>
+<div id="ref-Thomson.2009" class="csl-entry">
+Thomson, D. L., and et al, eds. 2009. <em>Modeling Demographic Processees in Marked Populations</em>. Vol. Environmental and Ecological Statistics. New York: Springer.
 </div>
-<div id="ref-Thorup.2009">
-<p>Thorup, K., and P. B. Conn. 2009. “Estimating the Seasonal Distribution of Migrant Bird Species: Can Standard Ringing Data Be Used?” In <em>Modeling Demographic Proccesses in Marked Populations</em>, edited by D. L. Thomson, E. G. Cooch, and M. J. Conroy, 1107–17. New York: Springer.</p>
+<div id="ref-Thorup.2009" class="csl-entry">
+Thorup, K., and P. B. Conn. 2009. <span>“Estimating the Seasonal Distribution of Migrant Bird Species: Can Standard Ringing Data Be Used?”</span> In <em>Modeling Demographic Proccesses in Marked Populations</em>, edited by D. L. Thomson, E. G. Cooch, and M. J. Conroy, 1107–17. New York: Springer.
 </div>
-<div id="ref-Webster.2002">
-<p>Webster, Michael S., Peter P. Marra, Susan M. Haig, Staffan Bensch, and Richard Holmes. 2002. “Links Between Worlds: Unraveling Migratory Connectivity.” <em>Trends in Ecology and Evolution</em> 17 (2): 76–83. <a href="https://doi.org/10.1016/S0169-5347(01)02380-1">https://doi.org/10.1016/S0169-5347(01)02380-1</a>.</p>
+<div id="ref-Webster.2002" class="csl-entry">
+Webster, Michael S., Peter P. Marra, Susan M. Haig, Staffan Bensch, and Richard Holmes. 2002. <span>“Links Between Worlds: Unraveling Migratory Connectivity.”</span> <em>Trends in Ecology and Evolution</em> 17 (2): 76–83. <a href="https://doi.org/10.1016/S0169-5347(01)02380-1">https://doi.org/10.1016/S0169-5347(01)02380-1</a>.
 </div>
-<div id="ref-White.1999">
-<p>White, Fary C., and Kenneth P. Burnham. 1999. “Program Mark: Survival Estimation from Populations of Marked Animals.” <em>Bird Study</em> 46 (suppl.): S120–189.</p>
+<div id="ref-White.1999" class="csl-entry">
+White, Fary C., and Kenneth P. Burnham. 1999. <span>“Program MARK: Survival Estimation from Populations of Marked Animals.”</span> <em>Bird Study</em> 46 (suppl.): S120–189.
 </div>
-<div id="ref-Wisz.2007">
-<p>Wisz, M. S., B. A. Walther, and C. Rahbek. 2007. “Using Potential Distributions to Explore Determinants of Western Palearctic Migratory Songbird Species Richness in Sub-Saharan Africa.” <em>Journal of Biogeography</em> 34: 828–41.</p>
+<div id="ref-Wisz.2007" class="csl-entry">
+Wisz, M. S., B. A. Walther, and C. Rahbek. 2007. <span>“Using Potential Distributions to Explore Determinants of Western Palearctic Migratory Songbird Species Richness in Sub-Saharan Africa.”</span> <em>Journal of Biogeography</em> 34: 828–41.
 </div>
 </div>
             </section>
@@ -547,12 +601,11 @@ A seminal paper that introduces these models for the study of seal migration is 
           </div>
         </div>
       </div>
-<a href="Sec-MigModels.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="Sec-StudentProjects.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="migration-models.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="student-projects.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -571,6 +624,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -591,6 +645,10 @@ gitbook.start({
 "text": null
 },
 "download": ["MigrationCourse.pdf", "MigrationCourse.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }
@@ -604,7 +662,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

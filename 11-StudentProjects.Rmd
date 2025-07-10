@@ -1,4 +1,4 @@
-# Student projects {#Sec:StudentProjects}
+# Student projects
 
 We encourage students to work on a research project during the course. We have compiled a list of suggested projects (see below) but students may come up with their own suggested project within the realm of bird and migration ecology (in the latter case, please come back to us before the course). 
 
@@ -32,7 +32,7 @@ You may use one or more of the above questions as a starting point and develop y
 
 The following papers may be inspiring to start with:
 
-- @Jenni.2003 
+- @Jenni.2003, @Hanmer2022
 
 
 The project may include the following steps:
@@ -128,7 +128,7 @@ Wing length is obviously an important determinant of flight costs. Has wing leng
 
 The following papers give some background on relevance:
 - @Hahn2016 
-- @Saino.2010
+- @Salewski.2010
 
 **Data required and R-analyses**
 
@@ -158,6 +158,7 @@ Analyse species-specific ringing lists
 
 - @LercheJrgensen.2018  
 - @Briedis.2018c  
+- @Zuniga.2017
 
 
 ```{r StudDiffMig}
@@ -221,14 +222,14 @@ abline(0,0.033, col=grey(0.8))
 
 Marking and recapturing individual birds allows for estimating apparent survival probability (= the probability that a bird survives and returns to the breeding site). Do survival probabilities correlate with conditions in the wintering area?
 
-Analyse a mark-recapture data set of reed warblers from a constant ringing effort site 
-using MCMC (software: Jags)
+Analyse a mark-recapture data set of reed warblers from a constant ringing effort site or from Snowfinches ringed year-round in the Alps. 
 
+An introduction on how survival is estimated based on mark-recapture data is given during the second course day. 
 
 
 ## Student project 6: Modelling spring migration: several questions
 
-Read Chapter \@ref(Sec:MigModels) for background on state-dependent migration models, what they can do and what they can't.   
+Read Chapter Migration Models for background on state-dependent migration models, what they can do and what they can't.   
 
 Exemplary questions that could be tackled with such a model are:
 
@@ -255,7 +256,7 @@ Download the model's R-code from GitHub [link](https://github.com/slisovski/sdpM
 
 ## Student project 7: Estimating Migration volume
 
-Why would it be important to quantify the number of birds migrating? Look for possible reasons at Chapters \@ref(Sec:Ecosystemfunctions) and \@ref(Sec:GlobalChange).
+Why would it be important to quantify the number of birds migrating? Look for possible reasons at Chapters 7 and 8.
 
 
 -	What is the total number and biomass of birds migrating?
@@ -307,4 +308,6 @@ In this project, students apply existing analytical methods to individual geoloc
 - Translate a time series of light levels into geographical locations and present them on maps
 - Derive the schedule of movements throughout the year
 
+
+# References
 
