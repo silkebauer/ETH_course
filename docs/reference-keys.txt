@@ -98,6 +98,7 @@ student-project-8-why-is-timing-in-spring-important
 student-project-9-geolocation---tracking-small-birds
 references-2
 refresher
+refreshing-r
 software-installation
 working-with-r
 working-with-rmarkdown
@@ -108,4 +109,3 @@ data
 fit-the-regression-using-lm
 check-the-model-assumptions
 drawing-conclusions
-references-3

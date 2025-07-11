@@ -77,7 +77,7 @@ Location: ETH Zürich, room LEE C 114
 * 14:00 - 14:45 Lecture 5: Methods for field ornithology (FK)    
 * 15:00 - 17:00 Practical (SB, FK)  
 
-  + refreshing working with R  
+  + refreshing working with R (Exercise in Chapter \@ref(refresher))
   + geolocation  
   + estimating migratory connectivity based data of marked animals    
 
