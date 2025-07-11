@@ -110,7 +110,7 @@ Location: ETH Zürich, room LEE C 114
 * 13:00 – 17:00 Preparation of student projects  
   + build groups  
   + find study question  
-  + sketch the projec  
+  + sketch the project  
   + download literature  
   + install R-packages
 
