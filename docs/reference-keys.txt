@@ -11,6 +11,8 @@ tab:obsmethods
 tab:TrackTechnology
 tab:mcdata
 tab:cjscode
+fig:diagnostics
+fig:figlmer2
 general-information
 introduction
 course-aims
@@ -95,3 +97,15 @@ student-project-7-estimating-migration-volume
 student-project-8-why-is-timing-in-spring-important
 student-project-9-geolocation---tracking-small-birds
 references-2
+refresher
+software-installation
+working-with-r
+working-with-rmarkdown
+linear-regression
+theory
+fitting-a-linear-regression-in-r
+data
+fit-the-regression-using-lm
+check-the-model-assumptions
+drawing-conclusions
+references-3
