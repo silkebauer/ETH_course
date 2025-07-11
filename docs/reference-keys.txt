@@ -16,7 +16,10 @@ introduction
 course-aims
 course-schedule
 prepatory-days-2-5-september-2025-at-swiss-ornithological-institute-sempach-and-eth-zürich
-course-day-1-tuesday-2-september-2024-in-sempach
+course-day-1-tuesday-2-september-2025-in-sempach
+course-day-2-wednesday-3-september-2025
+course-day-3-thursday-4-september-2025
+course-day-4-friday-5-september-2025
 excursion-to-col-de-bretolet-mon-fri-8-12-september-2025
 course-day-5-monday-8-september-2024
 course-day-6-tuesday-9-september-2025
@@ -80,7 +83,7 @@ multi-state-models-to-estimate-movement-rates
 individual-based-hidden-markov-model-for-bird-behaviour
 the-combination-of-different-data-sources
 references-1
-student-projects
+StudentProjects
 pre-requisite-reading-and-assessing-scientific-publications
 student-project-1-phenology---migration-timing-within-the-season-and-their-changes-over-the-years
 student-project-2-long-term-changes-in-morphology

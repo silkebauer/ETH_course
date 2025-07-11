@@ -29,8 +29,8 @@ For **practical and field methods**, we will introduce some of the most importan
 * tracking birds
 
 
-**Student projects** are ideally conducted in groups of 2-4 persons. We expect students to choose a project during the first two days of the course (see list of potential projects \@ref(Sec:StudentProjects)). There are several slots for work on these projects over the course week and we expect students to give a brief (approx. 20 min) presentation on Friday, detailing the ecological question behind the project, the analytical approach chosen, the results obtained and a discussion. 
-Within the student projects, we will introduce and apply important **theoretical approaches and analytical methods**
+**Student projects** are ideally conducted in groups of 2-4 persons. We expect students to choose a project during the first two days of the course (see list of potential projects \@ref(StudentProjects)). There are several slots for work on these projects over the course week and we expect students to give a brief (approx. 20 min) presentation on Friday, detailing the ecological question behind the project, the analytical approach chosen, the results obtained and a discussion. 
+Within the student projects, we will introduce and apply important **theoretical approaches and analytical methods**.
 
 
 ## Course schedule
@@ -40,7 +40,7 @@ The course consists of lectures, project work and excursions.
 ### Prepatory days: 2-5 September 2025 at Swiss Ornithological Institute Sempach and ETH Zürich
 
 
-Travel information
+Travel information  
 •	To Sempach: Travel by train is around 1.5h from Zürich HB (www.sbb.ch). The nearest train station is Sempach-Neuenkirch, from which you can either walk (15-20mins) to the visitor center of the Swiss Ornithological Institute or take a bus to “Sempach Vogelwarte”.
 
 
@@ -70,22 +70,49 @@ Location: [Room Schulungsraum Besuchszentrum at the Swiss Ornithological Institu
 ### Course day 2: Wednesday, 3 September 2025 
 
 Location: ETH Zürich, room LEE C 114
- 
 
-* 9:15 - 17:00
+* 9:15 - 12:00 Lecture 3: Modelling bird migration including practicals (SB) and practicals (SB, FK)  
 
+* 13:00 - 13:45 Lecture 4: Methods for studying animal migration (SB)    
+* 14:00 - 14:45 Lecture 5: Methods for field ornithology (FK)    
+* 15:00 - 17:00 Practical (SB, FK)  
+
+  + refreshing working with R  
+  + geolocation  
+  + estimating migratory connectivity based data of marked animals    
 
 ### Course day 3: Thursday, 4 September 2025 
 
 Location: ETH Zürich, room LEE C 114
 
-* 9:15 - 17:00
+* 9:15 - 10:00 Lecture 6: Timing of migration (SB)  
+* 10:15 - 11:00 Lecture 7: Orientation (FK)   
+* 11:15 - 12:00 Practical (FK, SB)     
+
+  + Analyse timing of arrival or hatching dates using linear regressions (FK, SB)  
+  
+* 13:00 - 13:45 Lecture 8: Migration in the life-cycle of a bird (FK)  
+* 14:00 - 14:45 Lecture 9: Ecosystem functions, biodiversity consequences, Services & disservices of migrants (SB)  
+* Practicals:  
+
+ + Survival estimation based on data of marked animals    
+ + Biodiversity consequences of movements  
+
 
 ### Course day 4: Friday, 5 September 2025 
 
 Location: ETH Zürich, room LEE C 114
 
-* 9:15 - 17:00
+* 9:15 - 10:00: Lecture 10: Climate change and other threats to migrating animals (SB)  
+* 10:15 - 11:00: Climate change and other threats to Swiss breeding birds (FK)  
+* 11:15 - 12:15: Exercises and discussion to climate change and threats to migrants (SB, FK)  
+
+* 13:00 – 17:00 Preparation of student projects  
+  + build groups  
+  + find study question  
+  + sketch the projec  
+  + download literature  
+  + install R-packages
 
 
 ### Excursion to Col de Bretolet: Mon-Fri 8-12 September 2025
@@ -97,24 +124,10 @@ we need to take weather conditions into account and may need to re-adjust.
 
 * Morning/ early afternoon: Travel to Barmaz (detailed travel suggestions will be provided separately)
 
-* Afternoon:
+* Afternoon: Bird excursion, species identification  
+* Discuss project proposals  
+* literature and questions  
 
-* Lecture 4: Methods for studying animal migration (SB)
-   + Moon-watching
-   + Satellite telemetry
-   + GPS loggers
-   + Geolocators
-   + Multi-sensor logger
-   + Radar
-   
-   
-* Lecture 5: Migration in the life-cycle of a bird (FK)
-
-* Presentations & discussion of 'homework' papers
-  + Give a brief overview of overarching questions addressed in the paper
-  + Provide background to approach used 
-  + Show/Explain main results
-  + Discuss 
 
 
 ### Course day 6: Tuesday, 9 September 2025
@@ -126,10 +139,8 @@ we need to take weather conditions into account and may need to re-adjust.
 
 * Afternoon 
 
-* Lecture 6: Timing of migration (SB)
-* Lecture 7: Orientation (FK)
-
-* Project work
+ + Project work  
+ + Repetition of species identification  
 
 
 ### Course day 6: Wednesday, 10 September 2025
@@ -139,9 +150,8 @@ we need to take weather conditions into account and may need to re-adjust.
   + Data 
 
 * Afternoon
-* Continue project work 
-
-* Lecture 8: Climate change and other threats to migrating animals (SB)
+  + Continue project work 
+  + Repetition of species identification
 
 
 ### Course day 7: Thursday, 11 September 2025
@@ -150,13 +160,6 @@ we need to take weather conditions into account and may need to re-adjust.
  
 * Continue project work 
 * Prepare final presentation
-
-* 13:30 Visit at the visitor centre
-
-* 15:00 Lecture: Climate change and other threats to migrants (Silke & Fränzi)
-
-* 16:00-17:00 Project work
-
 
 
 ### Course day 8: Friday, 12 September 2025
@@ -167,19 +170,6 @@ we need to take weather conditions into account and may need to re-adjust.
   + Student feedback
 
 * Around noon - return home
-
-
- * 10:00 Continue project work 
- 
- * 13:00 Presentations of student-projects  
- 
- * 15:30 Review of bird species seen during excursions (Christian)
- 
- * 15:45 Current research at Swiss Ornithological Institute and possibilities to get involved in (migration) research  
- * 16:00 Concluding remarks, review and summary of answers of initially asked questions
- 
- * 17:00 End of course
-
 
 ## Preparations
 
