@@ -78,8 +78,9 @@ Location: ETH Zürich, room LEE C 114
 * 15:00 - 17:00 Practical (SB, FK)  
 
   + refreshing working with R (Exercise in Chapter \@ref(refresher))
-  + geolocation  
-  + estimating migratory connectivity based data of marked animals    
+  + geolocation  (Exercise in Chapter \@ref(geolocs))
+  + estimating migratory connectivity based data of marked animals (Exercise in Chapter \@ref(migcon)) 
+  
 
 ### Course day 3: Thursday, 4 September 2025 
 

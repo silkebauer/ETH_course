@@ -15,9 +15,75 @@ Alternatively, we can model the number of reencounters from breeding area $i$ us
 $(R_{iA}, R_{iB}, N_i -R_{iA} -R_{iB}) \sim multinomial((m_{iA}r_A, m_{iB}r_B),  1-m_{iA}r_A-m_{iB}r_B)), N_i)$, where $m_{iA}$ and $m_{iB}$  are the proportions of birds migrating from breeding area $i$ to the non-breeding areas $A$ and $B$. The model parameters are estimable when the number of breeding area is at least as high as the number of non-breeding areas. 
 
 
+## Nightingale example
+
+The EURING data base contains 16 reencounters of Common Nightingale *Luscinia megarhynchos* in western Africa from birds ringed in W central Europe, 5 in western Africa from birds ringed in NE central Europe, 4 in central Africa from birds ringed in S central Europe and 1 each in western central and eastern Africa from birds ringed in E Europe (\@ref(fig:migconnightingale)).
+
+Estimate the proportion of birds from each of the 4 breeding areas migrating to each of the 3 non-breeding areas within Africa. 
 
 
+```{r migconnightingale, echo=FALSE, out.width='90%', fig.align='center', fig.show='hold', fig.cap="Ring recovery data of the Common nightingale. Lines connect the ringing location with the recovery location. Polygons indicate different breeding areas."}
 
+knitr::include_graphics('figures/Fig_ChallengesForMig.jpg')
+
+```
+
+
+A solution using Stan is given in the next R-junk. 
+
+```{r, eval=FALSE}
+# data
+Nringed <- c(1035, 1220, 4633, 1448) # total number of ringed birds in W central Europe, S central Europe, NE central Europe and E Europe
+recmatrix <- matrix(c(16, 0, 0,  
+                      0, 4, 0,
+                      5, 0, 0,
+                      1, 1, 1), nrow=4, ncol=3, byrow=TRUE)
+
+# compile data for Stan (you may need to install Stan before being able to run the next code)
+# 
+y <- cbind(recmatrix, Nringed-apply(recmatrix, 1, sum))
+
+datax <- list(y=y,
+              ngroups=nrow(y),
+              ndestinations=ncol(recmatrix))
+
+# 
+# you may need to install rstan:
+# make sure you  have RTools installed https://cran.r-project.org/bin/windows/Rtools/
+# then use 
+# #Optional: clean up old versions
+# remove.packages(c("rstan", "StanHeaders"))
+# #Install RStan from CRAN
+#install.packages("rstan", dependencies = TRUE)
+
+library(rstan)  
+mod <- stan(file="stan/multinom_migcon.stan", data=datax, pars=c("m", "r"))
+bsim <- as.data.frame(mod)
+
+
+# estimated recovery probabilities in western , central and eastern Africa
+apply(bsim[,c("r[1]","r[2]","r[3]")], 2, quantile, probs=c(0.5, 0.025, 0.975))
+
+# estimated proportion of birds from W EU migrating to western, central and eastern Africa 
+apply(bsim[,c("m[1,1]","m[1,2]","m[1,3]")], 2, quantile, probs=c(0.5, 0.025, 0.975))
+
+
+# estimated proportion of birds from S EU migrating to western, central and eastern Africa 
+apply(bsim[,c("m[2,1]","m[2,2]","m[2,3]")], 2, quantile, probs=c(0.5, 0.025, 0.975))
+
+
+# estimated proportion of birds from NE EU migrating to western, central and eastern Africa 
+apply(bsim[,c("m[3,1]","m[3,2]","m[3,3]")], 2, quantile, probs=c(0.5, 0.025, 0.975))
+
+# estimated proportion of birds from E EU migrating to western, central and eastern Africa 
+apply(bsim[,c("m[4,1]","m[4,2]","m[4,3]")], 2, quantile, probs=c(0.5, 0.025, 0.975))
+
+```
+
+
+You find the results also in @korner-nievergelt_migratory_2012.  
+
+What do you think about this migratory connectivity? Is it strong or week? What are implications of that migratory connectivity conserning population dynamics or threats of the species?
 
 
 

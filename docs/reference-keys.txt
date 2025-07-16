@@ -13,6 +13,7 @@ tab:mcdata
 tab:cjscode
 fig:diagnostics
 fig:figlmer2
+fig:migconnightingale
 general-information
 introduction
 course-aims
@@ -109,3 +110,8 @@ data
 fit-the-regression-using-lm
 check-the-model-assumptions
 drawing-conclusions
+geolocs
+migcon
+background
+nightingale-example
+references-3
