@@ -1,6 +1,25 @@
 # Exercise: Estimating migratory connectivity {#migcon}
 
+## Background
 
 Migratory connectivity has been defined as the extent to which different areas are connected over seasons by migrating animals [@Webster.2002]. A possibility to quantify migratory connectivity is the estimation of the proportion of individuals that migrate from specific breeding areas to specific non-breeding areas, e.g. in @saunders_multispecies_2025, @vonRonnJanA.C..2020.
 
+In order to estimate migratory connectivity it is required that we know of a large number of individuals from different breeding populations where they spend the non-breeding season. Often, it is not possible to track that many individuals from different populations. However, marking individuals such as ringing birds is done on a large scale by voluntary bird ringers and resightings or recoveries of such marked birds during the non-breeding season yields information on the connection of a breeding with a non-breeding areas by those birds that were resighted or recovered. The difficulty is that the probability of reencountering (resighting or recovering) a ringed bird very likely differs between different non-breeding area. Ring recovery probability depends primarily on human density and activity and also on the bird's behaviour. As a consequence, the proportions of ring reecounters in the different non-breeding areas does not reflect the proportions of birds migrating to the different non-breeding areas in an unbiased way. However, when there are at least as many breeding areas as there are non-breeding areas considered in a study, the unbiased proportion of birds migrating to the different non-breeding areas becomes estimable. That is because, for example with two breeding areas (1 and 2) and two non-breeding areas (A and B), the following equations can be written:  
 
+$N_1 = \frac{R_{1A}}{r_A} + \frac{R_{1B}}{r_B} $  
+$N_2 = \frac{R_{2A}}{r_A} + \frac{R_{2B}}{r_B} $  
+
+where $N_1$ and $N_2$ are the number of ringed birds in the breeding areas 1 and 2, $R_{1A}$, $R_{2A}$, $R_{1B}$ and $R_{2B}$ are the number of reencountered indidivuals from the two breeding areas in the two non-breeding areas, and $r_A$ and $r_B$ are the reencounter probabilities in the two non-breeding areas. Given the number of ringed individuals and the number of reencountered individuals are known, these equation system has two unknown parameters, $r_A$ and $r_B$ and can be solved. Knowing the reencounter probabilities, the proportions of birds that migrated from each breeding area to each non-breeding area can be calculated.
+
+Alternatively, we can model the number of reencounters from breeding area $i$ using a multinomial model:  
+$(R_{iA}, R_{iB}, N_i -R_{iA} -R_{iB}) \sim multinomial((m_{iA}r_A, m_{iB}r_B),  1-m_{iA}r_A-m_{iB}r_B)), N_i)$, where $m_{iA}$ and $m_{iB}$  are the proportions of birds migrating from breeding area $i$ to the non-breeding areas $A$ and $B$. The model parameters are estimable when the number of breeding area is at least as high as the number of non-breeding areas. 
+
+
+
+
+
+
+
+
+
+## References
