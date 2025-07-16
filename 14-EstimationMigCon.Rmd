@@ -1,0 +1,6 @@
+# Exercise: Estimating migratory connectivity {#migcon}
+
+
+Migratory connectivity has been defined as the extent to which different areas are connected over seasons by migrating animals [@Webster.2002]. A possibility to quantify migratory connectivity is the estimation of the proportion of individuals that migrate from specific breeding areas to specific non-breeding areas, e.g. in @saunders_multispecies_2025, @vonRonnJanA.C..2020.
+
+

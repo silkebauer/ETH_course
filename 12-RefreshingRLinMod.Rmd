@@ -1,4 +1,4 @@
-# Refreshing R and linear models {#refresher}
+# Exercise: Refreshing R and linear models {#refresher}
 
 
 ## Refreshing R
