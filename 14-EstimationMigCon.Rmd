@@ -19,8 +19,6 @@ $(R_{iA}, R_{iB}, N_i -R_{iA} -R_{iB}) \sim multinomial((m_{iA}r_A, m_{iB}r_B), 
 
 The EURING data base contains 16 reencounters of Common Nightingale *Luscinia megarhynchos* in western Africa from birds ringed in W central Europe, 5 in western Africa from birds ringed in NE central Europe, 4 in central Africa from birds ringed in S central Europe and 1 each in western central and eastern Africa from birds ringed in E Europe (\@ref(fig:migconnightingale)).
 
-Estimate the proportion of birds from each of the 4 breeding areas migrating to each of the 3 non-breeding areas within Africa. 
-
 
 ```{r migconnightingale, echo=FALSE, out.width='90%', fig.align='center', fig.show='hold', fig.cap="Ring recovery data of the Common nightingale. Lines connect the ringing location with the recovery location. Polygons indicate different breeding areas."}
 
@@ -29,7 +27,9 @@ knitr::include_graphics('figures/Fig_ChallengesForMig.jpg')
 ```
 
 
-A solution using Stan is given in the next R-junk. 
+Estimate the proportion of birds from each of the 4 breeding areas migrating to each of the 3 non-breeding areas within Africa.  
+
+A solution using Stan(https://mc-stan.org/) is given in the next R-junk (there are many other ways to solve the problem, feel free to use another method you are more familiar with. Or skip the estimation part and go directly to the questions below.) 
 
 ```{r, eval=FALSE}
 # data
@@ -81,9 +81,13 @@ apply(bsim[,c("m[4,1]","m[4,2]","m[4,3]")], 2, quantile, probs=c(0.5, 0.025, 0.9
 ```
 
 
-You find the results also in @korner-nievergelt_migratory_2012.  
+You find the results also in @korner-nievergelt_migratory_2012.   
 
-What do you think about this migratory connectivity? Is it strong or week? What are implications of that migratory connectivity conserning population dynamics or threats of the species?
+Questions:  
+What crucial assumptions are made in this analysis?  
+When may these assumptions be violated? What couuld be done to better meet the assumptions?  
+What do you think about the strength of migratory connectivity in the nightingale?   
+Is it strong or week? What are implications of that migratory connectivity concerning population dynamics or threats of the species?
 
 
 

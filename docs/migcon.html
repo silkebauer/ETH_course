@@ -23,7 +23,7 @@
 <meta name="author" content="Silke Bauer &amp; Fränzi Korner-Nievergelt" />
 
 
-<meta name="date" content="2025-07-16" />
+<meta name="date" content="2025-07-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -336,14 +336,14 @@ $N_2 = + $</p>
 <div id="nightingale-example" class="section level2 hasAnchor" number="15.2">
 <h2><span class="header-section-number">15.2</span> Nightingale example<a href="migcon.html#nightingale-example" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The EURING data base contains 16 reencounters of Common Nightingale <em>Luscinia megarhynchos</em> in western Africa from birds ringed in W central Europe, 5 in western Africa from birds ringed in NE central Europe, 4 in central Africa from birds ringed in S central Europe and 1 each in western central and eastern Africa from birds ringed in E Europe (<a href="migcon.html#fig:migconnightingale">15.1</a>).</p>
-<p>Estimate the proportion of birds from each of the 4 breeding areas migrating to each of the 3 non-breeding areas within Africa.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:migconnightingale"></span>
 <img src="figures/Fig_ChallengesForMig.jpg" alt="Ring recovery data of the Common nightingale. Lines connect the ringing location with the recovery location. Polygons indicate different breeding areas." width="90%" />
 <p class="caption">
 Figure 15.1: Ring recovery data of the Common nightingale. Lines connect the ringing location with the recovery location. Polygons indicate different breeding areas.
 </p>
 </div>
-<p>A solution using Stan is given in the next R-junk.</p>
+<p>Estimate the proportion of birds from each of the 4 breeding areas migrating to each of the 3 non-breeding areas within Africa.</p>
+<p>A solution using Stan(<a href="https://mc-stan.org/" class="uri">https://mc-stan.org/</a>) is given in the next R-junk (there are many other ways to solve the problem, feel free to use another method you are more familiar with. Or skip the estimation part and go directly to the questions below.)</p>
 <div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="migcon.html#cb30-1" tabindex="-1"></a><span class="co"># data</span></span>
 <span id="cb30-2"><a href="migcon.html#cb30-2" tabindex="-1"></a>Nringed <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1035</span>, <span class="dv">1220</span>, <span class="dv">4633</span>, <span class="dv">1448</span>) <span class="co"># total number of ringed birds in W central Europe, S central Europe, NE central Europe and E Europe</span></span>
 <span id="cb30-3"><a href="migcon.html#cb30-3" tabindex="-1"></a>recmatrix <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">16</span>, <span class="dv">0</span>, <span class="dv">0</span>,  </span>
@@ -390,7 +390,11 @@ Figure 15.1: Ring recovery data of the Common nightingale. Lines connect the rin
 <span id="cb30-44"><a href="migcon.html#cb30-44" tabindex="-1"></a><span class="co"># estimated proportion of birds from E EU migrating to western, central and eastern Africa </span></span>
 <span id="cb30-45"><a href="migcon.html#cb30-45" tabindex="-1"></a><span class="fu">apply</span>(bsim[,<span class="fu">c</span>(<span class="st">&quot;m[4,1]&quot;</span>,<span class="st">&quot;m[4,2]&quot;</span>,<span class="st">&quot;m[4,3]&quot;</span>)], <span class="dv">2</span>, quantile, <span class="at">probs=</span><span class="fu">c</span>(<span class="fl">0.5</span>, <span class="fl">0.025</span>, <span class="fl">0.975</span>))</span></code></pre></div>
 <p>You find the results also in <span class="citation">F. Korner-Nievergelt, Liechti, and Hahn (<a href="#ref-korner-nievergelt_migratory_2012">2012</a>)</span>.</p>
-<p>What do you think about this migratory connectivity? Is it strong or week? What are implications of that migratory connectivity conserning population dynamics or threats of the species?</p>
+<p>Questions:<br />
+What crucial assumptions are made in this analysis?<br />
+When may these assumptions be violated? What couuld be done to better meet the assumptions?<br />
+What do you think about the strength of migratory connectivity in the nightingale?<br />
+Is it strong or week? What are implications of that migratory connectivity concerning population dynamics or threats of the species?</p>
 </div>
 <div id="references-3" class="section level2 hasAnchor" number="15.3">
 <h2><span class="header-section-number">15.3</span> References<a href="migcon.html#references-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
