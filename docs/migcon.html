@@ -23,7 +23,7 @@
 <meta name="author" content="Silke Bauer &amp; Fränzi Korner-Nievergelt" />
 
 
-<meta name="date" content="2025-07-17" />
+<meta name="date" content="2025-07-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -299,7 +299,6 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="15.1" data-path="migcon.html"><a href="migcon.html#background"><i class="fa fa-check"></i><b>15.1</b> Background</a></li>
 <li class="chapter" data-level="15.2" data-path="migcon.html"><a href="migcon.html#nightingale-example"><i class="fa fa-check"></i><b>15.2</b> Nightingale example</a></li>
-<li class="chapter" data-level="15.3" data-path="migcon.html"><a href="migcon.html#references-3"><i class="fa fa-check"></i><b>15.3</b> References</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/silkebauer/ETH_course" target="blank">Published with bookdown</a></li>
@@ -327,8 +326,8 @@ div.csl-indent {
 <h2><span class="header-section-number">15.1</span> Background<a href="migcon.html#background" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Migratory connectivity has been defined as the extent to which different areas are connected over seasons by migrating animals <span class="citation">(<a href="#ref-Webster.2002">Webster et al. 2002</a>)</span>. A possibility to quantify migratory connectivity is the estimation of the proportion of individuals that migrate from specific breeding areas to specific non-breeding areas, e.g. in <span class="citation">Saunders et al. (<a href="#ref-saunders_multispecies_2025">2025</a>)</span>, <span class="citation">(<a href="#ref-vonRonnJanA.C"><strong>vonRonnJanA.C?</strong></a>)</span>..2020.</p>
 <p>In order to estimate migratory connectivity it is required that we know of a large number of individuals from different breeding populations where they spend the non-breeding season. Often, it is not possible to track that many individuals from different populations. However, marking individuals such as ringing birds is done on a large scale by voluntary bird ringers and resightings or recoveries of such marked birds during the non-breeding season yields information on the connection of a breeding with a non-breeding areas by those birds that were resighted or recovered. The difficulty is that the probability of reencountering (resighting or recovering) a ringed bird very likely differs between different non-breeding area. Ring recovery probability depends primarily on human density and activity and also on the bird’s behaviour. As a consequence, the proportions of ring reecounters in the different non-breeding areas does not reflect the proportions of birds migrating to the different non-breeding areas in an unbiased way. However, when there are at least as many breeding areas as there are non-breeding areas considered in a study, the unbiased proportion of birds migrating to the different non-breeding areas becomes estimable. That is because, for example with two breeding areas (1 and 2) and two non-breeding areas (A and B), the following equations can be written:</p>
-<p>$N_1 = + $<br />
-$N_2 = + $</p>
+<p><span class="math inline">\(N_1 = \frac{R_{1A}}{r_A} + \frac{R_{1B}}{r_B}\)</span><br />
+<span class="math inline">\(N_2 = \frac{R_{2A}}{r_A} + \frac{R_{2B}}{r_B}\)</span></p>
 <p>where <span class="math inline">\(N_1\)</span> and <span class="math inline">\(N_2\)</span> are the number of ringed birds in the breeding areas 1 and 2, <span class="math inline">\(R_{1A}\)</span>, <span class="math inline">\(R_{2A}\)</span>, <span class="math inline">\(R_{1B}\)</span> and <span class="math inline">\(R_{2B}\)</span> are the number of reencountered indidivuals from the two breeding areas in the two non-breeding areas, and <span class="math inline">\(r_A\)</span> and <span class="math inline">\(r_B\)</span> are the reencounter probabilities in the two non-breeding areas. Given the number of ringed individuals and the number of reencountered individuals are known, these equation system has two unknown parameters, <span class="math inline">\(r_A\)</span> and <span class="math inline">\(r_B\)</span> and can be solved. Knowing the reencounter probabilities, the proportions of birds that migrated from each breeding area to each non-breeding area can be calculated.</p>
 <p>Alternatively, we can model the number of reencounters from breeding area <span class="math inline">\(i\)</span> using a multinomial model:<br />
 <span class="math inline">\((R_{iA}, R_{iB}, N_i -R_{iA} -R_{iB}) \sim multinomial((m_{iA}r_A, m_{iB}r_B),  1-m_{iA}r_A-m_{iB}r_B)), N_i)\)</span>, where <span class="math inline">\(m_{iA}\)</span> and <span class="math inline">\(m_{iB}\)</span> are the proportions of birds migrating from breeding area <span class="math inline">\(i\)</span> to the non-breeding areas <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>. The model parameters are estimable when the number of breeding area is at least as high as the number of non-breeding areas.</p>
@@ -337,7 +336,7 @@ $N_2 = + $</p>
 <h2><span class="header-section-number">15.2</span> Nightingale example<a href="migcon.html#nightingale-example" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The EURING data base contains 16 reencounters of Common Nightingale <em>Luscinia megarhynchos</em> in western Africa from birds ringed in W central Europe, 5 in western Africa from birds ringed in NE central Europe, 4 in central Africa from birds ringed in S central Europe and 1 each in western central and eastern Africa from birds ringed in E Europe (<a href="migcon.html#fig:migconnightingale">15.1</a>).</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:migconnightingale"></span>
-<img src="figures/Fig_ChallengesForMig.jpg" alt="Ring recovery data of the Common nightingale. Lines connect the ringing location with the recovery location. Polygons indicate different breeding areas." width="90%" />
+<img src="figures/migcon_nightingales.jpg" alt="Ring recovery data of the Common nightingale. Lines connect the ringing location with the recovery location. Polygons indicate different breeding areas." width="90%" />
 <p class="caption">
 Figure 15.1: Ring recovery data of the Common nightingale. Lines connect the ringing location with the recovery location. Polygons indicate different breeding areas.
 </p>
@@ -395,9 +394,6 @@ What crucial assumptions are made in this analysis?<br />
 When may these assumptions be violated? What couuld be done to better meet the assumptions?<br />
 What do you think about the strength of migratory connectivity in the nightingale?<br />
 Is it strong or week? What are implications of that migratory connectivity concerning population dynamics or threats of the species?</p>
-</div>
-<div id="references-3" class="section level2 hasAnchor" number="15.3">
-<h2><span class="header-section-number">15.3</span> References<a href="migcon.html#references-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 
 <div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
 <div class="csl-entry">
