@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 13 Exercise: Refreshing R and linear models | Handout and background material for ETHZ course ‘Animal Migration and research in field ornithology’</title>
+  <title>Chapter 17 Path to the downloaded EBD file | Handout and background material for ETHZ course ‘Animal Migration and research in field ornithology’</title>
   <meta name="description" content="This is a handout for the ETH migration course at Col de Bretolet." />
   <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 13 Exercise: Refreshing R and linear models | Handout and background material for ETHZ course ‘Animal Migration and research in field ornithology’" />
+  <meta property="og:title" content="Chapter 17 Path to the downloaded EBD file | Handout and background material for ETHZ course ‘Animal Migration and research in field ornithology’" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This is a handout for the ETH migration course at Col de Bretolet." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 13 Exercise: Refreshing R and linear models | Handout and background material for ETHZ course ‘Animal Migration and research in field ornithology’" />
+  <meta name="twitter:title" content="Chapter 17 Path to the downloaded EBD file | Handout and background material for ETHZ course ‘Animal Migration and research in field ornithology’" />
   
   <meta name="twitter:description" content="This is a handout for the ETH migration course at Col de Bretolet." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="StudentProjects.html"/>
-<link rel="next" href="geolocs.html"/>
+<link rel="prev" href="exctiming.html"/>
+<link rel="next" href="define-filters.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -168,7 +168,7 @@ div.csl-indent {
 <li class="chapter" data-level="2.1" data-path="introduction.html"><a href="introduction.html#course-aims"><i class="fa fa-check"></i><b>2.1</b> Course aims</a></li>
 <li class="chapter" data-level="2.2" data-path="introduction.html"><a href="introduction.html#course-schedule"><i class="fa fa-check"></i><b>2.2</b> Course schedule</a>
 <ul>
-<li class="chapter" data-level="2.2.1" data-path="12-RefreshingRLinMod.html"><a href="#prepatory-days-2-5-september-2025-at-swiss-ornithological-institute-sempach-and-eth-z%C3%BCrich"><i class="fa fa-check"></i><b>2.2.1</b> Prepatory days: 2-5 September 2025 at Swiss Ornithological Institute Sempach and ETH Zürich</a></li>
+<li class="chapter" data-level="2.2.1" data-path="15-ExercisesTiming.html"><a href="#prepatory-days-2-5-september-2025-at-swiss-ornithological-institute-sempach-and-eth-z%C3%BCrich"><i class="fa fa-check"></i><b>2.2.1</b> Prepatory days: 2-5 September 2025 at Swiss Ornithological Institute Sempach and ETH Zürich</a></li>
 <li class="chapter" data-level="2.2.2" data-path="introduction.html"><a href="introduction.html#course-day-1-tuesday-2-september-2025-in-sempach"><i class="fa fa-check"></i><b>2.2.2</b> Course day 1: Tuesday, 2 September 2025 in Sempach</a></li>
 <li class="chapter" data-level="2.2.3" data-path="introduction.html"><a href="introduction.html#course-day-2-wednesday-3-september-2025"><i class="fa fa-check"></i><b>2.2.3</b> Course day 2: Wednesday, 3 September 2025</a></li>
 <li class="chapter" data-level="2.2.4" data-path="introduction.html"><a href="introduction.html#course-day-3-thursday-4-september-2025"><i class="fa fa-check"></i><b>2.2.4</b> Course day 3: Thursday, 4 September 2025</a></li>
@@ -329,183 +329,18 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="refresher" class="section level1 hasAnchor" number="13">
-<h1><span class="header-section-number">Chapter 13</span> Exercise: Refreshing R and linear models<a href="refresher.html#refresher" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="refreshing-r" class="section level2 hasAnchor" number="13.1">
-<h2><span class="header-section-number">13.1</span> Refreshing R<a href="refresher.html#refreshing-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="software-installation" class="section level3 hasAnchor" number="13.1.1">
-<h3><span class="header-section-number">13.1.1</span> Software installation<a href="refresher.html#software-installation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Download R and RStudio.</p>
-<p>Install the packages <code>rmarkdown</code>, <code>bookdown</code>, <code>knitr</code>, <code>dplyr</code>, <code>tidyr</code>, <code>ggplot2</code>and <code>arm</code> by typing <code>install.packages("rmarkdown")</code> etc. in the R-console. R-packages need to be installed only once, or after a major update of R.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="refresher.html#cb11-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">&quot;rmarkdown&quot;</span>, <span class="st">&quot;bookdown&quot;</span>, <span class="st">&quot;knitr&quot;</span>, <span class="st">&quot;dplyr&quot;</span>, <span class="st">&quot;tidyr&quot;</span>, <span class="st">&quot;ggplot2&quot;</span>,  <span class="st">&quot;arm&quot;</span>, <span class="st">&quot;bookdown&quot;</span>))</span></code></pre></div>
-</div>
-<div id="working-with-r" class="section level3 hasAnchor" number="13.1.2">
-<h3><span class="header-section-number">13.1.2</span> Working with R<a href="refresher.html#working-with-r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Writing and editing code is done in a text editor such as Wordpad or RStudio. RStudio is recommended because it is developed by the R development core team, it understands the R language and it communicates with R.<br />
-We write the code in the text file (<code>.r</code> or <code>.rmd</code>) and send it to the R-console in RStudio using <code>ctrl + enter</code>.</p>
-</div>
-<div id="working-with-rmarkdown" class="section level3 hasAnchor" number="13.1.3">
-<h3><span class="header-section-number">13.1.3</span> Working with rmarkdown<a href="refresher.html#working-with-rmarkdown" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Rmarkdown allows knitting text with R code. The option to knit text with R code allows to write analyses reports without having to copy and paste results from the R console into a Word file. We can optionally show or hide R code and insert results directly in the text. Further, for sharing R code, it is extremely helpful to describe what the R code does in the text sections.</p>
-<p>Text is written in plain. Latex notation can be used. Helpful <a href="https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf">introductions exist online</a>.</p>
-<p>R code is written within R chunks. In the header of the R chunks we can specify how the code, results and messages are shown in the output file.
-By pushing the “Knit” button all R-code is executed and displayed within a html, pdf or word document together with the text. The output format is specified in the header of the rmd-file.</p>
-<p>The R-console is the calculator. R can be used as a simple calculator or we can create objects, such as <code>x</code> and apply functions such as <code>mean()</code> to the objects. Functions are followed by round brackets <code>()</code> whithin which we can provide arguments. In the help file of the functions (open by <code>?</code> followed by the name of the function), we can see what arguments a function needs and what default values the arguments have.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="refresher.html#cb12-1" tabindex="-1"></a><span class="co"># This is R-code, therefore text is outcommented by the hash-tag sign</span></span>
-<span id="cb12-2"><a href="refresher.html#cb12-2" tabindex="-1"></a></span>
-<span id="cb12-3"><a href="refresher.html#cb12-3" tabindex="-1"></a><span class="dv">36</span><span class="sc">/</span><span class="dv">5</span>  <span class="co"># a mathematical expression</span></span>
-<span id="cb12-4"><a href="refresher.html#cb12-4" tabindex="-1"></a><span class="do">## [1] 7.2</span></span>
-<span id="cb12-5"><a href="refresher.html#cb12-5" tabindex="-1"></a></span>
-<span id="cb12-6"><a href="refresher.html#cb12-6" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">7</span>,<span class="dv">3</span>,<span class="dv">6</span>,<span class="dv">2</span>,<span class="dv">7</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">2</span>,<span class="dv">8</span>) <span class="co"># a vector, </span></span>
-<span id="cb12-7"><a href="refresher.html#cb12-7" tabindex="-1"></a><span class="co"># x becomes an object in the R global environment</span></span>
-<span id="cb12-8"><a href="refresher.html#cb12-8" tabindex="-1"></a></span>
-<span id="cb12-9"><a href="refresher.html#cb12-9" tabindex="-1"></a><span class="fu">mean</span>(x) <span class="co"># apply a function to an object</span></span>
-<span id="cb12-10"><a href="refresher.html#cb12-10" tabindex="-1"></a><span class="do">## [1] 4.666667</span></span>
-<span id="cb12-11"><a href="refresher.html#cb12-11" tabindex="-1"></a></span>
-<span id="cb12-12"><a href="refresher.html#cb12-12" tabindex="-1"></a><span class="co"># arguments of functions are defined with a specific order</span></span>
-<span id="cb12-13"><a href="refresher.html#cb12-13" tabindex="-1"></a><span class="fu">mean</span>(<span class="dv">4</span>,<span class="dv">7</span>,<span class="dv">3</span>,<span class="dv">6</span>,<span class="dv">2</span>,<span class="dv">7</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">2</span>,<span class="dv">8</span>) <span class="co"># is not correct!</span></span>
-<span id="cb12-14"><a href="refresher.html#cb12-14" tabindex="-1"></a><span class="do">## [1] 4</span></span>
-<span id="cb12-15"><a href="refresher.html#cb12-15" tabindex="-1"></a><span class="co"># but</span></span>
-<span id="cb12-16"><a href="refresher.html#cb12-16" tabindex="-1"></a><span class="fu">mean</span>(<span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">7</span>,<span class="dv">3</span>,<span class="dv">6</span>,<span class="dv">2</span>,<span class="dv">7</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">2</span>,<span class="dv">8</span>)) <span class="co"># is correct</span></span>
-<span id="cb12-17"><a href="refresher.html#cb12-17" tabindex="-1"></a><span class="do">## [1] 4.666667</span></span>
-<span id="cb12-18"><a href="refresher.html#cb12-18" tabindex="-1"></a></span>
-<span id="cb12-19"><a href="refresher.html#cb12-19" tabindex="-1"></a><span class="co"># check  ?mean  for arguments, order of arguments and default values</span></span></code></pre></div>
-</div>
-</div>
-<div id="linear-regression" class="section level2 hasAnchor" number="13.2">
-<h2><span class="header-section-number">13.2</span> Linear regression<a href="refresher.html#linear-regression" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="theory" class="section level3 hasAnchor" number="13.2.1">
-<h3><span class="header-section-number">13.2.1</span> Theory<a href="refresher.html#theory" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>You find the theory to this exercise in Chapter 11 in the online book <a href="https://tobiasroth.github.io/BDAEcology/lm.html">Bayesian Data Analyses Using Linear Models in R and Stan</a>.</p>
-</div>
-<div id="fitting-a-linear-regression-in-r" class="section level3 hasAnchor" number="13.2.2">
-<h3><span class="header-section-number">13.2.2</span> Fitting a Linear Regression in R<a href="refresher.html#fitting-a-linear-regression-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="refresher.html#cb13-1" tabindex="-1"></a><span class="fu">library</span>(arm)</span></code></pre></div>
-<pre><code>## Warning: Paket &#39;Matrix&#39; wurde unter R Version 4.2.3 erstellt</code></pre>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="refresher.html#cb15-1" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code></pre></div>
-<pre><code>## Warning: Paket &#39;dplyr&#39; wurde unter R Version 4.2.3 erstellt</code></pre>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="refresher.html#cb17-1" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
-<span id="cb17-2"><a href="refresher.html#cb17-2" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code></pre></div>
-<pre><code>## Warning: Paket &#39;ggplot2&#39; wurde unter R Version 4.2.3 erstellt</code></pre>
-</div>
-<div id="data" class="section level3 hasAnchor" number="13.2.3">
-<h3><span class="header-section-number">13.2.3</span> Data<a href="refresher.html#data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>We use weight data of snowfinches <em>Montifringilla nivalis</em> that have been captured and ringed during the winter months and we ask how the average weight changes with the time of the day.</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="refresher.html#cb19-1" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">&quot;data/SFringlistwinter.txt&quot;</span>, <span class="at">header=</span><span class="cn">TRUE</span>, <span class="at">sep=</span><span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span>)</span>
-<span id="cb19-2"><a href="refresher.html#cb19-2" tabindex="-1"></a><span class="co"># select winter month</span></span>
-<span id="cb19-3"><a href="refresher.html#cb19-3" tabindex="-1"></a>dat <span class="ot">&lt;-</span> dat[<span class="fu">is.element</span>(dat<span class="sc">$</span>month, <span class="fu">c</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">3</span>)),]</span>
-<span id="cb19-4"><a href="refresher.html#cb19-4" tabindex="-1"></a></span>
-<span id="cb19-5"><a href="refresher.html#cb19-5" tabindex="-1"></a>dat<span class="sc">$</span>time.num <span class="ot">&lt;-</span> dat<span class="sc">$</span>time_hour <span class="sc">+</span> dat<span class="sc">$</span>time_min<span class="sc">/</span><span class="dv">60</span></span>
-<span id="cb19-6"><a href="refresher.html#cb19-6" tabindex="-1"></a><span class="fu">plot</span>(dat<span class="sc">$</span>time.num, dat<span class="sc">$</span>weight, <span class="at">xlab=</span><span class="st">&quot;Hour&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;Weight [g]&quot;</span>, <span class="at">pch=</span><span class="dv">16</span>, <span class="at">col=</span><span class="fu">rgb</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.5</span>), <span class="at">cex=</span><span class="fl">0.7</span>)</span></code></pre></div>
-<p><img src="12-RefreshingRLinMod_files/figure-html/readdat-1.png" width="672" /></p>
-</div>
-<div id="fit-the-regression-using-lm" class="section level3 hasAnchor" number="13.2.4">
-<h3><span class="header-section-number">13.2.4</span> Fit the regression using lm<a href="refresher.html#fit-the-regression-using-lm" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><a href="https://tobiasroth.github.io/BDAEcology/lm.html#linear-regression">Theory</a></p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="refresher.html#cb20-1" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(weight<span class="sc">~</span>time.num, <span class="at">data=</span>dat)</span>
-<span id="cb20-2"><a href="refresher.html#cb20-2" tabindex="-1"></a>mod</span></code></pre></div>
-<pre><code>## 
-## Call:
-## lm(formula = weight ~ time.num, data = dat)
-## 
-## Coefficients:
-## (Intercept)     time.num  
-##     41.6403       0.1263</code></pre>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="refresher.html#cb22-1" tabindex="-1"></a><span class="fu">plot</span>(dat<span class="sc">$</span>time.num, dat<span class="sc">$</span>weight, <span class="at">xlab=</span><span class="st">&quot;Hour&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;Weight [g]&quot;</span>, <span class="at">pch=</span><span class="dv">16</span>, <span class="at">col=</span><span class="fu">rgb</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.5</span>), <span class="at">cex=</span><span class="fl">0.7</span>)</span>
-<span id="cb22-2"><a href="refresher.html#cb22-2" tabindex="-1"></a><span class="fu">abline</span>(mod, <span class="at">col=</span><span class="st">&quot;brown&quot;</span>)</span></code></pre></div>
-<p><img src="12-RefreshingRLinMod_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
-<ul>
-<li><p>What does the function <code>lm</code> do?</p></li>
-<li><p>What are the model parameters and what are their estimates?</p></li>
-<li><p>How does the formula of the regression line look like?</p></li>
-</ul>
-</div>
-<div id="check-the-model-assumptions" class="section level3 hasAnchor" number="13.2.5">
-<h3><span class="header-section-number">13.2.5</span> Check the model assumptions<a href="refresher.html#check-the-model-assumptions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><a href="https://tobiasroth.github.io/BDAEcology/residualanalysis.html">Theory</a></p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="refresher.html#cb23-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</span>
-<span id="cb23-2"><a href="refresher.html#cb23-2" tabindex="-1"></a><span class="fu">plot</span>(mod)</span></code></pre></div>
-<div class="figure"><span style="display:block;" id="fig:diagnostics"></span>
-<img src="12-RefreshingRLinMod_files/figure-html/diagnostics-1.png" alt="Diagnostic residual plots of a normal linear model fitted to simulated data, thus model assumptions are perfectly met. See text for explanation." width="672" />
-<p class="caption">
-Figure 13.1: Diagnostic residual plots of a normal linear model fitted to simulated data, thus model assumptions are perfectly met. See text for explanation.
-</p>
-</div>
-<ul>
-<li><p>Would you trust this model? Do you think the model assumptions are met?</p></li>
-<li><p>Which structures of the data could violate the model assumptions?</p></li>
-</ul>
-</div>
-<div id="drawing-conclusions" class="section level3 hasAnchor" number="13.2.6">
-<h3><span class="header-section-number">13.2.6</span> Drawing Conclusions<a href="refresher.html#drawing-conclusions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>To answer the question about how strongly <span class="math inline">\(y\)</span> is related to <span class="math inline">\(x\)</span> taking into account statistical uncertainty we look at the estimated slope <span class="math inline">\(\beta_{1}\)</span> and its standard error (SE). The slope <span class="math inline">\(\beta_{1}\)</span> measures how much <span class="math inline">\(y\)</span> increases in average when <span class="math inline">\(x\)</span> is increased by 1 unit. The value of <span class="math inline">\(\beta_{1}\)</span> is calculated from the data at hand. It is therefore, a characteristics of the specific data. However, we would like to draw our conclusions more generally, i.e. also in future, for new data, we expect that <span class="math inline">\(y\)</span> increases by <span class="math inline">\(\beta_{1}\)</span> if <span class="math inline">\(x\)</span> increases by 1. However for these unmeasured, future data <span class="math inline">\(\beta_{1}\)</span> may look differently. No statistical method can exactly predict how <span class="math inline">\(\beta_{1}\)</span> will look for future data. However, if we assume that the model assumptions reflect the real world reasonable well, we can use the standard error (SE) as an estimate of how far away in average the estimated <span class="math inline">\(\beta_{1}\)</span> may be from the underlying true value, i.e. a <span class="math inline">\(\beta_{1}\)</span> that we would measure if we had sampled a very high number of (i.e., all) observations.</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="refresher.html#cb24-1" tabindex="-1"></a><span class="fu">summary</span>(mod)</span></code></pre></div>
-<pre><code>## 
-## Call:
-## lm(formula = weight ~ time.num, data = dat)
-## 
-## Residuals:
-##      Min       1Q   Median       3Q      Max 
-## -10.0561  -3.3193  -0.0361   3.0881  14.8323 
-## 
-## Coefficients:
-##             Estimate Std. Error t value Pr(&gt;|t|)    
-## (Intercept) 41.64032    0.88299  47.159   &lt;2e-16 ***
-## time.num     0.12631    0.07829   1.613    0.107    
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## Residual standard error: 4.31 on 779 degrees of freedom
-##   (279 Beobachtungen als fehlend gelöscht)
-## Multiple R-squared:  0.003331,   Adjusted R-squared:  0.002051 
-## F-statistic: 2.603 on 1 and 779 DF,  p-value: 0.1071</code></pre>
-<ul>
-<li>What does the output of the function <code>summary</code> tell us?</li>
-</ul>
-<p>To draw a 95% compatibility interval around the regression line, we ﬁrst deﬁne new x-values for which we would like to have the ﬁtted values (about 100 points across the range of x will produce smooth-looking lines when connected by line segments). We save these new x-values within the new data.frame <code>newdat</code>. (Fig. <a href="refresher.html#fig:figlmer2">13.2</a>).</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="refresher.html#cb26-1" tabindex="-1"></a><span class="co"># Calculate 95% CI</span></span>
-<span id="cb26-2"><a href="refresher.html#cb26-2" tabindex="-1"></a><span class="fu">range</span>(dat<span class="sc">$</span>time.num, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code></pre></div>
-<pre><code>## [1]  7.833333 16.716667</code></pre>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="refresher.html#cb28-1" tabindex="-1"></a>newdat <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">time.num =</span> <span class="fu">seq</span>(<span class="dv">7</span>, <span class="dv">17</span>, <span class="at">length=</span><span class="dv">100</span>))</span>
-<span id="cb28-2"><a href="refresher.html#cb28-2" tabindex="-1"></a>newdat<span class="sc">$</span>fit <span class="ot">&lt;-</span> <span class="fu">predict</span>(mod, <span class="at">newdata=</span>newdat)</span>
-<span id="cb28-3"><a href="refresher.html#cb28-3" tabindex="-1"></a>newdat<span class="sc">$</span>lwr <span class="ot">&lt;-</span> <span class="fu">predict</span>(mod, <span class="at">interval=</span><span class="st">&quot;confidence&quot;</span>, <span class="at">newdata=</span>newdat)[,<span class="dv">2</span>]</span>
-<span id="cb28-4"><a href="refresher.html#cb28-4" tabindex="-1"></a>newdat<span class="sc">$</span>upr <span class="ot">&lt;-</span> <span class="fu">predict</span>(mod, <span class="at">interval=</span><span class="st">&quot;confidence&quot;</span>, <span class="at">newdata=</span>newdat)[,<span class="dv">3</span>]</span>
-<span id="cb28-5"><a href="refresher.html#cb28-5" tabindex="-1"></a></span>
-<span id="cb28-6"><a href="refresher.html#cb28-6" tabindex="-1"></a></span>
-<span id="cb28-7"><a href="refresher.html#cb28-7" tabindex="-1"></a><span class="fu">plot</span>(dat<span class="sc">$</span>time.num, dat<span class="sc">$</span>weight, <span class="at">xlab=</span><span class="st">&quot;Hour&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;Weight [g]&quot;</span>, <span class="at">pch=</span><span class="dv">16</span>, <span class="at">col=</span><span class="fu">rgb</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.5</span>), <span class="at">cex=</span><span class="fl">0.7</span>)</span>
-<span id="cb28-8"><a href="refresher.html#cb28-8" tabindex="-1"></a><span class="fu">lines</span>(newdat<span class="sc">$</span>time.num, newdat<span class="sc">$</span>fit, <span class="at">lwd=</span><span class="dv">2</span>, <span class="at">col=</span><span class="st">&quot;brown&quot;</span>)</span>
-<span id="cb28-9"><a href="refresher.html#cb28-9" tabindex="-1"></a><span class="fu">lines</span>(newdat<span class="sc">$</span>time.num, newdat<span class="sc">$</span>lwr, <span class="at">lwd=</span><span class="dv">2</span>, <span class="at">lty=</span><span class="dv">3</span>, <span class="at">col=</span><span class="st">&quot;brown&quot;</span>)</span>
-<span id="cb28-10"><a href="refresher.html#cb28-10" tabindex="-1"></a><span class="fu">lines</span>(newdat<span class="sc">$</span>time.num, newdat<span class="sc">$</span>upr, <span class="at">lwd=</span><span class="dv">2</span>, <span class="at">lty=</span><span class="dv">3</span>, <span class="at">col=</span><span class="st">&quot;brown&quot;</span>)</span></code></pre></div>
-<div class="figure"><span style="display:block;" id="fig:figlmer2"></span>
-<img src="12-RefreshingRLinMod_files/figure-html/figlmer2-1.png" alt="Regression with 95% credible interval of the posterior distribution of the ﬁtted values." width="672" />
-<p class="caption">
-Figure 13.2: Regression with 95% credible interval of the posterior distribution of the ﬁtted values.
-</p>
-</div>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="refresher.html#cb29-1" tabindex="-1"></a><span class="co"># Make the same plot using ggplot</span></span>
-<span id="cb29-2"><a href="refresher.html#cb29-2" tabindex="-1"></a><span class="co">#regplot &lt;- </span></span>
-<span id="cb29-3"><a href="refresher.html#cb29-3" tabindex="-1"></a><span class="co">#  ggplot(dat, aes(x = x, y = y)) +</span></span>
-<span id="cb29-4"><a href="refresher.html#cb29-4" tabindex="-1"></a><span class="co">#  geom_point() +</span></span>
-<span id="cb29-5"><a href="refresher.html#cb29-5" tabindex="-1"></a><span class="co">#  geom_abline(intercept = coef(mod)[1], slope=coef(mod)[2], lwd=1, col=&quot;blue&quot;) +</span></span>
-<span id="cb29-6"><a href="refresher.html#cb29-6" tabindex="-1"></a><span class="co">#  geom_line(data = newdat, aes(x = x, y = CrI_lo), lty = 3) +</span></span>
-<span id="cb29-7"><a href="refresher.html#cb29-7" tabindex="-1"></a><span class="co">#  geom_line(data = newdat, aes(x = x, y = CrI_up), lty = 3) +</span></span>
-<span id="cb29-8"><a href="refresher.html#cb29-8" tabindex="-1"></a><span class="co">#  labs(x = &quot;Predictor (x)&quot;, y = &quot;Outcome (y)&quot;)</span></span>
-<span id="cb29-9"><a href="refresher.html#cb29-9" tabindex="-1"></a><span class="co">#regplot</span></span></code></pre></div>
-<p>The uncertainty interval measures statistical uncertainty of the regression line, but it does not describe how new observations would scatter around the regression line. If we want to describe where future observations will be, we have to report the prediction interval (see online book, posterior predictive distribution), or present the data within the plot of the regression line.</p>
-<ul>
-<li>How would you describe the results for a paper?</li>
-</ul>
-
-</div>
-</div>
+<div id="path-to-the-downloaded-ebd-file" class="section level1 hasAnchor" number="17">
+<h1><span class="header-section-number">Chapter 17</span> Path to the downloaded EBD file<a href="path-to-the-downloaded-ebd-file.html#path-to-the-downloaded-ebd-file" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>ebd_file &lt;- “path/to/ebd_relFeb-2024.txt”
+sampling_file &lt;- “path/to/ebd_sampling_relFeb-2024.txt”</p>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="StudentProjects.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="geolocs.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="exctiming.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="define-filters.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
