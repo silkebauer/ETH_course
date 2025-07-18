@@ -90,7 +90,8 @@ Location: ETH Zürich, room LEE C 114
 * 10:15 - 11:00 Lecture 7: Orientation (FK)   
 * 11:15 - 12:00 Practical (FK, SB)     
 
-  + Analyse timing of arrival or hatching dates using linear regressions (FK, SB)  
+  + Analyse timing of arrival or hatching dates using linear regressions (Exercise in Chapter \@ref(exctiming))  
+  
   
 * 13:00 - 13:45 Lecture 8: Migration in the life-cycle of a bird (FK)  
 * 14:00 - 14:45 Lecture 9: Ecosystem functions, biodiversity consequences, Services & disservices of migrants (SB)  
