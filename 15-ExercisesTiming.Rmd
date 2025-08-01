@@ -35,7 +35,7 @@ first_obs <- obs_data %>%
  
 
 
-```{r. eval=FALSE}
+```{r, eval=FALSE}
 # How to download and filter ebird data
 
 #Go to: https://ebird.org/data/download

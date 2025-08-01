@@ -116,8 +116,3 @@ background
 nightingale-example
 exctiming
 arrival-dates-in-spring
-path-to-the-downloaded-ebd-file
-define-filters
-create-an-auk_ebd-object-and-apply-filters
-output-file
-run-the-filter
