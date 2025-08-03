@@ -1,168 +1,159 @@
 # Exercise: Survival estimation {#exSurvest}
 
-## Arrival dates in spring
 
+## Introduction to mark-recapture modelling
 
-Arrival of migratory birds in central Europe in spring varies among years. In this exercise, explore dates of first observations of the species in central Europe.
+Recapture or resightings (reencounters) of marked individuals inform about apparent survival, i.e. the probability that an individual survives and stays in the study area. Apparent survival differs from true survival because when the animals is seen last, it is still alive, i.e. the death is not observed. Thus, if an animal is no longer recaptured or resighted, we do not know whether it moved out of the study area or whether it died. Mark-recapture modelling techniques are designed to separately estimate recapture/resighting probability and apparent survival. To do so, they separate the observation process (recapturing or resighting an animal) from the biological process (staying in the study area and surviving). The basis for the development of an immense diversity of mark-recapture models has been set by the Cormack-Jolly-Seber model [@Cormack.1964; @Jolly.1965; @Seber.1965]. The CJS-model is introduced here using data on Snowfinches, a high alpine bird species that we study since 2015. 
 
+```{r readdat}
+load("data/annualCRdata.rda") # load datax object
+```
 
-For the exercise, we can use data provided by the authors of @Strebel2014. These data include first observation dates of selected bird species in Switzerland over around 15 years (~1995 - 2012). The data estimates detectability peaks and discusses how observer bias influences first arrival dates in citizen science data.  
+Since 2015, we individually marked `r datax$nind` Snowfinches. We systematically observed Snowfinches to read rings using scopes and cameras. We could resight `r sum(apply(datax$y, 1, sum)>1)` of the marked individuals in later years, many of them in more than one year. We collated the marking and resighting data in a capture history matrix $y$. Each row of $y$ contains the capture history of one individual and each column corresponds to a year from 2015 to 2023. A $1$ indicates that the individual was resighted or recaptured during that year and a $0$ indicates that the individual has not been seen. Thus, a $1$ means the individual is alive in the study area and it has been detected by the researchers. A $0$ could mean that the individual died, that it emigrated from the study area or that it is still alive in the study area but has not been detected by the researchers. 
 
-Choose a species and describe how the timing of the first observation has changed over the years. Use regression analyses.  
-
-
-```{r, eval=FALSE}
-
-# data download https://datadryad.org/dataset/doi:10.5061/dryad.k20q2  (source: https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.12175)
-
-# load packages
-library(dplyr)
-
-# read in data
-dat <- read.csv2("obs_data.csv", header=TRUE)
-specdat <- read.csv2("attr.csv", header=TRUE)
-str(dat)
-str(specdat)
-
-# extract first observation per species and year:
-first_obs <- dat %>%
-  group_by(Year, ArtId) %>%
-  summarise(first_day = min(DayOfYear), .groups = "drop")
-
-
-# select data of a species with data from at least 15 years
-tt <- table(first_obs$ArtId)
-ttspecs <- names(tt)[tt>15]
-specdat$name[is.element(specdat$ArtId, ttspecs)]
-first_obs$name <- specdat$name[match(first_obs$ArtId, specdat$ArtId)]
-first_obs <- first_obs[!is.na(first_obs$name),] # select only species with enough data
-
-
-# loop through all species
-species <- unique(first_obs$name)
-for(spec in species){
-  par(ask=TRUE)
-  dspec <-  subset(first_obs, name==spec)
-  plot(dspec$Year, dspec$first_day, xlab="Year", ylab="first day", main=spec)
+```{r seedat, fig.cap="Visualisation of the capture-recapture/resighting data. Each horizontal line connect capture or resightings of the same individual, a circle indicate that the individual is captured or resighted at least once during that year."}
+index <- order(datax$first)
+ch <- datax$y[index,]
+plot(c(1,datax$nocc), c(1, datax$nind), type="n", axes=FALSE, xlab="Yeaer", ylab="Individual")
+axis(1, at=1:datax$nocc)
+axis(2, at=1:datax$nind, las=1, cex.lab=0.5)
+for(i in 1:datax$nind){
+  points(c(1:datax$nocc)[ch[i,]==1], rep(i,sum(ch[i,])), cex=.6) 
+  lines(c(1:datax$nocc)[ch[i,]==1], rep(i,sum(ch[i,])))
 }
-par(ask=FALSE)
-
-# select a long-distance migrant for the analysis because 
-# short the observations of short distance migrants may be biased by 
-# observation effort in winter that may have changed over the years
-
-
-# select a species
-dspec <-  subset(first_obs, name=="Garden Warbler")
-
-
-# fit a regression line
-mod <- lm(first_day~Year, dspec)
-
-# assess model fit
-plot(mod)
-
-mod
-
-# draw the regression line with a 95% compatibility interval
-
-newdat <- data.frame(Year=1995:2012)
-newdat$fit <- predict(mod, newdata=newdat)
-newdat$lwr <- predict(mod, newdata=newdat, interval="confidence")[,2]
-newdat$upr <- predict(mod, newdata=newdat, interval="confidence")[,3]
-
-plot(dspec$Year, dspec$first_day, xlab="Year", ylab="first day")
-lines(newdat$Year, newdat$fit, lwd=2, col="blue")
-lines(newdat$Year, newdat$lwr, lwd=1, lty=3, col="blue")
-lines(newdat$Year, newdat$upr, lwd=1, lty=3, col="blue")
 
 ```
 
 
-Questions:  
+Model description:  
 
-- How much did the first observation date advance in 10 years? What is the statistical uncertainty of this value?  
+The observations $y_{it}$, an indicator of whether individual $i$ was recaptured or resighted during year $t$ is modeled conditional on the latent true state of the individual birds $z_{it}$ (0 = dead or permanently emigrated, 1 = alive and at the study site) as a Bernoulli variable. The probability $P(y_{it} = 1)$ is the product of the probability that an alive individual is recaptured or resighted, $p_{it}$, and the state of the bird $z_{it}$ (alive = 1, dead = 0). Thus, a dead bird cannot be recaptured or resighted, whereas for a bird alive during year $t$, the recapture/resighting probability equals $p_{it}$:
+$$y_{it} \sim Bernoulli(z_{it}p_{it})$$
+The latent state variable $z_{it}$ is a Markovian variable with the state at year $t$ being dependent on the state at year $t-1$ and the apparent survival probability $\phi_{it}$:
+$$z_{it} \sim Bernoulli(z_{it-1}\phi_{it})$$
 
-- What could be reasons for the advance (methodological and ecological reasons)?  
+We use the notation $\phi$ to indicate that this parameter can be interpreted as apparent survival rather than true survival of which the standard notation would be $S$ [@Thomson.2009d]. 
+We model $\phi$ dependent on age (1=first year, 2=older) and year.
 
-- The paper introduces a methodology to account for the observer bias. How much different are your results compared to the results in the paper?  
+$$\phi_{it} = \alpha_{age-class[it], t} $$
 
-If you prefer fitting a non-linear trend, use the R-code provided in the next R-junk. What conclusion changes from the ones above (linear regression)? What additional information do you gain? 
+Annual recapture/resighting probability is modeled for each year independently:
+$$p_{it} = \beta_{t}$$
+We use uniform prior distributions for all parameters with a parameter space limited to values between 0 and 1 (probabilities), $\alpha_{age-class,t} \sim uniform(0,1)$ and $\beta_t \sim uniform(0,1)$.
 
+We use Markov chain Monte Carlo simulations as implemented in jags [@Plummer2003] to fit the model to the data. For doing so, we first need to specify the model using Jags language. We do that in a separate text-file (jags/cjs.txt). 
+
+To fit the model, the [Software jags](https://sourceforge.net/projects/mcmc-jags/files/) need to be downloaded and installed. 
+
+```{r, echo=FALSE}
+cat("## jags model code
+model{
+  ## likelihood
+  for(i in 1:nind){
+    z[i,first[i]]  <- 1
+    for(t in (first[i]+1):nocc) {
+      phiz[i, t-1] <- z[i,t-1]*phi[i, t-1]
+      z[i,t] ~ dbern(phiz[i, t-1])
+      zp[i,t] <- z[i,t]*p[i,t-1]
+      y[i,t] ~ dbern(zp[i,t])
+    }
+  }
+
+  ## linear predictors
+  for(i in 1:nind){
+    for(t in first[i]:(nocc-1)){
+      phi[i,t] <-  a[age[i,t],t]
+      p[i,t] <-  b[t]
+    }
+  }
+
+  ## priors
+ for(t in 1:(nocc-1)){
+  b[t] ~ dunif(0, 1)
+  a[1,t] ~ dunif(0, 1)
+  a[2,t] ~ dunif(0, 1)
+
+ }
+}")
+```
+
+After having specified the model, we need to bundle the data into a list. We have prepared that list in the object `datax`.
+
+
+```{r lookatdata, collapse=TRUE}
+str(datax)
+
+```
+
+We then need to specify initial values and the parameters that we would like to save. 
+
+```{r jagsfit}
+library(R2jags)
+initz <- matrix(NA, ncol=datax$nocc, nrow=datax$nind)
+for(i in 1:datax$nind) initz[i,(datax$first[i]+1):datax$nocc] <- 1
+initfun <- function(){
+  list(a=matrix(runif(2*(datax$nocc-1), 0,1), ncol=datax$nocc-1, nrow=2),
+       b=runif(datax$nocc-1, 0,1),
+       z=initz)
+}
+
+
+parameters <- c("a", "b")
+mod <- jags(datax, inits=initfun, parameters.to.save=parameters, 
+            model.file="jags/cjs.txt", n.chains=3, n.iter=2000)
+mod <- mod$BUGSoutput
+
+```
+
+Before we look at the results, we check how well the Markov chains converged. The chains look ok except for the parameters of the last year. For the last year, apparent survival cannot be separated from recapture/resighting probability. Thus, we must expect that these chains do not converge well.  
 
 ```{r, eval=FALSE}
-# variant: visualise the non-linear trend
+# check 
+traceplot(mod)
 
-library(mgcv)
+```
+In the Cormack-Jolly-Seber model, for the last occasion, only the product of survival and recapture probability is estimable. Therefore, for these two parameters, it does not look like the Markov chains have converged.  
 
-mod <- gam(first_day~s(Year), data=dspec)
-# gam searches the best fitting smoother using leave-one-out cross validation
+We then look at the results
 
-# assess model fit
-plot(mod)
 
-mod
-
-# draw the regression line with a 95% compatibility interval
-
-newdat <- data.frame(Year=1995:2012)
-newdat$fit <- predict(mod, newdata=newdat)
-newdat$se <- predict(mod, newdata=newdat, se.fit=TRUE)$se.fit
-newdat$lwr <- newdat$fit-2*newdat$se
-newdat$upr <-  newdat$fit+2*newdat$se
-
-plot(dspec$Year, dspec$first_day, xlab="Year", ylab="first day")
-lines(newdat$Year, newdat$fit, lwd=2, col="blue")
-lines(newdat$Year, newdat$lwr, lwd=1, lty=3, col="blue")
-lines(newdat$Year, newdat$upr, lwd=1, lty=3, col="blue")
-
+```{r, collapse=TRUE}
+mod$summary
 
 ```
 
 
 
-## Additional data for further studies
+```{r, fig.asp=0.55, fig.cap="Annual apparent survival of juvenile and adult Snowfinches."}
 
-For the study on bird observations, [ebird](https://ebird.org/data/download) provides all their data for free after you created an account. With functions from the R-package `auk`, you can access the ebird data base and download the data directly from within R.
+plot(c(2015,2023), c(0,1), type="n", las=1, xlab=NA, ylab="Apparent survival")
 
-
-## Timing of hatching dates
-
-The `broods`data table contains hatching dates of Snowfinches *Montifringilla nivalsi* and also the number of fledglings. Explore the among year variance in hatching dates and how hatching date correlates with the number of fledglings. Use the R-code junk below as a start.   
-
-A short portrait of the Snowfinch: It is a specialist of high elevations, partial migrant, particularly males stay in winter in the Alps. Opportunistic movements towards southern France and Spain during winter are reported. It breeds above the treeline in rock crevices or at buildings. The chicks are fed by insect larvae that are developing in the soft and humid soil along the melting snow patches in spring. 
-
-```{r}
-
-dat <- read.table("data/broodsSF.txt", header=TRUE, sep=";")
-dat <- subset(dat, species=="Montifringilla nivalis") # select the species
-dat <- dat[!is.na(dat$day.hatching.first.egg),] # select hatching dates
-dat <- subset(dat, accuracy_hatching<2) # select accurate hatching dates (we do not know the exact hatching dates of all the broods)
-
-library(birdring)
-# insert day of year
-dat$doy_hatching <- dayofyear(d=dat$day.hatching.first.egg, m=dat$month.hatching.first.egg, y=dat$year)
-
-plot(doy_hatching~jitter(year), data=dat)
-
-plot(jitter(number.of.fledglings)~doy_hatching, dat)
-
-mod <- lm(number.of.fledglings~doy_hatching, data=dat)
-abline(mod)
-
-newdat <- data.frame(doy_hatching=120:220)
-newdat$lwr <- predict(mod, newdata=newdat, interval="confidence")[,2]
-newdat$upr <- predict(mod, newdata=newdat, interval="confidence")[,3]
-lines(newdat$doy_hatching, newdat$lwr, lty=3)
-lines(newdat$doy_hatching, newdat$upr, lty=3)
+phi <- apply(mod$sims.list$a, c(2,3), mean)
+phi.lwr <- apply(mod$sims.list$a, c(2,3), quantile, probs=0.025)
+phi.upr <- apply(mod$sims.list$a, c(2,3), quantile, probs=0.975)
+x <- seq(2015.5, 2022.5, by=1)
+segments(x, phi.lwr[1,], x,phi.upr[1,])
+points(x, phi[1,], pch=21, bg="white")
+segments(x+0.1, phi.lwr[2,], x+0.1,phi.upr[2,], lwd=2, col="brown")
+points(x+0.1, phi[2,], pch=21, bg="white", col="brown")
+legend(2015, 1.1, xpd=NA, lwd=c(1,2), col=c(1,"brown"), legend=c("first year", "adult"), horiz=TRUE)
 
 ```
 
-Questions:  
-- What could be reasons for the among-year variance in the hatching dates?  
-- What could be the reason for the decreasing number of fledglings with increasing dates?   
-- The relationship of breeding success with date is widespread among birds and it is called "the date effect". Discuss implications of the date effect for migratory birds. 
+
+```{r, fig.asp=0.5, fig.cap="Recapture and resighting probability"}
+
+plot(c(2016,2023), c(0,1), type="n", las=1, xlab=NA, ylab="Recapture/resighting probability")
+
+p <- apply(mod$sims.list$b, 2, mean)
+p.lwr <- apply(mod$sims.list$b, 2, quantile, probs=0.025)
+p.upr <- apply(mod$sims.list$b, 2, quantile, probs=0.975)
+x <- seq(2016, 2023, by=1)
+segments(x, p.lwr, x,p.upr, lwd=2, col="brown")
+points(x, p, pch=21, bg="white", col="brown")
+
+```
+
+@Kery.2012 wrote a gentle introduction to mark-recapture modelling for biologists. An example using Stan is found here https://tobiasroth.github.io/BDAEcology/cjs_with_mix.html.
 
 
-The two studies showed that over the past 20 years, the Snowfinch did not advance the timing of the breeding enough to compensate the warming: @Schano.2021, @niffenegger_rising_2025. 
- 

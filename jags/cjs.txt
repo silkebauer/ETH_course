@@ -1,0 +1,30 @@
+# CJS-model in BUGS or Jags language
+
+model{
+  ## likelihood
+  for(i in 1:nind){
+    z[i,first[i]]  <- 1
+    for(t in (first[i]+1):nocc) {
+      phiz[i, t-1] <- z[i,t-1]*phi[i, t-1]
+      z[i,t] ~ dbern(phiz[i, t-1])
+      zp[i,t] <- z[i,t]*p[i,t-1]
+      y[i,t] ~ dbern(zp[i,t])
+    }
+  }
+
+  ## linear predictors
+  for(i in 1:nind){
+    for(t in first[i]:(nocc-1)){
+      phi[i,t] <-  a[age[i,t],t]
+      p[i,t] <-  b[t]
+    }
+  }
+
+  ## priors
+ for(t in 1:(nocc-1)){
+  b[t] ~ dunif(0, 1)
+  a[1,t] ~ dunif(0, 1)
+  a[2,t] ~ dunif(0, 1)
+
+ }
+}

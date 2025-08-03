@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 17 Exercise: Survival estimation | Handout and background material for ETHZ course ‘Animal Migration and research in field ornithology’</title>
+  <meta name="description" content="This is a handout for the ETH migration course at Col de Bretolet." />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 17 Exercise: Survival estimation | Handout and background material for ETHZ course ‘Animal Migration and research in field ornithology’" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This is a handout for the ETH migration course at Col de Bretolet." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 17 Exercise: Survival estimation | Handout and background material for ETHZ course ‘Animal Migration and research in field ornithology’" />
+  
+  <meta name="twitter:description" content="This is a handout for the ETH migration course at Col de Bretolet." />
+  
+
+<meta name="author" content="Silke Bauer &amp; Fränzi Korner-Nievergelt" />
+
+
+<meta name="date" content="2025-08-03" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="exctiming.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Handout ETH course Migration ecology and methods in field ornithology</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> General information</a></li>
+<li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="introduction.html"><a href="introduction.html#course-aims"><i class="fa fa-check"></i><b>2.1</b> Course aims</a></li>
+<li class="chapter" data-level="2.2" data-path="introduction.html"><a href="introduction.html#course-schedule"><i class="fa fa-check"></i><b>2.2</b> Course schedule</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="16-ExercisesSurvival.html"><a href="#prepatory-days-2-5-september-2025-at-swiss-ornithological-institute-sempach-and-eth-z%C3%BCrich"><i class="fa fa-check"></i><b>2.2.1</b> Prepatory days: 2-5 September 2025 at Swiss Ornithological Institute Sempach and ETH Zürich</a></li>
+<li class="chapter" data-level="2.2.2" data-path="introduction.html"><a href="introduction.html#course-day-1-tuesday-2-september-2025-in-sempach"><i class="fa fa-check"></i><b>2.2.2</b> Course day 1: Tuesday, 2 September 2025 in Sempach</a></li>
+<li class="chapter" data-level="2.2.3" data-path="introduction.html"><a href="introduction.html#course-day-2-wednesday-3-september-2025"><i class="fa fa-check"></i><b>2.2.3</b> Course day 2: Wednesday, 3 September 2025</a></li>
+<li class="chapter" data-level="2.2.4" data-path="introduction.html"><a href="introduction.html#course-day-3-thursday-4-september-2025"><i class="fa fa-check"></i><b>2.2.4</b> Course day 3: Thursday, 4 September 2025</a></li>
+<li class="chapter" data-level="2.2.5" data-path="introduction.html"><a href="introduction.html#course-day-4-friday-5-september-2025"><i class="fa fa-check"></i><b>2.2.5</b> Course day 4: Friday, 5 September 2025</a></li>
+<li class="chapter" data-level="2.2.6" data-path="introduction.html"><a href="introduction.html#excursion-to-col-de-bretolet-mon-fri-8-12-september-2025"><i class="fa fa-check"></i><b>2.2.6</b> Excursion to Col de Bretolet: Mon-Fri 8-12 September 2025</a></li>
+<li class="chapter" data-level="2.2.7" data-path="introduction.html"><a href="introduction.html#course-day-5-monday-8-september-2024"><i class="fa fa-check"></i><b>2.2.7</b> Course day 5: Monday, 8 September 2024</a></li>
+<li class="chapter" data-level="2.2.8" data-path="introduction.html"><a href="introduction.html#course-day-6-tuesday-9-september-2025"><i class="fa fa-check"></i><b>2.2.8</b> Course day 6: Tuesday, 9 September 2025</a></li>
+<li class="chapter" data-level="2.2.9" data-path="introduction.html"><a href="introduction.html#course-day-6-wednesday-10-september-2025"><i class="fa fa-check"></i><b>2.2.9</b> Course day 6: Wednesday, 10 September 2025</a></li>
+<li class="chapter" data-level="2.2.10" data-path="introduction.html"><a href="introduction.html#course-day-7-thursday-11-september-2025"><i class="fa fa-check"></i><b>2.2.10</b> Course day 7: Thursday, 11 September 2025</a></li>
+<li class="chapter" data-level="2.2.11" data-path="introduction.html"><a href="introduction.html#course-day-8-friday-12-september-2025"><i class="fa fa-check"></i><b>2.2.11</b> Course day 8: Friday, 12 September 2025</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="introduction.html"><a href="introduction.html#preparations"><i class="fa fa-check"></i><b>2.3</b> Preparations</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="animal-migration.html"><a href="animal-migration.html"><i class="fa fa-check"></i><b>3</b> Animal migration</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="animal-migration.html"><a href="animal-migration.html#what-is-migration"><i class="fa fa-check"></i><b>3.1</b> What is migration?</a></li>
+<li class="chapter" data-level="3.2" data-path="animal-migration.html"><a href="animal-migration.html#why-do-birds-migrate"><i class="fa fa-check"></i><b>3.2</b> Why do birds migrate?</a></li>
+<li class="chapter" data-level="3.3" data-path="animal-migration.html"><a href="animal-migration.html#terminology-of-specific-migration-patterns"><i class="fa fa-check"></i><b>3.3</b> Terminology of specific migration patterns</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="animal-migration.html"><a href="animal-migration.html#characterisation-of-migration-according-to-distances-covered"><i class="fa fa-check"></i><b>3.3.1</b> Characterisation of migration according to distances covered</a></li>
+<li class="chapter" data-level="3.3.2" data-path="animal-migration.html"><a href="animal-migration.html#characterisation-of-migration-according-to-daytime-of-travel"><i class="fa fa-check"></i><b>3.3.2</b> Characterisation of migration according to daytime of travel</a></li>
+<li class="chapter" data-level="3.3.3" data-path="animal-migration.html"><a href="animal-migration.html#characterisation-of-migration-according-to-larger-scale-patterns-of-migratory-bouts"><i class="fa fa-check"></i><b>3.3.3</b> Characterisation of migration according to larger-scale patterns of migratory bouts</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="timing-of-migration.html"><a href="timing-of-migration.html"><i class="fa fa-check"></i><b>4</b> Timing of migration</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="timing-of-migration.html"><a href="timing-of-migration.html#why-is-timing-important"><i class="fa fa-check"></i><b>4.1</b> Why is timing important?</a></li>
+<li class="chapter" data-level="4.2" data-path="timing-of-migration.html"><a href="timing-of-migration.html#what-determines-the-timing-of-migratory-steps-cues"><i class="fa fa-check"></i><b>4.2</b> What determines the timing of migratory steps? Cues!</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="timing-of-migration.html"><a href="timing-of-migration.html#preparation"><i class="fa fa-check"></i><b>4.2.1</b> Preparation</a></li>
+<li class="chapter" data-level="4.2.2" data-path="timing-of-migration.html"><a href="timing-of-migration.html#departure"><i class="fa fa-check"></i><b>4.2.2</b> Departure</a></li>
+<li class="chapter" data-level="4.2.3" data-path="timing-of-migration.html"><a href="timing-of-migration.html#on-the-way"><i class="fa fa-check"></i><b>4.2.3</b> On the way</a></li>
+<li class="chapter" data-level="4.2.4" data-path="timing-of-migration.html"><a href="timing-of-migration.html#termination"><i class="fa fa-check"></i><b>4.2.4</b> Termination</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="timing-of-migration.html"><a href="timing-of-migration.html#consequences-of-migration-timing"><i class="fa fa-check"></i><b>4.3</b> Consequences of migration timing</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="orientation-and-navigation.html"><a href="orientation-and-navigation.html"><i class="fa fa-check"></i><b>5</b> Orientation and Navigation</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="orientation-and-navigation.html"><a href="orientation-and-navigation.html#sun-compass"><i class="fa fa-check"></i><b>5.1</b> Sun compass</a></li>
+<li class="chapter" data-level="5.2" data-path="orientation-and-navigation.html"><a href="orientation-and-navigation.html#star-compass"><i class="fa fa-check"></i><b>5.2</b> Star compass</a></li>
+<li class="chapter" data-level="5.3" data-path="orientation-and-navigation.html"><a href="orientation-and-navigation.html#magnetic-compass"><i class="fa fa-check"></i><b>5.3</b> Magnetic compass</a></li>
+<li class="chapter" data-level="5.4" data-path="orientation-and-navigation.html"><a href="orientation-and-navigation.html#landmarks"><i class="fa fa-check"></i><b>5.4</b> Landmarks</a></li>
+<li class="chapter" data-level="5.5" data-path="orientation-and-navigation.html"><a href="orientation-and-navigation.html#olfactory-cues"><i class="fa fa-check"></i><b>5.5</b> Olfactory cues</a></li>
+<li class="chapter" data-level="5.6" data-path="orientation-and-navigation.html"><a href="orientation-and-navigation.html#compass-orientation-vs.-navigation"><i class="fa fa-check"></i><b>5.6</b> Compass orientation vs. navigation</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="flight-energetics-and-plasticity-of-the-migratory-flight.html"><a href="flight-energetics-and-plasticity-of-the-migratory-flight.html"><i class="fa fa-check"></i><b>6</b> Flight energetics and plasticity of the migratory flight</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="flight-energetics-and-plasticity-of-the-migratory-flight.html"><a href="flight-energetics-and-plasticity-of-the-migratory-flight.html#mechanics-and-energetics-of-flight"><i class="fa fa-check"></i><b>6.1</b> Mechanics and energetics of flight</a></li>
+<li class="chapter" data-level="6.2" data-path="flight-energetics-and-plasticity-of-the-migratory-flight.html"><a href="flight-energetics-and-plasticity-of-the-migratory-flight.html#fuel-for-migratory-flights"><i class="fa fa-check"></i><b>6.2</b> Fuel for migratory flights</a></li>
+<li class="chapter" data-level="6.3" data-path="flight-energetics-and-plasticity-of-the-migratory-flight.html"><a href="flight-energetics-and-plasticity-of-the-migratory-flight.html#influences-on-migration"><i class="fa fa-check"></i><b>6.3</b> Influences on migration</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="flight-energetics-and-plasticity-of-the-migratory-flight.html"><a href="flight-energetics-and-plasticity-of-the-migratory-flight.html#endogeneous-and-exogeneous-factors"><i class="fa fa-check"></i><b>6.3.1</b> Endogeneous and exogeneous factors</a></li>
+<li class="chapter" data-level="6.3.2" data-path="flight-energetics-and-plasticity-of-the-migratory-flight.html"><a href="flight-energetics-and-plasticity-of-the-migratory-flight.html#topography"><i class="fa fa-check"></i><b>6.3.2</b> Topography</a></li>
+<li class="chapter" data-level="6.3.3" data-path="flight-energetics-and-plasticity-of-the-migratory-flight.html"><a href="flight-energetics-and-plasticity-of-the-migratory-flight.html#wind"><i class="fa fa-check"></i><b>6.3.3</b> Wind</a></li>
+<li class="chapter" data-level="6.3.4" data-path="flight-energetics-and-plasticity-of-the-migratory-flight.html"><a href="flight-energetics-and-plasticity-of-the-migratory-flight.html#temperature"><i class="fa fa-check"></i><b>6.3.4</b> Temperature</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="importance-of-migration-for-the-structure-and-dynamics-of-resident-communities.html"><a href="importance-of-migration-for-the-structure-and-dynamics-of-resident-communities.html"><i class="fa fa-check"></i><b>7</b> Importance of migration for the structure and dynamics of resident communities</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="importance-of-migration-for-the-structure-and-dynamics-of-resident-communities.html"><a href="importance-of-migration-for-the-structure-and-dynamics-of-resident-communities.html#migrants-link-ecological-communities-and-ecosystem-functioning-worldwide"><i class="fa fa-check"></i><b>7.1</b> Migrants link ecological communities and ecosystem functioning worldwide</a></li>
+<li class="chapter" data-level="7.2" data-path="importance-of-migration-for-the-structure-and-dynamics-of-resident-communities.html"><a href="importance-of-migration-for-the-structure-and-dynamics-of-resident-communities.html#animal-migrations-provide-services-and-disservices"><i class="fa fa-check"></i><b>7.2</b> Animal migrations provide services and disservices</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="global-change-and-other-challenges.html"><a href="global-change-and-other-challenges.html"><i class="fa fa-check"></i><b>8</b> Global change and other challenges</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="global-change-and-other-challenges.html"><a href="global-change-and-other-challenges.html#climate-change"><i class="fa fa-check"></i><b>8.1</b> Climate change</a></li>
+<li class="chapter" data-level="8.2" data-path="global-change-and-other-challenges.html"><a href="global-change-and-other-challenges.html#sensory-pollution"><i class="fa fa-check"></i><b>8.2</b> Sensory pollution</a></li>
+<li class="chapter" data-level="8.3" data-path="global-change-and-other-challenges.html"><a href="global-change-and-other-challenges.html#man-made-structures"><i class="fa fa-check"></i><b>8.3</b> Man-made structures</a></li>
+<li class="chapter" data-level="8.4" data-path="global-change-and-other-challenges.html"><a href="global-change-and-other-challenges.html#conservation-of-migrants-and-migrations"><i class="fa fa-check"></i><b>8.4</b> Conservation of migrants and migrations</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="field-methods.html"><a href="field-methods.html"><i class="fa fa-check"></i><b>9</b> Field methods</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="field-methods.html"><a href="field-methods.html#observations-visual-moonwatching-ir-radar"><i class="fa fa-check"></i><b>9.1</b> Observations: visual, moonwatching, IR, radar</a></li>
+<li class="chapter" data-level="9.2" data-path="field-methods.html"><a href="field-methods.html#marking-and-reencountering"><i class="fa fa-check"></i><b>9.2</b> Marking and reencountering</a></li>
+<li class="chapter" data-level="9.3" data-path="field-methods.html"><a href="field-methods.html#tracking-individuals"><i class="fa fa-check"></i><b>9.3</b> Tracking individuals</a></li>
+<li class="chapter" data-level="9.4" data-path="field-methods.html"><a href="field-methods.html#orientation-experiments"><i class="fa fa-check"></i><b>9.4</b> Orientation experiments</a></li>
+<li class="chapter" data-level="9.5" data-path="field-methods.html"><a href="field-methods.html#stable-isotopes-genetics-and-physiology"><i class="fa fa-check"></i><b>9.5</b> Stable isotopes, genetics and physiology</a></li>
+<li class="chapter" data-level="9.6" data-path="field-methods.html"><a href="field-methods.html#references"><i class="fa fa-check"></i><b>9.6</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="migration-models.html"><a href="migration-models.html"><i class="fa fa-check"></i><b>10</b> Migration models</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="migration-models.html"><a href="migration-models.html#state-dependent-migration-models"><i class="fa fa-check"></i><b>10.1</b> State-dependent migration models</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html"><i class="fa fa-check"></i><b>11</b> Statistical tools for studying migration</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#linear-models"><i class="fa fa-check"></i><b>11.1</b> Linear models</a></li>
+<li class="chapter" data-level="11.2" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#distribution-models-for-counts-of-resting-or-migrating-individuals"><i class="fa fa-check"></i><b>11.2</b> Distribution models for counts of resting or migrating individuals</a></li>
+<li class="chapter" data-level="11.3" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#migratory-connectivity-models"><i class="fa fa-check"></i><b>11.3</b> Migratory connectivity models</a></li>
+<li class="chapter" data-level="11.4" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#estimating-survival-based-on-mark-recapture-data-the-cormack-jolly-seber-model"><i class="fa fa-check"></i><b>11.4</b> Estimating survival based on mark-recapture data: The Cormack-Jolly-Seber model</a></li>
+<li class="chapter" data-level="11.5" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#multi-state-models-to-estimate-movement-rates"><i class="fa fa-check"></i><b>11.5</b> Multi-state models to estimate movement rates</a></li>
+<li class="chapter" data-level="11.6" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#individual-based-hidden-markov-model-for-bird-behaviour"><i class="fa fa-check"></i><b>11.6</b> Individual based hidden Markov model for bird behaviour</a></li>
+<li class="chapter" data-level="11.7" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#the-combination-of-different-data-sources"><i class="fa fa-check"></i><b>11.7</b> The combination of different data sources</a></li>
+<li class="chapter" data-level="11.8" data-path="statistical-tools-for-studying-migration.html"><a href="statistical-tools-for-studying-migration.html#references-1"><i class="fa fa-check"></i><b>11.8</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="StudentProjects.html"><a href="StudentProjects.html"><i class="fa fa-check"></i><b>12</b> Student projects</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="StudentProjects.html"><a href="StudentProjects.html#pre-requisite-reading-and-assessing-scientific-publications"><i class="fa fa-check"></i><b>12.1</b> Pre-requisite: Reading and assessing scientific publications</a></li>
+<li class="chapter" data-level="12.2" data-path="StudentProjects.html"><a href="StudentProjects.html#student-project-1-phenology---migration-timing-within-the-season-and-their-changes-over-the-years"><i class="fa fa-check"></i><b>12.2</b> Student project 1: Phenology - Migration timing within the season and their changes over the years</a></li>
+<li class="chapter" data-level="12.3" data-path="StudentProjects.html"><a href="StudentProjects.html#student-project-2-long-term-changes-in-morphology"><i class="fa fa-check"></i><b>12.3</b> Student project 2: Long-term changes in morphology</a></li>
+<li class="chapter" data-level="12.4" data-path="StudentProjects.html"><a href="StudentProjects.html#student-project-3-differential-migration"><i class="fa fa-check"></i><b>12.4</b> Student project 3: Differential Migration</a></li>
+<li class="chapter" data-level="12.5" data-path="StudentProjects.html"><a href="StudentProjects.html#student-project-4-flight-energetics-in-the-course-of-a-night-and-over-the-season"><i class="fa fa-check"></i><b>12.5</b> Student project 4: Flight energetics in the course of a night and over the season</a></li>
+<li class="chapter" data-level="12.6" data-path="StudentProjects.html"><a href="StudentProjects.html#student-project-5-estimate-survival-from-capture-recapture-data"><i class="fa fa-check"></i><b>12.6</b> Student project 5: Estimate survival from capture-recapture data</a></li>
+<li class="chapter" data-level="12.7" data-path="StudentProjects.html"><a href="StudentProjects.html#student-project-6-modelling-spring-migration-several-questions"><i class="fa fa-check"></i><b>12.7</b> Student project 6: Modelling spring migration: several questions</a></li>
+<li class="chapter" data-level="12.8" data-path="StudentProjects.html"><a href="StudentProjects.html#student-project-7-estimating-migration-volume"><i class="fa fa-check"></i><b>12.8</b> Student project 7: Estimating Migration volume</a></li>
+<li class="chapter" data-level="12.9" data-path="StudentProjects.html"><a href="StudentProjects.html#student-project-8-why-is-timing-in-spring-important"><i class="fa fa-check"></i><b>12.9</b> Student project 8: Why is timing in spring important?</a></li>
+<li class="chapter" data-level="12.10" data-path="StudentProjects.html"><a href="StudentProjects.html#student-project-9-geolocation---tracking-small-birds"><i class="fa fa-check"></i><b>12.10</b> Student project 9: Geolocation - tracking small birds</a></li>
+<li class="chapter" data-level="12.11" data-path="StudentProjects.html"><a href="StudentProjects.html#references-2"><i class="fa fa-check"></i><b>12.11</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="refresher.html"><a href="refresher.html"><i class="fa fa-check"></i><b>13</b> Exercise: Refreshing R and linear models</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="refresher.html"><a href="refresher.html#refreshing-r"><i class="fa fa-check"></i><b>13.1</b> Refreshing R</a>
+<ul>
+<li class="chapter" data-level="13.1.1" data-path="refresher.html"><a href="refresher.html#software-installation"><i class="fa fa-check"></i><b>13.1.1</b> Software installation</a></li>
+<li class="chapter" data-level="13.1.2" data-path="refresher.html"><a href="refresher.html#working-with-r"><i class="fa fa-check"></i><b>13.1.2</b> Working with R</a></li>
+<li class="chapter" data-level="13.1.3" data-path="refresher.html"><a href="refresher.html#working-with-rmarkdown"><i class="fa fa-check"></i><b>13.1.3</b> Working with rmarkdown</a></li>
+</ul></li>
+<li class="chapter" data-level="13.2" data-path="refresher.html"><a href="refresher.html#linear-regression"><i class="fa fa-check"></i><b>13.2</b> Linear regression</a>
+<ul>
+<li class="chapter" data-level="13.2.1" data-path="refresher.html"><a href="refresher.html#theory"><i class="fa fa-check"></i><b>13.2.1</b> Theory</a></li>
+<li class="chapter" data-level="13.2.2" data-path="refresher.html"><a href="refresher.html#fitting-a-linear-regression-in-r"><i class="fa fa-check"></i><b>13.2.2</b> Fitting a Linear Regression in R</a></li>
+<li class="chapter" data-level="13.2.3" data-path="refresher.html"><a href="refresher.html#data"><i class="fa fa-check"></i><b>13.2.3</b> Data</a></li>
+<li class="chapter" data-level="13.2.4" data-path="refresher.html"><a href="refresher.html#fit-the-regression-using-lm"><i class="fa fa-check"></i><b>13.2.4</b> Fit the regression using lm</a></li>
+<li class="chapter" data-level="13.2.5" data-path="refresher.html"><a href="refresher.html#check-the-model-assumptions"><i class="fa fa-check"></i><b>13.2.5</b> Check the model assumptions</a></li>
+<li class="chapter" data-level="13.2.6" data-path="refresher.html"><a href="refresher.html#drawing-conclusions"><i class="fa fa-check"></i><b>13.2.6</b> Drawing Conclusions</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="geolocs.html"><a href="geolocs.html"><i class="fa fa-check"></i><b>14</b> Exercise: Geolocation</a></li>
+<li class="chapter" data-level="15" data-path="migcon.html"><a href="migcon.html"><i class="fa fa-check"></i><b>15</b> Exercise: Estimating migratory connectivity</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="migcon.html"><a href="migcon.html#background"><i class="fa fa-check"></i><b>15.1</b> Background</a></li>
+<li class="chapter" data-level="15.2" data-path="migcon.html"><a href="migcon.html#nightingale-example"><i class="fa fa-check"></i><b>15.2</b> Nightingale example</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="exctiming.html"><a href="exctiming.html"><i class="fa fa-check"></i><b>16</b> Exercise: Timing</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="exctiming.html"><a href="exctiming.html#arrival-dates-in-spring"><i class="fa fa-check"></i><b>16.1</b> Arrival dates in spring</a></li>
+<li class="chapter" data-level="16.2" data-path="exctiming.html"><a href="exctiming.html#additional-data-for-further-studies"><i class="fa fa-check"></i><b>16.2</b> Additional data for further studies</a></li>
+<li class="chapter" data-level="16.3" data-path="exctiming.html"><a href="exctiming.html#timing-of-hatching-dates"><i class="fa fa-check"></i><b>16.3</b> Timing of hatching dates</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="exSurvest.html"><a href="exSurvest.html"><i class="fa fa-check"></i><b>17</b> Exercise: Survival estimation</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="exSurvest.html"><a href="exSurvest.html#introduction-to-mark-recapture-modelling"><i class="fa fa-check"></i><b>17.1</b> Introduction to mark-recapture modelling</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/silkebauer/ETH_course" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Handout and background material for ETHZ course ‘Animal Migration and research in field ornithology’</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="exSurvest" class="section level1 hasAnchor" number="17">
+<h1><span class="header-section-number">Chapter 17</span> Exercise: Survival estimation<a href="exSurvest.html#exSurvest" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="introduction-to-mark-recapture-modelling" class="section level2 hasAnchor" number="17.1">
+<h2><span class="header-section-number">17.1</span> Introduction to mark-recapture modelling<a href="exSurvest.html#introduction-to-mark-recapture-modelling" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Recapture or resightings (reencounters) of marked individuals inform about apparent survival, i.e. the probability that an individual survives and stays in the study area. Apparent survival differs from true survival because when the animals is seen last, it is still alive, i.e. the death is not observed. Thus, if an animal is no longer recaptured or resighted, we do not know whether it moved out of the study area or whether it died. Mark-recapture modelling techniques are designed to separately estimate recapture/resighting probability and apparent survival. To do so, they separate the observation process (recapturing or resighting an animal) from the biological process (staying in the study area and surviving). The basis for the development of an immense diversity of mark-recapture models has been set by the Cormack-Jolly-Seber model <span class="citation">(<a href="#ref-Cormack.1964">Cormack 1964</a>; <a href="#ref-Jolly.1965">Jolly 1965</a>; <a href="#ref-Seber.1965">Seber 1965</a>)</span>. The CJS-model is introduced here using data on Snowfinches, a high alpine bird species that we study since 2015.</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="exSurvest.html#cb41-1" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&quot;data/annualCRdata.rda&quot;</span>) <span class="co"># load datax object</span></span></code></pre></div>
+<p>Since 2015, we individually marked 1310 Snowfinches. We systematically observed Snowfinches to read rings using scopes and cameras. We could resight 529 of the marked individuals in later years, many of them in more than one year. We collated the marking and resighting data in a capture history matrix <span class="math inline">\(y\)</span>. Each row of <span class="math inline">\(y\)</span> contains the capture history of one individual and each column corresponds to a year from 2015 to 2023. A <span class="math inline">\(1\)</span> indicates that the individual was resighted or recaptured during that year and a <span class="math inline">\(0\)</span> indicates that the individual has not been seen. Thus, a <span class="math inline">\(1\)</span> means the individual is alive in the study area and it has been detected by the researchers. A <span class="math inline">\(0\)</span> could mean that the individual died, that it emigrated from the study area or that it is still alive in the study area but has not been detected by the researchers.</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="exSurvest.html#cb42-1" tabindex="-1"></a>index <span class="ot">&lt;-</span> <span class="fu">order</span>(datax<span class="sc">$</span>first)</span>
+<span id="cb42-2"><a href="exSurvest.html#cb42-2" tabindex="-1"></a>ch <span class="ot">&lt;-</span> datax<span class="sc">$</span>y[index,]</span>
+<span id="cb42-3"><a href="exSurvest.html#cb42-3" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">c</span>(<span class="dv">1</span>,datax<span class="sc">$</span>nocc), <span class="fu">c</span>(<span class="dv">1</span>, datax<span class="sc">$</span>nind), <span class="at">type=</span><span class="st">&quot;n&quot;</span>, <span class="at">axes=</span><span class="cn">FALSE</span>, <span class="at">xlab=</span><span class="st">&quot;Yeaer&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;Individual&quot;</span>)</span>
+<span id="cb42-4"><a href="exSurvest.html#cb42-4" tabindex="-1"></a><span class="fu">axis</span>(<span class="dv">1</span>, <span class="at">at=</span><span class="dv">1</span><span class="sc">:</span>datax<span class="sc">$</span>nocc)</span>
+<span id="cb42-5"><a href="exSurvest.html#cb42-5" tabindex="-1"></a><span class="fu">axis</span>(<span class="dv">2</span>, <span class="at">at=</span><span class="dv">1</span><span class="sc">:</span>datax<span class="sc">$</span>nind, <span class="at">las=</span><span class="dv">1</span>, <span class="at">cex.lab=</span><span class="fl">0.5</span>)</span>
+<span id="cb42-6"><a href="exSurvest.html#cb42-6" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>datax<span class="sc">$</span>nind){</span>
+<span id="cb42-7"><a href="exSurvest.html#cb42-7" tabindex="-1"></a>  <span class="fu">points</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span>datax<span class="sc">$</span>nocc)[ch[i,]<span class="sc">==</span><span class="dv">1</span>], <span class="fu">rep</span>(i,<span class="fu">sum</span>(ch[i,])), <span class="at">cex=</span>.<span class="dv">6</span>) </span>
+<span id="cb42-8"><a href="exSurvest.html#cb42-8" tabindex="-1"></a>  <span class="fu">lines</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span>datax<span class="sc">$</span>nocc)[ch[i,]<span class="sc">==</span><span class="dv">1</span>], <span class="fu">rep</span>(i,<span class="fu">sum</span>(ch[i,])))</span>
+<span id="cb42-9"><a href="exSurvest.html#cb42-9" tabindex="-1"></a>}</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:seedat"></span>
+<img src="16-ExercisesSurvival_files/figure-html/seedat-1.png" alt="Visualisation of the capture-recapture/resighting data. Each horizontal line connect capture or resightings of the same individual, a circle indicate that the individual is captured or resighted at least once during that year." width="672" />
+<p class="caption">
+Figure 17.1: Visualisation of the capture-recapture/resighting data. Each horizontal line connect capture or resightings of the same individual, a circle indicate that the individual is captured or resighted at least once during that year.
+</p>
+</div>
+<p>Model description:</p>
+<p>The observations <span class="math inline">\(y_{it}\)</span>, an indicator of whether individual <span class="math inline">\(i\)</span> was recaptured or resighted during year <span class="math inline">\(t\)</span> is modeled conditional on the latent true state of the individual birds <span class="math inline">\(z_{it}\)</span> (0 = dead or permanently emigrated, 1 = alive and at the study site) as a Bernoulli variable. The probability <span class="math inline">\(P(y_{it} = 1)\)</span> is the product of the probability that an alive individual is recaptured or resighted, <span class="math inline">\(p_{it}\)</span>, and the state of the bird <span class="math inline">\(z_{it}\)</span> (alive = 1, dead = 0). Thus, a dead bird cannot be recaptured or resighted, whereas for a bird alive during year <span class="math inline">\(t\)</span>, the recapture/resighting probability equals <span class="math inline">\(p_{it}\)</span>:
+<span class="math display">\[y_{it} \sim Bernoulli(z_{it}p_{it})\]</span>
+The latent state variable <span class="math inline">\(z_{it}\)</span> is a Markovian variable with the state at year <span class="math inline">\(t\)</span> being dependent on the state at year <span class="math inline">\(t-1\)</span> and the apparent survival probability <span class="math inline">\(\phi_{it}\)</span>:
+<span class="math display">\[z_{it} \sim Bernoulli(z_{it-1}\phi_{it})\]</span></p>
+<p>We use the notation <span class="math inline">\(\phi\)</span> to indicate that this parameter can be interpreted as apparent survival rather than true survival of which the standard notation would be <span class="math inline">\(S\)</span> <span class="citation">(<a href="#ref-Thomson.2009d">D. L. Thomson et al. 2009</a>)</span>.
+We model <span class="math inline">\(\phi\)</span> dependent on age (1=first year, 2=older) and year.</p>
+<p><span class="math display">\[\phi_{it} = \alpha_{age-class[it], t} \]</span></p>
+<p>Annual recapture/resighting probability is modeled for each year independently:
+<span class="math display">\[p_{it} = \beta_{t}\]</span>
+We use uniform prior distributions for all parameters with a parameter space limited to values between 0 and 1 (probabilities), <span class="math inline">\(\alpha_{age-class,t} \sim uniform(0,1)\)</span> and <span class="math inline">\(\beta_t \sim uniform(0,1)\)</span>.</p>
+<p>We use Markov chain Monte Carlo simulations as implemented in jags <span class="citation">(<a href="#ref-Plummer2003">Plummer 2003</a>)</span> to fit the model to the data. For doing so, we first need to specify the model using Jags language. We do that in a separate text-file (jags/cjs.txt).</p>
+<p>To fit the model, the <a href="https://sourceforge.net/projects/mcmc-jags/files/">Software jags</a> need to be downloaded and installed.</p>
+<pre><code>## ## jags model code
+## model{
+##   ## likelihood
+##   for(i in 1:nind){
+##     z[i,first[i]]  &lt;- 1
+##     for(t in (first[i]+1):nocc) {
+##       phiz[i, t-1] &lt;- z[i,t-1]*phi[i, t-1]
+##       z[i,t] ~ dbern(phiz[i, t-1])
+##       zp[i,t] &lt;- z[i,t]*p[i,t-1]
+##       y[i,t] ~ dbern(zp[i,t])
+##     }
+##   }
+## 
+##   ## linear predictors
+##   for(i in 1:nind){
+##     for(t in first[i]:(nocc-1)){
+##       phi[i,t] &lt;-  a[age[i,t],t]
+##       p[i,t] &lt;-  b[t]
+##     }
+##   }
+## 
+##   ## priors
+##  for(t in 1:(nocc-1)){
+##   b[t] ~ dunif(0, 1)
+##   a[1,t] ~ dunif(0, 1)
+##   a[2,t] ~ dunif(0, 1)
+## 
+##  }
+## }</code></pre>
+<p>After having specified the model, we need to bundle the data into a list. We have prepared that list in the object <code>datax</code>.</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="exSurvest.html#cb44-1" tabindex="-1"></a><span class="fu">str</span>(datax)</span>
+<span id="cb44-2"><a href="exSurvest.html#cb44-2" tabindex="-1"></a><span class="do">## List of 5</span></span>
+<span id="cb44-3"><a href="exSurvest.html#cb44-3" tabindex="-1"></a><span class="do">##  $ y    : &#39;table&#39; num [1:1310, 1:9] 0 1 1 1 1 1 1 1 1 1 ...</span></span>
+<span id="cb44-4"><a href="exSurvest.html#cb44-4" tabindex="-1"></a><span class="do">##  $ first: int [1:1310] 8 1 1 1 1 1 1 1 1 1 ...</span></span>
+<span id="cb44-5"><a href="exSurvest.html#cb44-5" tabindex="-1"></a><span class="do">##  $ age  : num [1:1310, 1:9] NA 2 2 1 1 1 1 2 1 1 ...</span></span>
+<span id="cb44-6"><a href="exSurvest.html#cb44-6" tabindex="-1"></a><span class="do">##  $ nind : int 1310</span></span>
+<span id="cb44-7"><a href="exSurvest.html#cb44-7" tabindex="-1"></a><span class="do">##  $ nocc : int 9</span></span></code></pre></div>
+<p>We then need to specify initial values and the parameters that we would like to save.</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="exSurvest.html#cb45-1" tabindex="-1"></a><span class="fu">library</span>(R2jags)</span></code></pre></div>
+<pre><code>## Lade nötiges Paket: rjags</code></pre>
+<pre><code>## Lade nötiges Paket: coda</code></pre>
+<pre><code>## Linked to JAGS 4.3.1</code></pre>
+<pre><code>## Loaded modules: basemod,bugs</code></pre>
+<pre><code>## 
+## Attache Paket: &#39;R2jags&#39;</code></pre>
+<pre><code>## Das folgende Objekt ist maskiert &#39;package:coda&#39;:
+## 
+##     traceplot</code></pre>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="exSurvest.html#cb52-1" tabindex="-1"></a>initz <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="cn">NA</span>, <span class="at">ncol=</span>datax<span class="sc">$</span>nocc, <span class="at">nrow=</span>datax<span class="sc">$</span>nind)</span>
+<span id="cb52-2"><a href="exSurvest.html#cb52-2" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>datax<span class="sc">$</span>nind) initz[i,(datax<span class="sc">$</span>first[i]<span class="sc">+</span><span class="dv">1</span>)<span class="sc">:</span>datax<span class="sc">$</span>nocc] <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb52-3"><a href="exSurvest.html#cb52-3" tabindex="-1"></a>initfun <span class="ot">&lt;-</span> <span class="cf">function</span>(){</span>
+<span id="cb52-4"><a href="exSurvest.html#cb52-4" tabindex="-1"></a>  <span class="fu">list</span>(<span class="at">a=</span><span class="fu">matrix</span>(<span class="fu">runif</span>(<span class="dv">2</span><span class="sc">*</span>(datax<span class="sc">$</span>nocc<span class="dv">-1</span>), <span class="dv">0</span>,<span class="dv">1</span>), <span class="at">ncol=</span>datax<span class="sc">$</span>nocc<span class="dv">-1</span>, <span class="at">nrow=</span><span class="dv">2</span>),</span>
+<span id="cb52-5"><a href="exSurvest.html#cb52-5" tabindex="-1"></a>       <span class="at">b=</span><span class="fu">runif</span>(datax<span class="sc">$</span>nocc<span class="dv">-1</span>, <span class="dv">0</span>,<span class="dv">1</span>),</span>
+<span id="cb52-6"><a href="exSurvest.html#cb52-6" tabindex="-1"></a>       <span class="at">z=</span>initz)</span>
+<span id="cb52-7"><a href="exSurvest.html#cb52-7" tabindex="-1"></a>}</span>
+<span id="cb52-8"><a href="exSurvest.html#cb52-8" tabindex="-1"></a></span>
+<span id="cb52-9"><a href="exSurvest.html#cb52-9" tabindex="-1"></a></span>
+<span id="cb52-10"><a href="exSurvest.html#cb52-10" tabindex="-1"></a>parameters <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>)</span>
+<span id="cb52-11"><a href="exSurvest.html#cb52-11" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="fu">jags</span>(datax, <span class="at">inits=</span>initfun, <span class="at">parameters.to.save=</span>parameters, </span>
+<span id="cb52-12"><a href="exSurvest.html#cb52-12" tabindex="-1"></a>            <span class="at">model.file=</span><span class="st">&quot;jags/cjs.txt&quot;</span>, <span class="at">n.chains=</span><span class="dv">3</span>, <span class="at">n.iter=</span><span class="dv">2000</span>)</span></code></pre></div>
+<pre><code>## module glm loaded</code></pre>
+<pre><code>## Compiling model graph
+##    Resolving undeclared variables
+##    Allocating nodes
+## Graph information:
+##    Observed stochastic nodes: 3726
+##    Unobserved stochastic nodes: 3750
+##    Total graph size: 28048
+## 
+## Initializing model</code></pre>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="exSurvest.html#cb55-1" tabindex="-1"></a>mod <span class="ot">&lt;-</span> mod<span class="sc">$</span>BUGSoutput</span></code></pre></div>
+<p>Before we look at the results, we check how well the Markov chains converged. The chains look ok except for the parameters of the last year. For the last year, apparent survival cannot be separated from recapture/resighting probability. Thus, we must expect that these chains do not converge well.</p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="exSurvest.html#cb56-1" tabindex="-1"></a><span class="co"># check </span></span>
+<span id="cb56-2"><a href="exSurvest.html#cb56-2" tabindex="-1"></a><span class="fu">traceplot</span>(mod)</span></code></pre></div>
+<p>In the Cormack-Jolly-Seber model, for the last occasion, only the product of survival and recapture probability is estimable. Therefore, for these two parameters, it does not look like the Markov chains have converged.</p>
+<p>We then look at the results</p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="exSurvest.html#cb57-1" tabindex="-1"></a>mod<span class="sc">$</span>summary</span>
+<span id="cb57-2"><a href="exSurvest.html#cb57-2" tabindex="-1"></a><span class="do">##                  mean           sd         2.5%          25%          50%</span></span>
+<span id="cb57-3"><a href="exSurvest.html#cb57-3" tabindex="-1"></a><span class="do">## a[1,1]   3.510501e-01   0.13258846 1.472128e-01 2.547385e-01 3.346281e-01</span></span>
+<span id="cb57-4"><a href="exSurvest.html#cb57-4" tabindex="-1"></a><span class="do">## a[2,1]   3.772487e-01   0.18880163 8.419908e-02 2.330570e-01 3.542132e-01</span></span>
+<span id="cb57-5"><a href="exSurvest.html#cb57-5" tabindex="-1"></a><span class="do">## a[1,2]   4.043694e-01   0.14811958 1.595110e-01 2.974084e-01 3.927426e-01</span></span>
+<span id="cb57-6"><a href="exSurvest.html#cb57-6" tabindex="-1"></a><span class="do">## a[2,2]   5.599796e-01   0.14756490 3.046820e-01 4.574393e-01 5.454964e-01</span></span>
+<span id="cb57-7"><a href="exSurvest.html#cb57-7" tabindex="-1"></a><span class="do">## a[1,3]   5.481388e-02   0.05548757 1.305397e-03 1.569167e-02 3.874899e-02</span></span>
+<span id="cb57-8"><a href="exSurvest.html#cb57-8" tabindex="-1"></a><span class="do">## a[2,3]   8.014487e-01   0.12978670 5.225325e-01 7.125187e-01 8.158234e-01</span></span>
+<span id="cb57-9"><a href="exSurvest.html#cb57-9" tabindex="-1"></a><span class="do">## a[1,4]   1.713731e-01   0.10743732 2.375803e-02 9.116378e-02 1.507140e-01</span></span>
+<span id="cb57-10"><a href="exSurvest.html#cb57-10" tabindex="-1"></a><span class="do">## a[2,4]   5.241398e-01   0.05606322 4.155180e-01 4.849657e-01 5.248591e-01</span></span>
+<span id="cb57-11"><a href="exSurvest.html#cb57-11" tabindex="-1"></a><span class="do">## a[1,5]   3.989734e-01   0.14274954 1.540121e-01 2.962065e-01 3.901665e-01</span></span>
+<span id="cb57-12"><a href="exSurvest.html#cb57-12" tabindex="-1"></a><span class="do">## a[2,5]   7.260562e-01   0.06116332 6.040354e-01 6.853648e-01 7.252535e-01</span></span>
+<span id="cb57-13"><a href="exSurvest.html#cb57-13" tabindex="-1"></a><span class="do">## a[1,6]   1.330646e-01   0.06067763 3.856729e-02 8.827885e-02 1.258523e-01</span></span>
+<span id="cb57-14"><a href="exSurvest.html#cb57-14" tabindex="-1"></a><span class="do">## a[2,6]   5.923377e-01   0.03239618 5.319510e-01 5.707441e-01 5.917055e-01</span></span>
+<span id="cb57-15"><a href="exSurvest.html#cb57-15" tabindex="-1"></a><span class="do">## a[1,7]   9.422119e-02   0.08860346 2.609582e-03 2.802027e-02 6.677591e-02</span></span>
+<span id="cb57-16"><a href="exSurvest.html#cb57-16" tabindex="-1"></a><span class="do">## a[2,7]   4.553917e-01   0.02608746 4.069549e-01 4.373354e-01 4.544428e-01</span></span>
+<span id="cb57-17"><a href="exSurvest.html#cb57-17" tabindex="-1"></a><span class="do">## a[1,8]   4.908014e-02   0.05343356 9.746482e-04 1.259474e-02 3.177382e-02</span></span>
+<span id="cb57-18"><a href="exSurvest.html#cb57-18" tabindex="-1"></a><span class="do">## a[2,8]   7.562171e-01   0.16605881 4.403930e-01 6.394721e-01 7.895405e-01</span></span>
+<span id="cb57-19"><a href="exSurvest.html#cb57-19" tabindex="-1"></a><span class="do">## b[1]     3.938988e-01   0.15366225 1.436084e-01 2.770269e-01 3.793731e-01</span></span>
+<span id="cb57-20"><a href="exSurvest.html#cb57-20" tabindex="-1"></a><span class="do">## b[2]     4.003212e-01   0.11368032 1.975058e-01 3.171543e-01 3.966951e-01</span></span>
+<span id="cb57-21"><a href="exSurvest.html#cb57-21" tabindex="-1"></a><span class="do">## b[3]     5.696087e-01   0.11485685 3.492900e-01 4.876967e-01 5.694310e-01</span></span>
+<span id="cb57-22"><a href="exSurvest.html#cb57-22" tabindex="-1"></a><span class="do">## b[4]     7.114393e-01   0.06593644 5.779153e-01 6.673879e-01 7.143324e-01</span></span>
+<span id="cb57-23"><a href="exSurvest.html#cb57-23" tabindex="-1"></a><span class="do">## b[5]     6.392463e-01   0.06049057 5.240727e-01 5.966711e-01 6.402428e-01</span></span>
+<span id="cb57-24"><a href="exSurvest.html#cb57-24" tabindex="-1"></a><span class="do">## b[6]     8.853452e-01   0.03227527 8.158858e-01 8.640709e-01 8.888795e-01</span></span>
+<span id="cb57-25"><a href="exSurvest.html#cb57-25" tabindex="-1"></a><span class="do">## b[7]     7.267394e-01   0.03771165 6.479020e-01 7.013729e-01 7.283647e-01</span></span>
+<span id="cb57-26"><a href="exSurvest.html#cb57-26" tabindex="-1"></a><span class="do">## b[8]     6.042151e-01   0.16189546 4.206285e-01 4.829874e-01 5.471965e-01</span></span>
+<span id="cb57-27"><a href="exSurvest.html#cb57-27" tabindex="-1"></a><span class="do">## deviance 1.323526e+03 202.53754505 8.408964e+02 1.228473e+03 1.378064e+03</span></span>
+<span id="cb57-28"><a href="exSurvest.html#cb57-28" tabindex="-1"></a><span class="do">##                   75%        97.5%     Rhat n.eff</span></span>
+<span id="cb57-29"><a href="exSurvest.html#cb57-29" tabindex="-1"></a><span class="do">## a[1,1]   4.291324e-01    0.6663751 1.005613   390</span></span>
+<span id="cb57-30"><a href="exSurvest.html#cb57-30" tabindex="-1"></a><span class="do">## a[2,1]   4.923753e-01    0.8184056 1.008630   380</span></span>
+<span id="cb57-31"><a href="exSurvest.html#cb57-31" tabindex="-1"></a><span class="do">## a[1,2]   4.908762e-01    0.7434647 1.003714  1800</span></span>
+<span id="cb57-32"><a href="exSurvest.html#cb57-32" tabindex="-1"></a><span class="do">## a[2,2]   6.449947e-01    0.8799137 1.006530   520</span></span>
+<span id="cb57-33"><a href="exSurvest.html#cb57-33" tabindex="-1"></a><span class="do">## a[1,3]   7.717234e-02    0.1915781 1.008789   490</span></span>
+<span id="cb57-34"><a href="exSurvest.html#cb57-34" tabindex="-1"></a><span class="do">## a[2,3]   9.092113e-01    0.9919025 1.001711  1700</span></span>
+<span id="cb57-35"><a href="exSurvest.html#cb57-35" tabindex="-1"></a><span class="do">## a[1,4]   2.316560e-01    0.4311438 1.002252  1100</span></span>
+<span id="cb57-36"><a href="exSurvest.html#cb57-36" tabindex="-1"></a><span class="do">## a[2,4]   5.634427e-01    0.6347886 1.006151   410</span></span>
+<span id="cb57-37"><a href="exSurvest.html#cb57-37" tabindex="-1"></a><span class="do">## a[1,5]   4.908763e-01    0.6954130 1.002908  1800</span></span>
+<span id="cb57-38"><a href="exSurvest.html#cb57-38" tabindex="-1"></a><span class="do">## a[2,5]   7.656461e-01    0.8464400 1.002439  1200</span></span>
+<span id="cb57-39"><a href="exSurvest.html#cb57-39" tabindex="-1"></a><span class="do">## a[1,6]   1.705673e-01    0.2695706 1.002569   970</span></span>
+<span id="cb57-40"><a href="exSurvest.html#cb57-40" tabindex="-1"></a><span class="do">## a[2,6]   6.135876e-01    0.6583520 1.001896  1400</span></span>
+<span id="cb57-41"><a href="exSurvest.html#cb57-41" tabindex="-1"></a><span class="do">## a[1,7]   1.332550e-01    0.3261571 1.004415   510</span></span>
+<span id="cb57-42"><a href="exSurvest.html#cb57-42" tabindex="-1"></a><span class="do">## a[2,7]   4.722086e-01    0.5112852 1.014535   140</span></span>
+<span id="cb57-43"><a href="exSurvest.html#cb57-43" tabindex="-1"></a><span class="do">## a[1,8]   6.854166e-02    0.1827170 1.009434   280</span></span>
+<span id="cb57-44"><a href="exSurvest.html#cb57-44" tabindex="-1"></a><span class="do">## a[2,8]   8.916055e-01    0.9854682 1.022899   100</span></span>
+<span id="cb57-45"><a href="exSurvest.html#cb57-45" tabindex="-1"></a><span class="do">## b[1]     4.958994e-01    0.7301728 1.020486   130</span></span>
+<span id="cb57-46"><a href="exSurvest.html#cb57-46" tabindex="-1"></a><span class="do">## b[2]     4.743176e-01    0.6389296 1.005744   380</span></span>
+<span id="cb57-47"><a href="exSurvest.html#cb57-47" tabindex="-1"></a><span class="do">## b[3]     6.502418e-01    0.7942569 1.000586  3000</span></span>
+<span id="cb57-48"><a href="exSurvest.html#cb57-48" tabindex="-1"></a><span class="do">## b[4]     7.570319e-01    0.8331624 1.007962   280</span></span>
+<span id="cb57-49"><a href="exSurvest.html#cb57-49" tabindex="-1"></a><span class="do">## b[5]     6.815173e-01    0.7564848 1.000617  3000</span></span>
+<span id="cb57-50"><a href="exSurvest.html#cb57-50" tabindex="-1"></a><span class="do">## b[6]     9.083763e-01    0.9409016 1.006195   350</span></span>
+<span id="cb57-51"><a href="exSurvest.html#cb57-51" tabindex="-1"></a><span class="do">## b[7]     7.530120e-01    0.7964192 1.015104   140</span></span>
+<span id="cb57-52"><a href="exSurvest.html#cb57-52" tabindex="-1"></a><span class="do">## b[8]     6.821865e-01    0.9738454 1.026053    94</span></span>
+<span id="cb57-53"><a href="exSurvest.html#cb57-53" tabindex="-1"></a><span class="do">## deviance 1.472758e+03 1589.9303241 1.022125   110</span></span></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="exSurvest.html#cb58-1" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">c</span>(<span class="dv">2015</span>,<span class="dv">2023</span>), <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="at">type=</span><span class="st">&quot;n&quot;</span>, <span class="at">las=</span><span class="dv">1</span>, <span class="at">xlab=</span><span class="cn">NA</span>, <span class="at">ylab=</span><span class="st">&quot;Apparent survival&quot;</span>)</span>
+<span id="cb58-2"><a href="exSurvest.html#cb58-2" tabindex="-1"></a></span>
+<span id="cb58-3"><a href="exSurvest.html#cb58-3" tabindex="-1"></a>phi <span class="ot">&lt;-</span> <span class="fu">apply</span>(mod<span class="sc">$</span>sims.list<span class="sc">$</span>a, <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>), mean)</span>
+<span id="cb58-4"><a href="exSurvest.html#cb58-4" tabindex="-1"></a>phi.lwr <span class="ot">&lt;-</span> <span class="fu">apply</span>(mod<span class="sc">$</span>sims.list<span class="sc">$</span>a, <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>), quantile, <span class="at">probs=</span><span class="fl">0.025</span>)</span>
+<span id="cb58-5"><a href="exSurvest.html#cb58-5" tabindex="-1"></a>phi.upr <span class="ot">&lt;-</span> <span class="fu">apply</span>(mod<span class="sc">$</span>sims.list<span class="sc">$</span>a, <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>), quantile, <span class="at">probs=</span><span class="fl">0.975</span>)</span>
+<span id="cb58-6"><a href="exSurvest.html#cb58-6" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fl">2015.5</span>, <span class="fl">2022.5</span>, <span class="at">by=</span><span class="dv">1</span>)</span>
+<span id="cb58-7"><a href="exSurvest.html#cb58-7" tabindex="-1"></a><span class="fu">segments</span>(x, phi.lwr[<span class="dv">1</span>,], x,phi.upr[<span class="dv">1</span>,])</span>
+<span id="cb58-8"><a href="exSurvest.html#cb58-8" tabindex="-1"></a><span class="fu">points</span>(x, phi[<span class="dv">1</span>,], <span class="at">pch=</span><span class="dv">21</span>, <span class="at">bg=</span><span class="st">&quot;white&quot;</span>)</span>
+<span id="cb58-9"><a href="exSurvest.html#cb58-9" tabindex="-1"></a><span class="fu">segments</span>(x<span class="fl">+0.1</span>, phi.lwr[<span class="dv">2</span>,], x<span class="fl">+0.1</span>,phi.upr[<span class="dv">2</span>,], <span class="at">lwd=</span><span class="dv">2</span>, <span class="at">col=</span><span class="st">&quot;brown&quot;</span>)</span>
+<span id="cb58-10"><a href="exSurvest.html#cb58-10" tabindex="-1"></a><span class="fu">points</span>(x<span class="fl">+0.1</span>, phi[<span class="dv">2</span>,], <span class="at">pch=</span><span class="dv">21</span>, <span class="at">bg=</span><span class="st">&quot;white&quot;</span>, <span class="at">col=</span><span class="st">&quot;brown&quot;</span>)</span>
+<span id="cb58-11"><a href="exSurvest.html#cb58-11" tabindex="-1"></a><span class="fu">legend</span>(<span class="dv">2015</span>, <span class="fl">1.1</span>, <span class="at">xpd=</span><span class="cn">NA</span>, <span class="at">lwd=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="at">col=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="st">&quot;brown&quot;</span>), <span class="at">legend=</span><span class="fu">c</span>(<span class="st">&quot;first year&quot;</span>, <span class="st">&quot;adult&quot;</span>), <span class="at">horiz=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-4"></span>
+<img src="16-ExercisesSurvival_files/figure-html/unnamed-chunk-4-1.png" alt="Annual apparent survival of juvenile and adult Snowfinches." width="672" />
+<p class="caption">
+Figure 17.2: Annual apparent survival of juvenile and adult Snowfinches.
+</p>
+</div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="exSurvest.html#cb59-1" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">c</span>(<span class="dv">2016</span>,<span class="dv">2023</span>), <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="at">type=</span><span class="st">&quot;n&quot;</span>, <span class="at">las=</span><span class="dv">1</span>, <span class="at">xlab=</span><span class="cn">NA</span>, <span class="at">ylab=</span><span class="st">&quot;Recapture/resighting probability&quot;</span>)</span>
+<span id="cb59-2"><a href="exSurvest.html#cb59-2" tabindex="-1"></a></span>
+<span id="cb59-3"><a href="exSurvest.html#cb59-3" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">apply</span>(mod<span class="sc">$</span>sims.list<span class="sc">$</span>b, <span class="dv">2</span>, mean)</span>
+<span id="cb59-4"><a href="exSurvest.html#cb59-4" tabindex="-1"></a>p.lwr <span class="ot">&lt;-</span> <span class="fu">apply</span>(mod<span class="sc">$</span>sims.list<span class="sc">$</span>b, <span class="dv">2</span>, quantile, <span class="at">probs=</span><span class="fl">0.025</span>)</span>
+<span id="cb59-5"><a href="exSurvest.html#cb59-5" tabindex="-1"></a>p.upr <span class="ot">&lt;-</span> <span class="fu">apply</span>(mod<span class="sc">$</span>sims.list<span class="sc">$</span>b, <span class="dv">2</span>, quantile, <span class="at">probs=</span><span class="fl">0.975</span>)</span>
+<span id="cb59-6"><a href="exSurvest.html#cb59-6" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">2016</span>, <span class="dv">2023</span>, <span class="at">by=</span><span class="dv">1</span>)</span>
+<span id="cb59-7"><a href="exSurvest.html#cb59-7" tabindex="-1"></a><span class="fu">segments</span>(x, p.lwr, x,p.upr, <span class="at">lwd=</span><span class="dv">2</span>, <span class="at">col=</span><span class="st">&quot;brown&quot;</span>)</span>
+<span id="cb59-8"><a href="exSurvest.html#cb59-8" tabindex="-1"></a><span class="fu">points</span>(x, p, <span class="at">pch=</span><span class="dv">21</span>, <span class="at">bg=</span><span class="st">&quot;white&quot;</span>, <span class="at">col=</span><span class="st">&quot;brown&quot;</span>)</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-5"></span>
+<img src="16-ExercisesSurvival_files/figure-html/unnamed-chunk-5-1.png" alt="Recapture and resighting probability" width="672" />
+<p class="caption">
+Figure 17.3: Recapture and resighting probability
+</p>
+</div>
+<p><span class="citation">Kéry and Schaub (<a href="#ref-Kery.2012">2012</a>)</span> wrote a gentle introduction to mark-recapture modelling for biologists. An example using Stan is found here <a href="https://tobiasroth.github.io/BDAEcology/cjs_with_mix.html" class="uri">https://tobiasroth.github.io/BDAEcology/cjs_with_mix.html</a>.</p>
+
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
+<div class="csl-entry">
+Abrahms, Briana, Elliott L Hazen, Ellen O Aikens, Matthew S Savoca, Jeremy A Goldbogen, Steven J Bograd, Michael G Jacox, Ladd M Irvine, Daniel M Palacios, and Bruce R Mate. 2019. <span>“<span class="nocase">Memory and resource tracking drive blue whale migrations.</span>”</span> <em>Proceedings of the National Academy of Sciences of the United States of America</em> 116 (12): 5582–87. <a href="https://doi.org/10.1073/pnas.1819031116">https://doi.org/10.1073/pnas.1819031116</a>.
+</div>
+<div class="csl-entry">
+Adamík, Peter, Tamara Emmenegger, Martins Briedis, Lars Gustafsson, Ian Henshaw, Miloš Krist, Toni Laaksonen, et al. 2016. <span>“<span class="nocase">Barrier crossing in small avian migrants: individual tracking reveals prolonged nocturnal flights into the day as a common migratory strategy</span>.”</span> <em>Scientific Reports</em> 6 (1): 21560. https://doi.org/<a href="10.1038/srep21560%20http://www.nature.com/articles/srep21560#supplementary-information">10.1038/srep21560 http://www.nature.com/articles/srep21560#supplementary-information</a>.
+</div>
+<div class="csl-entry">
+Alerstam, Thomas, Jason W Chapman, Johan Bäckman, Alan D Smith, Håkan Karlsson, Cecilia Nilsson, Don R Reynolds, Raymond H G Klaassen, and Jane K Hill. 2011. <span>“<span class="nocase">Convergent patterns of long-distance nocturnal migration in noctuid moths and passerine birds.</span>”</span> <em>Proceedings. Biological Sciences</em> 278 (1721): 3074–80. <a href="https://doi.org/10.1098/rspb.2011.0058">https://doi.org/10.1098/rspb.2011.0058</a>.
+</div>
+<div class="csl-entry">
+Alerstam, Thomas, and Anders Hedenström. 1998. <span>“<span class="nocase">The development of bird migration theory</span>.”</span> <em>Journal of Avian Biology</em> 29 (4): 343–69.
+</div>
+<div class="csl-entry">
+Antoniazza, M., F. Korner-Nievergelt, and V. Keller. 2012. <span>“Les Mouvements Des Grands Cormorans Phalacrocorax Carbo Bague<span>é</span>s Dans La Colonie Du Fanel, Lac de Neuch<span>â</span>tel.”</span> <em>Nos Oiseaux</em> 59: 11–22.
+</div>
+<div class="csl-entry">
+Arnason, A. N. 1972. <span>“Parameter Estimates from Mark-Recapture Experiments on Two Populations Subject to Migration and Death.”</span> <em>Researches on Population Ecology</em> 13: 97–113.
+</div>
+<div class="csl-entry">
+Arnason, A. N., C. J. Schwarz, and J. M. Gerrard. 1991. <span>“Estimating Closed Population Size and Number of Marked Animals from Sighting Data.”</span> <em>Journal of Wildlife Management</em> 55: 716–30.
+</div>
+<div class="csl-entry">
+Bächler, E., and M. Schaub. 2006. <span>“The Effects of Permanent Local Emigration and Encounter Technique on Stopover Duration Estimates as Revealed by Telemetry and Mark-Recapture.”</span> <em>The Condor</em> 109: 142–54.
+</div>
+<div class="csl-entry">
+Balmer, D., L. Coiffait, J. Clark, and R. A. Robinson. 2008. <em>Bird Ringing</em>. Norfolk: <span>British Trust for Ornithology BTO</span>.
+</div>
+<div class="csl-entry">
+Bauer, S., and B. J. Hoye. 2014. <span>“Migratory Animals Couple Biodiversity and Ecosystem Functioning Worldwide.”</span> <em>Science</em> 344: 1242552-1-8. <a href="https://doi.org/10.1126/science.1242552">https://doi.org/10.1126/science.1242552</a>.
+</div>
+<div class="csl-entry">
+Bauer, Silke, Jason W. Chapman, Don R. Reynolds, José A. Alves, Adriaan M. Dokter, Myles M. H. Menz, Nir Sapir, et al. 2017. <span>“<span class="nocase">From Agricultural Benefits to Aviation Safety: Realizing the Potential of Continent-Wide Radar Networks</span>.”</span> <em>BioScience</em> 67 (10): 912–18. <a href="https://doi.org/10.1093/biosci/bix074">https://doi.org/10.1093/biosci/bix074</a>.
+</div>
+<div class="csl-entry">
+Bauer, Silke, Phillip Gienapp, and Jesper Madsen. 2008. <span>“<span class="nocase">The relevance of environmental conditions for departure decision changes en route in migrating geese</span>.”</span> <em>Ecology</em> 89 (7): 1953–60. <a href="https://doi.org/10.1890/07-1101.1">https://doi.org/10.1890/07-1101.1</a>.
+</div>
+<div class="csl-entry">
+Bauer, Silke, Simeon Lisovski, and Steffen Hahn. 2016. <span>“<span class="nocase">Timing is crucial for consequences of migratory connectivity</span>.”</span> <em>Oikos</em> 125 (5): 605–12. <a href="https://doi.org/10.1111/oik.02706">https://doi.org/10.1111/oik.02706</a>.
+</div>
+<div class="csl-entry">
+Bauer, Silke, Bart a Nolet, Jarl Giske, Jason W Chapman, Susanne Åkesson, Anders Hedenström, and John M Fryxell. 2011. <span>“<span class="nocase">Cues and decision rules in animal migration</span>.”</span> In <em>Animal Migration: A Synthesis</em>, edited by E. J. Milner-Gulland, John M. Fryxell, and Anthony R. E. Sinclair, 68–87. August 2015. Oxford University Press. <a href="https://doi.org/10.1093/acprof:oso/9780199568994.001.0001">https://doi.org/10.1093/acprof:oso/9780199568994.001.0001</a>.
+</div>
+<div class="csl-entry">
+Bauer, Silke, Judy Shamoun‐Baranes, Cecilia Nilsson, Andrew Farnsworth, Jeffrey F. Kelly, Don R. Reynolds, Adriaan M. Dokter, et al. 2019. <span>“<span class="nocase">The grand challenges of migration ecology that radar aeroecology can help answer</span>.”</span> <em>Ecography</em> 42 (5): 861–75. <a href="https://doi.org/10.1111/ecog.04083">https://doi.org/10.1111/ecog.04083</a>.
+</div>
+<div class="csl-entry">
+Bauer, S., S. Lisovski, R. J. F. M. Eikelenboom-Kil, M. Shariati, and B. A. Nolet. 2018. <span>“<span class="nocase">Shooting may aggravate rather than alleviate conflicts between migratory geese and agriculture</span>.”</span> <em>Journal of Applied Ecology</em> 55 (6): 2653–62. <a href="https://doi.org/10.1111/1365-2664.13152">https://doi.org/10.1111/1365-2664.13152</a>.
+</div>
+<div class="csl-entry">
+Bauthian, I., F. Grossmann, Y. Ferrand, and R. Julliard. 2007. <span>“Quantifying the Origin of Woodcock Wintering in France.”</span> <em>Journal of Wildlife Management</em> 71: 701–5.
+</div>
+<div class="csl-entry">
+Beck, W., and W. Wiltschko. 1983. <span>“Orientation Behaviour Recorded in Registration Cages: A Comparison of Funnel Cages and Radial Perch Cages.”</span> <em>Behaviour</em> 87: 145–56.
+</div>
+<div class="csl-entry">
+Biebach, H. 1985. <span>“Sahara Stopover in Migratory Flycatchers: Fat and Food Affect the Time Program.”</span> <em>Experientia</em> 41: 695–97.
+</div>
+<div class="csl-entry">
+Bønløkke, J., J. J. Madsen, K. Thorup, K. T. Pedersen, M. Bjerrum, and C. Rahbek. 2006. <em>Dansk Tr<span>æ</span>kfugleatlas - the Danish Bird Migration Atlas</em>. K<span>ø</span>benhavn: <span>Forlaget Rhodos A/S and Zoological Museum, Copenhagen University</span>.
+</div>
+<div class="csl-entry">
+Both, C. 2010. <span>“Flexibility of Timing of Avian Migration to Climate Change Masked by Environmental Constraints En Route.”</span> <em>Current Biology : CB</em> 20 (3): 243–48. <a href="https://doi.org/10.1016/j.cub.2009.11.074">https://doi.org/10.1016/j.cub.2009.11.074</a>.
+</div>
+<div class="csl-entry">
+Briedis, Martins, and Silke Bauer. 2018. <span>“Migratory Connectivity in the Context of Differential Migration.”</span> <em>Biology Letters</em> 14 (12): 20180679. <a href="https://doi.org/10.1098/rsbl.2018.0679">https://doi.org/10.1098/rsbl.2018.0679</a>.
+</div>
+<div class="csl-entry">
+Briedis, Martins, Silke Bauer, Peter Adamík, José A. Alves, Joana S. Costa, Tamara Emmenegger, Lars Gustafsson, et al. 2019. <span>“<span class="nocase">A full annual perspective on sex-biased migration timing in long-distance migratory birds</span>.”</span> <em>Proceedings of the Royal Society B: Biological Sciences</em> 286 (1897): 20182821. <a href="https://doi.org/10.1098/rspb.2018.2821">https://doi.org/10.1098/rspb.2018.2821</a>.
+</div>
+<div class="csl-entry">
+Briedis, Martins, Silke Bauer, Peter Adamík, José A. Alves, Joana S. Costa, Tamara Emmenegger, Lars Gustafsson, et al. 2020. <span>“<span class="nocase">Broad-scale patterns of the Afro-Palaearctic landbird migration</span>.”</span> Edited by Brian McGill. <em>Global Ecology and Biogeography</em> 29 (4): 722–35. <a href="https://doi.org/10.1111/geb.13063">https://doi.org/10.1111/geb.13063</a>.
+</div>
+<div class="csl-entry">
+Brownie, C., D. R. Anderson, K. P. Burnham, and D. S. Robson. 1985. <em>Statistical Inference from Band Recovery Data - a Handbook</em>. Washington: <span>United States Department of the Interior, Fish and Wildlife Service</span>.
+</div>
+<div class="csl-entry">
+Brownie, C., J. E. Hines, J. D. Nichols, K. H. Pollock, and J. B. Hestbeck. 1993. <span>“Capture-Recapture Studies for Multiple Strata Including Non-Markovian Transitions.”</span> <em>Biometrics</em> 49: 1173–87.
+</div>
+<div class="csl-entry">
+Bruderer, B., and L. Jenni. 1988. <span>“Strategies of Bird Migration in the Area of the Alps.”</span> <em>Acta XIX Congressus Internationalis Ornithologici</em> XIX: 2150–61.
+</div>
+<div class="csl-entry">
+Bruderer, B., and F. Liechti. 1998. <span>“Flight Behaviour of Nocturnally Migrating Birds in Coastal Areas - Crossing or Coasting.”</span> <em>Journal of Avian Biology</em> 29: 499–507.
+</div>
+<div class="csl-entry">
+Chapman, Jason W., Don R. Reynolds, and Kenneth Wilson. 2015. <span>“<span class="nocase">Long-range seasonal migration in insects: mechanisms, evolutionary drivers and ecological consequences</span>.”</span> <em>Ecology Letters</em> 18 (3): 287–302. <a href="https://doi.org/10.1111/ele.12407">https://doi.org/10.1111/ele.12407</a>.
+</div>
+<div class="csl-entry">
+Choquet, R., L. Rouan, and R. Pradel. 2009. <span>“Program e-Surge: A Software Application for Fitting Multievent Models.”</span> In <em>Modeling Demographic Processes in Marked Populations</em>, edited by David L. Thomson, Evan G. Cooch, and Michael J. Conroy, 845–65. Environmental and Ecological Statistics. New York: Springer. <a href="https://doi.org/10.1007/978-0-387-78151-8%7B\_%7D39">https://doi.org/10.1007/978-0-387-78151-8{\_}39</a>.
+</div>
+<div class="csl-entry">
+Cohen, E. B., J. A. Hostetler, J. A. Royle, and P. P. Marra. 2014. <span>“Estimating Migratory Connectivity of Birds When Re-Encounter Probabilities Are Heterogeneous.”</span> <em>Ecology and Evolution</em> 4: 1659–70.
+</div>
+<div class="csl-entry">
+Cooch, E. G., and G. C. White. 2016. <em>Program MARK: A Gentle Introduction</em>. http://www.phidot.org/software/mark/docs/book/.
+</div>
+<div class="csl-entry">
+Cormack, R. M. 1964. <span>“Estimates of Survival from the Sighting of Marked Animals.”</span> <em>Biometrika</em> 51: 429–38.
+</div>
+<div class="csl-entry">
+Craighead, F., and J. Craighead. 1972. <span>“Grizzly Bear Prehibernation and Denning Activities as Determined by Radiotracking.”</span> <em>Wildlife Monographs</em> 32: 3–35.
+</div>
+<div class="csl-entry">
+Dingle, Hugh. 2014. <em>Migration: The Biology of Life on the Move</em>. Oxford University Press, USA.
+</div>
+<div class="csl-entry">
+Dowsett-Lemaire, F., and R. J. Dowsett. 1987. <span>“European Reed and Marsh Warblers in Africa: Migration Patterns, Moult and Habitat.”</span> <em>Ostrich</em> 58: 65–85.
+</div>
+<div class="csl-entry">
+Du Feu, C. R., J. A. Clark, M. Schaub, W. Fiedler, and S. R. Baillie. 2016. <span>“The EURING Data Bank – a Critical Tool for Continental-Scale Studies of Marked Birds.”</span> <em>Ringing <span>&amp;</span> Migration</em> 31: 1–18. <a href="https://doi.org/10.1080/03078698.2016.1195205">https://doi.org/10.1080/03078698.2016.1195205</a>.
+</div>
+<div class="csl-entry">
+Duff, S. J., L. A. Brownlie, D. F. Sherry, and M. Sangster. 1998. <span>“Sun Compass and Landmark Orientation by Black-Capped Chickadees (Parus Atricapillus).”</span> <em>Journal of Experimental Psychology: Animal Behavior Processes</em> 24: 243–53.
+</div>
+<div class="csl-entry">
+Emlen, S. T. 1967. <span>“Migratory Orientation in the Indigo Bunting, Passerina Cyanea. Part II: Mechanisms of Celestial Orientation.”</span> <em>Auk</em> 84: 463–89.
+</div>
+<div class="csl-entry">
+———. 1970. <span>“Celestial Rotation: Its Importance in the Development of Migratory Orientation.”</span> <em>Science</em> 170: 1198–1201.
+</div>
+<div class="csl-entry">
+Emlen, S. T., and J. T. Emlen. 1966. <span>“A Technique for Recording Migratory Orientation of Captive Birds.”</span> <em>The Auk</em> 83: 361–67.
+</div>
+<div class="csl-entry">
+Frederiksen, Morten, Fränzi Korner-Nievergelt, Loı̈c Marion, and Thomas Bregnballe. 2018. <span>“Where Do Wintering Cormorants Come from? Long-Term Changes in the Geographical Origin of a Migratory Bird on a Continental Scale.”</span> <em>Journal of Applied Ecology</em> 55 (4): 2019–32.
+</div>
+<div class="csl-entry">
+Gelman, A., and J. Hill. 2007. <em>Data Analysis Using Regression and Multilevel / Hierarchical Models</em>. Cambridge: <span>Cambridge University Press</span>.
+</div>
+<div class="csl-entry">
+Gimenez, O., R. Choquet, and J.-D. Lebreton. 2003. <span>“Parameter Redundancy in Multistate Capture-Recapture Models.”</span> <em>Biometrical Journal</em> 45: 704–22.
+</div>
+<div class="csl-entry">
+Hahn, Steffen, Valentin Amrhein, Pavel Zehtindijev, and Felix Liechti. 2013. <span>“Strong Migratory Connectivity and Seasonally Shifting Isotopic Niches in Geographically Separated Populations of a Long-Distance Migrating Songbird.”</span> <em>Oecologia</em> 73: 1217–25. <a href="https://doi.org/10.1007/s00442-013-2726-4">https://doi.org/10.1007/s00442-013-2726-4</a>.
+</div>
+<div class="csl-entry">
+Hahn, Steffen, Silke Bauer, and Felix Liechti. 2009. <span>“<span class="nocase">The natural link between Europe and Africa - 2.1 billion birds on migration</span>.”</span> <em>Oikos</em> 118 (4): 624–26. <a href="https://doi.org/10.1111/j.1600-0706.2009.17309.x">https://doi.org/10.1111/j.1600-0706.2009.17309.x</a>.
+</div>
+<div class="csl-entry">
+Hahn, Steffen, Tamara Emmenegger, Simeon Lisovski, V. Amrhein, Pavel Zehtindjiev, and F. Liechti. 2014. <span>“Variable Detours in Long-Distance Migration Across Ecological Barriers and Their Relation to Habitat Availability at Ground.”</span> <em>Ecology and Evolution</em> online. <a href="https://doi.org/10.1002/ece3.1279">https://doi.org/10.1002/ece3.1279</a>.
+</div>
+<div class="csl-entry">
+Hahn, Steffen, Fränzi Korner-Nievergelt, Tamara Emmenegger, Valentin Amrhein, Tibor Csörgő, Arzu Gursoy, Mihaela Ilieva, et al. 2016. <span>“<span class="nocase">Longer wings for faster springs - wing length relates to spring phenology in a long-distance migrant across its range</span>.”</span> <em>Ecology and Evolution</em> 6 (1): 68–77. <a href="https://doi.org/10.1002/ece3.1862">https://doi.org/10.1002/ece3.1862</a>.
+</div>
+<div class="csl-entry">
+Hanmer, Hugh J., Philipp H. Boersch-Supan, and Robert A. Robinson. 2022. <span>“Differential Changes in Life Cycle-Event Phenology Provide a Window into Regional Population Declines.”</span> <em>Biology Letters</em> 18 (August). <a href="https://doi.org/10.1098/rsbl.2022.0186">https://doi.org/10.1098/rsbl.2022.0186</a>.
+</div>
+<div class="csl-entry">
+Hansson, Lars-Anders, and Susanne Åkesson, eds. 2014. <em>Animal Movement Across Scales</em>. First edition. Oxford: <span>Oxford University Press</span>.
+</div>
+<div class="csl-entry">
+Hedenström, A., and T. Alerstam. 1998. <span>“How Fast Can Birds Migrate?”</span> <em>Journal of Avian Biology</em> 29: 424–32.
+</div>
+<div class="csl-entry">
+Hedenström, Anders. 2009. <span>“Optimal Migration Strategies in Bats.”</span> <em>Journal of Mammalogy</em> 90: 1298–1309.
+</div>
+<div class="csl-entry">
+Heyers, D., M. Manns, H. Luksch, O. Güntürkün, and H. Mouritsen. 2007. <span>“A Visual Pathway Links Brain Structures Active During Magnetic Compass Orientation in Migratory Birds.”</span> <em>PLoS ONE</em> 2 (9): e937. doi:10.1371/journal.pone.0000937.
+</div>
+<div class="csl-entry">
+Hobson, K. A., Steven L. Van Wilgenburg, L. I. Wassenaar, R. L. Powell, J. Still, and J. M. Craine. 2012. <span>“A Multi-Isotope (d13C, d15N, d2H) Feather Isoscape to Assign Afrotropical Migrant Birds to Origins.”</span> <em>Ecosphere</em> 3 (5): 44.
+</div>
+<div class="csl-entry">
+Hobson, K. A., and L. Wassenaar. 2008. <em>Tracking Animal Migration with Stable Isotopes</em>. London: <span>Academic Press</span>.
+</div>
+<div class="csl-entry">
+Holland, R. A., K. Thorup, A. Gagliardo, I. A. Bisson, E. Knecht, D. Mizrahi, and M. Wikelski. 2009. <span>“Testing the Role of Sensory Systems in the Migratory Heading of a Songbird.”</span> <em>The Journal of Experimental Biology</em> 212 (Pt 24): 4065–71. <a href="https://doi.org/10.1242/jeb.034504">https://doi.org/10.1242/jeb.034504</a>.
+</div>
+<div class="csl-entry">
+Hooten, Mevin B., Devin S. Johnson, Brett T. McClintock, and Juan M. Morales. 2017. <em>Animal Movement. Statistical Models for Telemetry Data</em>. New York: <span>CRC Press</span>.
+</div>
+<div class="csl-entry">
+Horton, Kyle G., Frank A. La Sorte, Daniel Sheldon, Tsung Yu Lin, Kevin Winner, Garrett Bernstein, Subhransu Maji, Wesley M. Hochachka, and Andrew Farnsworth. 2020. <span>“<span class="nocase">Phenology of nocturnal avian migration has shifted at the continental scale</span>.”</span> <em>Nature Climate Change</em> 10 (1): 63–68. <a href="https://doi.org/10.1038/s41558-019-0648-9">https://doi.org/10.1038/s41558-019-0648-9</a>.
+</div>
+<div class="csl-entry">
+Hu, Gao, Ka S. Lim, Nir Horvitz, Suzanne J. Clark, Don R. Reynolds, Nir Sapir, and Jason W. Chapman. 2016. <span>“<span class="nocase">Mass seasonal bioflows of high-flying insect migrants</span>.”</span> <em>Science</em> 354 (6319): 1584–87. <a href="https://doi.org/10.1126/science.aah4379">https://doi.org/10.1126/science.aah4379</a>.
+</div>
+<div class="csl-entry">
+Hüppop, Ommo, and Wolfgang Winkel. 2006. <span>“Climate Change and Timing of Spring Migration in the Long-Distance Migrants Ficedula Hypoleuca in Central Europe: The Role of Spatially Different Temperature Changes Along Migration Routes.”</span> <em>Journal of Ornithology</em> 147: 344–53.
+</div>
+<div class="csl-entry">
+Jeltsch, Florian, Dries Bonte, Guy Pe’er, Björn Reineking, Peter Leimgruber, Niko Balkenhol, Boris Schröder, et al. 2013. <span>“<span class="nocase">Integrating movement ecology with biodiversity research - exploring new avenues to address spatiotemporal biodiversity dynamics</span>.”</span> <em>Movement Ecology</em> 1 (1): 6. <a href="https://doi.org/10.1186/2051-3933-1-6">https://doi.org/10.1186/2051-3933-1-6</a>.
+</div>
+<div class="csl-entry">
+Jenni, L., and S. Jenni-Eiermann. 1998. <span>“Fuel Supply and Metabolic Constraints in Migrating Birds.”</span> <em>Journal of Avian Biology</em> 29: 521–28.
+</div>
+<div class="csl-entry">
+Jenni, Lukas, and Marc Kéry. 2003. <span>“Timing of Autumn Bird Migration Under Climate Change: Advances in Long-Distance Migrants, Delays in Short-Distance Migrants.”</span> <em>Proceedings of the Royal Society of London - Series B: Biological Sciences</em> 270: 1467–71.
+</div>
+<div class="csl-entry">
+Jenni-Eiermann, S., and Lukas Jenni. 2012. <span>“Fasting in Birds: General Patterns and the Special Case of Endurance Flight.”</span> In <em>Comparative Physiology of Fasting, Starvation, and Food Limitation</em>, edited by M. D. McCue. Berlin: Springer.
+</div>
+<div class="csl-entry">
+Jolly, G. 1965. <span>“Explicit Estimates from Capture-Recapture Data with Both Death and Immigration-Stochastic Model.”</span> <em>Biometrika</em> 52: 225–47.
+</div>
+<div class="csl-entry">
+Jonsen, Ian D., Joanna Mills Flemming, and Ransom A. Myers. 2005. <span>“Robust State-Space Modeling of Animal Movement Data.”</span> <em>Ecology</em> 86: 2874–80.
+</div>
+<div class="csl-entry">
+Kania, Wojciech, and Przemyslaw Busse. 1987. <span>“An Analysis of the Recovery Distribution Based on Finding Probabilities.”</span> <em>Acta Ornithologica</em> 23: 121–28.
+</div>
+<div class="csl-entry">
+Kendall, William L., P. B. Conn, and J. E. Hines. 2006. <span>“Combining Multistate Capture-Recapture Data with Tag Recoveries to Estimate Demographic Parameters.”</span> <em>Ecology</em> 87: 169–77.
+</div>
+<div class="csl-entry">
+Kéry, Marc, and Michael Schaub. 2012. <em>Bayesian Population Analysis Using WinBUGS</em>. Amsterdam: Elsevier.
+</div>
+<div class="csl-entry">
+King, R., and S. P. Brooks. 2003. <span>“Closed-Form Likelihoods for Arnason–Schwarz Models.”</span> <em>Biometrika</em> 90: 435–44.
+</div>
+<div class="csl-entry">
+Kjellén, N., M. Hake, and T. Alerstam. 1997. <span>“Strategies of Two Ospreys Pandion Haliaetus Migrating Between Sweden and Tropical Africa as Revealed by Satellite Tracking.”</span> <em>Journal of Avian Biology</em> 28: 15–23.
+</div>
+<div class="csl-entry">
+Klein Heerenbrink, M., L. C. Johansson, and A. Hedenström. 2015. <span>“Power of the Wingbeat: Modelling the Effects of Flapping Wings in Vertebrate Flight.”</span> <em>Proceedings of the Royal Society A: Mathematical, Physical and Engineering Sciences</em> 471 (2177): 20140952. <a href="https://doi.org/10.1098/rspa.2014.0952">https://doi.org/10.1098/rspa.2014.0952</a>.
+</div>
+<div class="csl-entry">
+Knudsen, Endre, Andreas Lindén, Christiaan Both, Niclas Jonzén, Francisco Pulido, Nicola Saino, William J. Sutherland, et al. 2011. <span>“<span class="nocase">Challenging claims in the study of migratory birds and climate change</span>.”</span> <em>Biological Reviews</em> 86 (4): 928–46. <a href="https://doi.org/10.1111/j.1469-185X.2011.00179.x">https://doi.org/10.1111/j.1469-185X.2011.00179.x</a>.
+</div>
+<div class="csl-entry">
+Kölzsch, Andrea, Silke Bauer, Rob de Boer, Larry Griffin, David Cabot, Klaus-Michael Exo, Henk P. van der Jeugd, and Bart A. Nolet. 2015. <span>“<span class="nocase">Forecasting spring from afar? Timing of migration and predictability of phenology along different migration routes of an avian herbivore</span>.”</span> Edited by Stuart Bearhop. <em>Journal of Animal Ecology</em> 84 (1): 272–83. <a href="https://doi.org/10.1111/1365-2656.12281">https://doi.org/10.1111/1365-2656.12281</a>.
+</div>
+<div class="csl-entry">
+Korner-Nievergelt, F., Felix Liechti, and K. Thorup. 2014. <span>“A Bird Distribution Model for Ring Recovery Data: Where Do the European Robins Go?”</span> <em>Ecology and Evolution</em> 4 (6): 720–31.
+</div>
+<div class="csl-entry">
+Korner-Nievergelt, F., F. Liechti, and S. Hahn. 2012. <span>“Migratory Connectivity Derived from Sparse Ring Reencounter Data with Unknown Numbers of Ringed Birds.”</span> <em>Journal of Ornithology</em> 153 (3). <a href="https://doi.org/10.1007/s10336-011-0793-z">https://doi.org/10.1007/s10336-011-0793-z</a>.
+</div>
+<div class="csl-entry">
+Korner-Nievergelt, Fränzi, Felix Liechti, and Steffen Hahn. 2012. <span>“Migratory Connectivity Derived from Sparse Ring Reencounter Data with Unknown Numbers of Ringed Birds.”</span> <em>Journal of Ornithology</em> 153: 771–82. <a href="https://doi.org/10.1007/s10336-011-0793-z">https://doi.org/10.1007/s10336-011-0793-z</a>.
+</div>
+<div class="csl-entry">
+Korner-Nievergelt, Fränzi, Céline Prévot, Steffen Hahn, Lukas Jenni, and Felix Liechti. 2017. <span>“The Integration of Mark Re-Encounter and Tracking Data to Quantify Migratory Connectivity.”</span> <em>Ecological Modelling</em> 344: 87–94. <a href="https://doi.org/10.1016/j.ecolmodel.2016.11.009">https://doi.org/10.1016/j.ecolmodel.2016.11.009</a>.
+</div>
+<div class="csl-entry">
+Korner-Nievergelt, Fränzi, Annette Sauter, P. W. Atkinson, J. Guélat, W. Kania, Marc Kéry, U. Köppen, et al. 2010. <span>“Improving the Analysis of Movement Data from Marked Individuals Through Explicit Estimation of Observer Heterogeneity.”</span> <em>Journal of Avian Biology</em> 41: 8–17.
+</div>
+<div class="csl-entry">
+Korner-Nievergelt, F., T. Roth, Stefanie von Felten, J. Guélat, B. Almasi, and P. Korner-Nievergelt. 2015. <em>Bayesian Data Analysis in Ecolog Using Linear Models with r, BUGS, and Stan</em>. New York: Elsevier.
+</div>
+<div class="csl-entry">
+Kramer, G. 1949. <span>“<span>Ü</span>ber Richtungstendenzen Bei Der n<span>ä</span>chtlichen Zugunruhe Gek<span>ä</span>figter v<span>ö</span>gel.”</span> In <em>Ornithologie Als Biologische Wissenschaft</em>, edited by E. Mayr and E. Schütz, 269–83. Heidelberg: Heidelberg.
+</div>
+<div class="csl-entry">
+Laake, J. L., D. S. Johnson, and P. B. Conn. 2013. <span>“Marked: An r Package for Maximumlikelihood and Markov ChainMonte Carlo Analysis of Capture-Recapture Data.”</span> <em>Methods in Ecology and Evolution</em> 4: 885–90.
+</div>
+<div class="csl-entry">
+Lebreton, J.-D., K. P. Burnham, J. Clobert, and D. R. Anderson. 1992. <span>“Modelling Survival and Testing Biological Hypotheses Using Marked Animals: A Unified Approach with Case Studies.”</span> <em>Ecological Monographs</em> 62 (1): 67–118.
+</div>
+<div class="csl-entry">
+Lerche-Jørgensen, Mathilde, Fränzi Korner-Nievergelt, Anders P. Tøttrup, Mikkel Willemoes Kristensen, and Kasper Thorup. 2018. <span>“Early Returning Long-Distance Migrant Males Do Pay a Survival Cost.”</span> <em>Ecology and Evolution</em> 8: 11434–49. <a href="https://doi.org/10.1002/ece3.4569">https://doi.org/10.1002/ece3.4569</a>.
+</div>
+<div class="csl-entry">
+Liechti, Felix. 2006. <span>“Birds: Blowin’ the Wind?”</span> <em>Journal of Ornithology</em> 147: 202–11.
+</div>
+<div class="csl-entry">
+Liechti, Felix, and Liam P. McGuire. 2017. <span>“Facing the Wind: The Aeroecology of Vertebrate Migrants.”</span> In <em>Aeroecology</em>, edited by P. B. Chilson and et al., 179–98. Berlin: <span>Springer Verlgag</span>.
+</div>
+<div class="csl-entry">
+Liechti, Felix, C. Scandolara, D. Rubolini, R. Ambrosini, Fränzi Korner-Nievergelt, S. Hahn, R. Lardelli, et al. 2014. <span>“Timing of Migration and Residence Areas During the Non-Breeding Period of Barn Swallows Hirundo Rustica in Relation to Sex and Population.”</span> <em>Journal of Avian Biology</em> 45: 001–12.
+</div>
+<div class="csl-entry">
+Liechti, F., S. Komenda-Zehnder, and B. Bruderer. 2012. <span>“Orientation of Passerine Trans-Sahara Migrants: The Directional Shift (<span>‘Zugknick’</span>) Reconsidered for Free-Flying Birds.”</span> <em>Animal Behaviour</em> 83: 63–68.
+</div>
+<div class="csl-entry">
+Liechti, F., D. Peter, R. Lardelli, and B. Bruderer. 1996. <span>“The Alps, an Obstacle for Nocturnal Broad Front Migration - a Survey Based on Moon-Watching.”</span> <em>Journal of Ornithology</em> 137: 337–56.
+</div>
+<div class="csl-entry">
+Lisovski, Simeon, Chris M. Hewson, Raymond H. G. Klaassen, Fränzi Korner-Nievergelt, Mikkel W. Kristensen, and Steffen Hahn. 2012. <span>“Geolocation by Light: Accuracy and Precision Affected by Environmental Factors.”</span> <em>Methods in Ecology and Evolution</em> 3: 603–312. <a href="https://doi.org/10.1111/j.2041-210X.2012.00185.x">https://doi.org/10.1111/j.2041-210X.2012.00185.x</a>.
+</div>
+<div class="csl-entry">
+Lopes, Ricardo J., João C. Marques, and Liv Wennerberg. 2006. <span>“Migratory Connectivity and Temporal Segregation of Dunlin (Calidris Alpina) in Portugal: Evidence from Morphology, Ringing Recoveries and mtDNA.”</span> <em>Journal of Ornithology</em> 147: 385–94.
+</div>
+<div class="csl-entry">
+Marra, Peter P., Charles M. Francis, Robert S. Mulvihill, and Frank R. Moore. 2005. <span>“The Influence of Climate on the Timing and Rate of Spring Bird Migration.”</span> <em>Oecologia</em> 142: 307–15.
+</div>
+<div class="csl-entry">
+McLaren, James D., Jeffrey J. Buler, Tim Schreckengost, Jaclyn A. Smolinsky, Matthew Boone, E. Emiel van Loon, Deanna K. Dawson, and Eric L. Walters. 2018. <span>“<span class="nocase">Artificial light at night confounds broad-scale habitat use by migrating birds</span>.”</span> Edited by Ryan Norris. <em>Ecology Letters</em> 21 (3): 356–64. <a href="https://doi.org/10.1111/ele.12902">https://doi.org/10.1111/ele.12902</a>.
+</div>
+<div class="csl-entry">
+Merkel, F. W., and W. Wiltschko. 1965. <span>“Magnetismus Und Richtungsfinden Zugunruhiger Rotkehlchen Erithacus Rubecula.”</span> <em>Die Vogelwarte</em> 23 (1): 71–77.
+</div>
+<div class="csl-entry">
+Mortensen, H. C. C. 1901. <span>“Premiers r<span>é</span>sultats de l’enqu<span>ê</span>te Sur Les Migrations de l’<span>é</span>tourneau Vulgaire.”</span> <em>Ornis</em> 11: 312.
+</div>
+<div class="csl-entry">
+Mouritsen, Henrik, and Ole Næsbye Larsen. 2001. <span>“Migrating Songbirds Tested in Computer-Controlled Emlen Funnels Use Stellar Cues for a Time-Independent Compass.”</span> <em>The Journal of Experimental Biology</em> 204: 3855–65.
+</div>
+<div class="csl-entry">
+Mouritsen, H., G. Feenders, A. Hegemann, and M. Liedvogel. 2009. <span>“Thermal Paper Can Replace Type Writer Correction Paper in Emlen Funnels.”</span> <em>Journal of Ornithology</em> 150: 713–15.
+</div>
+<div class="csl-entry">
+Muheim, Rachel. 2011. <span>“Behavioural and Physiological Mechanisms of Polarized Light Sensitivity in Birds.”</span> <em>Phil. Trans. R. Soc. B</em> 366: 763–71.
+</div>
+<div class="csl-entry">
+Muheim, Rachel, Susanne Åkesson, and Thomas Alerstam. 2003. <span>“Compass Orientation and Possible Migration Routes of Passerine Birds at High Arctic Latitudes.”</span> <em>Oikos</em> 103: 341–49.
+</div>
+<div class="csl-entry">
+Muheim, Rachel, J. Bäckman, and Susanne Åkesson. 2002. <span>“Magnetic Compass Orientation in European Robins Is Dependent on Both Wavelenght and Intensity of Light.”</span> <em>Journal of Experimental Biology</em> 205: 3845–56.
+</div>
+<div class="csl-entry">
+Muheim, Rachel, Jannika Boström, Susanne Åkesson, and Miriam Liedvogel. 2014. <span>“Sensory Mechanisms of Animal Orientation and Navigation.”</span> In <em>Animal Movement Across Scales</em>, edited by Lars-Anders Hansson and Susanne Åkesson, 179–94. Oxford: <span>Oxford University Press</span>.
+</div>
+<div class="csl-entry">
+Naef-Daenzer, Beat, and Lukas F. Keller. 1999. <span>“The Foraging Performance of Great and Blue Tits (Parus Major and p. Caeruleus) in Relation to Caterpillar Development, and Its Consequences for Nestling Growth.”</span> <em>Journal of Animal Ecology</em> 68: 708–18.
+</div>
+<div class="csl-entry">
+Newton, Ian. 2006. <span>“Advances in the Study of Irruptive Migration.”</span> <em>ARDEA-WAGENINGEN-</em> 94 (3): 433.
+</div>
+<div class="csl-entry">
+Nievergelt, F., and F. Liechti. 2000. <span>“Methodische Aspekte Zur Untersuchung Der Zugaktivit<span>ä</span>t Im Emlen-Trichter.”</span> <em>Journal of Ornithology</em> 141: 180–90.
+</div>
+<div class="csl-entry">
+Niffenegger, Carole A., Sabine M. Hille, Christian Schano, and Fränzi Korner‐Nievergelt. 2025. <span>“Rising Temperatures Advance Start and End of the Breeding Season of an Alpine Bird.”</span> <em>Ecology and Evolution</em> 15 (2): e70897. <a href="https://doi.org/10.1002/ece3.70897">https://doi.org/10.1002/ece3.70897</a>.
+</div>
+<div class="csl-entry">
+Padget, O., G. Dell’Ariccia, A. Gagliardo, J. González-Solís, and T. Guilford. 2017. <span>“Anosmia Impairs Homing Orientation but Not Foraging Behaviour in Free-Ranging Shearwaters.”</span> <em>Scientific Reports</em> 7 (1): 9668. <a href="https://doi.org/10.1038/s41598-017-09738-5">https://doi.org/10.1038/s41598-017-09738-5</a>.
+</div>
+<div class="csl-entry">
+Pennycuick, C. J. 2008. <em>Modelling the Flying Bird</em>. Amsterdam: <span>Academic Press</span>.
+</div>
+<div class="csl-entry">
+Perdeck, A. C. 1958. <span>“Two Types of Orientation in Migrating Starlings, Sturnus Vulgaris l., and Chaffinches, Fringilla Coelebs l., as Revealed by Displacement Experiments.”</span> <em>Ardea</em> 46: 1–37.
+</div>
+<div class="csl-entry">
+———. 1977. <span>“The Analysis of Ringing Data: Pitfalls and Prospects.”</span> <em>Die Vogelwarte</em> 29 (Sonderheft): 33–44.
+</div>
+<div class="csl-entry">
+Phillips, John B., Paulo Esteves Jorge, and Rachel Muheim. 2010. <span>“Light-Dependent Magnetic Compass Orientation in Amphibians and Insects: Candidate Receptors and Candidate Molecular Mechanisms.”</span> <em>Journal of the Royal Society Interface</em> 7: S241–56. <a href="https://doi.org/10.1098/rsif.2009.0459.focus">https://doi.org/10.1098/rsif.2009.0459.focus</a>.
+</div>
+<div class="csl-entry">
+Plummer, Martyn. 2003. <span>“<span class="nocase">JAGS : A Program for Analysis of Bayesian Graphical Models Using Gibbs Sampling JAGS : Just Another Gibbs Sampler</span>.”</span> In <em>Proceedings of the 3rd International Workshop on Distributed Statistical Computing</em>, edited by K. Hornik, F. Leisch, and A. Zeileis, 1–8. Dsc. Vienna.
+</div>
+<div class="csl-entry">
+Procházka, Petr, Steffen Hahn, Simon Rolland, Henk van der Jeugd, Tibor Csörgő, Frédéric Jiguet, Tomasz Mokwa, Felix Liechti, Didier Vangeluwe, and Fränzi Korner-Nievergelt. 2017. <span>“Delineating Large-Scale Migratory Connectivity of Reed Warblers Using Integrated Multistate Models.”</span> <em>Diversity and Distributions</em> 23: 27–40. <a href="https://doi.org/10.1111/ddi.12502">https://doi.org/10.1111/ddi.12502</a>.
+</div>
+<div class="csl-entry">
+Procházka, P., Steven L. Van Wilgenburg, J. M. Neto, R. Yosef, and K. A. Hobson. 2013. <span>“Using Stable Hydrogen Isotopes (d2H) and Ring Recoveries to Trace Natal Origins in a Eurasian Passerine with a Migratory Divide.”</span> <em>Journal of Avian Biology</em> 44: 1–10.
+</div>
+<div class="csl-entry">
+Rayner, J. M. V. 1990. <span>“The Mechanics of Flight and Bird Migration Performance.”</span> In <em>Bird Migration</em>, edited by E. Gwinner, 283–99. Berlin; Heidelberg: Springer-Verlag.
+</div>
+<div class="csl-entry">
+Ritz, T., S. Adem, and K. Schulten. 2000. <span>“A Model for Photoreceptor-Based Magnetoreception in Birds.”</span> <em>Biophysical Journal</em> 78: 707–18.
+</div>
+<div class="csl-entry">
+Robinson, W. Douglas, Melissa S. Bowlin, Isabelle Bisson, Judy Shamoun-Baranes, Kasper Thorup, Robert H. Diehl, Thomas H. Kunz, Sarah Mabey, and David W. Winkler. 2010. <span>“Integrating Concepts and Technologies to Advance the Study of Bird Migration.”</span> <em>Frontiers in Ecology and Evolution</em> 8: 354–61. <a href="https://doi.org/10.1890/080179">https://doi.org/10.1890/080179</a>.
+</div>
+<div class="csl-entry">
+Rönn, Jan A. C. von, Martin U. Grüebler, Thord Fransson, Ulrich Köppen, and Fränzi Korner-Nievergelt. 2020a. <span>“Integrating Stable Isotopes, Parasite, and Ring-Reencounter Data to Quantify Migratory Connectivity-a Case Study with Barn Swallows Breeding in Switzerland, Germany, Sweden, and Finland.”</span> <em>Ecology and Evolution</em> 10 (4): 2225–37. <a href="https://doi.org/10.1002/ece3.6061">https://doi.org/10.1002/ece3.6061</a>.
+</div>
+<div class="csl-entry">
+Rönn, Jan A. C. von, Martin U Grüebler, Thord Fransson, Ulrich Köppen, and Fränzi Korner-Nievergelt. 2020b. <span>“Integrating Stable Isotopes, Parasite, and Ring-Reencounter Data to Quantify Migratory Connectivity-a Case Study with Barn Swallows Breeding in Switzerland, Germany, Sweden, and Finland.”</span> <em>Ecology and Evolution</em> 10 (4): 2225–37. <a href="https://doi.org/10.1002/ece3.6061">https://doi.org/10.1002/ece3.6061</a>.
+</div>
+<div class="csl-entry">
+Rosenberg, Kenneth V., Adriaan M. Dokter, Peter J. Blancher, John R. Sauer, Adam C. Smith, Paul A. Smith, Jessica C. Stanton, et al. 2019. <span>“<span class="nocase">Decline of the North American avifauna</span>.”</span> <em>Science</em> 366 (6461): 120–24. <a href="https://doi.org/10.1126/SCIENCE.AAW1313">https://doi.org/10.1126/SCIENCE.AAW1313</a>.
+</div>
+<div class="csl-entry">
+Runge, C A, T G Martini, H P Possingham, S G Willis, and R A Fuller. 2014. <span>“<span class="nocase">Conserving mobile species</span>.”</span> <em>Frontiers in Ecology and the Environment</em> 12 (7): 395–402. <a href="https://doi.org/10.1890/130237">https://doi.org/10.1890/130237</a>.
+</div>
+<div class="csl-entry">
+Runge, Claire A., James E. M. Watson, Stuart H. M. Butchart, Jeffrey O. Hanson, Hugh P. Possingham, and Richard A. Fuller. 2015. <span>“<span class="nocase">Protected areas and global conservation of migratory birds</span>.”</span> <em>Science</em> 350 (6265): 1255–58. <a href="https://doi.org/10.1126/science.aac9180">https://doi.org/10.1126/science.aac9180</a>.
+</div>
+<div class="csl-entry">
+Salewski, V, W M Hochachka, and W Fiedler. 2010. <span>“Global Warming and Bergmannes Rule: Do Central European Passerines Adjust Their Body Size to Rising Temperatures?”</span> <em>Oecologia</em> 162: 247–60. <a href="http://www.jstor.org/stable/40540161">http://www.jstor.org/stable/40540161</a>.
+</div>
+<div class="csl-entry">
+Sauer, F. 1957. <span>“Die Sternorientierung n<span>ä</span>chtlich Ziehender Grasm<span>ü</span>cken Sylvia Atricapilla, Borin Und Curruca.”</span> <em>Zeitschrift f<span>ü</span>r Tierpsychologie</em> 14 (1): 29–70.
+</div>
+<div class="csl-entry">
+Saunders, Sarah P., William V. DeLuca, Brooke L. Bateman, Jill L. Deppe, Joanna Grand, Erika J. Knight, Timothy D. Meehan, et al. 2025. <span>“Multispecies Migratory Connectivity Indicates Hemispheric-Scale Risk to Bird Populations from Global Change.”</span> <em>Nature Ecology &amp; Evolution</em>, February. <a href="https://doi.org/10.1038/s41559-024-02575-6">https://doi.org/10.1038/s41559-024-02575-6</a>.
+</div>
+<div class="csl-entry">
+Saurola, Pertti, J. Valkama, and W. Velmala. 2013. <em>The Finnish Bird Ringing Atlas</em>. Helsinki: <span>Finnish Museum of Natural History and Ministry of Environment</span>.
+</div>
+<div class="csl-entry">
+Schano, Christian, Carole Niffenegger, Tobias Jonas, and Fränzi Korner-Nievergelt. 2021. <span>“Hatching Phenology Is Lagging Behind an Advancing Snowmelt Pattern in a High-Alpine Bird.”</span> <em>Scientific Reports</em> 11 (1): 20130016. <a href="https://doi.org/10.1038/s41598-021-01497-8">https://doi.org/10.1038/s41598-021-01497-8</a>.
+</div>
+<div class="csl-entry">
+Schirmer, Saskia. 2021. <span>“Modeling Spatial Patterns of Survival, Space Use and Recovery Probability.”</span> Mathematisch-Naturwissenschaftlichen Fakultät.
+</div>
+<div class="csl-entry">
+Schmaljohann, Heiko, and Christiaan Both. 2017. <span>“<span class="nocase">The limits of modifying migration speed to adjust to climate change</span>.”</span> <em>Nature Climate Change</em> 7 (8): 573–76. <a href="https://doi.org/10.1038/nclimate3336">https://doi.org/10.1038/nclimate3336</a>.
+</div>
+<div class="csl-entry">
+Schmaljohann, Heiko, Bruno Bruderer, and Felix Liechti. 2008. <span>“Sustained Bird Flights Occur at Temperatures Far Beyond Expected Limits.”</span> <em>Animal Behaviour</em> 76: 1133–38. <a href="https://doi.org/10.1016/j.anbehav.2008.05.024">https://doi.org/10.1016/j.anbehav.2008.05.024</a>.
+</div>
+<div class="csl-entry">
+Schmaljohann, Heiko, Fränzi Korner-Nievergelt, Beat Naef-Daenzer, Rolf Nagel, Ivan Maggini, Marc Bulte, and Franz Bairlein. 2013. <span>“Stopover Optimization in a Long-Distance Migrant: The Role of Fuel Load and Nocturnal Take-Off Time in Alaskan Northern Wheatears (Oenanthe Oenanthe).”</span> <em>Frontiers in Zoology</em> 10: 26.
+</div>
+<div class="csl-entry">
+Schmaljohann, Heiko, Felix Liechti, and Bruno Bruderer. 2007. <span>“Songbird Migration Across the Sahara: The Non-Stop Hypothesis Rejected!”</span> <em>Proceedings of the Royal Society B: Biological Sciences</em> 274 (1610): 735–39. <a href="https://doi.org/10.1098/rspb.2006.0011">https://doi.org/10.1098/rspb.2006.0011</a>.
+</div>
+<div class="csl-entry">
+Schmidt-Koenig, K. 1958. <span>“Der Einfluss Experimentell Ver<span>ä</span>nderter Zeitsch<span>ä</span>tzung Auf Das Heimfindeverm<span>ö</span>gen von Brieftauben.”</span> <em>Naturwissenschaften</em> 45: 47.
+</div>
+<div class="csl-entry">
+———. 1961. <span>“Die Sonne Als Kompass Im Heim-Orientierungssystem Der Brieftauben.”</span> <em>Zeitschrift f<span>ü</span>r Tierpsychologie</em> 18: 221–44.
+</div>
+<div class="csl-entry">
+Schwarz, Carl J., Jake F. Schweigert, and A. Neil Arnason. 1993. <span>“Estimating Migration Rates Using Tag-Recovery Data.”</span> <em>Biometrics</em> 49: 177–93.
+</div>
+<div class="csl-entry">
+Seber, G. A. F. 1965. <span>“A Note on the Multiple-Recapture Census.”</span> <em>Biometrika</em> 52: 249–59.
+</div>
+<div class="csl-entry">
+Sillett, T. Scott, and Richard T. Holmes. 2002. <span>“Variation in Survivorship of a Migratory Songbird Throughout Its Annual Cycle.”</span> <em>Journal of Animal Ecology</em> 71: 296–308.
+</div>
+<div class="csl-entry">
+Strebel, Nicolas, Marc Kéry, Michael Schaub, and Hans Schmid. 2014. <span>“Studying Phenology by Flexible Modelling of Seasonal Detectability Peaks.”</span> <em>Methods in Ecology and Evolution</em> 5: 483–90.
+</div>
+<div class="csl-entry">
+Strinella, Eliseo, Davide Scridel, Mattia Brambilla, Christian Schano, and Fränzi Korner-Nievergelt. 2020. <span>“Potential Sex-Dependent Effects of Weather on Apparent Survival of a High-Elevation Specialist.”</span> <em>Scientific Reports</em> 10 (1): 990. <a href="https://doi.org/10.1038/s41598-020-65017-w">https://doi.org/10.1038/s41598-020-65017-w</a>.
+</div>
+<div class="csl-entry">
+Thomson, D L, M J Conroy, D R Anderson, K P Burnham, E G Cooch, C M Francis, J.-D. Lebreton, et al. 2009. <span>“Standardising Terminology and Notation for the Analysis of Demographic Processes in Marked Populations.”</span> Edited by D L Thomson, E G Cooch, and M J Conroy. <em>Modeling Demographic Processes in Marked Populations</em>, 1099–1106.
+</div>
+<div class="csl-entry">
+Thomson, D. L., and et al, eds. 2009. <em>Modeling Demographic Processees in Marked Populations</em>. Vol. Environmental and Ecological Statistics. New York: Springer.
+</div>
+<div class="csl-entry">
+Thorup, K., and P. B. Conn. 2009. <span>“Estimating the Seasonal Distribution of Migrant Bird Species: Can Standard Ringing Data Be Used?”</span> In <em>Modeling Demographic Proccesses in Marked Populations</em>, edited by D. L. Thomson, E. G. Cooch, and M. J. Conroy, 1107–17. New York: Springer.
+</div>
+<div class="csl-entry">
+Thorup, K., F. Korner-Nievergelt, Emily B. Cohen, and Stephen R. Baillie. 2014. <span>“Large-Scale Spatial Analysis of Ringing and Re-Encounter Data: A Review Including Methodological Perspectives.”</span> <em>Methods in Ecology and Evolution</em> 5: 1337–50. <a href="https://doi.org/10.1111/2041-210X.12258">https://doi.org/10.1111/2041-210X.12258</a>.
+</div>
+<div class="csl-entry">
+Tøttrup, Anders P, Raymond H G Klaassen, Roine Strandberg, Kasper Thorup, Mikkel Willemoes Kristensen, Peter Søgaard Jørgensen, James Fox, Vsevolod Afanasyev, Carsten Rahbek, and Thomas Alerstam. 2012. <span>“<span class="nocase">The annual cycle of a trans-equatorial Eurasian-African passerine migrant: different spatio-temporal strategies for autumn and spring migration.</span>”</span> <em>Proceedings. Biological Sciences / The Royal Society</em> 279 (1730): 1008–16. <a href="https://doi.org/10.1098/rspb.2011.1323">https://doi.org/10.1098/rspb.2011.1323</a>.
+</div>
+<div class="csl-entry">
+Vardanis, Yannis, Raymond H. G. Klaassen, Roine Strandberg, and Thomas Alerstam. 2011. <span>“Individuality in Bird Migration: Routes and Timing.”</span> <em>Biology Letters</em> 7 (4): 502–5. <a href="https://doi.org/10.1098/rsbl.2010.1180">https://doi.org/10.1098/rsbl.2010.1180</a>.
+</div>
+<div class="csl-entry">
+Webster, Michael S, Peter P Marra, Susan M Haig, Staffan Bensch, and Richard Holmes. 2002. <span>“Links Between Worlds: Unraveling Migratory Connectivity.”</span> <em>Trends in Ecology and Evolution</em> 17 (2): 76–83. <a href="https://doi.org/10.1016/S0169-5347(01)02380-1">https://doi.org/10.1016/S0169-5347(01)02380-1</a>.
+</div>
+<div class="csl-entry">
+Weiser, Emily L., Richard B. Lanctot, Stephen C. Brown, José A. Alves, Phil F. Battley, Rebecca Bentzen, Joël Bêty, et al. 2016. <span>“Effects of Geolocators on Hatching Success, Return Rates, Breeding Movements, and Change in Body Mass in 16 Species of Arctic-Breeding Shorebirds.”</span> <em>Movement Ecology</em> 4: 12. <a href="https://doi.org/10.1186/s40462-016-0077-6">https://doi.org/10.1186/s40462-016-0077-6</a>.
+</div>
+<div class="csl-entry">
+White, Fary C., and Kenneth P. Burnham. 1999. <span>“Program MARK: Survival Estimation from Populations of Marked Animals.”</span> <em>Bird Study</em> 46 (suppl.): S120–189.
+</div>
+<div class="csl-entry">
+Wiltschko, R., S. Denznau, D. Gehrung, P. Thalau, and W. Wiltschko. 2011. <span>“Magnetic Orientation of Migratory Robins, Erithacus Rubecula, Under Long-Wavelength Light.”</span> <em>Journal of Experimental Biology</em> 214: 3096–3101.
+</div>
+<div class="csl-entry">
+Wiltschko, R., and W. Wiltschko. 1995. <em>Magnetic Orientation in Animals</em>. Berlin: Springer.
+</div>
+<div class="csl-entry">
+———. 1999a. <span>“Das Orientierungssystem Der Voegel 1) Kompassmechanismen.”</span> <em>Journal of Ornithology</em> 140: 1–40.
+</div>
+<div class="csl-entry">
+———. 1999b. <span>“Das Orientierungssystem Der Voegel 2) Heimfinden Und Navigation.”</span> <em>Journal of Ornithology</em> 140: 129–64.
+</div>
+<div class="csl-entry">
+Wiltschko, W., and R. Wiltschko. 1972. <span>“Magnetic Compass of European Robins.”</span> <em>Science</em> 176: 62–64.
+</div>
+<div class="csl-entry">
+Wisz, M. S., B. A. Walther, and C. Rahbek. 2007. <span>“Using Potential Distributions to Explore Determinants of Western Palearctic Migratory Songbird Species Richness in Sub-Saharan Africa.”</span> <em>Journal of Biogeography</em> 34: 828–41.
+</div>
+<div class="csl-entry">
+Zehnder, Susanna, Susanne Akesson, Felix Liechti, and Bruno Bruderer. 2002. <span>“Observation of Free-Flying Nocturnal Migrants at Falsterbo: Occurrence of Reverse Flight Directions in Autumn.”</span> <em>Avian Science</em> 2 (2): 103–13.
+</div>
+<div class="csl-entry">
+Zúñiga, D., Y. Gager, H. Kokko, A. M. Fudickar, A. Schmidt, B. Naef-Daenzer, M. Wikelski, and J. Partecke. 2017. <span>“Migration Confers Winter Survival Benefits in a Partially Migratory Songbird.”</span> <em>eLIFE</em>, e28123. <a href="https://doi.org/10.7554/eLife.28123.001">https://doi.org/10.7554/eLife.28123.001</a>.
+</div>
+</div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
+<div id="ref-Cormack.1964" class="csl-entry">
+Cormack, R. M. 1964. <span>“Estimates of Survival from the Sighting of Marked Animals.”</span> <em>Biometrika</em> 51: 429–38.
+</div>
+<div id="ref-Jolly.1965" class="csl-entry">
+Jolly, G. 1965. <span>“Explicit Estimates from Capture-Recapture Data with Both Death and Immigration-Stochastic Model.”</span> <em>Biometrika</em> 52: 225–47.
+</div>
+<div id="ref-Kery.2012" class="csl-entry">
+Kéry, Marc, and Michael Schaub. 2012. <em>Bayesian Population Analysis Using WinBUGS</em>. Amsterdam: Elsevier.
+</div>
+<div id="ref-Plummer2003" class="csl-entry">
+Plummer, Martyn. 2003. <span>“<span class="nocase">JAGS : A Program for Analysis of Bayesian Graphical Models Using Gibbs Sampling JAGS : Just Another Gibbs Sampler</span>.”</span> In <em>Proceedings of the 3rd International Workshop on Distributed Statistical Computing</em>, edited by K. Hornik, F. Leisch, and A. Zeileis, 1–8. Dsc. Vienna.
+</div>
+<div id="ref-Seber.1965" class="csl-entry">
+Seber, G. A. F. 1965. <span>“A Note on the Multiple-Recapture Census.”</span> <em>Biometrika</em> 52: 249–59.
+</div>
+<div id="ref-Thomson.2009d" class="csl-entry">
+Thomson, D L, M J Conroy, D R Anderson, K P Burnham, E G Cooch, C M Francis, J.-D. Lebreton, et al. 2009. <span>“Standardising Terminology and Notation for the Analysis of Demographic Processes in Marked Populations.”</span> Edited by D L Thomson, E G Cooch, and M J Conroy. <em>Modeling Demographic Processes in Marked Populations</em>, 1099–1106.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="exctiming.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["MigrationCourse.pdf", "MigrationCourse.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

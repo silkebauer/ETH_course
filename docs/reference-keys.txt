@@ -14,6 +14,9 @@ tab:cjscode
 fig:diagnostics
 fig:figlmer2
 fig:migconnightingale
+fig:seedat
+fig:unnamed-chunk-4
+fig:unnamed-chunk-5
 general-information
 introduction
 course-aims
@@ -118,3 +121,5 @@ exctiming
 arrival-dates-in-spring
 additional-data-for-further-studies
 timing-of-hatching-dates
+exSurvest
+introduction-to-mark-recapture-modelling
