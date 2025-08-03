@@ -6,67 +6,125 @@
 Arrival of migratory birds in central Europe in spring varies among years. In this exercise, explore dates of first observations of the species in central Europe.
 
 
-Two data sets are available: 
+For the exercise, we can use data provided by the authors of @Strebel2014. These data include first observation dates of selected bird species in Switzerland over around 15 years (~1995 - 2012). The data estimates detectability peaks and discusses how observer bias influences first arrival dates in citizen science data.  
 
-1. Data provided by the authors of @Strebel2014. These data include first observation dates of selected bird species in Switzerland over around 10 years (~2000 - 2012). The data estimates detectability peaks and discusses how observer bias influences first arrival dates in citizen science data.  
-
-2. ebird data is a citizen science data set that provides - depending on the species data over longer time periods for any place on the world.    
-
-Choose a data set from either 1) or 2), choose a species and describe how the timing of the first observation has changed over the years. Use regression analyses.  
-
+Choose a species and describe how the timing of the first observation has changed over the years. Use regression analyses.  
 
 
 ```{r, eval=FALSE}
 
 # data download https://datadryad.org/dataset/doi:10.5061/dryad.k20q2  (source: https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.12175)
 
-# extract first observation per species and year:
+# load packages
 library(dplyr)
-first_obs <- obs_data %>%
+
+# read in data
+dat <- read.csv2("obs_data.csv", header=TRUE)
+specdat <- read.csv2("attr.csv", header=TRUE)
+str(dat)
+str(specdat)
+
+# extract first observation per species and year:
+first_obs <- dat %>%
   group_by(Year, ArtId) %>%
   summarise(first_day = min(DayOfYear), .groups = "drop")
 
 
+# select data of a species with data from at least 15 years
+tt <- table(first_obs$ArtId)
+ttspecs <- names(tt)[tt>15]
+specdat$name[is.element(specdat$ArtId, ttspecs)]
+first_obs$name <- specdat$name[match(first_obs$ArtId, specdat$ArtId)]
+first_obs <- first_obs[!is.na(first_obs$name),] # select only species with enough data
+
+
+# loop through all species
+species <- unique(first_obs$name)
+for(spec in species){
+  par(ask=TRUE)
+  dspec <-  subset(first_obs, name==spec)
+  plot(dspec$Year, dspec$first_day, xlab="Year", ylab="first day", main=spec)
+}
+par(ask=FALSE)
+
+# select a long-distance migrant for the analysis because 
+# short the observations of short distance migrants may be biased by 
+# observation effort in winter that may have changed over the years
+
+
+# select a species
+dspec <-  subset(first_obs, name=="Garden Warbler")
+
+
+# fit a regression line
+mod <- lm(first_day~Year, dspec)
+
+# assess model fit
+plot(mod)
+
+mod
+
+# draw the regression line with a 95% compatibility interval
+
+newdat <- data.frame(Year=1995:2012)
+newdat$fit <- predict(mod, newdata=newdat)
+newdat$lwr <- predict(mod, newdata=newdat, interval="confidence")[,2]
+newdat$upr <- predict(mod, newdata=newdat, interval="confidence")[,3]
+
+plot(dspec$Year, dspec$first_day, xlab="Year", ylab="first day")
+lines(newdat$Year, newdat$fit, lwd=2, col="blue")
+lines(newdat$Year, newdat$lwr, lwd=1, lty=3, col="blue")
+lines(newdat$Year, newdat$upr, lwd=1, lty=3, col="blue")
 
 ```
 
 
- 
+Questions:  
+
+- How much did the first observation date advance in 10 years? What is the statistical uncertainty of this value?  
+
+- What could be reasons for the advance (methodological and ecological reasons)?  
+
+- The paper introduces a methodology to account for the observer bias. How much different are your results compared to the results in the paper?  
+
+If you prefer fitting a non-linear trend, use the R-code provided in the next R-junk. What conclusion changes from the ones above (linear regression)? What additional information do you gain? 
 
 
 ```{r, eval=FALSE}
-# How to download and filter ebird data
+# variant: visualise the non-linear trend
 
-#Go to: https://ebird.org/data/download
-#Request the full EBD or a regional subset (e.g., a country or state).
+library(mgcv)
 
-library(auk)
-library(tidyverse)
+mod <- gam(first_day~s(Year), data=dspec)
+# gam searches the best fitting smoother using leave-one-out cross validation
 
-# Path to the downloaded EBD file
-ebd_file <- "path/to/ebd_relFeb-2024.txt"
-sampling_file <- "path/to/ebd_sampling_relFeb-2024.txt"
+# assess model fit
+plot(mod)
 
-# Define filters
-species <- "Northern Cardinal"
-region <- "US-NY"  # New York, USA
-start_date <- "2021-05-01"
-end_date <- "2021-05-31"
+mod
 
+# draw the regression line with a 95% compatibility interval
 
-# Create an auk_ebd object and apply filters
-ebd_filtered <- auk_ebd(ebd_file, sampling_file) %>%
-  auk_species(species) %>%
-  auk_country("United States") %>%
-  auk_state("New York") %>%
-  auk_date(start_date, end_date)
+newdat <- data.frame(Year=1995:2012)
+newdat$fit <- predict(mod, newdata=newdat)
+newdat$se <- predict(mod, newdata=newdat, se.fit=TRUE)$se.fit
+newdat$lwr <- newdat$fit-2*newdat$se
+newdat$upr <-  newdat$fit+2*newdat$se
 
-# Output file
-output_file <- "filtered_ebd.txt"
-
-# Run the filter
-auk_filter(ebd_filtered, file = output_file)
+plot(dspec$Year, dspec$first_day, xlab="Year", ylab="first day")
+lines(newdat$Year, newdat$fit, lwd=2, col="blue")
+lines(newdat$Year, newdat$lwr, lwd=1, lty=3, col="blue")
+lines(newdat$Year, newdat$upr, lwd=1, lty=3, col="blue")
 
 
 ```
 
+
+
+## Additional data for further studies
+
+For the study on bird observations, (ebird)https://ebird.org/data/download provides all their data for free after you created an account. With functions from the R-package `auk`, you can access the ebird data base and download the data directly from within R.
+
+
+
+ 
