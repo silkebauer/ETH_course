@@ -126,5 +126,42 @@ lines(newdat$Year, newdat$upr, lwd=1, lty=3, col="blue")
 For the study on bird observations, [ebird](https://ebird.org/data/download) provides all their data for free after you created an account. With functions from the R-package `auk`, you can access the ebird data base and download the data directly from within R.
 
 
+## Timing of hatching dates
+
+The `broods`data table contains hatching dates of Snowfinches *Montifringilla nivalsi* and also the number of fledglings. Explore the among year variance in hatching dates and how hatching date correlates with the number of fledglings. Use the R-code junk below as a start.   
+
+A short portrait of the Snowfinch: It is a specialist of high elevations, partial migrant, particularly males stay in winter in the Alps. Opportunistic movements towards southern France and Spain during winter are reported. It breeds above the treeline in rock crevices or at buildings. The chicks are fed by insect larvae that are developing in the soft and humid soil along the melting snow patches in spring. 
+
+```{r}
+
+dat <- read.table("data/broodsSF.txt", header=TRUE, sep=";")
+dat <- subset(dat, species=="Montifringilla nivalis") # select the species
+dat <- dat[!is.na(dat$day.hatching.first.egg),] # select hatching dates
+dat <- subset(dat, accuracy_hatching<2) # select accurate hatching dates (we do not know the exact hatching dates of all the broods)
+
+library(birdring)
+# insert day of year
+dat$doy_hatching <- dayofyear(d=dat$day.hatching.first.egg, m=dat$month.hatching.first.egg, y=dat$year)
+
+plot(doy_hatching~jitter(year), data=dat)
+
+plot(jitter(number.of.fledglings)~doy_hatching, dat)
+
+mod <- lm(number.of.fledglings~doy_hatching, data=dat)
+abline(mod)
+
+newdat <- data.frame(doy_hatching=120:220)
+newdat$lwr <- predict(mod, newdata=newdat, interval="confidence")[,2]
+newdat$upr <- predict(mod, newdata=newdat, interval="confidence")[,3]
+lines(newdat$doy_hatching, newdat$lwr, lty=3)
+lines(newdat$doy_hatching, newdat$upr, lty=3)
+
+```
+
+Questions:  
+- What could be reasons for the among-year variance in the hatching dates?  
+- What could be the reason for the decreasing number of fledglings with increasing dates?   
+- The relationship of breeding success with date is widespread among birds and it is called "the date effect". Discuss implications of the date effect for migratory birds. 
+
 
  
