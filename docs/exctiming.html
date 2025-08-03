@@ -23,7 +23,7 @@
 <meta name="author" content="Silke Bauer &amp; Fränzi Korner-Nievergelt" />
 
 
-<meta name="date" content="2025-08-01" />
+<meta name="date" content="2025-08-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -303,6 +303,7 @@ div.csl-indent {
 <li class="chapter" data-level="16" data-path="exctiming.html"><a href="exctiming.html"><i class="fa fa-check"></i><b>16</b> Exercise: Timing</a>
 <ul>
 <li class="chapter" data-level="16.1" data-path="exctiming.html"><a href="exctiming.html#arrival-dates-in-spring"><i class="fa fa-check"></i><b>16.1</b> Arrival dates in spring</a></li>
+<li class="chapter" data-level="16.2" data-path="exctiming.html"><a href="exctiming.html#additional-data-for-further-studies"><i class="fa fa-check"></i><b>16.2</b> Additional data for further studies</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/silkebauer/ETH_course" target="blank">Published with bookdown</a></li>
@@ -329,50 +330,105 @@ div.csl-indent {
 <div id="arrival-dates-in-spring" class="section level2 hasAnchor" number="16.1">
 <h2><span class="header-section-number">16.1</span> Arrival dates in spring<a href="exctiming.html#arrival-dates-in-spring" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Arrival of migratory birds in central Europe in spring varies among years. In this exercise, explore dates of first observations of the species in central Europe.</p>
-<p>Two data sets are available:</p>
-<ol style="list-style-type: decimal">
-<li><p>Data provided by the authors of <span class="citation">Strebel et al. (<a href="#ref-Strebel2014">2014</a>)</span>. These data include first observation dates of selected bird species in Switzerland over around 10 years (~2000 - 2012). The data estimates detectability peaks and discusses how observer bias influences first arrival dates in citizen science data.</p></li>
-<li><p>ebird data is a citizen science data set that provides - depending on the species data over longer time periods for any place on the world.</p></li>
-</ol>
-<p>Choose a data set from either 1) or 2), choose a species and describe how the timing of the first observation has changed over the years. Use regression analyses.</p>
+<p>For the exercise, we can use data provided by the authors of <span class="citation">Strebel et al. (<a href="#ref-Strebel2014">2014</a>)</span>. These data include first observation dates of selected bird species in Switzerland over around 15 years (~1995 - 2012). The data estimates detectability peaks and discusses how observer bias influences first arrival dates in citizen science data.</p>
+<p>Choose a species and describe how the timing of the first observation has changed over the years. Use regression analyses.</p>
 <div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="exctiming.html#cb31-1" tabindex="-1"></a><span class="co"># data download https://datadryad.org/dataset/doi:10.5061/dryad.k20q2  (source: https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.12175)</span></span>
 <span id="cb31-2"><a href="exctiming.html#cb31-2" tabindex="-1"></a></span>
-<span id="cb31-3"><a href="exctiming.html#cb31-3" tabindex="-1"></a><span class="co"># extract first observation per species and year:</span></span>
+<span id="cb31-3"><a href="exctiming.html#cb31-3" tabindex="-1"></a><span class="co"># load packages</span></span>
 <span id="cb31-4"><a href="exctiming.html#cb31-4" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb31-5"><a href="exctiming.html#cb31-5" tabindex="-1"></a>first_obs <span class="ot">&lt;-</span> obs_data <span class="sc">%&gt;%</span></span>
-<span id="cb31-6"><a href="exctiming.html#cb31-6" tabindex="-1"></a>  <span class="fu">group_by</span>(Year, ArtId) <span class="sc">%&gt;%</span></span>
-<span id="cb31-7"><a href="exctiming.html#cb31-7" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">first_day =</span> <span class="fu">min</span>(DayOfYear), <span class="at">.groups =</span> <span class="st">&quot;drop&quot;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="exctiming.html#cb32-1" tabindex="-1"></a><span class="co"># How to download and filter ebird data</span></span>
+<span id="cb31-5"><a href="exctiming.html#cb31-5" tabindex="-1"></a></span>
+<span id="cb31-6"><a href="exctiming.html#cb31-6" tabindex="-1"></a><span class="co"># read in data</span></span>
+<span id="cb31-7"><a href="exctiming.html#cb31-7" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">&quot;obs_data.csv&quot;</span>, <span class="at">header=</span><span class="cn">TRUE</span>)</span>
+<span id="cb31-8"><a href="exctiming.html#cb31-8" tabindex="-1"></a>specdat <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">&quot;attr.csv&quot;</span>, <span class="at">header=</span><span class="cn">TRUE</span>)</span>
+<span id="cb31-9"><a href="exctiming.html#cb31-9" tabindex="-1"></a><span class="fu">str</span>(dat)</span>
+<span id="cb31-10"><a href="exctiming.html#cb31-10" tabindex="-1"></a><span class="fu">str</span>(specdat)</span>
+<span id="cb31-11"><a href="exctiming.html#cb31-11" tabindex="-1"></a></span>
+<span id="cb31-12"><a href="exctiming.html#cb31-12" tabindex="-1"></a><span class="co"># extract first observation per species and year:</span></span>
+<span id="cb31-13"><a href="exctiming.html#cb31-13" tabindex="-1"></a>first_obs <span class="ot">&lt;-</span> dat <span class="sc">%&gt;%</span></span>
+<span id="cb31-14"><a href="exctiming.html#cb31-14" tabindex="-1"></a>  <span class="fu">group_by</span>(Year, ArtId) <span class="sc">%&gt;%</span></span>
+<span id="cb31-15"><a href="exctiming.html#cb31-15" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">first_day =</span> <span class="fu">min</span>(DayOfYear), <span class="at">.groups =</span> <span class="st">&quot;drop&quot;</span>)</span>
+<span id="cb31-16"><a href="exctiming.html#cb31-16" tabindex="-1"></a></span>
+<span id="cb31-17"><a href="exctiming.html#cb31-17" tabindex="-1"></a></span>
+<span id="cb31-18"><a href="exctiming.html#cb31-18" tabindex="-1"></a><span class="co"># select data of a species with data from at least 15 years</span></span>
+<span id="cb31-19"><a href="exctiming.html#cb31-19" tabindex="-1"></a>tt <span class="ot">&lt;-</span> <span class="fu">table</span>(first_obs<span class="sc">$</span>ArtId)</span>
+<span id="cb31-20"><a href="exctiming.html#cb31-20" tabindex="-1"></a>ttspecs <span class="ot">&lt;-</span> <span class="fu">names</span>(tt)[tt<span class="sc">&gt;</span><span class="dv">15</span>]</span>
+<span id="cb31-21"><a href="exctiming.html#cb31-21" tabindex="-1"></a>specdat<span class="sc">$</span>name[<span class="fu">is.element</span>(specdat<span class="sc">$</span>ArtId, ttspecs)]</span>
+<span id="cb31-22"><a href="exctiming.html#cb31-22" tabindex="-1"></a>first_obs<span class="sc">$</span>name <span class="ot">&lt;-</span> specdat<span class="sc">$</span>name[<span class="fu">match</span>(first_obs<span class="sc">$</span>ArtId, specdat<span class="sc">$</span>ArtId)]</span>
+<span id="cb31-23"><a href="exctiming.html#cb31-23" tabindex="-1"></a>first_obs <span class="ot">&lt;-</span> first_obs[<span class="sc">!</span><span class="fu">is.na</span>(first_obs<span class="sc">$</span>name),] <span class="co"># select only species with enough data</span></span>
+<span id="cb31-24"><a href="exctiming.html#cb31-24" tabindex="-1"></a></span>
+<span id="cb31-25"><a href="exctiming.html#cb31-25" tabindex="-1"></a></span>
+<span id="cb31-26"><a href="exctiming.html#cb31-26" tabindex="-1"></a><span class="co"># loop through all species</span></span>
+<span id="cb31-27"><a href="exctiming.html#cb31-27" tabindex="-1"></a>species <span class="ot">&lt;-</span> <span class="fu">unique</span>(first_obs<span class="sc">$</span>name)</span>
+<span id="cb31-28"><a href="exctiming.html#cb31-28" tabindex="-1"></a><span class="cf">for</span>(spec <span class="cf">in</span> species){</span>
+<span id="cb31-29"><a href="exctiming.html#cb31-29" tabindex="-1"></a>  <span class="fu">par</span>(<span class="at">ask=</span><span class="cn">TRUE</span>)</span>
+<span id="cb31-30"><a href="exctiming.html#cb31-30" tabindex="-1"></a>  dspec <span class="ot">&lt;-</span>  <span class="fu">subset</span>(first_obs, name<span class="sc">==</span>spec)</span>
+<span id="cb31-31"><a href="exctiming.html#cb31-31" tabindex="-1"></a>  <span class="fu">plot</span>(dspec<span class="sc">$</span>Year, dspec<span class="sc">$</span>first_day, <span class="at">xlab=</span><span class="st">&quot;Year&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;first day&quot;</span>, <span class="at">main=</span>spec)</span>
+<span id="cb31-32"><a href="exctiming.html#cb31-32" tabindex="-1"></a>}</span>
+<span id="cb31-33"><a href="exctiming.html#cb31-33" tabindex="-1"></a><span class="fu">par</span>(<span class="at">ask=</span><span class="cn">FALSE</span>)</span>
+<span id="cb31-34"><a href="exctiming.html#cb31-34" tabindex="-1"></a></span>
+<span id="cb31-35"><a href="exctiming.html#cb31-35" tabindex="-1"></a><span class="co"># select a long-distance migrant for the analysis because </span></span>
+<span id="cb31-36"><a href="exctiming.html#cb31-36" tabindex="-1"></a><span class="co"># short the observations of short distance migrants may be biased by </span></span>
+<span id="cb31-37"><a href="exctiming.html#cb31-37" tabindex="-1"></a><span class="co"># observation effort in winter that may have changed over the years</span></span>
+<span id="cb31-38"><a href="exctiming.html#cb31-38" tabindex="-1"></a></span>
+<span id="cb31-39"><a href="exctiming.html#cb31-39" tabindex="-1"></a></span>
+<span id="cb31-40"><a href="exctiming.html#cb31-40" tabindex="-1"></a><span class="co"># select a species</span></span>
+<span id="cb31-41"><a href="exctiming.html#cb31-41" tabindex="-1"></a>dspec <span class="ot">&lt;-</span>  <span class="fu">subset</span>(first_obs, name<span class="sc">==</span><span class="st">&quot;Garden Warbler&quot;</span>)</span>
+<span id="cb31-42"><a href="exctiming.html#cb31-42" tabindex="-1"></a></span>
+<span id="cb31-43"><a href="exctiming.html#cb31-43" tabindex="-1"></a></span>
+<span id="cb31-44"><a href="exctiming.html#cb31-44" tabindex="-1"></a><span class="co"># fit a regression line</span></span>
+<span id="cb31-45"><a href="exctiming.html#cb31-45" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(first_day<span class="sc">~</span>Year, dspec)</span>
+<span id="cb31-46"><a href="exctiming.html#cb31-46" tabindex="-1"></a></span>
+<span id="cb31-47"><a href="exctiming.html#cb31-47" tabindex="-1"></a><span class="co"># assess model fit</span></span>
+<span id="cb31-48"><a href="exctiming.html#cb31-48" tabindex="-1"></a><span class="fu">plot</span>(mod)</span>
+<span id="cb31-49"><a href="exctiming.html#cb31-49" tabindex="-1"></a></span>
+<span id="cb31-50"><a href="exctiming.html#cb31-50" tabindex="-1"></a>mod</span>
+<span id="cb31-51"><a href="exctiming.html#cb31-51" tabindex="-1"></a></span>
+<span id="cb31-52"><a href="exctiming.html#cb31-52" tabindex="-1"></a><span class="co"># draw the regression line with a 95% compatibility interval</span></span>
+<span id="cb31-53"><a href="exctiming.html#cb31-53" tabindex="-1"></a></span>
+<span id="cb31-54"><a href="exctiming.html#cb31-54" tabindex="-1"></a>newdat <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Year=</span><span class="dv">1995</span><span class="sc">:</span><span class="dv">2012</span>)</span>
+<span id="cb31-55"><a href="exctiming.html#cb31-55" tabindex="-1"></a>newdat<span class="sc">$</span>fit <span class="ot">&lt;-</span> <span class="fu">predict</span>(mod, <span class="at">newdata=</span>newdat)</span>
+<span id="cb31-56"><a href="exctiming.html#cb31-56" tabindex="-1"></a>newdat<span class="sc">$</span>lwr <span class="ot">&lt;-</span> <span class="fu">predict</span>(mod, <span class="at">newdata=</span>newdat, <span class="at">interval=</span><span class="st">&quot;confidence&quot;</span>)[,<span class="dv">2</span>]</span>
+<span id="cb31-57"><a href="exctiming.html#cb31-57" tabindex="-1"></a>newdat<span class="sc">$</span>upr <span class="ot">&lt;-</span> <span class="fu">predict</span>(mod, <span class="at">newdata=</span>newdat, <span class="at">interval=</span><span class="st">&quot;confidence&quot;</span>)[,<span class="dv">3</span>]</span>
+<span id="cb31-58"><a href="exctiming.html#cb31-58" tabindex="-1"></a></span>
+<span id="cb31-59"><a href="exctiming.html#cb31-59" tabindex="-1"></a><span class="fu">plot</span>(dspec<span class="sc">$</span>Year, dspec<span class="sc">$</span>first_day, <span class="at">xlab=</span><span class="st">&quot;Year&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;first day&quot;</span>)</span>
+<span id="cb31-60"><a href="exctiming.html#cb31-60" tabindex="-1"></a><span class="fu">lines</span>(newdat<span class="sc">$</span>Year, newdat<span class="sc">$</span>fit, <span class="at">lwd=</span><span class="dv">2</span>, <span class="at">col=</span><span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb31-61"><a href="exctiming.html#cb31-61" tabindex="-1"></a><span class="fu">lines</span>(newdat<span class="sc">$</span>Year, newdat<span class="sc">$</span>lwr, <span class="at">lwd=</span><span class="dv">1</span>, <span class="at">lty=</span><span class="dv">3</span>, <span class="at">col=</span><span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb31-62"><a href="exctiming.html#cb31-62" tabindex="-1"></a><span class="fu">lines</span>(newdat<span class="sc">$</span>Year, newdat<span class="sc">$</span>upr, <span class="at">lwd=</span><span class="dv">1</span>, <span class="at">lty=</span><span class="dv">3</span>, <span class="at">col=</span><span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
+<p>Questions:</p>
+<ul>
+<li><p>How much did the first observation date advance in 10 years? What is the statistical uncertainty of this value?</p></li>
+<li><p>What could be reasons for the advance (methodological and ecological reasons)?</p></li>
+<li><p>The paper introduces a methodology to account for the observer bias. How much different are your results compared to the results in the paper?</p></li>
+</ul>
+<p>If you prefer fitting a non-linear trend, use the R-code provided in the next R-junk. What conclusion changes from the ones above (linear regression)? What additional information do you gain?</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="exctiming.html#cb32-1" tabindex="-1"></a><span class="co"># variant: visualise the non-linear trend</span></span>
 <span id="cb32-2"><a href="exctiming.html#cb32-2" tabindex="-1"></a></span>
-<span id="cb32-3"><a href="exctiming.html#cb32-3" tabindex="-1"></a><span class="co">#Go to: https://ebird.org/data/download</span></span>
-<span id="cb32-4"><a href="exctiming.html#cb32-4" tabindex="-1"></a><span class="co">#Request the full EBD or a regional subset (e.g., a country or state).</span></span>
-<span id="cb32-5"><a href="exctiming.html#cb32-5" tabindex="-1"></a></span>
-<span id="cb32-6"><a href="exctiming.html#cb32-6" tabindex="-1"></a><span class="fu">library</span>(auk)</span>
-<span id="cb32-7"><a href="exctiming.html#cb32-7" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb32-8"><a href="exctiming.html#cb32-8" tabindex="-1"></a></span>
-<span id="cb32-9"><a href="exctiming.html#cb32-9" tabindex="-1"></a><span class="co"># Path to the downloaded EBD file</span></span>
-<span id="cb32-10"><a href="exctiming.html#cb32-10" tabindex="-1"></a>ebd_file <span class="ot">&lt;-</span> <span class="st">&quot;path/to/ebd_relFeb-2024.txt&quot;</span></span>
-<span id="cb32-11"><a href="exctiming.html#cb32-11" tabindex="-1"></a>sampling_file <span class="ot">&lt;-</span> <span class="st">&quot;path/to/ebd_sampling_relFeb-2024.txt&quot;</span></span>
+<span id="cb32-3"><a href="exctiming.html#cb32-3" tabindex="-1"></a><span class="fu">library</span>(mgcv)</span>
+<span id="cb32-4"><a href="exctiming.html#cb32-4" tabindex="-1"></a></span>
+<span id="cb32-5"><a href="exctiming.html#cb32-5" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="fu">gam</span>(first_day<span class="sc">~</span><span class="fu">s</span>(Year), <span class="at">data=</span>dspec)</span>
+<span id="cb32-6"><a href="exctiming.html#cb32-6" tabindex="-1"></a><span class="co"># gam searches the best fitting smoother using leave-one-out cross validation</span></span>
+<span id="cb32-7"><a href="exctiming.html#cb32-7" tabindex="-1"></a></span>
+<span id="cb32-8"><a href="exctiming.html#cb32-8" tabindex="-1"></a><span class="co"># assess model fit</span></span>
+<span id="cb32-9"><a href="exctiming.html#cb32-9" tabindex="-1"></a><span class="fu">plot</span>(mod)</span>
+<span id="cb32-10"><a href="exctiming.html#cb32-10" tabindex="-1"></a></span>
+<span id="cb32-11"><a href="exctiming.html#cb32-11" tabindex="-1"></a>mod</span>
 <span id="cb32-12"><a href="exctiming.html#cb32-12" tabindex="-1"></a></span>
-<span id="cb32-13"><a href="exctiming.html#cb32-13" tabindex="-1"></a><span class="co"># Define filters</span></span>
-<span id="cb32-14"><a href="exctiming.html#cb32-14" tabindex="-1"></a>species <span class="ot">&lt;-</span> <span class="st">&quot;Northern Cardinal&quot;</span></span>
-<span id="cb32-15"><a href="exctiming.html#cb32-15" tabindex="-1"></a>region <span class="ot">&lt;-</span> <span class="st">&quot;US-NY&quot;</span>  <span class="co"># New York, USA</span></span>
-<span id="cb32-16"><a href="exctiming.html#cb32-16" tabindex="-1"></a>start_date <span class="ot">&lt;-</span> <span class="st">&quot;2021-05-01&quot;</span></span>
-<span id="cb32-17"><a href="exctiming.html#cb32-17" tabindex="-1"></a>end_date <span class="ot">&lt;-</span> <span class="st">&quot;2021-05-31&quot;</span></span>
-<span id="cb32-18"><a href="exctiming.html#cb32-18" tabindex="-1"></a></span>
-<span id="cb32-19"><a href="exctiming.html#cb32-19" tabindex="-1"></a></span>
-<span id="cb32-20"><a href="exctiming.html#cb32-20" tabindex="-1"></a><span class="co"># Create an auk_ebd object and apply filters</span></span>
-<span id="cb32-21"><a href="exctiming.html#cb32-21" tabindex="-1"></a>ebd_filtered <span class="ot">&lt;-</span> <span class="fu">auk_ebd</span>(ebd_file, sampling_file) <span class="sc">%&gt;%</span></span>
-<span id="cb32-22"><a href="exctiming.html#cb32-22" tabindex="-1"></a>  <span class="fu">auk_species</span>(species) <span class="sc">%&gt;%</span></span>
-<span id="cb32-23"><a href="exctiming.html#cb32-23" tabindex="-1"></a>  <span class="fu">auk_country</span>(<span class="st">&quot;United States&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb32-24"><a href="exctiming.html#cb32-24" tabindex="-1"></a>  <span class="fu">auk_state</span>(<span class="st">&quot;New York&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb32-25"><a href="exctiming.html#cb32-25" tabindex="-1"></a>  <span class="fu">auk_date</span>(start_date, end_date)</span>
-<span id="cb32-26"><a href="exctiming.html#cb32-26" tabindex="-1"></a></span>
-<span id="cb32-27"><a href="exctiming.html#cb32-27" tabindex="-1"></a><span class="co"># Output file</span></span>
-<span id="cb32-28"><a href="exctiming.html#cb32-28" tabindex="-1"></a>output_file <span class="ot">&lt;-</span> <span class="st">&quot;filtered_ebd.txt&quot;</span></span>
-<span id="cb32-29"><a href="exctiming.html#cb32-29" tabindex="-1"></a></span>
-<span id="cb32-30"><a href="exctiming.html#cb32-30" tabindex="-1"></a><span class="co"># Run the filter</span></span>
-<span id="cb32-31"><a href="exctiming.html#cb32-31" tabindex="-1"></a><span class="fu">auk_filter</span>(ebd_filtered, <span class="at">file =</span> output_file)</span></code></pre></div>
+<span id="cb32-13"><a href="exctiming.html#cb32-13" tabindex="-1"></a><span class="co"># draw the regression line with a 95% compatibility interval</span></span>
+<span id="cb32-14"><a href="exctiming.html#cb32-14" tabindex="-1"></a></span>
+<span id="cb32-15"><a href="exctiming.html#cb32-15" tabindex="-1"></a>newdat <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Year=</span><span class="dv">1995</span><span class="sc">:</span><span class="dv">2012</span>)</span>
+<span id="cb32-16"><a href="exctiming.html#cb32-16" tabindex="-1"></a>newdat<span class="sc">$</span>fit <span class="ot">&lt;-</span> <span class="fu">predict</span>(mod, <span class="at">newdata=</span>newdat)</span>
+<span id="cb32-17"><a href="exctiming.html#cb32-17" tabindex="-1"></a>newdat<span class="sc">$</span>se <span class="ot">&lt;-</span> <span class="fu">predict</span>(mod, <span class="at">newdata=</span>newdat, <span class="at">se.fit=</span><span class="cn">TRUE</span>)<span class="sc">$</span>se.fit</span>
+<span id="cb32-18"><a href="exctiming.html#cb32-18" tabindex="-1"></a>newdat<span class="sc">$</span>lwr <span class="ot">&lt;-</span> newdat<span class="sc">$</span>fit<span class="dv">-2</span><span class="sc">*</span>newdat<span class="sc">$</span>se</span>
+<span id="cb32-19"><a href="exctiming.html#cb32-19" tabindex="-1"></a>newdat<span class="sc">$</span>upr <span class="ot">&lt;-</span>  newdat<span class="sc">$</span>fit<span class="sc">+</span><span class="dv">2</span><span class="sc">*</span>newdat<span class="sc">$</span>se</span>
+<span id="cb32-20"><a href="exctiming.html#cb32-20" tabindex="-1"></a></span>
+<span id="cb32-21"><a href="exctiming.html#cb32-21" tabindex="-1"></a><span class="fu">plot</span>(dspec<span class="sc">$</span>Year, dspec<span class="sc">$</span>first_day, <span class="at">xlab=</span><span class="st">&quot;Year&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;first day&quot;</span>)</span>
+<span id="cb32-22"><a href="exctiming.html#cb32-22" tabindex="-1"></a><span class="fu">lines</span>(newdat<span class="sc">$</span>Year, newdat<span class="sc">$</span>fit, <span class="at">lwd=</span><span class="dv">2</span>, <span class="at">col=</span><span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb32-23"><a href="exctiming.html#cb32-23" tabindex="-1"></a><span class="fu">lines</span>(newdat<span class="sc">$</span>Year, newdat<span class="sc">$</span>lwr, <span class="at">lwd=</span><span class="dv">1</span>, <span class="at">lty=</span><span class="dv">3</span>, <span class="at">col=</span><span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb32-24"><a href="exctiming.html#cb32-24" tabindex="-1"></a><span class="fu">lines</span>(newdat<span class="sc">$</span>Year, newdat<span class="sc">$</span>upr, <span class="at">lwd=</span><span class="dv">1</span>, <span class="at">lty=</span><span class="dv">3</span>, <span class="at">col=</span><span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
+</div>
+<div id="additional-data-for-further-studies" class="section level2 hasAnchor" number="16.2">
+<h2><span class="header-section-number">16.2</span> Additional data for further studies<a href="exctiming.html#additional-data-for-further-studies" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>For the study on bird observations, (ebird)<a href="https://ebird.org/data/download" class="uri">https://ebird.org/data/download</a> provides all their data for free after you created an account. With functions from the R-package <code>auk</code>, you can access the ebird data base and download the data directly from within R.</p>
 
 <div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
 <div class="csl-entry">
