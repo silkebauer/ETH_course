@@ -97,7 +97,7 @@ Location: ETH Zürich, room LEE C 114
 * 14:00 - 14:45 Lecture 9: Ecosystem functions, biodiversity consequences, Services & disservices of migrants (SB)  
 * Practicals:  
 
- + Survival estimation based on data of marked animals    
+ + Survival estimation based on data of marked animals (exercise in Chapter \@ref(exSurvest))   
  + Biodiversity consequences of movements  
 
 
@@ -106,7 +106,7 @@ Location: ETH Zürich, room LEE C 114
 Location: ETH Zürich, room LEE C 114
 
 * 9:15 - 10:00: Lecture 10: Climate change and other threats to migrating animals (SB)  
-* 10:15 - 11:00: Climate change and other threats to Swiss breeding birds (FK)  
+* 10:15 - 11:00: Lecture 11: Climate change and other threats to Swiss breeding birds (FK)  
 * 11:15 - 12:15: Exercises and discussion to climate change and threats to migrants (SB, FK)  
 
 * 13:00 – 17:00 Preparation of student projects  
