@@ -28,7 +28,6 @@ first_obs <- obs_data %>%
 
 
 
-
 ```
 
 
