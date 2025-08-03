@@ -304,6 +304,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="16.1" data-path="exctiming.html"><a href="exctiming.html#arrival-dates-in-spring"><i class="fa fa-check"></i><b>16.1</b> Arrival dates in spring</a></li>
 <li class="chapter" data-level="16.2" data-path="exctiming.html"><a href="exctiming.html#additional-data-for-further-studies"><i class="fa fa-check"></i><b>16.2</b> Additional data for further studies</a></li>
+<li class="chapter" data-level="16.3" data-path="exctiming.html"><a href="exctiming.html#timing-of-hatching-dates"><i class="fa fa-check"></i><b>16.3</b> Timing of hatching dates</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/silkebauer/ETH_course" target="blank">Published with bookdown</a></li>
@@ -428,7 +429,44 @@ div.csl-indent {
 </div>
 <div id="additional-data-for-further-studies" class="section level2 hasAnchor" number="16.2">
 <h2><span class="header-section-number">16.2</span> Additional data for further studies<a href="exctiming.html#additional-data-for-further-studies" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>For the study on bird observations, (ebird)<a href="https://ebird.org/data/download" class="uri">https://ebird.org/data/download</a> provides all their data for free after you created an account. With functions from the R-package <code>auk</code>, you can access the ebird data base and download the data directly from within R.</p>
+<p>For the study on bird observations, <a href="https://ebird.org/data/download">ebird</a> provides all their data for free after you created an account. With functions from the R-package <code>auk</code>, you can access the ebird data base and download the data directly from within R.</p>
+</div>
+<div id="timing-of-hatching-dates" class="section level2 hasAnchor" number="16.3">
+<h2><span class="header-section-number">16.3</span> Timing of hatching dates<a href="exctiming.html#timing-of-hatching-dates" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The <code>broods</code>data table contains hatching dates of Snowfinches <em>Montifringilla nivalsi</em> and also the number of fledglings. Explore the among year variance in hatching dates and how hatching date correlates with the number of fledglings. Use the R-code junk below as a start.</p>
+<p>A short portrait of the Snowfinch: It is a specialist of high elevations, partial migrant, particularly males stay in winter in the Alps. Opportunistic movements towards southern France and Spain during winter are reported. It breeds above the treeline in rock crevices or at buildings. The chicks are fed by insect larvae that are developing in the soft and humid soil along the melting snow patches in spring.</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="exctiming.html#cb33-1" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">&quot;data/broodsSF.txt&quot;</span>, <span class="at">header=</span><span class="cn">TRUE</span>, <span class="at">sep=</span><span class="st">&quot;;&quot;</span>)</span>
+<span id="cb33-2"><a href="exctiming.html#cb33-2" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">subset</span>(dat, species<span class="sc">==</span><span class="st">&quot;Montifringilla nivalis&quot;</span>) <span class="co"># select the species</span></span>
+<span id="cb33-3"><a href="exctiming.html#cb33-3" tabindex="-1"></a>dat <span class="ot">&lt;-</span> dat[<span class="sc">!</span><span class="fu">is.na</span>(dat<span class="sc">$</span>day.hatching.first.egg),] <span class="co"># select hatching dates</span></span>
+<span id="cb33-4"><a href="exctiming.html#cb33-4" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">subset</span>(dat, accuracy_hatching<span class="sc">&lt;</span><span class="dv">2</span>) <span class="co"># select accurate hatching dates (we do not know the exact hatching dates of all the broods)</span></span>
+<span id="cb33-5"><a href="exctiming.html#cb33-5" tabindex="-1"></a></span>
+<span id="cb33-6"><a href="exctiming.html#cb33-6" tabindex="-1"></a><span class="fu">library</span>(birdring)</span></code></pre></div>
+<pre><code>## Lade nötiges Paket: basemaps</code></pre>
+<pre><code>## Warning: Paket &#39;basemaps&#39; wurde unter R Version 4.2.3 erstellt</code></pre>
+<pre><code>## Lade nötiges Paket: maps</code></pre>
+<pre><code>## Lade nötiges Paket: sfheaders</code></pre>
+<pre><code>## Warning: Multiple Methodentabellen gefunden für &#39;elide&#39;</code></pre>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="exctiming.html#cb39-1" tabindex="-1"></a><span class="co"># insert day of year</span></span>
+<span id="cb39-2"><a href="exctiming.html#cb39-2" tabindex="-1"></a>dat<span class="sc">$</span>doy_hatching <span class="ot">&lt;-</span> <span class="fu">dayofyear</span>(<span class="at">d=</span>dat<span class="sc">$</span>day.hatching.first.egg, <span class="at">m=</span>dat<span class="sc">$</span>month.hatching.first.egg, <span class="at">y=</span>dat<span class="sc">$</span>year)</span>
+<span id="cb39-3"><a href="exctiming.html#cb39-3" tabindex="-1"></a></span>
+<span id="cb39-4"><a href="exctiming.html#cb39-4" tabindex="-1"></a><span class="fu">plot</span>(doy_hatching<span class="sc">~</span><span class="fu">jitter</span>(year), <span class="at">data=</span>dat)</span></code></pre></div>
+<p><img src="15-ExercisesTiming_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="exctiming.html#cb40-1" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">jitter</span>(number.of.fledglings)<span class="sc">~</span>doy_hatching, dat)</span>
+<span id="cb40-2"><a href="exctiming.html#cb40-2" tabindex="-1"></a></span>
+<span id="cb40-3"><a href="exctiming.html#cb40-3" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(number.of.fledglings<span class="sc">~</span>doy_hatching, <span class="at">data=</span>dat)</span>
+<span id="cb40-4"><a href="exctiming.html#cb40-4" tabindex="-1"></a><span class="fu">abline</span>(mod)</span>
+<span id="cb40-5"><a href="exctiming.html#cb40-5" tabindex="-1"></a></span>
+<span id="cb40-6"><a href="exctiming.html#cb40-6" tabindex="-1"></a>newdat <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">doy_hatching=</span><span class="dv">120</span><span class="sc">:</span><span class="dv">220</span>)</span>
+<span id="cb40-7"><a href="exctiming.html#cb40-7" tabindex="-1"></a>newdat<span class="sc">$</span>lwr <span class="ot">&lt;-</span> <span class="fu">predict</span>(mod, <span class="at">newdata=</span>newdat, <span class="at">interval=</span><span class="st">&quot;confidence&quot;</span>)[,<span class="dv">2</span>]</span>
+<span id="cb40-8"><a href="exctiming.html#cb40-8" tabindex="-1"></a>newdat<span class="sc">$</span>upr <span class="ot">&lt;-</span> <span class="fu">predict</span>(mod, <span class="at">newdata=</span>newdat, <span class="at">interval=</span><span class="st">&quot;confidence&quot;</span>)[,<span class="dv">3</span>]</span>
+<span id="cb40-9"><a href="exctiming.html#cb40-9" tabindex="-1"></a><span class="fu">lines</span>(newdat<span class="sc">$</span>doy_hatching, newdat<span class="sc">$</span>lwr, <span class="at">lty=</span><span class="dv">3</span>)</span>
+<span id="cb40-10"><a href="exctiming.html#cb40-10" tabindex="-1"></a><span class="fu">lines</span>(newdat<span class="sc">$</span>doy_hatching, newdat<span class="sc">$</span>upr, <span class="at">lty=</span><span class="dv">3</span>)</span></code></pre></div>
+<p><img src="15-ExercisesTiming_files/figure-html/unnamed-chunk-3-2.png" width="672" /></p>
+<p>Questions:<br />
+- What could be reasons for the among-year variance in the hatching dates?<br />
+- What could be the reason for the decreasing number of fledglings with increasing dates?<br />
+- The relationship of breeding success with date is widespread among birds and it is called “the date effect”. Discuss implications of the date effect for migratory birds.</p>
+<p>The two studies showed that over the past 20 years, the Snowfinch did not advance the timing of the breeding enough to compensate the warming: <span class="citation">Schano et al. (<a href="#ref-Schano.2021">2021</a>)</span>, <span class="citation">Niffenegger et al. (<a href="#ref-niffenegger_rising_2025">2025</a>)</span>.</p>
 
 <div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
 <div class="csl-entry">
@@ -744,6 +782,9 @@ Newton, Ian. 2006. <span>“Advances in the Study of Irruptive Migration.”</sp
 Nievergelt, F., and F. Liechti. 2000. <span>“Methodische Aspekte Zur Untersuchung Der Zugaktivit<span>ä</span>t Im Emlen-Trichter.”</span> <em>Journal of Ornithology</em> 141: 180–90.
 </div>
 <div class="csl-entry">
+Niffenegger, Carole A., Sabine M. Hille, Christian Schano, and Fränzi Korner‐Nievergelt. 2025. <span>“Rising Temperatures Advance Start and End of the Breeding Season of an Alpine Bird.”</span> <em>Ecology and Evolution</em> 15 (2): e70897. <a href="https://doi.org/10.1002/ece3.70897">https://doi.org/10.1002/ece3.70897</a>.
+</div>
+<div class="csl-entry">
 Padget, O., G. Dell’Ariccia, A. Gagliardo, J. González-Solís, and T. Guilford. 2017. <span>“Anosmia Impairs Homing Orientation but Not Foraging Behaviour in Free-Ranging Shearwaters.”</span> <em>Scientific Reports</em> 7 (1): 9668. <a href="https://doi.org/10.1038/s41598-017-09738-5">https://doi.org/10.1038/s41598-017-09738-5</a>.
 </div>
 <div class="csl-entry">
@@ -892,6 +933,12 @@ Zúñiga, D., Y. Gager, H. Kokko, A. M. Fudickar, A. Schmidt, B. Naef-Daenzer, M
 </div>
 <h3>References</h3>
 <div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
+<div id="ref-niffenegger_rising_2025" class="csl-entry">
+Niffenegger, Carole A., Sabine M. Hille, Christian Schano, and Fränzi Korner‐Nievergelt. 2025. <span>“Rising Temperatures Advance Start and End of the Breeding Season of an Alpine Bird.”</span> <em>Ecology and Evolution</em> 15 (2): e70897. <a href="https://doi.org/10.1002/ece3.70897">https://doi.org/10.1002/ece3.70897</a>.
+</div>
+<div id="ref-Schano.2021" class="csl-entry">
+Schano, Christian, Carole Niffenegger, Tobias Jonas, and Fränzi Korner-Nievergelt. 2021. <span>“Hatching Phenology Is Lagging Behind an Advancing Snowmelt Pattern in a High-Alpine Bird.”</span> <em>Scientific Reports</em> 11 (1): 20130016. <a href="https://doi.org/10.1038/s41598-021-01497-8">https://doi.org/10.1038/s41598-021-01497-8</a>.
+</div>
 <div id="ref-Strebel2014" class="csl-entry">
 Strebel, Nicolas, Marc Kéry, Michael Schaub, and Hans Schmid. 2014. <span>“Studying Phenology by Flexible Modelling of Seasonal Detectability Peaks.”</span> <em>Methods in Ecology and Evolution</em> 5: 483–90.
 </div>
