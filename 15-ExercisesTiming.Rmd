@@ -121,9 +121,11 @@ lines(newdat$Year, newdat$upr, lwd=1, lty=3, col="blue")
 
 
 
-## Additional data for further studies
+## Additional data and literature on first arrival dates
 
 For the study on bird observations, [ebird](https://ebird.org/data/download) provides all their data for free after you created an account. With functions from the R-package `auk`, you can access the ebird data base and download the data directly from within R.
+
+@koh_extreme-value_2025 analyse first arrival dates based on citizen science data using state of the art statistical methods.  
 
 
 ## Timing of hatching dates
