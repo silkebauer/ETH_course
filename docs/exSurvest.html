@@ -23,7 +23,7 @@
 <meta name="author" content="Silke Bauer &amp; Fränzi Korner-Nievergelt" />
 
 
-<meta name="date" content="2025-08-04" />
+<meta name="date" content="2025-08-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -443,57 +443,57 @@ We use uniform prior distributions for all parameters with a parameter space lim
 <p>We then look at the results</p>
 <div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="exSurvest.html#cb57-1" tabindex="-1"></a>mod<span class="sc">$</span>summary</span>
 <span id="cb57-2"><a href="exSurvest.html#cb57-2" tabindex="-1"></a><span class="do">##                  mean           sd         2.5%          25%          50%</span></span>
-<span id="cb57-3"><a href="exSurvest.html#cb57-3" tabindex="-1"></a><span class="do">## a[1,1]   3.484555e-01   0.13385196 1.402201e-01 2.511544e-01 3.324801e-01</span></span>
-<span id="cb57-4"><a href="exSurvest.html#cb57-4" tabindex="-1"></a><span class="do">## a[2,1]   3.732957e-01   0.19047238 8.076975e-02 2.307984e-01 3.478820e-01</span></span>
-<span id="cb57-5"><a href="exSurvest.html#cb57-5" tabindex="-1"></a><span class="do">## a[1,2]   3.937757e-01   0.14746392 1.593356e-01 2.886584e-01 3.743000e-01</span></span>
-<span id="cb57-6"><a href="exSurvest.html#cb57-6" tabindex="-1"></a><span class="do">## a[2,2]   5.499118e-01   0.13494816 3.148242e-01 4.523354e-01 5.398733e-01</span></span>
-<span id="cb57-7"><a href="exSurvest.html#cb57-7" tabindex="-1"></a><span class="do">## a[1,3]   5.630866e-02   0.05443140 1.311175e-03 1.738442e-02 4.071885e-02</span></span>
-<span id="cb57-8"><a href="exSurvest.html#cb57-8" tabindex="-1"></a><span class="do">## a[2,3]   8.147522e-01   0.12443877 5.256814e-01 7.374153e-01 8.324798e-01</span></span>
-<span id="cb57-9"><a href="exSurvest.html#cb57-9" tabindex="-1"></a><span class="do">## a[1,4]   1.729039e-01   0.10887377 1.926411e-02 9.160640e-02 1.538067e-01</span></span>
-<span id="cb57-10"><a href="exSurvest.html#cb57-10" tabindex="-1"></a><span class="do">## a[2,4]   5.221492e-01   0.05251887 4.235033e-01 4.864871e-01 5.200143e-01</span></span>
-<span id="cb57-11"><a href="exSurvest.html#cb57-11" tabindex="-1"></a><span class="do">## a[1,5]   4.017951e-01   0.14539108 1.457370e-01 2.938850e-01 3.938474e-01</span></span>
-<span id="cb57-12"><a href="exSurvest.html#cb57-12" tabindex="-1"></a><span class="do">## a[2,5]   7.286113e-01   0.05819977 6.118100e-01 6.894982e-01 7.284558e-01</span></span>
-<span id="cb57-13"><a href="exSurvest.html#cb57-13" tabindex="-1"></a><span class="do">## a[1,6]   1.308165e-01   0.05709659 4.118366e-02 8.785078e-02 1.232238e-01</span></span>
-<span id="cb57-14"><a href="exSurvest.html#cb57-14" tabindex="-1"></a><span class="do">## a[2,6]   5.937656e-01   0.03080096 5.360844e-01 5.721966e-01 5.934363e-01</span></span>
-<span id="cb57-15"><a href="exSurvest.html#cb57-15" tabindex="-1"></a><span class="do">## a[1,7]   9.237251e-02   0.08363338 2.512934e-03 2.893634e-02 6.807373e-02</span></span>
-<span id="cb57-16"><a href="exSurvest.html#cb57-16" tabindex="-1"></a><span class="do">## a[2,7]   4.507122e-01   0.02696741 3.981334e-01 4.324045e-01 4.495071e-01</span></span>
-<span id="cb57-17"><a href="exSurvest.html#cb57-17" tabindex="-1"></a><span class="do">## a[1,8]   4.687844e-02   0.04741421 1.100854e-03 1.292257e-02 3.201425e-02</span></span>
-<span id="cb57-18"><a href="exSurvest.html#cb57-18" tabindex="-1"></a><span class="do">## a[2,8]   7.222736e-01   0.13695393 4.584819e-01 6.165251e-01 7.377122e-01</span></span>
-<span id="cb57-19"><a href="exSurvest.html#cb57-19" tabindex="-1"></a><span class="do">## b[1]     3.962330e-01   0.15202640 1.416284e-01 2.833157e-01 3.833684e-01</span></span>
-<span id="cb57-20"><a href="exSurvest.html#cb57-20" tabindex="-1"></a><span class="do">## b[2]     4.120147e-01   0.11009127 2.124304e-01 3.362995e-01 4.088524e-01</span></span>
-<span id="cb57-21"><a href="exSurvest.html#cb57-21" tabindex="-1"></a><span class="do">## b[3]     5.715121e-01   0.11087588 3.585434e-01 4.956009e-01 5.734695e-01</span></span>
-<span id="cb57-22"><a href="exSurvest.html#cb57-22" tabindex="-1"></a><span class="do">## b[4]     7.175781e-01   0.06685200 5.725628e-01 6.754523e-01 7.211501e-01</span></span>
-<span id="cb57-23"><a href="exSurvest.html#cb57-23" tabindex="-1"></a><span class="do">## b[5]     6.379362e-01   0.06006423 5.169332e-01 5.975373e-01 6.374156e-01</span></span>
-<span id="cb57-24"><a href="exSurvest.html#cb57-24" tabindex="-1"></a><span class="do">## b[6]     8.835847e-01   0.03129490 8.156985e-01 8.639965e-01 8.863027e-01</span></span>
-<span id="cb57-25"><a href="exSurvest.html#cb57-25" tabindex="-1"></a><span class="do">## b[7]     7.325829e-01   0.03769918 6.554922e-01 7.088216e-01 7.332414e-01</span></span>
-<span id="cb57-26"><a href="exSurvest.html#cb57-26" tabindex="-1"></a><span class="do">## b[8]     6.221331e-01   0.13163932 4.458730e-01 5.251555e-01 5.858159e-01</span></span>
-<span id="cb57-27"><a href="exSurvest.html#cb57-27" tabindex="-1"></a><span class="do">## deviance 1.295619e+03 153.62014471 9.260382e+02 1.211835e+03 1.329229e+03</span></span>
+<span id="cb57-3"><a href="exSurvest.html#cb57-3" tabindex="-1"></a><span class="do">## a[1,1]   3.391090e-01   0.12926996 1.386931e-01 2.449343e-01 3.249883e-01</span></span>
+<span id="cb57-4"><a href="exSurvest.html#cb57-4" tabindex="-1"></a><span class="do">## a[2,1]   3.657589e-01   0.18485727 8.182198e-02 2.257468e-01 3.408014e-01</span></span>
+<span id="cb57-5"><a href="exSurvest.html#cb57-5" tabindex="-1"></a><span class="do">## a[1,2]   3.823225e-01   0.12968383 1.631823e-01 2.909620e-01 3.691792e-01</span></span>
+<span id="cb57-6"><a href="exSurvest.html#cb57-6" tabindex="-1"></a><span class="do">## a[2,2]   5.425342e-01   0.13134561 3.025510e-01 4.494323e-01 5.399196e-01</span></span>
+<span id="cb57-7"><a href="exSurvest.html#cb57-7" tabindex="-1"></a><span class="do">## a[1,3]   5.646817e-02   0.05906909 1.508361e-03 1.620367e-02 3.773195e-02</span></span>
+<span id="cb57-8"><a href="exSurvest.html#cb57-8" tabindex="-1"></a><span class="do">## a[2,3]   8.213043e-01   0.11830111 5.623561e-01 7.434553e-01 8.356229e-01</span></span>
+<span id="cb57-9"><a href="exSurvest.html#cb57-9" tabindex="-1"></a><span class="do">## a[1,4]   1.729835e-01   0.10829749 2.323674e-02 8.938261e-02 1.541575e-01</span></span>
+<span id="cb57-10"><a href="exSurvest.html#cb57-10" tabindex="-1"></a><span class="do">## a[2,4]   5.232655e-01   0.05556734 4.209959e-01 4.851763e-01 5.204148e-01</span></span>
+<span id="cb57-11"><a href="exSurvest.html#cb57-11" tabindex="-1"></a><span class="do">## a[1,5]   3.924013e-01   0.13561391 1.536711e-01 2.971720e-01 3.830307e-01</span></span>
+<span id="cb57-12"><a href="exSurvest.html#cb57-12" tabindex="-1"></a><span class="do">## a[2,5]   7.294803e-01   0.06111069 6.040173e-01 6.892798e-01 7.312509e-01</span></span>
+<span id="cb57-13"><a href="exSurvest.html#cb57-13" tabindex="-1"></a><span class="do">## a[1,6]   1.360843e-01   0.06202983 3.927238e-02 9.038959e-02 1.287625e-01</span></span>
+<span id="cb57-14"><a href="exSurvest.html#cb57-14" tabindex="-1"></a><span class="do">## a[2,6]   5.943569e-01   0.02952242 5.371502e-01 5.737588e-01 5.951379e-01</span></span>
+<span id="cb57-15"><a href="exSurvest.html#cb57-15" tabindex="-1"></a><span class="do">## a[1,7]   9.538608e-02   0.08691389 3.098225e-03 2.946777e-02 6.982306e-02</span></span>
+<span id="cb57-16"><a href="exSurvest.html#cb57-16" tabindex="-1"></a><span class="do">## a[2,7]   4.535741e-01   0.02547227 4.045189e-01 4.370531e-01 4.533838e-01</span></span>
+<span id="cb57-17"><a href="exSurvest.html#cb57-17" tabindex="-1"></a><span class="do">## a[1,8]   4.255597e-02   0.04523499 9.443112e-04 1.045370e-02 2.732594e-02</span></span>
+<span id="cb57-18"><a href="exSurvest.html#cb57-18" tabindex="-1"></a><span class="do">## a[2,8]   6.314723e-01   0.15993564 4.234845e-01 4.882268e-01 5.948384e-01</span></span>
+<span id="cb57-19"><a href="exSurvest.html#cb57-19" tabindex="-1"></a><span class="do">## b[1]     4.076857e-01   0.15112105 1.531980e-01 2.939900e-01 3.956826e-01</span></span>
+<span id="cb57-20"><a href="exSurvest.html#cb57-20" tabindex="-1"></a><span class="do">## b[2]     4.146680e-01   0.10626864 2.250936e-01 3.395989e-01 4.083971e-01</span></span>
+<span id="cb57-21"><a href="exSurvest.html#cb57-21" tabindex="-1"></a><span class="do">## b[3]     5.717258e-01   0.11056682 3.564162e-01 4.925786e-01 5.735717e-01</span></span>
+<span id="cb57-22"><a href="exSurvest.html#cb57-22" tabindex="-1"></a><span class="do">## b[4]     7.152946e-01   0.06755338 5.745330e-01 6.705122e-01 7.175318e-01</span></span>
+<span id="cb57-23"><a href="exSurvest.html#cb57-23" tabindex="-1"></a><span class="do">## b[5]     6.386671e-01   0.05850453 5.213906e-01 5.992135e-01 6.398652e-01</span></span>
+<span id="cb57-24"><a href="exSurvest.html#cb57-24" tabindex="-1"></a><span class="do">## b[6]     8.825960e-01   0.03046633 8.175698e-01 8.635285e-01 8.842620e-01</span></span>
+<span id="cb57-25"><a href="exSurvest.html#cb57-25" tabindex="-1"></a><span class="do">## b[7]     7.271465e-01   0.03718638 6.546099e-01 7.024517e-01 7.278619e-01</span></span>
+<span id="cb57-26"><a href="exSurvest.html#cb57-26" tabindex="-1"></a><span class="do">## b[8]     7.238125e-01   0.16990201 4.504772e-01 5.673141e-01 7.237482e-01</span></span>
+<span id="cb57-27"><a href="exSurvest.html#cb57-27" tabindex="-1"></a><span class="do">## deviance 1.183597e+03 203.00690070 8.434020e+02 1.010628e+03 1.190579e+03</span></span>
 <span id="cb57-28"><a href="exSurvest.html#cb57-28" tabindex="-1"></a><span class="do">##                   75%        97.5%     Rhat n.eff</span></span>
-<span id="cb57-29"><a href="exSurvest.html#cb57-29" tabindex="-1"></a><span class="do">## a[1,1]   4.269647e-01    0.6509980 1.005889   430</span></span>
-<span id="cb57-30"><a href="exSurvest.html#cb57-30" tabindex="-1"></a><span class="do">## a[2,1]   4.885670e-01    0.8037528 1.003930   590</span></span>
-<span id="cb57-31"><a href="exSurvest.html#cb57-31" tabindex="-1"></a><span class="do">## a[1,2]   4.755954e-01    0.7442806 1.006394   340</span></span>
-<span id="cb57-32"><a href="exSurvest.html#cb57-32" tabindex="-1"></a><span class="do">## a[2,2]   6.388571e-01    0.8430319 1.010120   250</span></span>
-<span id="cb57-33"><a href="exSurvest.html#cb57-33" tabindex="-1"></a><span class="do">## a[1,3]   7.906348e-02    0.2022705 1.011818   240</span></span>
-<span id="cb57-34"><a href="exSurvest.html#cb57-34" tabindex="-1"></a><span class="do">## a[2,3]   9.109750e-01    0.9922309 1.001293  2500</span></span>
-<span id="cb57-35"><a href="exSurvest.html#cb57-35" tabindex="-1"></a><span class="do">## a[1,4]   2.385229e-01    0.4292708 1.002512  1000</span></span>
-<span id="cb57-36"><a href="exSurvest.html#cb57-36" tabindex="-1"></a><span class="do">## a[2,4]   5.555738e-01    0.6309100 1.001040  3000</span></span>
-<span id="cb57-37"><a href="exSurvest.html#cb57-37" tabindex="-1"></a><span class="do">## a[1,5]   4.988111e-01    0.7003451 1.008073   350</span></span>
-<span id="cb57-38"><a href="exSurvest.html#cb57-38" tabindex="-1"></a><span class="do">## a[2,5]   7.684754e-01    0.8390293 1.009669   350</span></span>
-<span id="cb57-39"><a href="exSurvest.html#cb57-39" tabindex="-1"></a><span class="do">## a[1,6]   1.657525e-01    0.2608746 1.003827   600</span></span>
-<span id="cb57-40"><a href="exSurvest.html#cb57-40" tabindex="-1"></a><span class="do">## a[2,6]   6.140845e-01    0.6526423 1.009069   240</span></span>
-<span id="cb57-41"><a href="exSurvest.html#cb57-41" tabindex="-1"></a><span class="do">## a[1,7]   1.297628e-01    0.3095811 1.002641   940</span></span>
-<span id="cb57-42"><a href="exSurvest.html#cb57-42" tabindex="-1"></a><span class="do">## a[2,7]   4.681571e-01    0.5063363 1.036410    63</span></span>
-<span id="cb57-43"><a href="exSurvest.html#cb57-43" tabindex="-1"></a><span class="do">## a[1,8]   6.384943e-02    0.1747082 1.005154   520</span></span>
-<span id="cb57-44"><a href="exSurvest.html#cb57-44" tabindex="-1"></a><span class="do">## a[2,8]   8.257151e-01    0.9800216 1.372205    10</span></span>
-<span id="cb57-45"><a href="exSurvest.html#cb57-45" tabindex="-1"></a><span class="do">## b[1]     4.951187e-01    0.7276083 1.000993  3000</span></span>
-<span id="cb57-46"><a href="exSurvest.html#cb57-46" tabindex="-1"></a><span class="do">## b[2]     4.865619e-01    0.6321674 1.001791  3000</span></span>
-<span id="cb57-47"><a href="exSurvest.html#cb57-47" tabindex="-1"></a><span class="do">## b[3]     6.500221e-01    0.7856553 1.001782  1600</span></span>
-<span id="cb57-48"><a href="exSurvest.html#cb57-48" tabindex="-1"></a><span class="do">## b[4]     7.621073e-01    0.8418391 1.003667   630</span></span>
-<span id="cb57-49"><a href="exSurvest.html#cb57-49" tabindex="-1"></a><span class="do">## b[5]     6.788254e-01    0.7558795 1.002687  1200</span></span>
-<span id="cb57-50"><a href="exSurvest.html#cb57-50" tabindex="-1"></a><span class="do">## b[6]     9.054949e-01    0.9379193 1.011865   210</span></span>
-<span id="cb57-51"><a href="exSurvest.html#cb57-51" tabindex="-1"></a><span class="do">## b[7]     7.581603e-01    0.8054830 1.037375    60</span></span>
-<span id="cb57-52"><a href="exSurvest.html#cb57-52" tabindex="-1"></a><span class="do">## b[8]     6.947590e-01    0.9445053 1.347959    10</span></span>
-<span id="cb57-53"><a href="exSurvest.html#cb57-53" tabindex="-1"></a><span class="do">## deviance 1.404884e+03 1516.9256411 1.373971    11</span></span></code></pre></div>
+<span id="cb57-29"><a href="exSurvest.html#cb57-29" tabindex="-1"></a><span class="do">## a[1,1]   4.095364e-01    0.6439080 1.003938  1200</span></span>
+<span id="cb57-30"><a href="exSurvest.html#cb57-30" tabindex="-1"></a><span class="do">## a[2,1]   4.782295e-01    0.7859011 1.001236  3000</span></span>
+<span id="cb57-31"><a href="exSurvest.html#cb57-31" tabindex="-1"></a><span class="do">## a[1,2]   4.625181e-01    0.6670335 1.000590  3000</span></span>
+<span id="cb57-32"><a href="exSurvest.html#cb57-32" tabindex="-1"></a><span class="do">## a[2,2]   6.281304e-01    0.8196244 1.004861   830</span></span>
+<span id="cb57-33"><a href="exSurvest.html#cb57-33" tabindex="-1"></a><span class="do">## a[1,3]   7.481242e-02    0.2321626 1.009478   380</span></span>
+<span id="cb57-34"><a href="exSurvest.html#cb57-34" tabindex="-1"></a><span class="do">## a[2,3]   9.173077e-01    0.9911213 1.008941   240</span></span>
+<span id="cb57-35"><a href="exSurvest.html#cb57-35" tabindex="-1"></a><span class="do">## a[1,4]   2.349906e-01    0.4231615 1.003517   660</span></span>
+<span id="cb57-36"><a href="exSurvest.html#cb57-36" tabindex="-1"></a><span class="do">## a[2,4]   5.605162e-01    0.6384613 1.004290   530</span></span>
+<span id="cb57-37"><a href="exSurvest.html#cb57-37" tabindex="-1"></a><span class="do">## a[1,5]   4.817269e-01    0.6774740 1.000558  3000</span></span>
+<span id="cb57-38"><a href="exSurvest.html#cb57-38" tabindex="-1"></a><span class="do">## a[2,5]   7.698123e-01    0.8496898 1.016996   120</span></span>
+<span id="cb57-39"><a href="exSurvest.html#cb57-39" tabindex="-1"></a><span class="do">## a[1,6]   1.713299e-01    0.2837163 1.001952  3000</span></span>
+<span id="cb57-40"><a href="exSurvest.html#cb57-40" tabindex="-1"></a><span class="do">## a[2,6]   6.139255e-01    0.6508677 1.001975  1500</span></span>
+<span id="cb57-41"><a href="exSurvest.html#cb57-41" tabindex="-1"></a><span class="do">## a[1,7]   1.365980e-01    0.3232679 1.001664  2400</span></span>
+<span id="cb57-42"><a href="exSurvest.html#cb57-42" tabindex="-1"></a><span class="do">## a[2,7]   4.715268e-01    0.5039232 1.005594   390</span></span>
+<span id="cb57-43"><a href="exSurvest.html#cb57-43" tabindex="-1"></a><span class="do">## a[1,8]   5.931756e-02    0.1677752 1.020197   100</span></span>
+<span id="cb57-44"><a href="exSurvest.html#cb57-44" tabindex="-1"></a><span class="do">## a[2,8]   7.679721e-01    0.9448277 2.092408     5</span></span>
+<span id="cb57-45"><a href="exSurvest.html#cb57-45" tabindex="-1"></a><span class="do">## b[1]     5.125595e-01    0.7311615 1.003342   880</span></span>
+<span id="cb57-46"><a href="exSurvest.html#cb57-46" tabindex="-1"></a><span class="do">## b[2]     4.877287e-01    0.6299324 1.002685   920</span></span>
+<span id="cb57-47"><a href="exSurvest.html#cb57-47" tabindex="-1"></a><span class="do">## b[3]     6.501616e-01    0.7801683 1.000627  3000</span></span>
+<span id="cb57-48"><a href="exSurvest.html#cb57-48" tabindex="-1"></a><span class="do">## b[4]     7.654597e-01    0.8343153 1.008188   270</span></span>
+<span id="cb57-49"><a href="exSurvest.html#cb57-49" tabindex="-1"></a><span class="do">## b[5]     6.782806e-01    0.7542348 1.004592   490</span></span>
+<span id="cb57-50"><a href="exSurvest.html#cb57-50" tabindex="-1"></a><span class="do">## b[6]     9.038486e-01    0.9362028 1.002399  3000</span></span>
+<span id="cb57-51"><a href="exSurvest.html#cb57-51" tabindex="-1"></a><span class="do">## b[7]     7.529580e-01    0.8001652 1.012333   170</span></span>
+<span id="cb57-52"><a href="exSurvest.html#cb57-52" tabindex="-1"></a><span class="do">## b[8]     8.805066e-01    0.9846847 2.078335     5</span></span>
+<span id="cb57-53"><a href="exSurvest.html#cb57-53" tabindex="-1"></a><span class="do">## deviance 1.350982e+03 1521.9923757 2.008238     5</span></span></code></pre></div>
 <div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="exSurvest.html#cb58-1" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">c</span>(<span class="dv">2015</span>,<span class="dv">2023</span>), <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="at">type=</span><span class="st">&quot;n&quot;</span>, <span class="at">las=</span><span class="dv">1</span>, <span class="at">xlab=</span><span class="cn">NA</span>, <span class="at">ylab=</span><span class="st">&quot;Apparent survival&quot;</span>)</span>
 <span id="cb58-2"><a href="exSurvest.html#cb58-2" tabindex="-1"></a></span>
 <span id="cb58-3"><a href="exSurvest.html#cb58-3" tabindex="-1"></a>phi <span class="ot">&lt;-</span> <span class="fu">apply</span>(mod<span class="sc">$</span>sims.list<span class="sc">$</span>a, <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>), mean)</span>
