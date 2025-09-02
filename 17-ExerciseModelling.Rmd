@@ -1,0 +1,213 @@
+# Exercise: Modelling {#excmigmodel}
+
+In this exercise, we will use a state-dependent migration model to model the migration 
+of Arctic breeding geese. You will know by now that the model is relatively complex 
+and uses several parameters that might be tricky to derive. 
+Therefore, we will use existing model code, go through the modelling steps together 
+and look at several output possibilities.
+Due to some changes in dependent R-packages, and updates not being on Github yet,
+simply copy the code below and replace the code in "Workflow.R". 
+
+We will proceed as follows:
+* First, start R and install the required package "install_github("slisovski/sdpMig", force = TRUE)"
+* Find the directory, open project "sdpMig.Rproj" 
+* Under files, open "Workflow.R" and overwrite it with R-code below
+* Try to run the code in "Workflow.R" line by line (we'll do this together)
+
+
+
+## Exercises
+
+### Change Parameters
+
+Under files, find the folder "Parameters" and within it, find "WFGParameter_ex4_mod.csv".
+Try changing some site-specific parameters, e.g. for 
+* timing of food availability (see values for )
+* amount of food available
+* predation risk parameters
+
+### Analyse resulting migration patterns
+
+Have a look at resulting migration patterns - mortality, places visited, 
+staging times and body condition - and compare those to the outcomes of 
+the original model.
+
+Try to find answers to questions such as
+* When do geese leave wintering grounds?
+* Which stop-over sites do they use for how long?
+
+Start changing some parameters, e.g. food availability:
+* Which parameters primarily change staging times?
+* What happens if specific sites are not available anymore?
+* How does body condition change over time and why?
+
+
+
+## Code to replace existing code in "Workflow.R"
+
+The following code replaces existing code in file "Workflow.R". 
+
+```
+install_github("slisovski/sdpMig", force = TRUE)
+library(sdpMig)
+library(zoo)
+library(ggplot2)
+library(sf)
+library(rnaturalearth)
+
+###############################################
+### Parameters ################################
+###############################################
+
+parms <- list(
+  
+  MaxT   = 100,  ## Maximum time
+  MaxX   = 100,  ## Maximum body condition
+  NSites = 8,    ## Excl. Breeding site
+  
+  ### Species specific Parameters ##
+  
+  B0 = 3,       ## Future reproductive success
+  w  = 0.028,   ## Parameters for sigmoidal TR function
+  xc = 55,      ## 
+  max_u = 1.0,  ## maximum foraging intensity
+  f = 1.0,      ## proportion of x that cannot be devoted to flying
+  
+  ## Flying capacities
+  c     = 14776,
+  speed = 1440,
+  
+  ## Wind
+  WindAssist = 0,
+  WindProb   = 1,
+  
+  ## Decision Error
+  decError = 4000,
+  
+  ## Terminal Reward
+  xFTReward = c(0, 86, 87, 97, 98, 100),
+  yFTReward = c(0, 0,   2,  2,  0,   0),
+  
+  
+  ### Site specific Parameters ###
+  path = "Parameters/WFGParameter_ex4.csv",
+
+  pred_a1  = 2,
+  pred_a2  = 2,
+  
+  ### Accuracy
+  ZStdNorm = c(-2.5, -2.0, -1.5, -1.0, -0.5,  0.0,  0.5,  1.0,  1.5,  2.0,  2.5),
+  PStdNorm = c(0.0092, 0.0279, 0.0655, 0.1210, 0.1747, 0.2034, 0.1747, 0.1210, 0.0655, 0.0279, 0.0092)
+  
+) ## End parameter ####
+
+# adjust directory to your working directory
+
+siteTab <- read.csv("/Users/bauersil/Dropbox/ETH-Kurs/student_projects/6_Modelling_migration/Parameters/WFGParameter_ex4_mod.csv", skip = 2, sep = ",", dec = ".")
+head(siteTab)
+
+cls <-  topo.colors(nrow(siteTab))
+
+
+### Sites
+world <- ne_countries(scale = "medium", returnclass = "sf")
+
+ggplot() +
+  geom_sf(data = world, fill = "grey90", color = "grey50") +
+  geom_point(data = siteTab, aes(x = Lon, y = Lat),
+             shape = 21, size = 5, stroke = 2,
+             fill = adjustcolor(cls, alpha.f = 0.7)) +
+  geom_text(data = siteTab, aes(x = Lon, y = Lat, label = 1:nrow(siteTab)),
+            size = 3.5, vjust = -1) +
+  coord_sf(xlim = c(-10, 150), ylim = c(0, 80), expand = FALSE) +
+  theme_minimal() +
+  labs(title = "Site Map - Eurasia Focus")
+
+text(siteTab$Lon, siteTab$Lat, labels = 1:nrow(siteTab), cex = 1.1)
+
+### Quality (energy intake)
+time <- siteTab[,substring(names(siteTab), 1,1)=="x"]
+dei  <- siteTab[,substring(names(siteTab), 1,1)=="y"]
+
+plot(NA, xlim = c(range(time, na.rm = T)), ylim = range(dei, na.rm = T), xlab = "time", ylab = "MEI (x)")
+for(i in 1:nrow(siteTab)) lines(time[i,], dei[i,], type = "o", pch = 16, lwd = 2, col = cls[i])
+
+par(new = T)
+plot(parms$xFTReward, parms$yFTReward, xlim = c(range(time, na.rm = T)), ylim = range(parms$yFTReward, na.rm = T),
+     xaxt = "n", yaxt = "n", xlab = "", ylab = "", type = "l", lty = 2)
+
+
+
+#############################
+### Backward Simulation #####
+#############################
+
+
+sdp  <- makeSDPmig(parms, "Whitefronted Geese")
+sdpM <- bwdIteration(sdp, pbar = TRUE)
+
+
+#############################
+### Forward Simulation ######
+#############################
+
+simu <- MigSim(sdpM, 100, 1, 1, c(10, 25))
+
+smP  <- simuPlot(simu, sdpM, fun = "mean")
+decisionPlot(sdpM)
+
+    # Calculate three major output measures: mortality, staging times per site, body condition per site, fuelling rates per site 
+    # Mortality
+    mort <- sum(apply(smP, 1, function(x) any(is.na(x))))/nrow(smP); mort 
+    
+    # Staging times per site
+    smP # individual staging times
+    smP[apply(smP, 1, function(x) any(is.na(x))),] <- cbind(rep(NA, ncol(smP)))
+    mean.staging <- apply(smP, 2, mean, na.rm = T); mean.staging
+    
+    # Mean body condition per site over time
+    meanX <- matrix(ncol = sdp@Init$MaxT, nrow = sdp@Init$NSites+1)
+    for(i in 1:ncol(meanX)) {
+      t1 <- aggregate(simu[,3,i], by = list(simu[,2,i]), FUN = function(x) mean(x, na.rm = T))
+      meanX[t1$Group.1+1, i]  <- t1$x
+    }
+    t(meanX)
+    mean.bodycond <- apply(t(meanX), 2, weighted.mean, w= , na.rm=T); mean.bodycond
+    
+    ### Fuelling rates per site
+    cond <- array(dim = c(sdp@Init$NSites+1, 4, dim(simu)[1]))
+    for(i in 1:dim(simu)[1]) {
+      if(all(simu[i,5,]==0)) {
+        tmp  <- simu[i,,-which(is.na(simu[i,4,]) & simu[i,2,]<sdp@Init$NSites)]
+        tmp2 <- lapply(split(as.data.frame(t(tmp)), f = tmp[2,]), function(x) cbind(nrow(x), x[1,3], x[nrow(x),3]))
+        out <- cbind(0:sdp@Init$NSites, NA, NA, NA)
+        out[match(as.numeric(names(tmp2)), out[,1]),-1] <- do.call("rbind", tmp2)
+        cond[,,i] <- out
+      }
+    }
+    indRate <- t(apply(cond, c(1,3), function(x) (x[4]-x[3])/x[2]))
+      indRate[,sdp@Init$NSites+1] <-  apply(cond, 3, function(x) x[nrow(x),3])
+    mean.fuelrates <- apply(indRate, 2, mean, na.rm=T); mean.fuelrates
+    
+
+
+    ######### Plot Individual body condition over time
+    plot(NA, xlim = c(0, sdpM@Init$MaxT+1), ylim = c(1, sdpM@Init$MaxX), bty = "n", xlab = "time", ylab = "body condition", 
+         las = 1, cex.lab  = 1.2)
+    
+    for(i in 1:dim(simu)[1]) {
+      tmp <- simu[i,,]
+      tmp <- tmp[,tmp[5,]!=1]
+      if(!is.null(nrow(tmp))) lines(tmp[1,], tmp[3,], col = adjustcolor("grey60", alpha.f = 0.6))
+    }
+    for(i in 1:dim(simu)[1]) {
+      tmp <- simu[i,,]
+      tmp <- tmp[,!is.na(tmp[2,]) & tmp[5,]!=1]
+      if(!is.null(nrow(tmp))) points(tmp[1,], tmp[3,], col = c(rainbow(sdpM@Init$NSites+1, alpha = 0.6)[tmp[2,]+1]), pch = 16) else {
+        points(tmp[1], tmp[3], col = c(rainbow(sdpM@Init$NSites, alpha = 0.6)[tmp[2]]), pch = 16) 
+      }
+    }
+    legend("topleft", paste("site", 1:sdpM@Init$NSites), pch = 16, col = rainbow(sdpM@Init$NSites), bty="n",ncol=2)
+    #########
+```
+
