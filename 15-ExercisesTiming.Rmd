@@ -87,7 +87,7 @@ Questions:
 
 - The paper introduces a methodology to account for the observer bias. How much different are your results compared to the results in the paper?  
 
-If you prefer fitting a non-linear trend, use the R-code provided in the next R-junk. What conclusion changes from the ones above (linear regression)? What additional information do you gain? 
+If you prefer fitting a non-linear trend, use the R-code provided in the next R-chunk. What conclusion changes from the ones above (linear regression)? What additional information do you gain? 
 
 
 ```{r, eval=FALSE}
