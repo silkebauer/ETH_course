@@ -413,122 +413,105 @@ We use uniform prior distributions for all parameters with a parameter space lim
 <span id="cb44-6"><a href="exSurvest.html#cb44-6" tabindex="-1"></a><span class="do">##  $ nind : int 1310</span></span>
 <span id="cb44-7"><a href="exSurvest.html#cb44-7" tabindex="-1"></a><span class="do">##  $ nocc : int 9</span></span></code></pre></div>
 <p>We then need to specify initial values and the parameters that we would like to save.</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="exSurvest.html#cb45-1" tabindex="-1"></a><span class="fu">library</span>(R2jags)</span></code></pre></div>
-<pre><code>## Lade nötiges Paket: rjags</code></pre>
-<pre><code>## Lade nötiges Paket: coda</code></pre>
-<pre><code>## Linked to JAGS 4.3.1</code></pre>
-<pre><code>## Loaded modules: basemod,bugs</code></pre>
-<pre><code>## 
-## Attache Paket: &#39;R2jags&#39;</code></pre>
-<pre><code>## Das folgende Objekt ist maskiert &#39;package:coda&#39;:
-## 
-##     traceplot</code></pre>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="exSurvest.html#cb52-1" tabindex="-1"></a>initz <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="cn">NA</span>, <span class="at">ncol=</span>datax<span class="sc">$</span>nocc, <span class="at">nrow=</span>datax<span class="sc">$</span>nind)</span>
-<span id="cb52-2"><a href="exSurvest.html#cb52-2" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>datax<span class="sc">$</span>nind) initz[i,(datax<span class="sc">$</span>first[i]<span class="sc">+</span><span class="dv">1</span>)<span class="sc">:</span>datax<span class="sc">$</span>nocc] <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb52-3"><a href="exSurvest.html#cb52-3" tabindex="-1"></a>initfun <span class="ot">&lt;-</span> <span class="cf">function</span>(){</span>
-<span id="cb52-4"><a href="exSurvest.html#cb52-4" tabindex="-1"></a>  <span class="fu">list</span>(<span class="at">a=</span><span class="fu">matrix</span>(<span class="fu">runif</span>(<span class="dv">2</span><span class="sc">*</span>(datax<span class="sc">$</span>nocc<span class="dv">-1</span>), <span class="dv">0</span>,<span class="dv">1</span>), <span class="at">ncol=</span>datax<span class="sc">$</span>nocc<span class="dv">-1</span>, <span class="at">nrow=</span><span class="dv">2</span>),</span>
-<span id="cb52-5"><a href="exSurvest.html#cb52-5" tabindex="-1"></a>       <span class="at">b=</span><span class="fu">runif</span>(datax<span class="sc">$</span>nocc<span class="dv">-1</span>, <span class="dv">0</span>,<span class="dv">1</span>),</span>
-<span id="cb52-6"><a href="exSurvest.html#cb52-6" tabindex="-1"></a>       <span class="at">z=</span>initz)</span>
-<span id="cb52-7"><a href="exSurvest.html#cb52-7" tabindex="-1"></a>}</span>
-<span id="cb52-8"><a href="exSurvest.html#cb52-8" tabindex="-1"></a></span>
-<span id="cb52-9"><a href="exSurvest.html#cb52-9" tabindex="-1"></a></span>
-<span id="cb52-10"><a href="exSurvest.html#cb52-10" tabindex="-1"></a>parameters <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>)</span>
-<span id="cb52-11"><a href="exSurvest.html#cb52-11" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="fu">jags</span>(datax, <span class="at">inits=</span>initfun, <span class="at">parameters.to.save=</span>parameters, </span>
-<span id="cb52-12"><a href="exSurvest.html#cb52-12" tabindex="-1"></a>            <span class="at">model.file=</span><span class="st">&quot;jags/cjs.txt&quot;</span>, <span class="at">n.chains=</span><span class="dv">3</span>, <span class="at">n.iter=</span><span class="dv">2000</span>)</span></code></pre></div>
-<pre><code>## module glm loaded</code></pre>
-<pre><code>## Compiling model graph
-##    Resolving undeclared variables
-##    Allocating nodes
-## Graph information:
-##    Observed stochastic nodes: 3726
-##    Unobserved stochastic nodes: 3750
-##    Total graph size: 28048
-## 
-## Initializing model</code></pre>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="exSurvest.html#cb55-1" tabindex="-1"></a>mod <span class="ot">&lt;-</span> mod<span class="sc">$</span>BUGSoutput</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="exSurvest.html#cb45-1" tabindex="-1"></a><span class="fu">library</span>(R2jags)</span>
+<span id="cb45-2"><a href="exSurvest.html#cb45-2" tabindex="-1"></a>initz <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="cn">NA</span>, <span class="at">ncol=</span>datax<span class="sc">$</span>nocc, <span class="at">nrow=</span>datax<span class="sc">$</span>nind)</span>
+<span id="cb45-3"><a href="exSurvest.html#cb45-3" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>datax<span class="sc">$</span>nind) initz[i,(datax<span class="sc">$</span>first[i]<span class="sc">+</span><span class="dv">1</span>)<span class="sc">:</span>datax<span class="sc">$</span>nocc] <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb45-4"><a href="exSurvest.html#cb45-4" tabindex="-1"></a>initfun <span class="ot">&lt;-</span> <span class="cf">function</span>(){</span>
+<span id="cb45-5"><a href="exSurvest.html#cb45-5" tabindex="-1"></a>  <span class="fu">list</span>(<span class="at">a=</span><span class="fu">matrix</span>(<span class="fu">runif</span>(<span class="dv">2</span><span class="sc">*</span>(datax<span class="sc">$</span>nocc<span class="dv">-1</span>), <span class="dv">0</span>,<span class="dv">1</span>), <span class="at">ncol=</span>datax<span class="sc">$</span>nocc<span class="dv">-1</span>, <span class="at">nrow=</span><span class="dv">2</span>),</span>
+<span id="cb45-6"><a href="exSurvest.html#cb45-6" tabindex="-1"></a>       <span class="at">b=</span><span class="fu">runif</span>(datax<span class="sc">$</span>nocc<span class="dv">-1</span>, <span class="dv">0</span>,<span class="dv">1</span>),</span>
+<span id="cb45-7"><a href="exSurvest.html#cb45-7" tabindex="-1"></a>       <span class="at">z=</span>initz)</span>
+<span id="cb45-8"><a href="exSurvest.html#cb45-8" tabindex="-1"></a>}</span>
+<span id="cb45-9"><a href="exSurvest.html#cb45-9" tabindex="-1"></a></span>
+<span id="cb45-10"><a href="exSurvest.html#cb45-10" tabindex="-1"></a></span>
+<span id="cb45-11"><a href="exSurvest.html#cb45-11" tabindex="-1"></a>parameters <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>)</span>
+<span id="cb45-12"><a href="exSurvest.html#cb45-12" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="fu">jags</span>(datax, <span class="at">inits=</span>initfun, <span class="at">parameters.to.save=</span>parameters, </span>
+<span id="cb45-13"><a href="exSurvest.html#cb45-13" tabindex="-1"></a>            <span class="at">model.file=</span><span class="st">&quot;jags/cjs.txt&quot;</span>, <span class="at">n.chains=</span><span class="dv">3</span>, <span class="at">n.iter=</span><span class="dv">2000</span>)</span>
+<span id="cb45-14"><a href="exSurvest.html#cb45-14" tabindex="-1"></a>mod <span class="ot">&lt;-</span> mod<span class="sc">$</span>BUGSoutput</span>
+<span id="cb45-15"><a href="exSurvest.html#cb45-15" tabindex="-1"></a><span class="fu">save</span>(mod, <span class="at">file=</span><span class="st">&quot;modelfits/survivalmodel.rda&quot;</span>)</span></code></pre></div>
 <p>Before we look at the results, we check how well the Markov chains converged. The chains look ok except for the parameters of the last year. For the last year, apparent survival cannot be separated from recapture/resighting probability. Thus, we must expect that these chains do not converge well.</p>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="exSurvest.html#cb56-1" tabindex="-1"></a><span class="co"># check </span></span>
-<span id="cb56-2"><a href="exSurvest.html#cb56-2" tabindex="-1"></a><span class="fu">traceplot</span>(mod)</span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="exSurvest.html#cb46-1" tabindex="-1"></a><span class="co"># check </span></span>
+<span id="cb46-2"><a href="exSurvest.html#cb46-2" tabindex="-1"></a><span class="fu">traceplot</span>(mod)</span></code></pre></div>
 <p>In the Cormack-Jolly-Seber model, for the last occasion, only the product of survival and recapture probability is estimable. Therefore, for these two parameters, it does not look like the Markov chains have converged.</p>
 <p>We then look at the results</p>
-<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="exSurvest.html#cb57-1" tabindex="-1"></a>mod<span class="sc">$</span>summary</span>
-<span id="cb57-2"><a href="exSurvest.html#cb57-2" tabindex="-1"></a><span class="do">##                  mean           sd         2.5%          25%          50%</span></span>
-<span id="cb57-3"><a href="exSurvest.html#cb57-3" tabindex="-1"></a><span class="do">## a[1,1]   3.579081e-01   0.14690512 1.410704e-01 2.498345e-01 3.368257e-01</span></span>
-<span id="cb57-4"><a href="exSurvest.html#cb57-4" tabindex="-1"></a><span class="do">## a[2,1]   3.607773e-01   0.19013937 7.155267e-02 2.215566e-01 3.312382e-01</span></span>
-<span id="cb57-5"><a href="exSurvest.html#cb57-5" tabindex="-1"></a><span class="do">## a[1,2]   3.967045e-01   0.13546861 1.703012e-01 2.982915e-01 3.857385e-01</span></span>
-<span id="cb57-6"><a href="exSurvest.html#cb57-6" tabindex="-1"></a><span class="do">## a[2,2]   5.551238e-01   0.13603812 3.006965e-01 4.610919e-01 5.469994e-01</span></span>
-<span id="cb57-7"><a href="exSurvest.html#cb57-7" tabindex="-1"></a><span class="do">## a[1,3]   5.100021e-02   0.04867985 1.420998e-03 1.504552e-02 3.623942e-02</span></span>
-<span id="cb57-8"><a href="exSurvest.html#cb57-8" tabindex="-1"></a><span class="do">## a[2,3]   8.033179e-01   0.12544301 5.262155e-01 7.237607e-01 8.165390e-01</span></span>
-<span id="cb57-9"><a href="exSurvest.html#cb57-9" tabindex="-1"></a><span class="do">## a[1,4]   1.741888e-01   0.10710407 2.232044e-02 9.282719e-02 1.568486e-01</span></span>
-<span id="cb57-10"><a href="exSurvest.html#cb57-10" tabindex="-1"></a><span class="do">## a[2,4]   5.192312e-01   0.05344142 4.177423e-01 4.813643e-01 5.182136e-01</span></span>
-<span id="cb57-11"><a href="exSurvest.html#cb57-11" tabindex="-1"></a><span class="do">## a[1,5]   3.942740e-01   0.13974363 1.468773e-01 2.947123e-01 3.816240e-01</span></span>
-<span id="cb57-12"><a href="exSurvest.html#cb57-12" tabindex="-1"></a><span class="do">## a[2,5]   7.320493e-01   0.06162039 6.110721e-01 6.907536e-01 7.326188e-01</span></span>
-<span id="cb57-13"><a href="exSurvest.html#cb57-13" tabindex="-1"></a><span class="do">## a[1,6]   1.343465e-01   0.06182839 4.019983e-02 8.742291e-02 1.259538e-01</span></span>
-<span id="cb57-14"><a href="exSurvest.html#cb57-14" tabindex="-1"></a><span class="do">## a[2,6]   5.945003e-01   0.03154709 5.344815e-01 5.722535e-01 5.944587e-01</span></span>
-<span id="cb57-15"><a href="exSurvest.html#cb57-15" tabindex="-1"></a><span class="do">## a[1,7]   8.917291e-02   0.08010705 3.386082e-03 2.861685e-02 6.684616e-02</span></span>
-<span id="cb57-16"><a href="exSurvest.html#cb57-16" tabindex="-1"></a><span class="do">## a[2,7]   4.571114e-01   0.02717100 4.060070e-01 4.384032e-01 4.567562e-01</span></span>
-<span id="cb57-17"><a href="exSurvest.html#cb57-17" tabindex="-1"></a><span class="do">## a[1,8]   4.929300e-02   0.04996788 1.080848e-03 1.289218e-02 3.309377e-02</span></span>
-<span id="cb57-18"><a href="exSurvest.html#cb57-18" tabindex="-1"></a><span class="do">## a[2,8]   8.119526e-01   0.15476080 4.470991e-01 7.215140e-01 8.503444e-01</span></span>
-<span id="cb57-19"><a href="exSurvest.html#cb57-19" tabindex="-1"></a><span class="do">## b[1]     4.001837e-01   0.15831648 1.360035e-01 2.819253e-01 3.839743e-01</span></span>
-<span id="cb57-20"><a href="exSurvest.html#cb57-20" tabindex="-1"></a><span class="do">## b[2]     4.040775e-01   0.10735693 2.164360e-01 3.259480e-01 3.993803e-01</span></span>
-<span id="cb57-21"><a href="exSurvest.html#cb57-21" tabindex="-1"></a><span class="do">## b[3]     5.720286e-01   0.11275205 3.542655e-01 4.966435e-01 5.685720e-01</span></span>
-<span id="cb57-22"><a href="exSurvest.html#cb57-22" tabindex="-1"></a><span class="do">## b[4]     7.183799e-01   0.06549556 5.876554e-01 6.738292e-01 7.212406e-01</span></span>
-<span id="cb57-23"><a href="exSurvest.html#cb57-23" tabindex="-1"></a><span class="do">## b[5]     6.390186e-01   0.06014063 5.208697e-01 5.987511e-01 6.400187e-01</span></span>
-<span id="cb57-24"><a href="exSurvest.html#cb57-24" tabindex="-1"></a><span class="do">## b[6]     8.808501e-01   0.03358445 8.063861e-01 8.603508e-01 8.840353e-01</span></span>
-<span id="cb57-25"><a href="exSurvest.html#cb57-25" tabindex="-1"></a><span class="do">## b[7]     7.235990e-01   0.03900797 6.435485e-01 6.962633e-01 7.260461e-01</span></span>
-<span id="cb57-26"><a href="exSurvest.html#cb57-26" tabindex="-1"></a><span class="do">## b[8]     5.559018e-01   0.13932289 4.056274e-01 4.578523e-01 5.123155e-01</span></span>
-<span id="cb57-27"><a href="exSurvest.html#cb57-27" tabindex="-1"></a><span class="do">## deviance 1.387413e+03 172.04391369 9.187164e+02 1.310614e+03 1.432749e+03</span></span>
-<span id="cb57-28"><a href="exSurvest.html#cb57-28" tabindex="-1"></a><span class="do">##                   75%        97.5%     Rhat n.eff</span></span>
-<span id="cb57-29"><a href="exSurvest.html#cb57-29" tabindex="-1"></a><span class="do">## a[1,1]   4.383729e-01    0.7196800 1.001172  3000</span></span>
-<span id="cb57-30"><a href="exSurvest.html#cb57-30" tabindex="-1"></a><span class="do">## a[2,1]   4.697703e-01    0.8029691 1.001262  2600</span></span>
-<span id="cb57-31"><a href="exSurvest.html#cb57-31" tabindex="-1"></a><span class="do">## a[1,2]   4.827166e-01    0.6990534 1.004566   520</span></span>
-<span id="cb57-32"><a href="exSurvest.html#cb57-32" tabindex="-1"></a><span class="do">## a[2,2]   6.460949e-01    0.8333966 1.006390   490</span></span>
-<span id="cb57-33"><a href="exSurvest.html#cb57-33" tabindex="-1"></a><span class="do">## a[1,3]   7.267660e-02    0.1821528 1.002351  1100</span></span>
-<span id="cb57-34"><a href="exSurvest.html#cb57-34" tabindex="-1"></a><span class="do">## a[2,3]   9.030432e-01    0.9897416 1.007036   410</span></span>
-<span id="cb57-35"><a href="exSurvest.html#cb57-35" tabindex="-1"></a><span class="do">## a[1,4]   2.342415e-01    0.4243667 1.001311  2500</span></span>
-<span id="cb57-36"><a href="exSurvest.html#cb57-36" tabindex="-1"></a><span class="do">## a[2,4]   5.564189e-01    0.6218842 1.003612   640</span></span>
-<span id="cb57-37"><a href="exSurvest.html#cb57-37" tabindex="-1"></a><span class="do">## a[1,5]   4.874236e-01    0.6909952 1.000696  3000</span></span>
-<span id="cb57-38"><a href="exSurvest.html#cb57-38" tabindex="-1"></a><span class="do">## a[2,5]   7.720097e-01    0.8535823 1.001950  1400</span></span>
-<span id="cb57-39"><a href="exSurvest.html#cb57-39" tabindex="-1"></a><span class="do">## a[1,6]   1.727651e-01    0.2697558 1.001443  2100</span></span>
-<span id="cb57-40"><a href="exSurvest.html#cb57-40" tabindex="-1"></a><span class="do">## a[2,6]   6.150834e-01    0.6573950 1.005546   410</span></span>
-<span id="cb57-41"><a href="exSurvest.html#cb57-41" tabindex="-1"></a><span class="do">## a[1,7]   1.268869e-01    0.3055715 1.002201  3000</span></span>
-<span id="cb57-42"><a href="exSurvest.html#cb57-42" tabindex="-1"></a><span class="do">## a[2,7]   4.746235e-01    0.5129423 1.002068  1800</span></span>
-<span id="cb57-43"><a href="exSurvest.html#cb57-43" tabindex="-1"></a><span class="do">## a[1,8]   6.879095e-02    0.1820264 1.002156  1200</span></span>
-<span id="cb57-44"><a href="exSurvest.html#cb57-44" tabindex="-1"></a><span class="do">## a[2,8]   9.401938e-01    0.9950865 1.047934   180</span></span>
-<span id="cb57-45"><a href="exSurvest.html#cb57-45" tabindex="-1"></a><span class="do">## b[1]     5.039640e-01    0.7355364 1.001768  1900</span></span>
-<span id="cb57-46"><a href="exSurvest.html#cb57-46" tabindex="-1"></a><span class="do">## b[2]     4.762941e-01    0.6254877 1.005170   430</span></span>
-<span id="cb57-47"><a href="exSurvest.html#cb57-47" tabindex="-1"></a><span class="do">## b[3]     6.515733e-01    0.8002085 1.000628  3000</span></span>
-<span id="cb57-48"><a href="exSurvest.html#cb57-48" tabindex="-1"></a><span class="do">## b[4]     7.646688e-01    0.8404250 1.000649  3000</span></span>
-<span id="cb57-49"><a href="exSurvest.html#cb57-49" tabindex="-1"></a><span class="do">## b[5]     6.805832e-01    0.7527484 1.001343  2400</span></span>
-<span id="cb57-50"><a href="exSurvest.html#cb57-50" tabindex="-1"></a><span class="do">## b[6]     9.051555e-01    0.9381220 1.010905   310</span></span>
-<span id="cb57-51"><a href="exSurvest.html#cb57-51" tabindex="-1"></a><span class="do">## b[7]     7.512913e-01    0.7966394 1.004152  3000</span></span>
-<span id="cb57-52"><a href="exSurvest.html#cb57-52" tabindex="-1"></a><span class="do">## b[8]     6.046360e-01    0.9513437 1.039273   200</span></span>
-<span id="cb57-53"><a href="exSurvest.html#cb57-53" tabindex="-1"></a><span class="do">## deviance 1.504601e+03 1612.9255318 1.065042    89</span></span></code></pre></div>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="exSurvest.html#cb58-1" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">c</span>(<span class="dv">2015</span>,<span class="dv">2023</span>), <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="at">type=</span><span class="st">&quot;n&quot;</span>, <span class="at">las=</span><span class="dv">1</span>, <span class="at">xlab=</span><span class="cn">NA</span>, <span class="at">ylab=</span><span class="st">&quot;Apparent survival&quot;</span>)</span>
-<span id="cb58-2"><a href="exSurvest.html#cb58-2" tabindex="-1"></a></span>
-<span id="cb58-3"><a href="exSurvest.html#cb58-3" tabindex="-1"></a>phi <span class="ot">&lt;-</span> <span class="fu">apply</span>(mod<span class="sc">$</span>sims.list<span class="sc">$</span>a, <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>), mean)</span>
-<span id="cb58-4"><a href="exSurvest.html#cb58-4" tabindex="-1"></a>phi.lwr <span class="ot">&lt;-</span> <span class="fu">apply</span>(mod<span class="sc">$</span>sims.list<span class="sc">$</span>a, <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>), quantile, <span class="at">probs=</span><span class="fl">0.025</span>)</span>
-<span id="cb58-5"><a href="exSurvest.html#cb58-5" tabindex="-1"></a>phi.upr <span class="ot">&lt;-</span> <span class="fu">apply</span>(mod<span class="sc">$</span>sims.list<span class="sc">$</span>a, <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>), quantile, <span class="at">probs=</span><span class="fl">0.975</span>)</span>
-<span id="cb58-6"><a href="exSurvest.html#cb58-6" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fl">2015.5</span>, <span class="fl">2022.5</span>, <span class="at">by=</span><span class="dv">1</span>)</span>
-<span id="cb58-7"><a href="exSurvest.html#cb58-7" tabindex="-1"></a><span class="fu">segments</span>(x, phi.lwr[<span class="dv">1</span>,], x,phi.upr[<span class="dv">1</span>,])</span>
-<span id="cb58-8"><a href="exSurvest.html#cb58-8" tabindex="-1"></a><span class="fu">points</span>(x, phi[<span class="dv">1</span>,], <span class="at">pch=</span><span class="dv">21</span>, <span class="at">bg=</span><span class="st">&quot;white&quot;</span>)</span>
-<span id="cb58-9"><a href="exSurvest.html#cb58-9" tabindex="-1"></a><span class="fu">segments</span>(x<span class="fl">+0.1</span>, phi.lwr[<span class="dv">2</span>,], x<span class="fl">+0.1</span>,phi.upr[<span class="dv">2</span>,], <span class="at">lwd=</span><span class="dv">2</span>, <span class="at">col=</span><span class="st">&quot;brown&quot;</span>)</span>
-<span id="cb58-10"><a href="exSurvest.html#cb58-10" tabindex="-1"></a><span class="fu">points</span>(x<span class="fl">+0.1</span>, phi[<span class="dv">2</span>,], <span class="at">pch=</span><span class="dv">21</span>, <span class="at">bg=</span><span class="st">&quot;white&quot;</span>, <span class="at">col=</span><span class="st">&quot;brown&quot;</span>)</span>
-<span id="cb58-11"><a href="exSurvest.html#cb58-11" tabindex="-1"></a><span class="fu">legend</span>(<span class="dv">2015</span>, <span class="fl">1.1</span>, <span class="at">xpd=</span><span class="cn">NA</span>, <span class="at">lwd=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="at">col=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="st">&quot;brown&quot;</span>), <span class="at">legend=</span><span class="fu">c</span>(<span class="st">&quot;first year&quot;</span>, <span class="st">&quot;adult&quot;</span>), <span class="at">horiz=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="exSurvest.html#cb47-1" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&quot;modelfits/survivalmodel.rda&quot;</span>)</span>
+<span id="cb47-2"><a href="exSurvest.html#cb47-2" tabindex="-1"></a>mod<span class="sc">$</span>summary</span>
+<span id="cb47-3"><a href="exSurvest.html#cb47-3" tabindex="-1"></a><span class="do">##                  mean           sd         2.5%          25%          50%</span></span>
+<span id="cb47-4"><a href="exSurvest.html#cb47-4" tabindex="-1"></a><span class="do">## a[1,1]   3.568470e-01   0.14788623 1.405587e-01 2.539947e-01 3.321348e-01</span></span>
+<span id="cb47-5"><a href="exSurvest.html#cb47-5" tabindex="-1"></a><span class="do">## a[2,1]   3.755367e-01   0.19356107 8.713047e-02 2.282797e-01 3.459405e-01</span></span>
+<span id="cb47-6"><a href="exSurvest.html#cb47-6" tabindex="-1"></a><span class="do">## a[1,2]   3.865373e-01   0.13942289 1.550767e-01 2.900549e-01 3.737544e-01</span></span>
+<span id="cb47-7"><a href="exSurvest.html#cb47-7" tabindex="-1"></a><span class="do">## a[2,2]   5.488762e-01   0.13070284 3.242579e-01 4.544082e-01 5.434537e-01</span></span>
+<span id="cb47-8"><a href="exSurvest.html#cb47-8" tabindex="-1"></a><span class="do">## a[1,3]   5.486558e-02   0.05590406 1.886321e-03 1.593380e-02 3.655845e-02</span></span>
+<span id="cb47-9"><a href="exSurvest.html#cb47-9" tabindex="-1"></a><span class="do">## a[2,3]   8.190587e-01   0.11779720 5.571751e-01 7.413001e-01 8.370315e-01</span></span>
+<span id="cb47-10"><a href="exSurvest.html#cb47-10" tabindex="-1"></a><span class="do">## a[1,4]   1.729962e-01   0.10769660 2.468798e-02 9.276290e-02 1.545091e-01</span></span>
+<span id="cb47-11"><a href="exSurvest.html#cb47-11" tabindex="-1"></a><span class="do">## a[2,4]   5.173047e-01   0.05528124 4.118721e-01 4.789383e-01 5.164283e-01</span></span>
+<span id="cb47-12"><a href="exSurvest.html#cb47-12" tabindex="-1"></a><span class="do">## a[1,5]   4.055602e-01   0.14212213 1.609208e-01 3.004083e-01 3.955103e-01</span></span>
+<span id="cb47-13"><a href="exSurvest.html#cb47-13" tabindex="-1"></a><span class="do">## a[2,5]   7.329404e-01   0.06171004 6.143780e-01 6.904521e-01 7.336408e-01</span></span>
+<span id="cb47-14"><a href="exSurvest.html#cb47-14" tabindex="-1"></a><span class="do">## a[1,6]   1.363609e-01   0.06406940 3.885308e-02 8.852954e-02 1.254485e-01</span></span>
+<span id="cb47-15"><a href="exSurvest.html#cb47-15" tabindex="-1"></a><span class="do">## a[2,6]   5.955792e-01   0.03278355 5.299185e-01 5.742478e-01 5.952925e-01</span></span>
+<span id="cb47-16"><a href="exSurvest.html#cb47-16" tabindex="-1"></a><span class="do">## a[1,7]   8.791460e-02   0.08449543 2.056102e-03 2.461361e-02 6.273840e-02</span></span>
+<span id="cb47-17"><a href="exSurvest.html#cb47-17" tabindex="-1"></a><span class="do">## a[2,7]   4.525413e-01   0.02632604 4.028667e-01 4.333533e-01 4.520473e-01</span></span>
+<span id="cb47-18"><a href="exSurvest.html#cb47-18" tabindex="-1"></a><span class="do">## a[1,8]   4.298138e-02   0.04050236 1.271957e-03 1.224750e-02 3.034956e-02</span></span>
+<span id="cb47-19"><a href="exSurvest.html#cb47-19" tabindex="-1"></a><span class="do">## a[2,8]   7.443479e-01   0.12248904 4.961986e-01 6.554350e-01 7.602906e-01</span></span>
+<span id="cb47-20"><a href="exSurvest.html#cb47-20" tabindex="-1"></a><span class="do">## b[1]     3.970041e-01   0.15924497 1.363171e-01 2.770442e-01 3.758527e-01</span></span>
+<span id="cb47-21"><a href="exSurvest.html#cb47-21" tabindex="-1"></a><span class="do">## b[2]     4.108497e-01   0.10578283 2.134573e-01 3.371822e-01 4.063393e-01</span></span>
+<span id="cb47-22"><a href="exSurvest.html#cb47-22" tabindex="-1"></a><span class="do">## b[3]     5.674775e-01   0.10727348 3.541829e-01 4.938086e-01 5.699489e-01</span></span>
+<span id="cb47-23"><a href="exSurvest.html#cb47-23" tabindex="-1"></a><span class="do">## b[4]     7.183032e-01   0.06594685 5.854001e-01 6.725983e-01 7.206398e-01</span></span>
+<span id="cb47-24"><a href="exSurvest.html#cb47-24" tabindex="-1"></a><span class="do">## b[5]     6.373483e-01   0.05824699 5.216230e-01 5.983343e-01 6.393034e-01</span></span>
+<span id="cb47-25"><a href="exSurvest.html#cb47-25" tabindex="-1"></a><span class="do">## b[6]     8.787225e-01   0.03299766 8.101230e-01 8.562140e-01 8.808235e-01</span></span>
+<span id="cb47-26"><a href="exSurvest.html#cb47-26" tabindex="-1"></a><span class="do">## b[7]     7.285209e-01   0.03813321 6.511608e-01 7.025155e-01 7.297285e-01</span></span>
+<span id="cb47-27"><a href="exSurvest.html#cb47-27" tabindex="-1"></a><span class="do">## b[8]     5.984491e-01   0.11120362 4.534393e-01 5.161797e-01 5.666464e-01</span></span>
+<span id="cb47-28"><a href="exSurvest.html#cb47-28" tabindex="-1"></a><span class="do">## deviance 1.332716e+03 135.67941260 1.014992e+03 1.256716e+03 1.362579e+03</span></span>
+<span id="cb47-29"><a href="exSurvest.html#cb47-29" tabindex="-1"></a><span class="do">##                   75%        97.5%     Rhat n.eff</span></span>
+<span id="cb47-30"><a href="exSurvest.html#cb47-30" tabindex="-1"></a><span class="do">## a[1,1]   4.331101e-01    0.7264191 1.015359   290</span></span>
+<span id="cb47-31"><a href="exSurvest.html#cb47-31" tabindex="-1"></a><span class="do">## a[2,1]   4.955586e-01    0.8197887 1.004035  2000</span></span>
+<span id="cb47-32"><a href="exSurvest.html#cb47-32" tabindex="-1"></a><span class="do">## a[1,2]   4.692237e-01    0.7033673 1.001147  3000</span></span>
+<span id="cb47-33"><a href="exSurvest.html#cb47-33" tabindex="-1"></a><span class="do">## a[2,2]   6.369562e-01    0.8146704 1.016822   130</span></span>
+<span id="cb47-34"><a href="exSurvest.html#cb47-34" tabindex="-1"></a><span class="do">## a[1,3]   7.765612e-02    0.2033934 1.002384  3000</span></span>
+<span id="cb47-35"><a href="exSurvest.html#cb47-35" tabindex="-1"></a><span class="do">## a[2,3]   9.111923e-01    0.9903918 1.004871   460</span></span>
+<span id="cb47-36"><a href="exSurvest.html#cb47-36" tabindex="-1"></a><span class="do">## a[1,4]   2.316744e-01    0.4308784 1.001124  3000</span></span>
+<span id="cb47-37"><a href="exSurvest.html#cb47-37" tabindex="-1"></a><span class="do">## a[2,4]   5.546029e-01    0.6297880 1.007154   380</span></span>
+<span id="cb47-38"><a href="exSurvest.html#cb47-38" tabindex="-1"></a><span class="do">## a[1,5]   5.069964e-01    0.6992618 1.004664   480</span></span>
+<span id="cb47-39"><a href="exSurvest.html#cb47-39" tabindex="-1"></a><span class="do">## a[2,5]   7.737150e-01    0.8562529 1.012477   170</span></span>
+<span id="cb47-40"><a href="exSurvest.html#cb47-40" tabindex="-1"></a><span class="do">## a[1,6]   1.739418e-01    0.2904621 1.001019  3000</span></span>
+<span id="cb47-41"><a href="exSurvest.html#cb47-41" tabindex="-1"></a><span class="do">## a[2,6]   6.169479e-01    0.6609227 1.010869   210</span></span>
+<span id="cb47-42"><a href="exSurvest.html#cb47-42" tabindex="-1"></a><span class="do">## a[1,7]   1.235419e-01    0.3074530 1.002424  1000</span></span>
+<span id="cb47-43"><a href="exSurvest.html#cb47-43" tabindex="-1"></a><span class="do">## a[2,7]   4.707361e-01    0.5044802 1.006162   360</span></span>
+<span id="cb47-44"><a href="exSurvest.html#cb47-44" tabindex="-1"></a><span class="do">## a[1,8]   6.149474e-02    0.1465196 1.003023   870</span></span>
+<span id="cb47-45"><a href="exSurvest.html#cb47-45" tabindex="-1"></a><span class="do">## a[2,8]   8.398049e-01    0.9450982 1.403860     9</span></span>
+<span id="cb47-46"><a href="exSurvest.html#cb47-46" tabindex="-1"></a><span class="do">## b[1]     5.019517e-01    0.7367122 1.008187   320</span></span>
+<span id="cb47-47"><a href="exSurvest.html#cb47-47" tabindex="-1"></a><span class="do">## b[2]     4.836419e-01    0.6240565 1.005672   390</span></span>
+<span id="cb47-48"><a href="exSurvest.html#cb47-48" tabindex="-1"></a><span class="do">## b[3]     6.450357e-01    0.7738967 1.004918   450</span></span>
+<span id="cb47-49"><a href="exSurvest.html#cb47-49" tabindex="-1"></a><span class="do">## b[4]     7.659016e-01    0.8364106 1.006271   670</span></span>
+<span id="cb47-50"><a href="exSurvest.html#cb47-50" tabindex="-1"></a><span class="do">## b[5]     6.775658e-01    0.7491825 1.001338  2400</span></span>
+<span id="cb47-51"><a href="exSurvest.html#cb47-51" tabindex="-1"></a><span class="do">## b[6]     9.027881e-01    0.9366115 1.014192   160</span></span>
+<span id="cb47-52"><a href="exSurvest.html#cb47-52" tabindex="-1"></a><span class="do">## b[7]     7.544946e-01    0.7980943 1.004610   600</span></span>
+<span id="cb47-53"><a href="exSurvest.html#cb47-53" tabindex="-1"></a><span class="do">## b[8]     6.604551e-01    0.8672611 1.399615     9</span></span>
+<span id="cb47-54"><a href="exSurvest.html#cb47-54" tabindex="-1"></a><span class="do">## deviance 1.427505e+03 1531.6642401 1.412915     9</span></span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="exSurvest.html#cb48-1" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">c</span>(<span class="dv">2015</span>,<span class="dv">2023</span>), <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="at">type=</span><span class="st">&quot;n&quot;</span>, <span class="at">las=</span><span class="dv">1</span>, <span class="at">xlab=</span><span class="cn">NA</span>, <span class="at">ylab=</span><span class="st">&quot;Apparent survival&quot;</span>)</span>
+<span id="cb48-2"><a href="exSurvest.html#cb48-2" tabindex="-1"></a></span>
+<span id="cb48-3"><a href="exSurvest.html#cb48-3" tabindex="-1"></a>phi <span class="ot">&lt;-</span> <span class="fu">apply</span>(mod<span class="sc">$</span>sims.list<span class="sc">$</span>a, <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>), mean)</span>
+<span id="cb48-4"><a href="exSurvest.html#cb48-4" tabindex="-1"></a>phi.lwr <span class="ot">&lt;-</span> <span class="fu">apply</span>(mod<span class="sc">$</span>sims.list<span class="sc">$</span>a, <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>), quantile, <span class="at">probs=</span><span class="fl">0.025</span>)</span>
+<span id="cb48-5"><a href="exSurvest.html#cb48-5" tabindex="-1"></a>phi.upr <span class="ot">&lt;-</span> <span class="fu">apply</span>(mod<span class="sc">$</span>sims.list<span class="sc">$</span>a, <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>), quantile, <span class="at">probs=</span><span class="fl">0.975</span>)</span>
+<span id="cb48-6"><a href="exSurvest.html#cb48-6" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fl">2015.5</span>, <span class="fl">2022.5</span>, <span class="at">by=</span><span class="dv">1</span>)</span>
+<span id="cb48-7"><a href="exSurvest.html#cb48-7" tabindex="-1"></a><span class="fu">segments</span>(x, phi.lwr[<span class="dv">1</span>,], x,phi.upr[<span class="dv">1</span>,])</span>
+<span id="cb48-8"><a href="exSurvest.html#cb48-8" tabindex="-1"></a><span class="fu">points</span>(x, phi[<span class="dv">1</span>,], <span class="at">pch=</span><span class="dv">21</span>, <span class="at">bg=</span><span class="st">&quot;white&quot;</span>)</span>
+<span id="cb48-9"><a href="exSurvest.html#cb48-9" tabindex="-1"></a><span class="fu">segments</span>(x<span class="fl">+0.1</span>, phi.lwr[<span class="dv">2</span>,], x<span class="fl">+0.1</span>,phi.upr[<span class="dv">2</span>,], <span class="at">lwd=</span><span class="dv">2</span>, <span class="at">col=</span><span class="st">&quot;brown&quot;</span>)</span>
+<span id="cb48-10"><a href="exSurvest.html#cb48-10" tabindex="-1"></a><span class="fu">points</span>(x<span class="fl">+0.1</span>, phi[<span class="dv">2</span>,], <span class="at">pch=</span><span class="dv">21</span>, <span class="at">bg=</span><span class="st">&quot;white&quot;</span>, <span class="at">col=</span><span class="st">&quot;brown&quot;</span>)</span>
+<span id="cb48-11"><a href="exSurvest.html#cb48-11" tabindex="-1"></a><span class="fu">legend</span>(<span class="dv">2015</span>, <span class="fl">1.1</span>, <span class="at">xpd=</span><span class="cn">NA</span>, <span class="at">lwd=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="at">col=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="st">&quot;brown&quot;</span>), <span class="at">legend=</span><span class="fu">c</span>(<span class="st">&quot;first year&quot;</span>, <span class="st">&quot;adult&quot;</span>), <span class="at">horiz=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-4"></span>
 <img src="16-ExercisesSurvival_files/figure-html/unnamed-chunk-4-1.png" alt="Annual apparent survival of juvenile and adult Snowfinches." width="672" />
 <p class="caption">
 Figure 17.2: Annual apparent survival of juvenile and adult Snowfinches.
 </p>
 </div>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="exSurvest.html#cb59-1" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">c</span>(<span class="dv">2016</span>,<span class="dv">2023</span>), <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="at">type=</span><span class="st">&quot;n&quot;</span>, <span class="at">las=</span><span class="dv">1</span>, <span class="at">xlab=</span><span class="cn">NA</span>, <span class="at">ylab=</span><span class="st">&quot;Recapture/resighting probability&quot;</span>)</span>
-<span id="cb59-2"><a href="exSurvest.html#cb59-2" tabindex="-1"></a></span>
-<span id="cb59-3"><a href="exSurvest.html#cb59-3" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">apply</span>(mod<span class="sc">$</span>sims.list<span class="sc">$</span>b, <span class="dv">2</span>, mean)</span>
-<span id="cb59-4"><a href="exSurvest.html#cb59-4" tabindex="-1"></a>p.lwr <span class="ot">&lt;-</span> <span class="fu">apply</span>(mod<span class="sc">$</span>sims.list<span class="sc">$</span>b, <span class="dv">2</span>, quantile, <span class="at">probs=</span><span class="fl">0.025</span>)</span>
-<span id="cb59-5"><a href="exSurvest.html#cb59-5" tabindex="-1"></a>p.upr <span class="ot">&lt;-</span> <span class="fu">apply</span>(mod<span class="sc">$</span>sims.list<span class="sc">$</span>b, <span class="dv">2</span>, quantile, <span class="at">probs=</span><span class="fl">0.975</span>)</span>
-<span id="cb59-6"><a href="exSurvest.html#cb59-6" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">2016</span>, <span class="dv">2023</span>, <span class="at">by=</span><span class="dv">1</span>)</span>
-<span id="cb59-7"><a href="exSurvest.html#cb59-7" tabindex="-1"></a><span class="fu">segments</span>(x, p.lwr, x,p.upr, <span class="at">lwd=</span><span class="dv">2</span>, <span class="at">col=</span><span class="st">&quot;brown&quot;</span>)</span>
-<span id="cb59-8"><a href="exSurvest.html#cb59-8" tabindex="-1"></a><span class="fu">points</span>(x, p, <span class="at">pch=</span><span class="dv">21</span>, <span class="at">bg=</span><span class="st">&quot;white&quot;</span>, <span class="at">col=</span><span class="st">&quot;brown&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="exSurvest.html#cb49-1" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">c</span>(<span class="dv">2016</span>,<span class="dv">2023</span>), <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="at">type=</span><span class="st">&quot;n&quot;</span>, <span class="at">las=</span><span class="dv">1</span>, <span class="at">xlab=</span><span class="cn">NA</span>, <span class="at">ylab=</span><span class="st">&quot;Recapture/resighting probability&quot;</span>)</span>
+<span id="cb49-2"><a href="exSurvest.html#cb49-2" tabindex="-1"></a></span>
+<span id="cb49-3"><a href="exSurvest.html#cb49-3" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">apply</span>(mod<span class="sc">$</span>sims.list<span class="sc">$</span>b, <span class="dv">2</span>, mean)</span>
+<span id="cb49-4"><a href="exSurvest.html#cb49-4" tabindex="-1"></a>p.lwr <span class="ot">&lt;-</span> <span class="fu">apply</span>(mod<span class="sc">$</span>sims.list<span class="sc">$</span>b, <span class="dv">2</span>, quantile, <span class="at">probs=</span><span class="fl">0.025</span>)</span>
+<span id="cb49-5"><a href="exSurvest.html#cb49-5" tabindex="-1"></a>p.upr <span class="ot">&lt;-</span> <span class="fu">apply</span>(mod<span class="sc">$</span>sims.list<span class="sc">$</span>b, <span class="dv">2</span>, quantile, <span class="at">probs=</span><span class="fl">0.975</span>)</span>
+<span id="cb49-6"><a href="exSurvest.html#cb49-6" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">2016</span>, <span class="dv">2023</span>, <span class="at">by=</span><span class="dv">1</span>)</span>
+<span id="cb49-7"><a href="exSurvest.html#cb49-7" tabindex="-1"></a><span class="fu">segments</span>(x, p.lwr, x,p.upr, <span class="at">lwd=</span><span class="dv">2</span>, <span class="at">col=</span><span class="st">&quot;brown&quot;</span>)</span>
+<span id="cb49-8"><a href="exSurvest.html#cb49-8" tabindex="-1"></a><span class="fu">points</span>(x, p, <span class="at">pch=</span><span class="dv">21</span>, <span class="at">bg=</span><span class="st">&quot;white&quot;</span>, <span class="at">col=</span><span class="st">&quot;brown&quot;</span>)</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-5"></span>
 <img src="16-ExercisesSurvival_files/figure-html/unnamed-chunk-5-1.png" alt="Recapture and resighting probability" width="672" />
 <p class="caption">
