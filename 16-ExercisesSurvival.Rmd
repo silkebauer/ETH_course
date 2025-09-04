@@ -87,7 +87,7 @@ str(datax)
 
 We then need to specify initial values and the parameters that we would like to save. 
 
-```{r jagsfit}
+```{r jagsfit, eval=FALSE}
 library(R2jags)
 initz <- matrix(NA, ncol=datax$nocc, nrow=datax$nind)
 for(i in 1:datax$nind) initz[i,(datax$first[i]+1):datax$nocc] <- 1
@@ -102,6 +102,7 @@ parameters <- c("a", "b")
 mod <- jags(datax, inits=initfun, parameters.to.save=parameters, 
             model.file="jags/cjs.txt", n.chains=3, n.iter=2000)
 mod <- mod$BUGSoutput
+save(mod, file="modelfits/survivalmodel.rda")
 
 ```
 
@@ -118,6 +119,7 @@ We then look at the results
 
 
 ```{r, collapse=TRUE}
+load("modelfits/survivalmodel.rda")
 mod$summary
 
 ```
