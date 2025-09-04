@@ -12,11 +12,12 @@ processes and community dynamics.
 
 Have a read of the starting point and major results of the following papers 
 (not details). 
+
 * Wildebeest in Serengeti [link](https://www.pnas.org/doi/10.1073/pnas.1614778114)
 * Insects in UK/Europe [link](https://www.science.org/doi/10.1126/science.aah4379)
 * Migrants in Arctic food web [link](https://www.frontiersin.org/journals/ecology-and-evolution/articles/10.3389/fevo.2022.1077260/full)
 * Pacific salmon [link](https://www.nature.com/articles/s41586-024-07980-2)
-*
+* North-American Bison [link](https://www.science.org/doi/10.1126/science.adu0703)
 
 Think about the following questions:
 * What (which factors & processes) do migratory animals change in resident communities?
