@@ -123,3 +123,9 @@ additional-data-and-literature-on-first-arrival-dates
 timing-of-hatching-dates
 exSurvest
 introduction-to-mark-recapture-modelling
+excmigmodel
+exercises
+change-parameters
+analyse-resulting-migration-patterns
+code-to-replace-existing-code-in-workflow.r
+SemEcosystem
